@@ -43,6 +43,15 @@ const config: GatsbyConfig = {
                 path: './src/images/',
             },
             __key: 'images',
+        },
+        {
+            resolve: 'gatsby-plugin-google-fonts',
+            options: {
+              fonts: [
+                `playfair display\:400,700`,
+                `open sans\:400,700`
+              ]
+            }
         }
     ],
 };

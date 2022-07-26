@@ -38,6 +38,7 @@ export const useCTAAreaQuery = () => {
                 }
             }
         }
-  `)
+    `)
+    
     return data
 }

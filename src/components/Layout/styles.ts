@@ -3,15 +3,30 @@ import styled from "@emotion/styled";
 
 export const GlobalStyles = css`
   html {
+    font-size: 62.5%; /* 10px browser default */ 
     font-family: 'arial', sans-serif;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
+    /* -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%; */
+
+    --color-light: #FFFFFF;
+    --color-muted: #D6D6D6;
+    --color-dark: #4D4D4D;
+    --color-primary: #009FDA;
+    --color-primary-light: #F3FAFD;
+    --color-accent: #69BE28;
+    --color-accent-light: #F1FBEA;
   }
 
   body {
+    font-size: 1.6rem;
     margin: 0;
+    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  .nav-active {
+    overflow-y: hidden;
   }
 
   .whiteText {
@@ -146,6 +161,12 @@ export const GlobalStyles = css`
     margin: 0;
   }
 
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: 2px solid var(--color-accent);
+  }
+
   optgroup {
     font-weight: 700;
   }
@@ -233,7 +254,6 @@ export const GlobalStyles = css`
   }
 
   html {
-    font: 112.5%/1.45em arial, georgia, serif;
     box-sizing: border-box;
     overflow-y: scroll;
   }
@@ -269,77 +289,35 @@ export const GlobalStyles = css`
   }
 
   a {
-    text-decoration: none;
-    color: #000;
+    color: var(--color-dark);
   }
 
   p {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.1rem;
-    line-height: 1.7rem;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+  }
+  
+  h1, h2, h3,
+  h4, h5, h6 {
+    font-weight: 700;
+    margin-top: 0px;
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Playfair Display', Arial, Helvetica, sans-serif;
+  }
+  
+  h4, h5, h6 {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   }
 
-  h1 {
-    font-size: 2.2rem;
-    font-family: 'Teko', Arial, serif;
-    font-weight: 800;
-    letter-spacing: 1px;
-    color: #282828;
-    text-transform: uppercase;
-    line-height: 40px;
-    margin-top: 10px;
-  }
-
-  h2 {
-    padding: 0;
-    margin: 0 0 1.45rem;
-    color: inherit;
-    font-family: 'Teko', Arial, Helvetica Neue, sans-serif;
-    font-weight: bold;
-    text-rendering: optimizeLegibility;
-    font-size: 1.62671rem;
-    line-height: 1.1;
-  }
-
-  h3 {
-    padding: 0;
-    margin: 0 0 1.45rem;
-    color: inherit;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    font-weight: bold;
-    text-rendering: optimizeLegibility;
-    font-size: 1.38316rem;
-    line-height: 1.1;
-  }
-
-  h4 {
-    font-family: Arial, serif;
-    font-weight: 800;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-  }
-
-  h5 {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: 200;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-    color: #000;
-    text-transform: uppercase;
-  }
-
-  h6 {
-    font-family: 'Times New Roman', serif;
-    font-size: 28px;
-    color: #fff;
-    font-style: italic;
-    margin: 40px 20% 20px 20%;
-    line-height: 35px;
-  }
+  h1 { font-size: 4.4rem; }
+  h2 { font-size: 3.0rem; }
+  h3 { font-size: 2.4rem; }
+  h4 { font-size: 2.0rem; }
+  h5 { font-size: 1.8rem; }
+  h6 { font-size: 1.6rem; }
 
   hgroup {
     padding: 0;
@@ -587,6 +565,5 @@ export const GlobalStyles = css`
 `;
 
 export const Wrapper = styled.div`
-  border: 2px solid green;
-  padding: 10px;
+  padding: 0px;
 `
