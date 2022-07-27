@@ -61,21 +61,25 @@ const IndexPage = ({path}: PageProps) => {
             </Hero>
             <Section
                 heading="What we offer"
+                subheading="Save time and let us search for you—it's fast, free, and fair."
                 color="light">
-                <h2>Save time and let us search for you—it’s fast, free, and fair.</h2>
                 <Carousel type="tiles">
                     <Tile
-                        image={home.homePageCustomFields.wwoMedicareImage.sourceUrl}
+                        image={home.homePageCustomFields.wwo.medicare.sourceUrl}
                         title="Medicare"/>
                     <Tile
-                        image={home.homePageCustomFields.wwoDentalImage.sourceUrl}
-                        title="Dental"/>
+                        image={home.homePageCustomFields.wwo.dental.sourceUrl}
+                        title="Dental"
+                        selected />
                     <Tile
-                        image={home.homePageCustomFields.wwoVisionImage.sourceUrl}
+                        image={home.homePageCustomFields.wwo.vision.sourceUrl}
                         title="Vision"/>
                     <Tile
-                        image={home.homePageCustomFields.wwoHealthImage.sourceUrl}
+                        image={home.homePageCustomFields.wwo.health.sourceUrl}
                         title="Health"/>
+                    <Tile
+                        image={home.homePageCustomFields.wwo.supplemental.sourceUrl}
+                        title="Supplemental"/>
                 </Carousel>
             </Section>
             <Medial color="primary">
@@ -128,7 +132,6 @@ const IndexPage = ({path}: PageProps) => {
                     />
                 </Carousel>
             </Section>
-            <h1>Home Page</h1>
         </Layout>
     );
 };

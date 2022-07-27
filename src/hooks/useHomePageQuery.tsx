@@ -15,17 +15,34 @@ export const useHomePageQuery = () => {
         homePageCustomFields {
           heroHeadline1
           heroHeadline2
-          wwoDentalImage {
-            sourceUrl
+          wwo {
+            medicare {
+              sourceUrl
+            }
+            dental {
+              sourceUrl
+            }
+            vision {
+              sourceUrl
+            }
+            health {
+              sourceUrl
+            }
+            supplemental {
+              sourceUrl
+            }
           }
-          wwoHealthImage {
-            sourceUrl
+          listItem1 {
+            heading
+            content
           }
-          wwoMedicareImage {
-            sourceUrl
+          listItem2 {
+            heading
+            content
           }
-          wwoVisionImage {
-            sourceUrl
+          listItem3 {
+            heading
+            content
           }
         }
       }

@@ -7,13 +7,14 @@ interface Props {
   image?: String,
   icon?: String,
   title: String,
+  selected?: boolean,
   children: ReactNode
 }
 
-const Tile: FC<Props> = ({ image, title, children }) => {
+const Tile: FC<Props> = ({ image, title, selected, children }) => {
 
   return (
-    <Wrapper className="tile">
+    <Wrapper className={(selected) ? `tile selected` : `tile`}>
       <img
         src={image}
         placeholder="BLURRED"

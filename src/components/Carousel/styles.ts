@@ -14,6 +14,23 @@ export const Wrapper = styled.div`
     z-index: 0;
   }
 
+  &.tiles {
+    & > [class*=Wrapper] {
+      overflow-x: hidden;
+
+      -ms-overflow-style: none; /* for Internet Explorer, Edge */
+      scrollbar-width: none; /* for Firefox */
+      
+      &::-webkit-scrollbar {
+        display: none; /* for Chrome, Safari, and Opera */
+      }
+    }
+
+    .carousel-nav {
+      margin-top: 5.5rem;
+    }
+  }
+
   &.full-background {
     &:before {
       width: 100%;
@@ -35,35 +52,15 @@ export const Wrapper = styled.div`
     }
 
     .carousel-nav {
-      margin-left: 8.9rem;
+      margin-left: 5.5rem;
     }
   }
-`
 
-export const Inner = styled.div`
-  display: flex;
-  flex-wrap: no-wrap;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: flex-start;
-  margin-bottom: 3.4rem;
-
-  position: relative;
-  z-index: 2;
-
-  blockquote {
-    font-size: 5.5rem;
-    margin-left: 0;
-    margin-right: 0;
+  @media only screen and (max-width: 920px) {
+    padding: 5.5rem 2.1rem;
   }
 
-  figcaption > div {
-    margin: 3.4rem auto;
-  }
-
-  .review {
-    flex-basis: 100%;
-    min-width: 100%;
-    margin-right: 8.9rem;
+  @media only screen and (max-width: 620px) {
+    padding: 5.5rem 0rem;
   }
 `

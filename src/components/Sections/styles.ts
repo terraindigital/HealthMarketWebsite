@@ -21,8 +21,11 @@ export const Wrapper = styled.div`
 `
 
 export const Heading = styled.div`
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   transform: translateX(-8.9rem);
+  width: calc(100% + 8.9rem);
 
   h1 {
     background-color: var(--color-primary);
@@ -30,6 +33,14 @@ export const Heading = styled.div`
     display: inline-block;
     margin: 0;
     padding: 3.4rem 3.4rem 3.4rem 14.4rem;
+  }
+
+  h2 {
+    font-family: 'Open Sans';
+    font-size: 2.4rem;
+    font-weight: normal;
+    margin-bottom: 0;
+    max-width: 415px;
   }
 `
 

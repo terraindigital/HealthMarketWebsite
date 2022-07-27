@@ -7,6 +7,7 @@ interface Props {
   color: String,
   children: ReactNode
   heading?: String,
+  subheading?: String
 }
 
 const switchBgColor = (bgColor) => {
@@ -22,7 +23,7 @@ const switchBgColor = (bgColor) => {
   }
 }
 
-const Section: FC<Props> = ({ heading, color, children}) => {
+const Section: FC<Props> = ({ heading, subheading, color, children}) => {
   const bgColor = switchBgColor(color)
 
   return (
@@ -30,6 +31,7 @@ const Section: FC<Props> = ({ heading, color, children}) => {
       {(heading) ? (
         <Heading className="heading">
           <h1>{heading}</h1>
+          <h2>{subheading}</h2>
         </Heading>
       ) : null}
       <Inner>
