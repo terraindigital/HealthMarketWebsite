@@ -557,9 +557,20 @@ export const GlobalStyles = css`
     content: '';
   }
 
-  @media only screen and (max-width: 480px) {
-    html {
-      font-size: 100%;
+/**
+ * Media Queries
+ */
+
+  .show-at-mobile {
+    display: none;
+  }
+
+  @media only screen and (max-width: 620px) {
+    .hide-at-mobile {
+      display: none;
+    }
+    .show-at-mobile {
+      display: block;
     }
   }
 `;

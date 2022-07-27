@@ -7,21 +7,22 @@ import { PageProps } from 'gatsby';
 // Components
 import Layout from "../../components/Layout"
 import Seo from "../../components/SEO"
-import Header from "../../components/Example/Header"
-import Hero from "../../components/Example/Hero"
-import Input from "../../components/Example/Inputs/Input"
-import Section from "../../components/Example/Sections"
-import FlexedSection from "../../components/Example/Sections/FlexedSection"
-import Typography from "../../components/Example/Typography"
-import Buttons from "../../components/Example/Buttons"
-import Button from "../../components/Example/Buttons/Button"
-import Medial from "../../components/Example/Medials"
-import Accordion from "../../components/Example/Accordions"
-import Cards from "../../components/Example/Cards"
-import Card from "../../components/Example/Cards/Card"
-import Carousel from "../../components/Example/Carousel"
-import Review from "../../components/Example/Reviews"
-import Footer from "../../components/Example/Footer"
+import Header from "../../components/Header"
+import Hero from "../../components/Hero"
+import Input from "../../components/Inputs/Input"
+import Section from "../../components/Sections"
+import FlexedSection from "../../components/Sections/FlexedSection"
+import Typography from "../../components/Typography"
+import Buttons from "../../components/Buttons"
+import Button from "../../components/Buttons/Button"
+import Medial from "../../components/Medials"
+import Accordion from "../../components/Accordions"
+import Cards from "../../components/Cards"
+import Card from "../../components/Cards/Card"
+import Carousel from "../../components/Carousel"
+import Reviews from "../../components/Reviews"
+import Review from "../../components/Reviews/Review"
+import Footer from "../../components/Footer"
 
 // Images
 import DentalIcon from "../../images/tooth.png"
@@ -139,7 +140,7 @@ const ExamplePage = ({path}: PageProps) => {
             </Medial>
             
             <Section heading="Carousels" color="light">
-                <Carousel background="full">
+                <Reviews background="full">
                     <Review
                         stars="5"
                         quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
@@ -165,7 +166,7 @@ const ExamplePage = ({path}: PageProps) => {
                         quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
                         author="Stephen Friedrichs"
                     />
-                </Carousel>
+                </Reviews>
             </Section>
 
             <Footer />
