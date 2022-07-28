@@ -42,6 +42,7 @@ const config: GatsbyConfig = {
                 trackingId: 'GA_TRACKING_ID',
             },
         },
+        'gatsby-plugin-postcss',
         'gatsby-plugin-image',
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-sitemap',
