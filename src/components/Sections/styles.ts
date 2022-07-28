@@ -32,6 +32,7 @@ export const Heading = styled.div`
     color: var(--color-light);
     display: inline-block;
     margin: 0;
+    max-width: 40%;
     padding: 3.4rem 3.4rem 3.4rem 14.4rem;
   }
 
