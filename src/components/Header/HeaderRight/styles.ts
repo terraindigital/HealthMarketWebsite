@@ -22,20 +22,6 @@ export const Item = styled.div`
     vertical-align: middle;
     margin: -0.3rem 0.3rem 0 0;
   }
-
-  .light & > a {
-    color: var(--color-light);
-  }
-
-  .light & > .icon,
-  .light & > a .icon {
-    filter: brightness(0) invert(1);
-  }
-
-  .dark & > a,
-  .stuck & > a {
-    color: var(--color-dark);
-  }
 `
 
 export const SearchButton = styled.img`

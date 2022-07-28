@@ -5,7 +5,6 @@ export const useHowWeHelpPageQuery = () => {
     query hwhPageQuery {
       hwh: wpPage(databaseId: {eq: 395}) {
         id
-        title
         featuredImage {
           node {
             sourceUrl

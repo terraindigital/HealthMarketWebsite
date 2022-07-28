@@ -5,8 +5,6 @@ export const useHomePageQuery = () => {
     query homepageQuery {
       home: wpPage(isFrontPage: {eq: true}) {
         id
-        title
-        content
         featuredImage {
           node {
             sourceUrl

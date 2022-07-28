@@ -7,7 +7,7 @@ interface Props {
   image?: String,
   icon?: String,
   title: String,
-  children: ReactNode
+  children?: ReactNode
 }
 
 const Card: FC<Props> = ({ image=null, icon=null, title, children }) => {

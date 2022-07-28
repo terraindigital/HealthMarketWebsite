@@ -13,15 +13,18 @@ export const Wrapper = styled.div`
 
   &.light {
     color: var(--color-light);
+    a { color: var(--color-light); }
+    a .icon { filter: brightness(0) invert(1); }
+    .icon { filter: brightness(0) invert(1); }
+    img { filter: brightness(0) invert(1); }
+    .header-right > div { border-color: var(--color-light); }
   }
 
   &.dark,
   &.stuck {
     color: var(--color-dark);
-
-    img {
-      filter: invert(0) brightness(1);
-    }
+    a { color: var(--color-dark); }
+    .header-right > div { border-color: var(--color-dark); }
   }
 
   &.stuck {
@@ -32,6 +35,8 @@ export const Wrapper = styled.div`
   &.nav-active {
     color: var(--color-light);
     a { color: var(--color-light); }
+    a .icon { filter: brightness(0) invert(1); }
+    .icon { filter: brightness(0) invert(1); }
     img { filter: brightness(0) invert(1); }
     .header-right > div { border-color: var(--color-light); }
   }
