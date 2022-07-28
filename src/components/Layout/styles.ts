@@ -8,6 +8,9 @@ export const GlobalStyles = css`
     /* -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%; */
 
+    --font-heading: 'Playfair Display', Arial, Helvetica, sans-serif;
+    --font-body: 'Open Sans', Arial, Helvetica, sans-serif;
+
     --color-light: #FFFFFF;
     --color-muted: #D6D6D6;
     --color-dark: #4D4D4D;
@@ -95,7 +98,7 @@ export const GlobalStyles = css`
   }
 
   h1 {
-    font-family: 'Teko', Arial, Helvetica, sans-serif;
+    font-family: var(--font-heading);
     font-weight: 700;
     font-size: 2em;
     margin: 0.67em 0;
@@ -272,7 +275,7 @@ export const GlobalStyles = css`
 
   body {
     color: hsla(0, 0%, 0%, 0.8);
-    font-family: 'arial', georgia, serif;
+    font-family: var(--font-body);
     font-weight: normal;
     word-wrap: break-word;
     font-kerning: normal;
@@ -293,7 +296,7 @@ export const GlobalStyles = css`
   }
 
   p {
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-family: var(--font-body);
     font-size: 1.6rem;
     line-height: 2.8rem;
   }
@@ -305,11 +308,11 @@ export const GlobalStyles = css`
   }
   
   h1, h2, h3 {
-    font-family: 'Playfair Display', Arial, Helvetica, sans-serif;
+    font-family: var(--font-heading);
   }
   
   h4, h5, h6 {
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-family: var(--font-body);
   }
 
   h1 { font-size: 4.4rem; }
