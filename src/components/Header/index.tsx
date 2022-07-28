@@ -10,11 +10,13 @@ import HeaderRight from "./HeaderRight"
 import headerLogo from "../../images/HMIA_logo2.png"
 
 interface Props {
+  staticHeader?: boolean,
   color?: String
 }
 
-const Header: FC<Props> = ({color}) => {
+const Header: FC<Props> = ({staticHeader=false, color}) => {
   const headerColor = (color) ? color : "dark";
+  const staticClass = (staticHeader) ? "static" : "";
 
   const stickyHeader = () => {
     const header = document.getElementsByClassName('site-header')[0]
@@ -30,7 +32,7 @@ const Header: FC<Props> = ({color}) => {
   window.onscroll = () => { stickyHeader() }
 
   return (
-    <Wrapper className={`site-header ` + headerColor}>
+    <Wrapper className={`site-header ` + headerColor + ` ` + staticClass}>
       <Logo src={headerLogo} />
       <HeaderRight />
     </Wrapper>

@@ -7,15 +7,16 @@ import Header from "../Header"
 import Footer from "../Footer"
 
 interface Props {
+    staticHeader?: boolean,
     headerColor?: String,
     children: ReactNode
 }
 
-const Layout: FC<Props> = ({ headerColor, children }) => {
+const Layout: FC<Props> = ({ staticHeader, headerColor, children }) => {
     return (
         <Wrapper>
             <Global styles={GlobalStyles}/>
-            <Header color={headerColor}/>
+            <Header staticHeader={staticHeader} color={headerColor}/>
             {children}
             <Footer />
         </Wrapper>
