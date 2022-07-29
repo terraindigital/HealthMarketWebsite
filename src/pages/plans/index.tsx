@@ -14,7 +14,7 @@ import {
 } from '../../components/Hero/Variants/plansPageStyles';
 
 // Images
-import MapPin from "../../images/location.png";
+import MapPin from "../../images/location.png"
 
 // Components
 import Layout from '../../components/Layout';
@@ -28,10 +28,11 @@ import Icons from '../../components/Icons';
 import Icon from '../../components/Icons/Icon';
 import Accordion from '../../components/Accordions';
 import Carousel from '../../components/Carousel';
-import Review from '../../components/Reviews/Review';
+import Review from '../../components/Example/Reviews';
 
 const PlansPage = () => {
   const { page } = usePlansPageQuery();
+  console.log(page);
 
   return (
     <Layout>
@@ -55,7 +56,7 @@ const PlansPage = () => {
         </div>
       </Hero>
       <Section color="primary">
-        <h2 style={{ color: "#009FDA", fontSize: "6rem", marginBottom: "5.5rem", textAlign: "center" }}>Plans to fit your life</h2>
+        <h2>Plans to fit your life</h2>
         <Cards>
           <Card
             icon={page.plansPageCustomFields.cards.card1.icon.sourceUrl}
@@ -75,7 +76,7 @@ const PlansPage = () => {
         </Cards>
       </Section>
       <Section color="primary">
-        <h2 style={{ color: "#009FDA", fontSize: "6rem", marginBottom: "5.5rem", textAlign: "center" }}>Our Plans</h2>
+        <h2>Our Plans</h2>
         <Icons>
           <Icon
             icon={page.plansPageCustomFields.plans.plan1.icon.sourceUrl}
@@ -110,18 +111,16 @@ const PlansPage = () => {
         </Icons>
       </Section>
       <Section color="light">
-        <h2 style={{ color: "#009FDA", fontSize: "6rem", marginBottom: "5.5rem", textAlign: "center" }}>Health insurance</h2>
-        <div style={{ margin: "0 auto", maxWidth: "800px" }}>
-          <Accordion
-            title={page.plansPageCustomFields.accordions.accordion1.heading}
-            content={page.plansPageCustomFields.accordions.accordion1.content} />
-          <Accordion
-            title={page.plansPageCustomFields.accordions.accordion2.heading}
-            content={page.plansPageCustomFields.accordions.accordion2.content} />
-          <Accordion
-            title={page.plansPageCustomFields.accordions.accordion3.heading}
-            content={page.plansPageCustomFields.accordions.accordion3.content} />
-        </div>
+        <h2>Health insurance</h2>
+        <Accordion
+          title={page.plansPageCustomFields.accordions.accordion1.heading}
+          content={page.plansPageCustomFields.accordions.accordion1.content} />
+        <Accordion
+          title={page.plansPageCustomFields.accordions.accordion2.heading}
+          content={page.plansPageCustomFields.accordions.accordion2.content} />
+        <Accordion
+          title={page.plansPageCustomFields.accordions.accordion3.heading}
+          content={page.plansPageCustomFields.accordions.accordion3.content} />
       </Section>
       <Section color="light">
         <Carousel type="reviews" background="full">
