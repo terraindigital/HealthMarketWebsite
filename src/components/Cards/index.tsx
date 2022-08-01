@@ -9,7 +9,7 @@ interface Props {
 
 const Cards: FC<Props> = ({children}) => {
   return (
-    <Wrapper>
+    <Wrapper className="cards">
       {children}
     </Wrapper>
   )
