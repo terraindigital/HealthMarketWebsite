@@ -13,20 +13,6 @@ export const Wrapper = styled.div`
     left: 100%;
     position: relative;
   }
-
-  blockquote {
-    font-family: var(--font-heading);
-    font-size: 5.5rem;
-    font-weight: bold;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  figcaption > div {
-    font-family: var(--font-body);
-    font-weight: bold;
-    margin: 3.4rem auto;
-  }
 `
 
 export const Figure = styled.figure`
@@ -34,9 +20,17 @@ export const Figure = styled.figure`
 `
 
 export const Blockquote = styled.blockquote`
-  // 
+  font-family: var(--font-heading);
+  font-size: 5.5rem;
+  font-weight: bold;
+  margin-left: 0;
+  margin-right: 0;
 `
 
 export const Figcaption = styled.figcaption`
-  // 
+  > div {
+    font-family: var(--font-body);
+    font-weight: bold;
+    margin: 3.4rem auto;
+  }
 `
