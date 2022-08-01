@@ -17,6 +17,7 @@ export const Item = styled.div`
   }
 
   .icon {
+    display: inline;
     height: 14px;
     position: relative;
     vertical-align: middle;

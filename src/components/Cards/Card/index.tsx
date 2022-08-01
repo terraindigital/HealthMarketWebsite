@@ -1,7 +1,7 @@
 import React, { FC, ReactNode} from "react"
 
 // Styles
-import { Wrapper, Content } from "./styles"
+import { Wrapper, Img, Content } from "./styles"
 
 interface Props {
   image?: String,
@@ -15,7 +15,7 @@ const Card: FC<Props> = ({ image=null, icon=null, title, children }) => {
 
   return (
     <Wrapper className={`card ${imageClass}`}>
-      <img
+      <Img
         src={(image !== null) ? image : icon}
         placeholder="BLURRED"
         maxWidth={(image === null) ? 128 : null}

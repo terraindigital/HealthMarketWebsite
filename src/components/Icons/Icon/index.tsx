@@ -1,7 +1,7 @@
 import React, { FC, ReactNode} from "react"
 
 // Styles
-import { Wrapper, Content } from "./styles"
+import { Wrapper, Img, Content } from "./styles"
 
 interface Props {
   icon: String,
@@ -11,7 +11,7 @@ interface Props {
 const Icon: FC<Props> = ({ icon, title }) => {
   return (
     <Wrapper>
-      <img
+      <Img
         src={icon}
         placeholder="BLURRED"
         maxWidth="128"

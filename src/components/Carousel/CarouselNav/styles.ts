@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  .half-background + & {
+  .half-background & {
     align-items: flex-start;
     justify-content: flex-start;
   }

@@ -10,7 +10,7 @@ interface Props {
 }
 
 const Hero: FC<Props> = ({ image, centered, children }) => (
-  <Wrapper className={(centered) ? "centered" : ""}>
+  <Wrapper className={(centered) ? "centered hero" : "hero"}>
     <Img src={image} alt="Hero" />
     <Inner className={(!centered) ? "half" : ""}>
       {children}

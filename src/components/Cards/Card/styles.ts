@@ -27,6 +27,10 @@ export const Wrapper = styled.div`
   }
 `
 
+export const Img = styled.img`
+  display: inline;
+`
+
 export const Content = styled.div`
   margin-top: 2.1rem;
   padding: 0 3.4rem 3.4rem;

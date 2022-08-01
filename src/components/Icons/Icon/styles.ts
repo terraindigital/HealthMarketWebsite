@@ -32,6 +32,10 @@ export const Wrapper = styled.div`
   }
 `
 
+export const Img = styled.img`
+  display: inline;
+`
+
 export const Content = styled.div`
   margin-top: 2.1rem;
 
