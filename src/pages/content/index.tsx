@@ -1,8 +1,12 @@
 // Library
 import * as React from 'react';
+import { Global } from '@emotion/react';
 
 // Queries
 import { useContentPageQuery } from '../../hooks/useContentPageQuery';
+
+// Styles
+import { PageStyles } from './styles';
 
 // Components
 import Layout from '../../components/Layout';
@@ -17,8 +21,9 @@ const ResourceCenterPage = () => {
 
   return (
     <Layout staticHeader>
+      <Global styles={PageStyles} />
       <Seo title="Get Counsel"/>
-      <Section color="primary" heading="Related resources">
+      <Section page="get-counsel" color="primary" heading="Related resources">
         <Cards>
           <Card
             image={page.contentPageCustomFields.contentArticles.contentArticle1.image.sourceUrl}
