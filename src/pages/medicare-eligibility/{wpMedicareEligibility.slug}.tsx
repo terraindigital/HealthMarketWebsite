@@ -4,19 +4,17 @@ import { Global } from "@emotion/react";
 import { graphql } from "gatsby";
 
 // Styles
-
 import { RightContent } from "./styles"
-import Button from '../../components/Buttons/Button';
-import Input from "../../components/Inputs/Input"
 import { PageStyles } from "./styles"
 
 // Components
-
 import Section from '../../components/Sections';
 import Layout from "../../components/Layout";
 import Dropdown from "../../components/Inputs/Dropdown";
 import DropdownOption from "../../components/Inputs/Dropdown/DropdownOption";
 import SplitSection from '../../components/Sections/SplitSection';
+import Button from '../../components/Buttons/Button';
+import Input from "../../components/Inputs/Input"
 
 interface PageInfo {
   page: {
@@ -33,16 +31,25 @@ const MedicareEligibilityPage = ({data}: { data: PageInfo }) => {
   return (
     <Layout staticHeader>
       <Global styles={PageStyles}/>
-        <SplitSection color="primary">
+        <SplitSection align="top" color="muted">
           <Section page={`medicare-eligibility ` + page.slug} color="light">
-            <h1 style={{ marginTop: "3.4rem" }}>{data.page.title}</h1>
+            <h1>{data.page.title}</h1>
             <div dangerouslySetInnerHTML={{ __html: data.page.content }} />
           </Section>
           <RightContent>
             <h3>Find the Coverage that Fits You.</h3>
             <p>Your search for affordable Health, Medicare and Life insurance starts here.</p>
             <Dropdown>
-              <DropdownOption text="Test" value="test" />
+              <DropdownOption text="Please Select" value="" />
+              <DropdownOption text="Medicare" value="Medicare" selected />
+              <DropdownOption text="Medicare Supplement" value="MedSupp" />
+              <DropdownOption text="Small Business" value="SmallBiz" />
+              <DropdownOption text="Individual Health Insurance" value="IndividualHealth" />
+              <DropdownOption text="Family Health Insurance" value="FamilyHealth" />
+              <DropdownOption text="Dental" value="Dental" />
+              <DropdownOption text="Vision" value="Vision" />
+              <DropdownOption text="Supplemental" value="Supplemental" />
+              <DropdownOption text="Life" value="Life" />
             </Dropdown>
             <Input hero centered type="text" name="heroLocationInput" placeholder="Enter zip code/City" />
             <Button style={{ borderRadius: "4px" }} background="accent" border="light" color="light">Get a free quote</Button>

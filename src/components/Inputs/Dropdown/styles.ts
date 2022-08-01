@@ -19,7 +19,7 @@ export const Select = styled.select`
   display: block;
   margin: 3.4rem 0rem;
   min-width: 32rem;
-  padding: 2.1rem 2.1rem 2.1rem 4rem;
+  padding: 2.1rem;
   position: relative;
 
   &::placeholder {

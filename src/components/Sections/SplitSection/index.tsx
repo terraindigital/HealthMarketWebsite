@@ -4,6 +4,7 @@ import React, {FC, ReactNode} from 'react';
 import { Wrapper } from "./styles";
 
 interface Props {
+  align?: String,
   color: String,
   children: ReactNode
 }
@@ -23,11 +24,12 @@ const switchBgColor = (bgColor) => {
   }
 }
 
-const SplitSection: FC<Props> = ({ color, children}) => {
+const SplitSection: FC<Props> = ({ align="center", color, children}) => {
+  const alignment = "align-" + align
   const bgColor = switchBgColor(color)
 
   return (
-    <Wrapper backgroundColor={bgColor} className={`section ` + color}>
+    <Wrapper backgroundColor={bgColor} className={`section ` + color + ` ` + alignment}>
       {children}
     </Wrapper>
   )

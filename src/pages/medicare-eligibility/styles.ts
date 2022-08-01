@@ -3,7 +3,9 @@ import styled from "@emotion/styled"
 import {css} from "@emotion/react";
 
 export const RightContent = styled.div`
-  vertical-align:top
+  margin-left: 3.4rem;
+  padding-top: 14.4rem;
+  vertical-align: top
 `
 
 export const PageStyles = css`

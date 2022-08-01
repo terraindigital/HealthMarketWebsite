@@ -9,13 +9,14 @@ import { Option } from "./styles"
 
 
 interface Props {
+  selected?: boolean,
   value: string,
   text: string
 }
 
-const DropdownOption: FC<Props> = ({ value, text }) => {
+const DropdownOption: FC<Props> = ({ selected, value, text }) => {
   return (
-    <Option value={value}>{text}</Option>
+    <Option value={value} selected={selected}>{text}</Option>
   )
 }
 

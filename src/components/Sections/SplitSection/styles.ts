@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
   display: flex;
-  align-items: center;
   justify-content: center;
 
   background-color: ${({ backgroundColor }) => backgroundColor};
@@ -21,6 +20,18 @@ export const Wrapper = styled.div`
   @media screen and (max-width: 920px) {
     padding-left: 2.1rem;
     padding-right: 2.1rem;
+  }
+
+  &.align-center {
+    align-items: center;
+  }
+
+  &.align-top {
+    align-items: flex-start;
+  }
+
+  &.align-bottom {
+    align-items: baseline;
   }
 
   h1 {
