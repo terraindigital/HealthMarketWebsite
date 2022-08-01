@@ -2,11 +2,7 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 export const PageStyles = css`
-  .hero .half[class*=Inner] {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+  /* ... */
 `
 
 export const HeroHeading = styled.h1`

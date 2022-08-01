@@ -10,7 +10,8 @@ import {
 
 interface Props {
   title: String,
-  content: String
+  content: String,
+  html?: boolean
 }
 
 const toggleAccordion = (el) => {
@@ -18,14 +19,16 @@ const toggleAccordion = (el) => {
   parent.classList.toggle('active')
 }
 
-const Accordion: FC<Props> = ({ title, content }) => {
+const Accordion: FC<Props> = ({ title, content, html=false }) => {
   return (
     <Wrapper className="accordion">
       <Title className="title" onClick={toggleAccordion}>
         {title}
       </Title>
       <Content className="content">
-        {content}
+        {(!html) ? content : (
+          <div dangerouslySetInnerHTML={{ __html: content }} />
+        )}
       </Content>
     </Wrapper>
   )

@@ -1,26 +1,39 @@
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
+export const PageStyles = css`
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 320px;
+  }
+
+  .button-container button:first-of-type {
+    margin-bottom: 2.1rem;
+  }
+`
+
 export const HeroHeading = styled.h1`
-  color: var(--color-primary);
+  color: var(--color-light);
   font-size: 8rem;
   line-height: 110%;
   margin-bottom: 3.4rem;
   max-width: 1024px;
-  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
 `
 
 export const HeroSubheading = styled.h4`
   color: var(--color-dark);
   line-height: 110%;
   margin-bottom: 3.4rem;
-  text-align: center;
 `
 
-export const PlansPageHeroForm = styled.div`
+export const PageHeroForm = styled.div`
   /* change to styled.form */
 `
 
-export const PlansPageHeroInputGroup = styled.div`
+export const PageHeroInputGroup = styled.div`
   display: inline-block;
   position: relative;
   text-align: center;
@@ -35,7 +48,7 @@ export const PlansPageHeroInputGroup = styled.div`
   }
 `
 
-export const PlansPageHeroInput = styled.input`
+export const PageHeroInput = styled.input`
   border-bottom: 2px solid var(--color-accent);
   border-left: none;
   border-right: none;

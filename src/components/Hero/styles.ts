@@ -35,6 +35,7 @@ export const Img = styled.img`
   left: 0;
   min-height: 100%;
   object-fit: cover;
+  min-width: 100%;
   position: absolute;
   top: 0;
   width: auto;
@@ -45,6 +46,10 @@ export const Inner = styled.div`
   margin: 0;
 
   &.half {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
     flex-basis: 50%;
     width: 50%;
   }
