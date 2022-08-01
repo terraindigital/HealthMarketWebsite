@@ -5,7 +5,7 @@ import * as React from 'react';
 import {
     HeroHeading,
     HeroSubheading
-} from '../../components/Hero/Variants/stdPageStyles';
+} from './styles';
 
 // Components
 import Layout from "../../components/Layout";
@@ -32,7 +32,7 @@ const HowWeHelpPage = () => {
 
   return (
     <Layout>
-      <Seo title="Home"/>
+      <Seo title="How We Help"/>
       <Hero
         image={hwh.featuredImage.node.sourceUrl}
         centered>

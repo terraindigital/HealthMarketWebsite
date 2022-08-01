@@ -11,7 +11,7 @@ import {
   PlansPageHeroForm,
   PlansPageHeroInputGroup,
   PlansPageHeroInput
-} from '../../components/Hero/Variants/plansPageStyles';
+} from './styles';
 
 // Images
 import MapPin from "../../images/location.png";

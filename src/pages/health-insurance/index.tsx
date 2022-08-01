@@ -35,7 +35,6 @@ import Review from "../../components/Reviews/Review";
 
 const HealthInsurancePage = () => {
   const { page } = useHealthPageQuery();
-  console.log(page)
 
   return (
     <Layout>

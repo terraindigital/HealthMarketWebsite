@@ -4,11 +4,13 @@ import * as React from 'react';
 // Queries
 import { useResourceCenterPageQuery } from '../../hooks/useResourceCenterPageQuery';
 
+// Styles
+import { HeroHeading, HeroSubheading } from './styles';
+
 // Components
 import Layout from '../../components/Layout';
 import Seo from '../../components/SEO';
 import Hero from '../../components/Hero';
-import { HeroHeading, HeroSubheading } from '../../components/Hero/Variants/stdPageStyles';
 import TabbedSection from '../../components/Sections/TabbedSection';
 import Section from '../../components/Sections';
 import Medial from '../../components/Medials';
