@@ -20,7 +20,7 @@ const Carousel: FC<Props> = ({ type, background, children }) => {
   if (type === "reviews") {
     return (
       <Wrapper className={type + ` ` + bgStyle}>
-        <Reviews background={background}>
+        <Reviews>
           {children}
         </Reviews>
         <CarouselNav count={children.length} />

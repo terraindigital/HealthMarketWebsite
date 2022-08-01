@@ -4,12 +4,15 @@ import { Global } from "@emotion/react";
 import { graphql } from "gatsby";
 
 // Styles
-import { PageStyles } from "../../components/Pages/MedicareEligibility/styles"
+
 import { RightContent } from "./styles"
 import Button from '../../components/Buttons/Button';
 import Input from "../../components/Inputs/Input"
+import { PageStyles } from "./styles"
 
 // Components
+
+import Section from '../../components/Sections';
 import Layout from "../../components/Layout";
 import Dropdown from "../../components/Inputs/Dropdown";
 import DropdownOption from "../../components/Inputs/Dropdown/DropdownOption";
@@ -25,16 +28,16 @@ interface PageInfo {
 }
 
 const MedicareEligibilityPage = ({data}: { data: PageInfo }) => {
-  console.log(data)
+  const { page } = data
 
   return (
     <Layout staticHeader>
       <Global styles={PageStyles}/>
         <SplitSection color="primary">
-          <div className="left_content">
+          <Section page={`medicare-eligibility ` + page.slug} color="light">
             <h1 style={{ marginTop: "3.4rem" }}>{data.page.title}</h1>
             <div dangerouslySetInnerHTML={{ __html: data.page.content }} />
-          </div>
+          </Section>
           <RightContent>
             <h3>Find the Coverage that Fits You.</h3>
             <p>Your search for affordable Health, Medicare and Life insurance starts here.</p>

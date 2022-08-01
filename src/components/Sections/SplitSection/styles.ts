@@ -23,14 +23,6 @@ export const Wrapper = styled.div`
     padding-right: 2.1rem;
   }
 
-  .left {
-    margin-right: 3.4rem;
-  }
-
-  .right {
-    margin-left: 3.4rem;
-  }
-
   h1 {
     color: var(--color-primary);
     margin-bottom: 2.1rem;
@@ -38,5 +30,19 @@ export const Wrapper = styled.div`
     & + p {
       margin-bottom: 3.4rem
     }
+  }
+
+  .left {
+    flex-basis: 50%;
+    max-width: 50%;
+
+    margin-right: 3.4rem;
+  }
+
+  .right {
+    flex-basis: 50%;
+    max-width: 50%;
+
+    margin-left: 3.4rem;
   }
 `

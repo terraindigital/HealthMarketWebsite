@@ -5,10 +5,13 @@ export const Wrapper = styled.div`
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
   margin-bottom: 2.1rem;
   position: relative;
-  text-align: center;
 
   flex-basis: calc(33% - 2.1rem);
   width: calc(33% - 2.1rem);
+
+  &.icon {
+    text-align: center;
+  }
 
   .gatsby-image-wrapper {
     margin-bottom: 1.6rem;

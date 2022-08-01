@@ -31,6 +31,9 @@ export const Wrapper = styled.div`
   &.stuck {
     background-color: rgba(255, 255, 255, 1);
     box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.12);
+    a .icon { filter: none; }
+    .icon { filter: none; }
+    img { filter: none; }
   }
 
   &.nav-active {

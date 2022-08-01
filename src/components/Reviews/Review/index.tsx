@@ -1,7 +1,12 @@
 import React, { FC } from 'react';
 
 // Styles
-import { Wrapper } from "./styles";
+import {
+  Wrapper,
+  Figure,
+  Blockquote,
+  Figcaption
+} from "./styles";
 
 // Components
 import Stars from "../Stars";
@@ -17,13 +22,13 @@ const Review: FC<Props> = ({ stars, quote, author }) => {
   return (
     <Wrapper className="review">
       <Stars count={stars} />
-      <figure>
-        <blockquote>{quote}</blockquote>
-        <figcaption>
+      <Figure>
+        <Blockquote>{quote}</Blockquote>
+        <Figcaption>
           <div>{author}</div>
           <Button background="accent" border="accent" color="light">See all reviews</Button>
-        </figcaption>
-      </figure>
+        </Figcaption>
+      </Figure>
     </Wrapper>
   )
 }

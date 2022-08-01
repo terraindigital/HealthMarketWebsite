@@ -16,6 +16,8 @@ const switchBgColor = (bgColor) => {
       return "#F1FBEA"
     case 'dark':
       return "#4D4D4D"
+    case 'muted':
+      return "#F6F4F2"
     default:
       return "#FFFFFF"
   }

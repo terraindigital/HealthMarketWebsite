@@ -5,12 +5,12 @@ export const Wrapper = styled.div`
   flex-wrap: no-wrap;
   flext-direction: row;
 
-  .full-background + & {
+  .full-background .review & {
     align-items: center;
     justify-content: center;
   }
 
-  .half-background + & {
+  .half-background .review & {
     align-items: flex-start;
     justify-content: flex-start;
   }

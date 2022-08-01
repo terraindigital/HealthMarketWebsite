@@ -6,15 +6,12 @@ import { Wrapper } from "./styles"
 // Components
 
 interface Props {
-  background?: String,
   children: ReactNode
 }
 
-const Reviews: FC<Props> = ({ background, children }) => {
-  const bgStyle = (background === "half") ? "half-background" : "full-background"
-
+const Reviews: FC<Props> = ({ children }) => {
   return (
-    <Wrapper className={bgStyle}>
+    <Wrapper>
       {children}
     </Wrapper>
   )
