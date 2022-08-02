@@ -64,3 +64,19 @@ export const PageHeroInput = styled.input`
     color: var(--color-accent);
   }
 `
+
+export const PageHeroCTA = styled.div`
+  display: flex;
+  align-items: center;
+  flex-wrap: no-wrap;
+
+  img {
+    filter: brightness(0) invert(1);
+    margin-bottom: 0;
+    margin-right: 0.8rem;
+  }
+
+  a, span {
+    color: var(--color-light);
+  }
+`

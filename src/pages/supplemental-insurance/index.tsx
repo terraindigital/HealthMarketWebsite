@@ -12,11 +12,13 @@ import {
   HeroSubheading,
   PageHeroForm,
   PageHeroInput,
-  PageHeroInputGroup
+  PageHeroInputGroup,
+  PageHeroCTA
 } from "./styles";
 
 // Images
 import MapPin from "../../images/location.png";
+import PhoneIcon from "../../images/phone-icon.png"
 
 // Components
 import Layout from "../../components/Layout";
@@ -53,6 +55,12 @@ const HealthInsurancePage = () => {
               </PageHeroInputGroup>
             </div>
           </PageHeroForm>
+          <PageHeroCTA>
+            <img src={PhoneIcon} />
+            <span>
+              Call us 24/7 at <a href="tel:+18555652552">(855) 565-2552</a>
+            </span>
+          </PageHeroCTA>
         </div>
       </Hero>
       <Section
