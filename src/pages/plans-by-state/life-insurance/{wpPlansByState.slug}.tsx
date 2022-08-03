@@ -11,7 +11,7 @@ const StatePage = ({data}: { data: PageInfo }) => {
     return (
         <Template
             data={data}
-            pageType="medicare"
+            pageType="lifeInsurance"
         />
     )
 }
@@ -34,7 +34,7 @@ query($slug: String!)
             pageData
             {
                 cityList
-                medicare
+                lifeInsurance
                 {
                     proof1
                     {
