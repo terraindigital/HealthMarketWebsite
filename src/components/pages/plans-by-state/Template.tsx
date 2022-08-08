@@ -1,6 +1,13 @@
 import React, {FC} from "react";
 import Layout from "../../Layout";
 import {GatsbyImage, getImage, ImageDataLike} from "gatsby-plugin-image";
+import HealthInsuranceIcon from "./icons/healthInsurance";
+import LifeInsuranceIcon from "./icons/lifeInsurance";
+import DentalIcon from "./icons/dentalInsurance";
+import VisionIcon from "./icons/vision";
+import MedicareIcon from "./icons/medicare";
+import SupplementalIcon from "./icons/supplementalInsurance";
+import SmallBusinessIcon from "./icons/smallBusiness";
 
 interface Proof {
     title: string;
@@ -46,10 +53,8 @@ interface Prop {
 
 
 const Template: FC<Prop> = ({data, pageType}) => {
-    console.log(data)
     const {title, slug} = data.page
     const cityList: string[] = data.page.pageData.cityList.split(",")
-    console.log(pageType)
     const {hero, proof1, proof2, proof3} = data.page.pageData[pageType] as CustomFields
     const imageData = getImage(hero.image.localFile)
 
@@ -120,7 +125,7 @@ const Template: FC<Prop> = ({data, pageType}) => {
                     </p>
                 </div>
                 {/* Hero - Image */}
-                <div className="hidden lg:block">
+                <div className="hidden lg:grid justify-end">
                     {imageData && <GatsbyImage image={imageData} alt="Hero Image"/>}
                 </div>
             </div>
@@ -148,19 +153,55 @@ const Template: FC<Prop> = ({data, pageType}) => {
                 <ul className="grid grid-cols-2 md:grid-cols-3 gap-10">
                     {
                         [
-                            {slug: `/plans-by-state/health-insurance/${slug}`, title: "Individual Health Insurance"},
-                            {slug: "/small-business", title: "Small Business"},
-                            {slug: `/plans-by-state/life-insurance/${slug}`, title: "Life Insurance"},
-                            {slug: `/plans-by-state/dental-insurance/${slug}`, title: "Dental Insurance"},
-                            {slug: "/vision-insurance", title: "Vision Insurance"},
-                            {slug: "/supplemental-insurance", title: "Supplemental Insurance"},
-                        ].map((product, index) => (
+                            {
+                                isHide: pageType === "healthInsurance",
+                                slug: `/plans-by-state/health-insurance/${slug}`,
+                                title: "Individual Health Insurance",
+                                icon: <HealthInsuranceIcon width={100} height={100}/>,
+                            },
+                            {
+                                isHide: pageType === "medicare",
+                                slug: `/plans-by-state/medicare/${slug}`,
+                                title: "Medicare",
+                                icon: <MedicareIcon width={100} height={100}/>,
+                            },
+                            {
+                                isHide: false,
+                                slug: "/small-business",
+                                title: "Small Business",
+                                icon: <SmallBusinessIcon width={100} height={100}/>,
+                            },
+                            {
+                                isHide: pageType === "lifeInsurance",
+                                slug: `/plans-by-state/life-insurance/${slug}`,
+                                title: "Life Insurance",
+                                icon: <LifeInsuranceIcon width={100} height={100}/>,
+                            },
+                            {
+                                isHide: pageType === "dentalInsurance",
+                                slug: `/plans-by-state/dental-insurance/${slug}`,
+                                title: "Dental Insurance",
+                                icon: <DentalIcon width={100} height={100}/>,
+                            },
+                            {
+                                isHide: false,
+                                slug: "/vision-insurance",
+                                title: "Vision Insurance",
+                                icon: <VisionIcon width={100} height={100}/>,
+                            },
+                            {
+                                isHide: false,
+                                slug: "/supplemental-insurance",
+                                title: "Supplemental Insurance",
+                                icon: <SupplementalIcon width={100} height={100}/>,
+                            },
+                        ].filter(item => !item.isHide).map((product, index) => (
                             <a
                                 key={index}
-                                className="grid grid-cols-1 gap-5 text-green-600 hover:text-green-900"
+                                className="grid grid-cols-1 justify-items-center text-green-600 hover:text-green-900"
                                 href={product.slug}
                             >
-                                <i>Icon</i>
+                                <i>{product.icon}</i>
                                 <span>{product.title}</span>
                             </a>
                         ))
@@ -188,7 +229,7 @@ const Template: FC<Prop> = ({data, pageType}) => {
                         }
                     </ul>
                 </div>
-                <div className="grid content-center px-5  text-4xl leading-relaxed font-semibold text-center">
+                <div className="grid content-center px-5 text-4xl leading-relaxed font-semibold text-center">
                     <h3>
                         Call us 24/7 at&nbsp;
                         <a
