@@ -15,7 +15,7 @@ export const Tabs = styled.div`
     padding-top: 0;
   }
 
-.section-tab {
+  .section-tab {
     color: var(--color-dark);
     font-size: 1.8rem;
     font-weight: bold;
@@ -34,5 +34,14 @@ export const Tabs = styled.div`
       color: var(--color-primary);
       text-decoration: underline;
     }
+  }
+
+  @media only screen and (max-width: 620px) {
+    padding: 2.4rem 1.6rem;
+
+    overflow-x: scroll;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    &::-webkit-scrollbar { display: none; } /* for Chrome, Safari, and Opera */
   }
 `

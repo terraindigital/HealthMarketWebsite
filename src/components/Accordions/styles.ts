@@ -45,13 +45,32 @@ export const Wrapper = styled.div`
 
 export const Title = styled.div`
   border-bottom: 1px solid var(--color-dark);
-  color: var(--color-primary);
-  font-size: 3rem;
   margin-bottom: 1.3rem;
   padding: 2.1rem 0px;
+
+  h2 {
+    color: var(--color-primary);
+    font-size: 3rem;
+    margin: 0px;
+  }
+
+  @media only screen and (max-width: 620px) {
+    margin-bottom: 0px;
+    
+    h2 {
+      font-family: var(--font-body);
+      font-size: 2rem;
+      max-width: 225px;
+    }
+  }
 `
 
 export const Content = styled.div`
   color: var(--color-dark);
   margin: 0 0 2.1rem 0;
+
+  @media only screen and (max-width: 620px) {
+    margin-bottom: 0px;
+    padding-bottom: 0.8rem;
+  }
 `

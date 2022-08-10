@@ -13,7 +13,8 @@ import {
   PageHeroForm,
   PageHeroInput,
   PageHeroInputGroup,
-  PageHeroCTA
+  PageHeroCTA,
+  PageHeroButtons
 } from "./styles";
 
 // Images
@@ -32,21 +33,27 @@ import FlexedSection from "../../components/Sections/FlexedSection";
 import Accordion from "../../components/Accordions";
 import Carousel from "../../components/Carousel";
 import Review from "../../components/Reviews/Review";
+import Reviews from "../../components/Reviews";
 
 const HealthInsurancePage = () => {
   const { page } = useDentalPageQuery();
   
   return (
-    <Layout>
+    <Layout pageClass="dental-insurance">
       <Global styles={PageStyles} />
       <Seo title="Dental Insurance"/>
       <Hero
-        image={page.featuredImage.node.sourceUrl} >
+        image={page.featuredImage.node.sourceUrl}>
         <HeroHeading>{page.pageHeroHeadlines.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroHeadlines.subheadline}</HeroSubheading>
         <div>
-          <Button background="accent" border="accent" color="light">Get a FREE quote</Button>
-          <Button background="light" border="accent" color="accent">Find an agent</Button>
+          <PageHeroButtons>
+            <Button background="accent" border="accent" color="light">
+              <div className="hide-at-mobile">Get a FREE quote</div>
+              <div className="show-at-mobile">Find my plan</div>
+            </Button>
+            <Button background="light" border="accent" color="accent">Find a licensed insurance agent</Button>
+          </PageHeroButtons>
           <PageHeroForm>
             <div>
               <PageHeroInputGroup>
@@ -75,36 +82,57 @@ const HealthInsurancePage = () => {
         <Accordion
           title={page.dentalPageCustomFields.dentalAccordions.dentalAccordion3.heading}
           content={page.dentalPageCustomFields.dentalAccordions.dentalAccordion3.content} />
-        <Button background="accent" border="accent" color="light">Show me options</Button>
+        <div className="hide-at-mobile">
+          <Button background="accent" border="accent" color="light">Show me options</Button>
+        </div>
       </FlexedSection>
       <Section color="light">
-        <Carousel type="reviews" background="half">
-          <Review
-            stars="5"
-            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-            author="Stephen Friedrichs"
-          />
-          <Review
-            stars="5"
-            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-            author="Stephen Friedrichs"
-          />
-          <Review
-            stars="5"
-            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-            author="Stephen Friedrichs"
-          />
-          <Review
-            stars="5"
-            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-            author="Stephen Friedrichs"
-          />
-          <Review
-            stars="5"
-            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-            author="Stephen Friedrichs"
-          />
-        </Carousel>
+        <div className="hide-at-mobile">
+          <Carousel type="reviews" background="half">
+            <Review
+              stars="5"
+              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+              author="Stephen Friedrichs"
+            />
+            <Review
+              stars="5"
+              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+              author="Stephen Friedrichs"
+            />
+            <Review
+              stars="5"
+              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+              author="Stephen Friedrichs"
+            />
+            <Review
+              stars="5"
+              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+              author="Stephen Friedrichs"
+            />
+            <Review
+              stars="5"
+              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+              author="Stephen Friedrichs"
+            />
+          </Carousel>
+        </div>
+        <div className="show-at-mobile">
+            <Reviews>
+                <Review
+                    stars="5"
+                    quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+                    author="Stephen Friedrichs"
+                />
+                <Review
+                    stars="5"
+                    quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+                    author="Stephen Friedrichs"
+                />
+            </Reviews>
+            <div style={{ textAlign: "center" }}>
+                <a href="#">See all reviews</a>
+            </div>
+        </div>
       </Section>
       <Section
         color="primary"
@@ -126,6 +154,9 @@ const HealthInsurancePage = () => {
             <div dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalRelatedContent.dentalRelatedContent3.content}} />
           </Card>
         </Cards>
+        <div className="full-rounded" style={{ textAlign: "center" }}>
+          <Button background="accent" border="accent" color="light">Get a free quote</Button>
+        </div>
       </Section>
     </Layout>
   )

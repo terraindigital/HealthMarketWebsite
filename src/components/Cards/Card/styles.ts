@@ -25,6 +25,48 @@ export const Wrapper = styled.div`
   &.icon img {
     padding: 3.4rem;
   }
+
+  @media only screen and (max-width: 620px) {
+    flex-basis: 100%;
+    width: 100%;
+
+    &.icon {
+      align-items: center;
+      border-bottom: 1px solid var(--color-primary);
+      display: flex;
+      margin-bottom: 0;
+      padding: 1.6rem 2.4rem;
+      text-align: left;
+
+      &:last-of-type {
+        border-bottom: none;
+      }
+
+      img {
+        height: auto;
+        margin: 0;
+        max-width: 4.2rem;
+        padding: 0px;
+      }
+
+      img + [class*=Content] {
+        margin-top: 0px;
+        padding: 0px;
+    
+        h2 {
+          font-family: var(--font-body);
+          font-size: 2rem;
+          line-height: 2.6rem;
+          margin-bottom: 0px;
+          margin-left: 1.6rem;
+    
+          & + div {
+            display: none;
+          }
+        }
+      }
+    }
+  }
 `
 
 export const Img = styled.img`

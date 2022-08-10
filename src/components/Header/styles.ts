@@ -16,7 +16,6 @@ export const Wrapper = styled.div`
     a { color: var(--color-light); }
     a .icon { filter: brightness(0) invert(1); }
     .icon { filter: brightness(0) invert(1); }
-    img { filter: brightness(0) invert(1); }
     .header-right > div { border-color: var(--color-light); }
   }
 
@@ -33,7 +32,6 @@ export const Wrapper = styled.div`
     box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.12);
     a .icon { filter: none; }
     .icon { filter: none; }
-    img { filter: none; }
   }
 
   &.nav-active {
@@ -41,7 +39,7 @@ export const Wrapper = styled.div`
     a { color: var(--color-light); }
     a .icon { filter: brightness(0) invert(1); }
     .icon { filter: brightness(0) invert(1); }
-    img { filter: brightness(0) invert(1); }
+    .site-logo { filter: brightness(0) invert(1); }
     .header-right > div { border-color: var(--color-light); }
   }
 

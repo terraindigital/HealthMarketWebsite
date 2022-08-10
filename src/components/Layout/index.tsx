@@ -7,14 +7,15 @@ import Header from "../Header"
 import Footer from "../Footer"
 
 interface Props {
+    pageClass?: String,
     staticHeader?: boolean,
     headerColor?: String,
     children: ReactNode
 }
 
-const Layout: FC<Props> = ({ staticHeader, headerColor, children }) => {
+const Layout: FC<Props> = ({ pageClass, staticHeader, headerColor, children }) => {
     return (
-        <Wrapper>
+        <Wrapper className={pageClass}>
             <Global styles={GlobalStyles}/>
             <Header staticHeader={staticHeader} color={headerColor}/>
             {children}

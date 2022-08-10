@@ -8,6 +8,7 @@ import HeaderRight from "./HeaderRight"
 
 // Images
 import headerLogo from "../../images/HMIA_logo2.png"
+import { Link } from "gatsby"
 
 interface Props {
   staticHeader?: boolean,
@@ -33,7 +34,9 @@ const Header: FC<Props> = ({staticHeader=false, color}) => {
 
   return (
     <Wrapper className={`site-header ` + headerColor + ` ` + staticClass}>
-      <Logo src={headerLogo} />
+      <Link to="/">
+        <Logo className="site-logo" src={headerLogo} />
+      </Link>
       <HeaderRight />
     </Wrapper>
   )

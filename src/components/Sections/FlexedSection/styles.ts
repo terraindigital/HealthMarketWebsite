@@ -21,6 +21,11 @@ export const Wrapper = styled.div`
     padding-left: 2.1rem;
     padding-right: 2.1rem;
   }
+
+  @media only screen and (max-width: 620px) {
+    display: block;
+    padding-bottom: 3.4rem;
+  }
 `
 
 export const Heading = styled.div`
@@ -35,8 +40,25 @@ export const Heading = styled.div`
     margin: 0;
     padding: 3.4rem 3.4rem 3.4rem 14.4rem;
   }
+
+  @media only screen and (max-width: 620px) {
+    display: block;
+    margin-bottom: 3.4rem;
+    transform: translateX(-2.1rem);
+
+    h1 {
+      max-width: 100%;
+      padding: 0.5rem 2.1rem 0.5rem 3.4rem;
+    }
+  }
 `
 
 export const Inner = styled.div`
-//
+  @media only screen and (max-width: 620px) {
+    button {
+      border-radius: 4px;
+      margin-top: 3.4rem;
+      width: 100%;
+    }
+  }
 `

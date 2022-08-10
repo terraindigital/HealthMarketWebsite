@@ -24,4 +24,15 @@ export const Wrapper = styled.div`
       margin-right: 0;
     }
   }
+
+  @media only screen and (max-width: 620px) {
+    .gatsby-image-wrapper {
+      max-width: 22px;
+      margin-right: 0.3rem;
+  
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
 `

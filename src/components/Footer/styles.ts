@@ -49,6 +49,8 @@ export const FooterLogo = styled.div`
     width: 100%;
     text-align: center;
     margin-top: 2.1rem;
+
+    img { margin: 0 auto; }
   }
 `
 

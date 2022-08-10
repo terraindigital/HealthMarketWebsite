@@ -31,6 +31,7 @@ import MapPin from "../images/location.png"
 
 // Queries
 import { useHomePageQuery } from '../hooks/useHomePageQuery';
+import Reviews from '../components/Reviews';
 
 const IndexPage = ({path}: PageProps) => {
     const { home } = useHomePageQuery();
@@ -44,10 +45,12 @@ const IndexPage = ({path}: PageProps) => {
                 image={home.featuredImage.node.sourceUrl}
                 centered>
                 <HeroHeading>More health plan options with less effort? You bet.</HeroHeading>
-                <HeroSubheading>We compare thousands of health insurance plans, so you don’t have to.</HeroSubheading>
+                <HeroSubheading>We search through thousands of insurance plans, so you don't have to</HeroSubheading>
                 <div style={{textAlign: "center"}}>
-                    <Button background="accent" border="accent" color="light">Find my plan</Button>
-                    <Button background="light" border="accent" color="accent">Talk to an agent</Button>
+                    <div className="home-hero-buttons">
+                        <Button background="accent" border="accent" color="light">Find my plan</Button>
+                        <Button background="light" border="accent" color="accent">Talk to an agent</Button>
+                    </div>
                     <HomePageHeroForm>
                         <div>
                             <HomePageHeroInputGroup>
@@ -84,7 +87,11 @@ const IndexPage = ({path}: PageProps) => {
             </Section>
             <Medial color="primary">
                 <img className="chat-bubble" src={ChatBubble} alt="Chat bubble icon" />
-                <h1>Uninsured?<br/>We can help.</h1>
+                <h1 className="hide-at-mobile">Uninsured?<br/>We can help.</h1>
+                <div className="show-at-mobile">
+                    <h2>Uninsured and not sure where to start?</h2>
+                    <p><strong>We can help.</strong></p>
+                </div>
                 <Button background="accent" border="accent" color="light">Show me options</Button>
             </Medial>
             <FlexedSection
@@ -104,33 +111,52 @@ const IndexPage = ({path}: PageProps) => {
                 <Button background="accent" border="accent" color="light">Explore my options</Button>
             </FlexedSection>
             <Section color="light">
-                <Carousel type="reviews" background="half">
-                    <Review
-                        stars="5"
-                        quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                        author="Stephen Friedrichs"
-                    />
-                    <Review
-                        stars="5"
-                        quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                        author="Stephen Friedrichs"
-                    />
-                    <Review
-                        stars="5"
-                        quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                        author="Stephen Friedrichs"
-                    />
-                    <Review
-                        stars="5"
-                        quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                        author="Stephen Friedrichs"
-                    />
-                    <Review
-                        stars="5"
-                        quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                        author="Stephen Friedrichs"
-                    />
-                </Carousel>
+                <div className="hide-at-mobile">
+                    <Carousel type="reviews" background="half">
+                        <Review
+                            stars="5"
+                            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+                            author="Stephen Friedrichs"
+                        />
+                        <Review
+                            stars="5"
+                            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+                            author="Stephen Friedrichs"
+                        />
+                        <Review
+                            stars="5"
+                            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+                            author="Stephen Friedrichs"
+                        />
+                        <Review
+                            stars="5"
+                            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+                            author="Stephen Friedrichs"
+                        />
+                        <Review
+                            stars="5"
+                            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+                            author="Stephen Friedrichs"
+                        />
+                    </Carousel>
+                </div>
+                <div className="show-at-mobile">
+                    <Reviews>
+                        <Review
+                            stars="5"
+                            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+                            author="Stephen Friedrichs"
+                        />
+                        <Review
+                            stars="5"
+                            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+                            author="Stephen Friedrichs"
+                        />
+                    </Reviews>
+                    <div style={{ textAlign: "center" }}>
+                        <a href="#">See all reviews</a>
+                    </div>
+                </div>
             </Section>
         </Layout>
     );

@@ -1,11 +1,12 @@
 // Library
 import * as React from 'react';
+import { Global } from '@emotion/react';
 
 // Queries
 import { useResourceCenterPageQuery } from '../../hooks/useResourceCenterPageQuery';
 
 // Styles
-import { HeroHeading, HeroSubheading } from './styles';
+import { PageStyles, HeroHeading, HeroSubheading } from './styles';
 
 // Components
 import Layout from '../../components/Layout';
@@ -32,8 +33,9 @@ const ResourceCenterPage = () => {
   sectionTabs.push("Wellness")
 
   return (
-    <Layout>
-      <Seo title="Home"/>
+    <Layout pageClass="resource-center">
+      <Global styles={PageStyles}/>
+      <Seo title="Resource Center"/>
       <Hero
         image={page.featuredImage.node.sourceUrl}
         centered>
@@ -45,18 +47,28 @@ const ResourceCenterPage = () => {
         tabs={sectionTabs}>
         {/* navigation */}
         <Section color="primary" heading="Featured Medicare articles">
-          <Flag>
-            <div className="left" style={{ maxWidth: "54rem" }}>
-              <h2>{page.resourceCenterPageCustomFields.featuredArticle.title}</h2>
+          <div className="hide-at-mobile">
+            <Flag>
+              <div className="left" style={{ maxWidth: "54rem" }}>
+                <h2>{page.resourceCenterPageCustomFields.featuredArticle.title}</h2>
+                <div dangerouslySetInnerHTML={{ __html: page.resourceCenterPageCustomFields.featuredArticle.content }} />
+                <p><a href="#">View article</a></p>
+              </div>
+              <div className="right">
+                <img
+                  src={page.resourceCenterPageCustomFields.featuredArticle.image.sourceUrl}
+                  alt={page.resourceCenterPageCustomFields.featuredArticle.title} />
+              </div>
+            </Flag>
+          </div>
+          <div className="show-at-mobile">
+            <Card
+              image={page.resourceCenterPageCustomFields.featuredArticle.image.sourceUrl}
+              title={page.resourceCenterPageCustomFields.featuredArticle.title}>
               <div dangerouslySetInnerHTML={{ __html: page.resourceCenterPageCustomFields.featuredArticle.content }} />
-              <p><a href="#">View article</a></p>
-            </div>
-            <div className="right">
-              <img
-                src={page.resourceCenterPageCustomFields.featuredArticle.image.sourceUrl}
-                alt={page.resourceCenterPageCustomFields.featuredArticle.title} />
-            </div>
-          </Flag>
+            </Card>
+            <div className="featured-cta"><a href="#">View article</a></div>
+          </div>
           <Cards>
             <Card
               image={page.resourceCenterPageCustomFields.additionalArticles.article1.image.sourceUrl}

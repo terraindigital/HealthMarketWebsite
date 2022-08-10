@@ -21,7 +21,7 @@ export const Nav = styled.nav`
   }
 
   @media only screen and (max-width: 620px) {
-    padding: 5.5rem 2.1rem 2.1rem;
+    padding: 8.9rem 2.1rem 2.1rem;
   }
 `
 
@@ -37,8 +37,7 @@ export const Menu = styled.ul`
       font-weight: bold;
 
       @media only screen and (max-width: 620px) {
-        font-size: 1.2rem;
-        font-weight: normal;
+        font-size: 1.6rem;
       }
     }
   }
@@ -56,14 +55,12 @@ export const MenuItem = styled.li`
     text-decoration: none;
   }
 
-
-
   @media only screen and (max-width: 620px) {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     
     a {
-      font-size: 1.8rem;
+      font-size: 3.2rem;
       line-height: 100%;
     }
   }

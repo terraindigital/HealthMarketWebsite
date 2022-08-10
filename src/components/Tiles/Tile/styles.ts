@@ -11,6 +11,11 @@ export const Wrapper = styled.div`
     margin: 0 3.4rem;
     transform: scale(1.1, 1.1)
                translate(-9px, -5px);
+
+    @media only screen and (max-width: 620px) {
+      margin: 3.4rem auto;
+      transform: none;
+    }
   }
 
   .gatsby-image-wrapper {

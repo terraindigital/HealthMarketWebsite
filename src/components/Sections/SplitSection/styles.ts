@@ -56,4 +56,15 @@ export const Wrapper = styled.div`
 
     margin-left: 3.4rem;
   }
+
+  @media only screen and (max-width: 620px) {
+    display: block;
+    
+    .left,
+    .right {
+      flex-basis: 100%;
+      max-width: 100%;
+      margin: 0px;
+    }
+  }
 `

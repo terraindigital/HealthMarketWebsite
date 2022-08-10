@@ -5,8 +5,10 @@ export const Wrapper = styled.div`
 `
 
 export const SearchButton = styled.img`
-  height: 24px;
-  margin-bottom: 0.5rem;
+  &.icon {
+    height: 2.5rem;
+    margin: 0.8rem auto;
+  }
 `
 
 export const Item = styled.div`
@@ -15,13 +17,14 @@ export const Item = styled.div`
 
   .icon {
     filter: brightness(0) invert(1);
-    height: 14px;
+    height: 1.9rem;
     margin: -0.3rem 0.3rem 0 0;
     position: relative;
     vertical-align: middle;
   }
 
   &, a {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
+    font-weight: bold;
   }
 `

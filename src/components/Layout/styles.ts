@@ -571,15 +571,15 @@ export const GlobalStyles = css`
  */
 
   .show-at-mobile {
-    display: none;
+    display: none !important;
   }
 
   @media only screen and (max-width: 620px) {
     .hide-at-mobile {
-      display: none;
+      display: none !important;
     }
     .show-at-mobile {
-      display: block;
+      display: block !important;
     }
   }
 `;

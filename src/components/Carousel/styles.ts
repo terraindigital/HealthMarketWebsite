@@ -28,6 +28,10 @@ export const Wrapper = styled.div`
 
     .carousel-nav {
       margin-top: 5.5rem;
+
+      @media only screen and (max-width: 620px) {
+        margin-top: 0rem;
+      }
     }
   }
 
@@ -54,6 +58,12 @@ export const Wrapper = styled.div`
     .carousel-nav {
       margin-left: 5.5rem;
     }
+
+    @media only screen and (max-width: 620px) {
+      &:before {
+        right: 0;
+      }
+    }
   }
 
   @media only screen and (max-width: 920px) {
@@ -61,6 +71,6 @@ export const Wrapper = styled.div`
   }
 
   @media only screen and (max-width: 620px) {
-    padding: 5.5rem 0rem;
+    padding: 0rem;
   }
 `

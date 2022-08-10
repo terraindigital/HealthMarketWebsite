@@ -13,7 +13,8 @@ import {
   PageHeroForm,
   PageHeroInput,
   PageHeroInputGroup,
-  PageHeroCTA
+  PageHeroCTA,
+  PageHeroButtons
 } from "./styles";
 
 // Images
@@ -34,12 +35,13 @@ import FlexedSection from "../../components/Sections/FlexedSection";
 import Accordion from "../../components/Accordions";
 import Carousel from "../../components/Carousel";
 import Review from "../../components/Reviews/Review";
+import Reviews from "../../components/Reviews";
 
 const HealthInsurancePage = () => {
   const { page } = useHealthPageQuery();
 
   return (
-    <Layout>
+    <Layout pageClass="health-insurance">
       <Global styles={PageStyles} />
       <Seo title="Health Insurance"/>
       <Hero
@@ -47,8 +49,10 @@ const HealthInsurancePage = () => {
         <HeroHeading>{page.pageHeroHeadlines.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroHeadlines.subheadline}</HeroSubheading>
         <div>
-          <Button background="accent" border="accent" color="light">Get a FREE quote</Button>
-          <Button background="light" border="accent" color="accent">Find an agent</Button>
+          <PageHeroButtons>
+            <Button background="accent" border="accent" color="light">Find my plan</Button>
+            <Button background="light" border="accent" color="accent">Find a licensed insurance agent</Button>
+          </PageHeroButtons>
           <PageHeroForm>
             <div>
               <PageHeroInputGroup>
@@ -135,36 +139,57 @@ const HealthInsurancePage = () => {
         <Accordion
           title={page.healthPageCustomFields.healthAccordions.healthAccordion3.title}
           content={page.healthPageCustomFields.healthAccordions.healthAccordion3.content} />
-        <Button background="accent" border="accent" color="light">Show me options</Button>
+        <div className="hide-at-mobile">
+          <Button background="accent" border="accent" color="light">Show me options</Button>
+        </div>
       </FlexedSection>
       <Section color="light">
-        <Carousel type="reviews" background="half">
-          <Review
-            stars="5"
-            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-            author="Stephen Friedrichs"
-          />
-          <Review
-            stars="5"
-            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-            author="Stephen Friedrichs"
-          />
-          <Review
-            stars="5"
-            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-            author="Stephen Friedrichs"
-          />
-          <Review
-            stars="5"
-            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-            author="Stephen Friedrichs"
-          />
-          <Review
-            stars="5"
-            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-            author="Stephen Friedrichs"
-          />
-        </Carousel>
+        <div className="hide-at-mobile">
+          <Carousel type="reviews" background="half">
+            <Review
+              stars="5"
+              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+              author="Stephen Friedrichs"
+            />
+            <Review
+              stars="5"
+              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+              author="Stephen Friedrichs"
+            />
+            <Review
+              stars="5"
+              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+              author="Stephen Friedrichs"
+            />
+            <Review
+              stars="5"
+              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+              author="Stephen Friedrichs"
+            />
+            <Review
+              stars="5"
+              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+              author="Stephen Friedrichs"
+            />
+          </Carousel>
+        </div>
+        <div className="show-at-mobile">
+            <Reviews>
+                <Review
+                    stars="5"
+                    quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+                    author="Stephen Friedrichs"
+                />
+                <Review
+                    stars="5"
+                    quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+                    author="Stephen Friedrichs"
+                />
+            </Reviews>
+            <div style={{ textAlign: "center" }}>
+                <a href="#">See all reviews</a>
+            </div>
+        </div>
       </Section>
       <Section color="primary" heading="Related content">
         <Cards>
@@ -184,6 +209,9 @@ const HealthInsurancePage = () => {
             <div dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthRelatedContent.healthRelatedContent3.content}} />
           </Card>
         </Cards>
+        <div className="full-rounded" style={{ textAlign: "center" }}>
+          <Button background="accent" border="accent" color="light">View more articles</Button>
+        </div>
       </Section>
     </Layout>
   )

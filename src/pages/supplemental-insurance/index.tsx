@@ -10,15 +10,20 @@ import {
   PageStyles,
   HeroHeading,
   HeroSubheading,
+  PageHeroButtons,
   PageHeroForm,
   PageHeroInput,
   PageHeroInputGroup,
-  PageHeroCTA
+  PageHeroCTA,
+  BestPriceImage,
+  BestPriceImageMobile
 } from "./styles";
 
 // Images
 import MapPin from "../../images/location.png";
-import PhoneIcon from "../../images/phone-icon.png"
+import PhoneIcon from "../../images/phone-icon.png";
+import BestPriceImg from "../../images/best-price-image.png";
+import BestPriceImgM from "../../images/best-price-image-mobile.png";
 
 // Components
 import Layout from "../../components/Layout";
@@ -30,13 +35,14 @@ import Cards from "../../components/Cards";
 import Card from "../../components/Cards/Card";
 import Carousel from "../../components/Carousel";
 import Review from "../../components/Reviews/Review";
+import Reviews from "../../components/Reviews";
 
 const HealthInsurancePage = () => {
   const { page } = useSupplementalPageQuery();
   console.log(page)
 
   return (
-    <Layout>
+    <Layout pageClass="supplemental-insurance">
       <Global styles={PageStyles} />
       <Seo title="Supplemental Insurance"/>
       <Hero
@@ -45,8 +51,10 @@ const HealthInsurancePage = () => {
         <HeroHeading>{page.pageHeroHeadlines.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroHeadlines.subheadline}</HeroSubheading>
         <div style={{ textAlign: "center" }}>
-          <Button background="accent" border="accent" color="light">Get a FREE quote</Button>
-          <Button background="light" border="accent" color="accent">Find an agent</Button>
+          <PageHeroButtons>
+            <Button background="accent" border="accent" color="light">Find my plan</Button>
+            <Button background="light" border="accent" color="accent">Find a licensed insurance agent</Button>
+          </PageHeroButtons>
           <PageHeroForm>
             <div>
               <PageHeroInputGroup>
@@ -65,7 +73,9 @@ const HealthInsurancePage = () => {
       </Hero>
       <Section
         color="primary"
-        heading="Our Plans">
+        heading="Supplemental Plans">
+        <BestPriceImage src={BestPriceImg} />
+        <BestPriceImageMobile src={BestPriceImgM} />
         <Cards>
           <Card
             icon={page.suppPageCustomFields.suppPlans.suppPlan1.icon.sourceUrl}
@@ -117,40 +127,64 @@ const HealthInsurancePage = () => {
             title={page.suppPageCustomFields.suppPlans.suppPlan10.title}>
             <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppPlans.suppPlan10.content }} />
           </Card>
+          <Card
+            icon={page.suppPageCustomFields.suppPlans.suppPlan11.icon.sourceUrl}
+            title={page.suppPageCustomFields.suppPlans.suppPlan11.title}>
+            <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppPlans.suppPlan11.content }} />
+          </Card>
         </Cards>
       </Section>
       <Section color="light">
-        <Carousel type="reviews" background="half">
-          <Review
-            stars="5"
-            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-            author="Stephen Friedrichs"
-          />
-          <Review
-            stars="5"
-            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-            author="Stephen Friedrichs"
-          />
-          <Review
-            stars="5"
-            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-            author="Stephen Friedrichs"
-          />
-          <Review
-            stars="5"
-            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-            author="Stephen Friedrichs"
-          />
-          <Review
-            stars="5"
-            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-            author="Stephen Friedrichs"
-          />
-        </Carousel>
+        <div className="hide-at-mobile">
+          <Carousel type="reviews" background="half">
+            <Review
+              stars="5"
+              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+              author="Stephen Friedrichs"
+            />
+            <Review
+              stars="5"
+              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+              author="Stephen Friedrichs"
+            />
+            <Review
+              stars="5"
+              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+              author="Stephen Friedrichs"
+            />
+            <Review
+              stars="5"
+              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+              author="Stephen Friedrichs"
+            />
+            <Review
+              stars="5"
+              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+              author="Stephen Friedrichs"
+            />
+          </Carousel>
+        </div>
+        <div className="show-at-mobile">
+            <Reviews>
+                <Review
+                    stars="5"
+                    quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+                    author="Stephen Friedrichs"
+                />
+                <Review
+                    stars="5"
+                    quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+                    author="Stephen Friedrichs"
+                />
+            </Reviews>
+            <div style={{ textAlign: "center" }}>
+                <a href="#">See all reviews</a>
+            </div>
+        </div>
       </Section>
       <Section
         color="primary"
-        heading="Learn more about dental insurance">
+        heading="Related Content">
         <Cards>
           <Card
             image={page.suppPageCustomFields.suppRelatedContent.suppRelatedContent1.image.sourceUrl}
@@ -168,6 +202,9 @@ const HealthInsurancePage = () => {
             <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppRelatedContent.suppRelatedContent3.content}} />
           </Card>
         </Cards>
+        <div className="full-rounded" style={{ textAlign: "center" }}>
+          <Button background="accent" border="accent" color="light">View more articles</Button>
+        </div>
       </Section>
     </Layout>
   )

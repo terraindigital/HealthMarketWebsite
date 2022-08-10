@@ -10,9 +10,10 @@ export const Wrapper = styled.div`
   position: relative;
 
   padding-bottom: 8.9rem;
+  padding-top: 8.9rem;
+
   padding-left: 8.9rem;
   padding-right: 8.9rem;
-  padding-top: 8.9rem;
 
   &.centered {
     align-items: center;
@@ -21,13 +22,18 @@ export const Wrapper = styled.div`
   }
 
   @media screen and (max-width: 1044px) {
-    padding-left: 55px;
-    padding-right: 55px;
+    padding-left: 5.5rem;
+    padding-right: 5.5rem;
   }
 
   @media screen and (max-width: 920px) {
-    padding-left: 21px;
-    padding-right: 21px;
+    padding-left: 2.1rem;
+    padding-right: 2.1rem;
+  }
+
+  @media only screen and (max-width: 620px) {
+    min-height: auto;
+    padding-bottom: 4rem;
   }
 `;
 
@@ -40,6 +46,14 @@ export const Img = styled.img`
   top: 0;
   width: auto;
   z-index: -1;
+
+  @media only screen and (max-width: 620px) {
+    object-position: 80%;
+  }
+
+  @media only screen and (max-width: 395px) {
+    object-position: 90%;
+  }
 `
 
 export const Inner = styled.div`
@@ -52,5 +66,9 @@ export const Inner = styled.div`
     
     flex-basis: 50%;
     width: 50%;
+  }
+
+  @media only screen and (max-width: 340px) {
+    width: 100%;
   }
 `;

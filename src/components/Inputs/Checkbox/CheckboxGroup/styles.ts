@@ -26,4 +26,11 @@ export const Box = styled.div`
       margin-bottom: 2.1rem;
     }
   }
+
+  @media only screen and (max-width: 620px) {
+    > div {
+      flex-basis: calc(50% - 2.1rem);
+      max-width: calc(50% - 2.1rem);
+    }
+  }
 `

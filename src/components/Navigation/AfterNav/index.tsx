@@ -13,7 +13,7 @@ const AfterNav = () => {
   return (
     <Wrapper className="show-at-mobile">
       <Item>
-        <SearchButton className="search-button" src={SearchIcon} alt="magnifying glass icon" />
+        <SearchButton className="search-button icon" src={SearchIcon} alt="magnifying glass icon" />
       </Item>
       <Item>
         <Link to="tel:8553001413">

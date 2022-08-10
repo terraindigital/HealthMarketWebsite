@@ -23,7 +23,7 @@ const Accordion: FC<Props> = ({ title, content, html=false }) => {
   return (
     <Wrapper className="accordion">
       <Title className="title" onClick={toggleAccordion}>
-        {title}
+        <h2>{title}</h2>
       </Title>
       <Content className="content">
         {(!html) ? content : (

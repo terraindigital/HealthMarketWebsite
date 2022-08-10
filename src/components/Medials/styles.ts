@@ -27,6 +27,16 @@ export const Wrapper = styled.div`
   .chat-bubble {
     max-height: 128px;
   }
+
+  @media only screen and (max-width: 620px) {
+    padding-bottom: 3.4rem;
+    padding-top: 3.4rem;
+    
+    .chat-bubble {
+      margin: 0 auto 2.1rem;
+      max-height: 75px;
+    }
+  }
 `
 
 export const Inner = styled.div`
@@ -39,9 +49,20 @@ export const Inner = styled.div`
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
   padding: 5.5rem;
 
-  h1 {
+  h1, h2 {
     color: var(--color-primary);
     line-height: 1.25em;
     margin: 0px;
+  }
+
+  @media only screen and (max-width: 620px) {
+    display: block;
+    padding: 2.1rem 1.3rem;
+    text-align: center;
+
+    p {
+      margin-bottom: 1.3rem;
+      margin-top: 1.3rem;
+    }
   }
 `

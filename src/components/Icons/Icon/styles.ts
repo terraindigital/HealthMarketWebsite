@@ -27,13 +27,28 @@ export const Wrapper = styled.div`
   }
 
   @media only screen and (max-width: 620px) {
+    align-items: center;
+    border-bottom: 1px solid var(--color-primary);
+    display: flex;
     flex-basis: 100%;
+    margin-bottom: 0px;
+    padding: 1.6rem 2.4rem;
     width: 100%;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
   }
 `
 
 export const Img = styled.img`
   display: inline;
+
+  @media only screen and (max-width: 620px) {
+    margin: 0;
+    max-width: 4.2rem;
+    padding: 0;
+  }
 `
 
 export const Content = styled.div`
@@ -42,5 +57,15 @@ export const Content = styled.div`
   h2 {
     color: var(--color-primary);
     margin-bottom: 0;
+  }
+
+  @media only screen and (max-width: 620px) {
+    margin-top: 0;
+
+    h2 {
+      font-family: var(--font-body);
+      font-size: 2rem;
+      margin-left: 1.6rem;
+    }
   }
 `
