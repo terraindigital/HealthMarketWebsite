@@ -25,6 +25,39 @@ export const Item = styled.div`
   }
 `
 
+export const TextSize = styled.span`
+  color: transparent;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: normal;
+  line-height: 100%;
+  position: relative;
+  width: 2.5rem;
+  vertical-align: middle;
+
+  &:before,
+  &.increase:after {
+    border-bottom: 2px solid var(--color-light);
+    content: '';
+    display: block;
+    height: 0;
+    left: 15%;
+    position: absolute;
+    top: 50%;
+    transform: translate(2px,-2px);
+    width: 11px;
+  }
+
+  &.increase:after {
+    transform: rotateZ(90deg) translate(-2px,-2px);
+  }
+
+  &.decrease {
+    margin-left: 2px;
+  }
+`
+
 export const SearchButton = styled.img`
  //
 `

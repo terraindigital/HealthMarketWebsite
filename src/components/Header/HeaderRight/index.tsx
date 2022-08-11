@@ -2,14 +2,13 @@ import React from "react";
 import { Link } from "gatsby";
 
 // Styles
-import { Wrapper, Item, SearchButton, MenuButton, Bars } from "./styles"
+import { Wrapper, Item, TextSize, SearchButton, MenuButton, Bars } from "./styles"
 
 // Components
 import Navigation from "../../Navigation"
 
 // Images
 import PhoneIcon from "../../../images/phone-icon.png"
-import UserIcon from "../../../images/user-icon.png"
 import SearchIcon from "../../../images/search-icon.png"
 
 const HeaderRight = () => {
@@ -24,24 +23,28 @@ const HeaderRight = () => {
     document.body.classList.toggle('nav-active')
     document.documentElement.classList.toggle('nav-active')
   }
+  
+  const changeTextSize = (el) => {
+    const html = document.getElementsByTagName('html')[0]
+    const textSize = el.target.classList[0]
+    const fontSize = parseFloat(window.getComputedStyle(html, null).fontSize)
+    if (textSize === "increase") {
+      html.style.fontSize = (fontSize + 1) + "px"
+    } else if (textSize === "decrease") {
+      html.style.fontSize = (fontSize - 1) + "px"
+    }
+  }
 
   return (
     <Wrapper className="header-right">
       <Item className="hide-at-mobile">
-        <Link to="tel:8553001413">
+        <Link to="tel:8008279990">
           <img className="icon" src={PhoneIcon} alt="telephone icon" />
-          (855) 300-1413
+          (800) 827-9990
         </Link>
       </Item>
       <Item className="hide-at-mobile">
-        Español
-      </Item>
-      <Item className="hide-at-mobile">
-        - Text Size +
-      </Item>
-      <Item className="hide-at-mobile">
-        <img className="icon" src={UserIcon} alt="user icon" />
-        Sign In
+        <TextSize className="decrease text-size" onClick={changeTextSize}>-</TextSize> Text Size <TextSize className="increase text-size" onClick={changeTextSize}>+</TextSize>
       </Item>
       <Item>
         <SearchButton className="hide-at-mobile icon" src={SearchIcon} alt="magnifying glass icon" />
