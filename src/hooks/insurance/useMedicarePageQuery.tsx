@@ -5,14 +5,15 @@ export const useMedicarePageQuery = () => {
     query MedicareQuery {
       page: wpPage(databaseId: {eq: 1340}) {
         id
-        featuredImage {
-          node {
-            sourceUrl
-          }
-        }
-        pageHeroHeadlines {
+        pageHeroFields {
           headline
           subheadline
+          heroImage {
+            sourceUrl
+          }
+          mobileHeroImage {
+            sourceUrl
+          }
         }
         medicarePageCustomFields {
           medicareCards {

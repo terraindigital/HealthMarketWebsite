@@ -5,14 +5,15 @@ export const useDentalPageQuery = () => {
     query DentalQuery {
       page: wpPage(databaseId: {eq: 1210}) {
         id
-        featuredImage {
-          node {
-            sourceUrl
-          }
-        }
-        pageHeroHeadlines {
+        pageHeroFields {
           headline
           subheadline
+          heroImage {
+            sourceUrl
+          }
+          mobileHeroImage {
+            sourceUrl
+          }
         }
         dentalPageCustomFields {
           dentalAccordions {

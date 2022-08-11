@@ -45,9 +45,10 @@ const HealthInsurancePage = () => {
       <Global styles={PageStyles} />
       <Seo title="Health Insurance"/>
       <Hero
-        image={page.featuredImage.node.sourceUrl} >
-        <HeroHeading>{page.pageHeroHeadlines.headline}</HeroHeading>
-        <HeroSubheading>{page.pageHeroHeadlines.subheadline}</HeroSubheading>
+        image={page.pageHeroFields.heroImage.sourceUrl}
+        mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}>
+        <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
+        <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
         <div>
           <PageHeroButtons>
             <Button background="accent" border="accent" color="light">Find my plan</Button>

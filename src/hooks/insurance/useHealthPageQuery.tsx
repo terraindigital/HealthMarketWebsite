@@ -5,14 +5,15 @@ export const useHealthPageQuery = () => {
     query HealthQuery {
       page: wpPage(databaseId: {eq: 1130}) {
         id
-        featuredImage {
-          node {
-            sourceUrl
-          }
-        }
-        pageHeroHeadlines {
+        pageHeroFields {
           headline
           subheadline
+          heroImage {
+            sourceUrl
+          }
+          mobileHeroImage {
+            sourceUrl
+          }
         }
         healthPageCustomFields {
           healthCards {

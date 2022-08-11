@@ -10,7 +10,7 @@ export const usePlansPageQuery = () => {
             sourceUrl
           }
         }
-        pageHeroHeadlines {
+        pageHeroFields {
           headline
           subheadline
         }

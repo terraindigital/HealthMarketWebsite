@@ -55,6 +55,8 @@ export const Heading = styled.div`
 
     h1 {
       font-size: 4rem;
+      letter-spacing: 0.02em;
+      line-height: 115%;
       max-width: 100%;
       padding: 0.5rem 2.1rem 0.5rem 3.4rem;
     }

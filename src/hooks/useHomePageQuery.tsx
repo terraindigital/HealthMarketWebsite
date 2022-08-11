@@ -5,14 +5,7 @@ export const useHomePageQuery = () => {
     query homepageQuery {
       home: wpPage(isFrontPage: {eq: true}) {
         id
-        featuredImage {
-          node {
-            sourceUrl
-          }
-        }
         homePageCustomFields {
-          heroHeadline1
-          heroHeadline2
           wwo {
             medicare {
               sourceUrl
@@ -42,6 +35,16 @@ export const useHomePageQuery = () => {
             heading
             content
           }
+        }
+        pageHeroFields {
+          heroImage {
+            sourceUrl
+          }
+          mobileHeroImage {
+            sourceUrl
+          }
+          headline
+          subheadline
         }
       }
     }

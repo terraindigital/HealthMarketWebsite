@@ -39,8 +39,8 @@ const PlansPage = () => {
       <Hero
         image={page.featuredImage.node.sourceUrl}
         centered>
-        <HeroHeading>{page.pageHeroHeadlines.headline}</HeroHeading>
-        <HeroSubheading>{page.pageHeroHeadlines.subheadline}</HeroSubheading>
+        <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
+        <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
         <div style={{textAlign: "center"}}>
           <Button background="accent" border="accent" color="light">Find my plan</Button>
           <Button background="light" border="accent" color="accent">Talk to an agent</Button>

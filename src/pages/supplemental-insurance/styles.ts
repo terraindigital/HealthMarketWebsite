@@ -27,16 +27,8 @@ export const PageStyles = css`
   }
 
   @media only screen and (max-width: 620px) {
-    .supplemental-insurance .hero {
-      padding-bottom: 275px;
-    }
-
-    .supplemental-insurance .hero > img {
-      object-position: 93%;
-    }
-
     .supplemental-insurance .hero + .section .heading h1 {
-      max-width: 315px;
+      max-width: 325px;
     }
   
     .card:nth-of-type(3n-1),

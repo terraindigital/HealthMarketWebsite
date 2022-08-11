@@ -29,8 +29,10 @@ const SplitSection: FC<Props> = ({ align="center", color, children}) => {
   const bgColor = switchBgColor(color)
 
   return (
-    <Wrapper backgroundColor={bgColor} className={`section ` + color + ` ` + alignment}>
-      {children}
+    <Wrapper backgroundColor={bgColor} className={`split-section section ` + color + ` ` + alignment}>
+      <div className="inner">
+        {children}
+      </div>
     </Wrapper>
   )
 };
