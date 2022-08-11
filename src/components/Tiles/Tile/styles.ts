@@ -54,6 +54,7 @@ export const Wrapper = styled.div`
   }
 
   @media only screen and (max-width: 620px) {
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
     flex-basis: 183px;
     min-width: 183px;
     margin-right: 2.1rem;
