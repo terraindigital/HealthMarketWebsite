@@ -81,6 +81,7 @@ export const HomePageHeroInput = styled.input`
   }
 
   @media only screen and (max-width: 620px) {
+    margin-top: 0.8rem;
     width: 100%;
   }
 `

@@ -39,17 +39,17 @@ import Reviews from "../../components/Reviews";
 
 const HealthInsurancePage = () => {
   const { page } = useSupplementalPageQuery();
-  console.log(page)
 
   return (
     <Layout pageClass="supplemental-insurance">
       <Global styles={PageStyles} />
       <Seo title="Supplemental Insurance"/>
       <Hero
-        image={page.featuredImage.node.sourceUrl}
+        image={page.pageHeroFields.heroImage.sourceUrl}
+        mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
         centered>
-        <HeroHeading>{page.pageHeroHeadlines.headline}</HeroHeading>
-        <HeroSubheading>{page.pageHeroHeadlines.subheadline}</HeroSubheading>
+        <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
+        <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
         <div style={{ textAlign: "center" }}>
           <PageHeroButtons>
             <Button background="accent" border="accent" color="light">Find my plan</Button>
@@ -127,11 +127,11 @@ const HealthInsurancePage = () => {
             title={page.suppPageCustomFields.suppPlans.suppPlan10.title}>
             <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppPlans.suppPlan10.content }} />
           </Card>
-          <Card
+          {/* <Card
             icon={page.suppPageCustomFields.suppPlans.suppPlan11.icon.sourceUrl}
             title={page.suppPageCustomFields.suppPlans.suppPlan11.title}>
             <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppPlans.suppPlan11.content }} />
-          </Card>
+          </Card> */}
         </Cards>
       </Section>
       <Section color="light">

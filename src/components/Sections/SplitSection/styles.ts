@@ -1,9 +1,6 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-
   background-color: ${({ backgroundColor }) => backgroundColor};
 
   padding-bottom: 8.9rem;
@@ -21,50 +18,55 @@ export const Wrapper = styled.div`
     padding-left: 2.1rem;
     padding-right: 2.1rem;
   }
-
-  &.align-center {
+    
+  &.align-center .inner {
     align-items: center;
   }
 
-  &.align-top {
+  &.align-top .inner {
     align-items: flex-start;
   }
 
-  &.align-bottom {
+  &.align-bottom .inner {
     align-items: baseline;
   }
 
-  h1 {
-    color: var(--color-primary);
-    margin-bottom: 2.1rem;
+  .inner {
+    display: flex;
+    justify-content: center;
 
-    & + p {
-      margin-bottom: 3.4rem
+    h1 {
+      color: var(--color-primary);
+      margin-bottom: 2.1rem;
+
+      & + p {
+        margin-bottom: 3.4rem
+      }
     }
-  }
 
-  .left {
-    flex-basis: 50%;
-    max-width: 50%;
+    .left {
+      flex-basis: 50%;
+      max-width: 50%;
 
-    margin-right: 3.4rem;
-  }
+      margin-right: 3.4rem;
+    }
 
-  .right {
-    flex-basis: 50%;
-    max-width: 50%;
-
-    margin-left: 3.4rem;
-  }
-
-  @media only screen and (max-width: 620px) {
-    display: block;
-    
-    .left,
     .right {
-      flex-basis: 100%;
-      max-width: 100%;
-      margin: 0px;
+      flex-basis: 50%;
+      max-width: 50%;
+
+      margin-left: 3.4rem;
+    }
+
+    @media only screen and (max-width: 620px) {
+      display: block;
+      
+      .left,
+      .right {
+        flex-basis: 100%;
+        max-width: 100%;
+        margin: 0px;
+      }
     }
   }
 `

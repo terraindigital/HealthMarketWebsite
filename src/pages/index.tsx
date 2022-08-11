@@ -36,16 +36,15 @@ import Reviews from '../components/Reviews';
 const IndexPage = ({path}: PageProps) => {
     const { home } = useHomePageQuery();
 
-    // console.log(home);
-
     return (
-        <Layout headerColor="light">
+        <Layout pageClass="home" headerColor="light">
             <Seo title="Home"/>
             <Hero
-                image={home.featuredImage.node.sourceUrl}
+                image={home.pageHeroFields.heroImage.sourceUrl}
+                mobileImage={home.pageHeroFields.mobileHeroImage.sourceUrl}
                 centered>
-                <HeroHeading>More health plan options with less effort? You bet.</HeroHeading>
-                <HeroSubheading>We search through thousands of insurance plans, so you don't have to</HeroSubheading>
+                <HeroHeading>{home.pageHeroFields.headline}</HeroHeading>
+                <HeroSubheading>{home.pageHeroFields.subheadline}</HeroSubheading>
                 <div style={{textAlign: "center"}}>
                     <div className="home-hero-buttons">
                         <Button background="accent" border="accent" color="light">Find my plan</Button>

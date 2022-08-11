@@ -37,10 +37,11 @@ const ResourceCenterPage = () => {
       <Global styles={PageStyles}/>
       <Seo title="Resource Center"/>
       <Hero
-        image={page.featuredImage.node.sourceUrl}
+        image={page.pageHeroFields.heroImage.sourceUrl}
+        mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
         centered>
-        <HeroHeading>{page.pageHeroHeadlines.headline}</HeroHeading>
-        <HeroSubheading>{page.pageHeroHeadlines.subheadline}</HeroSubheading>
+        <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
+        <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
       </Hero>
       <TabbedSection
         color="primary"

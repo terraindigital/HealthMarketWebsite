@@ -14,15 +14,15 @@ export const PageStyles = css`
   }
 
   @media only screen and (max-width: 620px) {
-    .medicare .hero {
-      padding-bottom: 275px;
-    }
-
     .medicare .hero .half {
       display: block;
       flex-basis: 100%;
       text-align: center;
       width: 100%;
+    }
+
+    .medicare .hero + .section {
+      padding-top: 4rem;
     }
   }
 `

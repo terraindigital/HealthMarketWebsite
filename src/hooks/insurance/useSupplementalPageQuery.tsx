@@ -5,14 +5,15 @@ export const useSupplementalPageQuery = () => {
     query SuppQuery {
       page: wpPage(databaseId: {eq: 1254}) {
         id
-        featuredImage {
-          node {
-            sourceUrl
-          }
-        }
-        pageHeroHeadlines {
+        pageHeroFields {
           headline
           subheadline
+          heroImage {
+            sourceUrl
+          }
+          mobileHeroImage {
+            sourceUrl
+          }
         }
         suppPageCustomFields {
           suppPlans {

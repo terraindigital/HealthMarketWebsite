@@ -5,37 +5,26 @@ export const useHowWeHelpPageQuery = () => {
     query hwhPageQuery {
       hwh: wpPage(databaseId: {eq: 395}) {
         id
-        featuredImage {
-          node {
+        pageHeroFields {
+          headline
+          subheadline
+          heroImage {
+            sourceUrl
+          }
+          mobileHeroImage {
             sourceUrl
           }
         }
-        pageHeroHeadlines {
-          headline
-          subheadline
-        }
         howWeHelpCustomFields {
-          listItem1 {
+          hwhListItem1 {
             heading
             content
           }
-          listItem2 {
+          hwhListItem2 {
             heading
             content
           }
-          listItem3 {
-            heading
-            content
-          }
-          listItem4 {
-            heading
-            content
-          }
-          listItem5 {
-            heading
-            content
-          }
-          listItem6 {
+          hwhListItem3 {
             heading
             content
           }

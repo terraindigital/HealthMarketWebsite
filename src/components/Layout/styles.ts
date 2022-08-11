@@ -2,13 +2,19 @@ import {css} from "@emotion/react";
 import styled from "@emotion/styled";
 
 export const GlobalStyles = css`
+  @font-face {
+    font-family: "IvyPresto Display-SemiBold";
+    src:  url('../../assets/fonts/IvyPresto-Display-SemiBold.ttf') format('ttf'),
+          url('../../assets/fonts/IvyPresto-Display-SemiBold.woff') format('woff');
+  }
+
   html {
     font-size: 62.5%; /* 10px browser default */ 
     font-family: 'arial', sans-serif;
     /* -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%; */
 
-    --font-heading: 'Playfair Display', Arial, Helvetica, sans-serif;
+    --font-heading: 'IvyPresto Display-SemiBold', serif;
     --font-body: 'Open Sans', Arial, Helvetica, sans-serif;
 
     --color-light: #FFFFFF;

@@ -32,8 +32,15 @@ export const Wrapper = styled.div`
   }
 
   @media only screen and (max-width: 620px) {
-    min-height: auto;
-    padding-bottom: 4rem;
+    &.centered {
+      display: block;
+      min-height: auto;
+      padding-top: 166px;
+    }
+
+    .home &.centered {
+      padding-top: 97px;
+    }
   }
 `;
 
@@ -48,11 +55,8 @@ export const Img = styled.img`
   z-index: -1;
 
   @media only screen and (max-width: 620px) {
-    object-position: 80%;
-  }
-
-  @media only screen and (max-width: 395px) {
-    object-position: 90%;
+    bottom: 0;
+    top: auto;
   }
 `
 

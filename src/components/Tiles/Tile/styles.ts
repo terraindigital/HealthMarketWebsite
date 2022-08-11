@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
                translate(-9px, -5px);
 
     @media only screen and (max-width: 620px) {
-      margin: 3.4rem auto;
+      margin: 3.4rem 2.1rem 3.4rem 0rem;
       transform: none;
     }
   }
@@ -24,6 +24,9 @@ export const Wrapper = styled.div`
 
   h2 {
     color: var(--color-light);
+    font-family: var(--font-body);
+    font-size: 3.2rem;
+    line-height: 115%;
     margin-bottom: 0;
   }
 
@@ -51,13 +54,21 @@ export const Wrapper = styled.div`
   }
 
   @media only screen and (max-width: 620px) {
-    flex-basis: 100%;
-    min-width: 100%;
-    margin-right: 0;
+    flex-basis: 183px;
+    min-width: 183px;
+    margin-right: 2.1rem;
+
+    img {
+      height: 233px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+    }
   }
 `
 
 export const Content = styled.div`
   margin-top: 2.1rem;
-  padding: 0 3.4rem 3.4rem;
+  padding: 0 3.4rem 2.4rem;
 `

@@ -5,14 +5,15 @@ export const useResourceCenterPageQuery = () => {
     query resourceCenterLPQuery {
       page: wpPage(databaseId: {eq: 985}) {
         id
-        featuredImage {
-          node {
-            sourceUrl
-          }
-        }
-        pageHeroHeadlines {
+        pageHeroFields {
           headline
           subheadline
+          heroImage {
+            sourceUrl
+          }
+          mobileHeroImage {
+            sourceUrl
+          }
         }
         resourceCenterPageCustomFields {
           featuredArticle {

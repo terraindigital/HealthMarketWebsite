@@ -9,15 +9,15 @@ export const PageStyles = css`
   }
 
   @media only screen and (max-width: 620px) {
-    .dental-insurance .hero {
-      padding-bottom: 275px;
-    }
-
     .dental-insurance .hero .half {
       display: block;
       flex-basis: 100%;
       text-align: center;
       width: 100%;
+    }
+
+    .dental-insurance .hero + .section {
+      padding-top: 4rem;
     }
   }
 `
