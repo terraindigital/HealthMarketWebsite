@@ -25,7 +25,7 @@ import { useFooterGetCounselMenuQuery } from "../../hooks/useFooterGetCounselMen
 import { useFooterGetToKnowUsMenuQuery } from "../../hooks/useFooterGetToKnowUsMenuQuery"
 
 // Images
-import Logo from "../../images/footer-logo.svg"
+import Logo from "../../images/HMIA_logo2.png"
 import Twitter from "../../images/twitter.webp"
 import Facebook from "../../images/facebook.webp"
 import YouTube from "../../images/youtube.webp"
@@ -45,13 +45,7 @@ const Footer = () => {
         </FooterLogo>
         <SocialWidget>
           <SocialIcon>
-            <img src={Twitter} alt="twitter logo" />
-          </SocialIcon>
-          <SocialIcon>
             <img src={Facebook} alt="facebook logo" />
-          </SocialIcon>
-          <SocialIcon>
-            <img src={YouTube} alt="youtube logo" />
           </SocialIcon>
         </SocialWidget>
         <BBBSeal>

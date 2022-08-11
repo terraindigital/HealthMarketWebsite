@@ -17,6 +17,8 @@ export const Wrapper = styled.div`
     a .icon { filter: brightness(0) invert(1); }
     .icon { filter: brightness(0) invert(1); }
     .header-right > div { border-color: var(--color-light); }
+    .header-right .text-size:before,
+    .header-right .text-size.increase:after { border-color: var(--color-light); }
   }
 
   &.dark,
@@ -24,6 +26,8 @@ export const Wrapper = styled.div`
     color: var(--color-dark);
     a { color: var(--color-dark); }
     .header-right > div { border-color: var(--color-dark); }
+    .header-right .text-size:before,
+    .header-right .text-size.increase:after { border-color: var(--color-dark); }
   }
 
   &.static,
@@ -41,6 +45,8 @@ export const Wrapper = styled.div`
     .icon { filter: brightness(0) invert(1); }
     .site-logo { filter: brightness(0) invert(1); }
     .header-right > div { border-color: var(--color-light); }
+    .header-right .text-size:before,
+    .header-right .text-size.increase:after { border-color: var(--color-light); }
   }
 
   padding-bottom: 2.1rem;
