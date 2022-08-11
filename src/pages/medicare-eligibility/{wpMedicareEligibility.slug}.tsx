@@ -38,7 +38,7 @@ const MedicareEligibilityPage = ({data}: { data: PageInfo }) => {
           <h1>{page.title}</h1>
           <div dangerouslySetInnerHTML={{ __html: page.content }} />
         </Section>
-        <RightContent>
+        <RightContent className="right-content">
           <h3>Find the Coverage that Fits You.</h3>
           <p>Your search for affordable Health, Medicare and Life insurance starts here.</p>
           <Dropdown>
@@ -55,14 +55,7 @@ const MedicareEligibilityPage = ({data}: { data: PageInfo }) => {
           </Dropdown>
           <Input hero centered type="text" name="heroLocationInput" placeholder="Enter zip code/City" />
           <Button style={{ borderRadius: "4px" }} background="accent" border="light" color="light">Get a free quote</Button>
-          <p>Call us 24/7 at 
-            <a href="tel:(800) 439-6916">(800) 439-6916</a> 
-            or 
-            <a href="http://agents.healthmarkets.com/" rel="noopener" target="_blank">
-              Find an Agent
-            </a> 
-            near you.
-          </p>
+          <p>Call us 24/7 at <a href="tel:(800) 439-6916">(800) 439-6916</a> or <a href="http://agents.healthmarkets.com/" rel="noopener" target="_blank">Find an Agent</a> near you.</p>
         </RightContent>
       </SplitSection>
     </Layout>
