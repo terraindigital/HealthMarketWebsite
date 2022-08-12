@@ -38,6 +38,8 @@ export const TextSize = styled.div`
 `
 
 export const SearchButton = styled.img`
+  cursor: pointer;
+
   &.icon {
     height: 2.5rem;
     margin: 0.8rem auto;

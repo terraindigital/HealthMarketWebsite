@@ -59,7 +59,7 @@ export const TextSize = styled.span`
 `
 
 export const SearchButton = styled.img`
- //
+  cursor: pointer;
 `
 
 export const MenuButton = styled.button`

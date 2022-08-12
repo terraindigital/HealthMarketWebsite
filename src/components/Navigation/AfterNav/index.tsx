@@ -8,7 +8,25 @@ import { Wrapper, Item, TextSize, SearchButton } from "./styles"
 import PhoneIcon from "../../../images/phone-icon.png"
 import SearchIcon from "../../../images/search-icon.png"
 
+// Components
+import Search from "../../Search"
+
 const AfterNav = () => {
+  const toggleSearch = () => {
+    const searchBtn = document.querySelector('.search-button')
+    const searchBox = document.querySelector('.search-box')
+    const header = document.querySelector('.site-header')
+    console.log(searchBtn)
+    console.log(searchBox)
+    console.log(header)
+    if (!searchBtn || !searchBox || !header) return
+    searchBtn.classList.toggle('search-active')
+    searchBox.classList.toggle('active')
+    header.classList.toggle('search-active')
+    document.body.classList.toggle('search-active')
+    document.documentElement.classList.toggle('search-active')
+  }
+
   const changeTextSize = (el) => {
     const html = document.getElementsByTagName('html')[0]
     const textSize = el.target.classList[0]

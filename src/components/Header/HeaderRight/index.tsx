@@ -6,6 +6,7 @@ import { Wrapper, Item, TextSize, SearchButton, MenuButton, Bars } from "./style
 
 // Components
 import Navigation from "../../Navigation"
+import Search from "../../Search"
 
 // Images
 import PhoneIcon from "../../../images/phone-icon.png"
@@ -52,6 +53,7 @@ const HeaderRight = () => {
           <Bars />
         </MenuButton>
         <Navigation />
+        <Search />
       </Item>
     </Wrapper>
   )

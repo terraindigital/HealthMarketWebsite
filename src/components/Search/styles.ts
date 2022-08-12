@@ -23,3 +23,13 @@ export const Wrapper = styled.div`
     padding: 5.5rem 2.1rem 2.1rem;
   }
 `
+
+export const CloseButton = styled.button`
+  background: red;
+  display: block;
+  height: 50px;
+  right: 28px;
+  position: absolute;
+  top: 15px;
+  width: 50px;
+`

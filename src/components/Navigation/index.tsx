@@ -6,7 +6,6 @@ import { Nav, Menu, MenuItem } from "./styles"
 
 // Components
 import AfterNav from "./AfterNav"
-import MobileSearch from "../Search/MobileSearch"
 
 // Queries
 import { useMainMenuQuery } from "../../hooks/useMainMenuQuery"
@@ -39,7 +38,6 @@ const Navigation = () => {
         )}
       </Menu>
       <AfterNav />
-      <MobileSearch />
     </Nav>
   )
 }
