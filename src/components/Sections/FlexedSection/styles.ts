@@ -30,7 +30,7 @@ export const Wrapper = styled.div`
 
 export const Heading = styled.div`
   display: block;
-  min-width: 50%;
+  min-width: calc(50% + 8.9rem);
   transform: translateX(-8.9rem);
 
   h1 {

@@ -121,7 +121,7 @@ const HowWeHelpPage = () => {
         heading="We’re committed to your privacy"
         subheading="We understand the importance of keeping your personally identifiable information safe. We protect it, as required by federal law."
         color="primary">
-        <Cards>
+        <Cards openAtMobile>
           <Card
             icon={hwh.howWeHelpCustomFields.iconCard1.icon.sourceUrl}
             title={hwh.howWeHelpCustomFields.iconCard1.heading}>

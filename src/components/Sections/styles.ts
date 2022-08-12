@@ -46,6 +46,7 @@ export const Heading = styled.div`
     font-size: 2.4rem;
     font-weight: normal;
     margin-bottom: 0;
+    margin-left: 2.4rem;
     max-width: 415px;
   }
 
@@ -64,6 +65,7 @@ export const Heading = styled.div`
     h2 {
       font-size: 1.8rem;
       margin-bottom: 2.1rem;
+      margin-left: 0;
       margin-top: 1.3rem;
       max-width: calc(100% - 4.2rem);
       padding-left: 3.4rem;

@@ -50,7 +50,7 @@ const MedicarePage = () => {
         page="medicare"
         color="light"
         heading="Medicare Insurance">
-        <Cards>
+        <Cards openAtMobile>
           <Card
             icon={page.medicarePageCustomFields.medicareCards.medicareCard1.icon.sourceUrl}
             title={page.medicarePageCustomFields.medicareCards.medicareCard1.title}>

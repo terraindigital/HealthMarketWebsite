@@ -39,6 +39,10 @@ export const Wrapper = styled.div`
     }
   }
 
+  .fitscore-menu-item {
+    background: red;
+  }
+
   @media only screen and (max-width: 620px) {
     margin-left: 0;
     margin-top: 2.1rem;

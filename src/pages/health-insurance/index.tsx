@@ -51,7 +51,7 @@ const HealthInsurancePage = () => {
         page="health-insurance"
         color="primary"
         heading="Insurance to fit your life">
-        <Cards>
+        <Cards openAtMobile>
           <Card
             icon={page.healthPageCustomFields.healthCards.healthCard1.icon.sourceUrl}
             title={page.healthPageCustomFields.healthCards.healthCard1.title}>
