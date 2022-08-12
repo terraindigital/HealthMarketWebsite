@@ -71,7 +71,9 @@ const IndexPage = ({path}: PageProps) => {
                     <h2>Uninsured and not sure where to start?</h2>
                     <p><strong>We can help.</strong></p>
                 </div>
-                <Button background="accent" border="accent" color="light">Show me options</Button>
+                <a href="https://www.healthmarkets.com/find-coverage">
+                    <Button background="accent" border="accent" color="light">Show me options</Button>
+                </a>
             </Medial>
             <FlexedSection
                 heading="How we help"
@@ -87,7 +89,9 @@ const IndexPage = ({path}: PageProps) => {
                         <p>Our recommendations are based on what is best for your needs and budget, and the result of a complete search of thousands of plans. </p>
                     </ListItem>
                 </List>
-                <Button background="accent" border="accent" color="light">Explore my options</Button>
+                <a href="https://www.healthmarkets.com/how-you-save/">
+                    <Button background="accent" border="accent" color="light">Explore my options</Button>
+                </a>
             </FlexedSection>
             <Section color="light">
                 <div className="hide-at-mobile">

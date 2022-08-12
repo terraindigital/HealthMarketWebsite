@@ -118,7 +118,9 @@ const HealthInsurancePage = () => {
           title={page.healthPageCustomFields.healthAccordions.healthAccordion3.title}
           content={page.healthPageCustomFields.healthAccordions.healthAccordion3.content} />
         <div className="hide-at-mobile">
-          <Button background="accent" border="accent" color="light">Show me options</Button>
+          <a href="https://www.healthmarkets.com/plans/aca-health/">
+            <Button background="accent" border="accent" color="light">Show me options</Button>
+          </a>
         </div>
       </FlexedSection>
       <Section color="light">

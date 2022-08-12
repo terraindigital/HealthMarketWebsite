@@ -58,7 +58,9 @@ const HealthInsurancePage = () => {
           title={page.dentalPageCustomFields.dentalAccordions.dentalAccordion3.heading}
           content={page.dentalPageCustomFields.dentalAccordions.dentalAccordion3.content} />
         <div className="hide-at-mobile">
-          <Button background="accent" border="accent" color="light">Show me options</Button>
+          <a href="https://shop.healthmarkets.com/dental">
+            <Button background="accent" border="accent" color="light">Show me options</Button>
+          </a>
         </div>
       </FlexedSection>
       <Section color="light">

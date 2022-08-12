@@ -56,7 +56,9 @@ const HowWeHelpPage = () => {
               <p>{hwh.howWeHelpCustomFields.hwhListItem3.content}</p>
           </ListItem>
         </List>
-        <Button background="accent" border="accent" color="light">Shop now</Button>
+        <a href="https://shop.healthmarkets.com/">
+          <Button background="accent" border="accent" color="light">Shop now</Button>
+        </a>
       </FlexedSection>
       <SplitSection color="primary">
         <div className="left image">
@@ -65,14 +67,18 @@ const HowWeHelpPage = () => {
         <div className="right content">
           <h1>{hwh.howWeHelpCustomFields.block1.heading}</h1>
           <p>{hwh.howWeHelpCustomFields.block1.content}</p>
-          <Button background="accent" border="accent" color="light">{hwh.howWeHelpCustomFields.block1.button.text}</Button>
+          <a href="https://shop.healthmarkets.com/">
+            <Button background="accent" border="accent" color="light">{hwh.howWeHelpCustomFields.block1.button.text}</Button>
+          </a>
         </div>
       </SplitSection>
       <SplitSection color="primary">
         <div className="left content hide-at-mobile">
           <h1>{hwh.howWeHelpCustomFields.block2.heading}</h1>
           <p>{hwh.howWeHelpCustomFields.block2.content}</p>
-          <Button background="accent" border="accent" color="light">{hwh.howWeHelpCustomFields.block2.button.text}</Button>
+          <a href="https://shop.healthmarkets.com/">
+            <Button background="accent" border="accent" color="light">{hwh.howWeHelpCustomFields.block2.button.text}</Button>
+          </a>
         </div>
         <div className="right image hide-at-mobile">
           <img src={hwh.howWeHelpCustomFields.block2.image.sourceUrl} alt="woman on computer" />
@@ -83,7 +89,9 @@ const HowWeHelpPage = () => {
         <div className="right content show-at-mobile">
           <h1>{hwh.howWeHelpCustomFields.block2.heading}</h1>
           <p>{hwh.howWeHelpCustomFields.block2.content}</p>
-          <Button background="accent" border="accent" color="light">{hwh.howWeHelpCustomFields.block2.button.text}</Button>
+          <a href="https://shop.healthmarkets.com/">
+            <Button background="accent" border="accent" color="light">{hwh.howWeHelpCustomFields.block2.button.text}</Button>
+          </a>
         </div>
       </SplitSection>
       <SplitSection color="primary">
@@ -93,7 +101,9 @@ const HowWeHelpPage = () => {
         <div className="right content">
           <h1>{hwh.howWeHelpCustomFields.block3.heading}</h1>
           <p>{hwh.howWeHelpCustomFields.block3.content}</p>
-          <Button background="accent" border="accent" color="light">{hwh.howWeHelpCustomFields.block3.button.text}</Button>
+          <a href="https://shop.healthmarkets.com/">
+            <Button background="accent" border="accent" color="light">{hwh.howWeHelpCustomFields.block3.button.text}</Button>
+          </a>
         </div>
       </SplitSection>
       <FlexedSection
@@ -115,7 +125,9 @@ const HowWeHelpPage = () => {
             title={hwh.howWeHelpCustomFields.accordionField4.heading}
             content={hwh.howWeHelpCustomFields.accordionField4.content}
         />
-        <Button background="accent" border="accent" color="light">Get your FitScore<sup>&reg;</sup></Button>
+        <a href="https://shop.healthmarkets.com/">
+          <Button background="accent" border="accent" color="light">Get your FitScore<sup>&reg;</sup></Button>
+        </a>
       </FlexedSection>
       <Section
         heading="We’re committed to your privacy"
@@ -139,7 +151,9 @@ const HowWeHelpPage = () => {
           </Card>
         </Cards>
         <div className="hide-at-mobile" style={{ textAlign: "center", marginTop: "5.5rem" }}>
-          <Button background="accent" border="accent" color="light">Find my plan</Button>
+          <a href="https://shop.healthmarkets.com/">
+            <Button background="accent" border="accent" color="light">Find my plan</Button>
+          </a>
         </div>
       </Section>
     </Layout>

@@ -91,12 +91,16 @@ const MedicarePage = () => {
       <Medial color="primary">
         <h1 className="color-primary">Still have questions? Contact us.</h1>
         <div className="button-container">
-          <Button background="accent" border="accent" color="light">
-            Call 900-000-0000
-          </Button>
-          <Button background="accent" border="accent" color="light">
-            Find a licensed insurance agent
-          </Button>
+          <a href="tel:8008279990">
+            <Button background="accent" border="accent" color="light">
+              Call 800-827-9990
+            </Button>
+          </a>
+          <a href="https://www.healthmarkets.com/local-health-insurance-agent">
+            <Button background="accent" border="accent" color="light">
+              Find a licensed insurance agent
+            </Button>
+          </a>
         </div>
       </Medial>
       <Section color="light">
