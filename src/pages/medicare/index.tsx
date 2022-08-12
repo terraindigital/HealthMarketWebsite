@@ -9,11 +9,7 @@ import { useMedicarePageQuery } from "../../hooks/insurance/useMedicarePageQuery
 import {
   PageStyles,
   HeroHeading,
-  HeroSubheading,
-  PageHeroForm,
-  PageHeroInput,
-  PageHeroInputGroup,
-  PageHeroCTA
+  HeroSubheading
 } from "./styles";
 
 // Images
@@ -24,6 +20,7 @@ import PhoneIcon from "../../images/phone-icon.png"
 import Layout from "../../components/Layout";
 import Seo from "../../components/SEO";
 import Hero from "../../components/Hero";
+import PageHeroForm from "../../components/Hero/PageHeroForm";
 import Button from "../../components/Buttons/Button";
 import Section from "../../components/Sections";
 import Cards from "../../components/Cards";
@@ -34,7 +31,6 @@ import Carousel from "../../components/Carousel";
 import Review from "../../components/Reviews/Review";
 import Medial from "../../components/Example/Medials";
 import Reviews from "../../components/Reviews";
-import { PageHeroButtons } from "../dental-insurance/styles";
 
 const MedicarePage = () => {
   const { page } = useMedicarePageQuery();
@@ -48,29 +44,7 @@ const MedicarePage = () => {
         mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}>
         <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
-        <div>
-          <PageHeroButtons>
-            <Button background="accent" border="accent" color="light">
-              <div className="hide-at-mobile">Get a FREE quote</div>
-              <div className="show-at-mobile">Find my plan</div>
-            </Button>
-            <Button background="light" border="accent" color="accent">Find a licensed insurance agent</Button>
-          </PageHeroButtons>
-          <PageHeroForm>
-            <div>
-              <PageHeroInputGroup>
-                <img src={MapPin} alt="map location pin image" />
-                <PageHeroInput id="homepageHeroLocation" type="text" name="homepageHeroLocation" placeholder="Enter Zip Code/City" />
-              </PageHeroInputGroup>
-            </div>
-          </PageHeroForm>
-          <PageHeroCTA>
-            <img src={PhoneIcon} />
-            <span>
-              Call us 24/7 at <a href="tel:+18555652552">(855) 565-2552</a>
-            </span>
-          </PageHeroCTA>
-        </div>
+        <PageHeroForm light btnLeftText="Get a FREE quote" btnRightText="Find a licensed insurance agent" inputId="medicarePageHeroLocation" />
       </Hero>
       <Section
         page="medicare"

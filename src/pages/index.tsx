@@ -2,19 +2,17 @@
 import * as React from 'react';
 import { PageProps } from 'gatsby';
 
+// Queries
+import { useHomePageQuery } from '../hooks/useHomePageQuery';
+
 // Styles
-import {
-    HeroHeading,
-    HeroSubheading,
-    HomePageHeroForm,
-    HomePageHeroInputGroup,
-    HomePageHeroInput
-} from '../components/Hero/Variants/homePageStyles';
+import { HeroHeading, HeroSubheading } from '../components/Hero/Variants/homePageStyles';
 
 // Components
 import Layout from "../components/Layout"
 import Seo from "../components/SEO"
 import Hero from '../components/Hero';
+import PageHeroForm from '../components/Hero/PageHeroForm';
 import Button from '../components/Buttons/Button';
 import Section from '../components/Sections';
 import Carousel from '../components/Carousel';
@@ -23,15 +21,11 @@ import Medial from '../components/Medials';
 import FlexedSection from '../components/Sections/FlexedSection';
 import List from '../components/Lists';
 import ListItem from '../components/Lists/ListItem';
+import Reviews from '../components/Reviews';
 import Review from '../components/Reviews/Review';
 
 // Images
 import ChatBubble from "../images/contact-cta-image.png"
-import MapPin from "../images/location.png"
-
-// Queries
-import { useHomePageQuery } from '../hooks/useHomePageQuery';
-import Reviews from '../components/Reviews';
 
 const IndexPage = ({path}: PageProps) => {
     const { home } = useHomePageQuery();
@@ -45,21 +39,7 @@ const IndexPage = ({path}: PageProps) => {
                 centered>
                 <HeroHeading>{home.pageHeroFields.headline}</HeroHeading>
                 <HeroSubheading>{home.pageHeroFields.subheadline}</HeroSubheading>
-                <div style={{textAlign: "center"}}>
-                    <div className="home-hero-buttons">
-                        <Button background="accent" border="accent" color="light">Find my plan</Button>
-                        <Button background="light" border="accent" color="accent">Talk to an agent</Button>
-                    </div>
-                    <HomePageHeroForm>
-                        <div>
-                            <HomePageHeroInputGroup>
-                                <img src={MapPin} alt="map location pin image" />
-                                <HomePageHeroInput id="homepageHeroLocation" type="text" name="homepageHeroLocation" placeholder="Enter Zip Code/City" />
-                            </HomePageHeroInputGroup>
-                        </div>
-                        <Button style={{borderRadius: "4px"}} background="accent" border="light" color="light">Search</Button>
-                    </HomePageHeroForm>
-                </div>
+                <PageHeroForm centered btnLeftText="Find my plan" btnRightText="Find a licensed insurance agent" inputId="homepageHeroLocation" button />
             </Hero>
             <Section
                 heading="What we offer"

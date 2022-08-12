@@ -9,12 +9,7 @@ import { useHealthPageQuery } from "../../hooks/insurance/useHealthPageQuery"
 import {
   PageStyles,
   HeroHeading,
-  HeroSubheading,
-  PageHeroForm,
-  PageHeroInput,
-  PageHeroInputGroup,
-  PageHeroCTA,
-  PageHeroButtons
+  HeroSubheading
 } from "./styles";
 
 // Images
@@ -25,6 +20,7 @@ import PhoneIcon from "../../images/phone-icon.png"
 import Layout from "../../components/Layout";
 import Seo from "../../components/SEO";
 import Hero from "../../components/Hero";
+import PageHeroForm from "../../components/Hero/PageHeroForm";
 import Button from "../../components/Buttons/Button";
 import Section from "../../components/Sections";
 import Cards from "../../components/Cards";
@@ -49,26 +45,7 @@ const HealthInsurancePage = () => {
         mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}>
         <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
-        <div>
-          <PageHeroButtons>
-            <Button background="accent" border="accent" color="light">Find my plan</Button>
-            <Button background="light" border="accent" color="accent">Find a licensed insurance agent</Button>
-          </PageHeroButtons>
-          <PageHeroForm>
-            <div>
-              <PageHeroInputGroup>
-                <img src={MapPin} alt="map location pin image" />
-                <PageHeroInput id="homepageHeroLocation" type="text" name="homepageHeroLocation" placeholder="Enter Zip Code/City" />
-              </PageHeroInputGroup>
-            </div>
-          </PageHeroForm>
-          <PageHeroCTA>
-            <img src={PhoneIcon} />
-            <span>
-              Call us 24/7 at <a href="tel:+18555652552">(855) 565-2552</a>
-            </span>
-          </PageHeroCTA>
-        </div>
+        <PageHeroForm light btnLeftText="Get a FREE quote" btnRightText="Find a licensed insurance agent" inputId="healthPageHeroLocation" />
       </Hero>
       <Section
         page="health-insurance"

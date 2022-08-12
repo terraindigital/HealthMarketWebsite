@@ -10,18 +10,11 @@ import {
   PageStyles,
   HeroHeading,
   HeroSubheading,
-  PageHeroButtons,
-  PageHeroForm,
-  PageHeroInput,
-  PageHeroInputGroup,
-  PageHeroCTA,
   BestPriceImage,
   BestPriceImageMobile
 } from "./styles";
 
 // Images
-import MapPin from "../../images/location.png";
-import PhoneIcon from "../../images/phone-icon.png";
 import BestPriceImg from "../../images/best-price-image.png";
 import BestPriceImgM from "../../images/best-price-image-mobile.png";
 
@@ -29,6 +22,7 @@ import BestPriceImgM from "../../images/best-price-image-mobile.png";
 import Layout from "../../components/Layout";
 import Seo from "../../components/SEO";
 import Hero from "../../components/Hero";
+import PageHeroForm from "../../components/Hero/PageHeroForm";
 import Button from "../../components/Buttons/Button";
 import Section from "../../components/Sections";
 import Cards from "../../components/Cards";
@@ -50,26 +44,7 @@ const HealthInsurancePage = () => {
         centered>
         <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
-        <div style={{ textAlign: "center" }}>
-          <PageHeroButtons>
-            <Button background="accent" border="accent" color="light">Find my plan</Button>
-            <Button background="light" border="accent" color="accent">Find a licensed insurance agent</Button>
-          </PageHeroButtons>
-          <PageHeroForm>
-            <div>
-              <PageHeroInputGroup>
-                <img src={MapPin} alt="map location pin image" />
-                <PageHeroInput id="homepageHeroLocation" type="text" name="homepageHeroLocation" placeholder="Enter Zip Code/City" />
-              </PageHeroInputGroup>
-            </div>
-          </PageHeroForm>
-          <PageHeroCTA>
-            <img src={PhoneIcon} />
-            <span>
-              Call us 24/7 at <a href="tel:+18555652552">(855) 565-2552</a>
-            </span>
-          </PageHeroCTA>
-        </div>
+        <PageHeroForm centered btnLeftText="Get a FREE quote" btnRightText="Find a licensed insurance agent" inputId="supplementalPageHeroLocation" />
       </Hero>
       <Section
         color="primary"
