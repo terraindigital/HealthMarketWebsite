@@ -42,15 +42,21 @@ const Footer = () => {
     <FooterWrapper>
       <WidgetAreaOne>
         <FooterLogo>
-          <img src={Logo} alt="footer logo" />
+          <Link to="/">
+            <img src={Logo} alt="footer logo" />
+          </Link>
         </FooterLogo>
         <SocialWidget>
           <SocialIcon>
-            <img src={Facebook} alt="facebook logo" />
+            <a href="#facebook">
+              <img src={Facebook} alt="facebook logo" />
+            </a>
           </SocialIcon>
         </SocialWidget>
         <BBBSeal>
-          <img src={BBB} alt="better business bureau seal" />
+          <a href="#bbb">
+            <img src={BBB} alt="better business bureau seal" />
+          </a>
         </BBBSeal>
       </WidgetAreaOne>
       <WidgetAreaTwo>

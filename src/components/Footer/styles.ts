@@ -96,6 +96,7 @@ export const BBBSeal = styled.div`
   text-align: right;
 
   img {
+    display: inline;
     max-width: 250px;
   }
 

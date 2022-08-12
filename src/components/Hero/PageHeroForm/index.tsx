@@ -14,10 +14,11 @@ import {
 } from "./styles"
 
 // Components
+import Button from "../../Buttons/Button"
 
 // Images
 import MapPin from "../../../images/location.png"
-import PhoneIcon from "../../../images/phone-icon.png";
+import PhoneIcon from "../../../images/phone-icon.png"
 
 interface Props {
   centered?: boolean,
