@@ -164,6 +164,37 @@ export const PlansByStateLinks = styled.div`
     }
   }
 
+  div {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  a,
+  a:hover,
+  a:active,
+  a:visited,
+  a:visited:hover {
+    color: var(--color-light);
+  }
+
+  a {
+    margin-right: 0.3rem;
+    position: relative;
+    word-wrap: normal;
+
+    &:after {
+      content: ",";
+    }
+
+    &:last-of-type:after {
+      content: none;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   @media only screen and (max-width: 620px) {
     flex-basis: 100%;
     width: 100%;
