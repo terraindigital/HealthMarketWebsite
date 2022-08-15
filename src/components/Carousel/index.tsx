@@ -63,8 +63,7 @@ const Carousel: FC<Props> = ({ type, background, children }) => {
             slidesPerView: 4
           }
         }}
-        onSlideChange={(swiper) => {
-          console.log(swiper.activeIndex);
+        onSlideChange={(swiper) => {          
           setCurrent(swiper.activeIndex);
         }}
         >
@@ -75,7 +74,7 @@ const Carousel: FC<Props> = ({ type, background, children }) => {
           ) : ({children})
           }
         </Tiles>
-        <CarouselNav current={current} count={children.length}/>
+        <CarouselNav current={current + 1} count={children.length}/>
         </Swiper>        
       </Wrapper>
     )

@@ -26,6 +26,10 @@ export const Wrapper = styled.div`
       }
     }
 
+    .swiper-slide.swiper-slide-active + .swiper-slide {
+      transform: scale(1.1);
+    }
+
     .carousel-nav {
       margin-top: 5.5rem;
 
