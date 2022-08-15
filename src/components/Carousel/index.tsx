@@ -1,4 +1,10 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ReactNode, Children, useState } from 'react';
+
+// Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Swiper Styles
+import 'swiper/css'
 
 // Styles
 import { Wrapper } from "./styles"
@@ -16,23 +22,61 @@ interface Props {
 
 const Carousel: FC<Props> = ({ type, background, children }) => {
   const bgStyle = (background) ? ((background === "half") ? "half-background" : "full-background") : ""
+  const [current, setCurrent] = useState(0);
 
   if (type === "reviews") {
     return (
       <Wrapper className={type + ` ` + bgStyle}>
+        <Swiper 
+        spaceBetween={0} slidesPerView={1}
+        loop={true}
+        onSlideChange={(swiper) => {
+          console.log(swiper.activeIndex);
+          setCurrent(swiper.activeIndex);
+        }}
+        >
         <Reviews>
-          {children}
+          {
+          Array.isArray(children) ? (
+            Children.map(children, (child: ReactNode) => <SwiperSlide>{child}</SwiperSlide>)
+          ) : ({children})
+          }
         </Reviews>
-        <CarouselNav count={children.length} />
+        <CarouselNav current={current} count={children.length}/>
+        </Swiper>
       </Wrapper>
     )
   } else if (type === "tiles") {
     return (
       <Wrapper className={type}>
+        <Swiper 
+        spaceBetween={0} slidesPerView={1}
+        loop={true}       
+        breakpoints={{
+          620: {
+            slidesPerView: 2
+          },
+          920: {
+            slidesPerView: 3
+          },
+          1044: {
+            slidesPerView: 4
+          }
+        }}
+        onSlideChange={(swiper) => {
+          console.log(swiper.activeIndex);
+          setCurrent(swiper.activeIndex);
+        }}
+        >
         <Tiles>
-          {children}
+          {
+          Array.isArray(children) ? (
+            Children.map(children, (child: ReactNode) => <SwiperSlide>{child}</SwiperSlide>)
+          ) : ({children})
+          }
         </Tiles>
-        <CarouselNav count={children.length} />
+        <CarouselNav current={current} count={children.length}/>
+        </Swiper>        
       </Wrapper>
     )
   }

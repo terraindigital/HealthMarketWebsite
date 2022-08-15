@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import React, {FC, ReactNode} from 'react';
+import React, {FC, Children} from 'react';
 
 // Styles
 import { Wrapper, Tabs } from "./styles";
@@ -12,7 +12,8 @@ interface Props {
 
 interface SectionTabs {
   id: number,
-  name: String
+  name: String,
+  active: String,
 }
 
 const switchBgColor = (bgColor) => {
@@ -28,19 +29,37 @@ const switchBgColor = (bgColor) => {
   }
 }
 
-const TabbedSection: FC<Props> = ({ color, tabs, children}) => {
+const changeSeoUrl = (name: String) => {
+    return name.toString()               // Convert to string
+        .normalize('NFD')               // Change diacritics
+        .replace(/[\u0300-\u036f]/g,'') // Remove illegal characters
+        .replace(/\s+/g,'-')            // Change whitespace to dashes
+        .toLowerCase()                  // Change to lowercase
+        .replace(/&/g,'-and-')          // Replace ampersand
+        .replace(/[^a-z0-9\-]/g,'')     // Remove anything that is not a letter, number or dash
+        .replace(/-+/g,'-')             // Remove duplicate dashes
+        .replace(/^-*/,'')              // Remove starting dashes
+        .replace(/-*$/,'');             // Remove trailing dashes
+}
+const TabbedSection: FC<Props> = ({ color, tabs, children, activeTab}) => {
   const bgColor = switchBgColor(color)
+  const currentTab = activeTab ? activeTab.substring(1) : changeSeoUrl(tabs[0]);
 
   return (
     <Wrapper backgroundColor={bgColor} className={`section ` + color}>
       <Tabs>
         {tabs.map(tab => (
-          <a className="section-tab" href={`#` + tab} key={tab.id}>{tab}</a>
+          <a className={changeSeoUrl(tab) == currentTab ? "section-tab active" : "section-tab"} href={`#` + changeSeoUrl(tab)} key={tab.id}>{tab}</a>
         ))}
       </Tabs>
-      {children}
+      {
+          Array.isArray(children) ? (
+            Children.map(children, (child: ReactNode) => <> {child.props.page == currentTab ? (<>{child}</>) : ''}</>)
+          ) : ({children})
+          }
     </Wrapper>
   )
 };
 
+export {changeSeoUrl}
 export default TabbedSection

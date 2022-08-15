@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 
+import { useSwiper } from 'swiper/react';
 // Styles
 import {
   Wrapper,
@@ -8,25 +9,28 @@ import {
   Dot } from "./styles"
 
 interface Props {
-  count: number
+  count: number,
+  current: number
 }
 
-const CarouselNav: FC<Props> = ({ count }) => {
+const CarouselNav: FC<Props> =  ({count, current }) => {
+  // create swiper object
+  const swiper = useSwiper();
+
   const renderDots = (num) => {
     const row = []
-    for (var i=0; i < num; i++) {
-      row.push(<Dot/>)
+    for (let i: number=0; i < num; i++) {
+      row.push(<Dot className={(current % num)== i ? "active" : ""} onClick={() => swiper.slideTo(i)} />)
     }
     return row
   }
-
   return (
     <Wrapper className="carousel-nav">
-      <Prev/>
+      <Prev onClick={() => swiper.slidePrev() }/>
         <Wrapper>
           {renderDots(count)}
         </Wrapper>
-      <Next/>
+      <Next onClick={() => swiper.slideNext() }/>
     </Wrapper>
   )
 }

@@ -18,6 +18,7 @@ export const Prev = styled.div`
   margin-right: 1.3rem;
   position: relative;
   width: 6px;
+  cursor: pointer;
 
   &:before,
   &:after {
@@ -27,6 +28,11 @@ export const Prev = styled.div`
     height: 8px;
     position: absolute;
     width: 2px;
+  }
+
+  &:hover:before,
+  &:hover:after {
+    background-color: var(--color-dark);
   }
 
   &:before {
@@ -46,6 +52,7 @@ export const Next = styled.div`
   margin-left: 1.3rem;
   position: relative;
   width: 6px;
+  cursor: pointer;
 
   &:before,
   &:after {
@@ -55,6 +62,11 @@ export const Next = styled.div`
     height: 8px;
     position: absolute;
     width: 2px;
+  }
+
+  &:hover:before,
+  &:hover:after {
+    background-color: var(--color-dark);
   }
 
   &:before {
@@ -76,12 +88,17 @@ export const Dot = styled.div`
   margin-right: 0.8rem;
   position: relative;
   width: 1.6rem;
+  cursor: pointer;
 
   &.active {
-    background-color: ;var(--color-dark);
+    background-color: var(--color-dark);
   }
 
   &:last-child {
     margin-right: 0;
+  }
+
+  &:hover {
+    background-color: var(--color-dark);
   }
 `

@@ -9,6 +9,7 @@ src/gatsby-types.d.ts
 
 # User-specific stuff
 .idea
+package-lock.json
 
 # Mac
 .DS_store

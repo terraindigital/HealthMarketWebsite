@@ -56,7 +56,7 @@ export const Wrapper = styled.div`
     }
 
     .carousel-nav {
-      margin-left: 5.5rem;
+      margin-left: 0.25rem;
     }
 
     @media only screen and (max-width: 620px) {

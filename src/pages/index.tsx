@@ -52,7 +52,7 @@ const IndexPage = ({path}: PageProps) => {
                     <Tile
                         image={home.homePageCustomFields.wwo.dental.sourceUrl}
                         title="Dental"
-                        selected />
+                        />
                     <Tile
                         image={home.homePageCustomFields.wwo.vision.sourceUrl}
                         title="Vision"/>

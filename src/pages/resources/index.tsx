@@ -22,9 +22,8 @@ import Flag from '../../components/Flag';
 import Icons from '../../components/Icons';
 import Icon from '../../components/Icons/Icon';
 
-const ResourceCenterPage = () => {
+const ResourceCenterPage = ({location}) => {
   const { page } = useResourceCenterPageQuery();
-
   const sectionTabs = Array()
   sectionTabs.push("Medicare")
   sectionTabs.push("Health Insurance")
@@ -45,10 +44,71 @@ const ResourceCenterPage = () => {
       </Hero>
       <TabbedSection
         color="primary"
-        tabs={sectionTabs}>
+        tabs={sectionTabs}
+        activeTab={location.hash}
+        >
         {/* navigation */}
-        <Section color="primary" heading="Featured Medicare articles">
+        <Section color="primary" heading="Featured Medicare articles" page="medicare">
           <div className="hide-at-mobile">
+            <Flag>
+              <div className="left" style={{ maxWidth: "54rem" }}>
+                <h2>{page.resourceCenterPageCustomFields.featuredArticle.title}</h2>
+                <div dangerouslySetInnerHTML={{ __html: page.resourceCenterPageCustomFields.featuredArticle.content }} />
+                <p><a href="#">View article</a></p>
+              </div>
+              <div className="right">
+                <img
+                  src={page.resourceCenterPageCustomFields.featuredArticle.image.sourceUrl}
+                  alt={page.resourceCenterPageCustomFields.featuredArticle.title} />
+              </div>
+            </Flag>
+          </div>
+          <div className="show-at-mobile">
+            <Card
+              image={page.resourceCenterPageCustomFields.featuredArticle.image.sourceUrl}
+              title={page.resourceCenterPageCustomFields.featuredArticle.title}>
+              <div dangerouslySetInnerHTML={{ __html: page.resourceCenterPageCustomFields.featuredArticle.content }} />
+            </Card>
+            <div className="featured-cta"><a href="#">View article</a></div>
+          </div>
+          <Cards>
+            <Card
+              image={page.resourceCenterPageCustomFields.additionalArticles.article1.image.sourceUrl}
+              title={page.resourceCenterPageCustomFields.additionalArticles.article1.title}>
+              <div dangerouslySetInnerHTML={{ __html: page.resourceCenterPageCustomFields.additionalArticles.article1.content }} />
+            </Card>
+            <Card
+              image={page.resourceCenterPageCustomFields.additionalArticles.article2.image.sourceUrl}
+              title={page.resourceCenterPageCustomFields.additionalArticles.article2.title}>
+              <div dangerouslySetInnerHTML={{ __html: page.resourceCenterPageCustomFields.additionalArticles.article2.content }} />
+            </Card>
+            <Card
+              image={page.resourceCenterPageCustomFields.additionalArticles.article3.image.sourceUrl}
+              title={page.resourceCenterPageCustomFields.additionalArticles.article3.title}>
+              <div dangerouslySetInnerHTML={{ __html: page.resourceCenterPageCustomFields.additionalArticles.article3.content }} />
+            </Card>
+            <Card
+              image={page.resourceCenterPageCustomFields.additionalArticles.article4.image.sourceUrl}
+              title={page.resourceCenterPageCustomFields.additionalArticles.article4.title}>
+              <div dangerouslySetInnerHTML={{ __html: page.resourceCenterPageCustomFields.additionalArticles.article4.content }} />
+            </Card>
+            <Card
+              image={page.resourceCenterPageCustomFields.additionalArticles.article5.image.sourceUrl}
+              title={page.resourceCenterPageCustomFields.additionalArticles.article5.title}>
+              <div dangerouslySetInnerHTML={{ __html: page.resourceCenterPageCustomFields.additionalArticles.article5.content }} />
+            </Card>
+            <Card
+              image={page.resourceCenterPageCustomFields.additionalArticles.article6.image.sourceUrl}
+              title={page.resourceCenterPageCustomFields.additionalArticles.article6.title}>
+              <div dangerouslySetInnerHTML={{ __html: page.resourceCenterPageCustomFields.additionalArticles.article6.content }} />
+            </Card>
+          </Cards>
+          <div style={{ marginTop: "3.4rem", textAlign: "center" }}>
+            <Button background="accent" border="accent" color="light">View more articles</Button>
+          </div>
+        </Section>
+        <Section color="primary" heading="Featured Health Insurance" page="health-insurance">
+        <div className="hide-at-mobile">
             <Flag>
               <div className="left" style={{ maxWidth: "54rem" }}>
                 <h2>{page.resourceCenterPageCustomFields.featuredArticle.title}</h2>

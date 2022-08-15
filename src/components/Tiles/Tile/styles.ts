@@ -39,25 +39,23 @@ export const Wrapper = styled.div`
 
   flex-basis: calc(25% - 2.1rem);
   min-width: calc(25% - 2.1rem);
-  margin-right: 2.1rem;
+  margin-left: 1.05rem;
+  margin-right: 1.05rem;
 
   @media only screen and (max-width: 1044px) {
     flex-basis: calc(33% - 2.1rem);
     min-width: calc(33% - 2.1rem);
-    margin-right: 2.1rem;
   }
 
   @media only screen and (max-width: 920px) {
     flex-basis: calc(50% - 2.1rem);
     min-width: calc(50% - 2.1rem);
-    margin-right: 2.1rem;
   }
 
   @media only screen and (max-width: 620px) {
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
     flex-basis: 183px;
     min-width: 183px;
-    margin-right: 2.1rem;
 
     img {
       height: 233px;
