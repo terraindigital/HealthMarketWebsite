@@ -70,12 +70,10 @@ query($slug: String!)
                             mediaItemUrl
                             localFile
                             {
-                                childImageSharp
-                                {
-                                    gatsbyImageData(quality
-                                :
-                                    100
-                                )
+                                childImageSharp {
+                                    gatsbyImageData(
+                                        quality: 100
+                                    )
                                 }
                             }
                         }
