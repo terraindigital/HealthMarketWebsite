@@ -33,9 +33,9 @@ query($slug: String!)
             title
             pageData
             {
-                cityList
                 healthInsurance
                 {
+                    cityList
                     proof1
                     {
                         content

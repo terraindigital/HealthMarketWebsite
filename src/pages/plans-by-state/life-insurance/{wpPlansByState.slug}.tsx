@@ -5,7 +5,6 @@ import {graphql} from "gatsby";
 import Template, {PageInfo} from "../../../components/pages/plans-by-state/Template";
 
 
-
 const StatePage = ({data}: { data: PageInfo }) => {
 
     return (
@@ -33,9 +32,9 @@ query($slug: String!)
             title
             pageData
             {
-                cityList
                 lifeInsurance
                 {
+                    cityList
                     proof1
                     {
                         content

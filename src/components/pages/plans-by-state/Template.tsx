@@ -21,6 +21,7 @@ interface Proof {
 }
 
 export interface CustomFields {
+    cityList: string;
     hero: {
         title: string;
         subtitle: string;
@@ -43,7 +44,6 @@ export interface PageInfo {
             healthInsurance?: CustomFields;
             dentalInsurance?: CustomFields;
             lifeInsurance?: CustomFields;
-            cityList: string;
         }
     }
 }
@@ -57,8 +57,8 @@ interface Prop {
 
 const Template: FC<Prop> = ({data, pageType}) => {
     const {title, slug} = data.page
-    const cityList: string[] = data.page.pageData.cityList.split(",")
-    const {hero, proof1, proof2, proof3} = data.page.pageData[pageType] as CustomFields
+    const {cityList, hero, proof1, proof2, proof3} = data.page.pageData[pageType] as CustomFields
+    const allCityList: string[] = cityList.split(",")
     const imageData = getImage(hero.image.localFile)
 
     // Parse text with variables. e.g: {pageTitle}
@@ -79,20 +79,16 @@ const Template: FC<Prop> = ({data, pageType}) => {
                 }}
             >
                 <div
-                    className="relative px-10 mx-auto my-0"
+                    className="relative px-10 mx-auto py-10"
                 >
                     {/* Hero - Image */}
-                    <div className="absolute right-0 bottom-0 hidden lg:grid w-[45%] max-w-2xl">
+                    <div className="absolute right-[8%] bottom-0 hidden lg:grid w-[40%] lg:w-[45%] max-w-2xl">
                         {imageData && <GatsbyImage image={imageData} alt="Hero Image"/>}
                     </div>
                     {/* Hero - Left */}
-                    <div className="p-6 md:pl-[8%] lg:pl-[14%] xl:pl-[20%] md:w-[65%] lg:w-[55%]">
-                        <h1 className="my-8 text-5xl font-bold box-border text-sky-500">
-                            {heroTitle}
-                        </h1>
-                        <h4 className="text-3xl">
-                            {heroSubtitle}
-                        </h4>
+                    <div className="p-6 md:pl-[4%] lg:pl-[10%] xl:pl-[16%] md:w-[55%] lg:w-[60%]">
+                        <h1 className="my-8 text-5xl font-bold box-border text-sky-500" dangerouslySetInnerHTML={{__html:heroTitle}}/>
+                        <p className="text-3xl" dangerouslySetInnerHTML={{__html:heroSubtitle}}/>
                         <button
                             className="
                             my-14 p-4 md:px-16
@@ -112,7 +108,7 @@ const Template: FC<Prop> = ({data, pageType}) => {
                         <p className="font-bold text-neutral-600">
                         <span>
                             <a
-                                className="hover:underline hover:text-neutral-800 focus:text-neutral-800"
+                                className="text-neutral-600 hover:underline hover:text-neutral-800 focus:text-neutral-800"
                                 href="tel:+18666830506"
                                 data-wpel-link="internal"
                             >
@@ -169,7 +165,7 @@ const Template: FC<Prop> = ({data, pageType}) => {
                                     {proof.icon}
                                     <h4 className="text-3xl font-bold pl-2">{proof.title} ::</h4>
                                 </div>
-                                <p className="text-2xl font-semibold">{proof.content}</p>
+                                <p className="text-2xl font-semibold" dangerouslySetInnerHTML={{__html:proof.content}}/>
                                 <footer className="text-xl">
                                     <span>{proof.name}</span> - <cite>{proof.location}</cite>
                                 </footer>
@@ -279,7 +275,7 @@ const Template: FC<Prop> = ({data, pageType}) => {
                     <h5 className="pb-8 font-bold">Here are a few of the cities where we offer coverage.</h5>
                     <ul className="grid grid-cols-1 md:grid-cols-2">
                         {
-                            cityList.map((city, index) => (
+                            allCityList.map((city, index) => (
                                 <li key={index}>{city}</li>
                             ))
                         }
@@ -316,6 +312,7 @@ const Template: FC<Prop> = ({data, pageType}) => {
                     Related Info
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3">
+                    {/* TODO: Change Article Link */}
                     {
                         [
                             {
@@ -367,7 +364,7 @@ const Template: FC<Prop> = ({data, pageType}) => {
                                     {article.title}
                                 </h4>
                                 <p
-                                    className="break-words"
+                                    className="text-gray-400 text-xl break-words"
                                 >
                                     {article.content}
                                 </p>
