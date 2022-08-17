@@ -9,6 +9,8 @@ const toggleOpenState = (el) => {
   card.classList.toggle('active')
 }
 
+// TODO: add link to props
+
 interface Props {
   image?: String,
   icon?: String,

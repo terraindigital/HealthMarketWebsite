@@ -91,8 +91,13 @@ export const Input = styled.input`
 `
 
 export const Footer = styled.div`
-  margin: 4.8rem auto 0rem;
+  margin-top: 4.8rem;
   max-width: 335px;
+
+  .centered & {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   button {
     width: 100%;

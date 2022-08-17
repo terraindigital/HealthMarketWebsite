@@ -33,6 +33,7 @@ import Reviews from "../../components/Reviews";
 
 const HealthInsurancePage = () => {
   const { page } = useSupplementalPageQuery();
+  const plans = page.suppPageCustomFields.suppPlans;
 
   return (
     <Layout pageClass="supplemental-insurance">
@@ -52,61 +53,17 @@ const HealthInsurancePage = () => {
         <BestPriceImage src={BestPriceImg} />
         <BestPriceImageMobile src={BestPriceImgM} />
         <Cards>
-          <Card
-            icon={page.suppPageCustomFields.suppPlans.suppPlan1.icon.sourceUrl}
-            title={page.suppPageCustomFields.suppPlans.suppPlan1.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppPlans.suppPlan1.content }} />
-          </Card>
-          <Card
-            icon={page.suppPageCustomFields.suppPlans.suppPlan2.icon.sourceUrl}
-            title={page.suppPageCustomFields.suppPlans.suppPlan2.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppPlans.suppPlan2.content }} />
-          </Card>
-          <Card
-            icon={page.suppPageCustomFields.suppPlans.suppPlan3.icon.sourceUrl}
-            title={page.suppPageCustomFields.suppPlans.suppPlan3.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppPlans.suppPlan3.content }} />
-          </Card>
-          <Card
-            icon={page.suppPageCustomFields.suppPlans.suppPlan4.icon.sourceUrl}
-            title={page.suppPageCustomFields.suppPlans.suppPlan4.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppPlans.suppPlan4.content }} />
-          </Card>
-          <Card
-            icon={page.suppPageCustomFields.suppPlans.suppPlan5.icon.sourceUrl}
-            title={page.suppPageCustomFields.suppPlans.suppPlan5.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppPlans.suppPlan5.content }} />
-          </Card>
-          <Card
-            icon={page.suppPageCustomFields.suppPlans.suppPlan6.icon.sourceUrl}
-            title={page.suppPageCustomFields.suppPlans.suppPlan6.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppPlans.suppPlan6.content }} />
-          </Card>
-          <Card
-            icon={page.suppPageCustomFields.suppPlans.suppPlan7.icon.sourceUrl}
-            title={page.suppPageCustomFields.suppPlans.suppPlan7.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppPlans.suppPlan7.content }} />
-          </Card>
-          <Card
-            icon={page.suppPageCustomFields.suppPlans.suppPlan8.icon.sourceUrl}
-            title={page.suppPageCustomFields.suppPlans.suppPlan8.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppPlans.suppPlan8.content }} />
-          </Card>
-          <Card
-            icon={page.suppPageCustomFields.suppPlans.suppPlan9.icon.sourceUrl}
-            title={page.suppPageCustomFields.suppPlans.suppPlan9.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppPlans.suppPlan9.content }} />
-          </Card>
-          <Card
-            icon={page.suppPageCustomFields.suppPlans.suppPlan10.icon.sourceUrl}
-            title={page.suppPageCustomFields.suppPlans.suppPlan10.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppPlans.suppPlan10.content }} />
-          </Card>
-          {/* <Card
-            icon={page.suppPageCustomFields.suppPlans.suppPlan11.icon.sourceUrl}
-            title={page.suppPageCustomFields.suppPlans.suppPlan11.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppPlans.suppPlan11.content }} />
-          </Card> */}
+          {(plans) ? (
+            Object.keys(plans).map((plan) => {
+              return (
+                <Card
+                  icon={plans[plan].icon.sourceUrl}
+                  title={plans[plan].title}>
+                  <div dangerouslySetInnerHTML={{ __html: plans[plan].content }} />
+                </Card>
+              )
+            })
+          ) : null}
         </Cards>
       </Section>
       <Section color="light">

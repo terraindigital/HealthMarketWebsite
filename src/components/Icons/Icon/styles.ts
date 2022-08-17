@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.a`
   background-color: var(--color-light);
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
   margin-bottom: 2.1rem;

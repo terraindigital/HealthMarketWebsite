@@ -6,11 +6,12 @@ import { Wrapper, Img, Content } from "./styles"
 interface Props {
   icon: String,
   title: String,
+  link?: String
 }
 
-const Icon: FC<Props> = ({ icon, title }) => {
+const Icon: FC<Props> = ({ icon, title, link }) => {
   return (
-    <Wrapper>
+    <Wrapper href={(link) ? link : ''}>
       <Img
         src={icon}
         placeholder="BLURRED"

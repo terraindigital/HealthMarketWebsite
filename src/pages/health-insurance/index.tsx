@@ -35,6 +35,7 @@ import Reviews from "../../components/Reviews";
 
 const HealthInsurancePage = () => {
   const { page } = useHealthPageQuery();
+  const plans = page.healthPageCustomFields.healthPlans
 
   return (
     <Layout pageClass="health-insurance">
@@ -73,36 +74,16 @@ const HealthInsurancePage = () => {
         color="primary"
         heading="Our Plans">
         <Icons>
-          <Icon
-            icon={page.healthPageCustomFields.healthPlans.healthPlan1.icon.sourceUrl}
-            title={page.healthPageCustomFields.healthPlans.healthPlan1.title} />
-          <Icon
-            icon={page.healthPageCustomFields.healthPlans.healthPlan2.icon.sourceUrl}
-            title={page.healthPageCustomFields.healthPlans.healthPlan2.title} />
-          <Icon
-            icon={page.healthPageCustomFields.healthPlans.healthPlan3.icon.sourceUrl}
-            title={page.healthPageCustomFields.healthPlans.healthPlan3.title} />
-          <Icon
-            icon={page.healthPageCustomFields.healthPlans.healthPlan4.icon.sourceUrl}
-            title={page.healthPageCustomFields.healthPlans.healthPlan4.title} />
-          <Icon
-            icon={page.healthPageCustomFields.healthPlans.healthPlan5.icon.sourceUrl}
-            title={page.healthPageCustomFields.healthPlans.healthPlan5.title} />
-          <Icon
-            icon={page.healthPageCustomFields.healthPlans.healthPlan6.icon.sourceUrl}
-            title={page.healthPageCustomFields.healthPlans.healthPlan6.title} />
-          <Icon
-            icon={page.healthPageCustomFields.healthPlans.healthPlan7.icon.sourceUrl}
-            title={page.healthPageCustomFields.healthPlans.healthPlan7.title} />
-          <Icon
-            icon={page.healthPageCustomFields.healthPlans.healthPlan8.icon.sourceUrl}
-            title={page.healthPageCustomFields.healthPlans.healthPlan8.title} />
-          <Icon
-            icon={page.healthPageCustomFields.healthPlans.healthPlan9.icon.sourceUrl}
-            title={page.healthPageCustomFields.healthPlans.healthPlan9.title} />
-          <Icon
-            icon={page.healthPageCustomFields.healthPlans.healthPlan10.icon.sourceUrl}
-            title={page.healthPageCustomFields.healthPlans.healthPlan10.title} />
+          {(plans) ? (
+            Object.keys(plans).map((plan) => {
+              return (
+                <Icon
+                  icon={plans[plan].icon.sourceUrl}
+                  title={plans[plan].title}
+                  link={plans[plan].link} />
+              )
+            })
+          ) : null}
         </Icons>
       </Section>
       <FlexedSection

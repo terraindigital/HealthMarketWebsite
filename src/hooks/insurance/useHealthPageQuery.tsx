@@ -45,60 +45,77 @@ export const useHealthPageQuery = () => {
                 sourceUrl
               }
               title
+              link
             }
             healthPlan2 {
               icon {
                 sourceUrl
               }
               title
+              link
             }
             healthPlan3 {
               icon {
                 sourceUrl
               }
               title
+              link
             }
             healthPlan4 {
               icon {
                 sourceUrl
               }
               title
+              link
             }
             healthPlan5 {
               icon {
                 sourceUrl
               }
               title
+              link
             }
             healthPlan6 {
               icon {
                 sourceUrl
               }
               title
+              link
             }
             healthPlan7 {
               icon {
                 sourceUrl
               }
               title
+              link
             }
             healthPlan8 {
               icon {
                 sourceUrl
               }
               title
+              link
             }
             healthPlan9 {
               icon {
                 sourceUrl
               }
               title
+              link
             }
             healthPlan10 {
               icon {
                 sourceUrl
               }
               title
+              link
+            }
+            healthPlan11 {
+              icon {
+                sourceUrl
+              }
+              title
+              link
             }
           }
           healthAccordions {
