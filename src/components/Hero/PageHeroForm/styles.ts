@@ -115,6 +115,9 @@ export const CTA = styled.div`
   flex-wrap: no-wrap;
   margin-top: 1.6rem;
 
+  // TODO: remove or do this better
+  .home & { display: none; }
+
   .centered & {
     justify-content: center;
   }

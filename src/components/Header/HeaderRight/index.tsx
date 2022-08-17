@@ -8,14 +8,12 @@ import { Wrapper, Item, TextSize, SearchButton, MenuButton, Bars } from "./style
 import {
   changeTextSize,
   toggleNav,
-  toggleSearch,
-  toggleMobileSearch
+  toggleSearch
 } from "../../../assets/scripts/global"
 
 // Components
 import Navigation from "../../Navigation"
 import SearchField from "../../SearchField"
-import SearchFieldMobile from "../../SearchField/Mobile"
 
 // Images
 import PhoneIcon from "../../../images/phone-icon.png"
@@ -34,7 +32,6 @@ const HeaderRight = () => {
         <TextSize className="decrease text-size" onClick={changeTextSize}>-</TextSize> Text Size <TextSize className="increase text-size" onClick={changeTextSize}>+</TextSize>
       </Item>
       <Item>
-        <SearchField />
         <SearchButton className="hide-at-mobile icon" onClick={toggleSearch} src={SearchIcon} alt="magnifying glass icon" />
         {/* TODO: remove this vvvv */}
         {/* <SearchButton className="hide-at-mobile icon" onClick={toggleMobileSearch} src={SearchIcon} alt="magnifying glass icon" /> */}
@@ -42,7 +39,7 @@ const HeaderRight = () => {
           <Bars />
         </MenuButton>
         <Navigation />
-        <SearchFieldMobile />
+        <SearchField />
       </Item>
     </Wrapper>
   )

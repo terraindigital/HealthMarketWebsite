@@ -9,7 +9,7 @@ export const changeTextSize = (el) => {
   }
 }
 
-export const toggleMobileSearch = () => {
+export const toggleSearch = () => {
   const searchBox = document.querySelector('.search-box-mobile')
   const header = document.querySelector('.site-header')
   if (!searchBox || !header) return
@@ -19,7 +19,7 @@ export const toggleMobileSearch = () => {
   document.documentElement.classList.toggle('search-active')
 }
 
-export const toggleSearch = () => {
+export const toggleVariantSearch = () => {
   const searchBtn = document.querySelector('.search-button')
   const searchBox = document.querySelector('.search-box-wrap')
   const header = document.querySelector('.site-header')
