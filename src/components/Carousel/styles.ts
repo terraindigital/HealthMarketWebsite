@@ -27,7 +27,21 @@ export const Wrapper = styled.div`
     }
 
     .swiper-slide.swiper-slide-active + .swiper-slide {
-      transform: scale(1.1);
+
+      @media only screen and (min-width: 1200px) {
+        width: calc(25% + 1.05rem)!important;
+        transform: translateY(-30px);
+
+        & .tile {
+          img {
+            height: 460px;
+          }
+        }
+      }
+    }
+
+    & .tile {
+      box-shadow: none!important;
     }
 
     .carousel-nav {

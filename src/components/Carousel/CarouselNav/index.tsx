@@ -5,8 +5,7 @@ import { useSwiper } from 'swiper/react';
 import {
   Wrapper,
   Prev,
-  Next,
-  Dot } from "./styles"
+  Next } from "./styles"
 
 interface Props {
   count: number,
@@ -16,21 +15,12 @@ interface Props {
 const CarouselNav: FC<Props> =  ({count, current }) => {
   // create swiper object
   const swiper = useSwiper();
-
-  const renderDots = (num) => {
-    const row = []
-    for (let i: number=0; i < num; i++) {
-      row.push(<Dot className={(current % num)== i ? "active" : ""} onClick={() => swiper.slideTo(i)} />)
-    }
-    return row
-  }
   return (
     <Wrapper className="carousel-nav">
-      <Prev onClick={() => swiper.slidePrev() }/>
-        <Wrapper>
-          {renderDots(count)}
+      <Prev onClick={() => swiper.isBeginning ? swiper.slideTo(100) : swiper.slidePrev()} />
+        <Wrapper className="carousel-pagination">
         </Wrapper>
-      <Next onClick={() => swiper.slideNext() }/>
+      <Next onClick={() => swiper.isEnd ? swiper.slideTo(0) : swiper.slideNext() } />
     </Wrapper>
   )
 }

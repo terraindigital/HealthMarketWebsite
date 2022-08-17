@@ -11,6 +11,29 @@ export const Wrapper = styled.div`
     align-items: flex-start;
     justify-content: flex-start;
   }
+
+  &.carousel-pagination div {
+    background-color: var(--color-muted);
+    border-radius: 50%;
+    display: block;
+    height: 1.6rem;
+    margin-right: 0.8rem;
+    position: relative;
+    width: 1.6rem;
+    cursor: pointer;
+
+    &.swiper-pagination-bullet-active {
+      background-color: var(--color-dark);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      background-color: var(--color-dark);
+    }
+  }
 `
 
 export const Prev = styled.div`
@@ -77,28 +100,5 @@ export const Next = styled.div`
   &:after {
     transform: rotateZ(32deg);
     top: calc(50% - 1px);
-  }
-`
-
-export const Dot = styled.div`
-  background-color: var(--color-muted);
-  border-radius: 50%;
-  display: block;
-  height: 1.6rem;
-  margin-right: 0.8rem;
-  position: relative;
-  width: 1.6rem;
-  cursor: pointer;
-
-  &.active {
-    background-color: var(--color-dark);
-  }
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  &:hover {
-    background-color: var(--color-dark);
   }
 `

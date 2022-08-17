@@ -2,13 +2,13 @@ import React, { FC, ReactNode, Children, useState } from 'react';
 
 // Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper';
 
 // Swiper Styles
 import 'swiper/css'
 
 // Styles
 import { Wrapper } from "./styles"
-
 // Components
 import Reviews from "../Reviews"
 import Tiles from "../Tiles"
@@ -29,10 +29,14 @@ const Carousel: FC<Props> = ({ type, background, children }) => {
       <Wrapper className={type + ` ` + bgStyle}>
         <Swiper 
         spaceBetween={0} slidesPerView={1}
+        modules={[Pagination]}
         loop={true}
-        onSlideChange={(swiper) => {
-          console.log(swiper.activeIndex);
-          setCurrent(swiper.activeIndex);
+        pagination={{ 
+          el: '.carousel-pagination',
+          clickable: true,
+          renderBullet: (index, className) =>  {
+            return '<div class="' + className + '"></div>';
+          }
         }}
         >
         <Reviews>
@@ -50,22 +54,39 @@ const Carousel: FC<Props> = ({ type, background, children }) => {
     return (
       <Wrapper className={type}>
         <Swiper 
-        spaceBetween={0} slidesPerView={1}
-        loop={true}       
-        breakpoints={{
-          620: {
-            slidesPerView: 2
-          },
-          920: {
-            slidesPerView: 3
-          },
-          1044: {
-            slidesPerView: 4
+        spaceBetween={0} slidesPerView={2}
+        centeredSlides={true}
+        centeredSlidesBounds={true}
+        modules={[Pagination]}
+        pagination={{ 
+          el: '.carousel-pagination',
+          clickable: true,
+          renderBullet: (index, className) =>  {
+            return '<div class="' + className + '"></div>';
           }
         }}
-        onSlideChange={(swiper) => {          
+        breakpoints={{
+          768: {
+            slidesPerView: 2,
+            centeredSlides: false,
+            centeredSlidesBounds: false
+          },
+          960: {
+            slidesPerView: 3,
+            centeredSlides: false,
+            centeredSlidesBounds: false
+          },
+          1200: {
+            slidesPerView: 4,
+            centeredSlides: false,
+            centeredSlidesBounds: false
+          }
+        }}
+        onSlideChange={(swiper) => {
+          console.log("current activeIndex", swiper.activeIndex);
           setCurrent(swiper.activeIndex);
         }}
+
         >
         <Tiles>
           {
@@ -74,7 +95,7 @@ const Carousel: FC<Props> = ({ type, background, children }) => {
           ) : ({children})
           }
         </Tiles>
-        <CarouselNav current={current + 1} count={children.length}/>
+        <CarouselNav current={current} count={children.length}/>
         </Swiper>        
       </Wrapper>
     )
