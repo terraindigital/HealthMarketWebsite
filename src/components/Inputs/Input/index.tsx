@@ -12,6 +12,7 @@ interface Props {
   id?: String,
   hero?: boolean,
   centered?: boolean,
+  classes?: String,
   type: String,
   name: String,
   pattern?: String,
@@ -24,6 +25,7 @@ const Input: FC<Props> = ({
   id,
   hero,
   centered,
+  classes,
   type,
   name,
   pattern = null,
@@ -35,7 +37,7 @@ const Input: FC<Props> = ({
 
   if (!hero) {
     return (
-      <InputField id={id} type={type} name={name} pattern={pattern} placeholder={placeholder} required={required} value={value} />
+      <InputField className={classes} id={id} type={type} name={name} pattern={pattern} placeholder={placeholder} required={required} value={value} />
     )
   } else {
     return (

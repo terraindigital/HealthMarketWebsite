@@ -1,4 +1,5 @@
 import React, { FC } from "react"
+import { Link } from "gatsby"
 
 // Styles
 import { Wrapper, Logo } from "./styles"
@@ -8,7 +9,6 @@ import HeaderRight from "./HeaderRight"
 
 // Images
 import headerLogo from "../../images/HMIA_logo2.png"
-import { Link } from "gatsby"
 
 interface Props {
   staticHeader?: boolean,

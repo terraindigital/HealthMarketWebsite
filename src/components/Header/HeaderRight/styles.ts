@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-end;
+  position: relative;
 `
 
 export const Item = styled.div`
