@@ -1,24 +1,36 @@
 import React from "react";
+import { Link } from "gatsby";
 
 // Styles
-import { Wrapper, CloseButton } from "./styles"
+import { Wrapper, Logo, CloseButton, Inner } from "./styles"
 
 // Scripts
 import { toggleSearch } from "../../assets/scripts/global";
 
+// Components
+import Input from "../Inputs/Input";
+
 // Images
+import siteLogo from "../../images/HMIA_logo2.png"
 import Icon from "../../images/search-icon.png"
 
 const SearchField = () => {
   return (
-    <Wrapper className="search-box-wrap">
-      <form className="search-box">
-        <input className="search-box-input" type="text" placeholder="Search" />
-        <button className="search-box-submit" type="submit">
-          <img src={Icon} alt="search icon" />
-        </button>
-      </form>
-      <CloseButton onClick={toggleSearch}>X</CloseButton>
+    <Wrapper className="search-box-mobile">
+      <Link to="/">
+        <Logo src={siteLogo} />
+      </Link>
+      <CloseButton onClick={toggleSearch} />
+      <Inner>
+        <div>
+          <form className="search-box">
+            <Input classes="search-box-input" id="searchBox" type="text" name="query" placeholder="Search" />
+            <button type="submit" className="search-box-submit">
+              <img src={Icon} alt="search icon" />
+            </button>
+          </form>
+        </div>
+      </Inner>
     </Wrapper>
   )
 }

@@ -1,70 +1,125 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
+  background-color: var(--color-primary);
   display: block;
-  height: 26px;
+  left: 0px;
+  min-width: 100%;
+  min-width: 100vw;
   opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  right: 5rem;
+  position: fixed;
   top: -9999px;
-  width: 0px;
-  z-index: 1;
+  transition: opacity 0.22s linear;
+  z-index: 0;
 
   &.active {
+    bottom: 0;
     opacity: 1;
     top: 0px;
-    width: calc(100% - 5rem);
+  }
+`
 
-    .search-box {
-      width: calc(100% - 3.4rem);
-    }
+export const Logo = styled.img`
+  filter: brightness(0) invert(1);
+  max-width: 120px;
+
+  margin-bottom: 2.1rem;
+  margin-left: 8.9rem;
+  margin-right: 8.9rem;
+  margin-top: 3.4rem;
+
+  @media screen and (max-width: 1044px) {
+    margin-left: 5.5rem;
+    margin-right: 5.5rem;
   }
 
-  .search-box {
-    background-color: var(--color-light);
-    display: flex;
-    flex-wrap: nowrap;
-    margin: 0;
-    padding: 1px;
-    position: absolute;
-    right: 3.4rem;
-    transition: width 0.22s linear;
-    width: 0;
+  @media screen and (max-width: 920px) {
+    margin-left: 2.1rem;
+    margin-right: 2.1rem;
+  }
 
-    .search-box-input {
-      color: var(--color-dark);
-      padding-left: 0.5rem;
-      width: calc(100% - 3.4rem);
-
-      &::placeholder {
-        color: var(--color-dark);
-      }
-    }
-
-    .search-box-submit {
-      width: 3.4rem;
-
-      img {
-        display: inline;
-        margin: 0;
-        max-width: 18px;
-      }
-    }
+  @media only screen and (max-width: 620px) {
+    margin-top: 2.1rem;
   }
 `
 
 export const CloseButton = styled.button`
-  background-color: var(--color-accent);
-  bottom: 0;
-  left: calc(100% - 3.4rem);
-  opacity: 0;
+  display: block;
+  height: 28px;
   position: absolute;
-  top: 0;
-  transition: opacity 0.22s linear;
-  width: 3.4rem;
+  width: 28px;
 
-  .active & {
-    opacity: 1;
+  right: 114px;
+  top: 39px;
+
+  @media screen and (max-width: 1044px) {
+    right: 71px;
+  }
+
+  @media screen and (max-width: 920px) {
+    right: 37px;
+  }
+
+  @media only screen and (max-width: 620px) {
+    top: 26px;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    border-bottom: 1px solid var(--color-light);
+    height: 0px;
+    position: relative;
+    transition: all 0.22s linear;
+    width: 24px;
+  }
+
+  &:before {
+    transform: rotate(45deg) translateY(calc(-50% + 1px));
+  }
+
+  &:after {
+    transform: rotate(-45deg) translateY(calc(50% - 1px));
+  }
+`
+
+export const Inner = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  height: 60vh;
+  justify-content: center;
+  padding: 3.4rem;
+
+  .search-box {
+    border-bottom: 1px solid var(--color-light);
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 60rem;
+  }
+
+  .search-box-input,
+  .search-box-input::placeholder {
+    color: var(--color-light);
+    font-family: var(--font-heading);
+    font-size: 3.2rem;
+    font-weight: bold;
+  }
+
+  .search-box-input{
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .search-box-submit {
+    img {
+      display: inline;
+      filter: brightness(0) invert(1);
+      margin: 0;
+      vertical-align: middle;
+    }
   }
 `
