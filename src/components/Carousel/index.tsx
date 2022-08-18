@@ -67,19 +67,13 @@ const Carousel: FC<Props> = ({ type, background, children }) => {
         }}
         breakpoints={{
           768: {
-            slidesPerView: 2,
-            centeredSlides: false,
-            centeredSlidesBounds: false
+            slidesPerView: 2
           },
           960: {
-            slidesPerView: 3,
-            centeredSlides: false,
-            centeredSlidesBounds: false
+            slidesPerView: 3
           },
           1200: {
-            slidesPerView: 4,
-            centeredSlides: false,
-            centeredSlidesBounds: false
+            slidesPerView: 4
           }
         }}
         onSlideChange={(swiper) => {
