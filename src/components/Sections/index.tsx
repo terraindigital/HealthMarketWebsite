@@ -34,8 +34,8 @@ const Section: FC<Props> = ({ heading, subheading, page, color, children}) => {
     <Wrapper backgroundColor={bgColor} className={`section ` + color + ` ` + pageClass}>
       {(heading) ? (
         <Heading className="heading">
-          <h1>{heading}</h1>
-          <h2>{subheading}</h2>
+          <h2>{heading}</h2>
+          <h3>{subheading}</h3>
         </Heading>
       ) : null}
       <Inner>

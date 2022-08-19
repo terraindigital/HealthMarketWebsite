@@ -88,7 +88,9 @@ export const HeroHeading = styled.h1`
   }
 `
 
-export const HeroSubheading = styled.h4`
+export const HeroSubheading = styled.h2`
+  font-family: var(--font-body);
+  font-size: 2.4rem;
   line-height: 110%;
   margin-bottom: 0;
   text-align: center;

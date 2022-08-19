@@ -40,7 +40,7 @@ export const HeroHeading = styled.h1`
   }
 `
 
-export const HeroSubheading = styled.h3`
+export const HeroSubheading = styled.h2`
   color: var(--color-light);
   font-family: var(--font-body);
   font-size: 2.4rem;
