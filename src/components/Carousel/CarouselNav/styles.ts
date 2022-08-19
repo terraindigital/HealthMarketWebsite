@@ -102,3 +102,18 @@ export const Next = styled.div`
     top: calc(50% - 1px);
   }
 `
+
+
+export const Dot = styled.div`
+  margin-right: 0.8rem;
+  position: relative;
+  width: 1.6rem;
+  cursor: pointer;
+  
+  &.active {
+    background-color: var(--color-dark);
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+`

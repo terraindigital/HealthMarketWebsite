@@ -26,7 +26,7 @@ export const Wrapper = styled.div`
       }
     }
 
-    .swiper-slide.swiper-slide-active + .swiper-slide {
+    .swiper-slide.swiper-slide-active {
 
       @media only screen and (min-width: 1200px) {
         width: calc(25% + 1.05rem)!important;

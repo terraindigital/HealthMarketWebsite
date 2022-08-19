@@ -22,7 +22,7 @@ interface Props {
 
 const Carousel: FC<Props> = ({ type, background, children }) => {
   const bgStyle = (background) ? ((background === "half") ? "half-background" : "full-background") : ""
-  const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState(1);
 
   if (type === "reviews") {
     return (
@@ -46,7 +46,7 @@ const Carousel: FC<Props> = ({ type, background, children }) => {
           ) : ({children})
           }
         </Reviews>
-        <CarouselNav current={current} count={children.length}/>
+        <CarouselNav count={0}/>
         </Swiper>
       </Wrapper>
     )
@@ -57,30 +57,29 @@ const Carousel: FC<Props> = ({ type, background, children }) => {
         spaceBetween={0} slidesPerView={2}
         centeredSlides={true}
         centeredSlidesBounds={true}
-        modules={[Pagination]}
-        pagination={{ 
-          el: '.carousel-pagination',
-          clickable: true,
-          renderBullet: (index, className) =>  {
-            return '<div class="' + className + '"></div>';
-          }
-        }}
         breakpoints={{
           768: {
-            slidesPerView: 2
+            slidesPerView: 2,
+            centeredSlides: false,
+            centeredSlidesBounds: false
           },
           960: {
-            slidesPerView: 3
+            slidesPerView: 3,
+            centeredSlides: false,
+            centeredSlidesBounds: false
           },
           1200: {
-            slidesPerView: 4
+            slidesPerView: 4,
+            centeredSlides: false,
+            centeredSlidesBounds: false
           }
         }}
-        onSlideChange={(swiper) => {
-          console.log("current activeIndex", swiper.activeIndex);
-          setCurrent(swiper.activeIndex);
-        }}
 
+        onTouchEnd={(swiper) => {
+          setTimeout(() => {
+            setCurrent(swiper.activeIndex);
+          }, 100);
+        }}
         >
         <Tiles>
           {
