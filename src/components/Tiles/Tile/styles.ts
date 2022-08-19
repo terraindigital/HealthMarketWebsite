@@ -42,6 +42,12 @@ export const Wrapper = styled.div`
   margin-left: 1.05rem;
   margin-right: 1.05rem;
 
+  @media only screen and (max-width: 1600px) {
+    h2 {
+      font-size: 2rem;
+    }
+  }
+  
   @media only screen and (max-width: 1044px) {
     flex-basis: calc(33% - 2.1rem);
     min-width: calc(33% - 2.1rem);

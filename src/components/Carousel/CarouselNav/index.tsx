@@ -40,7 +40,7 @@ const CarouselNav: FC<Props> =  ({count, current}) => {
   }, [active])
 
   useEffect(() => {
-    setActive(current);
+    setActive(swiper.activeIndex);
   }, [current]);
 
   const slidePrev = () => {
