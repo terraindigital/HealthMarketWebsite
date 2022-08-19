@@ -29,10 +29,6 @@ export const Wrapper = styled.div`
     &:last-child {
       margin-right: 0;
     }
-
-    &:hover {
-      background-color: var(--color-dark);
-    }
   }
 `
 

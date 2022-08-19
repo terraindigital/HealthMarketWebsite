@@ -22,7 +22,7 @@ interface Props {
 
 const Carousel: FC<Props> = ({ type, background, children }) => {
   const bgStyle = (background) ? ((background === "half") ? "half-background" : "full-background") : ""
-  const [current, setCurrent] = useState(1);
+  const [current, setCurrent] = useState(0);
 
   if (type === "reviews") {
     return (
@@ -77,8 +77,12 @@ const Carousel: FC<Props> = ({ type, background, children }) => {
 
         onTouchEnd={(swiper) => {
           setTimeout(() => {
-            setCurrent(swiper.activeIndex);
+            setCurrent(new Date().getTime());
           }, 100);
+        }}
+
+        onResize={(swiper) => {
+          setCurrent(new Date().getTime());
         }}
         >
         <Tiles>
