@@ -8,6 +8,7 @@ export const useFooterProductMenuQuery = () => {
           nodes {
             id
             label
+            cssClasses
             url
           }
         }

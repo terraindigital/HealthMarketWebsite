@@ -8,6 +8,7 @@ export const useFooterConnectMenuQuery = () => {
           nodes {
             id
             label
+            cssClasses
             url
           }
         }

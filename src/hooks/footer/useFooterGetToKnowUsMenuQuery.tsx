@@ -8,6 +8,7 @@ export const useFooterGetToKnowUsMenuQuery = () => {
           nodes {
             id
             label
+            cssClasses
             url
           }
         }

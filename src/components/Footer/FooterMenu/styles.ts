@@ -25,8 +25,14 @@ export const Wrapper = styled.div`
     cursor: pointer;
     padding: 0.5rem 0px;
 
-    &:hover {
-      text-decoration: underline;
+    &.reg-mark {
+      position: relative;
+  
+      &:after {
+        content: '®';
+        font-size: 70%;
+        vertical-align: top;
+      }
     }
   }
 
@@ -37,10 +43,6 @@ export const Wrapper = styled.div`
     &:hover {
       text-decoration: underline;
     }
-  }
-
-  .fitscore-menu-item {
-    background: red;
   }
 
   @media only screen and (max-width: 620px) {

@@ -14,7 +14,7 @@ const FooterMenu: FC<Props> = ({ menu, title }) => (
     <h6>{title}</h6>
     <ul>
       {menu.menuItems.nodes.map(item =>
-        <li key={item.id} className="item">
+        <li key={item.id} className={`item ${item.cssClasses.map(className => className)}`}>
           <Link to={item.url} activeClassName="active">
             {item.label}
           </Link>
