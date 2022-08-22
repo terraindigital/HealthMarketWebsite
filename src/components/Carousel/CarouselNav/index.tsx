@@ -40,7 +40,20 @@ const CarouselNav: FC<Props> =  ({count, current}) => {
   }, [active])
 
   useEffect(() => {
-    setActive(swiper.activeIndex);
+    if (swiper.touches.diff > 0) {
+      if (active > swiper.activeIndex) {
+        setActive(swiper.activeIndex);
+      }
+    }
+
+    console.log(active);
+    if (swiper.touches.diff < 0) {
+      if (active >= swiper.activeIndex && count > active + 1) {
+        setActive( active + 1);
+      } else {
+        setActive(swiper.activeIndex);
+      }
+    }
   }, [current]);
 
   const slidePrev = () => {

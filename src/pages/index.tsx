@@ -46,22 +46,31 @@ const IndexPage = ({path}: PageProps) => {
                 subheading="Save time and let us search for you—it's fast, free, and fair."
                 color="light">
                 <Carousel type="tiles">
-                    <Tile
-                        image={home.homePageCustomFields.wwo.medicare.sourceUrl}
-                        title="Medicare"/>
-                    <Tile
-                        image={home.homePageCustomFields.wwo.dental.sourceUrl}
-                        title="Dental"
+                <Tile
+                        image={home.homePageCustomFields.wwo.hpTile1.image.sourceUrl}
+                        title={home.homePageCustomFields.wwo.hpTile1.title}
+                        link={home.homePageCustomFields.wwo.hpTile1.link}
                         />
                     <Tile
-                        image={home.homePageCustomFields.wwo.vision.sourceUrl}
-                        title="Vision"/>
+                        image={home.homePageCustomFields.wwo.hpTile2.image.sourceUrl}
+                        title={home.homePageCustomFields.wwo.hpTile2.title}
+                        link={home.homePageCustomFields.wwo.hpTile2.link}
+                        />
                     <Tile
-                        image={home.homePageCustomFields.wwo.health.sourceUrl}
-                        title="Health"/>
+                        image={home.homePageCustomFields.wwo.hpTile3.image.sourceUrl}
+                        title={home.homePageCustomFields.wwo.hpTile3.title}
+                        link={home.homePageCustomFields.wwo.hpTile3.link}
+                        />
                     <Tile
-                        image={home.homePageCustomFields.wwo.supplemental.sourceUrl}
-                        title="Supplemental"/>
+                        image={home.homePageCustomFields.wwo.hpTile4.image.sourceUrl}
+                        title={home.homePageCustomFields.wwo.hpTile4.title}
+                        link={home.homePageCustomFields.wwo.hpTile4.link}
+                        />
+                    <Tile
+                        image={home.homePageCustomFields.wwo.hpTile5.image.sourceUrl}
+                        title={home.homePageCustomFields.wwo.hpTile5.title}
+                        link={home.homePageCustomFields.wwo.hpTile5.link}
+                        />
                 </Carousel>
             </Section>
             <Medial color="primary">

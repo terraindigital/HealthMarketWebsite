@@ -18,9 +18,15 @@ export const Wrapper = styled.div`
     }
   }
 
+  & > a {
+    display: block;
+  }
+  
   .gatsby-image-wrapper {
     margin-bottom: 0;
   }
+
+
 
   h2 {
     color: var(--color-light);

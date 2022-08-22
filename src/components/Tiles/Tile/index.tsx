@@ -8,13 +8,15 @@ interface Props {
   icon?: String,
   title: String,
   selected?: boolean,
+  link?: String,
   children: ReactNode
 }
 
-const Tile: FC<Props> = ({ image, title, selected, children }) => {
+const Tile: FC<Props> = ({ image, title, selected, link, children }) => {
 
   return (
     <Wrapper className={(selected) ? `tile selected` : `tile`}>
+      <a href={link} title={title}>
       <img
         src={image}
         placeholder="BLURRED"
@@ -26,6 +28,7 @@ const Tile: FC<Props> = ({ image, title, selected, children }) => {
         <h2>{title}</h2>
         {children}
       </Content>
+      </a>
     </Wrapper>
   )
 }

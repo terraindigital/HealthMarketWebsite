@@ -7,20 +7,40 @@ export const useHomePageQuery = () => {
         id
         homePageCustomFields {
           wwo {
-            medicare {
-              sourceUrl
+            hpTile1 {
+              image {
+                sourceUrl
+              }
+              title
+              link
             }
-            dental {
-              sourceUrl
+            hpTile2 {
+              image {
+                sourceUrl
+              }
+              title
+              link
             }
-            vision {
-              sourceUrl
+            hpTile3 {
+              image {
+                sourceUrl
+              }
+              title
+              link
             }
-            health {
-              sourceUrl
+            hpTile4 {
+              image {
+                sourceUrl
+              }
+              title
+              link
             }
-            supplemental {
-              sourceUrl
+            hpTile5 {
+              image {
+                sourceUrl
+              }
+              title
+              link
             }
           }
           listItem1 {
