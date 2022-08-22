@@ -130,6 +130,9 @@ export const useSupplementalPageQuery = () => {
             }
           }
         }
+        disclaimers {
+          disclaimer
+        }
       }
     }
 

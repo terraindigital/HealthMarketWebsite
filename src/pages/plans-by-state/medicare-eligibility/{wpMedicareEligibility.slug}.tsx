@@ -16,6 +16,7 @@ import SplitSection from '../../../components/Sections/SplitSection';
 import Button from '../../../components/Buttons/Button';
 import Input from "../../../components/Inputs/Input"
 import Seo from "../../../components/SEO";
+import Footer from "../../../components/Footer";
 
 interface PageInfo {
   page: {
@@ -28,6 +29,8 @@ interface PageInfo {
 
 const MedicareEligibilityPage = ({data}: { data: PageInfo }) => {
   const { page } = data
+
+  console.log(page)
 
   return (
     <Layout staticHeader>
@@ -58,6 +61,9 @@ const MedicareEligibilityPage = ({data}: { data: PageInfo }) => {
           <p>Call us 24/7 at <a href="tel:(800) 439-6916">(800) 439-6916</a> or <a href="http://agents.healthmarkets.com/" rel="noopener" target="_blank">Find an Agent</a> near you.</p>
         </RightContent>
       </SplitSection>
+      <Footer>
+        <div dangerouslySetInnerHTML={{ __html: page.disclaimers.disclaimer }} />
+      </Footer>
     </Layout>
   )
 }
@@ -71,6 +77,9 @@ export const pageQuery = graphql`
       title
       slug
       content
+      disclaimers {
+        disclaimer
+      }
     }
   }
 `

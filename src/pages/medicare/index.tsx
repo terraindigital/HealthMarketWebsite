@@ -31,6 +31,7 @@ import Carousel from "../../components/Carousel";
 import Review from "../../components/Reviews/Review";
 import Medial from "../../components/Example/Medials";
 import Reviews from "../../components/Reviews";
+import Footer from "../../components/Footer";
 
 const MedicarePage = () => {
   const { page } = useMedicarePageQuery();
@@ -152,6 +153,9 @@ const MedicarePage = () => {
             </div>
         </div>
       </Section>
+      <Footer>
+        <div dangerouslySetInnerHTML={{ __html: page.disclaimers.disclaimer }} />
+      </Footer>
     </Layout>
   )
 }

@@ -15,6 +15,7 @@ import Section from '../../components/Sections';
 import Cards from '../../components/Cards';
 import Card from '../../components/Cards/Card';
 import Button from '../../components/Buttons/Button';
+import Footer from '../../components/Footer';
 
 const ResourceCenterPage = () => {
   const { page } = useContentPageQuery();
@@ -97,6 +98,9 @@ const ResourceCenterPage = () => {
           <Button background="accent" border="accent" color="light">View more articles</Button>
         </div>
       </Section>
+      <Footer>
+        <div dangerouslySetInnerHTML={{ __html: page.disclaimers.disclaimer }} />
+      </Footer>
     </Layout>
   );
 };

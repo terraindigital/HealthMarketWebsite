@@ -130,6 +130,9 @@ export const useResourceCenterPageQuery = () => {
             }
           }
         }
+        disclaimers {
+          disclaimer
+        }
       }
     }
   `)

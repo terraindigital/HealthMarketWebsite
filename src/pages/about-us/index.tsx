@@ -18,6 +18,7 @@ import {
 // Components
 import Layout from "../../components/Layout";
 import Seo from "../../components/SEO";
+import Footer from "../../components/Footer";
 
 const AboutUsPage = () => {
   const { page } = useAboutUsPageQuery()
@@ -66,6 +67,9 @@ const AboutUsPage = () => {
           <div dangerouslySetInnerHTML={{ __html: page.gatsbyCustomFields.gpAboutContent }} />
         </Inner>
       </Wrapper>
+      <Footer>
+        <div dangerouslySetInnerHTML={{ __html: page.disclaimers.disclaimer }} />
+      </Footer>
     </Layout>
   )
 }

@@ -58,6 +58,9 @@ export const useMedicarePageQuery = () => {
             }
           }
         }
+        disclaimers {
+          disclaimer
+        }
       }
     }
   `)

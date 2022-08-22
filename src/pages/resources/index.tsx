@@ -21,6 +21,7 @@ import Card from '../../components/Cards/Card';
 import Flag from '../../components/Flag';
 import Icons from '../../components/Icons';
 import Icon from '../../components/Icons/Icon';
+import Footer from '../../components/Footer';
 
 const ResourceCenterPage = ({location}) => {
   const { page } = useResourceCenterPageQuery();
@@ -215,6 +216,9 @@ const ResourceCenterPage = ({location}) => {
           </span>
         </div>
       </Medial>
+      <Footer>
+        <div dangerouslySetInnerHTML={{ __html: page.disclaimers.disclaimer }} />
+      </Footer>
     </Layout>
   );
 };

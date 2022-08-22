@@ -66,6 +66,9 @@ export const useHomePageQuery = () => {
           headline
           subheadline
         }
+        disclaimers {
+          disclaimer
+        }
       }
     }
   `)

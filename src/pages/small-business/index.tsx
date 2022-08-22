@@ -20,6 +20,7 @@ import {
 // Components
 import Layout from "../../components/Layout";
 import Seo from "../../components/SEO";
+import Footer from "../../components/Footer";
 
 const SmallBusinessPage = () => {
   const { page } = useSmallBusinessPageQuery()
@@ -167,6 +168,9 @@ const SmallBusinessPage = () => {
           </BenefitsResourcesChild>
         </BenefitsResourcesInner>
       </BenefitsResourcesWrapper>
+      <Footer>
+        <div dangerouslySetInnerHTML={{ __html: page.disclaimers.disclaimer }} />
+      </Footer>
     </Layout>
   )
 }

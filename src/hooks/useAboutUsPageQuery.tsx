@@ -28,6 +28,9 @@ export const useAboutUsPageQuery = () => {
           }
           gpAboutContent
         }
+        disclaimers {
+          disclaimer
+        }
       }
     }
   `)

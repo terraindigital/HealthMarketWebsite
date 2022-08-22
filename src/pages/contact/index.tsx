@@ -2,6 +2,9 @@
 import * as React from 'react';
 import { Global } from '@emotion/react';
 
+// Queries
+import { useContactPageQuery } from '../../hooks/useContactPageQuery';
+
 // Styles
 import { PageStyles } from "./styles"
 
@@ -17,8 +20,11 @@ import SplitSection from '../../components/Sections/SplitSection';
 import Button from '../../components/Buttons/Button';
 import Carousel from '../../components/Carousel';
 import Review from '../../components/Reviews/Review';
+import Footer from '../../components/Footer';
 
 const ContactPage = () => {
+  const { page } = useContactPageQuery();
+
   return (
     <Layout staticHeader>
       <Global styles={PageStyles}/>
@@ -77,6 +83,9 @@ const ContactPage = () => {
           </div>
         </SplitSection>
       </Section>
+      <Footer>
+        <div dangerouslySetInnerHTML={{ __html: page.disclaimers.disclaimer }} />
+      </Footer>
     </Layout>
   )
 }

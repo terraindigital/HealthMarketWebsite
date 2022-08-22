@@ -24,6 +24,7 @@ import {
 // Components
 import Layout from "../../components/Layout";
 import Seo from "../../components/SEO";
+import Footer from "../../components/Footer";
 
 const LifeInsurancePage = () => {
   const { page } = useLifeInsurancePageQuery()
@@ -244,6 +245,9 @@ const LifeInsurancePage = () => {
           </ResourcesChild>
         </ResourcesInner>
       </ResourcesWrapper>
+      <Footer>
+        <div dangerouslySetInnerHTML={{ __html: page.disclaimers.disclaimer }} />
+      </Footer>
     </Layout>
   )
 }

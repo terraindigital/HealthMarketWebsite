@@ -81,6 +81,9 @@ query($slug: String!)
                     }
                 }
             }
+            disclaimers {
+                disclaimer
+            }
         }
     }
 `

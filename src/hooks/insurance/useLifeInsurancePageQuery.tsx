@@ -111,6 +111,9 @@ export const useLifeInsurancePageQuery = () => {
             }
           }
         }
+        disclaimers {
+          disclaimer
+        }
       }
     }
   `)

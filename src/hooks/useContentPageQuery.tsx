@@ -51,6 +51,9 @@ export const useContentPageQuery = () => {
             }
           }
         }
+        disclaimers {
+          disclaimer
+        }
       }
     }
   `)

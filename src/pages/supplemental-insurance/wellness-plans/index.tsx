@@ -22,6 +22,7 @@ import {
 // Components
 import Layout from "../../../components/Layout";
 import Seo from "../../../components/SEO";
+import Footer from "../../../components/Footer";
 
 const WellnessPage = () => {
   const { page } = useWellnessPageQuery()
@@ -153,6 +154,9 @@ const WellnessPage = () => {
           </Aside>
         </Inner>
       </Wrapper>
+      <Footer>
+        <div dangerouslySetInnerHTML={{ __html: page.disclaimers.disclaimer }} />
+      </Footer>
     </Layout>
   )
 }

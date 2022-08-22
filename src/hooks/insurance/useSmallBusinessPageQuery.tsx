@@ -93,6 +93,9 @@ export const useSmallBusinessPageQuery = () => {
             }
           }
         }
+        disclaimers {
+          disclaimer
+        }
       }
     }
   `)

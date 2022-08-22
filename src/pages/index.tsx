@@ -23,6 +23,7 @@ import List from '../components/Lists';
 import ListItem from '../components/Lists/ListItem';
 import Reviews from '../components/Reviews';
 import Review from '../components/Reviews/Review';
+import Footer from '../components/Footer';
 
 // Images
 import ChatBubble from "../images/contact-cta-image.png"
@@ -150,6 +151,9 @@ const IndexPage = ({path}: PageProps) => {
                     </div>
                 </div>
             </Section>
+            <Footer>
+                <div dangerouslySetInnerHTML={{ __html: home.disclaimers.disclaimer }} />
+            </Footer>
         </Layout>
     );
 };

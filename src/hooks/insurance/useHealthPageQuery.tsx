@@ -156,6 +156,9 @@ export const useHealthPageQuery = () => {
             }
           }
         }
+        disclaimers {
+          disclaimer
+        }
       }
     }
   `)

@@ -48,6 +48,9 @@ export const useWellnessPageQuery = () => {
             }
           }
         }
+        disclaimers {
+          disclaimer
+        }
       }
     }
   `)

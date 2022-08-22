@@ -27,6 +27,7 @@ import Accordion from '../../components/Accordions';
 import Section from '../../components/Sections';
 import Cards from '../../components/Cards';
 import Card from '../../components/Cards/Card';
+import Footer from '../../components/Footer';
 
 const HowWeHelpPage = () => {
   const { hwh } = useHowWeHelpPageQuery();
@@ -130,7 +131,7 @@ const HowWeHelpPage = () => {
         </a>
       </FlexedSection>
       <Section
-        heading="We’re committed to your privacy"
+        heading="We're committed to your privacy"
         subheading="We understand the importance of keeping your personally identifiable information safe. We protect it, as required by federal law."
         color="primary">
         <Cards openAtMobile>
@@ -156,6 +157,9 @@ const HowWeHelpPage = () => {
           </a>
         </div>
       </Section>
+      <Footer>
+        <div dangerouslySetInnerHTML={{ __html: hwh.disclaimers.disclaimer }} />
+      </Footer>
     </Layout>
   );
 };

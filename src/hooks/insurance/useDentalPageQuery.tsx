@@ -54,6 +54,9 @@ export const useDentalPageQuery = () => {
             }
           }
         }
+        disclaimers {
+          disclaimer
+        }
       }
     }
   `)

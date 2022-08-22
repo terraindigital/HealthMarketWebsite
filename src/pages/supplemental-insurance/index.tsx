@@ -30,6 +30,7 @@ import Card from "../../components/Cards/Card";
 import Carousel from "../../components/Carousel";
 import Review from "../../components/Reviews/Review";
 import Reviews from "../../components/Reviews";
+import Footer from "../../components/Footer";
 
 const HealthInsurancePage = () => {
   const { page } = useSupplementalPageQuery();
@@ -138,6 +139,9 @@ const HealthInsurancePage = () => {
           <Button background="accent" border="accent" color="light">View more articles</Button>
         </div>
       </Section>
+      <Footer>
+        <div dangerouslySetInnerHTML={{ __html: page.disclaimers.disclaimer }} />
+      </Footer>
     </Layout>
   )
 }

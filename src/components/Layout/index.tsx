@@ -19,7 +19,6 @@ const Layout: FC<Props> = ({ pageClass, staticHeader, headerColor, children }) =
             <Global styles={GlobalStyles}/>
             <Header staticHeader={staticHeader} color={headerColor}/>
             {children}
-            <Footer />
         </Wrapper>
     )
 };

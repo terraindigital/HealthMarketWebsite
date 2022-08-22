@@ -12,6 +12,7 @@ import SmallBusinessIcon from "./icons/smallBusiness";
 import ChoiceIcon from "./icons/choice";
 import ConvenienceIcon from "./icons/convenience";
 import CounselIcon from "./icons/counsel";
+import Footer from "../../Footer";
 
 interface Proof {
     title: string;
@@ -373,6 +374,9 @@ const Template: FC<Prop> = ({data, pageType}) => {
                     }
                 </div>
             </div>
+            <Footer>
+                <div dangerouslySetInnerHTML={{ __html: data.page.disclaimers.disclaimer }} />
+            </Footer>
         </Layout>
     )
 }

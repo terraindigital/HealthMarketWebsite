@@ -138,6 +138,9 @@ export const usePlansPageQuery = () => {
             }
           }
         }
+        disclaimers {
+          disclaimer
+        }
       }
     }
   `)

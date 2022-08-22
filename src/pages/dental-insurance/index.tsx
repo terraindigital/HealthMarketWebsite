@@ -30,6 +30,7 @@ import Accordion from "../../components/Accordions";
 import Carousel from "../../components/Carousel";
 import Review from "../../components/Reviews/Review";
 import Reviews from "../../components/Reviews";
+import Footer from "../../components/Footer";
 
 const HealthInsurancePage = () => {
   const { page } = useDentalPageQuery();
@@ -135,6 +136,9 @@ const HealthInsurancePage = () => {
           <Button background="accent" border="accent" color="light">Get a free quote</Button>
         </div>
       </Section>
+      <Footer>
+        <div dangerouslySetInnerHTML={{ __html: page.disclaimers.disclaimer }} />
+      </Footer>
     </Layout>
   )
 }

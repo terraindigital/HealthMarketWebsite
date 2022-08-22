@@ -99,6 +99,9 @@ export const useHowWeHelpPageQuery = () => {
             content
           }
         }
+        disclaimers {
+          disclaimer
+        }
       }
     }
   `)
