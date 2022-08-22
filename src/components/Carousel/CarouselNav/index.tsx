@@ -40,13 +40,16 @@ const CarouselNav: FC<Props> =  ({count, current}) => {
   }, [active])
 
   useEffect(() => {
+
+    // right touch
     if (swiper.touches.diff > 0) {
       if (active > swiper.activeIndex) {
         setActive(swiper.activeIndex);
       }
     }
+    
 
-    console.log(active);
+    // left touch
     if (swiper.touches.diff < 0) {
       if (active >= swiper.activeIndex && count > active + 1) {
         setActive( active + 1);
