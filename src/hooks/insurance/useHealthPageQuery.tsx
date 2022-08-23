@@ -16,143 +16,163 @@ export const useHealthPageQuery = () => {
           }
         }
         healthPageCustomFields {
-          healthCards {
-            healthCard1 {
-              icon {
-                sourceUrl
+          healthSection1 {
+            heading
+            healthCards {
+              healthCard1 {
+                icon {
+                  sourceUrl
+                }
+                title
+                content
               }
-              title
-              content
-            }
-            healthCard2 {
-              icon {
-                sourceUrl
+              healthCard2 {
+                icon {
+                  sourceUrl
+                }
+                title
+                content
               }
-              title
-              content
-            }
-            healthCard3 {
-              icon {
-                sourceUrl
+              healthCard3 {
+                icon {
+                  sourceUrl
+                }
+                title
+                content
               }
-              title
-              content
             }
           }
-          healthPlans {
-            healthPlan1 {
-              icon {
-                sourceUrl
+          healthSection2 {
+            heading
+            healthAccordions {
+              healthAccordion1 {
+                title
+                content
               }
-              title
-              link
+              healthAccordion2 {
+                title
+                content
+              }
+              healthAccordion3 {
+                title
+                content
+              }
             }
-            healthPlan2 {
-              icon {
-                sourceUrl
-              }
-              title
+            cta {
               link
-            }
-            healthPlan3 {
-              icon {
-                sourceUrl
-              }
-              title
-              link
-            }
-            healthPlan4 {
-              icon {
-                sourceUrl
-              }
-              title
-              link
-            }
-            healthPlan5 {
-              icon {
-                sourceUrl
-              }
-              title
-              link
-            }
-            healthPlan6 {
-              icon {
-                sourceUrl
-              }
-              title
-              link
-            }
-            healthPlan7 {
-              icon {
-                sourceUrl
-              }
-              title
-              link
-            }
-            healthPlan8 {
-              icon {
-                sourceUrl
-              }
-              title
-              link
-            }
-            healthPlan9 {
-              icon {
-                sourceUrl
-              }
-              title
-              link
-            }
-            healthPlan10 {
-              icon {
-                sourceUrl
-              }
-              title
-              link
-            }
-            healthPlan11 {
-              icon {
-                sourceUrl
-              }
-              title
-              link
+              text
             }
           }
-          healthAccordions {
-            healthAccordion1 {
-              title
-              content
-            }
-            healthAccordion2 {
-              title
-              content
-            }
-            healthAccordion3 {
-              title
-              content
+          healthSection3 {
+            heading
+            healthPlans {
+              healthPlan1 {
+                icon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              healthPlan2 {
+                icon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              healthPlan3 {
+                icon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              healthPlan4 {
+                icon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              healthPlan5 {
+                icon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              healthPlan6 {
+                icon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              healthPlan7 {
+                icon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              healthPlan8 {
+                icon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              healthPlan9 {
+                icon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              healthPlan10 {
+                icon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              healthPlan11 {
+                icon {
+                  sourceUrl
+                }
+                title
+                link
+              }
             }
           }
-          healthRelatedContent {
-            healthRelatedContent1 {
-              image {
-                sourceUrl
+          healthSection4 {
+            heading
+            healthRelatedContent {
+              healthRelatedContent1 {
+                image {
+                  sourceUrl
+                }
+                heading
+                content
               }
-              heading
-              content
+              healthRelatedContent2 {
+                image {
+                  sourceUrl
+                }
+                heading
+                content
+              }
+              healthRelatedContent3 {
+                image {
+                  sourceUrl
+                }
+                heading
+                content
+              }
             }
-            healthRelatedContent2 {
-              image {
-                sourceUrl
-              }
-              heading
-              content
-            }
-            healthRelatedContent3 {
-              image {
-                sourceUrl
-              }
-              heading
-              content
+            cta {
+              link
+              text
             }
           }
         }

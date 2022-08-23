@@ -16,87 +16,118 @@ export const useHowWeHelpPageQuery = () => {
           }
         }
         howWeHelpCustomFields {
-          hwhListItem1 {
+          hwhSection1 {
             heading
-            content
-          }
-          hwhListItem2 {
-            heading
-            content
-          }
-          hwhListItem3 {
-            heading
-            content
-          }
-          block1 {
-            image {
-              sourceUrl
+            hwhListItems {
+              hwhListItem1 {
+                heading
+                content
+              }
+              hwhListItem2 {
+                heading
+                content
+              }
+              hwhListItem3 {
+                heading
+                content
+              }
             }
-            heading
-            content
-            button {
-              text
+            cta {
               link
-            }
-          }
-          block2 {
-            image {
-              sourceUrl
-            }
-            heading
-            content
-            button {
               text
-              link
             }
           }
-          block3 {
-            image {
-              sourceUrl
+          hwhSection2 {
+            hwhBlocks {
+              hwhBlock1 {
+                image {
+                  sourceUrl
+                }
+                heading
+                content
+                button {
+                  link
+                  text
+                }
+              }
+              hwhBlock2 {
+                image {
+                  sourceUrl
+                }
+                heading
+                content
+                button {
+                  link
+                  text
+                }
+              }
+              hwhBlock3 {
+                image {
+                  sourceUrl
+                }
+                heading
+                content
+                button {
+                  link
+                  text
+                }
+              }
             }
+          }
+          hwhSection3 {
             heading
-            content
-            button {
+            hwhAccordions {
+              hwhAccordion1 {
+                heading
+                content
+              }
+              hwhAccordion2 {
+                heading
+                content
+              }
+              hwhAccordion3 {
+                heading
+                content
+              }
+              hwhAccordion4 {
+                heading
+                content
+              }
+            }
+            cta {
+              link
               text
+            }
+          }
+          hwhSection4 {
+            heading
+            hwhCards {
+              hwhCard1 {
+                icon {
+                  sourceUrl
+                }
+                heading
+                content
+              }
+              hwhCard2 {
+                icon {
+                  sourceUrl
+                }
+                heading
+                content
+              }
+              hwhCard3 {
+                icon {
+                  sourceUrl
+                }
+                heading
+                content
+              }
+            }
+            cta {
               link
+              text
             }
-          }
-          accordionField1 {
-            heading
-            content
-          }
-          accordionField2 {
-            heading
-            content
-          }
-          accordionField3 {
-            heading
-            content
-          }
-          accordionField4 {
-            heading
-            content
-          }
-          iconCard1 {
-            icon {
-              sourceUrl
-            }
-            heading
-            content
-          }
-          iconCard2 {
-            icon {
-              sourceUrl
-            }
-            heading
-            content
-          }
-          iconCard3 {
-            icon {
-              sourceUrl
-            }
-            heading
-            content
           }
         }
         disclaimers {

@@ -36,7 +36,7 @@ import Footer from "../../components/Footer";
 
 const HealthInsurancePage = () => {
   const { page } = useHealthPageQuery();
-  const plans = page.healthPageCustomFields.healthPlans
+  const plans = page.healthPageCustomFields.healthSection3.healthPlans
 
   return (
     <Layout pageClass="health-insurance">
@@ -52,28 +52,46 @@ const HealthInsurancePage = () => {
       <Section
         page="health-insurance"
         color="primary"
-        heading="Insurance to fit your life">
+        heading={page.healthPageCustomFields.healthSection1.heading}>
         <Cards openAtMobile>
           <Card
-            icon={page.healthPageCustomFields.healthCards.healthCard1.icon.sourceUrl}
-            title={page.healthPageCustomFields.healthCards.healthCard1.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthCards.healthCard1.content }} />
+            icon={page.healthPageCustomFields.healthSection1.healthCards.healthCard1.icon.sourceUrl}
+            title={page.healthPageCustomFields.healthSection1.healthCards.healthCard1.title}>
+            <div dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection1.healthCards.healthCard1.content }} />
           </Card>
           <Card
-            icon={page.healthPageCustomFields.healthCards.healthCard2.icon.sourceUrl}
-            title={page.healthPageCustomFields.healthCards.healthCard2.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthCards.healthCard2.content }} />
+            icon={page.healthPageCustomFields.healthSection1.healthCards.healthCard2.icon.sourceUrl}
+            title={page.healthPageCustomFields.healthSection1.healthCards.healthCard2.title}>
+            <div dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection1.healthCards.healthCard2.content }} />
           </Card>
           <Card
-            icon={page.healthPageCustomFields.healthCards.healthCard3.icon.sourceUrl}
-            title={page.healthPageCustomFields.healthCards.healthCard3.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthCards.healthCard3.content }} />
+            icon={page.healthPageCustomFields.healthSection1.healthCards.healthCard3.icon.sourceUrl}
+            title={page.healthPageCustomFields.healthSection1.healthCards.healthCard3.title}>
+            <div dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection1.healthCards.healthCard3.content }} />
           </Card>
         </Cards>
       </Section>
+      <FlexedSection
+        color="light"
+        heading={page.healthPageCustomFields.healthSection2.heading}>
+        <Accordion
+          title={page.healthPageCustomFields.healthSection2.healthAccordions.healthAccordion1.title}
+          content={page.healthPageCustomFields.healthSection2.healthAccordions.healthAccordion1.content} />
+        <Accordion
+          title={page.healthPageCustomFields.healthSection2.healthAccordions.healthAccordion2.title}
+          content={page.healthPageCustomFields.healthSection2.healthAccordions.healthAccordion2.content} />
+        <Accordion
+          title={page.healthPageCustomFields.healthSection2.healthAccordions.healthAccordion3.title}
+          content={page.healthPageCustomFields.healthSection2.healthAccordions.healthAccordion3.content} />
+        <div className="hide-at-mobile">
+          <a href="https://www.healthmarkets.com/plans/aca-health/">
+            <Button background="accent" border="accent" color="light">Show me options</Button>
+          </a>
+        </div>
+      </FlexedSection>
       <Section
         color="primary"
-        heading="Our Plans">
+        heading={page.healthPageCustomFields.healthSection3.heading}>
         <Icons>
           {(plans) ? (
             Object.keys(plans).map((plan) => {
@@ -87,24 +105,6 @@ const HealthInsurancePage = () => {
           ) : null}
         </Icons>
       </Section>
-      <FlexedSection
-        color="light"
-        heading="Health insurance">
-        <Accordion
-          title={page.healthPageCustomFields.healthAccordions.healthAccordion1.title}
-          content={page.healthPageCustomFields.healthAccordions.healthAccordion1.content} />
-        <Accordion
-          title={page.healthPageCustomFields.healthAccordions.healthAccordion2.title}
-          content={page.healthPageCustomFields.healthAccordions.healthAccordion2.content} />
-        <Accordion
-          title={page.healthPageCustomFields.healthAccordions.healthAccordion3.title}
-          content={page.healthPageCustomFields.healthAccordions.healthAccordion3.content} />
-        <div className="hide-at-mobile">
-          <a href="https://www.healthmarkets.com/plans/aca-health/">
-            <Button background="accent" border="accent" color="light">Show me options</Button>
-          </a>
-        </div>
-      </FlexedSection>
       <Section color="light">
         <div className="hide-at-mobile">
           <Carousel type="reviews" background="half">
@@ -153,22 +153,24 @@ const HealthInsurancePage = () => {
             </div>
         </div>
       </Section>
-      <Section color="primary" heading="Related content">
+      <Section
+        color="primary"
+        heading={page.healthPageCustomFields.healthSection4.heading}>
         <Cards>
           <Card
-            image={page.healthPageCustomFields.healthRelatedContent.healthRelatedContent1.image.sourceUrl}
-            title={page.healthPageCustomFields.healthRelatedContent.healthRelatedContent1.heading}>
-            <div dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthRelatedContent.healthRelatedContent1.content}} />
+            image={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent1.image.sourceUrl}
+            title={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent1.heading}>
+            <div dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent1.content}} />
           </Card>
           <Card
-            image={page.healthPageCustomFields.healthRelatedContent.healthRelatedContent2.image.sourceUrl}
-            title={page.healthPageCustomFields.healthRelatedContent.healthRelatedContent2.heading}>
-            <div dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthRelatedContent.healthRelatedContent2.content}} />
+            image={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent2.image.sourceUrl}
+            title={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent2.heading}>
+            <div dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent2.content}} />
           </Card>
           <Card
-            image={page.healthPageCustomFields.healthRelatedContent.healthRelatedContent3.image.sourceUrl}
-            title={page.healthPageCustomFields.healthRelatedContent.healthRelatedContent3.heading}>
-            <div dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthRelatedContent.healthRelatedContent3.content}} />
+            image={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent3.image.sourceUrl}
+            title={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent3.heading}>
+            <div dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent3.content}} />
           </Card>
         </Cards>
         <div className="full-rounded" style={{ textAlign: "center" }}>

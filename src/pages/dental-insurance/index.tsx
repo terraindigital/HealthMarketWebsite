@@ -12,10 +12,6 @@ import {
   HeroSubheading
 } from "./styles";
 
-// Images
-import MapPin from "../../images/location.png";
-import PhoneIcon from "../../images/phone-icon.png"
-
 // Components
 import Layout from "../../components/Layout";
 import Seo from "../../components/SEO";
@@ -48,16 +44,16 @@ const HealthInsurancePage = () => {
       </Hero>
       <FlexedSection
         color="light"
-        heading="Dental insurance">
+        heading={page.dentalPageCustomFields.dentalSection1.heading}>
         <Accordion
-          title={page.dentalPageCustomFields.dentalAccordions.dentalAccordion1.heading}
-          content={page.dentalPageCustomFields.dentalAccordions.dentalAccordion1.content} />
+          title={page.dentalPageCustomFields.dentalSection1.dentalAccordions.dentalAccordion1.heading}
+          content={page.dentalPageCustomFields.dentalSection1.dentalAccordions.dentalAccordion1.content} />
         <Accordion
-          title={page.dentalPageCustomFields.dentalAccordions.dentalAccordion2.heading}
-          content={page.dentalPageCustomFields.dentalAccordions.dentalAccordion2.content} />
+          title={page.dentalPageCustomFields.dentalSection1.dentalAccordions.dentalAccordion2.heading}
+          content={page.dentalPageCustomFields.dentalSection1.dentalAccordions.dentalAccordion2.content} />
         <Accordion
-          title={page.dentalPageCustomFields.dentalAccordions.dentalAccordion3.heading}
-          content={page.dentalPageCustomFields.dentalAccordions.dentalAccordion3.content} />
+          title={page.dentalPageCustomFields.dentalSection1.dentalAccordions.dentalAccordion3.heading}
+          content={page.dentalPageCustomFields.dentalSection1.dentalAccordions.dentalAccordion3.content} />
         <div className="hide-at-mobile">
           <a href="https://shop.healthmarkets.com/dental">
             <Button background="accent" border="accent" color="light">Show me options</Button>
@@ -114,26 +110,30 @@ const HealthInsurancePage = () => {
       </Section>
       <Section
         color="primary"
-        heading="Learn more about dental insurance">
+        heading={page.dentalPageCustomFields.dentalSection2.heading}>
         <Cards>
           <Card
-            image={page.dentalPageCustomFields.dentalRelatedContent.dentalRelatedContent1.image.sourceUrl}
-            title={page.dentalPageCustomFields.dentalRelatedContent.dentalRelatedContent1.heading}>
-            <div dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalRelatedContent.dentalRelatedContent1.content}} />
+            image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.image.sourceUrl}
+            title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.heading}>
+            <div dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.content}} />
           </Card>
           <Card
-            image={page.dentalPageCustomFields.dentalRelatedContent.dentalRelatedContent2.image.sourceUrl}
-            title={page.dentalPageCustomFields.dentalRelatedContent.dentalRelatedContent2.heading}>
-            <div dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalRelatedContent.dentalRelatedContent2.content}} />
+            image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.image.sourceUrl}
+            title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.heading}>
+            <div dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.content}} />
           </Card>
           <Card
-            image={page.dentalPageCustomFields.dentalRelatedContent.dentalRelatedContent3.image.sourceUrl}
-            title={page.dentalPageCustomFields.dentalRelatedContent.dentalRelatedContent3.heading}>
-            <div dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalRelatedContent.dentalRelatedContent3.content}} />
+            image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.image.sourceUrl}
+            title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.heading}>
+            <div dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.content}} />
           </Card>
         </Cards>
         <div className="full-rounded" style={{ textAlign: "center" }}>
-          <Button background="accent" border="accent" color="light">Get a free quote</Button>
+          <a href={page.dentalPageCustomFields.dentalSection2.cta.link}>
+            <Button background="accent" border="accent" color="light">
+              {page.dentalPageCustomFields.dentalSection2.cta.text}
+            </Button>
+          </a>
         </div>
       </Section>
       <Footer>

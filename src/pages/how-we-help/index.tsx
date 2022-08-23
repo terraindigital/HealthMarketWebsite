@@ -32,6 +32,8 @@ import Footer from '../../components/Footer';
 const HowWeHelpPage = () => {
   const { hwh } = useHowWeHelpPageQuery();
 
+  console.log(hwh)
+
   return (
     <Layout pageClass="how-we-help">
       <Global styles={PageStyles}/>
@@ -44,17 +46,17 @@ const HowWeHelpPage = () => {
         <HeroSubheading>{hwh.pageHeroFields.subheadline}</HeroSubheading>
       </Hero>
       <FlexedSection
-        heading="What you get with HealthMarkets"
+        heading={hwh.howWeHelpCustomFields.hwhSection1.heading}
         color="light">
         <List>
-          <ListItem heading={hwh.howWeHelpCustomFields.hwhListItem1.heading}>
-              <p>{hwh.howWeHelpCustomFields.hwhListItem1.content}</p>
+          <ListItem heading={hwh.howWeHelpCustomFields.hwhSection1.hwhListItems.hwhListItem1.heading}>
+              <p>{hwh.howWeHelpCustomFields.hwhSection1.hwhListItems.hwhListItem1.content}</p>
           </ListItem>
-          <ListItem heading={hwh.howWeHelpCustomFields.hwhListItem2.heading}>
-              <p>{hwh.howWeHelpCustomFields.hwhListItem2.content}</p>
+          <ListItem heading={hwh.howWeHelpCustomFields.hwhSection1.hwhListItems.hwhListItem2.heading}>
+              <p>{hwh.howWeHelpCustomFields.hwhSection1.hwhListItems.hwhListItem2.content}</p>
           </ListItem>
-          <ListItem heading={hwh.howWeHelpCustomFields.hwhListItem3.heading}>
-              <p>{hwh.howWeHelpCustomFields.hwhListItem3.content}</p>
+          <ListItem heading={hwh.howWeHelpCustomFields.hwhSection1.hwhListItems.hwhListItem3.heading}>
+              <p>{hwh.howWeHelpCustomFields.hwhSection1.hwhListItems.hwhListItem3.content}</p>
           </ListItem>
         </List>
         <a href="https://shop.healthmarkets.com/">
@@ -63,97 +65,101 @@ const HowWeHelpPage = () => {
       </FlexedSection>
       <SplitSection color="primary">
         <div className="left image">
-          <img src={hwh.howWeHelpCustomFields.block1.image.sourceUrl} alt="woman on computer" />
+          <img src={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.image.sourceUrl} alt="woman on computer" />
         </div>
         <div className="right content">
-          <h1>{hwh.howWeHelpCustomFields.block1.heading}</h1>
-          <p>{hwh.howWeHelpCustomFields.block1.content}</p>
+          <h1>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.heading}</h1>
+          <p>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.content}</p>
           <a href="https://shop.healthmarkets.com/">
-            <Button background="accent" border="accent" color="light">{hwh.howWeHelpCustomFields.block1.button.text}</Button>
+            <Button background="accent" border="accent" color="light">{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.button.text}</Button>
           </a>
         </div>
       </SplitSection>
       <SplitSection color="primary">
         <div className="left content hide-at-mobile">
-          <h1>{hwh.howWeHelpCustomFields.block2.heading}</h1>
-          <p>{hwh.howWeHelpCustomFields.block2.content}</p>
+          <h1>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.heading}</h1>
+          <p>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.content}</p>
           <a href="https://shop.healthmarkets.com/">
-            <Button background="accent" border="accent" color="light">{hwh.howWeHelpCustomFields.block2.button.text}</Button>
+            <Button background="accent" border="accent" color="light">{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.button.text}</Button>
           </a>
         </div>
         <div className="right image hide-at-mobile">
-          <img src={hwh.howWeHelpCustomFields.block2.image.sourceUrl} alt="woman on computer" />
+          <img src={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.image.sourceUrl} alt="woman on computer" />
         </div>
         <div className="left image show-at-mobile">
-          <img src={hwh.howWeHelpCustomFields.block2.image.sourceUrl} alt="woman on computer" />
+          <img src={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.image.sourceUrl} alt="woman on computer" />
         </div>
         <div className="right content show-at-mobile">
-          <h1>{hwh.howWeHelpCustomFields.block2.heading}</h1>
-          <p>{hwh.howWeHelpCustomFields.block2.content}</p>
+          <h1>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.heading}</h1>
+          <p>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.content}</p>
           <a href="https://shop.healthmarkets.com/">
-            <Button background="accent" border="accent" color="light">{hwh.howWeHelpCustomFields.block2.button.text}</Button>
+            <Button background="accent" border="accent" color="light">{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.button.text}</Button>
           </a>
         </div>
       </SplitSection>
       <SplitSection color="primary">
         <div className="left image">
-          <img src={hwh.howWeHelpCustomFields.block3.image.sourceUrl} alt="woman on computer" />
+          <img src={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock3.image.sourceUrl} alt="woman on computer" />
         </div>
         <div className="right content">
-          <h1>{hwh.howWeHelpCustomFields.block3.heading}</h1>
-          <p>{hwh.howWeHelpCustomFields.block3.content}</p>
+          <h1>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock3.heading}</h1>
+          <p>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock3.content}</p>
           <a href="https://shop.healthmarkets.com/">
-            <Button background="accent" border="accent" color="light">{hwh.howWeHelpCustomFields.block3.button.text}</Button>
+            <Button background="accent" border="accent" color="light">{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock3.button.text}</Button>
           </a>
         </div>
       </SplitSection>
       <FlexedSection
-        heading="How we work"
+        heading={hwh.howWeHelpCustomFields.hwhSection3.heading}
         color="light">
         <Accordion
-            title={hwh.howWeHelpCustomFields.accordionField1.heading}
-            content={hwh.howWeHelpCustomFields.accordionField1.content}
+            title={hwh.howWeHelpCustomFields.hwhSection3.hwhAccordions.hwhAccordion1.heading}
+            content={hwh.howWeHelpCustomFields.hwhSection3.hwhAccordions.hwhAccordion1.content}
         />
         <Accordion
-            title={hwh.howWeHelpCustomFields.accordionField2.heading}
-            content={hwh.howWeHelpCustomFields.accordionField2.content}
+            title={hwh.howWeHelpCustomFields.hwhSection3.hwhAccordions.hwhAccordion2.heading}
+            content={hwh.howWeHelpCustomFields.hwhSection3.hwhAccordions.hwhAccordion2.content}
         />
         <Accordion
-            title={hwh.howWeHelpCustomFields.accordionField3.heading}
-            content={hwh.howWeHelpCustomFields.accordionField3.content}
+            title={hwh.howWeHelpCustomFields.hwhSection3.hwhAccordions.hwhAccordion3.heading}
+            content={hwh.howWeHelpCustomFields.hwhSection3.hwhAccordions.hwhAccordion3.content}
         />
         <Accordion
-            title={hwh.howWeHelpCustomFields.accordionField4.heading}
-            content={hwh.howWeHelpCustomFields.accordionField4.content}
+            title={hwh.howWeHelpCustomFields.hwhSection3.hwhAccordions.hwhAccordion4.heading}
+            content={hwh.howWeHelpCustomFields.hwhSection3.hwhAccordions.hwhAccordion4.content}
         />
-        <a href="https://shop.healthmarkets.com/">
-          <Button background="accent" border="accent" color="light">Get your FitScore<sup>&reg;</sup></Button>
+        <a href={hwh.howWeHelpCustomFields.hwhSection3.cta.link}>
+          <Button background="accent" border="accent" color="light">
+            {hwh.howWeHelpCustomFields.hwhSection3.cta.text}
+          </Button>
         </a>
       </FlexedSection>
       <Section
-        heading="We're committed to your privacy"
-        subheading="We understand the importance of keeping your personally identifiable information safe. We protect it, as required by federal law."
+        heading={hwh.howWeHelpCustomFields.hwhSection4.heading}
+        subheading={hwh.howWeHelpCustomFields.hwhSection4.subheading}
         color="primary">
         <Cards openAtMobile>
           <Card
-            icon={hwh.howWeHelpCustomFields.iconCard1.icon.sourceUrl}
-            title={hwh.howWeHelpCustomFields.iconCard1.heading}>
-            <p>{hwh.howWeHelpCustomFields.iconCard1.content}</p>
+            icon={hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard1.icon.sourceUrl}
+            title={hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard1.heading}>
+            <p>{hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard1.content}</p>
           </Card>
           <Card
-            icon={hwh.howWeHelpCustomFields.iconCard2.icon.sourceUrl}
-            title={hwh.howWeHelpCustomFields.iconCard2.heading}>
-            <p>{hwh.howWeHelpCustomFields.iconCard2.content}</p>
+            icon={hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard2.icon.sourceUrl}
+            title={hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard2.heading}>
+            <p>{hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard2.content}</p>
           </Card>
           <Card
-            icon={hwh.howWeHelpCustomFields.iconCard3.icon.sourceUrl}
-            title={hwh.howWeHelpCustomFields.iconCard3.heading}>
-            <p>{hwh.howWeHelpCustomFields.iconCard3.content}</p>
+            icon={hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard3.icon.sourceUrl}
+            title={hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard3.heading}>
+            <p>{hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard3.content}</p>
           </Card>
         </Cards>
         <div className="hide-at-mobile" style={{ textAlign: "center", marginTop: "5.5rem" }}>
-          <a href="https://shop.healthmarkets.com/">
-            <Button background="accent" border="accent" color="light">Find my plan</Button>
+          <a href={hwh.howWeHelpCustomFields.hwhSection4.cta.link}>
+            <Button background="accent" border="accent" color="light">
+              {hwh.howWeHelpCustomFields.hwhSection4.cta.text}
+            </Button>
           </a>
         </div>
       </Section>

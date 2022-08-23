@@ -16,41 +16,55 @@ export const useDentalPageQuery = () => {
           }
         }
         dentalPageCustomFields {
-          dentalAccordions {
-            dentalAccordion1 {
-              heading
-              content
+          dentalSection1 {
+            heading
+            dentalAccordions {
+              dentalAccordion1 {
+                heading
+                content
+              }
+              dentalAccordion2 {
+                heading
+                content
+              }
+              dentalAccordion3 {
+                heading
+                content
+              }
             }
-            dentalAccordion2 {
-              heading
-              content
-            }
-            dentalAccordion3 {
-              heading
-              content
+            cta {
+              link
+              text
             }
           }
-          dentalRelatedContent {
-            dentalRelatedContent1 {
-              image {
-                sourceUrl
+          dentalSection2 {
+            heading
+            dentalRelatedContent {
+              dentalRelatedContent1 {
+                image {
+                  sourceUrl
+                }
+                heading
+                content
               }
-              heading
-              content
+              dentalRelatedContent2 {
+                image {
+                  sourceUrl
+                }
+                heading
+                content
+              }
+              dentalRelatedContent3 {
+                image {
+                  sourceUrl
+                }
+                heading
+                content
+              }
             }
-            dentalRelatedContent2 {
-              image {
-                sourceUrl
-              }
-              heading
-              content
-            }
-            dentalRelatedContent3 {
-              image {
-                sourceUrl
-              }
-              heading
-              content
+            cta {
+              link
+              text
             }
           }
         }
