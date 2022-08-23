@@ -27,9 +27,7 @@ import { useFooterGetToKnowUsMenuQuery } from "../../hooks/footer/useFooterGetTo
 
 // Images
 import Logo from "../../images/HMIA_logo2.png"
-import Twitter from "../../images/twitter.webp"
 import Facebook from "../../images/facebook.webp"
-import YouTube from "../../images/youtube.webp"
 import BBB from "../../images/bbb-seal.png"
 
 interface Props {
@@ -52,13 +50,13 @@ const Footer: FC<Props> = ({children}) => {
         </FooterLogo>
         <SocialWidget>
           <SocialIcon>
-            <a href="#facebook">
+            <a href="https://www.facebook.com/HealthMarkets">
               <img src={Facebook} alt="facebook logo" />
             </a>
           </SocialIcon>
         </SocialWidget>
         <BBBSeal>
-          <a href="#bbb">
+          <a href="https://www.bbb.org/us/tx/north-richland-hills/profile/insurance-companies/healthmarkets-insurance-agency-0825-235973986/#sealclick">
             <img src={BBB} alt="better business bureau seal" />
           </a>
         </BBBSeal>
