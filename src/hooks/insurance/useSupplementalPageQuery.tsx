@@ -16,117 +16,132 @@ export const useSupplementalPageQuery = () => {
           }
         }
         suppPageCustomFields {
-          suppPlans {
-            suppPlan1 {
-              icon {
+          suppSection1 {
+            heading
+            bestPrice {
+              active
+              image {
                 sourceUrl
               }
-              title
-              content
-              link
+              mobileImage {
+                sourceUrl
+              }
             }
-            suppPlan2 {
-              icon {
-                sourceUrl
+            suppPlans {
+              suppPlan1 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+                content
               }
-              title
-              content
-              link
-            }
-            suppPlan3 {
-              icon {
-                sourceUrl
+              suppPlan2 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+                content
               }
-              title
-              content
-              link
-            }
-            suppPlan4 {
-              icon {
-                sourceUrl
+              suppPlan3 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+                content
               }
-              title
-              content
-              link
-            }
-            suppPlan5 {
-              icon {
-                sourceUrl
+              suppPlan4 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+                content
               }
-              title
-              content
-              link
-            }
-            suppPlan6 {
-              icon {
-                sourceUrl
+              suppPlan5 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+                content
               }
-              title
-              content
-              link
-            }
-            suppPlan7 {
-              icon {
-                sourceUrl
+              suppPlan6 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+                content
               }
-              title
-              content
-              link
-            }
-            suppPlan8 {
-              icon {
-                sourceUrl
+              suppPlan7 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+                content
               }
-              title
-              content
-              link
-            }
-            suppPlan9 {
-              icon {
-                sourceUrl
+              suppPlan8 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+                content
               }
-              title
-              content
-              link
-            }
-            suppPlan10 {
-              icon {
-                sourceUrl
+              suppPlan9 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+                content
               }
-              title
-              content
-              link
-            }
-            suppPlan11 {
-              icon {
-                sourceUrl
+              suppPlan10 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+                content
               }
-              title
-              content
-              link
+              suppPlan11 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
             }
           }
-          suppRelatedContent {
-            suppRelatedContent1 {
-              image {
-                sourceUrl
+          suppSection2 {
+            heading
+            suppRelatedContent {
+              relatedContent1 {
+                image {
+                  sourceUrl
+                }
+                title
+                content
               }
-              title
-              content
-            }
-            suppRelatedContent2 {
-              image {
-                sourceUrl
+              relatedContent2 {
+                image {
+                  sourceUrl
+                }
+                title
+                content
               }
-              title
-              content
-            }
-            suppRelatedContent3 {
-              image {
-                sourceUrl
+              relatedContent3 {
+                image {
+                  sourceUrl
+                }
+                title
+                content
               }
-              title
-              content
             }
           }
         }
@@ -135,7 +150,6 @@ export const useSupplementalPageQuery = () => {
         }
       }
     }
-
   `)
 
   return data

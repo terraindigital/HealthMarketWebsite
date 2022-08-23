@@ -36,6 +36,8 @@ import Footer from "../../components/Footer";
 const MedicarePage = () => {
   const { page } = useMedicarePageQuery();
 
+  console.log(page)
+
   return (
     <Layout pageClass="medicare">
       <Global styles={PageStyles} />
@@ -50,56 +52,65 @@ const MedicarePage = () => {
       <Section
         page="medicare"
         color="light"
-        heading="Medicare Insurance">
+        heading={page.medicarePageCustomFields.medicareSection1.heading}>
         <Cards openAtMobile>
           <Card
-            icon={page.medicarePageCustomFields.medicareCards.medicareCard1.icon.sourceUrl}
-            title={page.medicarePageCustomFields.medicareCards.medicareCard1.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareCards.medicareCard1.content }} />
+            icon={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard1.icon.sourceUrl}
+            title={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard1.title}>
+            <div dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard1.content }} />
           </Card>
           <Card
-            icon={page.medicarePageCustomFields.medicareCards.medicareCard2.icon.sourceUrl}
-            title={page.medicarePageCustomFields.medicareCards.medicareCard2.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareCards.medicareCard2.content }} />
+            icon={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard2.icon.sourceUrl}
+            title={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard2.title}>
+            <div dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard2.content }} />
           </Card>
           <Card
-            icon={page.medicarePageCustomFields.medicareCards.medicareCard3.icon.sourceUrl}
-            title={page.medicarePageCustomFields.medicareCards.medicareCard3.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareCards.medicareCard3.content }} />
+            icon={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.icon.sourceUrl}
+            title={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.title}>
+            <div dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.content }} />
           </Card>
         </Cards>
+        <div dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.disclaimer }} />
       </Section>
       <FlexedSection
         color="primary"
-        heading="Which Medicare plan is right for me?">
+        heading={page.medicarePageCustomFields.medicareSection2.heading}>
         <Accordion
-          title={page.medicarePageCustomFields.medicareAccordions.medicareAccordion1.heading}
-          content={page.medicarePageCustomFields.medicareAccordions.medicareAccordion1.content}
+          title={page.medicarePageCustomFields.medicareSection2.medicareAccordions.medicareAccordion1.heading}
+          content={page.medicarePageCustomFields.medicareSection2.medicareAccordions.medicareAccordion1.content}
           html />
         <Accordion
-          title={page.medicarePageCustomFields.medicareAccordions.medicareAccordion2.heading}
-          content={page.medicarePageCustomFields.medicareAccordions.medicareAccordion2.content}
+          title={page.medicarePageCustomFields.medicareSection2.medicareAccordions.medicareAccordion2.heading}
+          content={page.medicarePageCustomFields.medicareSection2.medicareAccordions.medicareAccordion2.content}
           html />
         <Accordion
-          title={page.medicarePageCustomFields.medicareAccordions.medicareAccordion3.heading}
-          content={page.medicarePageCustomFields.medicareAccordions.medicareAccordion3.content}
+          title={page.medicarePageCustomFields.medicareSection2.medicareAccordions.medicareAccordion3.heading}
+          content={page.medicarePageCustomFields.medicareSection2.medicareAccordions.medicareAccordion3.content}
           html />
         <Accordion
-          title={page.medicarePageCustomFields.medicareAccordions.medicareAccordion4.heading}
-          content={page.medicarePageCustomFields.medicareAccordions.medicareAccordion4.content}
+          title={page.medicarePageCustomFields.medicareSection2.medicareAccordions.medicareAccordion4.heading}
+          content={page.medicarePageCustomFields.medicareSection2.medicareAccordions.medicareAccordion4.content}
+          html />
+        <Accordion
+          title={page.medicarePageCustomFields.medicareSection2.medicareAccordions.medicareAccordion5.heading}
+          content={page.medicarePageCustomFields.medicareSection2.medicareAccordions.medicareAccordion5.content}
+          html />
+        <Accordion
+          title={page.medicarePageCustomFields.medicareSection2.medicareAccordions.medicareAccordion6.heading}
+          content={page.medicarePageCustomFields.medicareSection2.medicareAccordions.medicareAccordion6.content}
           html />
       </FlexedSection>
       <Medial color="primary">
-        <h1 className="color-primary">Still have questions? Contact us.</h1>
+        <div dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection3.medicareColumns.medicareColumn1.heading }} />
         <div className="button-container">
-          <a href="tel:8008279990">
+          <a href={page.medicarePageCustomFields.medicareSection3.medicareColumns.medicareColumn2.button.button1.link}>
             <Button background="accent" border="accent" color="light">
-              Call 800-827-9990
+              {page.medicarePageCustomFields.medicareSection3.medicareColumns.medicareColumn2.button.button1.text}
             </Button>
           </a>
-          <a href="https://www.healthmarkets.com/local-health-insurance-agent">
+          <a href={page.medicarePageCustomFields.medicareSection3.medicareColumns.medicareColumn2.button.button2.link}>
             <Button background="accent" border="accent" color="light">
-              Find a licensed insurance agent
+              {page.medicarePageCustomFields.medicareSection3.medicareColumns.medicareColumn2.button.button2.text}
             </Button>
           </a>
         </div>

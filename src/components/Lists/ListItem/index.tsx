@@ -19,7 +19,7 @@ const ListItem: FC<Props> = ({ heading, children }) => {
       <Check>
         <img src={checkImg} alt="list checkmark" />
       </Check>
-      <Heading>{heading}</Heading>
+      <Heading dangerouslySetInnerHTML={{ __html: heading }} />
       {children}
     </Wrapper>
   )

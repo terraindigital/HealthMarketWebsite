@@ -5,57 +5,6 @@ export const useHomePageQuery = () => {
     query homepageQuery {
       home: wpPage(isFrontPage: {eq: true}) {
         id
-        homePageCustomFields {
-          wwo {
-            hpTile1 {
-              image {
-                sourceUrl
-              }
-              title
-              link
-            }
-            hpTile2 {
-              image {
-                sourceUrl
-              }
-              title
-              link
-            }
-            hpTile3 {
-              image {
-                sourceUrl
-              }
-              title
-              link
-            }
-            hpTile4 {
-              image {
-                sourceUrl
-              }
-              title
-              link
-            }
-            hpTile5 {
-              image {
-                sourceUrl
-              }
-              title
-              link
-            }
-          }
-          listItem1 {
-            heading
-            content
-          }
-          listItem2 {
-            heading
-            content
-          }
-          listItem3 {
-            heading
-            content
-          }
-        }
         pageHeroFields {
           heroImage {
             sourceUrl
@@ -65,6 +14,88 @@ export const useHomePageQuery = () => {
           }
           headline
           subheadline
+        }
+        homePageCustomFields {
+          homeSection1 {
+            heading
+            subheading
+            tiles {
+              tile1 {
+                image {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              tile2 {
+                image {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              tile3 {
+                image {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              tile4 {
+                image {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              tile5 {
+                image {
+                  sourceUrl
+                }
+                title
+                link
+              }
+            }
+          }
+          homeSection2 {
+            columns {
+              column1 {
+                image {
+                  sourceUrl
+                }
+              }
+              column2 {
+                heading
+              }
+              column3 {
+                button {
+                  text
+                  link
+                }
+              }
+            }
+          }
+          homeSection3 {
+            heading
+            homeListItems {
+              homeListItem1 {
+                heading
+                content
+              }
+              homeListItem2 {
+                heading
+                content
+              }
+              homeListItem3 {
+                heading
+                content
+              }
+            }
+            sectionCta {
+              link
+              text
+            }
+          }
         }
         disclaimers {
           disclaimer

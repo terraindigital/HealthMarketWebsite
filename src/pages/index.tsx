@@ -25,9 +25,6 @@ import Reviews from '../components/Reviews';
 import Review from '../components/Reviews/Review';
 import Footer from '../components/Footer';
 
-// Images
-import ChatBubble from "../images/contact-cta-image.png"
-
 const IndexPage = ({path}: PageProps) => {
     const { home } = useHomePageQuery();
 
@@ -43,64 +40,62 @@ const IndexPage = ({path}: PageProps) => {
                 <PageHeroForm centered btnLeftText="Find my plan" btnRightText="Find a licensed insurance agent" inputId="homepageHeroLocation" button />
             </Hero>
             <Section
-                heading="What we offer"
-                subheading="Save time and let us search for you—it's fast, free, and fair."
+                heading={home.homePageCustomFields.homeSection1.heading}
+                subheading={home.homePageCustomFields.homeSection1.subheading}
                 color="light">
                 <Carousel type="tiles">
-                <Tile
-                        image={home.homePageCustomFields.wwo.hpTile1.image.sourceUrl}
-                        title={home.homePageCustomFields.wwo.hpTile1.title}
-                        link={home.homePageCustomFields.wwo.hpTile1.link}
+                    <Tile
+                        image={home.homePageCustomFields.homeSection1.tiles.tile1.image.sourceUrl}
+                        title={home.homePageCustomFields.homeSection1.tiles.tile1.title}
+                        link={home.homePageCustomFields.homeSection1.tiles.tile1.link}
                         />
                     <Tile
-                        image={home.homePageCustomFields.wwo.hpTile2.image.sourceUrl}
-                        title={home.homePageCustomFields.wwo.hpTile2.title}
-                        link={home.homePageCustomFields.wwo.hpTile2.link}
+                        image={home.homePageCustomFields.homeSection1.tiles.tile2.image.sourceUrl}
+                        title={home.homePageCustomFields.homeSection1.tiles.tile2.title}
+                        link={home.homePageCustomFields.homeSection1.tiles.tile2.link}
                         />
                     <Tile
-                        image={home.homePageCustomFields.wwo.hpTile3.image.sourceUrl}
-                        title={home.homePageCustomFields.wwo.hpTile3.title}
-                        link={home.homePageCustomFields.wwo.hpTile3.link}
+                        image={home.homePageCustomFields.homeSection1.tiles.tile3.image.sourceUrl}
+                        title={home.homePageCustomFields.homeSection1.tiles.tile3.title}
+                        link={home.homePageCustomFields.homeSection1.tiles.tile3.link}
                         />
                     <Tile
-                        image={home.homePageCustomFields.wwo.hpTile4.image.sourceUrl}
-                        title={home.homePageCustomFields.wwo.hpTile4.title}
-                        link={home.homePageCustomFields.wwo.hpTile4.link}
+                        image={home.homePageCustomFields.homeSection1.tiles.tile4.image.sourceUrl}
+                        title={home.homePageCustomFields.homeSection1.tiles.tile4.title}
+                        link={home.homePageCustomFields.homeSection1.tiles.tile4.link}
                         />
                     <Tile
-                        image={home.homePageCustomFields.wwo.hpTile5.image.sourceUrl}
-                        title={home.homePageCustomFields.wwo.hpTile5.title}
-                        link={home.homePageCustomFields.wwo.hpTile5.link}
+                        image={home.homePageCustomFields.homeSection1.tiles.tile5.image.sourceUrl}
+                        title={home.homePageCustomFields.homeSection1.tiles.tile5.title}
+                        link={home.homePageCustomFields.homeSection1.tiles.tile5.link}
                         />
                 </Carousel>
             </Section>
             <Medial color="primary">
-                <img className="chat-bubble" src={ChatBubble} alt="Chat bubble icon" />
-                <h1 className="hide-at-mobile">Uninsured?<br/>We can help.</h1>
-                <div className="show-at-mobile">
-                    <h2>Uninsured and not sure where to start?</h2>
-                    <p><strong>We can help.</strong></p>
-                </div>
-                <a href="https://www.healthmarkets.com/find-coverage">
-                    <Button background="accent" border="accent" color="light">Show me options</Button>
+                <img className="chat-bubble" src={home.homePageCustomFields.homeSection2.columns.column1.image.sourceUrl} alt="Chat bubble icon" />
+                <div dangerouslySetInnerHTML={{ __html: home.homePageCustomFields.homeSection2.columns.column2.heading }} />
+                <a href={home.homePageCustomFields.homeSection2.columns.column3.button.link}>
+                    <Button background="accent" border="accent" color="light">
+                        {home.homePageCustomFields.homeSection2.columns.column3.button.text}
+                    </Button>
                 </a>
             </Medial>
             <FlexedSection
-                heading="How we help"
+                heading={home.homePageCustomFields.homeSection3.heading}
                 color="primary">
                 <List>
-                    <ListItem heading="A FitScore&reg; in minutes">
-                        <p>Our FitScore technology uses your answers to recommend relevant plans and compare them to your current plan. The higher the FitScore, the closer the plan is to your ideal match.</p>
+                    <ListItem heading={home.homePageCustomFields.homeSection3.homeListItems.homeListItem1.heading}>
+                        <div dangerouslySetInnerHTML={{ __html: home.homePageCustomFields.homeSection3.homeListItems.homeListItem1.content }} />
                     </ListItem>
-                    <ListItem heading="Personalized recommendations in minutes">
-                        <p>HealthMarkets instantly scans and ranks thousands of health insurance plans to find the right fit for you. We’ll recommend the top plans in your area for you.</p>
+                    <ListItem heading={home.homePageCustomFields.homeSection3.homeListItems.homeListItem2.heading}>
+                        <div dangerouslySetInnerHTML={{ __html: home.homePageCustomFields.homeSection3.homeListItems.homeListItem2.content }} />
                     </ListItem>
-                    <ListItem heading="Fair and Reliable">
-                        <p>Our recommendations are based on what is best for your needs and budget, and the result of a complete search of thousands of plans. </p>
+                    <ListItem heading={home.homePageCustomFields.homeSection3.homeListItems.homeListItem3.heading}>
+                        <div dangerouslySetInnerHTML={{ __html: home.homePageCustomFields.homeSection3.homeListItems.homeListItem3.content }} />
                     </ListItem>
                 </List>
-                <a href="https://www.healthmarkets.com/how-you-save/">
-                    <Button background="accent" border="accent" color="light">Explore my options</Button>
+                <a href={home.homePageCustomFields.homeSection3.sectionCta.link}>
+                    <Button background="accent" border="accent" color="light">{home.homePageCustomFields.homeSection3.sectionCta.text}</Button>
                 </a>
             </FlexedSection>
             <Section color="light">

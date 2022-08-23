@@ -14,10 +14,6 @@ import {
   BestPriceImageMobile
 } from "./styles";
 
-// Images
-import BestPriceImg from "../../images/best-price-image.png";
-import BestPriceImgM from "../../images/best-price-image-mobile.png";
-
 // Components
 import Layout from "../../components/Layout";
 import Seo from "../../components/SEO";
@@ -34,7 +30,7 @@ import Footer from "../../components/Footer";
 
 const HealthInsurancePage = () => {
   const { page } = useSupplementalPageQuery();
-  const plans = page.suppPageCustomFields.suppPlans;
+  const plans = page.suppPageCustomFields.suppSection1.suppPlans;
 
   return (
     <Layout pageClass="supplemental-insurance">
@@ -50,9 +46,13 @@ const HealthInsurancePage = () => {
       </Hero>
       <Section
         color="primary"
-        heading="Supplemental Plans">
-        <BestPriceImage src={BestPriceImg} />
-        <BestPriceImageMobile src={BestPriceImgM} />
+        heading={page.suppPageCustomFields.suppSection1.heading}>
+        {page.suppPageCustomFields.suppSection1.bestPrice.active ? (
+          <>
+            <BestPriceImage src={page.suppPageCustomFields.suppSection1.bestPrice.image.sourceUrl} />
+            <BestPriceImageMobile src={page.suppPageCustomFields.suppSection1.bestPrice.mobileImage.sourceUrl} />
+          </>
+        ) : null}
         <Cards>
           {(plans) ? (
             Object.keys(plans).map((plan) => {
@@ -117,22 +117,22 @@ const HealthInsurancePage = () => {
       </Section>
       <Section
         color="primary"
-        heading="Related Content">
+        heading={page.suppPageCustomFields.suppSection2.heading}>
         <Cards>
           <Card
-            image={page.suppPageCustomFields.suppRelatedContent.suppRelatedContent1.image.sourceUrl}
-            title={page.suppPageCustomFields.suppRelatedContent.suppRelatedContent1.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppRelatedContent.suppRelatedContent1.content}} />
+            image={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent1.image.sourceUrl}
+            title={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent1.title}>
+            <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent1.content}} />
           </Card>
           <Card
-            image={page.suppPageCustomFields.suppRelatedContent.suppRelatedContent2.image.sourceUrl}
-            title={page.suppPageCustomFields.suppRelatedContent.suppRelatedContent2.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppRelatedContent.suppRelatedContent2.content}} />
+            image={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent2.image.sourceUrl}
+            title={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent2.title}>
+            <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent2.content}} />
           </Card>
           <Card
-            image={page.suppPageCustomFields.suppRelatedContent.suppRelatedContent3.image.sourceUrl}
-            title={page.suppPageCustomFields.suppRelatedContent.suppRelatedContent3.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppRelatedContent.suppRelatedContent3.content}} />
+            image={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent3.image.sourceUrl}
+            title={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent3.title}>
+            <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent3.content}} />
           </Card>
         </Cards>
         <div className="full-rounded" style={{ textAlign: "center" }}>

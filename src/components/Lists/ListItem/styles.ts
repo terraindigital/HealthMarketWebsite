@@ -32,7 +32,7 @@ export const Check = styled.div`
   }
 `
 
-export const Heading = styled.h4`
+export const Heading = styled.div`
   color: var(--color-primary);
   margin-bottom: 1.3rem;
 `
