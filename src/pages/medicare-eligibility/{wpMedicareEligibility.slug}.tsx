@@ -8,15 +8,15 @@ import { RightContent } from "./styles"
 import { PageStyles } from "./styles"
 
 // Components
-import Section from '../../../components/Sections';
-import Layout from "../../../components/Layout";
-import Dropdown from "../../../components/Inputs/Dropdown";
-import DropdownOption from "../../../components/Inputs/Dropdown/DropdownOption";
-import SplitSection from '../../../components/Sections/SplitSection';
-import Button from '../../../components/Buttons/Button';
-import Input from "../../../components/Inputs/Input"
-import Seo from "../../../components/SEO";
-import Footer from "../../../components/Footer";
+import Section from '../../components/Sections';
+import Layout from "../../components/Layout";
+import Dropdown from "../../components/Inputs/Dropdown";
+import DropdownOption from "../../components/Inputs/Dropdown/DropdownOption";
+import SplitSection from '../../components/Sections/SplitSection';
+import Button from '../../components/Buttons/Button';
+import Input from "../../components/Inputs/Input"
+import Seo from "../../components/SEO";
+import Footer from "../../components/Footer";
 
 interface PageInfo {
   page: {
