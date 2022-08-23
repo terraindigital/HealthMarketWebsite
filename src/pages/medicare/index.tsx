@@ -12,10 +12,6 @@ import {
   HeroSubheading
 } from "./styles";
 
-// Images
-import MapPin from "../../images/location.png";
-import PhoneIcon from "../../images/phone-icon.png"
-
 // Components
 import Layout from "../../components/Layout";
 import Seo from "../../components/SEO";
@@ -36,8 +32,6 @@ import Footer from "../../components/Footer";
 const MedicarePage = () => {
   const { page } = useMedicarePageQuery();
 
-  console.log(page)
-
   return (
     <Layout pageClass="medicare">
       <Global styles={PageStyles} />
@@ -47,11 +41,15 @@ const MedicarePage = () => {
         mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}>
         <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
-        <PageHeroForm light btnLeftText="Get a FREE quote" btnRightText="Find a licensed insurance agent" inputId="medicarePageHeroLocation" />
+        <PageHeroForm
+            light
+            btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
+            btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
+            inputId="medicarePageHeroLocation" />
       </Hero>
       <Section
         page="medicare"
-        color="light"
+        color={page.medicarePageCustomFields.medicareSection1.color}
         heading={page.medicarePageCustomFields.medicareSection1.heading}>
         <Cards openAtMobile>
           <Card
@@ -73,7 +71,7 @@ const MedicarePage = () => {
         <div dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.disclaimer }} />
       </Section>
       <FlexedSection
-        color="primary"
+        color={page.medicarePageCustomFields.medicareSection2.color}
         heading={page.medicarePageCustomFields.medicareSection2.heading}>
         <Accordion
           title={page.medicarePageCustomFields.medicareSection2.medicareAccordions.medicareAccordion1.heading}
@@ -100,7 +98,7 @@ const MedicarePage = () => {
           content={page.medicarePageCustomFields.medicareSection2.medicareAccordions.medicareAccordion6.content}
           html />
       </FlexedSection>
-      <Medial color="primary">
+      <Medial color={page.medicarePageCustomFields.medicareSection3.color}>
         <div dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection3.medicareColumns.medicareColumn1.heading }} />
         <div className="button-container">
           <a href={page.medicarePageCustomFields.medicareSection3.medicareColumns.medicareColumn2.button.button1.link}>

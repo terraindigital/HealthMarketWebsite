@@ -37,12 +37,17 @@ const IndexPage = ({path}: PageProps) => {
                 centered>
                 <HeroHeading>{home.pageHeroFields.headline}</HeroHeading>
                 <HeroSubheading>{home.pageHeroFields.subheadline}</HeroSubheading>
-                <PageHeroForm centered btnLeftText="Find my plan" btnRightText="Find a licensed insurance agent" inputId="homepageHeroLocation" button />
+                <PageHeroForm
+                    centered
+                    btnLeftText={home.pageHeroFields.heroButtons.heroButton1.text}
+                    btnRightText={home.pageHeroFields.heroButtons.heroButton2.text}
+                    inputId="homepageHeroLocation"
+                    button />
             </Hero>
             <Section
                 heading={home.homePageCustomFields.homeSection1.heading}
                 subheading={home.homePageCustomFields.homeSection1.subheading}
-                color="light">
+                color={home.homePageCustomFields.homeSection1.color}>
                 <Carousel type="tiles">
                     <Tile
                         image={home.homePageCustomFields.homeSection1.tiles.tile1.image.sourceUrl}
@@ -71,7 +76,7 @@ const IndexPage = ({path}: PageProps) => {
                         />
                 </Carousel>
             </Section>
-            <Medial color="primary">
+            <Medial color={home.homePageCustomFields.homeSection2.color}>
                 <img className="chat-bubble" src={home.homePageCustomFields.homeSection2.columns.column1.image.sourceUrl} alt="Chat bubble icon" />
                 <div dangerouslySetInnerHTML={{ __html: home.homePageCustomFields.homeSection2.columns.column2.heading }} />
                 <a href={home.homePageCustomFields.homeSection2.columns.column3.button.link}>
@@ -82,7 +87,7 @@ const IndexPage = ({path}: PageProps) => {
             </Medial>
             <FlexedSection
                 heading={home.homePageCustomFields.homeSection3.heading}
-                color="primary">
+                color={home.homePageCustomFields.homeSection3.color}>
                 <List>
                     <ListItem heading={home.homePageCustomFields.homeSection3.homeListItems.homeListItem1.heading}>
                         <div dangerouslySetInnerHTML={{ __html: home.homePageCustomFields.homeSection3.homeListItems.homeListItem1.content }} />

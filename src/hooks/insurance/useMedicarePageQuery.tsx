@@ -14,9 +14,21 @@ export const useMedicarePageQuery = () => {
           mobileHeroImage {
             sourceUrl
           }
+          heroButtons {
+            heroButton1 {
+              text
+            }
+            heroButton2 {
+              text
+            }
+            heroButton3 {
+              text
+            }
+          }
         }
         medicarePageCustomFields {
           medicareSection1 {
+            color
             heading
             medicareCards {
               medicareCard1 {
@@ -47,6 +59,7 @@ export const useMedicarePageQuery = () => {
             disclaimer
           }
           medicareSection2 {
+            color
             heading
             medicareAccordions {
               medicareAccordion1 {
@@ -76,6 +89,7 @@ export const useMedicarePageQuery = () => {
             }
           }
           medicareSection3 {
+            color
             medicareCtaStyle
             medicareColumns {
               medicareColumn1 {

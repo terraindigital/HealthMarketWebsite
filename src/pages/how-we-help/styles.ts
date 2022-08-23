@@ -62,9 +62,8 @@ export const PageStyles = css`
     width: 100%;
   }
 
-  .how-we-help .split-section + .section.light + .section.primary h2 {
-    font-size: 1.6rem;
-    max-width: calc(100% + 4.2rem);
+  .how-we-help .split-section + .section.light + .section.primary .heading h2 {
+    max-width: 50%;
   }
 
   .how-we-help .split-section + .section.light + .section.primary .card > div:first-of-type h2 {

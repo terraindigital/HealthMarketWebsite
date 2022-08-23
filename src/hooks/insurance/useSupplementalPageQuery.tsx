@@ -14,9 +14,21 @@ export const useSupplementalPageQuery = () => {
           mobileHeroImage {
             sourceUrl
           }
+          heroButtons {
+            heroButton1 {
+              text
+            }
+            heroButton2 {
+              text
+            }
+            heroButton3 {
+              text
+            }
+          }
         }
         suppPageCustomFields {
           suppSection1 {
+            color
             heading
             bestPrice {
               active
@@ -119,6 +131,7 @@ export const useSupplementalPageQuery = () => {
             }
           }
           suppSection2 {
+            color
             heading
             suppRelatedContent {
               relatedContent1 {

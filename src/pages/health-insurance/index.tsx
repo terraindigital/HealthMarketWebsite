@@ -47,11 +47,15 @@ const HealthInsurancePage = () => {
         mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}>
         <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
-        <PageHeroForm light btnLeftText="Get a FREE quote" btnRightText="Find a licensed insurance agent" inputId="healthPageHeroLocation" />
+        <PageHeroForm
+            light
+            btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
+            btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
+            inputId="healthPageHeroLocation" />
       </Hero>
       <Section
         page="health-insurance"
-        color="primary"
+        color={page.healthPageCustomFields.healthSection1.color}
         heading={page.healthPageCustomFields.healthSection1.heading}>
         <Cards openAtMobile>
           <Card
@@ -72,7 +76,7 @@ const HealthInsurancePage = () => {
         </Cards>
       </Section>
       <FlexedSection
-        color="light"
+        color={page.healthPageCustomFields.healthSection2.color}
         heading={page.healthPageCustomFields.healthSection2.heading}>
         <Accordion
           title={page.healthPageCustomFields.healthSection2.healthAccordions.healthAccordion1.title}
@@ -90,7 +94,7 @@ const HealthInsurancePage = () => {
         </div>
       </FlexedSection>
       <Section
-        color="primary"
+        color={page.healthPageCustomFields.healthSection3.color}
         heading={page.healthPageCustomFields.healthSection3.heading}>
         <Icons>
           {(plans) ? (
@@ -154,7 +158,7 @@ const HealthInsurancePage = () => {
         </div>
       </Section>
       <Section
-        color="primary"
+        color={page.healthPageCustomFields.healthSection4.color}
         heading={page.healthPageCustomFields.healthSection4.heading}>
         <Cards>
           <Card

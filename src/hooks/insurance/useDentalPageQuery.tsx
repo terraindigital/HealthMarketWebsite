@@ -14,9 +14,21 @@ export const useDentalPageQuery = () => {
           mobileHeroImage {
             sourceUrl
           }
+          heroButtons {
+            heroButton1 {
+              text
+            }
+            heroButton2 {
+              text
+            }
+            heroButton3 {
+              text
+            }
+          }
         }
         dentalPageCustomFields {
           dentalSection1 {
+            color
             heading
             dentalAccordions {
               dentalAccordion1 {
@@ -38,6 +50,7 @@ export const useDentalPageQuery = () => {
             }
           }
           dentalSection2 {
+            color
             heading
             dentalRelatedContent {
               dentalRelatedContent1 {

@@ -14,9 +14,21 @@ export const useHealthPageQuery = () => {
           mobileHeroImage {
             sourceUrl
           }
+          heroButtons {
+            heroButton1 {
+              text
+            }
+            heroButton2 {
+              text
+            }
+            heroButton3 {
+              text
+            }
+          }
         }
         healthPageCustomFields {
           healthSection1 {
+            color
             heading
             healthCards {
               healthCard1 {
@@ -43,6 +55,7 @@ export const useHealthPageQuery = () => {
             }
           }
           healthSection2 {
+            color
             heading
             healthAccordions {
               healthAccordion1 {
@@ -64,6 +77,7 @@ export const useHealthPageQuery = () => {
             }
           }
           healthSection3 {
+            color
             heading
             healthPlans {
               healthPlan1 {
@@ -146,6 +160,7 @@ export const useHealthPageQuery = () => {
             }
           }
           healthSection4 {
+            color
             heading
             healthRelatedContent {
               healthRelatedContent1 {

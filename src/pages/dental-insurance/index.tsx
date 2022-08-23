@@ -40,10 +40,13 @@ const HealthInsurancePage = () => {
         mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}>
         <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
-        <PageHeroForm btnLeftText="Get a FREE quote" btnRightText="Find a licensed insurance agent" inputId="supplementalPageHeroLocation" />
+        <PageHeroForm
+            btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
+            btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
+            inputId="dentalPageHeroLocation" />
       </Hero>
       <FlexedSection
-        color="light"
+        color={page.dentalPageCustomFields.dentalSection1.color}
         heading={page.dentalPageCustomFields.dentalSection1.heading}>
         <Accordion
           title={page.dentalPageCustomFields.dentalSection1.dentalAccordions.dentalAccordion1.heading}
@@ -109,7 +112,7 @@ const HealthInsurancePage = () => {
         </div>
       </Section>
       <Section
-        color="primary"
+        color={page.dentalPageCustomFields.dentalSection2.color}
         heading={page.dentalPageCustomFields.dentalSection2.heading}>
         <Cards>
           <Card

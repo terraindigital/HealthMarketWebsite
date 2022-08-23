@@ -42,10 +42,14 @@ const HealthInsurancePage = () => {
         centered>
         <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
-        <PageHeroForm centered btnLeftText="Get a FREE quote" btnRightText="Find a licensed insurance agent" inputId="supplementalPageHeroLocation" />
+        <PageHeroForm
+            centered
+            btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
+            btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
+            inputId="supplementalPageHeroLocation" />
       </Hero>
       <Section
-        color="primary"
+        color={page.suppPageCustomFields.suppSection1.color}
         heading={page.suppPageCustomFields.suppSection1.heading}>
         {page.suppPageCustomFields.suppSection1.bestPrice.active ? (
           <>
@@ -116,7 +120,7 @@ const HealthInsurancePage = () => {
         </div>
       </Section>
       <Section
-        color="primary"
+        color={page.suppPageCustomFields.suppSection2.color}
         heading={page.suppPageCustomFields.suppSection2.heading}>
         <Cards>
           <Card

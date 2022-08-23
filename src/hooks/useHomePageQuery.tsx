@@ -12,11 +12,23 @@ export const useHomePageQuery = () => {
           mobileHeroImage {
             sourceUrl
           }
+          heroButtons {
+            heroButton1 {
+              text
+            }
+            heroButton2 {
+              text
+            }
+            heroButton3 {
+              text
+            }
+          }
           headline
           subheadline
         }
         homePageCustomFields {
           homeSection1 {
+            color
             heading
             subheading
             tiles {
@@ -58,6 +70,7 @@ export const useHomePageQuery = () => {
             }
           }
           homeSection2 {
+            color
             columns {
               column1 {
                 image {
@@ -76,6 +89,7 @@ export const useHomePageQuery = () => {
             }
           }
           homeSection3 {
+            color
             heading
             homeListItems {
               homeListItem1 {

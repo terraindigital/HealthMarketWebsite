@@ -14,9 +14,21 @@ export const useHowWeHelpPageQuery = () => {
           mobileHeroImage {
             sourceUrl
           }
+          heroButtons {
+            heroButton1 {
+              text
+            }
+            heroButton2 {
+              text
+            }
+            heroButton3 {
+              text
+            }
+          }
         }
         howWeHelpCustomFields {
           hwhSection1 {
+            color
             heading
             hwhListItems {
               hwhListItem1 {
@@ -38,6 +50,7 @@ export const useHowWeHelpPageQuery = () => {
             }
           }
           hwhSection2 {
+            color
             hwhBlocks {
               hwhBlock1 {
                 image {
@@ -75,6 +88,7 @@ export const useHowWeHelpPageQuery = () => {
             }
           }
           hwhSection3 {
+            color
             heading
             hwhAccordions {
               hwhAccordion1 {
@@ -100,7 +114,9 @@ export const useHowWeHelpPageQuery = () => {
             }
           }
           hwhSection4 {
+            color
             heading
+            subheading
             hwhCards {
               hwhCard1 {
                 icon {

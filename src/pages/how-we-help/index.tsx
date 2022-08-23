@@ -32,8 +32,6 @@ import Footer from '../../components/Footer';
 const HowWeHelpPage = () => {
   const { hwh } = useHowWeHelpPageQuery();
 
-  console.log(hwh)
-
   return (
     <Layout pageClass="how-we-help">
       <Global styles={PageStyles}/>
@@ -47,7 +45,7 @@ const HowWeHelpPage = () => {
       </Hero>
       <FlexedSection
         heading={hwh.howWeHelpCustomFields.hwhSection1.heading}
-        color="light">
+        color={hwh.howWeHelpCustomFields.hwhSection1.color}>
         <List>
           <ListItem heading={hwh.howWeHelpCustomFields.hwhSection1.hwhListItems.hwhListItem1.heading}>
               <p>{hwh.howWeHelpCustomFields.hwhSection1.hwhListItems.hwhListItem1.content}</p>
@@ -59,28 +57,34 @@ const HowWeHelpPage = () => {
               <p>{hwh.howWeHelpCustomFields.hwhSection1.hwhListItems.hwhListItem3.content}</p>
           </ListItem>
         </List>
-        <a href="https://shop.healthmarkets.com/">
-          <Button background="accent" border="accent" color="light">Shop now</Button>
+        <a href={hwh.howWeHelpCustomFields.hwhSection1.cta.link}>
+          <Button background="accent" border="accent" color="light">
+            {hwh.howWeHelpCustomFields.hwhSection1.cta.text}
+          </Button>
         </a>
       </FlexedSection>
-      <SplitSection color="primary">
+      <SplitSection color={hwh.howWeHelpCustomFields.hwhSection2.color}>
         <div className="left image">
           <img src={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.image.sourceUrl} alt="woman on computer" />
         </div>
         <div className="right content">
           <h1>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.heading}</h1>
           <p>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.content}</p>
-          <a href="https://shop.healthmarkets.com/">
-            <Button background="accent" border="accent" color="light">{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.button.text}</Button>
+          <a href={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.button.link}>
+            <Button background="accent" border="accent" color="light">
+              {hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.button.text}
+            </Button>
           </a>
         </div>
       </SplitSection>
-      <SplitSection color="primary">
+      <SplitSection color={hwh.howWeHelpCustomFields.hwhSection2.color}>
         <div className="left content hide-at-mobile">
           <h1>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.heading}</h1>
           <p>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.content}</p>
-          <a href="https://shop.healthmarkets.com/">
-            <Button background="accent" border="accent" color="light">{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.button.text}</Button>
+          <a href={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.button.link}>
+            <Button background="accent" border="accent" color="light">
+              {hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.button.text}
+            </Button>
           </a>
         </div>
         <div className="right image hide-at-mobile">
@@ -92,12 +96,14 @@ const HowWeHelpPage = () => {
         <div className="right content show-at-mobile">
           <h1>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.heading}</h1>
           <p>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.content}</p>
-          <a href="https://shop.healthmarkets.com/">
-            <Button background="accent" border="accent" color="light">{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.button.text}</Button>
+          <a href={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.button.link}>
+            <Button background="accent" border="accent" color="light">
+              {hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.button.text}
+            </Button>
           </a>
         </div>
       </SplitSection>
-      <SplitSection color="primary">
+      <SplitSection color={hwh.howWeHelpCustomFields.hwhSection2.color}>
         <div className="left image">
           <img src={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock3.image.sourceUrl} alt="woman on computer" />
         </div>
@@ -111,7 +117,7 @@ const HowWeHelpPage = () => {
       </SplitSection>
       <FlexedSection
         heading={hwh.howWeHelpCustomFields.hwhSection3.heading}
-        color="light">
+        color={hwh.howWeHelpCustomFields.hwhSection3.color}>
         <Accordion
             title={hwh.howWeHelpCustomFields.hwhSection3.hwhAccordions.hwhAccordion1.heading}
             content={hwh.howWeHelpCustomFields.hwhSection3.hwhAccordions.hwhAccordion1.content}
@@ -137,7 +143,7 @@ const HowWeHelpPage = () => {
       <Section
         heading={hwh.howWeHelpCustomFields.hwhSection4.heading}
         subheading={hwh.howWeHelpCustomFields.hwhSection4.subheading}
-        color="primary">
+        color={hwh.howWeHelpCustomFields.hwhSection4.color}>
         <Cards openAtMobile>
           <Card
             icon={hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard1.icon.sourceUrl}
