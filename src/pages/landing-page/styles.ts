@@ -126,7 +126,7 @@ export const PageStyles = css`
       }
 
       .left {
-        max-width: 36rem!important;
+        max-width: 40rem!important;
         margin-left: auto;
         margin-right: auto;
         
@@ -214,11 +214,39 @@ export const PageStyles = css`
         }
 
         &.centered > div {
-          max-width: 36rem;
+          max-width: 40rem;
           margin-left: auto;
           margin-right: auto;
           width: 100%;
         }
+      }
+    }
+
+    .show-at-mobile.primary {
+      @media only screen and (max-width: 620px) {
+        .star path {
+          fill: var(--color-primary);
+        }
+
+        .review {
+          &:before {
+            background-color: var(--color-primary-light);
+            width: 100%;
+          }
+
+          > div {
+            justify-content: center;
+          }
+
+          blockquote,
+          figcaption {
+            text-align: center;
+          }
+        }
+      }
+
+      .cta {
+        color: var(--color-primary);
       }
     }
 
@@ -257,21 +285,34 @@ export const PageStyles = css`
           }
         }
       }
+
+      &.Icons {
+        @media only screen and (min-width: 921px) {
+          .heading + div {
+            padding-top: 0;
+          }
+        }
+      }
     }
   }
 `
 
 export const HeroHeading = styled.h1`
   font-family: var(--font-heading);
-  font-size: 12rem;
+  font-size: 9rem;
   color: var(--color-primary);
   line-height: 1;
   font-weight: 600;
   margin-bottom: 2.4rem;
   max-width: 1024px;
+  
+  br {
+    display: none;
+  }
 
-  @media only screen and (max-width: 920px) {
-    font-size: 9rem;
+  @media only screen and (max-width: 1300px) {
+    font-size: 6rem;
+    max-width: 700px;
   }
 
   @media only screen and (max-width: 620px) {
@@ -282,8 +323,10 @@ export const HeroHeading = styled.h1`
     line-height: 0.9;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+
+    br {
+      display: block;
+    }
   }
 `
 

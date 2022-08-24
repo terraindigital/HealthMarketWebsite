@@ -106,14 +106,14 @@ const LPPage = ({data}: { data: PageInfo }) => {
     <Layout>
       <Global styles={PageStyles} />
       <Seo title={page.title}/>
-      <div className={page.slug}>        
+      <div className={page.slug}>
         <Hero
             image={page.landingPageCustomFields.lpHero.heroImage.sourceUrl}
             mobileImage={page.landingPageCustomFields.lpHero.heroImageMobile.sourceUrl}
             left
             centered={page.slug == "campaign-c"}
           >
-            <HeroHeading>{page.landingPageCustomFields.lpHero.heroHeadline}</HeroHeading>
+            <HeroHeading dangerouslySetInnerHTML={{ __html: page.landingPageCustomFields.lpHero.heroHeadline }}></HeroHeading>
             <HeroSubheading>{page.landingPageCustomFields.lpHero.heroSubheadline}</HeroSubheading>
 
             {
@@ -207,6 +207,7 @@ const LPPage = ({data}: { data: PageInfo }) => {
         {
           section2.isActive && section2.contentType == "Icons" ? (
             <Section
+            page = {section2.contentType}
             color={section2.bgColor}
             heading={section2.headline.headlineText}>
               <Icons>
@@ -254,7 +255,7 @@ const LPPage = ({data}: { data: PageInfo }) => {
             />
           </Carousel>
         </div>
-        <div className="show-at-mobile">
+        <div className="show-at-mobile primary">
             <Reviews>
                 <Review
                     stars="5"
@@ -268,7 +269,7 @@ const LPPage = ({data}: { data: PageInfo }) => {
                 />
             </Reviews>
             <div style={{ textAlign: "center" }}>
-                <a href="#">See all reviews</a>
+                <a className="cta" href="#">See all reviews</a>
             </div>
         </div>
       </Section>
