@@ -25,10 +25,11 @@ interface Props {
   light?: boolean,
   btnLeftText: String,
   btnRightText: String,
-  inputId: String
+  inputId: String,
+  hideFooter?: boolean
 }
 
-const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, inputId }) => {
+const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, inputId, hideFooter  }) => {
   const toggleForm = (el) => {
     const parent = el.target.parentElement;
     // if not already active...
@@ -51,15 +52,20 @@ const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, i
               <img src={MapPin} alt="map location pin image" />
               <Input id={inputId} type="text" name={inputId} placeholder="Enter Zip Code/City" />
           </InputGroup>
-          <Footer>
-            <Button style={{borderRadius: "4px"}} background="accent" border="light" color="light">Search</Button>
-            <CTA>
-              <img src={PhoneIcon} />
-              <span>
-                Call us 24/7 at <a href="tel:+18555652552">(855) 565-2552</a>
-              </span>
-            </CTA>
-          </Footer>
+          {
+            hideFooter ? (<></>) : (
+            <Footer>
+              <Button style={{borderRadius: "4px"}} background="accent" border="light" color="light">Search</Button>
+              <CTA>
+                <img src={PhoneIcon} />
+                <span>
+                  Call us 24/7 at <a href="tel:+18555652552">(855) 565-2552</a>
+                </span>
+              </CTA>
+            </Footer>
+            )
+          }
+          
       </Form>
     </Wrapper>
   )

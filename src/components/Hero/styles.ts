@@ -72,6 +72,20 @@ export const Inner = styled.div`
     width: 50%;
   }
 
+  &.left {
+    padding-bottom: 11rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media only screen and (max-width: 620px) {
+      padding-top: 4rem;
+      padding-bottom: 31rem;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
   @media only screen and (max-width: 340px) {
     width: 100%;
   }

@@ -66,6 +66,7 @@ export const Content = styled.div`
       font-family: var(--font-body);
       font-size: 2rem;
       margin-left: 1.6rem;
+      text-align: left;
     }
   }
 `

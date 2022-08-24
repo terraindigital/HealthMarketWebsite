@@ -61,6 +61,16 @@ export const Wrapper = styled.div`
     .inner {
       text-align: center;
     }
+
+    &.primary {
+      &:before {
+        background-color: var(--color-primary-light)
+      }
+
+      .star path {
+        fill: var(--color-primary);
+      }
+    }
   }
 
   &.half-background {

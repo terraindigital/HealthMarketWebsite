@@ -21,7 +21,7 @@ interface Props {
 }
 
 const Carousel: FC<Props> = ({ type, background, children }) => {
-  const bgStyle = (background) ? ((background === "half") ? "half-background" : "full-background") : ""
+  const bgStyle = (background) ? ((background === "half") ? "half-background" : "full-background " + background) : ""
   const [current, setCurrent] = useState(0);
 
   if (type === "reviews") {
