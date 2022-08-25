@@ -10,7 +10,6 @@ import {
 
 // Components
 import Stars from "../Stars";
-import Button from "../../Buttons/Button";
 
 interface Props {
   stars: number,
@@ -26,9 +25,11 @@ const Review: FC<Props> = ({ stars, quote, author }) => {
         <Blockquote>{quote}</Blockquote>
         <Figcaption>
           <div>{author}</div>
-          <Button background="accent" border="accent" color="light">See all reviews</Button>
         </Figcaption>
       </Figure>
+      <div style={{ marginBottom: "2.1rem" }}>
+        <a href="https://www.healthmarkets.com/">See all reviews</a>
+      </div>
     </Wrapper>
   )
 }

@@ -22,7 +22,6 @@ import Footer from "../../components/Footer";
 
 const AboutUsPage = () => {
   const { page } = useAboutUsPageQuery()
-  console.log(page)
 
   const BannerIcon = page.gatsbyCustomFields.gpBanner.gpBannerIcon.sourceUrl
 

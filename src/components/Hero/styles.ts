@@ -1,5 +1,6 @@
 import styled from "@emotion/styled"
-import { StaticImage } from 'gatsby-plugin-image'
+
+// TODO: Global hero responsive check
 
 export const Wrapper = styled.div`
   display: flex;
@@ -83,6 +84,32 @@ export const Inner = styled.div`
       padding-bottom: 31rem;
       align-items: center;
       width: 100%;
+    }
+  }
+
+  .boxed & {
+    margin: 3.4rem 14.4rem;
+    padding: 6rem 12rem;
+
+    @media only screen and (max-width: 620px) {
+      margin: 0 auto;
+      padding: 0;
+    }
+  }
+
+  .boxed.primary & {
+    background-color: var(--color-primary);
+
+    @media only screen and (max-width: 620px) {
+      background-color: transparent;
+    }
+  }
+
+  .boxed.accent & {
+    background-color: var(--color-accent);
+
+    @media only screen and (max-width: 620px) {
+      background-color: transparent;
     }
   }
 

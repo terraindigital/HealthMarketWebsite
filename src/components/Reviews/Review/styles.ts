@@ -56,7 +56,15 @@ export const Wrapper = styled.div`
 `
 
 export const Figure = styled.figure`
-  // 
+  & + div a {
+    color: var(--color-accent);
+  }
+
+  @media only screen and (max-width: 620px) {
+    & + div {
+      display: none;
+    }
+  }
 `
 
 export const Blockquote = styled.blockquote`
@@ -80,7 +88,7 @@ export const Figcaption = styled.figcaption`
     @media only screen and (max-width: 620px) {
       margin: 1.3rem auto 0;
 
-      & + button {
+      & + div {
         display: none;
       }
     }

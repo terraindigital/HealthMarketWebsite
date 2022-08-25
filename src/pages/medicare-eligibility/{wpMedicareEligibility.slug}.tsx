@@ -30,8 +30,6 @@ interface PageInfo {
 const MedicareEligibilityPage = ({data}: { data: PageInfo }) => {
   const { page } = data
 
-  console.log(page)
-
   return (
     <Layout staticHeader>
       <Global styles={PageStyles}/>

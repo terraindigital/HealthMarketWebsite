@@ -4,26 +4,34 @@ import { Global } from "@emotion/react";
 import { graphql } from "gatsby";
 
 // Styles
-import { HeroHeading, HeroSubheading, PageStyles } from './styles';
+import {
+  HeroHeading,
+  HeroSubheading,
+  PageStyles,
+  Wrapper
+} from './styles';
 
 // Components
-
 import Layout from "../../components/Layout";
 import Seo from "../../components/SEO";
 import Hero from '../../components/Hero';
 import Button from '../../components/Buttons/Button';
-import Input from "../../components/Inputs/Input"
 import Section from "../../components/Sections";
+import FlexedSection from '../../components/Sections/FlexedSection';
+import CenteredSection from '../../components/Sections/CenteredSection';
 import Icons from "../../components/Icons";
 import Icon from "../../components/Icons/Icon";
 import Carousel from "../../components/Carousel";
 import Review from "../../components/Reviews/Review";
 import Reviews from "../../components/Reviews";
-import FlexedSection from '../../components/Sections/FlexedSection';
 import ListItem from "../../components/Lists/ListItem";
 import List from '../../components/Lists';
 import Medial from '../../components/Medials';
 import PageHeroForm from '../../components/Hero/PageHeroForm';
+import Footer from '../../components/Footer';
+import Accordion from "../../components/Accordions";
+import Cards from "../../components/Cards";
+import Card from "../../components/Cards/Card";
 
 interface IconInfo {
   link: String,  
@@ -34,6 +42,18 @@ interface IconInfo {
 }
 
 interface ListInfo {
+  title: String,
+  content: String
+}
+
+interface CardInfo {
+  image: string,
+  link: string,
+  title: string,
+  content: string
+}
+
+interface AccordionInfo {
   title: String,
   content: String
 }
@@ -56,41 +76,117 @@ interface SectionInfo {
     icon7: IconInfo,
     icon8: IconInfo,
     icon9: IconInfo,
-    icon10: IconInfo    
+    icon10: IconInfo,
+    icon11: IconInfo  
   },
   list: {
     listItem1: ListInfo,
     listItem2: ListInfo,
     listItem3: ListInfo,
-    listCta: {
-      ctaLink: String,
-      ctaText: String,
-      showCta: String
-    }
+    listItem4: ListInfo
+  },
+  cards: {
+    card1: CardInfo,
+    card2: CardInfo,
+    card3: CardInfo
+  },
+  accordions: {
+    accordion1: AccordionInfo,
+    accordion2: AccordionInfo,
+    accordion3: AccordionInfo
+  },
+  cta: {
+    showCta: boolean,
+    background: string,
+    border: string,
+    color: string,
+    link: string,
+    text: string
   }
 }
 
 interface PageInfo {
   page: {
-    id: string;
-    title: string;
-    slug: string
-    landingPageCustomFields?: {
+    id: string,
+    title: string,
+    slug: string,
+    disclaimers: {
+      disclaimer: string
+    },
+    landingPageCustomFields: {
+      lpCta: {
+        showCta?: boolean,
+        ctaStyle: string,
+        bgColor: string,
+        ctaColumns: {
+          column1: {
+            contentType: string,
+            image?: {
+              sourceUrl: string
+            },
+            heading?: string,
+            button?: {
+              link: string,
+              text: string
+            }
+          }
+          column2: {
+            contentType: string,
+            image?: {
+              sourceUrl: string
+            },
+            heading?: string,
+            button?: {
+              link: string,
+              text: string
+            }
+          }
+          column3?: {
+            contentType: string,
+            image?: {
+              sourceUrl: string
+            },
+            heading?: string,
+            button?: {
+              link: string,
+              text: string
+            }
+          }
+        }
+      },
       lpHero: {
         heroImage: {
           sourceUrl: string
-        }
+        },
         heroImageMobile: {
           sourceUrl: string
+        },
+        heroSubheadline: string,
+        heroHeadline: string,
+        alignment: string,
+        contentStyle: string,
+        contentBgColor?: string,
+        heroButtons: {
+          showButtons: boolean,
+          heroButton1: {
+            text: string
+          }
+          heroButton2: {
+            text: string
+          }
         }
-        heroSubheadline: string
-        heroHeadline: string
+      },
+      lpReviews: {
+        alignment: string,
+        bgColor: string,
+        starColor: string
       },
       lpSections: {
         lpSection1: SectionInfo,
         lpSection2: SectionInfo,
         lpSection3: SectionInfo,
-        lpSection4: SectionInfo
+        lpSection4: SectionInfo,
+        lpSection5: SectionInfo
       }
     }
   }
@@ -98,192 +194,346 @@ interface PageInfo {
 
 const LPPage = ({data}: { data: PageInfo }) => {
   const { page } = data
-  const section1 = page.landingPageCustomFields?.lpSections.lpSection1;
-  const section2 = page.landingPageCustomFields?.lpSections.lpSection2;
-
+  const sections = page.landingPageCustomFields.lpSections
 
   return (
-    <Layout>
+    <Layout pageClass={page.slug}>
       <Global styles={PageStyles} />
       <Seo title={page.title}/>
-      <div className={page.slug}>
+      <Wrapper>
         <Hero
-            image={page.landingPageCustomFields.lpHero.heroImage.sourceUrl}
-            mobileImage={page.landingPageCustomFields.lpHero.heroImageMobile.sourceUrl}
-            left
-            centered={page.slug == "campaign-c"}
+          image={page.landingPageCustomFields.lpHero.heroImage.sourceUrl}
+          mobileImage={page.landingPageCustomFields.lpHero.heroImageMobile.sourceUrl}
+          centered={(page.landingPageCustomFields.lpHero.alignment === "centered")}
+          boxed={(page.landingPageCustomFields.lpHero.contentStyle === "boxed")}
+          color={page.landingPageCustomFields.lpHero.contentBgColor}
           >
-            <HeroHeading dangerouslySetInnerHTML={{ __html: page.landingPageCustomFields.lpHero.heroHeadline }}></HeroHeading>
-            <HeroSubheading>{page.landingPageCustomFields.lpHero.heroSubheadline}</HeroSubheading>
-
-            {
-              (page.slug == "campaign-a") ? (
-                <>
-                <Input hero type="text" name="heroLocationInput" placeholder="Enter zip code/City" />
-                <Button style={{ borderRadius: "4px" }} background="accent" border="light" color="light">Get a free quote</Button>
-                </>
-              ) : (
-                <PageHeroForm btnLeftText="Get a Free quote" btnRightText="Find an agent" inputId="homepageHeroLocation" hideFooter={page.slug == "campaign-c"}/>
-              )
-            }
-            
+          <HeroHeading>{page.landingPageCustomFields.lpHero.heroHeadline}</HeroHeading>
+          <HeroSubheading>{page.landingPageCustomFields.lpHero.heroSubheadline}</HeroSubheading>
+          <PageHeroForm
+            centered={(page.landingPageCustomFields.lpHero.alignment === "centered")}
+            btnLeftText={page.landingPageCustomFields.lpHero.heroButtons.heroButton1.text}
+            btnRightText={page.landingPageCustomFields.lpHero.heroButtons.heroButton2.text}
+            inputId={`${page.title.replaceAll(' ', '')}HeroLocation`}
+            buttons={page.landingPageCustomFields.lpHero.heroButtons.showButtons} />
         </Hero>
 
-        {
-          section1.isActive && section1?.contentType == "Icon" ? (
-            <Section
-            color={section1.bgColor}
-            heading={section1.headline.headlineText}>
-              <Icons>
-              {(section1.icons) ? (
-                Object.keys(section1.icons).map((plan) => {
-                  return (
-                    <Icon
-                      icon={section1.icons[plan].icon.sourceUrl}
-                      title={section1.icons[plan].title} key={plan} />
-                  )
-                })
-              ) : null}
-            </Icons>
-            </Section>
-          ) : (<></>)
-        }
+        {Object.keys(sections).map((i) => {
+          const section = sections[i];
 
-        {
-          page.slug != "campaign-c" && section1.isActive && section1.contentType == "List" ? (
-            <FlexedSection
-                heading={section1?.headline.headlineText}
-                color={section1?.bgColor}>
-                <List>
-                  {(section1.list) ? (
-                    Object.keys(section1.list).map((li) => {
-                      if (li.indexOf("listItem") >= 0) {
-                        return (<ListItem key={li} heading={section1.list[li].title}><div dangerouslySetInnerHTML={{ __html: section1.list[li].content }} /></ListItem>);
-                      }
-                    } )
-                  ): null}
-                </List>
-                {
-                  section1?.list.listCta.showCta ? (
-                  <a href={section1?.list.listCta.ctaLink}>
-                    <Button background="accent" border="accent" color="light">{section1?.list.listCta.ctaText}</Button>
-                  </a>
-                  ) : (<></>)
-                }
-                
-            </FlexedSection>
-          ) : (<></>)
-        }
+          if (section.isActive) {
+            if (section.contentType === "List") {
+              if (section.headline.headlineAlignment === "Centered") {
+                return (
+                  <CenteredSection
+                    color={(section.bgColor) ? section.bgColor : "light"}
+                    heading={section.headline.headlineText}>
+                    <List>
+                      {Object.keys(section.list).map((listItem) => (
+                        <ListItem heading={section.list[listItem].title}>
+                          <p>{section.list[listItem].content}</p>
+                        </ListItem>
+                      ))}
+                    </List>
+                    {(section.cta.showCta) ? (
+                      <div style={{ marginTop: "5.5rem" }}>
+                        <a href={section.cta.link}>
+                          <Button
+                            background={section.cta.background}
+                            border={section.cta.border}
+                            color={section.cta.color}>
+                            {section.cta.text}
+                          </Button>
+                        </a>
+                      </div>
+                    ) : null}
+                  </CenteredSection>
+                )
+              } else {
+                return (
+                  <FlexedSection
+                    color={(section.bgColor) ? section.bgColor : "light"}
+                    heading={section.headline.headlineText}>
+                    <List>
+                      {Object.keys(section.list).map((listItem) => (
+                        <ListItem heading={section.list[listItem].title}>
+                          <p>{section.list[listItem].content}</p>
+                        </ListItem>
+                      ))}
+                    </List>
+                    {(section.cta.showCta) ? (
+                      <div>
+                        <a href={section.cta.link}>
+                          <Button
+                            background={section.cta.background}
+                            border={section.cta.border}
+                            color={section.cta.color}>
+                            {section.cta.text}
+                          </Button>
+                        </a>
+                      </div>
+                    ) : null}
+                  </FlexedSection>
+                )
+              }
+            }
 
-        {
-          page.slug == "campaign-c" && section1.isActive && section1.contentType == "List" ? (
-            <Section
-                page = {section1.contentType}
-                heading={section1?.headline.headlineText}
-                color={section1?.bgColor}>
-                <List>
-                  {(section1.list) ? (
-                    Object.keys(section1.list).map((li) => {
-                      if (li.indexOf("listItem") >= 0) {
-                        return (<ListItem key={li} heading={section1.list[li].title}><div dangerouslySetInnerHTML={{ __html: section1.list[li].content }} /></ListItem>);
-                      }
-                    } )
-                  ): null}
-                </List>
-                {
-                  section1?.list.listCta.showCta ? (
-                  <div className="listCta">
-                    <a href={section1?.list.listCta.ctaLink}>
-                      <Button background="primary" border="primary" color="light">{section1?.list.listCta.ctaText}</Button>
-                    </a>
-                  </div>
-                  ) : (<></>)
-                }
-                
-            </Section>
-          ) : (<></>)
-        }
+            if (section.contentType === "Accordion") {
+              if (section.headline.headlineAlignment === "Centered") {
+                return (
+                  <CenteredSection
+                    color={(section.bgColor) ? section.bgColor : "light"}
+                    heading={section.headline.headlineText}>
+                    <Accordion
+                      title={section.accordions.heading}
+                      content={section.accordions.content} />
+                    {(section.cta.showCta) ? (
+                      <div style={{ marginTop: "5.5rem" }}>
+                        <a href={section.cta.link}>
+                          <Button
+                            background={section.cta.background}
+                            border={section.cta.border}
+                            color={section.cta.color}>
+                            {section.cta.text}
+                          </Button>
+                        </a>
+                      </div>
+                    ) : null}
+                  </CenteredSection>
+                )
+              } else {
+                return (
+                  <FlexedSection
+                    color={(section.bgColor) ? section.bgColor : "light"}
+                    heading={section.headline.headlineText}>
+                    <Accordion
+                      title={section.accordions.heading}
+                      content={section.accordions.content} />
+                    {(section.cta.showCta) ? (
+                      <div>
+                        <a href={section.cta.link}>
+                          <Button
+                            background={section.cta.background}
+                            border={section.cta.border}
+                            color={section.cta.color}>
+                            {section.cta.text}
+                          </Button>
+                        </a>
+                      </div>
+                    ) : null}
+                  </FlexedSection>
+                )
+              }
+            }
 
-        {
-          section2.isActive && section2.contentType == "Icons" ? (
-            <Section
-            page = {section2.contentType}
-            color={section2.bgColor}
-            heading={section2.headline.headlineText}>
-              <Icons>
-              {(section2.icons) ? (
-                Object.keys(section2.icons).map((plan) => {
-                  return (
-                    <Icon
-                      icon={section2.icons[plan].icon.sourceUrl}
-                      title={section2.icons[plan].title} key={plan} />
-                  )
-                })
-              ) : null}
-            </Icons>
-            </Section>
-          ) : (<></>)
-        }
+            if (section.contentType === "Cards") {
+              if (section.headline.headlineAlignment === "Centered") {
+                return (
+                  <CenteredSection
+                    color={(section.bgColor) ? section.bgColor : "light"}
+                    heading={section.headline.headlineText}>
+                    <Cards>
+                      {(section.cards) ? (
+                        Object.keys(section.cards).map((i) => {
+                          const card = section.cards[i];
+                          return (
+                            <Card
+                              icon={card.icon.sourceUrl}
+                              title={card.title}>
+                              <div dangerouslySetInnerHTML={{ __html: card.content }} />
+                            </Card>
+                          )
+                        })
+                      ) : null}
+                    </Cards>
+                    {(section.cta.showCta) ? (
+                      <div style={{ marginTop: "5.5rem" }}>
+                        <a href={section.cta.link}>
+                          <Button
+                            background={section.cta.background}
+                            border={section.cta.border}
+                            color={section.cta.color}>
+                            {section.cta.text}
+                          </Button>
+                        </a>
+                      </div>
+                    ) : null}
+                  </CenteredSection>
+                )
+              } else {
+                return (
+                  <Section
+                    color={(section.bgColor) ? section.bgColor : "light"}
+                    heading={section.headline.headlineText}>
+                    <Cards>
+                      {(section.cards) ? (
+                        Object.keys(section.cards).map((i) => {
+                          const card = section.cards[i];
+                          return (
+                            <Card
+                              icon={card.icon.sourceUrl}
+                              title={card.title}>
+                              <div dangerouslySetInnerHTML={{ __html: card.content }} />
+                            </Card>
+                          )
+                        })
+                      ) : null}
+                    </Cards>
+                    {(section.cta.showCta) ? (
+                      <div>
+                        <a href={section.cta.link}>
+                          <Button
+                            background={section.cta.background}
+                            border={section.cta.border}
+                            color={section.cta.color}>
+                            {section.cta.text}
+                          </Button>
+                        </a>
+                      </div>
+                    ) : null}
+                  </Section>
+                )
+              }
+            }
 
-      <Section color="light">
-        <div className="hide-at-mobile">
-          <Carousel type="reviews" background={page.slug == "campaign-c" ? "primary" : "half"}>
-            <Review
-              stars="5"
-              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-              author="Stephen Friedrichs"
-            />
-            <Review
-              stars="5"
-              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-              author="Stephen Friedrichs"
-            />
-            <Review
-              stars="5"
-              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-              author="Stephen Friedrichs"
-            />
-            <Review
-              stars="5"
-              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-              author="Stephen Friedrichs"
-            />
-            <Review
-              stars="5"
-              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-              author="Stephen Friedrichs"
-            />
-          </Carousel>
-        </div>
-        <div className="show-at-mobile primary">
-            <Reviews>
-                <Review
-                    stars="5"
-                    quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                    author="Stephen Friedrichs"
-                />
-                <Review
-                    stars="5"
-                    quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                    author="Stephen Friedrichs"
-                />
-            </Reviews>
-            <div style={{ textAlign: "center" }}>
-                <a className="cta" href="#">See all reviews</a>
-            </div>
-        </div>
-      </Section>
+            if (section.contentType === "Icons") {
+              if (section.headline.headlineAlignment === "Centered") {
+                return (
+                  <CenteredSection
+                    color={(section.bgColor) ? section.bgColor : "light"}
+                    heading={section.headline.headlineText}>
+                    <Icons>
+                      {(section.icons) ? (
+                        Object.keys(section.icons).map((i) => {
+                          const icon = section.icons[i];
+                          return (
+                            <Icon
+                              icon={icon.icon.sourceUrl}
+                              title={icon.title}
+                              link={icon.link} />
+                          )
+                        })
+                      ) : null}
+                    </Icons>
+                    {(section.cta.showCta) ? (
+                      <div style={{ marginTop: "5.5rem" }}>
+                        <a href={section.cta.link}>
+                          <Button
+                            background={section.cta.background}
+                            border={section.cta.border}
+                            color={section.cta.color}>
+                            {section.cta.text}
+                          </Button>
+                        </a>
+                      </div>
+                    ) : null}
+                  </CenteredSection>
+                )
+              } else {
+                return (
+                  <Section
+                    color={(section.bgColor) ? section.bgColor : "light"}
+                    heading={section.headline.headlineText}>
+                    <Icons>
+                      {(section.icons) ? (
+                        Object.keys(section.icons).map((i) => {
+                          const icon = section.icons[i];
+                          return (
+                            <Icon
+                              icon={icon.icon.sourceUrl}
+                              title={icon.title}
+                              link={icon.link} />
+                          )
+                        })
+                      ) : null}
+                    </Icons>
+                    {(section.cta.showCta) ? (
+                      <div>
+                        <a href={section.cta.link}>
+                          <Button
+                            background={section.cta.background}
+                            border={section.cta.border}
+                            color={section.cta.color}>
+                            {section.cta.text}
+                          </Button>
+                        </a>
+                      </div>
+                    ) : null}
+                  </Section>
+                )
+              }
+            }
+          }
+        })}
 
-      <Medial color="primary">
-          <img className="chat-bubble" src={"https://hmnm2022.wpengine.com/wp-content/uploads/2022/08/contact-cta-image.png"} alt="Chat bubble icon" />
-          <h1 dangerouslySetInnerHTML={{ __html: "Uninsured?<br>We can help." }} />
-          <a href={"https://www.healthmarkets.com/find-coverage"}>
-              <Button background="accent" border="accent" color="light">
-                  {"Show me options"}
-              </Button>
-          </a>
-      </Medial>
-      </div>
+        <Section color="light">
+          <div className="hide-at-mobile">
+            <Carousel type="reviews" background={page.slug == "campaign-c" ? "primary" : "half"}>
+              <Review
+                stars="5"
+                quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+                author="Stephen Friedrichs"
+              />
+              <Review
+                stars="5"
+                quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+                author="Stephen Friedrichs"
+              />
+              <Review
+                stars="5"
+                quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+                author="Stephen Friedrichs"
+              />
+              <Review
+                stars="5"
+                quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+                author="Stephen Friedrichs"
+              />
+              <Review
+                stars="5"
+                quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+                author="Stephen Friedrichs"
+              />
+            </Carousel>
+          </div>
+          <div className="show-at-mobile primary">
+              <Reviews>
+                  <Review
+                      stars="5"
+                      quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+                      author="Stephen Friedrichs"
+                  />
+                  <Review
+                      stars="5"
+                      quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
+                      author="Stephen Friedrichs"
+                  />
+              </Reviews>
+              <div style={{ textAlign: "center" }}>
+                  <a className="cta" href="#">See all reviews</a>
+              </div>
+          </div>
+        </Section>
+
+        {(page.landingPageCustomFields.lpCta.showCta) ? (
+          <Medial
+            color={page.landingPageCustomFields.lpCta.bgColor}>
+              <img className="chat-bubble" src={page.landingPageCustomFields.lpCta.ctaColumns.column1.image?.sourceUrl} alt="Chat bubble icon" />
+              <h1 dangerouslySetInnerHTML={{ __html: page.landingPageCustomFields.lpCta.ctaColumns.column2.heading }} />
+              <a href={page.landingPageCustomFields.lpCta.ctaColumns.column3?.button?.link}>
+                  <Button
+                    background={(page.landingPageCustomFields.lpCta.bgColor === "accent") ? "primary" : "accent"}
+                    border={(page.landingPageCustomFields.lpCta.bgColor === "accent") ? "primary" : "accent"}
+                    color="light">
+                      {page.landingPageCustomFields.lpCta.ctaColumns.column3?.button?.text}
+                  </Button>
+              </a>
+          </Medial>
+        ) : null}
+      </Wrapper>
+      <Footer>
+          <div dangerouslySetInnerHTML={{ __html: page.disclaimers.disclaimer }} />
+      </Footer>
     </Layout>
   )
 }
@@ -291,229 +541,894 @@ const LPPage = ({data}: { data: PageInfo }) => {
 export default LPPage
 
 export const pageQuery = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     page: wpLandingPage(slug: {eq: $slug}) {
       id
       title
       slug
       landingPageCustomFields {
+        lpCta {
+          showCta
+          ctaStyle
+          bgColor
+          ctaColumns {
+            column1 {
+              button {
+                link
+                text
+              }
+              contentType
+              heading
+              image {
+                sourceUrl
+              }
+            }
+            column2 {
+              button {
+                link
+                text
+              }
+              contentType
+              heading
+              image {
+                sourceUrl
+              }
+            }
+            column3 {
+              button {
+                link
+                text
+              }
+              contentType
+              heading
+              image {
+                sourceUrl
+              }
+            }
+          }
+        }
         lpHero {
+          alignment
+          contentStyle
+          contentBgColor
+          heroHeadline
+          heroSubheadline
           heroImage {
             sourceUrl
           }
           heroImageMobile {
             sourceUrl
           }
-          heroSubheadline
-          heroHeadline
+          heroButtons {
+            showButtons
+            heroButton1 {
+              text
+            }
+            heroButton2 {
+              text
+            }
+          }
+        }
+        lpReviews {
+          alignment
+          bgColor
+          starColor
         }
         lpSections {
           lpSection1 {
+            isActive
             bgColor
             contentType
-            isActive
             headline {
               headlineText
               headlineAlignment
             }
+            cta {
+              showCta
+              background
+              border
+              color
+              link
+              text
+            }
+            accordions {
+              accordion1 {
+                title
+                content
+              }
+              accordion2 {
+                title
+                content
+              }
+              accordion3 {
+                title
+                content
+              }
+              accordion4 {
+                title
+                content
+              }
+              accordion5 {
+                title
+                content
+              }
+            }
+            cards {
+              card1 {
+                image {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+              card2 {
+                image {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+              card3 {
+                image {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+            }
             icons {
               icon1 {
-                link
-                title
                 icon {
                   sourceUrl
-                }    
+                }
+                link
+                title
               }
               icon2 {
-                link
-                title
                 icon {
                   sourceUrl
                 }
+                link
+                title
               }
               icon3 {
-                link
-                title
                 icon {
                   sourceUrl
                 }
+                link
+                title
               }
               icon4 {
-                link
-                title
                 icon {
                   sourceUrl
                 }
+                link
+                title
               }
               icon5 {
-                link
-                title
                 icon {
                   sourceUrl
                 }
+                link
+                title
               }
               icon6 {
-                link
-                title
                 icon {
                   sourceUrl
                 }
+                link
+                title
               }
               icon7 {
-                link
-                title
                 icon {
                   sourceUrl
                 }
+                link
+                title
               }
               icon8 {
-                link
-                title
                 icon {
                   sourceUrl
                 }
+                link
+                title
               }
               icon9 {
-                link
-                title
                 icon {
                   sourceUrl
                 }
+                link
+                title
               }
               icon10 {
-                link
-                title
                 icon {
                   sourceUrl
                 }
-              }            
+                link
+                title
+              }
+              icon11 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
             }
-
             list {
               listItem1 {
-                content
                 title
+                content
               }
               listItem2 {
-                content
                 title
+                content
               }
               listItem3 {
-                content
                 title
-              },
-              listCta {
-                ctaLink
-                ctaText
-                showCta
+                content
+              }
+              listItem4 {
+                title
+                content
               }
             }
-
           }
-
-          lpSection2{
+          lpSection2 {
+            isActive
             bgColor
             contentType
-            isActive
             headline {
               headlineText
               headlineAlignment
             }
+            cta {
+              showCta
+              background
+              border
+              color
+              link
+              text
+            }
+            accordions {
+              accordion1 {
+                title
+                content
+              }
+              accordion2 {
+                title
+                content
+              }
+              accordion3 {
+                title
+                content
+              }
+              accordion4 {
+                title
+                content
+              }
+              accordion5 {
+                title
+                content
+              }
+            }
+            cards {
+              card1 {
+                image {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+              card2 {
+                image {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+              card3 {
+                image {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+            }
             icons {
               icon1 {
-                link
-                title
                 icon {
                   sourceUrl
-                }    
+                }
+                link
+                title
               }
               icon2 {
-                link
-                title
                 icon {
                   sourceUrl
                 }
+                link
+                title
               }
               icon3 {
-                link
-                title
                 icon {
                   sourceUrl
                 }
+                link
+                title
               }
               icon4 {
-                link
-                title
                 icon {
                   sourceUrl
                 }
+                link
+                title
               }
               icon5 {
-                link
-                title
                 icon {
                   sourceUrl
                 }
+                link
+                title
               }
               icon6 {
-                link
-                title
                 icon {
                   sourceUrl
                 }
+                link
+                title
               }
               icon7 {
-                link
-                title
                 icon {
                   sourceUrl
                 }
+                link
+                title
               }
               icon8 {
-                link
-                title
                 icon {
                   sourceUrl
                 }
+                link
+                title
               }
               icon9 {
-                link
-                title
                 icon {
                   sourceUrl
                 }
+                link
+                title
               }
               icon10 {
-                link
-                title
                 icon {
                   sourceUrl
                 }
-              }            
+                link
+                title
+              }
+              icon11 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
             }
-
             list {
               listItem1 {
-                content
                 title
+                content
               }
               listItem2 {
-                content
                 title
+                content
               }
               listItem3 {
-                content
                 title
-              },
-              listCta {
-                ctaLink
-                ctaText
-                showCta
+                content
+              }
+              listItem4 {
+                title
+                content
               }
             }
-
           }
-        }        
+          lpSection3 {
+            isActive
+            bgColor
+            contentType
+            headline {
+              headlineText
+              headlineAlignment
+            }
+            cta {
+              showCta
+              background
+              border
+              color
+              link
+              text
+            }
+            accordions {
+              accordion1 {
+                title
+                content
+              }
+              accordion2 {
+                title
+                content
+              }
+              accordion3 {
+                title
+                content
+              }
+              accordion4 {
+                title
+                content
+              }
+              accordion5 {
+                title
+                content
+              }
+            }
+            cards {
+              card1 {
+                image {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+              card2 {
+                image {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+              card3 {
+                image {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+            }
+            icons {
+              icon1 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon2 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon3 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon4 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon5 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon6 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon7 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon8 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon9 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon10 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon11 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+            }
+            list {
+              listItem1 {
+                title
+                content
+              }
+              listItem2 {
+                title
+                content
+              }
+              listItem3 {
+                title
+                content
+              }
+              listItem4 {
+                title
+                content
+              }
+            }
+          }
+          lpSection4 {
+            isActive
+            bgColor
+            contentType
+            headline {
+              headlineText
+              headlineAlignment
+            }
+            cta {
+              showCta
+              background
+              border
+              color
+              link
+              text
+            }
+            accordions {
+              accordion1 {
+                title
+                content
+              }
+              accordion2 {
+                title
+                content
+              }
+              accordion3 {
+                title
+                content
+              }
+              accordion4 {
+                title
+                content
+              }
+              accordion5 {
+                title
+                content
+              }
+            }
+            cards {
+              card1 {
+                image {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+              card2 {
+                image {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+              card3 {
+                image {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+            }
+            icons {
+              icon1 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon2 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon3 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon4 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon5 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon6 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon7 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon8 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon9 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon10 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon11 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+            }
+            list {
+              listItem1 {
+                title
+                content
+              }
+              listItem2 {
+                title
+                content
+              }
+              listItem3 {
+                title
+                content
+              }
+              listItem4 {
+                title
+                content
+              }
+            }
+          }
+          lpSection5 {
+            isActive
+            bgColor
+            contentType
+            headline {
+              headlineText
+              headlineAlignment
+            }
+            cta {
+              showCta
+              background
+              border
+              color
+              link
+              text
+            }
+            accordions {
+              accordion1 {
+                title
+                content
+              }
+              accordion2 {
+                title
+                content
+              }
+              accordion3 {
+                title
+                content
+              }
+              accordion4 {
+                title
+                content
+              }
+              accordion5 {
+                title
+                content
+              }
+            }
+            cards {
+              card1 {
+                image {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+              card2 {
+                image {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+              card3 {
+                image {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+            }
+            icons {
+              icon1 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon2 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon3 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon4 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon5 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon6 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon7 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon8 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon9 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon10 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+              icon11 {
+                icon {
+                  sourceUrl
+                }
+                link
+                title
+              }
+            }
+            list {
+              listItem1 {
+                title
+                content
+              }
+              listItem2 {
+                title
+                content
+              }
+              listItem3 {
+                title
+                content
+              }
+              listItem4 {
+                title
+                content
+              }
+            }
+          }
+        }
+      }
+      disclaimers {
+        disclaimer
       }
     }
   }

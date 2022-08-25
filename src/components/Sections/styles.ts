@@ -55,7 +55,7 @@ export const Heading = styled.div`
     display: block;
     transform: translateX(-2.1rem);
 
-    h1 {
+    h2 {
       font-size: 4rem;
       letter-spacing: 0.02em;
       line-height: 115%;
@@ -63,7 +63,7 @@ export const Heading = styled.div`
       padding: 0.5rem 2.1rem 0.5rem 3.4rem;
     }
 
-    h2 {
+    h3 {
       font-size: 1.8rem;
       margin-bottom: 2.1rem;
       margin-left: 0;

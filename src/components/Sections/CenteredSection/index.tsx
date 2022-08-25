@@ -22,11 +22,11 @@ const switchBgColor = (bgColor) => {
   }
 }
 
-const FlexedSection: FC<Props> = ({ heading, color, children}) => {
+const CenteredSection: FC<Props> = ({ heading, color, children}) => {
   const bgColor = switchBgColor(color)
 
   return (
-    <Wrapper backgroundColor={bgColor} className={`section ` + color}>
+    <Wrapper backgroundColor={bgColor} className={`centered section ` + color}>
       <Heading>
         <h2>{heading}</h2>
       </Heading>
@@ -37,4 +37,4 @@ const FlexedSection: FC<Props> = ({ heading, color, children}) => {
   )
 };
 
-export default FlexedSection
+export default CenteredSection

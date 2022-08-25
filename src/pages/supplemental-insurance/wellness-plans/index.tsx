@@ -26,7 +26,6 @@ import Footer from "../../../components/Footer";
 
 const WellnessPage = () => {
   const { page } = useWellnessPageQuery()
-  console.log(page)
 
   return (
     <Layout staticHeader>

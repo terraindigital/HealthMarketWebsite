@@ -24,7 +24,6 @@ import Footer from "../../components/Footer";
 
 const SmallBusinessPage = () => {
   const { page } = useSmallBusinessPageQuery()
-  console.log(page)
 
   return (
     <Layout staticHeader>

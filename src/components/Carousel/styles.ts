@@ -70,6 +70,10 @@ export const Wrapper = styled.div`
       .star path {
         fill: var(--color-primary);
       }
+
+      figure + div a {
+        color: var(--color-primary);
+      }
     }
   }
 

@@ -26,10 +26,12 @@ interface Props {
   btnLeftText: String,
   btnRightText: String,
   inputId: String,
+  buttons?: boolean,
   hideFooter?: boolean
 }
 
-const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, inputId, hideFooter  }) => {
+const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, inputId, buttons, hideFooter  }) => {
+  // TODO: rendezvous with design re: this
   const toggleForm = (el) => {
     const parent = el.target.parentElement;
     // if not already active...
@@ -43,10 +45,12 @@ const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, i
 
   return (
     <Wrapper className={`${(centered) ? `centered` : ``} ${(light) ? `light` : ``}`}>
-      <Buttons>
+      {(buttons || buttons === undefined) ? (
+        <Buttons>
           <Btn className="accented" onClick={toggleForm}>{btnLeftText}</Btn>
           <Btn onClick={toggleForm}>{btnRightText}</Btn>
-      </Buttons>
+        </Buttons>
+      ) : null}
       <Form>
           <InputGroup>
               <img src={MapPin} alt="map location pin image" />
@@ -56,12 +60,14 @@ const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, i
             hideFooter ? (<></>) : (
             <Footer>
               <Button style={{borderRadius: "4px"}} background="accent" border="light" color="light">Search</Button>
-              <CTA>
-                <img src={PhoneIcon} />
-                <span>
-                  Call us 24/7 at <a href="tel:+18555652552">(855) 565-2552</a>
-                </span>
-              </CTA>
+              {(buttons || buttons === undefined) ? (
+                <CTA>
+                  <img src={PhoneIcon} />
+                  <span>
+                    Call us 24/7 at <a href="tel:+18555652552">(855) 565-2552</a>
+                  </span>
+                </CTA>
+              ) : null}
             </Footer>
             )
           }

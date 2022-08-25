@@ -33,10 +33,11 @@ export const Heading = styled.div`
   min-width: calc(50% + 8.9rem);
   transform: translateX(-8.9rem);
 
-  h1 {
+  h2 {
     background-color: var(--color-primary);
     color: var(--color-light);
     display: inline-block;
+    font-size: 4.4rem;
     margin: 0;
     padding: 3.4rem 3.4rem 3.4rem 14.4rem;
   }
@@ -46,7 +47,7 @@ export const Heading = styled.div`
     margin-bottom: 3.4rem;
     transform: translateX(-2.1rem);
 
-    h1 {
+    h2 {
       max-width: 100%;
       padding: 0.5rem 2.1rem 0.5rem 3.4rem;
     }
