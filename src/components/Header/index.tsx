@@ -30,7 +30,9 @@ const Header: FC<Props> = ({staticHeader=false, color}) => {
     }
   }
   
-  window.onscroll = () => { stickyHeader() }
+  if (typeof window !== "undefined") {
+    window.onscroll = () => { stickyHeader() }
+  }
 
   return (
     <Wrapper className={`site-header ` + headerColor + ` ` + staticClass}>
