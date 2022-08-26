@@ -1,17 +1,6 @@
 
-import styled from "@emotion/styled"
 import {css} from "@emotion/react";
-
-export const RightContent = styled.div`
-  margin-left: 3.4rem;
-  padding-top: 14.4rem;
-  vertical-align: top;
-
-  @media only screen and (max-width: 620px) {
-    margin-left: 0;
-    padding-top: 4rem;
-  }
-`
+import styled from "@emotion/styled"
 
 export const PageStyles = css`
   h1, h2, h3 {
@@ -43,5 +32,16 @@ export const PageStyles = css`
   .right-content > div.centered + button {
     margin-bottom: 1.6rem;
     width: 100%;
+  }
+`
+
+export const RightContent = styled.div`
+  margin-left: 3.4rem;
+  padding-top: 14.4rem;
+  vertical-align: top;
+
+  @media only screen and (max-width: 620px) {
+    margin-left: 0;
+    padding-top: 4rem;
   }
 `

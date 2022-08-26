@@ -12,7 +12,7 @@ import {
   HeroSubheading,
   BestPriceImage,
   BestPriceImageMobile
-} from "./styles";
+} from "../../components/pages/styles/SupplementalInsStyles";
 
 // Components
 import Layout from "../../components/Layout";

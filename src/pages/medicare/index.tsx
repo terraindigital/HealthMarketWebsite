@@ -10,7 +10,7 @@ import {
   PageStyles,
   HeroHeading,
   HeroSubheading
-} from "./styles";
+} from "../../components/pages/styles/MedicareStyles";
 
 // Components
 import Layout from "../../components/Layout";

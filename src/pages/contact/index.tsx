@@ -6,7 +6,7 @@ import { Global } from '@emotion/react';
 import { useContactPageQuery } from '../../hooks/useContactPageQuery';
 
 // Styles
-import { PageStyles } from "./styles"
+import { PageStyles } from "../../components/pages/styles/ContactStyles";
 
 // Components
 import Layout from '../../components/Layout';

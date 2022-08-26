@@ -5,11 +5,11 @@ import { graphql } from "gatsby";
 
 // Styles
 import {
-  HeroHeading,
-  HeroSubheading,
   PageStyles,
-  Wrapper
-} from './styles';
+  Wrapper,
+  HeroHeading,
+  HeroSubheading
+} from '../../components/pages/styles/LandingPageStyles';
 
 // Components
 import Layout from "../../components/Layout";

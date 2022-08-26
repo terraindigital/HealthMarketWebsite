@@ -18,24 +18,18 @@ const config: GatsbyConfig = {
     // Learn more at: https://gatsby.dev/graphql-typegen
     graphqlTypegen: true,
     plugins: [
-        // {
-        //   resolve: "gatsby-source-graphql",
-        //   options: {
-        //     // Remote schema query type. This is an arbitrary name.
-        //     typeName: "WPGraphQL",
-        //     // Field name under which it will be available. Used in your Gatsby query. This is also an arbitrary name.
-        //     fieldName: "wpcontent",
-        //     // GraphQL endpoint, relative to your WordPress home URL.
-        //     url: process.env.WPGRAPHQL_URL,
-        //   },
-        // },
         {
             resolve: `gatsby-source-wordpress`,
             options: {
                 url: process.env.WPGRAPHQL_URL,
             }
         },
-        'gatsby-plugin-emotion',
+        {
+            resolve: 'gatsby-plugin-emotion',
+            options: {
+                cssPropOptimization: true,
+            }
+        },
         {
             resolve: 'gatsby-plugin-google-analytics',
             options: {
