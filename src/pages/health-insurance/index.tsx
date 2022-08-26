@@ -10,11 +10,7 @@ import {
   PageStyles,
   HeroHeading,
   HeroSubheading
-} from "./styles";
-
-// Images
-import MapPin from "../../images/location.png";
-import PhoneIcon from "../../images/phone-icon.png"
+} from "../../components/pages/styles/HealthInsStyles";
 
 // Components
 import Layout from "../../components/Layout";

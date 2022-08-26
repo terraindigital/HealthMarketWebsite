@@ -10,7 +10,7 @@ import {
   PageStyles,
   HeroHeading,
   HeroSubheading
-} from "./styles";
+} from "../../components/pages/styles/DentalInsStyles";
 
 // Components
 import Layout from "../../components/Layout";
@@ -28,7 +28,7 @@ import Review from "../../components/Reviews/Review";
 import Reviews from "../../components/Reviews";
 import Footer from "../../components/Footer";
 
-const HealthInsurancePage = () => {
+const DentalInsurancePage = () => {
   const { page } = useDentalPageQuery();
   
   return (
@@ -146,4 +146,4 @@ const HealthInsurancePage = () => {
   )
 }
 
-export default HealthInsurancePage
+export default DentalInsurancePage

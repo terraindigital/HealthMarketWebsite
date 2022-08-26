@@ -4,8 +4,10 @@ import { Global } from "@emotion/react";
 import { graphql } from "gatsby";
 
 // Styles
-import { RightContent } from "./styles"
-import { PageStyles } from "./styles"
+import {
+  PageStyles,
+  RightContent
+} from "../../components/pages/styles/MedicareEligibilityStyles"
 
 // Components
 import Section from '../../components/Sections';

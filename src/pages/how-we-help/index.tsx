@@ -7,7 +7,7 @@ import {
   PageStyles,
   HeroHeading,
   HeroSubheading
-} from './styles';
+} from '../../components/pages/styles/HowWeHelpStyles';
 
 // Components
 import Layout from "../../components/Layout";
