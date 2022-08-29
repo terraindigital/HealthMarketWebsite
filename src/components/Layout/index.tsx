@@ -4,7 +4,6 @@ import {GlobalStyles, Wrapper} from "./styles";
 
 // Components
 import Header from "../Header"
-import Footer from "../Footer"
 
 interface Props {
     pageClass?: String,

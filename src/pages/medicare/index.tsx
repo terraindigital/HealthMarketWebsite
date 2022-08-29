@@ -25,7 +25,7 @@ import FlexedSection from "../../components/Sections/FlexedSection";
 import Accordion from "../../components/Accordions";
 import Carousel from "../../components/Carousel";
 import Review from "../../components/Reviews/Review";
-import Medial from "../../components/Example/Medials";
+import Medial from "../../components/Medials";
 import Reviews from "../../components/Reviews";
 import Footer from "../../components/Footer";
 
