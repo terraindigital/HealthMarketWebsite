@@ -33,8 +33,6 @@ const HeaderRight = () => {
       </Item>
       <Item>
         <SearchButton className="hide-at-mobile icon" onClick={toggleSearch} src={SearchIcon} alt="magnifying glass icon" />
-        {/* TODO: remove this vvvv */}
-        {/* <SearchButton className="hide-at-mobile icon" onClick={toggleMobileSearch} src={SearchIcon} alt="magnifying glass icon" /> */}
         <MenuButton className="menu-button" onClick={toggleNav}>
           <Bars />
         </MenuButton>

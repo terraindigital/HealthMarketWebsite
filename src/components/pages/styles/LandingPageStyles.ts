@@ -2,7 +2,7 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 export const PageStyles = css`
-  /* TODO: Responsive tweaks for lp template */
+  /* TODO: Responsive; Responsive tweaks for lp template */
 `
 
 export const Wrapper = styled.div`

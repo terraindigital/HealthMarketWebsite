@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 
-// TODO: Global hero responsive check
+// TODO: Responsive; Global hero responsive check
 
 export const Wrapper = styled.div`
   display: flex;

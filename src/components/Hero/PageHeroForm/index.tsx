@@ -31,7 +31,7 @@ interface Props {
 }
 
 const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, inputId, buttons, hideFooter  }) => {
-  // TODO: rendezvous with design re: this
+  // TODO: link up with design re: this
   const toggleForm = (el) => {
     const parent = el.target.parentElement;
     // if not already active...

@@ -317,7 +317,7 @@ const Template: FC<Prop> = ({data, pageType}) => {
                     Related Info
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3">
-                    {/* TODO: Change Article Link */}
+                    {/* TODO: make articles dynamic (BrightEdge) */}
                     {
                         [
                             {

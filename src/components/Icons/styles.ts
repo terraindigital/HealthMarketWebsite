@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 
-// TODO: Alignment issues with icons; to be discussed with design
+// TODO: link up with design re: icon alignment
 
 export const Wrapper = styled.div`
   display: flex;
