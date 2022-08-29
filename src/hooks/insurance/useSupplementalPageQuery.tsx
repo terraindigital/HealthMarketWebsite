@@ -145,6 +145,7 @@ export const useSupplementalPageQuery = () => {
                 }
                 title
                 content
+                link
               }
               relatedContent2 {
                 image {
@@ -152,6 +153,7 @@ export const useSupplementalPageQuery = () => {
                 }
                 title
                 content
+                link
               }
               relatedContent3 {
                 image {
@@ -159,6 +161,7 @@ export const useSupplementalPageQuery = () => {
                 }
                 title
                 content
+                link
               }
             }
           }

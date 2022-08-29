@@ -64,6 +64,7 @@ export const useDentalPageQuery = () => {
                 }
                 heading
                 content
+                link
               }
               dentalRelatedContent2 {
                 image {
@@ -71,6 +72,7 @@ export const useDentalPageQuery = () => {
                 }
                 heading
                 content
+                link
               }
               dentalRelatedContent3 {
                 image {
@@ -78,6 +80,7 @@ export const useDentalPageQuery = () => {
                 }
                 heading
                 content
+                link
               }
             }
             cta {

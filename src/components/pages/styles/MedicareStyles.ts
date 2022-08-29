@@ -9,8 +9,12 @@ export const PageStyles = css`
     min-width: 320px;
   }
 
-  .button-container button:first-of-type {
+  .button-container a:first-of-type {
     margin-bottom: 2.1rem;
+  }
+
+  .button-container button {
+    width: 100%;
   }
 
   @media only screen and (max-width: 620px) {

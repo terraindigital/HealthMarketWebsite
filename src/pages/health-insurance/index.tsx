@@ -161,17 +161,20 @@ const HealthInsurancePage = () => {
         <Cards>
           <Card
             image={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent1.image.sourceUrl}
-            title={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent1.heading}>
+            title={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent1.heading}
+            link={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent1.link}>
             <div dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent1.content}} />
           </Card>
           <Card
             image={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent2.image.sourceUrl}
-            title={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent2.heading}>
+            title={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent2.heading}
+            link={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent2.link}>
             <div dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent2.content}} />
           </Card>
           <Card
             image={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent3.image.sourceUrl}
-            title={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent3.heading}>
+            title={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent3.heading}
+            link={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent3.link}>
             <div dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent3.content}} />
           </Card>
         </Cards>

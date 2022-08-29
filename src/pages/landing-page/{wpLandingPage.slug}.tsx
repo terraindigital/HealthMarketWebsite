@@ -341,7 +341,8 @@ const LPPage = ({data}: { data: PageInfo }) => {
                           return (
                             <Card
                               icon={card.icon.sourceUrl}
-                              title={card.title}>
+                              title={card.title}
+                              list={(card.list) ? card.list : null}>
                               <div dangerouslySetInnerHTML={{ __html: card.content }} />
                             </Card>
                           )
@@ -374,7 +375,8 @@ const LPPage = ({data}: { data: PageInfo }) => {
                           return (
                             <Card
                               icon={card.icon.sourceUrl}
-                              title={card.title}>
+                              title={card.title}
+                              list={(card.list) ? card.list : null}>
                               <div dangerouslySetInnerHTML={{ __html: card.content }} />
                             </Card>
                           )

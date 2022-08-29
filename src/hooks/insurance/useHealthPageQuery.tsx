@@ -174,6 +174,7 @@ export const useHealthPageQuery = () => {
                 }
                 heading
                 content
+                link
               }
               healthRelatedContent2 {
                 image {
@@ -181,6 +182,7 @@ export const useHealthPageQuery = () => {
                 }
                 heading
                 content
+                link
               }
               healthRelatedContent3 {
                 image {
@@ -188,6 +190,7 @@ export const useHealthPageQuery = () => {
                 }
                 heading
                 content
+                link
               }
             }
             cta {

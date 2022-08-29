@@ -9,20 +9,19 @@ const toggleOpenState = (el) => {
   card.classList.toggle('active')
 }
 
-// TODO: add link to props
-
 interface Props {
   image?: String,
   icon?: String,
+  link?: String,
   title: String,
   children?: ReactNode
 }
 
-const Card: FC<Props> = ({ image=null, icon=null, title, children }) => {
+const Card: FC<Props> = ({ image=null, icon=null, link=null, title, children }) => {
   const imageClass = (icon !== null) ? "icon" : ""
 
   return (
-    <Wrapper className={`card ${imageClass}`}>
+    <Wrapper className={`card ${imageClass}`} href={link}>
       <Header className="card-header" onClick={toggleOpenState}>
         <Img
           src={(image !== null) ? image : icon}

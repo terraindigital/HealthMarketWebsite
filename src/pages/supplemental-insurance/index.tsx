@@ -65,7 +65,8 @@ const HealthInsurancePage = () => {
               return (
                 <Card
                   icon={plans[plan].icon.sourceUrl}
-                  title={plans[plan].title}>
+                  title={plans[plan].title}
+                  link={plans[plan].link}>
                   <div dangerouslySetInnerHTML={{ __html: plans[plan].content }} />
                 </Card>
               )
@@ -127,17 +128,20 @@ const HealthInsurancePage = () => {
         <Cards>
           <Card
             image={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent1.image.sourceUrl}
-            title={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent1.title}>
+            title={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent1.title}
+            link={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent1.link}>
             <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent1.content}} />
           </Card>
           <Card
             image={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent2.image.sourceUrl}
-            title={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent2.title}>
+            title={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent2.title}
+            link={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent2.link}>
             <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent2.content}} />
           </Card>
           <Card
             image={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent3.image.sourceUrl}
-            title={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent3.title}>
+            title={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent3.title}
+            link={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent3.link}>
             <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent3.content}} />
           </Card>
         </Cards>

@@ -56,17 +56,20 @@ const MedicarePage = () => {
         <Cards openAtMobile>
           <Card
             icon={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard1.icon.sourceUrl}
-            title={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard1.title}>
+            title={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard1.title}
+            link={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard1.link}>
             <div dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard1.content }} />
           </Card>
           <Card
             icon={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard2.icon.sourceUrl}
-            title={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard2.title}>
+            title={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard2.title}
+            link={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard2.link}>
             <div dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard2.content }} />
           </Card>
           <Card
             icon={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.icon.sourceUrl}
-            title={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.title}>
+            title={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.title}
+            link={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.link}>
             <div dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.content }} />
           </Card>
         </Cards>
