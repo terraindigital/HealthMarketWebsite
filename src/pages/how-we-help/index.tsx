@@ -35,7 +35,9 @@ const HowWeHelpPage = () => {
   return (
     <Layout pageClass="how-we-help">
       <Global styles={PageStyles}/>
-      <Seo title="How We Help"/>
+      <Seo
+          title={hwh.metadataCustomFields.metaTitle}
+          description={hwh.metadataCustomFields.metaDescription}/>
       <Hero
         image={hwh.pageHeroFields.heroImage.sourceUrl}
         mobileImage={hwh.pageHeroFields.mobileHeroImage.sourceUrl}

@@ -28,7 +28,9 @@ const ContactPage = () => {
   return (
     <Layout staticHeader>
       <Global styles={PageStyles}/>
-      <Seo title="Contact" />
+      <Seo
+          title={page.metadataCustomFields.metaTitle}
+          description={page.metadataCustomFields.metaDescription}/>
       <Section page="contact" color="muted" heading="Let's connect">
         <SplitSection color="muted">
           <div className="left">

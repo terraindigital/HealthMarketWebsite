@@ -5,6 +5,11 @@ export const useMedicarePageQuery = () => {
     query MedicareQuery {
       page: wpPage(databaseId: {eq: 1340}) {
         id
+        metadataCustomFields {
+          metaTitle
+          metaDescription
+          metaKeywords
+        }
         pageHeroFields {
           headline
           subheadline

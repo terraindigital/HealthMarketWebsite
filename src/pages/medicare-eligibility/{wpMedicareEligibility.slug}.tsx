@@ -35,7 +35,9 @@ const MedicareEligibilityPage = ({data}: { data: PageInfo }) => {
   return (
     <Layout staticHeader>
       <Global styles={PageStyles}/>
-      <Seo title={page.title}/>
+      <Seo
+          title={page.metadataCustomFields.metaTitle}
+          description={page.metadataCustomFields.metaDescription}/>
       <SplitSection align="top" color="muted">
         <Section page={`medicare-eligibility ` + page.slug} color="light">
           <h1>{page.title}</h1>
@@ -77,6 +79,11 @@ export const pageQuery = graphql`
       title
       slug
       content
+      metadataCustomFields {
+        metaTitle
+        metaDescription
+        metaKeywords
+      }
       disclaimers {
         disclaimer
       }

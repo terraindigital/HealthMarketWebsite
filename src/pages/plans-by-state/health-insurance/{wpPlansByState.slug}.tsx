@@ -31,6 +31,11 @@ query($slug: String!)
             id
             slug
             title
+            metadataCustomFields {
+                metaTitle
+                metaDescription
+                metaKeywords
+            }
             pageData
             {
                 healthInsurance

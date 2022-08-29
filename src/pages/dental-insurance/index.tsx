@@ -34,7 +34,9 @@ const DentalInsurancePage = () => {
   return (
     <Layout pageClass="dental-insurance">
       <Global styles={PageStyles} />
-      <Seo title="Dental Insurance"/>
+      <Seo
+          title={page.metadataCustomFields.metaTitle}
+          description={page.metadataCustomFields.metaDescription}/>
       <Hero
         image={page.pageHeroFields.heroImage.sourceUrl}
         mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}>

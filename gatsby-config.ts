@@ -36,6 +36,12 @@ const config: GatsbyConfig = {
                 trackingId: 'GA_TRACKING_ID',
             },
         },
+        {
+          resolve: `gatsby-plugin-canonical-urls`,
+          options: {
+            siteUrl: `https://www.healthmarkets.com`,
+          },
+        },
         'gatsby-plugin-image',
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-sitemap',

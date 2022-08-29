@@ -30,7 +30,9 @@ const IndexPage = ({path}: PageProps) => {
 
     return (
         <Layout pageClass="home" headerColor="light">
-            <Seo title="Home"/>
+            <Seo
+                title={home.metadataCustomFields.metaTitle}
+                description={home.metadataCustomFields.metaDescription}/>
             <Hero
                 image={home.pageHeroFields.heroImage.sourceUrl}
                 mobileImage={home.pageHeroFields.mobileHeroImage.sourceUrl}

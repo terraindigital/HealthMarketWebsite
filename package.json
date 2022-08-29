@@ -25,6 +25,7 @@
     "dotenv": "^16.0.1",
     "gatsby": "^4.18.0",
     "gatsby-cli": "^4.21.0",
+    "gatsby-plugin-canonical-urls": "^4.21.0",
     "gatsby-plugin-emotion": "^7.18.0",
     "gatsby-plugin-google-analytics": "^4.18.0",
     "gatsby-plugin-google-fonts": "^1.0.1",

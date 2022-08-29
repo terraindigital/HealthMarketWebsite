@@ -199,7 +199,9 @@ const LPPage = ({data}: { data: PageInfo }) => {
   return (
     <Layout pageClass={page.slug}>
       <Global styles={PageStyles} />
-      <Seo title={page.title}/>
+      <Seo
+          title={page.metadataCustomFields.metaTitle}
+          description={page.metadataCustomFields.metaDescription}/>
       <Wrapper>
         <Hero
           image={page.landingPageCustomFields.lpHero.heroImage.sourceUrl}
@@ -546,6 +548,11 @@ export const pageQuery = graphql`
       id
       title
       slug
+      metadataCustomFields {
+        metaTitle
+        metaDescription
+        metaKeywords
+      }
       landingPageCustomFields {
         lpCta {
           showCta

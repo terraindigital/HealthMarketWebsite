@@ -5,6 +5,11 @@ export const useDentalPageQuery = () => {
     query DentalQuery {
       page: wpPage(databaseId: {eq: 1210}) {
         id
+        metadataCustomFields {
+          metaTitle
+          metaDescription
+          metaKeywords
+        }
         pageHeroFields {
           headline
           subheadline
