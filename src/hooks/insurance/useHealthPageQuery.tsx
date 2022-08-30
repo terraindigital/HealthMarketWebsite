@@ -42,6 +42,7 @@ export const useHealthPageQuery = () => {
                 }
                 title
                 content
+                link
               }
               healthCard2 {
                 icon {
@@ -49,6 +50,7 @@ export const useHealthPageQuery = () => {
                 }
                 title
                 content
+                link
               }
               healthCard3 {
                 icon {
@@ -56,6 +58,7 @@ export const useHealthPageQuery = () => {
                 }
                 title
                 content
+                link
               }
             }
           }

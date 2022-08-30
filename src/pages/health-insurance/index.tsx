@@ -58,17 +58,20 @@ const HealthInsurancePage = () => {
         <Cards openAtMobile>
           <Card
             icon={page.healthPageCustomFields.healthSection1.healthCards.healthCard1.icon.sourceUrl}
-            title={page.healthPageCustomFields.healthSection1.healthCards.healthCard1.title}>
+            title={page.healthPageCustomFields.healthSection1.healthCards.healthCard1.title}
+            link={page.healthPageCustomFields.healthSection1.healthCards.healthCard1.link}>
             <div dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection1.healthCards.healthCard1.content }} />
           </Card>
           <Card
             icon={page.healthPageCustomFields.healthSection1.healthCards.healthCard2.icon.sourceUrl}
-            title={page.healthPageCustomFields.healthSection1.healthCards.healthCard2.title}>
+            title={page.healthPageCustomFields.healthSection1.healthCards.healthCard2.title}
+            link={page.healthPageCustomFields.healthSection1.healthCards.healthCard2.link}>
             <div dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection1.healthCards.healthCard2.content }} />
           </Card>
           <Card
             icon={page.healthPageCustomFields.healthSection1.healthCards.healthCard3.icon.sourceUrl}
-            title={page.healthPageCustomFields.healthSection1.healthCards.healthCard3.title}>
+            title={page.healthPageCustomFields.healthSection1.healthCards.healthCard3.title}
+            link={page.healthPageCustomFields.healthSection1.healthCards.healthCard3.link}>
             <div dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection1.healthCards.healthCard3.content }} />
           </Card>
         </Cards>
