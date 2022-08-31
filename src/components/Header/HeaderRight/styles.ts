@@ -11,7 +11,9 @@ export const Wrapper = styled.div`
 
 export const Item = styled.div`
   border-right: 1px solid var(--color-dark);
-  padding: 0 1.3rem;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0 1.6rem;
 
   &:last-child {
     border-right: none;
@@ -19,10 +21,14 @@ export const Item = styled.div`
 
   .icon {
     display: inline;
-    height: 14px;
+    height: 23px;
     position: relative;
     vertical-align: middle;
     margin: -0.3rem 0.3rem 0 0;
+
+    &.phone {
+      margin-right: 0.8rem;
+    }
   }
 `
 
@@ -68,10 +74,10 @@ export const MenuButton = styled.button`
   border: none;
   cursor: pointer;
   display: inline;
-  height: 28px;
+  height: 34px;
   margin-left: 1.3rem;
   padding: 0;
-  width: 28px;
+  width: 34px;
   
   .light & > div {
     border-color: var(--color-light);
@@ -86,15 +92,20 @@ export const MenuButton = styled.button`
 
   &.nav-active > div {
     border-color: transparent;
-    &:before, &:after { border-color: var(--color-light); }
+    top: -10px;
+    
+    &:before, &:after {
+      border-color: var(--color-light);
+      left: 3px;
+    }
 
-    &:before { transform: rotate(45deg) translateY(9px); }
-    &:after  { transform: rotate(-45deg) translateY(-9px); }
+    &:before { transform: rotate(45deg) translate(5px, 13px); }
+    &:after  { transform: rotate(-45deg) translate(-1px, -8px); }
   }
 `
 
 export const Bars = styled.div`
-  border-bottom: 1px solid var(--color-dark);
+  border-bottom: 2px solid var(--color-dark);
   height: 0px;
   position: relative;
   top: -5px;
@@ -105,7 +116,7 @@ export const Bars = styled.div`
   &:after {
     content: '';
     display: block;
-    border-bottom: 1px solid var(--color-dark);
+    border-bottom: 2px solid var(--color-dark);
     height: 0px;
     position: relative;
     transition: all 0.22s linear;
@@ -113,7 +124,7 @@ export const Bars = styled.div`
   }
 
   &:before {
-    top: -7px;
+    top: -9px;
   }
 
   &:after {

@@ -34,7 +34,7 @@ const ContactPage = () => {
       <Section page="contact" color="muted" heading="Let's connect">
         <SplitSection color="muted">
           <div className="left">
-            <h3 style={{ fontWeight: "normal" }}>Submit your contact info and a licensed insurance agent will be in touch soon!</h3>
+            <h4 style={{ fontWeight: "normal" }}>Submit your contact info and a licensed insurance agent will be in touch soon!</h4>
             <form>
               <Input id="fName" type="text" name="fName" placeholder="First name" required />
               <Input id="lName" type="text" name="lName" placeholder="Last name" required />

@@ -15,9 +15,9 @@ export const PageStyles = css`
     padding: 0;
   }
 
-  .contact.section .section div h3 {
+  .contact.section .section div h4 {
     font-family: var(--font-body);
-    font-size: 2.4rem;
+    /* font-size: 2.4rem; */
   }
     
   .contact.section .section div h3 + form p a {

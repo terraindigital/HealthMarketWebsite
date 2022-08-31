@@ -76,10 +76,7 @@ export const PageStyles = css`
 `
 
 export const HeroHeading = styled.h1`
-  font-size: 8rem;
-  line-height: 110%;
   margin-bottom: 3.4rem;
-  max-width: 1024px;
   text-align: center;
 
   @media only screen and (max-width: 620px) {
@@ -87,10 +84,8 @@ export const HeroHeading = styled.h1`
   }
 `
 
-export const HeroSubheading = styled.h2`
+export const HeroSubheading = styled.h4`
   font-family: var(--font-body);
-  font-size: 2.4rem;
-  line-height: 110%;
   margin-bottom: 0;
   text-align: center;
 

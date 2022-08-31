@@ -30,10 +30,10 @@ const Card: FC<Props> = ({ image=null, icon=null, link=null, title, children }) 
           maxHeight={(image === null) ? 98 : null}
           alt="Card Icon Image"
         />
-        <h2 className="show-at-mobile">{title}</h2>
+        <h4 className="show-at-mobile">{title}</h4>
       </Header>
       <Content className="card-content">
-        <h2 className="hide-at-mobile">{title}</h2>
+        <h4 className="hide-at-mobile">{title}</h4>
         {children}
       </Content>
     </Wrapper>

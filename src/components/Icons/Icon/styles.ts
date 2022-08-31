@@ -78,15 +78,16 @@ export const Img = styled.img`
 export const Content = styled.div`
   margin-top: 2.1rem;
 
-  h2 {
+  h4 {
     color: var(--color-primary);
+    font-family: var(--font-heading);
     margin-bottom: 0;
   }
 
   @media only screen and (max-width: 620px) {
     margin-top: 0;
 
-    h2 {
+    h4 {
       font-family: var(--font-body);
       font-size: 2rem;
       margin-left: 1.6rem;

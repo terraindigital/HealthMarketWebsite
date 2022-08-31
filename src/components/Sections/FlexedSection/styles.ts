@@ -37,9 +37,9 @@ export const Heading = styled.div`
     background-color: var(--color-primary);
     color: var(--color-light);
     display: inline-block;
-    font-size: 4.4rem;
+    letter-spacing: 1px;
     margin: 0;
-    padding: 3.4rem 3.4rem 3.4rem 14.4rem;
+    padding: 2.8rem 8.8rem 2.8rem 14.4rem;
   }
 
   @media only screen and (max-width: 620px) {

@@ -1,7 +1,7 @@
 import styled from "@emotion/styled"
 
 export const Wrapper = styled.li`
-  margin-bottom: 3.4rem;
+  margin-bottom: 4rem;
   position: relative;
 
   &:last-of-type {
@@ -10,11 +10,11 @@ export const Wrapper = styled.li`
 `
 
 export const Check = styled.div`
-  height: 2.1rem;
-  left: -30px;
+  height: 4rem;
+  left: -6rem;
   position: absolute;
   top: 0.3rem;
-  width: 2.1rem;
+  width: 4rem;
   z-index: 1;
 
   &:before {
@@ -23,16 +23,22 @@ export const Check = styled.div`
     border: 2px solid var(--color-accent);
     border-radius: 50%;
     display: block;
-    height: 2.1rem;
+    height: 4.5rem;
     left: -3px;
     position: absolute;
     top: 3px;
-    width: 2.1rem;
+    width: 4.5rem;
     z-index: -1;
   }
 `
 
 export const Heading = styled.div`
   color: var(--color-primary);
-  margin-bottom: 1.3rem;
+  margin-bottom: 1.6rem;
+`
+
+export const Body = styled.div`
+  &, & p {
+    font-size: 2rem;
+  }
 `

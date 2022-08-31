@@ -24,7 +24,7 @@ const HeaderRight = () => {
     <Wrapper className="header-right">
       <Item className="hide-at-mobile">
         <Link to="tel:8008279990">
-          <img className="icon" src={PhoneIcon} alt="telephone icon" />
+          <img className="phone icon" src={PhoneIcon} alt="telephone icon" />
           (800) 827-9990
         </Link>
       </Item>

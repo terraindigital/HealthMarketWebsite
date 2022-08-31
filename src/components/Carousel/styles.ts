@@ -26,17 +26,19 @@ export const Wrapper = styled.div`
       }
     }
 
-    .swiper-slide.swiper-slide-active {
+    .swiper-slide {
+      // TODO: width: 340px margin: 1.7rem;
+      flex-basis: calc(340px + 3.4rem);
+      min-width: 340px;
+      margin-left: 1.7rem;
+      margin-right: 1.7rem;
 
-      @media only screen and (min-width: 1200px) {
-        width: calc(25% + 1.05rem)!important;
-        transform: translateY(-30px);
+      // animation
+      transition: transform 0.22s ease-in-out;
 
-        & .tile {
-          img {
-            height: 460px;
-          }
-        }
+      &:hover {
+        transform: scale(1.1, 1.1)
+                   translate(1px, -5px);
       }
     }
 

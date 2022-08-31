@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
 `
 
 export const Label = styled.label`
-  left: 14px;
+  left: 30px;
   position: absolute;
   top: 50%;
   transform: translateY(-11px);

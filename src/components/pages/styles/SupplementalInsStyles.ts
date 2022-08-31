@@ -40,10 +40,7 @@ export const PageStyles = css`
 
 export const HeroHeading = styled.h1`
   color: var(--color-dark);
-  font-size: 8rem;
-  line-height: 110%;
   margin-bottom: 3.4rem;
-  max-width: 1024px;
   text-align: center;
 
   @media only screen and (max-width: 620px) {
@@ -51,11 +48,9 @@ export const HeroHeading = styled.h1`
   }
 `
 
-export const HeroSubheading = styled.h2`
+export const HeroSubheading = styled.h4`
   color: var(--color-dark);
   font-family: var(--font-body);
-  font-size: 2.4rem;
-  line-height: 110%;
   margin-bottom: 3.4rem;
   text-align: center;
 
@@ -67,9 +62,9 @@ export const HeroSubheading = styled.h2`
 
 export const BestPriceImage = styled.img `
   display: block;
-  left: 596px;
+  left: 67vw;
   position: absolute;
-  top: 60px;
+  top: 82px;
 
   @media only screen and (max-width: 920px) {
     left: 520px;

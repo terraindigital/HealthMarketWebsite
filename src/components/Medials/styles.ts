@@ -8,13 +8,13 @@ export const Wrapper = styled.div`
   padding: 8.9rem;
 
   @media screen and (max-width: 1044px) {
-    padding-left: 55px;
-    padding-right: 55px;
+    padding-left: 5.5rem;
+    padding-right: 5.5rem;
   }
 
   @media screen and (max-width: 920px) {
-    padding-left: 21px;
-    padding-right: 21px;
+    padding-left: 2.1rem;
+    padding-right: 2.1rem;
   }
 
   .section.accent + &.accent,
@@ -25,7 +25,7 @@ export const Wrapper = styled.div`
   }
 
   .chat-bubble {
-    max-height: 128px;
+    max-height: 215px;
   }
 
   @media only screen and (max-width: 620px) {
@@ -47,9 +47,9 @@ export const Inner = styled.div`
   background-color: var(--color-light);
   border-radius: 4px;
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
-  padding: 5.5rem;
+  padding: 4rem 9.6rem;
 
-  h1, h2 {
+  h3 {
     color: var(--color-primary);
     line-height: 1.25em;
     margin: 0px;

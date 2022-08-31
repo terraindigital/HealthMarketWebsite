@@ -20,7 +20,7 @@ const Icon: FC<Props> = ({ icon, title, link }) => {
         alt="Card Icon Image"
       />
       <Content>
-        <h2>{title}</h2>
+        <h4>{title}</h4>
       </Content>
     </Wrapper>
   )

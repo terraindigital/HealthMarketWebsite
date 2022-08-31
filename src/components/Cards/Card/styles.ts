@@ -47,8 +47,9 @@ export const Header = styled.div`
     margin-bottom: 0;
   }
 
-  h2 {
+  h4 {
     color: var(--color-primary);
+    font-family: var(--font-heading);
     padding: 3.2rem 3.2rem 2.4rem;
   }
 
@@ -59,7 +60,7 @@ export const Header = styled.div`
       margin: 0;
     }
 
-    h2 {
+    h4 {
       margin: 0px;
       padding: 1.6rem 0rem;
     }
@@ -97,7 +98,7 @@ export const Header = styled.div`
         padding: 0px;
       }
 
-      h2 {
+      h4 {
         font-family: var(--font-body);
         font-size: 2rem;
         line-height: 2.6rem;
@@ -127,15 +128,16 @@ export const Content = styled.div`
   color: var(--color-dark);
   padding: 3.2rem;
 
-  h2 {
+  h4 {
     color: var(--color-primary);
+    font-family: var(--font-heading);
     padding: 0rem 0rem 2.4rem;
   }
 
   .icon & {
     padding: 0 3.2rem 3.2rem;
     
-    h2 {
+    h4 {
       margin: 0px;
       padding: 1.6rem 0rem;
     }

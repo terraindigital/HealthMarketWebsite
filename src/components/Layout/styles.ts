@@ -36,7 +36,6 @@ export const GlobalStyles = css`
     color: #fff;
   }
 
-  h2,
   article,
   aside,
   details,
@@ -97,13 +96,6 @@ export const GlobalStyles = css`
 
   dfn {
     font-style: italic;
-  }
-
-  h1 {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 2em;
-    margin: 0.67em 0;
   }
 
   mark {
@@ -302,6 +294,7 @@ export const GlobalStyles = css`
   h1, h2, h3,
   h4, h5, h6 {
     font-weight: 700;
+    line-height: 110%;
     margin-top: 0px;
   }
   
@@ -313,12 +306,7 @@ export const GlobalStyles = css`
     font-family: var(--font-body);
   }
 
-  h1 { font-size: 4.4rem; }
-  h2 { font-size: 3.0rem; }
-  h3 { font-size: 2.4rem; }
-  h4 { font-size: 2.0rem; }
-  h5 { font-size: 1.8rem; }
-  h6 { font-size: 1.6rem; }
+  /* Heading font-sizes are in /assets/css/fonts.css */
 
   .font-heading {
     font-family: var(--font-heading);

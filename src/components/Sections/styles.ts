@@ -4,8 +4,8 @@ export const Wrapper = styled.div`
   background-color: ${({ backgroundColor }) => backgroundColor};
   position: relative;
 
-  padding-bottom: 8.9rem;
-  padding-top: 8.9rem;
+  padding-bottom: 10rem;
+  padding-top: 10rem;
 
   padding-left: 8.9rem;
   padding-right: 8.9rem;
@@ -37,18 +37,17 @@ export const Heading = styled.div`
     background-color: var(--color-primary);
     color: var(--color-light);
     display: inline-block;
-    font-size: 4.4rem;
+    letter-spacing: 1px;
     margin: 0;
-    padding: 3.4rem 3.4rem 3.4rem 14.4rem;
+    padding: 2.8rem 8.8rem 2.8rem 14.4rem;
   }
 
-  h3 {
+  h4 {
     font-family: var(--font-body);
-    font-size: 2.4rem;
     font-weight: normal;
     margin-bottom: 0;
     margin-left: 2.4rem;
-    max-width: 415px;
+    max-width: 38%;
   }
 
   @media only screen and (max-width: 620px) {

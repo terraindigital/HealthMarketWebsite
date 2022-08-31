@@ -6,6 +6,11 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   left: 0;
+  min-height: 165px;
+  padding-bottom: 3.4rem;
+  padding-left: 8.9rem;
+  padding-right: 8.9rem;
+  padding-top: 3.4rem;
   position: fixed;
   top: 0;
   width: 100%;
@@ -49,11 +54,6 @@ export const Wrapper = styled.div`
     .header-right .text-size.increase:after { border-color: var(--color-light); }
   }
 
-  padding-bottom: 2.1rem;
-  padding-left: 8.9rem;
-  padding-right: 8.9rem;
-  padding-top: 3.4rem;
-
   @media screen and (max-width: 1044px) {
     padding-left: 5.5rem;
     padding-right: 5.5rem;
@@ -71,5 +71,5 @@ export const Wrapper = styled.div`
 
 export const Logo = styled.img`
   margin: 0;
-  max-width: 120px;
+  max-width: 193px;
 `

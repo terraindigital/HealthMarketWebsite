@@ -2,6 +2,8 @@ import styled from "@emotion/styled"
 
 export const Wrapper = styled.ul`
   list-style-type: none;
+  margin-bottom: 4.8rem;
+  margin-left: 0;
 
   .centered.section & {
     columns: 2;
@@ -10,7 +12,6 @@ export const Wrapper = styled.ul`
     padding-right: 2.1rem;
     text-align: left;
   }
-
 
   @media only screen and (max-width: 620px) {
     margin-left: 3.4rem;

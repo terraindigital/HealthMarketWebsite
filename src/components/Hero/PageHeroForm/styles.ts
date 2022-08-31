@@ -20,7 +20,7 @@ export const Buttons = styled.div`
   }
 
   button {
-    min-width: 305px;
+    min-width: 410px;
   }
 
   @media only screen and (max-width: 620px) {
@@ -36,6 +36,8 @@ export const Btn = styled.button`
   background-color: var(--color-light);
   border: 2px solid var(--color-accent);
   color: var(--color-accent);
+  font-size: 2rem;
+  font-weight: bold;
   padding: 13px 34px;
 
   &.accented {
@@ -55,11 +57,11 @@ export const InputGroup = styled.div`
   text-align: center;
 
   img {
-    height: 18px;
-    left: 14px;
+    height: 24px;
+    left: 30px;
     position: absolute;
     top: 50%;
-    transform: translateY(-11px);
+    transform: translateY(-14px);
     z-index: 1;
   }
 
@@ -76,9 +78,10 @@ export const Input = styled.input`
   border-top: none;
   color: var(--color-dark);
   display: block;
+  font-size: 2rem;
   margin: 0 auto;
-  min-width: 61rem;
-  padding: 2.1rem 2.1rem 2.1rem 4rem;
+  min-width: 82rem;
+  padding: 2.1rem 2.1rem 2.1rem 6.2rem;
   position: relative;
 
   &::placeholder {
@@ -92,7 +95,6 @@ export const Input = styled.input`
 
 export const Footer = styled.div`
   margin-top: 4.8rem;
-  max-width: 335px;
 
   .centered & {
     margin-left: auto;
@@ -100,6 +102,7 @@ export const Footer = styled.div`
   }
 
   button {
+    max-width: 335px;
     width: 100%;
   }
 
@@ -115,7 +118,6 @@ export const CTA = styled.div`
   flex-wrap: no-wrap;
   margin-top: 1.6rem;
 
-  // TODO: link up with design re: this
   .home & { display: none; }
 
   .centered & {
@@ -129,6 +131,8 @@ export const CTA = styled.div`
 
   a, span {
     color: var(--color-dark);
+    font-size: 2.4rem;
+    font-weight: bold;
   }
 
   .light & {
