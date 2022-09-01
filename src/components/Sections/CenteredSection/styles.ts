@@ -28,9 +28,17 @@ export const Wrapper = styled.div`
 export const Heading = styled.div`
   h2 {
     color: var(--color-primary);
-    font-size: 6rem;
     margin-bottom: 5.5rem;
     text-align: center; 
+  }
+
+  @media only screen and (max-width: 620px) {
+    h2 {
+      font-size: 4rem;
+      letter-spacing: 0.02em;
+      line-height: 115%;
+      max-width: 100%;
+    }
   }
 `
 

@@ -1,7 +1,11 @@
 import React, { FC, ReactNode } from "react"
 
 // Styles
-import { Wrapper, Check, Heading, Body } from "./styles"
+import {
+  Wrapper,
+  Check,
+  Heading
+} from "./styles"
 
 // Components
 
@@ -20,7 +24,7 @@ const ListItem: FC<Props> = ({ heading, children }) => {
         <img src={checkImg} alt="list checkmark" />
       </Check>
       <Heading dangerouslySetInnerHTML={{ __html: heading }} />
-      <Body>{children}</Body>
+      {children}
     </Wrapper>
   )
 }

@@ -33,14 +33,12 @@ export const Wrapper = styled.div`
   }
 
   @media only screen and (max-width: 620px) {
+    padding-top: 16.6rem;
+    padding-bottom: 19.7rem;
+
     &.centered {
       display: block;
       min-height: auto;
-      padding-top: 166px;
-    }
-
-    .home &.centered {
-      padding-top: 97px;
     }
   }
 `;

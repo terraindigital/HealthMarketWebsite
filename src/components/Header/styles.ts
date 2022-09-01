@@ -65,6 +65,7 @@ export const Wrapper = styled.div`
   }
 
   @media only screen and (max-width: 620px) {
+    min-height: auto;
     padding-top: 2.1rem;
   }
 `
@@ -72,4 +73,8 @@ export const Wrapper = styled.div`
 export const Logo = styled.img`
   margin: 0;
   max-width: 193px;
+
+  @media only screen and (max-width: 620px) {
+    max-width: 137px;
+  }
 `

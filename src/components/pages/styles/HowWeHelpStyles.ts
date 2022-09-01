@@ -73,6 +73,12 @@ export const PageStyles = css`
   .how-we-help .split-section + .section.light + .section.primary .card > div:first-of-type p {
     display: none;
   }
+
+  @media only screen and (max-width: 620px) {
+    .how-we-help .split-section + .section.light + .section.primary .heading h2 {
+      max-width: 100%;
+    }
+  }
 `
 
 export const HeroHeading = styled.h1`

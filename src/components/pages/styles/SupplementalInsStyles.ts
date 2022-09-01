@@ -27,8 +27,9 @@ export const PageStyles = css`
   }
 
   @media only screen and (max-width: 620px) {
-    .supplemental-insurance .hero + .section .heading h1 {
-      max-width: 325px;
+    .supplemental-insurance .hero + .section .heading h2 {
+      max-width: 68%;
+      padding-right: 3.6rem;
     }
   
     .card:nth-of-type(3n-1),
@@ -42,10 +43,6 @@ export const HeroHeading = styled.h1`
   color: var(--color-dark);
   margin-bottom: 3.4rem;
   text-align: center;
-
-  @media only screen and (max-width: 620px) {
-    font-size: 5rem;
-  }
 `
 
 export const HeroSubheading = styled.h4`
@@ -53,11 +50,6 @@ export const HeroSubheading = styled.h4`
   font-family: var(--font-body);
   margin-bottom: 3.4rem;
   text-align: center;
-
-  @media only screen and (max-width: 620px) {
-    font-size: 1.6rem;
-    font-weight: normal;
-  }
 `
 
 export const BestPriceImage = styled.img `
@@ -81,7 +73,7 @@ export const BestPriceImageMobile = styled.img `
   display: none;
   position: absolute;
   left: 329px;
-  top: 29px;
+  top: 15px;
 
   @media only screen and (max-width: 620px) {
     display: block;

@@ -30,15 +30,21 @@ export const Check = styled.div`
     width: 4.5rem;
     z-index: -1;
   }
+
+  @media only screen and (max-width: 620px) {
+    height: 2.3rem;
+    width: 2.3rem;
+
+    left: -3.6rem;
+
+    &:before {
+      height: 2.7rem;
+      width: 2.7rem;
+    }
+  }
 `
 
 export const Heading = styled.div`
   color: var(--color-primary);
   margin-bottom: 1.6rem;
-`
-
-export const Body = styled.div`
-  &, & p {
-    font-size: 2rem;
-  }
 `

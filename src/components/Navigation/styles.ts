@@ -32,7 +32,7 @@ export const Menu = styled.ul`
 
   &.submenu {
     .item a {
-      font-family: 'Open Sans';
+      font-family: var(--font-body);
       font-size: 2.4rem;
       font-weight: bold;
 

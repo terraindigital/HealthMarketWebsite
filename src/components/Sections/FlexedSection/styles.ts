@@ -48,8 +48,21 @@ export const Heading = styled.div`
     transform: translateX(-2.1rem);
 
     h2 {
+      font-size: 4rem;
+      letter-spacing: 0.02em;
+      line-height: 115%;
       max-width: 100%;
       padding: 0.5rem 2.1rem 0.5rem 3.4rem;
+    }
+
+    h4 {
+      font-size: 2.4rem;
+      margin-bottom: 2.1rem;
+      margin-left: 0;
+      margin-top: 1.3rem;
+      max-width: calc(100% - 4.2rem);
+      padding-left: 3.4rem;
+      padding-right: 2.1rem;
     }
   }
 `

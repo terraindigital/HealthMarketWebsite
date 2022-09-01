@@ -62,8 +62,8 @@ export const Heading = styled.div`
       padding: 0.5rem 2.1rem 0.5rem 3.4rem;
     }
 
-    h3 {
-      font-size: 1.8rem;
+    h4 {
+      font-size: 2.4rem;
       margin-bottom: 2.1rem;
       margin-left: 0;
       margin-top: 1.3rem;

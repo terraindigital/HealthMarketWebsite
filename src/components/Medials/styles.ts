@@ -60,6 +60,10 @@ export const Inner = styled.div`
     padding: 2.1rem 1.3rem;
     text-align: center;
 
+    & > div {
+      margin-bottom: 2.4rem;
+    }
+
     p {
       margin-bottom: 1.3rem;
       margin-top: 1.3rem;

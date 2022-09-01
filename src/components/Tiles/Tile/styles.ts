@@ -46,10 +46,6 @@ export const Wrapper = styled.div`
     img {
       height: 233px;
     }
-
-    h4 {
-      font-size: 1.6rem;
-    }
   }
 `
 
