@@ -119,53 +119,7 @@ const MedicarePage = () => {
         </div>
       </Medial>
       <Section color="light">
-        
-      <div className="hide-at-mobile">
-          <Carousel type="reviews" background="half">
-            <Review
-              stars="5"
-              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-              author="Stephen Friedrichs"
-            />
-            <Review
-              stars="5"
-              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-              author="Stephen Friedrichs"
-            />
-            <Review
-              stars="5"
-              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-              author="Stephen Friedrichs"
-            />
-            <Review
-              stars="5"
-              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-              author="Stephen Friedrichs"
-            />
-            <Review
-              stars="5"
-              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-              author="Stephen Friedrichs"
-            />
-          </Carousel>
-        </div>
-        <div className="show-at-mobile">
-            <Reviews>
-                <Review
-                    stars="5"
-                    quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                    author="Stephen Friedrichs"
-                />
-                <Review
-                    stars="5"
-                    quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                    author="Stephen Friedrichs"
-                />
-            </Reviews>
-            <div style={{ textAlign: "center" }}>
-                <a href="#">See all reviews</a>
-            </div>
-        </div>
+        <h1>Callouts</h1>
       </Section>
       <Footer>
         <div dangerouslySetInnerHTML={{ __html: page.disclaimers.disclaimer }} />

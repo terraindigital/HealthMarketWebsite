@@ -55,33 +55,7 @@ const ContactPage = () => {
             </form>
           </div>
           <div className="right">
-            <Carousel type="reviews" background="full">
-              <Review
-                stars="5"
-                quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                author="Stephen Friedrichs"
-              />
-              <Review
-                stars="5"
-                quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                author="Stephen Friedrichs"
-              />
-              <Review
-                stars="5"
-                quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                author="Stephen Friedrichs"
-              />
-              <Review
-                stars="5"
-                quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                author="Stephen Friedrichs"
-              />
-              <Review
-                stars="5"
-                quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                author="Stephen Friedrichs"
-              />
-            </Carousel>
+            <h1>Callouts</h1>
           </div>
         </SplitSection>
       </Section>

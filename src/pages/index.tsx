@@ -21,12 +21,11 @@ import Medial from '../components/Medials';
 import FlexedSection from '../components/Sections/FlexedSection';
 import List from '../components/Lists';
 import ListItem from '../components/Lists/ListItem';
-import Reviews from '../components/Reviews';
-import Review from '../components/Reviews/Review';
 import Footer from '../components/Footer';
 
 const IndexPage = ({path}: PageProps) => {
     const { home } = useHomePageQuery();
+    const tiles = home.homePageCustomFields.homeSection1.tiles;
 
     return (
         <Layout pageClass="home" headerColor="light">
@@ -44,38 +43,24 @@ const IndexPage = ({path}: PageProps) => {
                     btnLeftText={home.pageHeroFields.heroButtons.heroButton1.text}
                     btnRightText={home.pageHeroFields.heroButtons.heroButton2.text}
                     inputId="homepageHeroLocation"
-                    button />
+                    buttons />
             </Hero>
             <Section
                 heading={home.homePageCustomFields.homeSection1.heading}
                 subheading={home.homePageCustomFields.homeSection1.subheading}
                 color={home.homePageCustomFields.homeSection1.color}>
-                <Carousel type="tiles">
-                    <Tile
-                        image={home.homePageCustomFields.homeSection1.tiles.tile1.image.sourceUrl}
-                        title={home.homePageCustomFields.homeSection1.tiles.tile1.title}
-                        link={home.homePageCustomFields.homeSection1.tiles.tile1.link}
-                        />
-                    <Tile
-                        image={home.homePageCustomFields.homeSection1.tiles.tile2.image.sourceUrl}
-                        title={home.homePageCustomFields.homeSection1.tiles.tile2.title}
-                        link={home.homePageCustomFields.homeSection1.tiles.tile2.link}
-                        />
-                    <Tile
-                        image={home.homePageCustomFields.homeSection1.tiles.tile3.image.sourceUrl}
-                        title={home.homePageCustomFields.homeSection1.tiles.tile3.title}
-                        link={home.homePageCustomFields.homeSection1.tiles.tile3.link}
-                        />
-                    <Tile
-                        image={home.homePageCustomFields.homeSection1.tiles.tile4.image.sourceUrl}
-                        title={home.homePageCustomFields.homeSection1.tiles.tile4.title}
-                        link={home.homePageCustomFields.homeSection1.tiles.tile4.link}
-                        />
-                    <Tile
-                        image={home.homePageCustomFields.homeSection1.tiles.tile5.image.sourceUrl}
-                        title={home.homePageCustomFields.homeSection1.tiles.tile5.title}
-                        link={home.homePageCustomFields.homeSection1.tiles.tile5.link}
-                        />
+                <Carousel>
+                    {(tiles) ? (
+                        Object.keys(tiles).map((tile) => {
+                        return (
+                            <Tile
+                                image={tiles[tile].image.sourceUrl}
+                                title={tiles[tile].title}
+                                link={tiles[tile].link}
+                            />
+                        )
+                        })
+                    ) : null}
                 </Carousel>
             </Section>
             <Medial color={home.homePageCustomFields.homeSection2.color}>
@@ -106,52 +91,7 @@ const IndexPage = ({path}: PageProps) => {
                 </a>
             </FlexedSection>
             <Section color="light">
-                <div className="hide-at-mobile">
-                    <Carousel type="reviews" background="half">
-                        <Review
-                            stars="5"
-                            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                            author="Stephen Friedrichs"
-                        />
-                        <Review
-                            stars="5"
-                            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                            author="Stephen Friedrichs"
-                        />
-                        <Review
-                            stars="5"
-                            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                            author="Stephen Friedrichs"
-                        />
-                        <Review
-                            stars="5"
-                            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                            author="Stephen Friedrichs"
-                        />
-                        <Review
-                            stars="5"
-                            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                            author="Stephen Friedrichs"
-                        />
-                    </Carousel>
-                </div>
-                <div className="show-at-mobile">
-                    <Reviews>
-                        <Review
-                            stars="5"
-                            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                            author="Stephen Friedrichs"
-                        />
-                        <Review
-                            stars="5"
-                            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                            author="Stephen Friedrichs"
-                        />
-                    </Reviews>
-                    <div style={{ textAlign: "center" }}>
-                        <a href="#">See all reviews</a>
-                    </div>
-                </div>
+                <h1>Callouts</h1>
             </Section>
             <Footer>
                 <div dangerouslySetInnerHTML={{ __html: home.disclaimers.disclaimer }} />

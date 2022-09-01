@@ -72,6 +72,55 @@ export const useHomePageQuery = () => {
                 title
                 link
               }
+              tile6 {
+                image {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              tile7 {
+                image {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              tile8 {
+                image {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              tile9 {
+                image {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              tile10 {
+                image {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              tile11 {
+                image {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              tile12 {
+                image {
+                  sourceUrl
+                }
+                title
+                link
+              }
             }
           }
           homeSection2 {
