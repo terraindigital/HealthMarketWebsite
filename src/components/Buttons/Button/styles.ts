@@ -15,7 +15,7 @@ export const Btn = styled.button`
 
   // TODO: add vars or work off current vars
   &:hover {
-    background-color: transparent;
+    background-color: var(--color-light);
     color: ${props => `var(--color-${props.border})`};
   }
 `

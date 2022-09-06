@@ -25,11 +25,14 @@ import Icons from "../../components/Icons";
 import Icon from "../../components/Icons/Icon";
 import FlexedSection from "../../components/Sections/FlexedSection";
 import Accordion from "../../components/Accordions";
+import Callouts from "../../components/Callouts";
+import Callout from "../../components/Callouts/Callout";
 import Footer from "../../components/Footer";
 
 const HealthInsurancePage = () => {
   const { page } = useHealthPageQuery();
-  const plans = page.healthPageCustomFields.healthSection3.healthPlans
+  const plans = page.healthPageCustomFields.healthSection3.healthPlans;
+  const callouts = page.calloutsCustomField.callouts;
 
   return (
     <Layout pageClass="health-insurance">
@@ -106,7 +109,22 @@ const HealthInsurancePage = () => {
         </Icons>
       </Section>
       <Section color="light">
-        <h1>Callouts</h1>
+        <Callouts>
+            {(callouts && callouts.isActive) ? (
+                Object.keys(callouts).map((index) => {
+                    const callout = callouts[index];
+                    return (
+                        <Callout
+                            number={callout.number}
+                            tagline={callout.tagline}
+                            title={callout.title}
+                            description={callout.description}
+                            disclaimer={callout.disclaimer}
+                        />
+                    )
+                })
+            ) : null}
+        </Callouts>
       </Section>
       <Section
         color={page.healthPageCustomFields.healthSection4.color}

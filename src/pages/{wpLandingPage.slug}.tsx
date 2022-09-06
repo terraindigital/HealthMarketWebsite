@@ -1,5 +1,5 @@
 // Library
-import React from "react";
+import React, { ReactNode } from "react";
 import { Global } from "@emotion/react";
 import { graphql } from "gatsby";
 
@@ -9,29 +9,28 @@ import {
   Wrapper,
   HeroHeading,
   HeroSubheading
-} from '../../components/pages/styles/LandingPageStyles';
+} from '../components/pages/styles/LandingPageStyles';
 
 // Components
-import Layout from "../../components/Layout";
-import Seo from "../../components/SEO";
-import Hero from '../../components/Hero';
-import Button from '../../components/Buttons/Button';
-import Section from "../../components/Sections";
-import FlexedSection from '../../components/Sections/FlexedSection';
-import CenteredSection from '../../components/Sections/CenteredSection';
-import Icons from "../../components/Icons";
-import Icon from "../../components/Icons/Icon";
-import Carousel from "../../components/Carousel";
-import Review from "../../components/Reviews/Review";
-import Reviews from "../../components/Reviews";
-import ListItem from "../../components/Lists/ListItem";
-import List from '../../components/Lists';
-import Medial from '../../components/Medials';
-import PageHeroForm from '../../components/Hero/PageHeroForm';
-import Footer from '../../components/Footer';
-import Accordion from "../../components/Accordions";
-import Cards from "../../components/Cards";
-import Card from "../../components/Cards/Card";
+import Layout from "../components/Layout";
+import Seo from "../components/SEO";
+import Hero from '../components/Hero';
+import Button from '../components/Buttons/Button';
+import Section from "../components/Sections";
+import FlexedSection from '../components/Sections/FlexedSection';
+import CenteredSection from '../components/Sections/CenteredSection';
+import Icons from "../components/Icons";
+import Icon from "../components/Icons/Icon";
+import Callout from "../components/Callouts/Callout";
+import Callouts from "../components/Callouts";
+import ListItem from "../components/Lists/ListItem";
+import List from '../components/Lists';
+import Medial from '../components/Medials';
+import PageHeroForm from '../components/Hero/PageHeroForm';
+import Footer from '../components/Footer';
+import Accordion from "../components/Accordions";
+import Cards from "../components/Cards";
+import Card from "../components/Cards/Card";
 
 interface IconInfo {
   link: String,  
@@ -103,6 +102,14 @@ interface SectionInfo {
     link: string,
     text: string
   }
+}
+
+interface CalloutInfo {
+  number: string,
+  tagline: string,
+  title: string,
+  description: string,
+  disclaimer: ReactNode
 }
 
 interface PageInfo {
@@ -189,12 +196,21 @@ interface PageInfo {
         lpSection5: SectionInfo
       }
     }
+    calloutsCustomField: {
+      isActive: boolean,
+      callouts: {
+        callout1: CalloutInfo,
+        callout2: CalloutInfo,
+        callout3: CalloutInfo,
+      }
+    }
   }
 }
 
 const LPPage = ({data}: { data: PageInfo }) => {
-  const { page } = data
-  const sections = page.landingPageCustomFields.lpSections
+  const { page } = data;
+  const sections = page.landingPageCustomFields.lpSections;
+  const callouts = page.calloutsCustomField.callouts;
 
   return (
     <Layout pageClass={page.slug}>
@@ -471,7 +487,22 @@ const LPPage = ({data}: { data: PageInfo }) => {
         })}
         
         <Section color="light">
-          <h1>Callouts</h1>
+          <Callouts>
+              {(callouts && callouts.isActive) ? (
+                  Object.keys(callouts).map((index) => {
+                      const callout = callouts[index];
+                      return (
+                          <Callout
+                              number={callout.number}
+                              tagline={callout.tagline}
+                              title={callout.title}
+                              description={callout.description}
+                              disclaimer={callout.disclaimer}
+                          />
+                      )
+                  })
+              ) : null}
+          </Callouts>
         </Section>
 
         {(page.landingPageCustomFields.lpCta.showCta) ? (
@@ -1393,6 +1424,32 @@ export const pageQuery = graphql`
       }
       disclaimers {
         disclaimer
+      }
+      calloutsCustomField {
+        isActive
+        callouts {
+          callout1 {
+            number
+            tagline
+            title
+            description
+            disclaimer
+          }
+          callout2 {
+            number
+            tagline
+            title
+            description
+            disclaimer
+          }
+          callout3 {
+            number
+            tagline
+            title
+            description
+            disclaimer
+          }
+        }
       }
     }
   }

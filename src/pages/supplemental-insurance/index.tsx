@@ -23,14 +23,14 @@ import Button from "../../components/Buttons/Button";
 import Section from "../../components/Sections";
 import Cards from "../../components/Cards";
 import Card from "../../components/Cards/Card";
-import Carousel from "../../components/Carousel";
-import Review from "../../components/Reviews/Review";
-import Reviews from "../../components/Reviews";
+import Callouts from "../../components/Callouts";
+import Callout from "../../components/Callouts/Callout";
 import Footer from "../../components/Footer";
 
 const HealthInsurancePage = () => {
   const { page } = useSupplementalPageQuery();
   const plans = page.suppPageCustomFields.suppSection1.suppPlans;
+  const callouts = page.calloutsCustomField.callouts;
 
   return (
     <Layout pageClass="supplemental-insurance">
@@ -75,7 +75,22 @@ const HealthInsurancePage = () => {
         </Cards>
       </Section>
       <Section color="light">
-        <h1>Callouts</h1>
+        <Callouts>
+            {(callouts && callouts.isActive) ? (
+                Object.keys(callouts).map((index) => {
+                    const callout = callouts[index];
+                    return (
+                        <Callout
+                            number={callout.number}
+                            tagline={callout.tagline}
+                            title={callout.title}
+                            description={callout.description}
+                            disclaimer={callout.disclaimer}
+                        />
+                    )
+                })
+            ) : null}
+        </Callouts>
       </Section>
       <Section
         color={page.suppPageCustomFields.suppSection2.color}

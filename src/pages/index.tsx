@@ -21,11 +21,14 @@ import Medial from '../components/Medials';
 import FlexedSection from '../components/Sections/FlexedSection';
 import List from '../components/Lists';
 import ListItem from '../components/Lists/ListItem';
+import Callouts from '../components/Callouts';
+import Callout from '../components/Callouts/Callout';
 import Footer from '../components/Footer';
 
 const IndexPage = ({path}: PageProps) => {
     const { home } = useHomePageQuery();
     const tiles = home.homePageCustomFields.homeSection1.tiles;
+    const callouts = home.calloutsCustomField.callouts;
 
     return (
         <Layout pageClass="home" headerColor="light">
@@ -91,7 +94,22 @@ const IndexPage = ({path}: PageProps) => {
                 </a>
             </FlexedSection>
             <Section color="light">
-                <h1>Callouts</h1>
+                <Callouts>
+                    {(callouts && callouts.isActive) ? (
+                        Object.keys(callouts).map((index) => {
+                            const callout = callouts[index];
+                            return (
+                                <Callout
+                                    number={callout.number}
+                                    tagline={callout.tagline}
+                                    title={callout.title}
+                                    description={callout.description}
+                                    disclaimer={callout.disclaimer}
+                                />
+                            )
+                        })
+                    ) : null}
+                </Callouts>
             </Section>
             <Footer>
                 <div dangerouslySetInnerHTML={{ __html: home.disclaimers.disclaimer }} />

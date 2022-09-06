@@ -24,10 +24,13 @@ import Card from "../../components/Cards/Card";
 import FlexedSection from "../../components/Sections/FlexedSection";
 import Accordion from "../../components/Accordions";
 import Medial from "../../components/Medials";
+import Callouts from "../../components/Callouts";
+import Callout from "../../components/Callouts/Callout";
 import Footer from "../../components/Footer";
 
 const MedicarePage = () => {
   const { page } = useMedicarePageQuery();
+  const callouts = page.calloutsCustomField.callouts;
 
   return (
     <Layout pageClass="medicare">
@@ -116,7 +119,22 @@ const MedicarePage = () => {
         </div>
       </Medial>
       <Section color="light">
-        <h1>Callouts</h1>
+        <Callouts>
+            {(callouts && callouts.isActive) ? (
+                Object.keys(callouts).map((index) => {
+                    const callout = callouts[index];
+                    return (
+                        <Callout
+                            number={callout.number}
+                            tagline={callout.tagline}
+                            title={callout.title}
+                            description={callout.description}
+                            disclaimer={callout.disclaimer}
+                        />
+                    )
+                })
+            ) : null}
+        </Callouts>
       </Section>
       <Footer>
         <div dangerouslySetInnerHTML={{ __html: page.disclaimers.disclaimer }} />

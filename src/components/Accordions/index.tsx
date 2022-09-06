@@ -1,5 +1,4 @@
 import React, {FC, ReactNode} from 'react';
-import { parentPort } from 'worker_threads';
 
 // Styles
 import {
