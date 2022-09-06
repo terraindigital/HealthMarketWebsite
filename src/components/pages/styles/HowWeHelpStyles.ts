@@ -2,6 +2,14 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 export const PageStyles = css`
+  .how-we-help .split-section .inner h3 {
+    color: var(--color-primary);
+  }
+
+  .how-we-help .split-section .inner p {
+    padding: 3.2rem 0;
+  }
+
   @media only screen and (max-width: 620px) {
     .how-we-help .hero {
       padding-bottom: 197px;
@@ -34,11 +42,6 @@ export const PageStyles = css`
       padding: 3rem 1.6rem 4rem;
     }
 
-    .how-we-help .split-section .inner h1 {
-      font-size: 3.6rem;
-      line-height: 115%;
-    }
-
     .how-we-help .split-section .inner p {
       font-size: 1.8rem;
       line-height: 120%;
@@ -52,10 +55,6 @@ export const PageStyles = css`
 
   .how-we-help .split-section + .section.light {
     padding-top: 4rem;
-  }
-
-  .how-we-help .accordion .title h2 {
-    max-width: 285px;
   }
 
   .how-we-help .split-section + .section.light + .section.primary > div[class*=Heading] {
@@ -82,20 +81,12 @@ export const PageStyles = css`
 `
 
 export const HeroHeading = styled.h1`
-  margin-bottom: 3.4rem;
+  margin-bottom: 2.4rem;
   text-align: center;
-
-  @media only screen and (max-width: 620px) {
-    font-size: 4.5rem;
-  }
 `
 
 export const HeroSubheading = styled.h4`
   font-family: var(--font-body);
-  margin-bottom: 0;
+  margin-bottom: 4rem;
   text-align: center;
-
-  @media only screen and (max-width: 620px) {
-    font-size: 2rem;
-  }
 `

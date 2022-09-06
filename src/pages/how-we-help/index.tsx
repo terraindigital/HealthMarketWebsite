@@ -70,7 +70,7 @@ const HowWeHelpPage = () => {
           <img src={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.image.sourceUrl} alt="woman on computer" />
         </div>
         <div className="right content">
-          <h1>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.heading}</h1>
+          <h3>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.heading}</h3>
           <p>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.content}</p>
           <a href={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.button.link}>
             <Button background="accent" border="accent" color="light">
@@ -81,7 +81,7 @@ const HowWeHelpPage = () => {
       </SplitSection>
       <SplitSection color={hwh.howWeHelpCustomFields.hwhSection2.color}>
         <div className="left content hide-at-mobile">
-          <h1>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.heading}</h1>
+          <h3>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.heading}</h3>
           <p>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.content}</p>
           <a href={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.button.link}>
             <Button background="accent" border="accent" color="light">
@@ -96,7 +96,7 @@ const HowWeHelpPage = () => {
           <img src={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.image.sourceUrl} alt="woman on computer" />
         </div>
         <div className="right content show-at-mobile">
-          <h1>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.heading}</h1>
+          <h3>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.heading}</h3>
           <p>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.content}</p>
           <a href={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.button.link}>
             <Button background="accent" border="accent" color="light">
@@ -110,10 +110,12 @@ const HowWeHelpPage = () => {
           <img src={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock3.image.sourceUrl} alt="woman on computer" />
         </div>
         <div className="right content">
-          <h1>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock3.heading}</h1>
+          <h3>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock3.heading}</h3>
           <p>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock3.content}</p>
           <a href="https://shop.healthmarkets.com/">
-            <Button background="accent" border="accent" color="light">{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock3.button.text}</Button>
+            <Button background="accent" border="accent" color="light">
+              {hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock3.button.text}
+              </Button>
           </a>
         </div>
       </SplitSection>

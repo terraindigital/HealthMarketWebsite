@@ -50,6 +50,9 @@ export const Wrapper = styled.div`
 `
 
 export const Content = styled.div`
-  // TODO: height: 113px
-  padding: 3.7rem 3.4rem 3.7rem;
+  display: flex;
+  flex-direction: column;
+  height: 11.3rem;
+  justify-content: center;
+  padding: 1.9rem 3.4rem;
 `

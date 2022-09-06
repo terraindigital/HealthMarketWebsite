@@ -8,6 +8,7 @@ interface Props {
   children: ReactNode
   heading?: String,
   subheading?: String,
+  guarantee?: ReactNode,
   page?: String
 }
 
@@ -26,7 +27,7 @@ const switchBgColor = (bgColor) => {
   }
 }
 
-const Section: FC<Props> = ({ heading, subheading, page, color, children}) => {
+const Section: FC<Props> = ({ heading, subheading, guarantee, page, color, children}) => {
   const bgColor = switchBgColor(color)
   const pageClass = (page) ? page : ""
 
@@ -36,6 +37,7 @@ const Section: FC<Props> = ({ heading, subheading, page, color, children}) => {
         <Heading className="heading">
           <h2>{heading}</h2>
           <h4>{subheading}</h4>
+          {(guarantee) ? guarantee : null}
         </Heading>
       ) : null}
       <Inner>

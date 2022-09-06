@@ -17,46 +17,23 @@ export const PageStyles = css`
 
   .contact.section .section div h4 {
     font-family: var(--font-body);
-    /* font-size: 2.4rem; */
+  }
+  
+  .contact.section .section .inner .left h4 {
+    font-size: 3.6rem;
+    line-height: 115%;
+    margin-bottom: 6.4rem;
+    margin-top: 2.4rem;
   }
     
-  .contact.section .section div h3 + form p a {
+  .contact.section .section div .inner .left form p:last-of-type {
+    margin-bottom: 43rem;
+    margin-top: 4.8rem;
+  }
+  
+  .contact.section .section div .inner .left form p:last-of-type > a {
     color: var(--color-primary);
-  }
-
-  .contact.section .section div .reviews {
-    margin-top: 14.4rem;
-  }
-
-  .contact.section .section div .reviews:before {
-    background-color: var(--color-light);
-  }
-
-  .contact.section .section div .review:before {
-    display: none;
-  }
-
-  .contact.section .section div .reviews.full-background .review[class*=Wrapper] {
-    text-align: left;
-  }
-
-  .contact.section .section div .reviews.full-background .review[class*=Wrapper] div {
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-
-  .contact.section .section div .reviews.full-background .inner {
-    text-align: left;
-  }
-
-  .contact.section .section div .reviews.full-background .carousel-nav {
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin-left: 5.5rem;
-  }
-
-  .contact.section .section div .reviews .review blockquote {
-    font-size: 4rem;
+    text-decoration: underline;
   }
 
   @media only screen and (max-width: 620px) {
@@ -75,41 +52,6 @@ export const PageStyles = css`
     .contact.section .section div h3 + form button {
       border-radius: 4px;
       width: 100%;
-    }
-
-    .contact.section .section div .reviews {
-      margin-top: 4rem;
-    }
-
-    .contact.section .section div .reviews > div[class*=Wrapper] {
-      display: flex;
-      margin: 0;
-    }
-
-    .contact.section .section div .reviews > div > .review {
-      padding: 2.4rem 1.3rem;
-    }
-
-    .contact.section .section div .reviews.full-background .review[class*=Wrapper] div {
-      justify-content: center;
-    }
-
-    .contact.section .section div .reviews > div > .review figure {
-      text-align: center;
-    }
-
-    .contact.section .section div .reviews > div > .review blockquote {
-      font-size: 3.2rem;
-    }
-
-    .contact.section .section div .reviews > div > .review figcaption {
-      margin: 1.6rem auto 0px;
-    }
-
-    .contact.section .section div .reviews.full-background .carousel-nav {
-      justify-content: center;
-      margin: 0px;
-      transform: translateY(-3.2rem);
     }
   }
 `

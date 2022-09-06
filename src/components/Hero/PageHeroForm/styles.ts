@@ -23,11 +23,11 @@ export const Buttons = styled.div`
     min-width: 410px;
   }
 
-  @media only screen and (max-width: 620px) {
+  @media only screen and (max-width: 768px) {
     button {
-      font-size: 14px;
-      min-width: 50%;
-      padding: 11px;
+      font-size: 1.8rem;
+      min-width: calc(50% - 2.1rem);
+      padding: 1.1rem;
     }
   }
 `
@@ -37,7 +37,7 @@ export const Btn = styled.button`
   border: 2px solid var(--color-accent);
   color: var(--color-accent);
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 600;
   padding: 13px 34px;
 
   &.accented {
@@ -88,13 +88,14 @@ export const Input = styled.input`
     color: var(--color-accent);
   }
 
-  @media only screen and (max-width: 620px) {
-    min-width: 100%;
+  @media only screen and (max-width: 768px) {
+    min-width: auto;
+    width: 89.5vw;
   }
 `
 
 export const Footer = styled.div`
-  margin-top: 4.8rem;
+  margin-top: 3.2rem;
 
   .centered & {
     margin-left: auto;

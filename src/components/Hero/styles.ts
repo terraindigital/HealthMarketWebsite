@@ -10,8 +10,8 @@ export const Wrapper = styled.div`
   overflow: hidden;
   position: relative;
 
-  padding-bottom: 8.9rem;
-  padding-top: 8.9rem;
+  padding-bottom: 10.4rem;
+  padding-top: 16.5rem;
 
   padding-left: 8.9rem;
   padding-right: 8.9rem;
@@ -61,14 +61,16 @@ export const Img = styled.img`
 
 export const Inner = styled.div`
   margin: 0;
+  max-width: 144rem;
+  width: 100%;
 
   &.half {
     display: flex;
     flex-direction: column;
     justify-content: center;
     
-    flex-basis: 50%;
-    width: 50%;
+    flex-basis: 72%;
+    width: 72%;
   }
 
   &.left {

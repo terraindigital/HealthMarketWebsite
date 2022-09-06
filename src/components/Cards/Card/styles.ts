@@ -5,6 +5,7 @@ export const Wrapper = styled.a`
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
   margin-bottom: 2.1rem;
   position: relative;
+  text-decoration: none;
 
   flex-basis: calc(33% - 2.1rem);
   width: calc(33% - 2.1rem);
@@ -126,12 +127,18 @@ export const Img = styled.img`
 
 export const Content = styled.div`
   color: var(--color-dark);
-  padding: 3.2rem;
+  padding: 3.2rem 3.2rem 6rem;
 
   h4 {
     color: var(--color-primary);
     font-family: var(--font-heading);
     padding: 0rem 0rem 2.4rem;
+  }
+
+  p {
+    font-weight: 600;
+    line-height: 140%;
+    margin-bottom: 0;
   }
 
   .icon & {

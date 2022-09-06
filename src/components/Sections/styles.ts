@@ -4,8 +4,8 @@ export const Wrapper = styled.div`
   background-color: ${({ backgroundColor }) => backgroundColor};
   position: relative;
 
-  padding-bottom: 10rem;
-  padding-top: 10rem;
+  padding-bottom: 10.4rem;
+  padding-top: 10.4rem;
 
   padding-left: 8.9rem;
   padding-right: 8.9rem;

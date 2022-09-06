@@ -52,13 +52,13 @@ const HealthInsurancePage = () => {
       </Hero>
       <Section
         color={page.suppPageCustomFields.suppSection1.color}
-        heading={page.suppPageCustomFields.suppSection1.heading}>
-        {page.suppPageCustomFields.suppSection1.bestPrice.active ? (
+        heading={page.suppPageCustomFields.suppSection1.heading}
+        guarantee={page.suppPageCustomFields.suppSection1.bestPrice.active ? (
           <>
             <BestPriceImage src={page.suppPageCustomFields.suppSection1.bestPrice.image.sourceUrl} />
             <BestPriceImageMobile src={page.suppPageCustomFields.suppSection1.bestPrice.mobileImage.sourceUrl} />
           </>
-        ) : null}
+        ) : null}>
         <Cards>
           {(plans) ? (
             Object.keys(plans).map((plan) => {
@@ -67,7 +67,7 @@ const HealthInsurancePage = () => {
                   icon={plans[plan].icon.sourceUrl}
                   title={plans[plan].title}
                   link={plans[plan].link}>
-                  <div dangerouslySetInnerHTML={{ __html: plans[plan].content }} />
+                  <p dangerouslySetInnerHTML={{ __html: plans[plan].content }} />
                 </Card>
               )
             })

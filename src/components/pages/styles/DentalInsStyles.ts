@@ -24,20 +24,12 @@ export const PageStyles = css`
 
 export const HeroHeading = styled.h1`
   color: var(--color-light);
-  margin-bottom: 3.4rem;
+  margin-bottom: 2.4rem;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
-
-  @media only screen and (max-width: 620px) {
-    font-size: 5rem;
-  }
 `
 
 export const HeroSubheading = styled.h4`
   color: var(--color-dark);
   font-family: var(--font-body);
-  margin-bottom: 3.4rem;
-
-  @media only screen and (max-width: 620px) {
-    font-size: 2rem;
-  }
+  margin-bottom: 4rem;
 `

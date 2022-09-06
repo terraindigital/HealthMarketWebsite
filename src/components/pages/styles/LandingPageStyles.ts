@@ -12,14 +12,10 @@ export const Wrapper = styled.div`
 export const HeroHeading = styled.h1`
   .hero.centered & {
     color: var(--color-dark);
-    margin-bottom: 3.4rem;
+    margin-bottom: 2.4rem;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-
-    @media only screen and (max-width: 620px) {
-      font-size: 5rem;
-    }
   }
 
   .hero.centered.boxed & {
@@ -32,12 +28,8 @@ export const HeroHeading = styled.h1`
 
   .hero .half & {
     color: var(--color-light);
-    margin-bottom: 3.4rem;
+    margin-bottom: 2.4rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
-  
-    @media only screen and (max-width: 620px) {
-      font-size: 5rem;
-    }
   }
 `
 
@@ -45,13 +37,8 @@ export const HeroSubheading = styled.h4`
   .hero.centered & {
     color: var(--color-dark);
     font-family: var(--font-body);
-    margin-bottom: 3.4rem;
+    margin-bottom: 4rem;
     text-align: center;
-
-    @media only screen and (max-width: 620px) {
-      font-size: 1.6rem;
-      font-weight: normal;
-    }
   }
 
   .hero.centered.boxed & {
@@ -65,10 +52,6 @@ export const HeroSubheading = styled.h4`
   .hero .half & {
     color: var(--color-dark);
     font-family: var(--font-body);
-    margin-bottom: 3.4rem;
-  
-    @media only screen and (max-width: 620px) {
-      font-size: 2rem;
-    }
+    margin-bottom: 4rem;
   }
 `

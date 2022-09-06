@@ -1,6 +1,8 @@
 import styled from "@emotion/styled"
 
 export const Wrapper = styled.li`
+  font-size: 2rem;
+  font-weight: 600;
   margin-bottom: 4rem;
   position: relative;
 
@@ -13,7 +15,7 @@ export const Check = styled.div`
   height: 4rem;
   left: -6rem;
   position: absolute;
-  top: 0.3rem;
+  top: -1.3rem;
   width: 4rem;
   z-index: 1;
 

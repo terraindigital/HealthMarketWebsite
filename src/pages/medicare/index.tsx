@@ -23,10 +23,7 @@ import Cards from "../../components/Cards";
 import Card from "../../components/Cards/Card";
 import FlexedSection from "../../components/Sections/FlexedSection";
 import Accordion from "../../components/Accordions";
-import Carousel from "../../components/Carousel";
-import Review from "../../components/Reviews/Review";
 import Medial from "../../components/Medials";
-import Reviews from "../../components/Reviews";
 import Footer from "../../components/Footer";
 
 const MedicarePage = () => {
@@ -58,22 +55,22 @@ const MedicarePage = () => {
             icon={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard1.icon.sourceUrl}
             title={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard1.title}
             link={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard1.link}>
-            <div dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard1.content }} />
+            <p dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard1.content }} />
           </Card>
           <Card
             icon={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard2.icon.sourceUrl}
             title={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard2.title}
             link={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard2.link}>
-            <div dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard2.content }} />
+            <p dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard2.content }} />
           </Card>
           <Card
             icon={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.icon.sourceUrl}
             title={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.title}
             link={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.link}>
-            <div dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.content }} />
+            <p dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.content }} />
           </Card>
         </Cards>
-        <div dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.disclaimer }} />
+        <div className="card-disclaimer" dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.disclaimer }} />
       </Section>
       <FlexedSection
         color={page.medicarePageCustomFields.medicareSection2.color}

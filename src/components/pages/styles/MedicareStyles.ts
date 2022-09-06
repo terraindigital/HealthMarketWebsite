@@ -16,6 +16,14 @@ export const PageStyles = css`
   .button-container button {
     width: 100%;
   }
+  
+  .card-disclaimer {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 6.4rem auto 0;
+    max-width: 106.8rem;
+    text-align: center;
+  }
 
   @media only screen and (max-width: 620px) {
     .medicare .hero .half {
@@ -33,21 +41,16 @@ export const PageStyles = css`
 
 export const HeroHeading = styled.h1`
   color: var(--color-light);
-  margin-bottom: 3.4rem;
+  margin-bottom: 2.4rem;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
-
-  @media only screen and (max-width: 620px) {
-    font-size: 5rem;
-  }
 `
 
 export const HeroSubheading = styled.h4`
   color: var(--color-light);
   font-family: var(--font-body);
-  margin-bottom: 3.4rem;
+  margin-bottom: 4rem;
 
   @media only screen and (max-width: 620px) {
     color: var(--color-light);
-    font-size: 2rem;
   }
 `

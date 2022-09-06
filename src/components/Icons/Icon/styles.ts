@@ -8,6 +8,7 @@ export const Wrapper = styled.a`
   padding: 2.1rem;
   position: relative;
   text-align: center;
+  text-decoration: none;
 
   flex-basis: calc(20% - 2.1rem);
   width: calc(20% - 2.1rem);

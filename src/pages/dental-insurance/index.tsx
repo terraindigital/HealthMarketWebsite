@@ -23,9 +23,6 @@ import Cards from "../../components/Cards";
 import Card from "../../components/Cards/Card";
 import FlexedSection from "../../components/Sections/FlexedSection";
 import Accordion from "../../components/Accordions";
-import Carousel from "../../components/Carousel";
-import Review from "../../components/Reviews/Review";
-import Reviews from "../../components/Reviews";
 import Footer from "../../components/Footer";
 
 const DentalInsurancePage = () => {
@@ -59,11 +56,9 @@ const DentalInsurancePage = () => {
         <Accordion
           title={page.dentalPageCustomFields.dentalSection1.dentalAccordions.dentalAccordion3.heading}
           content={page.dentalPageCustomFields.dentalSection1.dentalAccordions.dentalAccordion3.content} />
-        <div className="hide-at-mobile">
-          <a href="https://shop.healthmarkets.com/dental">
-            <Button background="accent" border="accent" color="light">Show me options</Button>
-          </a>
-        </div>
+        <a className="hide-at-mobile" href={page.dentalPageCustomFields.dentalSection1.cta.link}>
+          <Button background="accent" border="accent" color="light">{page.dentalPageCustomFields.dentalSection1.cta.text}</Button>
+        </a>
       </FlexedSection>
       <Section color="light">
         <h1>Callouts</h1>
@@ -76,19 +71,19 @@ const DentalInsurancePage = () => {
             image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.image.sourceUrl}
             title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.heading}
             link={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.link}>
-            <div dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.content}} />
+            <p dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.content}} />
           </Card>
           <Card
             image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.image.sourceUrl}
             title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.heading}
             link={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.link}>
-            <div dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.content}} />
+            <p dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.content}} />
           </Card>
           <Card
             image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.image.sourceUrl}
             title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.heading}
             link={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.link}>
-            <div dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.content}} />
+            <p dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.content}} />
           </Card>
         </Cards>
         <div className="full-rounded" style={{ textAlign: "center" }}>

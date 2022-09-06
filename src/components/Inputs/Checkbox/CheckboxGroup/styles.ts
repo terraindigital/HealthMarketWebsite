@@ -14,6 +14,7 @@ export const Box = styled.div`
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
+  gap: 2.9rem;
 
   border: 1px solid var(--color-accent);
   padding: 2.1rem;
@@ -21,10 +22,6 @@ export const Box = styled.div`
   > div {
     flex-basis: calc(33% - 2.1rem);
     max-width: calc(33% - 2.1rem);
-
-    &:nth-of-type(-n+3) {
-      margin-bottom: 2.1rem;
-    }
   }
 
   @media only screen and (max-width: 620px) {

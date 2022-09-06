@@ -17,6 +17,10 @@ export const Wrapper = styled.div`
     width: 10px;
   }
 
+  &:last-of-type {
+    margin-bottom: 3.2rem;
+  }
+
   .content {
     height: 0;
     position: relative;
@@ -45,8 +49,8 @@ export const Wrapper = styled.div`
 
 export const Title = styled.div`
   border-bottom: 1px solid var(--color-dark);
-  margin-bottom: 1.3rem;
-  padding: 2.1rem 0px;
+  margin-bottom: 0;
+  padding: 2.2rem 0 2.4rem;
 
   h2 {
     color: var(--color-primary);
@@ -68,6 +72,10 @@ export const Title = styled.div`
 export const Content = styled.div`
   color: var(--color-dark);
   margin: 0 0 2.1rem 0;
+
+  p {
+    font-weight: 400;
+  }
 
   @media only screen and (max-width: 620px) {
     margin-bottom: 0px;

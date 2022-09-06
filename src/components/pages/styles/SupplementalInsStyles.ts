@@ -27,6 +27,10 @@ export const PageStyles = css`
   }
 
   @media only screen and (max-width: 620px) {
+    .hero + .section > .heading {
+      display: flex;
+    }
+
     .supplemental-insurance .hero + .section .heading h2 {
       max-width: 68%;
       padding-right: 3.6rem;
@@ -41,27 +45,26 @@ export const PageStyles = css`
 
 export const HeroHeading = styled.h1`
   color: var(--color-dark);
-  margin-bottom: 3.4rem;
+  margin-bottom: 2.4rem;
   text-align: center;
 `
 
 export const HeroSubheading = styled.h4`
   color: var(--color-dark);
   font-family: var(--font-body);
-  margin-bottom: 3.4rem;
+  margin-bottom: 4rem;
   text-align: center;
 `
 
 export const BestPriceImage = styled.img `
   display: block;
-  left: 67vw;
-  position: absolute;
-  top: 82px;
+  left: -4rem;
+  position: relative;
+  top: 15px;
 
   @media only screen and (max-width: 920px) {
-    left: 520px;
+    left: -4rem;
     max-height: 132px;
-    top: 90px;
   }
 
   @media only screen and (max-width: 620px) {
@@ -71,9 +74,9 @@ export const BestPriceImage = styled.img `
 
 export const BestPriceImageMobile = styled.img `
   display: none;
-  position: absolute;
-  left: 329px;
-  top: 15px;
+  position: relative;
+  left: -7rem;
+  top: 0;
 
   @media only screen and (max-width: 620px) {
     display: block;

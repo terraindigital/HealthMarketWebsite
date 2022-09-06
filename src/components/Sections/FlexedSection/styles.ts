@@ -6,8 +6,8 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: flex-start;
 
-  padding-bottom: 8.9rem;
-  padding-top: 8.9rem;
+  padding-bottom: 10.4rem;
+  padding-top: 10.4rem;
 
   padding-left: 8.9rem;
   padding-right: 8.9rem;

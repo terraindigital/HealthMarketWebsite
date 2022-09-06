@@ -18,8 +18,6 @@ import Input from '../../components/Inputs/Input';
 import TextArea from '../../components/Inputs/TextArea';
 import SplitSection from '../../components/Sections/SplitSection';
 import Button from '../../components/Buttons/Button';
-import Carousel from '../../components/Carousel';
-import Review from '../../components/Reviews/Review';
 import Footer from '../../components/Footer';
 
 const ContactPage = () => {

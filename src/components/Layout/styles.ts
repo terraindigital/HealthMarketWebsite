@@ -74,7 +74,8 @@ export const GlobalStyles = css`
 
   a {
     background-color: transparent;
-    color: var(--color-accent);
+    color: var(--color-primary);
+    text-decoration: underline;
     
     -webkit-text-decoration-skip: objects;
   }
@@ -287,23 +288,23 @@ export const GlobalStyles = css`
 
   p {
     font-family: var(--font-body);
-    font-size: 1.6rem;
-    line-height: 2.8rem;
+    line-height: 110%;
   }
   
   h1, h2, h3,
   h4, h5, h6 {
-    font-weight: 700;
     line-height: 110%;
     margin-top: 0px;
   }
   
   h1, h2, h3 {
     font-family: var(--font-heading);
+    font-weight: 700;
   }
   
   h4, h5, h6 {
     font-family: var(--font-body);
+    font-weight: 600;
   }
 
   /* Heading font-sizes are in /assets/css/fonts.css */

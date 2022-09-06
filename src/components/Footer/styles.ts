@@ -144,6 +144,12 @@ export const Disclaimer = styled.div`
     font-size: 1.2rem;
   }
 
+  a {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
   @media only screen and (max-width: 620px) {
     margin-top: 3.4rem;
   }

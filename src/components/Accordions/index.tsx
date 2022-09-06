@@ -27,8 +27,10 @@ const Accordion: FC<Props> = ({ title, content, html=false }) => {
         <h2>{title}</h2>
       </Title>
       <Content className="content">
-        {(!html) ? content : (
-          <div dangerouslySetInnerHTML={{ __html: content }} />
+        {(!html) ? (
+          <p>{content}</p>
+        ) : (
+          <p dangerouslySetInnerHTML={{ __html: content }} />
         )}
       </Content>
     </Wrapper>
