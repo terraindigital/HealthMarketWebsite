@@ -16,6 +16,7 @@ export const GlobalStyles = css`
     --color-dark: #4D4D4D;
     --color-primary: #009FDA;
     --color-primary-light: #F3FAFD;
+    --color-primary-dark: #0065BD;
     --color-accent: #69BE28;
     --color-accent-light: #F1FBEA;
   }
@@ -70,19 +71,6 @@ export const GlobalStyles = css`
   [hidden],
   template {
     display: none;
-  }
-
-  a {
-    background-color: transparent;
-    color: var(--color-primary);
-    text-decoration: underline;
-    
-    -webkit-text-decoration-skip: objects;
-  }
-
-  a:active,
-  a:hover {
-    outline-width: 0;
   }
 
   abbr[title] {

@@ -32,12 +32,45 @@ export const Wrapper = styled.a`
         display: none;
       }
     }
+  }
+`
 
-    .open-at-mobile &.icon {
-      &.active {
-        .card-content {
-          display: block;
-        }
+export const MobileWrapper = styled.div`
+  background-color: var(--color-light);
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.1rem;
+  position: relative;
+  text-decoration: none;
+
+  flex-basis: calc(33% - 2.1rem);
+  width: calc(33% - 2.1rem);
+
+  &.icon {
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 620px) {
+    flex-basis: 100%;
+    width: 100%;
+
+    &.icon {
+      border-bottom: 1px solid var(--color-primary);
+      margin-bottom: 0;
+      padding: 1.6rem 2.4rem;
+      text-align: left;
+
+      &:last-of-type {
+        border-bottom: none;
+      }
+    
+      .card-content {
+        display: none;
+      }
+    }
+
+    &.icon.active {
+      .card-content {
+        display: block;
       }
     }
   }

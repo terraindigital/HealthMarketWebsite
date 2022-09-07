@@ -30,10 +30,14 @@ export const PageStyles = css`
     margin-bottom: 43rem;
     margin-top: 4.8rem;
   }
-  
-  .contact.section .section div .inner .left form p:last-of-type > a {
-    color: var(--color-primary);
-    text-decoration: underline;
+
+  .contact.section .inner .right .callout {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact.section .inner .right .callout h1 {
+    color: var(--color-accent);
   }
 
   @media only screen and (max-width: 620px) {

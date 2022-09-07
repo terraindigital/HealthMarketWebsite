@@ -9,13 +9,18 @@ export const Wrapper = styled.li`
   &:last-of-type {
     margin-bottom: 0;
   }
+
+  p {
+    font-weight: 400;
+    line-height: 160%;
+  }
 `
 
 export const Check = styled.div`
   height: 4rem;
   left: -6rem;
   position: absolute;
-  top: -1.3rem;
+  top: 0px;
   width: 4rem;
   z-index: 1;
 

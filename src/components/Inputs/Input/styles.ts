@@ -43,6 +43,7 @@ export const InputField = styled.input`
   border: none;
   border-bottom: 1px solid var(--color-dark);
   color: var(--color-dark);
+  font-size: 2rem;
   line-height: 140%;
   margin: 2.1rem 0 3.4rem 0;
   padding: 0.8rem 0rem;

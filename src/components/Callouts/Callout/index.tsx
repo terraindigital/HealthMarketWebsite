@@ -24,7 +24,7 @@ interface Props {
 const Callout: FC<Props> = ({ number, tagline, title, description, disclaimer }) => {
 
   return (
-    <Wrapper>
+    <Wrapper className="callout">
       <Heading>
         <Number>{number}</Number>
         <Tagline>{tagline}</Tagline>

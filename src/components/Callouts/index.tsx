@@ -11,7 +11,7 @@ interface Props {
 
 const Callouts: FC<Props> = ({children}) => {
   return (
-    <Wrapper>
+    <Wrapper className="callouts">
       {children}
     </Wrapper>
   );

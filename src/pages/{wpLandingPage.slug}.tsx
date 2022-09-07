@@ -33,8 +33,11 @@ import Cards from "../components/Cards";
 import Card from "../components/Cards/Card";
 
 interface IconInfo {
-  link: String,  
-  title: String
+  link: String,
+  title: String,
+  mobileIcon: {
+    sourceUrl: String
+  },
   icon: {
     sourceUrl: String
   }
@@ -182,11 +185,6 @@ interface PageInfo {
             text: string
           }
         }
-      },
-      lpReviews: {
-        alignment: string,
-        bgColor: string,
-        starColor: string
       },
       lpSections: {
         lpSection1: SectionInfo,
@@ -429,6 +427,7 @@ const LPPage = ({data}: { data: PageInfo }) => {
                           return (
                             <Icon
                               icon={icon.icon.sourceUrl}
+                              mobile={icon.mobileIcon.sourceUrl}
                               title={icon.title}
                               link={icon.link} />
                           )
@@ -461,6 +460,7 @@ const LPPage = ({data}: { data: PageInfo }) => {
                           return (
                             <Icon
                               icon={icon.icon.sourceUrl}
+                              mobile={icon.mobileIcon.sourceUrl}
                               title={icon.title}
                               link={icon.link} />
                           )
@@ -488,7 +488,7 @@ const LPPage = ({data}: { data: PageInfo }) => {
         
         <Section color="light">
           <Callouts>
-              {(callouts && callouts.isActive) ? (
+              {(callouts) ? (
                   Object.keys(callouts).map((index) => {
                       const callout = callouts[index];
                       return (
@@ -604,11 +604,6 @@ export const pageQuery = graphql`
             }
           }
         }
-        lpReviews {
-          alignment
-          bgColor
-          starColor
-        }
         lpSections {
           lpSection1 {
             isActive
@@ -679,11 +674,17 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
               icon2 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -693,11 +694,17 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
               icon4 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -707,11 +714,17 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
               icon6 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -721,11 +734,17 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
               icon8 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -735,6 +754,9 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
@@ -742,11 +764,17 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
               icon11 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -841,11 +869,17 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
               icon2 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -855,11 +889,17 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
               icon4 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -869,11 +909,17 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
               icon6 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -883,11 +929,17 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
               icon8 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -897,6 +949,9 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
@@ -904,11 +959,17 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
               icon11 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -1003,11 +1064,17 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
               icon2 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -1017,11 +1084,17 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
               icon4 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -1031,11 +1104,17 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
               icon6 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -1045,11 +1124,17 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
               icon8 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -1059,6 +1144,9 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
@@ -1066,11 +1154,17 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
               icon11 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -1165,11 +1259,17 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
               icon2 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -1179,11 +1279,17 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
               icon4 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -1193,11 +1299,17 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
               icon6 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -1207,11 +1319,17 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
               icon8 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -1221,6 +1339,9 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
@@ -1228,11 +1349,17 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
               icon11 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -1327,11 +1454,17 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
               icon2 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -1341,11 +1474,17 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
               icon4 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -1355,11 +1494,17 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
               icon6 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -1369,11 +1514,17 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
               icon8 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -1383,6 +1534,9 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
@@ -1390,11 +1544,17 @@ export const pageQuery = graphql`
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
               }
               icon11 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link

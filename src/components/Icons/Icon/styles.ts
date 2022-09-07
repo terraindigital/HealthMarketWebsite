@@ -67,12 +67,15 @@ export const Wrapper = styled.a`
 `
 
 export const Img = styled.img`
-  display: inline;
+  &.desktop { display: inline; }
+  &.mobile { display: none; }
 
   @media only screen and (max-width: 620px) {
     margin: 0;
-    max-width: 4.2rem;
     padding: 0;
+
+    &.desktop { display: none; }
+    &.mobile { display: inline; }
   }
 `
 

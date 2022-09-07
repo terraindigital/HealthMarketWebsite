@@ -58,7 +58,7 @@ export const PageStyles = css`
   }
 
   .how-we-help .split-section + .section.light + .section.primary > div[class*=Heading] {
-    width: 100%;
+    width: calc(100% + 8.9rem);
   }
 
   .how-we-help .split-section + .section.light + .section.primary .heading h2 {

@@ -9,7 +9,6 @@ import {
 } from './styles';
 
 // Components
-import Tiles from '../Tiles';
 import CarouselNav from './CarouselNav';
 
 interface Props {

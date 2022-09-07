@@ -76,7 +76,7 @@ const HealthInsurancePage = () => {
       </Section>
       <Section color="light">
         <Callouts>
-            {(callouts && callouts.isActive) ? (
+            {(callouts) ? (
                 Object.keys(callouts).map((index) => {
                     const callout = callouts[index];
                     return (

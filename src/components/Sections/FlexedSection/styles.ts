@@ -30,8 +30,9 @@ export const Wrapper = styled.div`
 
 export const Heading = styled.div`
   display: block;
-  min-width: calc(50% + 8.9rem);
+  flex-basis: 50%;
   transform: translateX(-8.9rem);
+  width: 50%;
 
   h2 {
     background-color: var(--color-primary);
@@ -68,6 +69,9 @@ export const Heading = styled.div`
 `
 
 export const Inner = styled.div`
+  flex-basis: 50%;
+  width: 50%;
+
   @media only screen and (max-width: 620px) {
     button {
       border-radius: 4px;
