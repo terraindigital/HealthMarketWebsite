@@ -14,14 +14,12 @@ export const Wrapper = styled.div`
     padding-right: 5.5rem;
   }
 
-  @media screen and (max-width: 920px) {
-    padding-left: 2.1rem;
-    padding-right: 2.1rem;
-  }
-
   @media only screen and (max-width: 620px) {
     display: block;
-    padding-bottom: 3.4rem;
+    padding-left: 2.1rem;
+    padding-right: 2.1rem;
+    padding-bottom: 4rem;
+    padding-top: 4rem;
   }
 `
 
@@ -32,7 +30,7 @@ export const Heading = styled.div`
     text-align: center; 
   }
 
-  @media only screen and (max-width: 620px) {
+  @media only screen and (max-width: 788px) {
     h2 {
       font-size: 4rem;
       letter-spacing: 0.02em;

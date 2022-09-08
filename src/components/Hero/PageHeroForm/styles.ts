@@ -23,11 +23,15 @@ export const Buttons = styled.div`
     min-width: 410px;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 788px) {
+    justify-content: center;
+
     button {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
+      line-height: 120%;
+      min-height: 5.6rem;
       min-width: calc(50% - 2.1rem);
-      padding: 1.1rem;
+      padding: 0.9rem 1.1rem;
     }
   }
 `
@@ -66,7 +70,7 @@ export const InputGroup = styled.div`
   }
 
   @media only screen and (max-width: 620px) {
-    margin-top: 0.8rem;
+    margin-top: 1.6rem;
     width: 100%;
   }
 `
@@ -86,9 +90,11 @@ export const Input = styled.input`
 
   &::placeholder {
     color: var(--color-accent);
+    opacity: 0.6;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 788px) {
+    font-size: 1.6rem;
     min-width: auto;
     width: 89.5vw;
   }
@@ -103,12 +109,16 @@ export const Footer = styled.div`
   }
 
   button {
-    max-width: 335px;
+    max-width: 33.3rem;
     width: 100%;
+
+    @media only screen and (max-width: 620px) {
+      max-width: 100%;
+    }
   }
 
-  @media only screen and (max-width: 620px) {
-    margin-top: 1.6rem;
+  @media only screen and (max-width: 788px) {
+    margin-top: 2.4rem;
     max-width: 100%;
   }
 `
@@ -133,7 +143,7 @@ export const CTA = styled.div`
   a, span {
     color: var(--color-dark);
     font-size: 2.4rem;
-    font-weight: bold;
+    font-weight: 600;
   }
 
   .light & {
@@ -143,6 +153,19 @@ export const CTA = styled.div`
   
     a, span {
       color: var(--color-light);
+    }
+  }
+
+  @media only screen and (max-width: 788px) {
+    justify-content: center;
+    
+    a, span {
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    img {
+      max-height: 18px;
     }
   }
 `

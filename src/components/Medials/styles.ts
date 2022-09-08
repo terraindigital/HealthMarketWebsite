@@ -28,7 +28,7 @@ export const Wrapper = styled.div`
     max-height: 215px;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 788px) {
     padding-bottom: 3.4rem;
     padding-top: 3.4rem;
     
@@ -50,10 +50,22 @@ export const Inner = styled.div`
 
   .two-columns & {
     padding: 8.3rem 14.6rem 8.3rem 12.8rem;
+
+    @media only screen and (max-width: 1460px) {
+      padding: 5.5rem 12.8rem 5.5rem 10.3rem;
+    }
+
+    @media only screen and (max-width: 788px) {
+      padding: 4rem 2.1rem;
+    }
   }
 
   .three-columns & {
     padding: 4rem 9.6rem;
+
+    @media only screen and (max-width: 788px) {
+      padding: 4rem 2.1rem;
+    }
   }
 
   h3 {
@@ -62,7 +74,7 @@ export const Inner = styled.div`
     margin: 0px;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 788px) {
     display: block;
     padding: 2.1rem 1.3rem;
     text-align: center;

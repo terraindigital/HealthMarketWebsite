@@ -92,11 +92,17 @@ export const useHealthPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 title
                 link
               }
               healthPlan2 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 title
@@ -106,11 +112,17 @@ export const useHealthPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 title
                 link
               }
               healthPlan4 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 title
@@ -120,11 +132,17 @@ export const useHealthPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 title
                 link
               }
               healthPlan6 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 title
@@ -134,11 +152,17 @@ export const useHealthPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 title
                 link
               }
               healthPlan8 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 title
@@ -148,6 +172,9 @@ export const useHealthPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 title
                 link
               }
@@ -155,11 +182,17 @@ export const useHealthPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 title
                 link
               }
               healthPlan11 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 title

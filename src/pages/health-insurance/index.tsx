@@ -42,7 +42,8 @@ const HealthInsurancePage = () => {
           description={page.metadataCustomFields.metaDescription}/>
       <Hero
         image={page.pageHeroFields.heroImage.sourceUrl}
-        mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}>
+        mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
+        bgColor="#fff000">
         <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
         <PageHeroForm
@@ -76,6 +77,24 @@ const HealthInsurancePage = () => {
           </Card>
         </Cards>
       </Section>
+      <Section
+        classes="show-at-mobile"
+        color="primary"
+        heading={page.healthPageCustomFields.healthSection3.heading}>
+        <Icons>
+          {(plans) ? (
+            Object.keys(plans).map((plan) => {
+              return (
+                <Icon
+                  icon={plans[plan].icon.sourceUrl}
+                  mobile={plans[plan].mobileIcon.sourceUrl}
+                  title={plans[plan].title}
+                  link={plans[plan].link} />
+              )
+            })
+          ) : null}
+        </Icons>
+      </Section>
       <FlexedSection
         color={page.healthPageCustomFields.healthSection2.color}
         heading={page.healthPageCustomFields.healthSection2.heading}>
@@ -93,6 +112,7 @@ const HealthInsurancePage = () => {
         </a>
       </FlexedSection>
       <Section
+        classes="hide-at-mobile"
         color={page.healthPageCustomFields.healthSection3.color}
         heading={page.healthPageCustomFields.healthSection3.heading}>
         <Icons>
@@ -101,6 +121,7 @@ const HealthInsurancePage = () => {
               return (
                 <Icon
                   icon={plans[plan].icon.sourceUrl}
+                  mobile={plans[plan].mobileIcon.sourceUrl}
                   title={plans[plan].title}
                   link={plans[plan].link} />
               )

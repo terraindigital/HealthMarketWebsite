@@ -8,7 +8,7 @@ export const PageStyles = css`
     padding-right: 6.5rem;
   }
 
-  @media only screen and (max-width: 620px) {
+  @media only screen and (max-width: 788px) {
     .dental-insurance .hero .half {
       display: block;
       flex-basis: 100%;
@@ -18,6 +18,13 @@ export const PageStyles = css`
 
     .dental-insurance .hero + .section {
       padding-top: 4rem;
+    }
+  }
+
+  @media only screen and (max-width: 620px) {
+    .dental-insurance .hero > img {
+      bottom: -8rem;
+      top: auto;
     }
   }
 `

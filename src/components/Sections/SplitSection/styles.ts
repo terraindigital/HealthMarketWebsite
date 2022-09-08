@@ -58,7 +58,7 @@ export const Wrapper = styled.div`
       margin-left: 3.4rem;
     }
 
-    @media only screen and (max-width: 620px) {
+    @media only screen and (max-width: 788px) {
       display: block;
       
       .left,

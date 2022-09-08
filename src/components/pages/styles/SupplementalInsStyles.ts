@@ -26,7 +26,7 @@ export const PageStyles = css`
     padding-right: 6.5rem;
   }
 
-  @media only screen and (max-width: 620px) {
+  @media only screen and (max-width: 788px) {
     .hero + .section > .heading {
       display: flex;
     }
@@ -61,6 +61,12 @@ export const BestPriceImage = styled.img `
   left: -4rem;
   position: relative;
   top: 15px;
+
+  @media only screen and (max-width: 1460px) {
+    left: -24.3rem;
+    max-height: 172px;
+    top: 12px;
+  }
 
   @media only screen and (max-width: 920px) {
     left: -4rem;

@@ -14,8 +14,8 @@ export const Input = styled.input`
     color: var(--color-dark);
     height: 1.4rem;
     margin-right: 0.8rem;
-    transform: translateY(1px);
-    width: 1.4rem;
+    transform: translateY(6px);
+    min-width: 1.4rem;
 
     &:checked {
       background-color: transparent;

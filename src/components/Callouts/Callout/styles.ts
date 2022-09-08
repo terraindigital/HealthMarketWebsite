@@ -19,7 +19,7 @@ export const Number = styled.h1`
   @media only screen and (max-width: 1650px) {
     font-size: 10rem;
   }
-  @media only screen and (max-width: 620px) {
+  @media only screen and (max-width: 788px) {
     font-size: 8rem;
   }
   @media only screen and (max-width: 360px) {

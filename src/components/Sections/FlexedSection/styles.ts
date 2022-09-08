@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
 
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
 
   padding-bottom: 10.4rem;
   padding-top: 10.4rem;
@@ -17,14 +18,12 @@ export const Wrapper = styled.div`
     padding-right: 5.5rem;
   }
 
-  @media screen and (max-width: 920px) {
+  @media only screen and (max-width: 788px) {
+    display: block;
     padding-left: 2.1rem;
     padding-right: 2.1rem;
-  }
-
-  @media only screen and (max-width: 620px) {
-    display: block;
-    padding-bottom: 3.4rem;
+    padding-bottom: 4rem;
+    padding-top: 4rem;
   }
 `
 
@@ -41,42 +40,56 @@ export const Heading = styled.div`
     letter-spacing: 1px;
     margin: 0;
     padding: 2.8rem 8.8rem 2.8rem 14.4rem;
-  }
 
-  @media only screen and (max-width: 620px) {
-    display: block;
-    margin-bottom: 3.4rem;
-    transform: translateX(-2.1rem);
+    @media only screen and (max-width: 1460px) {
+      padding-left: 8.9rem;
+    }
 
-    h2 {
+    @media only screen and (max-width: 788px) {
       font-size: 4rem;
       letter-spacing: 0.02em;
       line-height: 115%;
       max-width: 100%;
-      padding: 0.5rem 2.1rem 0.5rem 3.4rem;
+      padding: 0.5rem 2.1rem;
     }
+  }
 
-    h4 {
-      font-size: 2.4rem;
-      margin-bottom: 2.1rem;
-      margin-left: 0;
-      margin-top: 1.3rem;
-      max-width: calc(100% - 4.2rem);
-      padding-left: 3.4rem;
-      padding-right: 2.1rem;
-    }
+  @media only screen and (max-width: 788px) {
+    display: block;
+    flex-basis: 100%;
+    margin-bottom: 3.4rem;
+    transform: translateX(-2.1rem);
+    width: 100%;
   }
 `
 
 export const Inner = styled.div`
-  flex-basis: 50%;
-  width: 50%;
+  flex-basis: calc(50% - 9.6rem);
+  width: calc(50% - 9.6rem);
 
-  @media only screen and (max-width: 620px) {
+  @media only screen and (max-width: 788px) {
+    flex-basis: 100%;
+    width: 100%;
+
+    text-align: center;
+    margin: 0 auto;
+    max-width: 55rem;
+
     button {
       border-radius: 4px;
+      margin-left: auto;
+      margin-right: auto;
       margin-top: 3.4rem;
+      max-width: 33.3rem;
       width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 620px) {
+    max-width: 100%;
+    
+    button {
+      max-width: 100%;
     }
   }
 `

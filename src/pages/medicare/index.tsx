@@ -40,7 +40,8 @@ const MedicarePage = () => {
           description={page.metadataCustomFields.metaDescription}/>
       <Hero
         image={page.pageHeroFields.heroImage.sourceUrl}
-        mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}>
+        mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
+        bgColor="#fff000">
         <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
         <PageHeroForm

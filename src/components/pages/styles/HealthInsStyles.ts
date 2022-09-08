@@ -8,7 +8,7 @@ export const PageStyles = css`
     padding-right: 6.5rem;
   }
 
-  @media only screen and (max-width: 620px) {
+  @media only screen and (max-width: 788px) {
     .health-insurance .hero .half {
       display: block;
       flex-basis: 100%;
@@ -18,6 +18,17 @@ export const PageStyles = css`
 
     .health-insurance .hero + .section {
       padding-top: 4rem;
+    }
+
+    .section + .flexed.section {
+      background-color: var(--color-light);
+    }
+  }
+
+  @media only screen and (max-width: 620px) {
+    .health-insurance .hero > img {
+      bottom: -8rem;
+      top: auto;
     }
   }
 `

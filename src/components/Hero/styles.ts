@@ -3,6 +3,7 @@ import styled from "@emotion/styled"
 // TODO: Responsive; Global hero responsive check
 
 export const Wrapper = styled.div`
+  background-color: ${props => `${props.background}`};
   display: flex;
   min-height: 600px;
   min-height: 100%;
@@ -32,16 +33,16 @@ export const Wrapper = styled.div`
     padding-right: 2.1rem;
   }
 
-  @media only screen and (max-width: 620px) {
+  @media only screen and (max-width: 788px) {
     padding-top: 16.6rem;
-    padding-bottom: 19.7rem;
+    padding-bottom: 22rem;
 
     &.centered {
       display: block;
       min-height: auto;
     }
   }
-`;
+`
 
 export const Img = styled.img`
   left: 0;
@@ -51,18 +52,15 @@ export const Img = styled.img`
   position: absolute;
   top: 0;
   width: auto;
-  z-index: -1;
-
-  @media only screen and (max-width: 620px) {
-    bottom: 0;
-    top: auto;
-  }
+  z-index: 0;
 `
 
 export const Inner = styled.div`
   margin: 0;
   max-width: 144rem;
+  position: relative;
   width: 100%;
+  z-index: 1;
 
   &.half {
     display: flex;

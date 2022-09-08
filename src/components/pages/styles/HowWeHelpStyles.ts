@@ -10,7 +10,7 @@ export const PageStyles = css`
     padding: 3.2rem 0;
   }
 
-  @media only screen and (max-width: 620px) {
+  @media only screen and (max-width: 788px) {
     .how-we-help .hero {
       padding-bottom: 197px;
     }
@@ -42,9 +42,18 @@ export const PageStyles = css`
       padding: 3rem 1.6rem 4rem;
     }
 
+    .how-we-help .split-section .inner img {
+      margin: 0;
+    }
+
+    .how-we-help .split-section .inner h3 {
+      padding: 2.4rem 0 0.8rem;
+    }
+
     .how-we-help .split-section .inner p {
       font-size: 1.8rem;
       line-height: 120%;
+      padding: 0.8rem 0 2.4rem;
     }
 
     .how-we-help .split-section .inner button {
@@ -73,7 +82,7 @@ export const PageStyles = css`
     display: none;
   }
 
-  @media only screen and (max-width: 620px) {
+  @media only screen and (max-width: 788px) {
     .how-we-help .split-section + .section.light + .section.primary .heading h2 {
       max-width: 100%;
     }

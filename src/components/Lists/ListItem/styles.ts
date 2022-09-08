@@ -52,6 +52,6 @@ export const Check = styled.div`
 `
 
 export const Heading = styled.div`
-  color: var(--color-primary);
+  color: var(--color-primary-dark);
   margin-bottom: 1.6rem;
 `

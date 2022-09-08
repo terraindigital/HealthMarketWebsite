@@ -14,6 +14,17 @@ export const Wrapper = styled.a`
     text-align: center;
   }
 
+  @media only screen and (max-width: 788px) {
+    flex-basis: calc(50% - 2.1rem);
+    width: calc(50% - 2.1rem);
+
+    margin-right: 2.1rem;
+
+    &:nth-of-type(n+2) {
+      margin-right: 0;
+    }
+  }
+
   @media only screen and (max-width: 620px) {
     flex-basis: 100%;
     width: 100%;
@@ -101,6 +112,8 @@ export const Header = styled.div`
   }
 
   @media only screen and (max-width: 620px) {
+    min-height: 5.9rem;
+    
     .icon & {
       align-items: center;
       display: flex;

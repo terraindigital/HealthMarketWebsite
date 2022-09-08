@@ -9,6 +9,7 @@ interface Props {
   heading?: String,
   subheading?: String,
   guarantee?: ReactNode,
+  classes?: String,
   page?: String
 }
 
@@ -27,12 +28,15 @@ const switchBgColor = (bgColor) => {
   }
 }
 
-const Section: FC<Props> = ({ heading, subheading, guarantee, page, color, children}) => {
+const Section: FC<Props> = ({ heading, subheading, guarantee, classes, page, color, children}) => {
   const bgColor = switchBgColor(color)
-  const pageClass = (page) ? page : ""
+
+  let classList = "section";
+  if (page) { classList += ` ${page}`}
+  if (classes) { classList += ` ${classes}`}
 
   return (
-    <Wrapper backgroundColor={bgColor} className={`section ` + color + ` ` + pageClass}>
+    <Wrapper backgroundColor={bgColor} className={classList}>
       {(heading) ? (
         <Heading className="heading">
           <h2>{heading}</h2>

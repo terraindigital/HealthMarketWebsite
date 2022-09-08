@@ -1,8 +1,10 @@
 import styled from "@emotion/styled"
 
 export const Wrapper = styled.div`
+  cursor: pointer;
   margin: 0;
   position: relative;
+  text-align: left;
 
   &:after {
     content: '';
@@ -71,10 +73,15 @@ export const Title = styled.div`
 
 export const Content = styled.div`
   color: var(--color-dark);
-  margin: 0 0 2.1rem 0;
+  margin: 0 0 1.7rem 0;
 
   p {
     font-weight: 400;
+    line-height: 130%;
+
+    & + p {
+      margin-top: 1.6rem;
+    }
   }
 
   @media only screen and (max-width: 620px) {

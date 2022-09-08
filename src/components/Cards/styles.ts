@@ -5,4 +5,8 @@ export const Wrapper = styled.div`
   align-items: stretch;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  @media only screen and (max-width: 788px) {
+    justify-content: center;
+  }
 `

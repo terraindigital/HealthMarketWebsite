@@ -19,6 +19,10 @@ export const Item = styled.div`
     border-right: none;
   }
 
+  .telephone {
+    font-weight: 700;
+  }
+
   .icon {
     display: inline;
     height: 23px;

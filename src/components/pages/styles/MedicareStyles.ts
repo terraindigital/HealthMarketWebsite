@@ -14,18 +14,19 @@ export const PageStyles = css`
   }
 
   .button-container button {
+    max-width: 38.6rem;
     width: 100%;
   }
   
   .card-disclaimer {
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 400;
     margin: 6.4rem auto 0;
     max-width: 106.8rem;
     text-align: center;
   }
 
-  @media only screen and (max-width: 620px) {
+  @media only screen and (max-width: 788px) {
     .medicare .hero .half {
       display: block;
       flex-basis: 100%;
@@ -35,6 +36,18 @@ export const PageStyles = css`
 
     .medicare .hero + .section {
       padding-top: 4rem;
+    }
+  
+    .card-disclaimer {
+      font-size: 1.6rem;
+      margin-top: 1.6rem;
+    }
+  }
+
+  @media only screen and (max-width: 620px) {
+    .medicare .hero > img {
+      bottom: -8rem;
+      top: auto;
     }
   }
 `

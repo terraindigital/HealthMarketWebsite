@@ -26,8 +26,7 @@ const Carousel: FC<Props> = ({ children }) => {
         modules={[Navigation, Pagination]}
         spacebetween={34}
         centeredSlides={true}
-        centeredSlideBounds={true}
-        onSlideChange={() => console.log('changed')}
+        centeredSlideBounds={false}
         allowTouchMove={true}
         pagination={{
           el: '.carousel-pagination',
@@ -37,9 +36,10 @@ const Carousel: FC<Props> = ({ children }) => {
           }
         }}
         breakpoints={{
-          620: {
+          425: {
             slidesPerView: 1,
-            slidesPerGroupAuto: false,
+            slidesPerGroup: 1,
+            slidesPerGroupAuto: true,
             centeredSlides: false,
             centeredSlidesBounds: false
           },
@@ -50,7 +50,7 @@ const Carousel: FC<Props> = ({ children }) => {
             centeredSlides: false,
             centeredSlidesBounds: false
           },
-          1280: {
+          1024: {
             slidesPerView: 3,
             slidesPerGroup: 3,
             slidesPerGroupAuto: true,

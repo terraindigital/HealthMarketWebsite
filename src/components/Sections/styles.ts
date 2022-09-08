@@ -15,14 +15,11 @@ export const Wrapper = styled.div`
     padding-right: 5.5rem;
   }
 
-  @media screen and (max-width: 920px) {
+  @media screen and (max-width: 788px) {
     padding-left: 2.1rem;
     padding-right: 2.1rem;
-  }
-
-  @media only screen and (max-width: 620px) {
-    padding-bottom: 3.4rem;
-    padding-top: 3.4rem;
+    padding-bottom: 4rem;
+    padding-top: 4rem;
   }
 `
 
@@ -40,6 +37,18 @@ export const Heading = styled.div`
     letter-spacing: 1px;
     margin: 0;
     padding: 2.8rem 8.8rem 2.8rem 14.4rem;
+
+    @media only screen and (max-width: 1460px) {
+      padding-left: 8.9rem;
+    }
+
+    @media only screen and (max-width: 788px) {
+      font-size: 4rem;
+      letter-spacing: 0.02em;
+      line-height: 115%;
+      max-width: 100%;
+      padding: 0.5rem 2.1rem;
+    }
   }
 
   h4 {
@@ -48,29 +57,21 @@ export const Heading = styled.div`
     margin-bottom: 0;
     margin-left: 2.4rem;
     max-width: 38%;
-  }
 
-  @media only screen and (max-width: 620px) {
-    display: block;
-    transform: translateX(-2.1rem);
-
-    h2 {
-      font-size: 4rem;
-      letter-spacing: 0.02em;
-      line-height: 115%;
-      max-width: 100%;
-      padding: 0.5rem 2.1rem 0.5rem 3.4rem;
-    }
-
-    h4 {
-      font-size: 2.4rem;
-      margin-bottom: 2.1rem;
+    @media only screen and (max-width: 788px) {
+      font-size: 2rem;
+      margin-bottom: 2.4rem;
       margin-left: 0;
-      margin-top: 1.3rem;
+      margin-top: 2.4rem;
       max-width: calc(100% - 4.2rem);
       padding-left: 3.4rem;
       padding-right: 2.1rem;
     }
+  }
+
+  @media only screen and (max-width: 788px) {
+    display: block;
+    transform: translateX(-2.1rem);
   }
 `
 

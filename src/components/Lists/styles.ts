@@ -13,6 +13,18 @@ export const Wrapper = styled.ul`
     text-align: left;
   }
 
+  @media only screen and (max-width: 788px) {
+    margin-left: 6.6rem;
+    text-align: left;
+
+    .centered.section & {
+      columns: 1;
+      column-gap: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
   @media only screen and (max-width: 620px) {
     margin-left: 3.4rem;
 
