@@ -9,7 +9,7 @@ import {
   Wrapper,
   HeroHeading,
   HeroSubheading
-} from '../components/pages/styles/LandingPageStyles';
+} from '../components/pages/styles/GeneralProductPageStyles';
 
 // Components
 import Layout from "../components/Layout";
@@ -123,48 +123,8 @@ interface PageInfo {
     disclaimers: {
       disclaimer: string
     },
-    landingPageCustomFields: {
-      lpCta: {
-        showCta?: boolean,
-        ctaStyle: string,
-        bgColor: string,
-        ctaColumns: {
-          column1: {
-            contentType: string,
-            image?: {
-              sourceUrl: string
-            },
-            heading?: string,
-            button?: {
-              link: string,
-              text: string
-            }
-          }
-          column2: {
-            contentType: string,
-            image?: {
-              sourceUrl: string
-            },
-            heading?: string,
-            button?: {
-              link: string,
-              text: string
-            }
-          }
-          column3?: {
-            contentType: string,
-            image?: {
-              sourceUrl: string
-            },
-            heading?: string,
-            button?: {
-              link: string,
-              text: string
-            }
-          }
-        }
-      },
-      lpHero: {
+    generalProductCustomFields: {
+      gpHero: {
         heroImage: {
           sourceUrl: string
         },
@@ -186,12 +146,12 @@ interface PageInfo {
           }
         }
       },
-      lpSections: {
-        lpSection1: SectionInfo,
-        lpSection2: SectionInfo,
-        lpSection3: SectionInfo,
-        lpSection4: SectionInfo,
-        lpSection5: SectionInfo
+      gpSections: {
+        gpSection1: SectionInfo,
+        gpSection2: SectionInfo,
+        gpSection3: SectionInfo,
+        gpSection4: SectionInfo,
+        gpSection5: SectionInfo
       }
     }
     calloutsCustomField: {
@@ -205,33 +165,33 @@ interface PageInfo {
   }
 }
 
-const LPPage = ({data}: { data: PageInfo }) => {
+const GPPage = ({data}: { data: PageInfo }) => {
   const { page } = data;
-  const sections = page.landingPageCustomFields.lpSections;
+  const sections = page.generalProductCustomFields.gpSections;
   const callouts = page.calloutsCustomField.callouts;
 
   return (
     <Layout pageClass={page.slug}>
       <Global styles={PageStyles} />
       <Seo
-          title={page.metadataCustomFields.metaTitle}
-          description={page.metadataCustomFields.metaDescription}/>
+        title={page.metadataCustomFields.metaTitle}
+        description={page.metadataCustomFields.metaDescription}/>
       <Wrapper>
         <Hero
-          image={page.landingPageCustomFields.lpHero.heroImage.sourceUrl}
-          mobileImage={page.landingPageCustomFields.lpHero.heroImageMobile.sourceUrl}
-          centered={(page.landingPageCustomFields.lpHero.alignment === "centered")}
-          boxed={(page.landingPageCustomFields.lpHero.contentStyle === "boxed")}
-          color={page.landingPageCustomFields.lpHero.contentBgColor}
+          image={page.generalProductCustomFields.gpHero.heroImage.sourceUrl}
+          mobileImage={page.generalProductCustomFields.gpHero.heroImageMobile.sourceUrl}
+          centered={(page.generalProductCustomFields.gpHero.alignment === "centered")}
+          boxed={(page.generalProductCustomFields.gpHero.contentStyle === "boxed")}
+          color={page.generalProductCustomFields.gpHero.contentBgColor}
           >
-          <HeroHeading>{page.landingPageCustomFields.lpHero.heroHeadline}</HeroHeading>
-          <HeroSubheading>{page.landingPageCustomFields.lpHero.heroSubheadline}</HeroSubheading>
+          <HeroHeading>{page.generalProductCustomFields.gpHero.heroHeadline}</HeroHeading>
+          <HeroSubheading>{page.generalProductCustomFields.gpHero.heroSubheadline}</HeroSubheading>
           <PageHeroForm
-            centered={(page.landingPageCustomFields.lpHero.alignment === "centered")}
-            btnLeftText={page.landingPageCustomFields.lpHero.heroButtons.heroButton1.text}
-            btnRightText={page.landingPageCustomFields.lpHero.heroButtons.heroButton2.text}
+            centered={(page.generalProductCustomFields.gpHero.alignment === "centered")}
+            btnLeftText={page.generalProductCustomFields.gpHero.heroButtons.heroButton1.text}
+            btnRightText={page.generalProductCustomFields.gpHero.heroButtons.heroButton2.text}
             inputId={`${page.title.replaceAll(' ', '')}HeroLocation`}
-            buttons={page.landingPageCustomFields.lpHero.heroButtons.showButtons} />
+            buttons={page.generalProductCustomFields.gpHero.heroButtons.showButtons} />
         </Hero>
 
         {Object.keys(sections).map((i) => {
@@ -245,11 +205,18 @@ const LPPage = ({data}: { data: PageInfo }) => {
                     color={(section.bgColor) ? section.bgColor : "light"}
                     heading={section.headline.headlineText}>
                     <List>
-                      {Object.keys(section.list).map((listItem) => (
-                        <ListItem heading={section.list[listItem].title}>
-                          <p>{section.list[listItem].content}</p>
-                        </ListItem>
-                      ))}
+                      {(section.list) ? (
+                        Object.keys(section.list).map((i) => {
+                          const item = section.list[i];
+                          if (item.title) {
+                            return (
+                              <ListItem heading={item.title}>
+                                <p>{item.content}</p>
+                              </ListItem>
+                            )
+                          }
+                        })
+                      ) : null}
                     </List>
                     {(section.cta.showCta) ? (
                       <div style={{ marginTop: "5.5rem" }}>
@@ -271,11 +238,18 @@ const LPPage = ({data}: { data: PageInfo }) => {
                     color={(section.bgColor) ? section.bgColor : "light"}
                     heading={section.headline.headlineText}>
                     <List>
-                      {Object.keys(section.list).map((listItem) => (
-                        <ListItem heading={section.list[listItem].title}>
-                          <p>{section.list[listItem].content}</p>
-                        </ListItem>
-                      ))}
+                    {(section.list) ? (
+                      Object.keys(section.list).map((i) => {
+                        const item = section.list[i];
+                        if (item.title) {
+                          return (
+                            <ListItem heading={item.title}>
+                              <p>{item.content}</p>
+                            </ListItem>
+                          )
+                        }
+                      })
+                    ) : null}
                     </List>
                     {(section.cta.showCta) ? (
                       <div>
@@ -294,15 +268,24 @@ const LPPage = ({data}: { data: PageInfo }) => {
               }
             }
 
-            if (section.contentType === "Accordion") {
+            if (section.contentType === "Accordions") {
               if (section.headline.headlineAlignment === "Centered") {
                 return (
                   <CenteredSection
                     color={(section.bgColor) ? section.bgColor : "light"}
                     heading={section.headline.headlineText}>
-                    <Accordion
-                      title={section.accordions.heading}
-                      content={section.accordions.content} />
+                    {(section.accordions) ? (
+                      Object.keys(section.accordions).map((i) => {
+                        const accordion = section.accordions[i];
+                        if (accordion.title) {
+                          return (
+                            <Accordion
+                              title={accordion.title}
+                              content={accordion.content} />
+                          )
+                        }
+                      })
+                    ) : null}
                     {(section.cta.showCta) ? (
                       <div style={{ marginTop: "5.5rem" }}>
                         <a href={section.cta.link}>
@@ -322,9 +305,18 @@ const LPPage = ({data}: { data: PageInfo }) => {
                   <FlexedSection
                     color={(section.bgColor) ? section.bgColor : "light"}
                     heading={section.headline.headlineText}>
-                    <Accordion
-                      title={section.accordions.heading}
-                      content={section.accordions.content} />
+                    {(section.accordions) ? (
+                      Object.keys(section.accordions).map((i) => {
+                        const accordion = section.accordions[i];
+                        if (accordion.title) {
+                          return (
+                            <Accordion
+                              title={accordion.title}
+                              content={accordion.content} />
+                          )
+                        }
+                      })
+                    ) : null}
                     {(section.cta.showCta) ? (
                       <div>
                         <a href={section.cta.link}>
@@ -352,14 +344,18 @@ const LPPage = ({data}: { data: PageInfo }) => {
                       {(section.cards) ? (
                         Object.keys(section.cards).map((i) => {
                           const card = section.cards[i];
-                          return (
-                            <Card
-                              icon={card.icon.sourceUrl}
-                              title={card.title}
-                              list={(card.list) ? card.list : null}>
-                              <p dangerouslySetInnerHTML={{ __html: card.content }} />
-                            </Card>
-                          )
+                          if (card.title) {
+                            return (
+                              <Card
+                                image={(card.image) ? card.image.sourceUrl : null}
+                                icon={(card.icon) ? card.icon.sourceUrl : null}
+                                mobile={(card.mobile) ? card.mobile.sourceUrl : null}
+                                title={card.title}
+                                link={(card.link) ? card.link : null}>
+                                <p dangerouslySetInnerHTML={{ __html: card.content }} />
+                              </Card>
+                            )
+                          }
                         })
                       ) : null}
                     </Cards>
@@ -386,14 +382,18 @@ const LPPage = ({data}: { data: PageInfo }) => {
                       {(section.cards) ? (
                         Object.keys(section.cards).map((i) => {
                           const card = section.cards[i];
-                          return (
-                            <Card
-                              icon={card.icon.sourceUrl}
-                              title={card.title}
-                              list={(card.list) ? card.list : null}>
-                              <p dangerouslySetInnerHTML={{ __html: card.content }} />
-                            </Card>
-                          )
+                          if (card.title) {
+                            return (
+                              <Card
+                                image={(card.image) ? card.image.sourceUrl : null}
+                                icon={(card.icon) ? card.icon.sourceUrl : null}
+                                mobile={(card.mobile) ? card.mobile.sourceUrl : null}
+                                title={card.title}
+                                link={(card.link) ? card.link : null}>
+                                <p dangerouslySetInnerHTML={{ __html: card.content }} />
+                              </Card>
+                            )
+                          }
                         })
                       ) : null}
                     </Cards>
@@ -424,13 +424,15 @@ const LPPage = ({data}: { data: PageInfo }) => {
                       {(section.icons) ? (
                         Object.keys(section.icons).map((i) => {
                           const icon = section.icons[i];
-                          return (
-                            <Icon
-                              icon={icon.icon.sourceUrl}
-                              mobile={icon.mobileIcon.sourceUrl}
-                              title={icon.title}
-                              link={icon.link} />
-                          )
+                          if (icon.title) {
+                            return (
+                              <Icon
+                                icon={icon.icon.sourceUrl}
+                                mobile={icon.mobileIcon.sourceUrl}
+                                title={icon.title}
+                                link={icon.link} />
+                            )
+                          }
                         })
                       ) : null}
                     </Icons>
@@ -457,13 +459,15 @@ const LPPage = ({data}: { data: PageInfo }) => {
                       {(section.icons) ? (
                         Object.keys(section.icons).map((i) => {
                           const icon = section.icons[i];
-                          return (
-                            <Icon
-                              icon={icon.icon.sourceUrl}
-                              mobile={icon.mobileIcon.sourceUrl}
-                              title={icon.title}
-                              link={icon.link} />
-                          )
+                          if (icon.title) {
+                            return (
+                              <Icon
+                                icon={icon.icon.sourceUrl}
+                                mobile={icon.mobileIcon.sourceUrl}
+                                title={icon.title}
+                                link={icon.link} />
+                            )
+                          }
                         })
                       ) : null}
                     </Icons>
@@ -488,38 +492,22 @@ const LPPage = ({data}: { data: PageInfo }) => {
         
         <Section color="light">
           <Callouts>
-              {(callouts) ? (
-                  Object.keys(callouts).map((index) => {
-                      const callout = callouts[index];
-                      return (
-                          <Callout
-                              number={callout.number}
-                              tagline={callout.tagline}
-                              title={callout.title}
-                              description={callout.description}
-                              disclaimer={callout.disclaimer}
-                          />
-                      )
-                  })
-              ) : null}
+            {(callouts) ? (
+              Object.keys(callouts).map((index) => {
+                const callout = callouts[index];
+                return (
+                  <Callout
+                    number={callout.number}
+                    tagline={callout.tagline}
+                    title={callout.title}
+                    description={callout.description}
+                    disclaimer={callout.disclaimer}
+                  />
+                )
+              })
+            ) : null}
           </Callouts>
         </Section>
-
-        {(page.landingPageCustomFields.lpCta.showCta) ? (
-          <Medial
-            color={page.landingPageCustomFields.lpCta.bgColor}>
-              <img className="chat-bubble" src={page.landingPageCustomFields.lpCta.ctaColumns.column1.image?.sourceUrl} alt="Chat bubble icon" />
-              <h1 dangerouslySetInnerHTML={{ __html: page.landingPageCustomFields.lpCta.ctaColumns.column2.heading }} />
-              <a href={page.landingPageCustomFields.lpCta.ctaColumns.column3?.button?.link}>
-                  <Button
-                    background={(page.landingPageCustomFields.lpCta.bgColor === "accent") ? "primary" : "accent"}
-                    border={(page.landingPageCustomFields.lpCta.bgColor === "accent") ? "primary" : "accent"}
-                    color="light">
-                      {page.landingPageCustomFields.lpCta.ctaColumns.column3?.button?.text}
-                  </Button>
-              </a>
-          </Medial>
-        ) : null}
       </Wrapper>
       <Footer>
           <div dangerouslySetInnerHTML={{ __html: page.disclaimers.disclaimer }} />
@@ -528,11 +516,11 @@ const LPPage = ({data}: { data: PageInfo }) => {
   )
 }
 
-export default LPPage
+export default GPPage
 
 export const pageQuery = graphql`
   query ($slug: String!) {
-    page: wpLandingPage(slug: {eq: $slug}) {
+    page: wpProduct(slug: {eq: $slug}) {
       id
       title
       slug
@@ -540,1047 +528,6 @@ export const pageQuery = graphql`
         metaTitle
         metaDescription
         metaKeywords
-      }
-      landingPageCustomFields {
-        lpCta {
-          showCta
-          ctaStyle
-          bgColor
-          ctaColumns {
-            column1 {
-              button {
-                link
-                text
-              }
-              contentType
-              heading
-              image {
-                sourceUrl
-              }
-            }
-            column2 {
-              button {
-                link
-                text
-              }
-              contentType
-              heading
-              image {
-                sourceUrl
-              }
-            }
-            column3 {
-              button {
-                link
-                text
-              }
-              contentType
-              heading
-              image {
-                sourceUrl
-              }
-            }
-          }
-        }
-        lpHero {
-          alignment
-          contentStyle
-          contentBgColor
-          heroHeadline
-          heroSubheadline
-          heroImage {
-            sourceUrl
-          }
-          heroImageMobile {
-            sourceUrl
-          }
-          heroButtons {
-            showButtons
-            heroButton1 {
-              text
-            }
-            heroButton2 {
-              text
-            }
-          }
-        }
-        lpSections {
-          lpSection1 {
-            isActive
-            bgColor
-            contentType
-            headline {
-              headlineText
-              headlineAlignment
-            }
-            cta {
-              showCta
-              background
-              border
-              color
-              link
-              text
-            }
-            accordions {
-              accordion1 {
-                title
-                content
-              }
-              accordion2 {
-                title
-                content
-              }
-              accordion3 {
-                title
-                content
-              }
-              accordion4 {
-                title
-                content
-              }
-              accordion5 {
-                title
-                content
-              }
-            }
-            cards {
-              card1 {
-                image {
-                  sourceUrl
-                }
-                link
-                title
-                content
-              }
-              card2 {
-                image {
-                  sourceUrl
-                }
-                link
-                title
-                content
-              }
-              card3 {
-                image {
-                  sourceUrl
-                }
-                link
-                title
-                content
-              }
-            }
-            icons {
-              icon1 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon2 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon3 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon4 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon5 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon6 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon7 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon8 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon9 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon10 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon11 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-            }
-            list {
-              listItem1 {
-                title
-                content
-              }
-              listItem2 {
-                title
-                content
-              }
-              listItem3 {
-                title
-                content
-              }
-              listItem4 {
-                title
-                content
-              }
-            }
-          }
-          lpSection2 {
-            isActive
-            bgColor
-            contentType
-            headline {
-              headlineText
-              headlineAlignment
-            }
-            cta {
-              showCta
-              background
-              border
-              color
-              link
-              text
-            }
-            accordions {
-              accordion1 {
-                title
-                content
-              }
-              accordion2 {
-                title
-                content
-              }
-              accordion3 {
-                title
-                content
-              }
-              accordion4 {
-                title
-                content
-              }
-              accordion5 {
-                title
-                content
-              }
-            }
-            cards {
-              card1 {
-                image {
-                  sourceUrl
-                }
-                link
-                title
-                content
-              }
-              card2 {
-                image {
-                  sourceUrl
-                }
-                link
-                title
-                content
-              }
-              card3 {
-                image {
-                  sourceUrl
-                }
-                link
-                title
-                content
-              }
-            }
-            icons {
-              icon1 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon2 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon3 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon4 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon5 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon6 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon7 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon8 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon9 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon10 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon11 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-            }
-            list {
-              listItem1 {
-                title
-                content
-              }
-              listItem2 {
-                title
-                content
-              }
-              listItem3 {
-                title
-                content
-              }
-              listItem4 {
-                title
-                content
-              }
-            }
-          }
-          lpSection3 {
-            isActive
-            bgColor
-            contentType
-            headline {
-              headlineText
-              headlineAlignment
-            }
-            cta {
-              showCta
-              background
-              border
-              color
-              link
-              text
-            }
-            accordions {
-              accordion1 {
-                title
-                content
-              }
-              accordion2 {
-                title
-                content
-              }
-              accordion3 {
-                title
-                content
-              }
-              accordion4 {
-                title
-                content
-              }
-              accordion5 {
-                title
-                content
-              }
-            }
-            cards {
-              card1 {
-                image {
-                  sourceUrl
-                }
-                link
-                title
-                content
-              }
-              card2 {
-                image {
-                  sourceUrl
-                }
-                link
-                title
-                content
-              }
-              card3 {
-                image {
-                  sourceUrl
-                }
-                link
-                title
-                content
-              }
-            }
-            icons {
-              icon1 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon2 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon3 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon4 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon5 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon6 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon7 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon8 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon9 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon10 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon11 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-            }
-            list {
-              listItem1 {
-                title
-                content
-              }
-              listItem2 {
-                title
-                content
-              }
-              listItem3 {
-                title
-                content
-              }
-              listItem4 {
-                title
-                content
-              }
-            }
-          }
-          lpSection4 {
-            isActive
-            bgColor
-            contentType
-            headline {
-              headlineText
-              headlineAlignment
-            }
-            cta {
-              showCta
-              background
-              border
-              color
-              link
-              text
-            }
-            accordions {
-              accordion1 {
-                title
-                content
-              }
-              accordion2 {
-                title
-                content
-              }
-              accordion3 {
-                title
-                content
-              }
-              accordion4 {
-                title
-                content
-              }
-              accordion5 {
-                title
-                content
-              }
-            }
-            cards {
-              card1 {
-                image {
-                  sourceUrl
-                }
-                link
-                title
-                content
-              }
-              card2 {
-                image {
-                  sourceUrl
-                }
-                link
-                title
-                content
-              }
-              card3 {
-                image {
-                  sourceUrl
-                }
-                link
-                title
-                content
-              }
-            }
-            icons {
-              icon1 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon2 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon3 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon4 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon5 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon6 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon7 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon8 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon9 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon10 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon11 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-            }
-            list {
-              listItem1 {
-                title
-                content
-              }
-              listItem2 {
-                title
-                content
-              }
-              listItem3 {
-                title
-                content
-              }
-              listItem4 {
-                title
-                content
-              }
-            }
-          }
-          lpSection5 {
-            isActive
-            bgColor
-            contentType
-            headline {
-              headlineText
-              headlineAlignment
-            }
-            cta {
-              showCta
-              background
-              border
-              color
-              link
-              text
-            }
-            accordions {
-              accordion1 {
-                title
-                content
-              }
-              accordion2 {
-                title
-                content
-              }
-              accordion3 {
-                title
-                content
-              }
-              accordion4 {
-                title
-                content
-              }
-              accordion5 {
-                title
-                content
-              }
-            }
-            cards {
-              card1 {
-                image {
-                  sourceUrl
-                }
-                link
-                title
-                content
-              }
-              card2 {
-                image {
-                  sourceUrl
-                }
-                link
-                title
-                content
-              }
-              card3 {
-                image {
-                  sourceUrl
-                }
-                link
-                title
-                content
-              }
-            }
-            icons {
-              icon1 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon2 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon3 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon4 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon5 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon6 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon7 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon8 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon9 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon10 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-              icon11 {
-                icon {
-                  sourceUrl
-                }
-                mobileIcon {
-                  sourceUrl
-                }
-                link
-                title
-              }
-            }
-            list {
-              listItem1 {
-                title
-                content
-              }
-              listItem2 {
-                title
-                content
-              }
-              listItem3 {
-                title
-                content
-              }
-              listItem4 {
-                title
-                content
-              }
-            }
-          }
-        }
       }
       disclaimers {
         disclaimer
@@ -1608,6 +555,1124 @@ export const pageQuery = graphql`
             title
             description
             disclaimer
+          }
+        }
+      }
+      generalProductCustomFields {
+        gpHero {
+          alignment
+          contentBgColor
+          contentStyle
+          heroHeadline
+          heroSubheadline
+          showForm
+          heroButtons {
+            heroButton1 {
+              text
+            }
+            heroButton2 {
+              text
+            }
+            showButtons
+          }
+          heroImage {
+            sourceUrl
+          }
+          heroImageMobile {
+            sourceUrl
+          }
+        }
+        gpRelatedContent {
+          relatedContent1 {
+            image {
+              sourceUrl
+            }
+            heading
+            content
+            link
+          }
+          relatedContent2 {
+            image {
+              sourceUrl
+            }
+            heading
+            content
+            link
+          }
+          relatedContent3 {
+            image {
+              sourceUrl
+            }
+            heading
+            content
+            link
+          }
+        }
+        gpSections {
+          gpSection1 {
+            isActive
+            bgColor
+            contentType
+            accordions {
+              accordion1 {
+                title
+                content
+              }
+              accordion2 {
+                title
+                content
+              }
+              accordion3 {
+                title
+                content
+              }
+              accordion4 {
+                title
+                content
+              }
+              accordion5 {
+                title
+                content
+              }
+            }
+            cards {
+              card1 {
+                image {
+                  sourceUrl
+                }
+                icon {
+                  sourceUrl
+                }
+                mobile {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+              card2 {
+                image {
+                  sourceUrl
+                }
+                icon {
+                  sourceUrl
+                }
+                mobile {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+              card3 {
+                image {
+                  sourceUrl
+                }
+                icon {
+                  sourceUrl
+                }
+                mobile {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+            }
+            cta {
+              showCta
+              link
+              text
+              color
+              border
+              background
+            }
+            headline {
+              headlineText
+              headlineAlignment
+            }
+            icons {
+              icon1 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon2 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon3 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon4 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon5 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon6 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon7 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon8 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon9 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon10 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon11 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+            }
+            list {
+              listItem1 {
+                title
+                content
+              }
+              listItem2 {
+                title
+                content
+              }
+              listItem3 {
+                title
+                content
+              }
+              listItem4 {
+                title
+                content
+              }
+            }
+          }
+          gpSection2 {
+            isActive
+            bgColor
+            contentType
+            accordions {
+              accordion1 {
+                title
+                content
+              }
+              accordion2 {
+                title
+                content
+              }
+              accordion3 {
+                title
+                content
+              }
+              accordion4 {
+                title
+                content
+              }
+              accordion5 {
+                title
+                content
+              }
+            }
+            cards {
+              card1 {
+                image {
+                  sourceUrl
+                }
+                icon {
+                  sourceUrl
+                }
+                mobile {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+              card2 {
+                image {
+                  sourceUrl
+                }
+                icon {
+                  sourceUrl
+                }
+                mobile {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+              card3 {
+                image {
+                  sourceUrl
+                }
+                icon {
+                  sourceUrl
+                }
+                mobile {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+            }
+            cta {
+              showCta
+              link
+              text
+              color
+              border
+              background
+            }
+            headline {
+              headlineText
+              headlineAlignment
+            }
+            icons {
+              icon1 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon2 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon3 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon4 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon5 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon6 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon7 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon8 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon9 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon10 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon11 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+            }
+            list {
+              listItem1 {
+                title
+                content
+              }
+              listItem2 {
+                title
+                content
+              }
+              listItem3 {
+                title
+                content
+              }
+              listItem4 {
+                title
+                content
+              }
+            }
+          }
+          gpSection3 {
+            isActive
+            bgColor
+            contentType
+            accordions {
+              accordion1 {
+                title
+                content
+              }
+              accordion2 {
+                title
+                content
+              }
+              accordion3 {
+                title
+                content
+              }
+              accordion4 {
+                title
+                content
+              }
+              accordion5 {
+                title
+                content
+              }
+            }
+            cards {
+              card1 {
+                image {
+                  sourceUrl
+                }
+                icon {
+                  sourceUrl
+                }
+                mobile {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+              card2 {
+                image {
+                  sourceUrl
+                }
+                icon {
+                  sourceUrl
+                }
+                mobile {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+              card3 {
+                image {
+                  sourceUrl
+                }
+                icon {
+                  sourceUrl
+                }
+                mobile {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+            }
+            cta {
+              showCta
+              link
+              text
+              color
+              border
+              background
+            }
+            headline {
+              headlineText
+              headlineAlignment
+            }
+            icons {
+              icon1 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon2 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon3 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon4 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon5 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon6 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon7 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon8 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon9 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon10 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon11 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+            }
+            list {
+              listItem1 {
+                title
+                content
+              }
+              listItem2 {
+                title
+                content
+              }
+              listItem3 {
+                title
+                content
+              }
+              listItem4 {
+                title
+                content
+              }
+            }
+          }
+          gpSection4 {
+            isActive
+            bgColor
+            contentType
+            accordions {
+              accordion1 {
+                title
+                content
+              }
+              accordion2 {
+                title
+                content
+              }
+              accordion3 {
+                title
+                content
+              }
+              accordion4 {
+                title
+                content
+              }
+              accordion5 {
+                title
+                content
+              }
+            }
+            cards {
+              card1 {
+                image {
+                  sourceUrl
+                }
+                icon {
+                  sourceUrl
+                }
+                mobile {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+              card2 {
+                image {
+                  sourceUrl
+                }
+                icon {
+                  sourceUrl
+                }
+                mobile {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+              card3 {
+                image {
+                  sourceUrl
+                }
+                icon {
+                  sourceUrl
+                }
+                mobile {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+            }
+            cta {
+              showCta
+              link
+              text
+              color
+              border
+              background
+            }
+            headline {
+              headlineText
+              headlineAlignment
+            }
+            icons {
+              icon1 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon2 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon3 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon4 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon5 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon6 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon7 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon8 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon9 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon10 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon11 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+            }
+            list {
+              listItem1 {
+                title
+                content
+              }
+              listItem2 {
+                title
+                content
+              }
+              listItem3 {
+                title
+                content
+              }
+              listItem4 {
+                title
+                content
+              }
+            }
+          }
+          gpSection5 {
+            isActive
+            bgColor
+            contentType
+            accordions {
+              accordion1 {
+                title
+                content
+              }
+              accordion2 {
+                title
+                content
+              }
+              accordion3 {
+                title
+                content
+              }
+              accordion4 {
+                title
+                content
+              }
+              accordion5 {
+                title
+                content
+              }
+            }
+            cards {
+              card1 {
+                image {
+                  sourceUrl
+                }
+                icon {
+                  sourceUrl
+                }
+                mobile {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+              card2 {
+                image {
+                  sourceUrl
+                }
+                icon {
+                  sourceUrl
+                }
+                mobile {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+              card3 {
+                image {
+                  sourceUrl
+                }
+                icon {
+                  sourceUrl
+                }
+                mobile {
+                  sourceUrl
+                }
+                link
+                title
+                content
+              }
+            }
+            cta {
+              showCta
+              link
+              text
+              color
+              border
+              background
+            }
+            headline {
+              headlineText
+              headlineAlignment
+            }
+            icons {
+              icon1 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon2 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon3 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon4 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon5 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon6 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon7 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon8 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon9 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon10 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              icon11 {
+                icon {
+                  sourceUrl
+                }
+                mobileIcon {
+                  sourceUrl
+                }
+                title
+                link
+              }
+            }
+            list {
+              listItem1 {
+                title
+                content
+              }
+              listItem2 {
+                title
+                content
+              }
+              listItem3 {
+                title
+                content
+              }
+              listItem4 {
+                title
+                content
+              }
+            }
           }
         }
       }

@@ -67,7 +67,7 @@ export const MobileWrapper = styled.div`
     &.icon {
       border-bottom: 1px solid var(--color-primary);
       margin-bottom: 0;
-      padding: 1.6rem 2.4rem;
+      padding: 0 2.4rem 0 0;
       text-align: left;
 
       &:last-of-type {
@@ -141,7 +141,6 @@ export const Header = styled.div`
       img {
         height: auto;
         margin: 0;
-        max-width: 4.2rem;
         padding: 0px;
       }
 

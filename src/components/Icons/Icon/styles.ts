@@ -57,7 +57,7 @@ export const Wrapper = styled.a`
     flex-basis: 100%;
     margin-bottom: 0px;
     margin-right: 0px;
-    padding: 1.6rem 2.4rem;
+    padding: 0 2.4rem 0 0;
     width: 100%;
 
     &:last-of-type {
