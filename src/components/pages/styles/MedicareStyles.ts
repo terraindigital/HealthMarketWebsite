@@ -45,6 +45,10 @@ export const PageStyles = css`
   }
 
   @media only screen and (max-width: 620px) {
+    .button-container {
+      min-width: 100%;
+    }
+    
     .medicare .hero > img {
       bottom: -8rem;
       top: auto;

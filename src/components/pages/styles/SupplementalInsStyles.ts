@@ -14,7 +14,7 @@ export const PageStyles = css`
     }
 
     .supplemental-insurance .hero + .section .heading h2 {
-      max-width: 68%;
+      max-width: 100%;
       padding-right: 3.6rem;
     }
   }
@@ -62,10 +62,15 @@ export const BestPriceImageMobile = styled.img `
   top: 0;
 
   @media only screen and (max-width: 620px) {
+    left: -4.1rem;
     display: block;
   }
 
   @media only screen and (max-width: 395px) {
+    left: -5rem;
+  }
+
+  @media only screen and (max-width: 340px) {
     display: none;
   }
 `

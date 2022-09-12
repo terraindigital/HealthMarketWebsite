@@ -43,7 +43,7 @@ const HealthInsurancePage = () => {
       <Hero
         image={page.pageHeroFields.heroImage.sourceUrl}
         mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
-        bgColor="#fff000">
+        bgColor="#C8E3E0">
         <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
         <PageHeroForm
@@ -59,18 +59,21 @@ const HealthInsurancePage = () => {
         <Cards openAtMobile>
           <Card
             icon={page.healthPageCustomFields.healthSection1.healthCards.healthCard1.icon.sourceUrl}
+            mobile={page.healthPageCustomFields.healthSection1.healthCards.healthCard1.mobile.sourceUrl}
             title={page.healthPageCustomFields.healthSection1.healthCards.healthCard1.title}
             link={page.healthPageCustomFields.healthSection1.healthCards.healthCard1.link}>
             <p dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection1.healthCards.healthCard1.content }} />
           </Card>
           <Card
             icon={page.healthPageCustomFields.healthSection1.healthCards.healthCard2.icon.sourceUrl}
+            mobile={page.healthPageCustomFields.healthSection1.healthCards.healthCard2.mobile.sourceUrl}
             title={page.healthPageCustomFields.healthSection1.healthCards.healthCard2.title}
             link={page.healthPageCustomFields.healthSection1.healthCards.healthCard2.link}>
             <p dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection1.healthCards.healthCard2.content }} />
           </Card>
           <Card
             icon={page.healthPageCustomFields.healthSection1.healthCards.healthCard3.icon.sourceUrl}
+            mobile={page.healthPageCustomFields.healthSection1.healthCards.healthCard3.mobile.sourceUrl}
             title={page.healthPageCustomFields.healthSection1.healthCards.healthCard3.title}
             link={page.healthPageCustomFields.healthSection1.healthCards.healthCard3.link}>
             <p dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection1.healthCards.healthCard3.content }} />

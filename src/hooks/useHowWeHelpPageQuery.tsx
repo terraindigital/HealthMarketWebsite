@@ -127,6 +127,9 @@ export const useHowWeHelpPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobile {
+                  sourceUrl
+                }
                 heading
                 content
               }
@@ -134,11 +137,17 @@ export const useHowWeHelpPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobile {
+                  sourceUrl
+                }
                 heading
                 content
               }
               hwhCard3 {
                 icon {
+                  sourceUrl
+                }
+                mobile {
                   sourceUrl
                 }
                 heading

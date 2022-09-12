@@ -176,6 +176,7 @@ interface PageInfo {
         alignment: string,
         contentStyle: string,
         contentBgColor?: string,
+        bgColor?: string,
         heroButtons: {
           showButtons: boolean,
           heroButton1: {
@@ -220,6 +221,7 @@ const LPPage = ({data}: { data: PageInfo }) => {
         <Hero
           image={page.landingPageCustomFields.lpHero.heroImage.sourceUrl}
           mobileImage={page.landingPageCustomFields.lpHero.heroImageMobile.sourceUrl}
+          bgColor={(page.landingPageCustomFields.lpHero.bgColor) ? page.landingPageCustomFields.lpHero.bgColor : "#ffffff"}
           centered={(page.landingPageCustomFields.lpHero.alignment === "centered")}
           boxed={(page.landingPageCustomFields.lpHero.contentStyle === "boxed")}
           color={page.landingPageCustomFields.lpHero.contentBgColor}
@@ -594,6 +596,7 @@ export const pageQuery = graphql`
           heroImageMobile {
             sourceUrl
           }
+          bgColor
           heroButtons {
             showButtons
             heroButton1 {

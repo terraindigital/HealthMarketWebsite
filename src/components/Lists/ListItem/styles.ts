@@ -14,6 +14,10 @@ export const Wrapper = styled.li`
     font-weight: 400;
     line-height: 160%;
   }
+
+  @media only screen and (max-width: 620px) {
+    margin-bottom: 3.2rem;
+  }
 `
 
 export const Check = styled.div`

@@ -65,6 +65,7 @@ const HealthInsurancePage = () => {
               return (
                 <Card
                   icon={plans[plan].icon.sourceUrl}
+                  mobile={plans[plan].mobileIcon.sourceUrl}
                   title={plans[plan].title}
                   link={plans[plan].link}>
                   <p dangerouslySetInnerHTML={{ __html: plans[plan].content }} />

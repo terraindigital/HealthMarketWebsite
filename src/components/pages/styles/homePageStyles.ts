@@ -13,6 +13,8 @@ export const HeroSubheading = styled.h4`
   text-align: center;
 
   @media only screen and (max-width: 620px) {
+    margin-bottom: 3.2rem;
+
     & + div .home-hero-buttons {
       display: flex;
 

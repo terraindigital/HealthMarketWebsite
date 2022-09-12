@@ -49,12 +49,18 @@ export const useSupplementalPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
                 content
               }
               suppPlan2 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -65,12 +71,18 @@ export const useSupplementalPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
                 content
               }
               suppPlan4 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -81,12 +93,18 @@ export const useSupplementalPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
                 content
               }
               suppPlan6 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -97,12 +115,18 @@ export const useSupplementalPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
                 content
               }
               suppPlan8 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -113,6 +137,9 @@ export const useSupplementalPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
                 content
@@ -121,12 +148,18 @@ export const useSupplementalPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
                 content
               }
               suppPlan11 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link

@@ -40,6 +40,9 @@ export const useHealthPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobile {
+                  sourceUrl
+                }
                 title
                 content
                 link
@@ -48,12 +51,18 @@ export const useHealthPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobile {
+                  sourceUrl
+                }
                 title
                 content
                 link
               }
               healthCard3 {
                 icon {
+                  sourceUrl
+                }
+                mobile {
                   sourceUrl
                 }
                 title

@@ -72,6 +72,10 @@ export const InputGroup = styled.div`
   @media only screen and (max-width: 620px) {
     margin-top: 1.6rem;
     width: 100%;
+
+    img {
+      left: 14px;
+    }
   }
 `
 
@@ -98,6 +102,10 @@ export const Input = styled.input`
     max-width: 100%;
     min-width: 100%;
     width: 68.8vw;
+  }
+
+  @media only screen and (max-width: 620px) {
+    padding: 1.6rem 5.6rem 1.8rem 4.2rem;
   }
 `
 

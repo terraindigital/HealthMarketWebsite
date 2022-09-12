@@ -151,6 +151,7 @@ export const Header = styled.div`
       h4 {
         font-family: var(--font-body);
         font-size: 2rem;
+        font-weight: bold;
         line-height: 2.6rem;
         margin-top: 0px;
         padding: 0rem 1.6rem;
@@ -204,7 +205,7 @@ export const Content = styled.div`
 
     .icon & {
       margin-top: 1.6rem;
-      padding: 0rem;
+      padding: 0 0 2.4rem 2.4rem;
     }
   }
 `

@@ -30,6 +30,14 @@ export const PageStyles = css`
       bottom: -8rem;
       top: auto;
     }
+
+    .full-rounded button {
+      margin-top: 1.1rem;
+    }
+
+    .health-insurance .flexed.section + .hide-at-mobile + .section {
+      padding-top: 0;
+    }
   }
 `
 

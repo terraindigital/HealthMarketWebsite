@@ -27,6 +27,7 @@ export const Wrapper = styled.ul`
 
   @media only screen and (max-width: 620px) {
     margin-left: 3.4rem;
+    margin-bottom: 3.2rem;
 
     .centered.section & {
       columns: 1;

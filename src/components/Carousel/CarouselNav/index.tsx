@@ -48,7 +48,7 @@ const CarouselNav: FC<Props> =  ({count, current}) => {
     <Wrapper className="carousel-nav">
       <Prev onClick={() => slidePrev()} />
       <Wrapper className="carousel-pagination">
-        {count > 0 ? renderDots(count) : <></>}
+        {count > 0 ? renderDots((count / 3)) : <></>}
       </Wrapper>
       <Next onClick={() => slideNext() } />
     </Wrapper>

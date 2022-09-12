@@ -6,7 +6,7 @@ import { PageProps } from 'gatsby';
 import { useHomePageQuery } from '../hooks/useHomePageQuery';
 
 // Styles
-import { HeroHeading, HeroSubheading } from '../components/Hero/Variants/homePageStyles';
+import { HeroHeading, HeroSubheading } from '../components/pages/styles/homePageStyles';
 
 // Components
 import Layout from "../components/Layout"

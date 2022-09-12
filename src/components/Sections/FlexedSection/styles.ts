@@ -108,6 +108,10 @@ export const Heading = styled.div`
     transform: translateX(-2.1rem);
     width: 100%;
   }
+
+  @media only screen and (max-width: 620px) {
+    margin-bottom: 2.4rem;
+  }
 `
 
 export const Inner = styled.div`
@@ -156,6 +160,7 @@ export const Inner = styled.div`
     max-width: 100%;
     
     button {
+      margin-top: 0;
       max-width: 100%;
     }
   }

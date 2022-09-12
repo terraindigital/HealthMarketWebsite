@@ -48,6 +48,12 @@ export const Wrapper = styled.div`
       max-height: 125px;
     }
   }
+
+  @media only screen and (max-width: 620px) {
+    .chat-bubble {
+      max-height: 75px;
+    }
+  }
 `
 
 export const Inner = styled.div`
@@ -93,10 +99,6 @@ export const Inner = styled.div`
     display: block;
     padding: 2.1rem 1.3rem;
     text-align: center;
-
-    & > div {
-      margin-bottom: 2.4rem;
-    }
 
     p {
       margin-bottom: 1.3rem;

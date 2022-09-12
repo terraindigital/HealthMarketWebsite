@@ -36,10 +36,10 @@ const Carousel: FC<Props> = ({ children }) => {
           }
         }}
         breakpoints={{
-          425: {
-            slidesPerView: 1,
-            slidesPerGroup: 1,
-            slidesPerGroupAuto: true,
+          620: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            slidesPerGroupAuto: false,
             centeredSlides: false,
             centeredSlidesBounds: false
           },
@@ -82,7 +82,7 @@ const Carousel: FC<Props> = ({ children }) => {
           ) : ({children})
         }
         <div className="hide-at-mobile">
-          <CarouselNav current={current} count={children.length / 3}/>
+          <CarouselNav current={current} count={children.length}/>
         </div>
       </Swiper>  
     </Wrapper>

@@ -62,6 +62,12 @@ export const Wrapper = styled.div`
       top: 28px;
     }
   }
+
+  @media only screen and (max-width: 620px) {
+    margin-bottom: 0;
+
+    &:last-of-type { margin-bottom: 0rem; }
+  }
 `
 
 export const Title = styled.div`
@@ -85,6 +91,7 @@ export const Title = styled.div`
     h2 {
       font-family: var(--font-body);
       font-size: 2rem;
+      font-weight: 600;
       max-width: 225px;
     }
   }
@@ -109,6 +116,5 @@ export const Content = styled.div`
 
   @media only screen and (max-width: 620px) {
     margin-bottom: 0px;
-    padding-bottom: 0.8rem;
   }
 `

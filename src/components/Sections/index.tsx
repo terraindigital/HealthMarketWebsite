@@ -37,10 +37,16 @@ const Section: FC<Props> = ({ heading, subheading, guarantee, classes, page, col
 
   return (
     <Wrapper backgroundColor={bgColor} className={classList}>
-      {(heading) ? (
+      {(heading && subheading) ? (
         <Heading className="heading">
           <h2>{heading}</h2>
           <h4>{subheading}</h4>
+          {(guarantee) ? guarantee : null}
+        </Heading>
+      ) : null}
+      {(heading && !subheading) ? (
+        <Heading className="heading">
+          <h2>{heading}</h2>
           {(guarantee) ? guarantee : null}
         </Heading>
       ) : null}

@@ -151,16 +151,19 @@ const HowWeHelpPage = () => {
         <Cards openAtMobile>
           <Card
             icon={hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard1.icon.sourceUrl}
+            mobile={hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard1.mobile.sourceUrl}
             title={hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard1.heading}>
             <p>{hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard1.content}</p>
           </Card>
           <Card
             icon={hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard2.icon.sourceUrl}
+            mobile={hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard2.mobile.sourceUrl}
             title={hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard2.heading}>
             <p>{hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard2.content}</p>
           </Card>
           <Card
             icon={hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard3.icon.sourceUrl}
+            mobile={hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard3.mobile.sourceUrl}
             title={hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard3.heading}>
             <p>{hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard3.content}</p>
           </Card>

@@ -41,7 +41,7 @@ const MedicarePage = () => {
       <Hero
         image={page.pageHeroFields.heroImage.sourceUrl}
         mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
-        bgColor="#fff000">
+        bgColor="#5899D1">
         <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
         <PageHeroForm
@@ -57,18 +57,21 @@ const MedicarePage = () => {
         <Cards openAtMobile>
           <Card
             icon={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard1.icon.sourceUrl}
+            mobile={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard1.mobile.sourceUrl}
             title={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard1.title}
             link={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard1.link}>
             <p dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard1.content }} />
           </Card>
           <Card
             icon={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard2.icon.sourceUrl}
+            mobile={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard2.mobile.sourceUrl}
             title={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard2.title}
             link={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard2.link}>
             <p dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard2.content }} />
           </Card>
           <Card
             icon={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.icon.sourceUrl}
+            mobile={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.mobile.sourceUrl}
             title={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.title}
             link={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.link}>
             <p dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.content }} />

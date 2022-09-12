@@ -45,5 +45,11 @@ export const Wrapper = styled.div`
       margin-bottom: 3.4rem;
       margin-right: 0;
     }
+  
+    @media only screen and (max-width: 768px) {
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
   }
 `

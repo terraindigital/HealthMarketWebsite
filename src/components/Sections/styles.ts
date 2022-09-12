@@ -129,6 +129,10 @@ export const Heading = styled.div`
       padding-left: 3.4rem;
       padding-right: 2.1rem;
     }
+
+    @media only screen and (max-width: 620px) {
+      
+    }
   }
 
   @media only screen and (max-width: 788px) {

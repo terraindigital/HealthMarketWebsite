@@ -99,6 +99,7 @@ export const Content = styled.div`
     h4 {
       font-family: var(--font-body);
       font-size: 2rem;
+      font-weight: bold;
       margin-left: 1.6rem;
       text-align: left;
     }

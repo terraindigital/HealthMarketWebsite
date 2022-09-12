@@ -40,6 +40,9 @@ export const useMedicarePageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobile {
+                  sourceUrl
+                }
                 link
                 title
                 content
@@ -48,12 +51,18 @@ export const useMedicarePageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobile {
+                  sourceUrl
+                }
                 link
                 title
                 content
               }
               medicareCard3 {
                 icon {
+                  sourceUrl
+                }
+                mobile {
                   sourceUrl
                 }
                 link
