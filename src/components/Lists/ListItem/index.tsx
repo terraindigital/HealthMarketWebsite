@@ -10,7 +10,7 @@ import {
 // Components
 
 // Images
-import checkImg from "../../../images/list-check.png"
+import checkImg from "../../../assets/images/list-check.png"
 
 interface Props {
   heading: String,

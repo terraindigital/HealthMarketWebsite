@@ -7,7 +7,7 @@ import { Wrapper, CloseButton } from "./styles"
 import { toggleSearch } from "../../assets/scripts/global";
 
 // Images
-import Icon from "../../images/search-icon.png"
+import Icon from "../../assets/images/search-icon.png"
 
 const SearchField = () => {
   return (

@@ -6,7 +6,7 @@ import { Wrapper, Label, InputField, HeroInputField } from "./styles"
 // Components
 
 // Images
-import Pin from "../../../images/location.png"
+import Pin from "../../../assets/images/location.png"
 
 interface Props {
   id?: String,

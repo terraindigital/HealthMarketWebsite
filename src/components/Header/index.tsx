@@ -8,7 +8,7 @@ import { Wrapper, Logo } from "./styles"
 import HeaderRight from "./HeaderRight"
 
 // Images
-import headerLogo from "../../images/HMIA_logo2.png"
+import headerLogo from "../../assets/images/HMIA_logo2.png"
 
 interface Props {
   staticHeader?: boolean,

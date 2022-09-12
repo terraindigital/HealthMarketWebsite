@@ -16,8 +16,8 @@ import Navigation from "../../Navigation"
 import SearchField from "../../SearchField"
 
 // Images
-import PhoneIcon from "../../../images/phone-icon.png"
-import SearchIcon from "../../../images/search-icon.png"
+import PhoneIcon from "../../../assets/images/phone-icon.png"
+import SearchIcon from "../../../assets/images/search-icon.png"
 
 const HeaderRight = () => {
   return (

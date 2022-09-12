@@ -11,8 +11,8 @@ import { toggleSearch } from "../../assets/scripts/global";
 import Input from "../Inputs/Input";
 
 // Images
-import siteLogo from "../../images/HMIA_logo2.png"
-import Icon from "../../images/search-icon.png"
+import siteLogo from "../../assets/images/HMIA_logo2.png"
+import Icon from "../../assets/images/search-icon.png"
 
 const SearchField = () => {
   return (

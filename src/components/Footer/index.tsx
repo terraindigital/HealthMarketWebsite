@@ -26,9 +26,9 @@ import { useFooterGetCounselMenuQuery } from "../../hooks/footer/useFooterGetCou
 import { useFooterGetToKnowUsMenuQuery } from "../../hooks/footer/useFooterGetToKnowUsMenuQuery"
 
 // Images
-import Logo from "../../images/HMIA_logo2.png"
-import Facebook from "../../images/facebook.webp"
-import BBB from "../../images/bbb-seal.png"
+import Logo from "../../assets/images/HMIA_logo2.png"
+import Facebook from "../../assets/images/facebook.webp"
+import BBB from "../../assets/images/bbb-seal.png"
 
 interface Props {
   children: ReactNode
