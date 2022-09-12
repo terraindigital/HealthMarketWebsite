@@ -10,16 +10,41 @@ export const Wrapper = styled.div`
   padding-left: 8.9rem;
   padding-right: 8.9rem;
 
+  @media screen and (min-width: 1921px) {
+    padding-left: 40rem;
+    padding-right: 40rem;
+  }
+
   @media screen and (max-width: 1044px) {
     padding-left: 5.5rem;
     padding-right: 5.5rem;
   }
 
   @media screen and (max-width: 788px) {
+    padding-left: 4.8rem;
+    padding-right: 4.8rem;
+    padding-bottom: 8rem;
+    padding-top: 8rem;
+  }
+
+  @media screen and (max-width: 620px) {
     padding-left: 2.1rem;
     padding-right: 2.1rem;
     padding-bottom: 4rem;
     padding-top: 4rem;
+  }
+
+  // if section below has the same background, remove its padding-top
+  &.primary + .primary {
+    padding-top: 0;
+  }
+  
+  &.accent + .accent {
+    padding-top: 0;
+  }
+  
+  &.light + .light {
+    padding-top: 0;
   }
 `
 
@@ -27,27 +52,61 @@ export const Heading = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transform: translateX(-8.9rem);
-  width: calc(100% + 8.9rem);
 
   h2 {
-    background-color: var(--color-primary);
     color: var(--color-light);
     display: inline-block;
     letter-spacing: 1px;
     margin: 0;
-    padding: 2.8rem 8.8rem 2.8rem 14.4rem;
+    padding: 2.8rem 8.8rem 2.8rem 0rem;
+    position: relative;
+    z-index: 1;
+
+    &:before {
+      background-color: var(--color-primary);
+      bottom: 0;
+      content: '';
+      left: -14.4rem;
+      position: absolute;
+      top: 0;
+      width: calc(100% + 40rem);
+      z-index: -1;
+    }
+
+    @media only screen and (min-width: 1921px) {
+      &:before {
+        left: -40rem;
+        width: calc(100% + 40rem);
+      }
+    }
 
     @media only screen and (max-width: 1460px) {
-      padding-left: 8.9rem;
+      &:before {
+        left: -8.9rem;
+        width: calc(100% + 8.9rem);
+      }
     }
 
     @media only screen and (max-width: 788px) {
-      font-size: 4rem;
+      font-size: 5.6rem;
       letter-spacing: 0.02em;
       line-height: 115%;
       max-width: 100%;
       padding: 0.5rem 2.1rem;
+
+      &:before {
+        left: -4.8rem;
+        width: calc(100% + 4.8rem);
+      }
+    }
+
+    @media only screen and (max-width: 620px) {
+      font-size: 4rem;
+
+      &:before {
+        left: -2.1rem;
+        width: calc(100% + 2.1rem);
+      }
     }
   }
 
@@ -58,9 +117,12 @@ export const Heading = styled.div`
     margin-left: 2.4rem;
     max-width: 38%;
 
+    @media only screen and (min-width: 1921px) {
+      margin-left: 8.1rem;
+    }
+
     @media only screen and (max-width: 788px) {
       font-size: 2rem;
-      margin-bottom: 2.4rem;
       margin-left: 0;
       margin-top: 2.4rem;
       max-width: calc(100% - 4.2rem);
@@ -77,10 +139,14 @@ export const Heading = styled.div`
 
 export const Inner = styled.div`
   .heading + & {
-    padding-top: 8.9rem;
+    padding-top: 8rem;
+
+    @media only screen and (max-width: 1460px) {
+      padding-top: 4.8rem;
+    }
 
     @media only screen and (max-width: 620px) {
-      padding-top: 0;
+      padding-top: 2.4rem;
     }
   }
 `

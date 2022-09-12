@@ -26,6 +26,10 @@ export const Box = styled.div`
     display: flex;
   }
 
+  @media only screen and (max-width: 788px) {
+    gap: 1.3rem 2.9rem;
+  }
+
   @media only screen and (max-width: 620px) {
     > div {
       flex-basis: calc(50% - 2.1rem);

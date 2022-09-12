@@ -8,18 +8,25 @@ export const FooterWrapper = styled.footer`
   padding-right: 8.9rem;
   padding-top: 5.5rem;
 
+  @media screen and (min-width: 1921px) {
+    padding-left: 40rem;
+    padding-right: 40rem;
+  }
+
   @media screen and (max-width: 1044px) {
     padding-left: 5.5rem;
     padding-right: 5.5rem;
   }
 
-  @media screen and (max-width: 920px) {
-    padding-left: 2.1rem;
-    padding-right: 2.1rem;
+  @media screen and (max-width: 788px) {
+    padding-left: 4.8rem;
+    padding-right: 4.8rem;
   }
 
   @media screen and (max-width: 620px) {
     padding-top: 3.4rem;
+    padding-left: 2.1rem;
+    padding-right: 2.1rem;
   }
 `
 
@@ -120,6 +127,11 @@ export const WidgetWrapper = styled.div`
   flex-basis: 64%;
   width: 64%;
 
+  @media only screen and (max-width: 788px) {
+    flex-basis: 50%;
+    width: 50%;
+  }
+
   @media only screen and (max-width: 620px) {
     flex-basis: 100%;
     width: 100%;
@@ -130,6 +142,11 @@ export const FooterMenuWrapper = styled.div`
   display: flex;
   align-items: stretch;
   justify-content: space-between;
+
+  @media only screen and (max-width: 788px) {
+    flex-wrap: wrap;
+    gap: 2.4rem 0;
+  }
 
   @media only screen and (max-width: 620px) {
     flex-direction: column;
@@ -200,6 +217,11 @@ export const PlansByStateLinks = styled.div`
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  @media only screen and (max-width: 788px) {
+    flex-basis: 50%;
+    width: 50%;
   }
 
   @media only screen and (max-width: 620px) {

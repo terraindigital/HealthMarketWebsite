@@ -547,6 +547,19 @@ export const GlobalStyles = css`
  * Media Queries
  */
 
+  .show-at-device {
+    display: none !important;
+  }
+
+  @media only screen and (max-width: 788px) {
+    .hide-at-device {
+      display: none !important;
+    }
+    .show-at-device {
+      display: block !important;
+    }
+  }
+
   .show-at-mobile {
     display: none !important;
   }

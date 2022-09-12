@@ -34,6 +34,10 @@ export const Item = styled.div`
       margin-right: 0.8rem;
     }
   }
+
+  @media only screen and (max-width: 788px) {
+    font-size: 1.8rem;
+  }
 `
 
 export const TextSize = styled.span`

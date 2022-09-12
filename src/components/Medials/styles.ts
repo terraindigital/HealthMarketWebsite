@@ -7,14 +7,28 @@ export const Wrapper = styled.div`
 
   padding: 10.4rem 8.9rem;
 
+  @media screen and (min-width: 1921px) {
+    padding-left: 40rem;
+    padding-right: 40rem;
+  }
+
   @media screen and (max-width: 1044px) {
     padding-left: 5.5rem;
     padding-right: 5.5rem;
   }
 
-  @media screen and (max-width: 920px) {
+  @media screen and (max-width: 788px) {
+    padding-left: 11rem;
+    padding-right: 11rem;
+    padding-bottom: 8rem;
+    padding-top: 8rem;
+  }
+
+  @media screen and (max-width: 620px) {
     padding-left: 2.1rem;
     padding-right: 2.1rem;
+    padding-bottom: 4rem;
+    padding-top: 4rem;
   }
 
   .section.accent + &.accent,
@@ -29,9 +43,6 @@ export const Wrapper = styled.div`
   }
 
   @media only screen and (max-width: 788px) {
-    padding-bottom: 3.4rem;
-    padding-top: 3.4rem;
-    
     .chat-bubble {
       margin: 0 auto 2.1rem;
       max-height: 125px;
@@ -72,6 +83,10 @@ export const Inner = styled.div`
     color: var(--color-primary);
     line-height: 1.25em;
     margin: 0px;
+
+    &:last-of-type {
+      margin-bottom: 2.4rem;
+    }
   }
 
   @media only screen and (max-width: 788px) {

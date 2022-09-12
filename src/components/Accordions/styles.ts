@@ -47,6 +47,21 @@ export const Wrapper = styled.div`
       top: 0px;
     }
   }
+
+  // centered accordions
+  .centered & {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90rem;
+  }
+
+  @media only screen and (max-width: 788px) {
+    margin-bottom: 1.6rem;
+
+    &:after {
+      top: 28px;
+    }
+  }
 `
 
 export const Title = styled.div`
@@ -58,6 +73,10 @@ export const Title = styled.div`
     color: var(--color-primary);
     font-size: 3rem;
     margin: 0px;
+  }
+
+  @media only screen and (max-width: 788px) {
+    padding: 1.6rem 0;
   }
 
   @media only screen and (max-width: 620px) {
@@ -82,6 +101,10 @@ export const Content = styled.div`
     & + p {
       margin-top: 1.6rem;
     }
+  }
+
+  @media only screen and (max-width: 788px) {
+    margin-bottom: 0px;
   }
 
   @media only screen and (max-width: 620px) {

@@ -16,7 +16,7 @@ export const Btn = styled.button`
 
   &:hover {
     background-color: var(--color-light);
-    color: ${props => `var(--color-${props.border})`};
+    color: ${props => props.border !== 'light' ? `var(--color-${props.border})` : `var(--color-accent)`};
   }
 
   @media only screen and (max-width: 1460px) {
@@ -29,5 +29,6 @@ export const Btn = styled.button`
 
   @media only screen and (max-width: 620px) {
     font-size: 1.6rem;
+    min-width: 100%;
   }
 `

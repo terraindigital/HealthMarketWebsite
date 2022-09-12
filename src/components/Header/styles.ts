@@ -54,18 +54,26 @@ export const Wrapper = styled.div`
     .header-right .text-size.increase:after { border-color: var(--color-light); }
   }
 
+  @media screen and (min-width: 1921px) {
+    padding-left: 40rem;
+    padding-right: 40rem;
+  }
+
   @media screen and (max-width: 1044px) {
     padding-left: 5.5rem;
     padding-right: 5.5rem;
   }
 
-  @media screen and (max-width: 920px) {
-    padding-left: 2.1rem;
-    padding-right: 2.1rem;
+  @media screen and (max-width: 788px) {
+    min-height: 0;
+    padding-left: 4.8rem;
+    padding-right: 4.8rem;
   }
 
   @media only screen and (max-width: 620px) {
     min-height: auto;
+    padding-left: 2.1rem;
+    padding-right: 2.1rem;
     padding-top: 2.1rem;
   }
 `
@@ -73,6 +81,10 @@ export const Wrapper = styled.div`
 export const Logo = styled.img`
   margin: 0;
   max-width: 193px;
+
+  @media only screen and (max-width: 788px) {
+    max-width: 165px;
+  }
 
   @media only screen and (max-width: 620px) {
     max-width: 137px;

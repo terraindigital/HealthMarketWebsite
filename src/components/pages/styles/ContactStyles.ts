@@ -53,6 +53,10 @@ export const PageStyles = css`
   }
 
   @media only screen and (max-width: 788px) {
+    .contact.section {
+      margin-top: 12.6rem;
+    }
+
     .contact.section .section .inner .left h4 {
       font-size: 2.4rem;
       margin-bottom: 4rem;
@@ -65,6 +69,10 @@ export const PageStyles = css`
     
     .contact.section .section div h4 + form input:last-of-type {
       margin-bottom: 4rem;
+    }
+    
+    .contact.section .section div h4 + form input[type="checkbox"] {
+      margin-bottom: 0;
     }
     
     .contact.section .section div h4 + form h6 {

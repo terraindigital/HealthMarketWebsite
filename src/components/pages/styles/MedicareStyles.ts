@@ -40,7 +40,7 @@ export const PageStyles = css`
   
     .card-disclaimer {
       font-size: 1.6rem;
-      margin-top: 1.6rem;
+      margin-top: 2.7rem;
     }
   }
 

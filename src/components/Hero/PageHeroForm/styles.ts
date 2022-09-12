@@ -95,8 +95,9 @@ export const Input = styled.input`
 
   @media only screen and (max-width: 788px) {
     font-size: 1.6rem;
-    min-width: auto;
-    width: 89.5vw;
+    max-width: 100%;
+    min-width: 100%;
+    width: 68.8vw;
   }
 `
 

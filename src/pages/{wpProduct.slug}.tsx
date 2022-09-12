@@ -280,6 +280,7 @@ const GPPage = ({data}: { data: PageInfo }) => {
                         if (accordion.title) {
                           return (
                             <Accordion
+                              html
                               title={accordion.title}
                               content={accordion.content} />
                           )
@@ -311,6 +312,7 @@ const GPPage = ({data}: { data: PageInfo }) => {
                         if (accordion.title) {
                           return (
                             <Accordion
+                              html
                               title={accordion.title}
                               content={accordion.content} />
                           )

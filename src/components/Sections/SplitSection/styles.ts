@@ -9,6 +9,11 @@ export const Wrapper = styled.div`
   padding-left: 8.9rem;
   padding-right: 8.9rem;
 
+  @media screen and (min-width: 1921px) {
+    padding-left: 40rem;
+    padding-right: 40rem;
+  }
+
   @media screen and (max-width: 1044px) {
     padding-left: 5.5rem;
     padding-right: 5.5rem;

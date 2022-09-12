@@ -69,7 +69,7 @@ const Footer: FC<Props> = ({children}) => {
             <FooterMenu menu={counselMenu} title="Get Counsel" />
             <FooterMenu menu={getToKnowUsMenu} title="Get to Know Us" />
           </FooterMenuWrapper>
-          <Disclaimer className="hide-at-mobile">
+          <Disclaimer className="hide-at-device">
             <p>&copy; 2022 HealthMarkets Insurance Agency. All rights reserved.</p>
             {children}
           </Disclaimer>
@@ -80,6 +80,10 @@ const Footer: FC<Props> = ({children}) => {
           {children}
         </Disclaimer>
       </WidgetAreaTwo>
+      <Disclaimer className="show-at-device hide-at-mobile">
+        <p>&copy; 2022 HealthMarkets Insurance Agency. All rights reserved.</p>
+        {children}
+      </Disclaimer>
     </FooterWrapper>
   )
 }

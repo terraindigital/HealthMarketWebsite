@@ -20,7 +20,11 @@ export const Wrapper = styled.a`
 
     margin-right: 2.1rem;
 
-    &:nth-of-type(n+2) {
+    &:nth-of-type(2n-2) {
+      margin-right: 0;
+    }
+
+    &:last-of-type {
       margin-right: 0;
     }
   }

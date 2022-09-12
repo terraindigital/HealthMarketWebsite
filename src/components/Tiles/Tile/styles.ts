@@ -3,8 +3,7 @@ import styled from "@emotion/styled"
 export const Wrapper = styled.div`
   background-color: var(--color-accent);
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
-  margin: 3.4rem 1.7rem;
-  // max-width: 34rem;
+  margin: 0 1.7rem;
   position: relative;
   text-align: center;
 

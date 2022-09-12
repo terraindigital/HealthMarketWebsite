@@ -13,13 +13,25 @@ export const Wrapper = styled.div`
   padding-left: 8.9rem;
   padding-right: 8.9rem;
 
+  @media screen and (min-width: 1921px) {
+    padding-left: 40rem;
+    padding-right: 40rem;
+  }
+
   @media screen and (max-width: 1044px) {
     padding-left: 5.5rem;
     padding-right: 5.5rem;
   }
 
-  @media only screen and (max-width: 788px) {
+  @media screen and (max-width: 788px) {
     display: block;
+    padding-left: 4.8rem;
+    padding-right: 4.8rem;
+    padding-bottom: 8rem;
+    padding-top: 8rem;
+  }
+
+  @media screen and (max-width: 620px) {
     padding-left: 2.1rem;
     padding-right: 2.1rem;
     padding-bottom: 4rem;
@@ -30,27 +42,62 @@ export const Wrapper = styled.div`
 export const Heading = styled.div`
   display: block;
   flex-basis: 50%;
-  transform: translateX(-8.9rem);
   width: 50%;
 
   h2 {
-    background-color: var(--color-primary);
     color: var(--color-light);
     display: inline-block;
     letter-spacing: 1px;
     margin: 0;
-    padding: 2.8rem 8.8rem 2.8rem 14.4rem;
+    padding: 2.8rem 8.8rem 2.8rem 0rem;
+    position: relative;
+    z-index: 1;
+
+    &:before {
+      background-color: var(--color-primary);
+      bottom: 0;
+      content: '';
+      left: -14.4rem;
+      position: absolute;
+      top: 0;
+      width: calc(100% + 14.4rem);
+      z-index: -1;
+    }
+
+    @media only screen and (min-width: 1921px) {
+      &:before {
+        left: -40rem;
+        width: calc(100% + 40rem);
+      }
+    }
 
     @media only screen and (max-width: 1460px) {
-      padding-left: 8.9rem;
+      &:before {
+        left: -8.9rem;
+        width: calc(100% + 8.9rem);
+      }
     }
 
     @media only screen and (max-width: 788px) {
-      font-size: 4rem;
+      font-size: 5.6rem;
       letter-spacing: 0.02em;
       line-height: 115%;
       max-width: 100%;
       padding: 0.5rem 2.1rem;
+
+      &:before {
+        left: -4.8rem;
+        width: calc(100% + 4.8rem);
+      }
+    }
+
+    @media only screen and (max-width: 620px) {
+      font-size: 4rem;
+
+      &:before {
+        left: -2.1rem;
+        width: calc(100% + 2.1rem);
+      }
     }
   }
 
@@ -67,6 +114,18 @@ export const Inner = styled.div`
   flex-basis: calc(50% - 9.6rem);
   width: calc(50% - 9.6rem);
 
+  .heading + & {
+    padding-top: 8rem;
+
+    @media only screen and (max-width: 1460px) {
+      padding-top: 4.8rem;
+    }
+
+    @media only screen and (max-width: 620px) {
+      padding-top: 2.4rem;
+    }
+  }
+
   @media only screen and (max-width: 788px) {
     flex-basis: 100%;
     width: 100%;
@@ -74,6 +133,14 @@ export const Inner = styled.div`
     text-align: center;
     margin: 0 auto;
     max-width: 55rem;
+
+    .list {
+      margin-left: 4rem;
+
+      & + a {
+        margin-left: auto;
+      }
+    }
 
     button {
       border-radius: 4px;

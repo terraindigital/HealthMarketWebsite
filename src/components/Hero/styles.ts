@@ -23,6 +23,13 @@ export const Wrapper = styled.div`
     vertical-align: middle;
   }
 
+  @media screen and (min-width: 1921px) {
+    padding-left: 40rem;
+    padding-right: 40rem;
+    min-height: 65%;
+    min-height: 65vh;
+  }
+
   @media screen and (max-width: 1044px) {
     padding-left: 5.5rem;
     padding-right: 5.5rem;
@@ -88,6 +95,11 @@ export const Inner = styled.div`
   .boxed & {
     margin: 3.4rem 14.4rem;
     padding: 6rem 12rem;
+
+    @media only screen and (max-width: 788px) {
+      margin: 0 auto;
+      padding: 4rem 8rem;
+    }
 
     @media only screen and (max-width: 620px) {
       margin: 0 auto;

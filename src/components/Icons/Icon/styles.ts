@@ -50,6 +50,11 @@ export const Wrapper = styled.a`
     }
   }
 
+  @media only screen and (max-width: 788px) {
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+  }
+
   @media only screen and (max-width: 620px) {
     align-items: center;
     border-bottom: 1px solid var(--color-primary);
