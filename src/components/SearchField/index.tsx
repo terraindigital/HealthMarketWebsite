@@ -2,7 +2,13 @@ import React from "react";
 import { Link } from "gatsby";
 
 // Styles
-import { Wrapper, Logo, CloseButton, Inner } from "./styles"
+import {
+  Wrapper,
+  Logo,
+  CloseButton,
+  Inner,
+  Results
+} from "./styles"
 
 // Scripts
 import { toggleSearch } from "../../assets/scripts/global";
@@ -30,6 +36,7 @@ const SearchField = () => {
             </button>
           </form>
         </div>
+        <Results />
       </Inner>
     </Wrapper>
   )

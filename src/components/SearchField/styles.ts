@@ -87,8 +87,6 @@ export const CloseButton = styled.button`
 export const Inner = styled.div`
   display: flex;
   flex-direction: column;
-  height: 60%;
-  height: 60vh;
   justify-content: center;
   padding: 3.4rem;
 
@@ -104,7 +102,7 @@ export const Inner = styled.div`
   .search-box-input::placeholder {
     color: var(--color-light);
     font-family: var(--font-heading);
-    font-size: 3.2rem;
+    font-size: 5.6rem;
     font-weight: bold;
   }
 
@@ -122,4 +120,15 @@ export const Inner = styled.div`
       vertical-align: middle;
     }
   }
+
+  @media only screen and (max-width: 788px) {
+    .search-box-input,
+    .search-box-input::placeholder {
+      font-size: 3.2rem;
+    }
+  }
+`
+
+export const Results = styled.div`
+
 `
