@@ -13,11 +13,11 @@ import {
 import {
   changeTextSize,
   toggleSearch
-} from "../../../assets/scripts/global";
+} from "../../../static/scripts/global";
 
 // Images
-import PhoneIcon from "../../../assets/images/phone-icon.png"
-import SearchIcon from "../../../assets/images/search-icon.png"
+import PhoneIcon from "../../../static/images/phone-icon.png"
+import SearchIcon from "../../../static/images/search-icon.png"
 
 // Components
 

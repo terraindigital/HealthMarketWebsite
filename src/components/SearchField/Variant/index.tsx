@@ -4,10 +4,10 @@ import React from "react";
 import { Wrapper, CloseButton } from "./styles"
 
 // Scripts
-import { toggleSearch } from "../../assets/scripts/global";
+import { toggleSearch } from "../../static/scripts/global";
 
 // Images
-import Icon from "../../assets/images/search-icon.png"
+import Icon from "../../static/images/search-icon.png"
 
 const SearchField = () => {
   return (

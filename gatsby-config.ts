@@ -5,7 +5,7 @@ envConfig({
     path: `.env.${process.env.NODE_ENV}`,
 })
 
-const config: GatsbyConfig = {
+module.exports = {
     siteMetadata: {
         title: 'HealthMarkets',
         siteUrl: 'https://www.healthmarkets.com',
@@ -16,6 +16,7 @@ const config: GatsbyConfig = {
     // and better GraphQL IntelliSense.
     // If you use VSCode you can also use the GraphQL plugin
     // Learn more at: https://gatsby.dev/graphql-typegen
+    // assetPrefix: 'https://cdn.example.com/',
     graphqlTypegen: true,
     plugins: [
         {
@@ -25,13 +26,13 @@ const config: GatsbyConfig = {
             }
         },
         {
-            resolve: 'gatsby-plugin-emotion',
+            resolve: `gatsby-plugin-emotion`,
             options: {
                 cssPropOptimization: true,
             }
         },
         {
-            resolve: 'gatsby-plugin-google-analytics',
+            resolve: `gatsby-plugin-google-analytics`,
             options: {
                 trackingId: 'GA_TRACKING_ID',
             },
@@ -48,15 +49,21 @@ const config: GatsbyConfig = {
         'gatsby-plugin-sharp',
         'gatsby-transformer-sharp',
         {
-            resolve: 'gatsby-source-filesystem',
+            resolve: `gatsby-source-filesystem`,
             options: {
                 name: 'images',
-                path: './src/assets/images/',
+                path: './src/static/images/',
             },
-            __key: 'images',
         },
         {
-            resolve: 'gatsby-plugin-google-fonts',
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: 'fonts',
+                path: './src/static/fonts/',
+            },
+        },
+        {
+            resolve: `gatsby-plugin-google-fonts`,
             options: {
               fonts: [
                 `playfair display\:400,700`,
@@ -67,4 +74,4 @@ const config: GatsbyConfig = {
     ],
 };
 
-export default config;
+// export default config;

@@ -29,7 +29,8 @@ export const GlobalStyles = css`
     -moz-osx-font-smoothing: grayscale;
   }
 
-  .nav-active {
+  .nav-active,
+  .search-active {
     overflow-y: hidden;
   }
 
@@ -295,7 +296,7 @@ export const GlobalStyles = css`
     font-weight: 600;
   }
 
-  /* Heading font-sizes are in /assets/css/fonts.css */
+  /* Heading font-sizes are in /static/css/fonts.css */
 
   .font-heading {
     font-family: var(--font-heading);

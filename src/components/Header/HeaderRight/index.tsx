@@ -9,15 +9,15 @@ import {
   changeTextSize,
   toggleNav,
   toggleSearch
-} from "../../../assets/scripts/global"
+} from "../../../static/scripts/global"
 
 // Components
 import Navigation from "../../Navigation"
 import SearchField from "../../SearchField"
 
 // Images
-import PhoneIcon from "../../../assets/images/phone-icon.png"
-import SearchIcon from "../../../assets/images/search-icon.png"
+import PhoneIcon from "../../../static/images/phone-icon.png"
+import SearchIcon from "../../../static/images/search-icon.png"
 
 const HeaderRight = () => {
   return (

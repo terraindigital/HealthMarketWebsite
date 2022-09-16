@@ -37,6 +37,10 @@ export const Item = styled.div`
 
   @media only screen and (max-width: 788px) {
     font-size: 1.8rem;
+
+    &:last-child {
+      padding-right: 0;
+    }
   }
 `
 

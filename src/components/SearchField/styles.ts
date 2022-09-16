@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
-  background-color: var(--color-primary);
+  background-color: var(--color-light);
   display: block;
   left: 0px;
   min-width: 100%;
@@ -15,8 +15,14 @@ export const Wrapper = styled.div`
   &.active {
     bottom: 0;
     opacity: 1;
-    top: 0px;
+    top: 0;
   }
+`
+
+export const TopBar = styled.div`
+  background-color: var(--color-primary);
+  padding-left: 2.1rem;
+  padding-right: 2.1rem;
 `
 
 export const Logo = styled.img`
@@ -29,17 +35,19 @@ export const Logo = styled.img`
   margin-top: 3.4rem;
 
   @media screen and (max-width: 1044px) {
-    margin-left: 5.5rem;
-    margin-right: 5.5rem;
+    margin-left: 3.4rem;
+    margin-right: 3.4rem;
   }
 
   @media screen and (max-width: 920px) {
-    margin-left: 2.1rem;
-    margin-right: 2.1rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   @media only screen and (max-width: 620px) {
     margin-top: 2.1rem;
+    margin-left: 0;
+    margin-right: 0;
   }
 `
 
@@ -49,15 +57,15 @@ export const CloseButton = styled.button`
   position: absolute;
   width: 28px;
 
-  right: 114px;
+  right: 93px;
   top: 39px;
 
   @media screen and (max-width: 1044px) {
-    right: 71px;
+    right: 50px;
   }
 
   @media screen and (max-width: 920px) {
-    right: 37px;
+    right: 16px;
   }
 
   @media only screen and (max-width: 620px) {
@@ -88,11 +96,11 @@ export const Inner = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 3.4rem;
 
   .search-box {
     border-bottom: 1px solid var(--color-light);
     display: flex;
+    margin-bottom: 3.4rem;
     margin-left: auto;
     margin-right: auto;
     max-width: 60rem;
@@ -130,5 +138,7 @@ export const Inner = styled.div`
 `
 
 export const Results = styled.div`
-
+  max-height: calc(100vh - 292px);
+  overflow-y: auto;
+  padding: 4rem;
 `

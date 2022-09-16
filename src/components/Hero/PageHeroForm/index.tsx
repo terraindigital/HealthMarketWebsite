@@ -17,8 +17,9 @@ import {
 import Button from "../../Buttons/Button"
 
 // Images
-import MapPin from "../../../assets/images/location.png"
-import PhoneIcon from "../../../assets/images/phone-icon.png"
+import MapPin from "../../../static/images/location.png"
+
+import PhoneIcon from "../../../static/images/phone-icon.png"
 
 interface Props {
   centered?: boolean,
