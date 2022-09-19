@@ -39,3 +39,18 @@ export const toggleNav = () => {
   document.body.classList.toggle('nav-active')
   document.documentElement.classList.toggle('nav-active')
 }
+
+
+export const toggleForm = (el) => {
+  const parent = el.target.parentElement
+  // if not already active...
+  if (el.target.classList.contains('accented')) return
+  // toggle first button state
+  parent.firstChild.classList.toggle('accented')
+  parent.firstChild.querySelector('input[type=radio]').checked = (parent.firstChild.classList.contains('accented'))
+  // toggle second button state
+  parent.firstChild.nextSibling.classList.toggle('accented')
+  parent.firstChild.nextSibling.querySelector('input[type=radio]').checked = parent.firstChild.nextSibling.classList.contains('accented')
+  // toggle form state
+  parent.parentElement.classList.toggle('agent')
+}

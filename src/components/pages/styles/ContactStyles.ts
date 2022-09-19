@@ -31,7 +31,6 @@ export const PageStyles = css`
     margin-top: 4.8rem;
   }
 
-  /* TODO: make this sticky */
   .contact.section .inner .right .callout {
     background-color: var(--color-light);
     margin-left: auto;

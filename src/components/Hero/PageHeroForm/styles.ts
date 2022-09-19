@@ -19,14 +19,14 @@ export const Buttons = styled.div`
     justify-content: center;
   }
 
-  button {
+  div {
     min-width: 410px;
   }
 
   @media only screen and (max-width: 788px) {
     justify-content: center;
 
-    button {
+    div {
       font-size: 1.6rem;
       line-height: 120%;
       min-height: 5.6rem;
@@ -36,10 +36,11 @@ export const Buttons = styled.div`
   }
 `
 
-export const Btn = styled.button`
+export const Radio = styled.div`
   background-color: var(--color-light);
   border: 2px solid var(--color-accent);
   color: var(--color-accent);
+  cursor: pointer;
   font-size: 2rem;
   font-weight: 600;
   padding: 13px 34px;
@@ -47,6 +48,10 @@ export const Btn = styled.button`
   &.accented {
     background-color: var(--color-accent);
     color: var(--color-light);
+  }
+
+  input[type=radio] {
+    visibility: hidden;
   }
 `
 

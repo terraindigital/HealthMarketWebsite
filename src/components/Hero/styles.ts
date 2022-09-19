@@ -1,7 +1,5 @@
 import styled from "@emotion/styled"
 
-// TODO: Responsive; Global hero responsive check
-
 export const Wrapper = styled.div`
   background-color: ${props => `${props.background}`};
   display: flex;

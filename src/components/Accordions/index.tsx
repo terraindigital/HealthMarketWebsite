@@ -13,7 +13,6 @@ interface Props {
   html?: boolean
 }
 
-// TODO: Toggle anywhere, not whitespace
 const toggleAccordion = (el) => {
   const parent = el.target.closest('.accordion')
   parent.classList.toggle('active')
