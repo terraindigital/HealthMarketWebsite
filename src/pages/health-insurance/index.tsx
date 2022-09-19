@@ -14,7 +14,7 @@ import {
 
 // Components
 import Layout from "../../components/Layout";
-import Seo from "../../components/SEO";
+import PageHead from "../../components/PageHead";
 import Hero from "../../components/Hero";
 import PageHeroForm from "../../components/Hero/PageHeroForm";
 import Button from "../../components/Buttons/Button";
@@ -37,9 +37,6 @@ const HealthInsurancePage = () => {
   return (
     <Layout pageClass="health-insurance">
       <Global styles={PageStyles} />
-      <Seo
-          title={page.metadataCustomFields.metaTitle}
-          description={page.metadataCustomFields.metaDescription}/>
       <Hero
         image={page.pageHeroFields.heroImage.sourceUrl}
         mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
@@ -185,3 +182,19 @@ const HealthInsurancePage = () => {
 }
 
 export default HealthInsurancePage
+
+export const Head = () => {
+  const { page } = useHealthPageQuery();
+  return (
+    <>
+      <PageHead
+        title={page.metadataCustomFields.metaTitle}
+        description={page.metadataCustomFields.metaDescription}/>
+      <script
+        async
+        type="text/javascript"
+        src="https://cdne-uho-cdn-eastus-prod.azureedge.net/scripts/analytics-configuration.min.js"
+      ></script>
+    </>
+  )
+}

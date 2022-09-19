@@ -11,7 +11,7 @@ import {
 
 // Components
 import Layout from "../../components/Layout";
-import Seo from "../../components/SEO";
+import PageHead from "../../components/PageHead";
 import Hero from '../../components/Hero';
 import FlexedSection from '../../components/Sections/FlexedSection';
 import List from '../../components/Lists';
@@ -35,9 +35,6 @@ const HowWeHelpPage = () => {
   return (
     <Layout pageClass="how-we-help">
       <Global styles={PageStyles}/>
-      <Seo
-          title={hwh.metadataCustomFields.metaTitle}
-          description={hwh.metadataCustomFields.metaDescription}/>
       <Hero
         image={hwh.pageHeroFields.heroImage.sourceUrl}
         mobileImage={hwh.pageHeroFields.mobileHeroImage.sourceUrl}
@@ -185,4 +182,18 @@ const HowWeHelpPage = () => {
 
 export default HowWeHelpPage;
 
-
+export const Head = () => {
+  const { hwh } = useHowWeHelpPageQuery();
+  return (
+    <>
+      <PageHead
+        title={hwh.metadataCustomFields.metaTitle}
+        description={hwh.metadataCustomFields.metaDescription}/>
+      <script
+        async
+        type="text/javascript"
+        src="https://cdne-uho-cdn-eastus-prod.azureedge.net/scripts/analytics-configuration.min.js"
+      ></script>
+    </>
+  )
+}

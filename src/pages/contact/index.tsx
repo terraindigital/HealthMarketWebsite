@@ -10,7 +10,7 @@ import { PageStyles } from "../../components/pages/styles/ContactStyles";
 
 // Components
 import Layout from '../../components/Layout';
-import Seo from '../../components/SEO';
+import PageHead from '../../components/PageHead';
 import Section from '../../components/Sections';
 import Checkbox from '../../components/Inputs/Checkbox';
 import CheckboxGroup from '../../components/Inputs/Checkbox/CheckboxGroup';
@@ -28,9 +28,6 @@ const ContactPage = () => {
   return (
     <Layout staticHeader>
       <Global styles={PageStyles}/>
-      <Seo
-          title={page.metadataCustomFields.metaTitle}
-          description={page.metadataCustomFields.metaDescription}/>
       <Section page="contact" color="muted" heading="Let's connect">
         <SplitSection align="top" color="muted">
           <div className="left">
@@ -73,3 +70,19 @@ const ContactPage = () => {
 }
 
 export default ContactPage
+
+export const Head = () => {
+  const { page } = useContactPageQuery();
+  return (
+    <>
+      <PageHead
+        title={page.metadataCustomFields.metaTitle}
+        description={page.metadataCustomFields.metaDescription}/>
+      <script
+        async
+        type="text/javascript"
+        src="https://cdne-uho-cdn-eastus-prod.azureedge.net/scripts/analytics-configuration.min.js"
+      ></script>
+    </>
+  )
+}

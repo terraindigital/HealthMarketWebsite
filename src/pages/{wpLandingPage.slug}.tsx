@@ -13,7 +13,7 @@ import {
 
 // Components
 import Layout from "../components/Layout";
-import Seo from "../components/SEO";
+import PageHead from "../components/PageHead";
 import Hero from '../components/Hero';
 import Button from '../components/Buttons/Button';
 import Section from "../components/Sections";
@@ -216,9 +216,6 @@ const LPPage = ({data}: { data: PageInfo }) => {
   return (
     <Layout pageClass={page.slug}>
       <Global styles={PageStyles} />
-      <Seo
-          title={page.metadataCustomFields.metaTitle}
-          description={page.metadataCustomFields.metaDescription}/>
       <Wrapper>
         <Hero
           image={page.landingPageCustomFields.lpHero.heroImage.sourceUrl}
@@ -533,6 +530,22 @@ const LPPage = ({data}: { data: PageInfo }) => {
 }
 
 export default LPPage
+
+export const Head = ({ data }) => {
+  const { page } = data;
+    return (
+        <>
+            <PageHead
+                title={page.metadataCustomFields.metaTitle}
+                description={page.metadataCustomFields.metaDescription}/>
+            <script
+                async
+                type="text/javascript"
+                src="https://cdne-uho-cdn-eastus-prod.azureedge.net/scripts/analytics-configuration.min.js"
+            ></script>
+        </>
+    )
+}
 
 export const pageQuery = graphql`
   query ($slug: String!) {

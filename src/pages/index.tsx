@@ -9,8 +9,8 @@ import { useHomePageQuery } from '../hooks/useHomePageQuery';
 import { HeroHeading, HeroSubheading } from '../components/pages/styles/homePageStyles';
 
 // Components
-import Layout from "../components/Layout"
-import Seo from "../components/SEO"
+import Layout from "../components/Layout";
+import PageHead from "../components/PageHead";
 import Hero from '../components/Hero';
 import PageHeroForm from '../components/Hero/PageHeroForm';
 import Button from '../components/Buttons/Button';
@@ -32,9 +32,6 @@ const IndexPage = ({path}: PageProps) => {
 
     return (
         <Layout pageClass="home" headerColor="light">
-            <Seo
-                title={home.metadataCustomFields.metaTitle}
-                description={home.metadataCustomFields.metaDescription}/>
             <Hero
                 image={home.pageHeroFields.heroImage.sourceUrl}
                 mobileImage={home.pageHeroFields.mobileHeroImage.sourceUrl}
@@ -120,4 +117,18 @@ const IndexPage = ({path}: PageProps) => {
 
 export default IndexPage;
 
-
+export const Head = () => {
+    const { home } = useHomePageQuery();
+    return (
+        <>
+            <PageHead
+                title={home.metadataCustomFields.metaTitle}
+                description={home.metadataCustomFields.metaDescription}/>
+            <script
+                async
+                type="text/javascript"
+                src="https://cdne-uho-cdn-eastus-prod.azureedge.net/scripts/analytics-configuration.min.js"
+            ></script>
+        </>
+    )
+}

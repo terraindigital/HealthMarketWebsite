@@ -1,7 +1,7 @@
 import React, {FC, useState} from "react";
 import classnames from "classnames"
 import Layout from "../../Layout";
-import Seo from "../../SEO";
+import PageHead from "../../PageHead";
 import {GatsbyImage, getImage, ImageDataLike} from "gatsby-plugin-image";
 import HealthInsuranceIcon from "./icons/healthInsurance";
 import LifeInsuranceIcon from "./icons/lifeInsurance";
@@ -69,9 +69,6 @@ const Template: FC<Prop> = ({data, pageType}) => {
 
     return (
         <Layout>
-            <Seo
-                title={data.page.metadataCustomFields.metaTitle}
-                description={data.page.metadataCustomFields.metaDescription}/>
             <br/>
             <br/>
             <br/>
@@ -386,3 +383,19 @@ const Template: FC<Prop> = ({data, pageType}) => {
 }
 
 export default Template
+
+export const Head = ({data}) => {
+  const { page } = data;
+  return (
+    <>
+      <PageHead
+        title={page.metadataCustomFields.metaTitle}
+        description={page.metadataCustomFields.metaDescription}/>
+      <script
+        async
+        type="text/javascript"
+        src="https://cdne-uho-cdn-eastus-prod.azureedge.net/scripts/analytics-configuration.min.js"
+      ></script>
+    </>
+  )
+}
