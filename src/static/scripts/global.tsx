@@ -15,8 +15,6 @@ export const toggleSearch = () => {
   if (!searchBox || !header) return
   searchBox.classList.toggle('active')
   header.classList.toggle('search-active')
-  document.body.classList.toggle('search-active')
-  document.documentElement.classList.toggle('search-active')
 }
 
 export const toggleVariantSearch = () => {
@@ -36,10 +34,7 @@ export const toggleNav = () => {
   navBtn.classList.toggle('nav-active')
   navMenu.classList.toggle('active')
   header.classList.toggle('nav-active')
-  document.body.classList.toggle('nav-active')
-  document.documentElement.classList.toggle('nav-active')
 }
-
 
 export const toggleForm = (el) => {
   const parent = el.target.parentElement
@@ -47,10 +42,14 @@ export const toggleForm = (el) => {
   if (el.target.classList.contains('accented')) return
   // toggle first button state
   parent.firstChild.classList.toggle('accented')
-  parent.firstChild.querySelector('input[type=radio]').checked = (parent.firstChild.classList.contains('accented'))
+  if (parent.firstChild.classList.contains('accented')) {
+    parent.firstChild.querySelector('input[type=radio]').checked = true
+    parent.firstChild.closest('form').action = "/plans" 
+  }
   // toggle second button state
   parent.firstChild.nextSibling.classList.toggle('accented')
-  parent.firstChild.nextSibling.querySelector('input[type=radio]').checked = parent.firstChild.nextSibling.classList.contains('accented')
-  // toggle form state
-  parent.parentElement.classList.toggle('agent')
+  if (parent.firstChild.nextSibling.classList.contains('accented')) {
+    parent.firstChild.nextSibling.querySelector('input[type=radio]').checked = true
+    parent.firstChild.nextSibling.closest('form').action = "/agents" 
+  }
 }

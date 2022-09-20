@@ -38,7 +38,7 @@ const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, i
   // TODO: send queries to relevant pages
   return (
     <Wrapper className={`${(centered) ? `centered` : ``} ${(light) ? `light` : ``}`}>
-      <Form>
+      <Form action="/plans">
         {(buttons || buttons === undefined) ? (
           <Buttons>
             <Radio onClick={toggleForm} className="accented">{btnLeftText}
