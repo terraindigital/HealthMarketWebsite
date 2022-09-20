@@ -10,15 +10,15 @@ export const Wrapper = styled.a`
   text-align: center;
   text-decoration: none;
 
-  flex-basis: calc(20% - 2.1rem);
-  width: calc(20% - 2.1rem);
+  flex-basis: calc((100% / 6) - 2.1rem);
+  width: calc((100% / 6) - 2.1rem);
 
   &:last-of-type {
     margin-right: 0;
   }
 
   @media only screen and (min-width: 1301px) {
-    &:nth-of-type(5n + 5) {
+    &:nth-of-type(6n + 6) {
       margin-right: 0;
     }
   }
