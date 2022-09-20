@@ -77,8 +77,15 @@ export const TextSize = styled.span`
   }
 `
 
-export const SearchButton = styled.img`
+export const SearchButton = styled.button`
+  background: transparent;
+  border: none;
   cursor: pointer;
+  display: inline;
+  height: 34px;
+  margin-left: 1.3rem;
+  padding: 0;
+  width: 34px;
 `
 
 export const MenuButton = styled.button`

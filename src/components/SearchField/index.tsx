@@ -23,7 +23,7 @@ import Icon from "../../static/images/search-icon.png"
 
 const SearchField = () => {
   return (
-    <Wrapper className="search-box-mobile">
+    <Wrapper className="search-box">
       <Inner>
         <TopBar>
           <Link to="/">

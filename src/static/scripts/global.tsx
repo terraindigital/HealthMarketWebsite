@@ -10,31 +10,36 @@ export const changeTextSize = (el) => {
 }
 
 export const toggleSearch = () => {
-  const searchBox = document.querySelector('.search-box-mobile')
+  const searchBox = document.querySelector('.search-box')
   const header = document.querySelector('.site-header')
   if (!searchBox || !header) return
   searchBox.classList.toggle('active')
-  header.classList.toggle('search-active')
+  header.classList.toggle('active')
+  document.documentElement.classList.toggle('takeover-active')
 }
 
-export const toggleVariantSearch = () => {
-  const searchBtn = document.querySelector('.search-button')
-  const searchBox = document.querySelector('.search-box-wrap')
-  const header = document.querySelector('.site-header')
-  if (!searchBtn || !searchBox || !header) return
-  searchBtn.classList.toggle('search-active')
-  searchBox.classList.toggle('active')
-}
-
-export const toggleNav = () => {
+export const toggleNav = (isActive) => {
   const navBtn = document.querySelector('button.menu-button')
   const navMenu = document.querySelector('nav.menu.wrapper')
   const header = document.querySelector('.site-header')
+
+  // if we don't have a menu button, menu, or header, exit
   if (!navBtn || !navMenu || !header) return
-  navBtn.classList.toggle('nav-active')
-  navMenu.classList.toggle('active')
-  header.classList.toggle('nav-active')
+
+  // if we're not open, remove the active classes
+  if (!isActive) {
+    navBtn.classList.remove('nav-active')
+    navMenu.classList.remove('active')
+    header.classList.remove('takeover-active')
+    document.documentElement.classList.remove('takeover-active')
+  } else {
+    navBtn.classList.add('nav-active')
+    navMenu.classList.add('active')
+    header.classList.add('takeover-active')
+    document.documentElement.classList.add('takeover-active')
+  }
 }
+
 
 export const toggleForm = (el) => {
   const parent = el.target.parentElement

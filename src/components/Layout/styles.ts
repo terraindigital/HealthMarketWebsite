@@ -29,8 +29,7 @@ export const GlobalStyles = css`
     -moz-osx-font-smoothing: grayscale;
   }
 
-  .nav-active,
-  .search-active {
+  .takeover-active {
     overflow-y: hidden;
   }
 

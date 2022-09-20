@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import { Link } from "gatsby";
 
 // Styles
-import { Wrapper, Item, TextSize, SearchButton, MenuButton, Bars } from "./styles"
+import {
+  Wrapper,
+  Item,
+  TextSize,
+  SearchButton,
+  MenuButton,
+  Bars
+} from "./styles"
 
 // Scripts
 import {
@@ -12,6 +19,7 @@ import {
 } from "../../../static/scripts/global"
 
 // Components
+import ToggleButton from "../../Buttons/ToggleButton"
 import Navigation from "../../Navigation"
 import SearchField from "../../SearchField"
 
@@ -20,6 +28,12 @@ import PhoneIcon from "../../../static/images/phone-icon.png"
 import SearchIcon from "../../../static/images/search-icon.png"
 
 const HeaderRight = () => {
+  const [isNavOpen, setNavOpen] = useState(false);
+
+  // const changeNavOpen = (value) => {
+  //   setNavOpen(value);
+  // }
+
   return (
     <Wrapper className="header-right">
       <Item className="hide-at-mobile">
@@ -32,10 +46,12 @@ const HeaderRight = () => {
         <TextSize className="decrease text-size" onClick={changeTextSize}>-</TextSize> Text Size <TextSize className="increase text-size" onClick={changeTextSize}>+</TextSize>
       </Item>
       <Item>
-        <SearchButton className="hide-at-mobile icon" onClick={toggleSearch} src={SearchIcon} alt="magnifying glass icon" />
-        <MenuButton className="menu-button" onClick={toggleNav}>
+        <SearchButton className="hide-at-mobile" onClick={toggleSearch}>
+          <img className="icon" src={SearchIcon} alt="magnifying glass icon" />
+        </SearchButton>
+        <ToggleButton className="menu-button" callback={toggleNav}>
           <Bars />
-        </MenuButton>
+        </ToggleButton>
         <Navigation />
         <SearchField />
       </Item>

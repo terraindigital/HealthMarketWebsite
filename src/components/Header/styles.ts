@@ -43,7 +43,7 @@ export const Wrapper = styled.div`
     .icon { filter: none; }
   }
 
-  &.nav-active {
+  &.takeover-active {
     color: var(--color-light);
     a { color: var(--color-light); }
     a .icon { filter: brightness(0) invert(1); }
