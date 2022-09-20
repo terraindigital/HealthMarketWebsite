@@ -23,7 +23,8 @@ export const Input = styled.input`
       position: relative;
 
       &:after {
-        content: '/';
+        content: '✔';
+        font-size: 1.2rem;
         left: 50%;
         position: absolute;
         top: 50%;
