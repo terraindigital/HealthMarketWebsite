@@ -10,6 +10,16 @@ export const Wrapper = styled.a`
   flex-basis: calc(33% - 2.1rem);
   width: calc(33% - 2.1rem);
 
+  margin-right: 2.1rem;
+
+  &:nth-of-type(3n-3) {
+    margin-right: 0;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
   &.icon {
     text-align: center;
   }
@@ -19,6 +29,10 @@ export const Wrapper = styled.a`
     width: calc(50% - 2.1rem);
 
     margin-right: 2.1rem;
+
+    &:nth-of-type(3n-3) {
+      margin-right: 2.1rem;
+    }
 
     &:nth-of-type(2n-2) {
       margin-right: 0;

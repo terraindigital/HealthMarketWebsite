@@ -35,18 +35,18 @@ export const HeroSubheading = styled.h4`
 
 export const BestPriceImage = styled.img `
   display: block;
-  left: -4rem;
+  left: 2.4rem;
   position: relative;
   top: 15px;
 
   @media only screen and (max-width: 1460px) {
-    left: -24.3rem;
+    left: 0;
     max-height: 172px;
     top: 12px;
   }
 
   @media only screen and (max-width: 920px) {
-    left: -4rem;
+    left: 0;
     max-height: 132px;
   }
 
@@ -62,12 +62,9 @@ export const BestPriceImageMobile = styled.img `
   top: 0;
 
   @media only screen and (max-width: 620px) {
-    left: -4.1rem;
     display: block;
-  }
-
-  @media only screen and (max-width: 395px) {
-    left: -5rem;
+    right: 0;
+    transform: translateX(calc(100% + 1.8rem));
   }
 
   @media only screen and (max-width: 340px) {
