@@ -1,5 +1,6 @@
-import React, {FC} from 'react';
-import {useStaticQuery, graphql} from 'gatsby';
+import React, { FC } from 'react';
+import { useLocation } from "@reach/router";
+import { useStaticQuery, graphql } from 'gatsby';
 
 interface Props {
     title: string;
@@ -31,9 +32,12 @@ const PageHead: FC<Props> = ({
     `
     );
 
-    const canonical = location && `${site.siteMetadata.siteUrl}${location.pathname}`
+    const location = useLocation();
+    const canonical = site.siteMetadata.siteUrl + location.pathname;
     const siteTitle = title || site.siteMetadata.title;
     const metaDescription = description || site.siteMetadata.description;
+
+    console.log(canonical);
 
     return (
       <>
