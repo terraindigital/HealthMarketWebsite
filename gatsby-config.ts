@@ -16,7 +16,7 @@ module.exports = {
     // and better GraphQL IntelliSense.
     // If you use VSCode you can also use the GraphQL plugin
     // Learn more at: https://gatsby.dev/graphql-typegen
-    // assetPrefix: 'https://cdn.example.com/',
+    assetPrefix: '/core-assets',
     graphqlTypegen: true,
     plugins: [
         {
