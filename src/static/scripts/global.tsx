@@ -58,3 +58,20 @@ export const toggleForm = (el) => {
     parent.firstChild.nextSibling.closest('form').action = "/agents" 
   }
 }
+
+export const fadeIn = (selector) => {
+  const targets = document.querySelectorAll(selector)
+
+  Object.keys(targets).map((i) => {
+    console.log(targets[i])
+  
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.pageYOffset
+      const targetTop = targets[i].offsetTop
+
+      if ((scrollTop + window.innerHeight) >= targetTop) {
+        targets[i].classList.add('animate')
+      }
+    })
+  });
+}

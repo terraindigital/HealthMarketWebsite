@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from "react"
+import React, { FC, ReactNode, useEffect } from "react"
 
 // Styles
 import {
@@ -6,6 +6,9 @@ import {
   Check,
   Heading
 } from "./styles"
+
+// Scripts
+import { fadeIn } from "../../../static/scripts/global"
 
 // Components
 
@@ -18,8 +21,12 @@ interface Props {
 }
 
 const ListItem: FC<Props> = ({ heading, children }) => {
+  useEffect(() => {
+    fadeIn('.list-item')
+  });
+
   return (
-    <Wrapper>
+    <Wrapper className="list-item">
       <Check>
         <img src={checkImg} alt="list checkmark" />
       </Check>

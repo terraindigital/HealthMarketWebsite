@@ -6,6 +6,15 @@ export const Wrapper = styled.li`
   margin-bottom: 4rem;
   position: relative;
 
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.56s linear;
+
+  &.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   &:last-of-type {
     margin-bottom: 0;
   }

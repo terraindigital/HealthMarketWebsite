@@ -5,6 +5,8 @@ export const Wrapper = styled.div`
   &.primary { background-color: var(--color-primary-light); }
   &.accent { background-color: var(--color-accent-light); }
 
+  overflow-y: hidden;
+
   padding: 10.4rem 8.9rem;
 
   @media screen and (min-width: 1921px) {
@@ -64,6 +66,15 @@ export const Inner = styled.div`
   background-color: var(--color-light);
   border-radius: 4px;
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.56s linear;
+
+  .animate & {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   .two-columns & {
     padding: 8.3rem 14.6rem 8.3rem 12.8rem;
