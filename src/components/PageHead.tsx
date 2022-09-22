@@ -37,8 +37,6 @@ const PageHead: FC<Props> = ({
     const siteTitle = title || site.siteMetadata.title;
     const metaDescription = description || site.siteMetadata.description;
 
-    console.log(canonical);
-
     return (
       <>
         <html lang={lang} />

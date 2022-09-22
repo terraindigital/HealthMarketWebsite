@@ -69,7 +69,7 @@ export const Heading = styled.div`
       left: -14.4rem;
       position: absolute;
       top: 0;
-      width: calc(100% + 40rem);
+      width: calc(100% + 14.4rem);
       z-index: -1;
     }
 

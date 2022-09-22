@@ -63,8 +63,6 @@ export const fadeIn = (selector) => {
   const targets = document.querySelectorAll(selector)
 
   Object.keys(targets).map((i) => {
-    console.log(targets[i])
-  
     window.addEventListener("scroll", () => {
       const scrollTop = window.pageYOffset
       const targetTop = targets[i].offsetTop
