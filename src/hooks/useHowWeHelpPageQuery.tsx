@@ -5,10 +5,11 @@ export const useHowWeHelpPageQuery = () => {
     query hwhPageQuery {
       hwh: wpPage(databaseId: {eq: 395}) {
         id
-        metadataCustomFields {
-          metaTitle
-          metaDescription
-          metaKeywords
+        slug
+        seo {
+          fullHead
+          title
+          metaDesc
         }
         pageHeroFields {
           headline

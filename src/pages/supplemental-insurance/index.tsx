@@ -131,8 +131,8 @@ export const Head = () => {
   return (
     <>
       <PageHead
-        title={page.metadataCustomFields.metaTitle}
-        description={page.metadataCustomFields.metaDescription}/>
+        title={page.seo.title}
+        description={page.seo.metaDesc}/>
       <script
         async
         type="text/javascript"

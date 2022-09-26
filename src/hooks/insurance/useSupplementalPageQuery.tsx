@@ -5,10 +5,11 @@ export const useSupplementalPageQuery = () => {
     query SuppQuery {
       page: wpPage(databaseId: {eq: 1254}) {
         id
-        metadataCustomFields {
-          metaTitle
-          metaDescription
-          metaKeywords
+        slug
+        seo {
+          fullHead
+          title
+          metaDesc
         }
         pageHeroFields {
           headline

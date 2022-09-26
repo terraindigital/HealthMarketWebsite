@@ -520,8 +520,8 @@ export const Head = ({ data }) => {
     return (
         <>
             <PageHead
-                title={page.metadataCustomFields.metaTitle}
-                description={page.metadataCustomFields.metaDescription}/>
+                title={page.seo.title}
+                description={page.seo.metaDesc}/>
             <script
                 async
                 type="text/javascript"
@@ -539,10 +539,10 @@ export const pageQuery = graphql`
       id
       title
       slug
-      metadataCustomFields {
-        metaTitle
-        metaDescription
-        metaKeywords
+      seo {
+        fullHead
+        title
+        metaDesc
       }
       disclaimers {
         disclaimer

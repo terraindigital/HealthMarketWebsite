@@ -5,10 +5,11 @@ export const useContactPageQuery = () => {
     query contactQuery {
       page: wpPage(databaseId: {eq: 12}) {
         id
-        metadataCustomFields {
-          metaTitle
-          metaDescription
-          metaKeywords
+        slug
+        seo {
+          fullHead
+          title
+          metaDesc
         }
         disclaimers {
           disclaimer

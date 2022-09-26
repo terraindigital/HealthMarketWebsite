@@ -5,10 +5,11 @@ export const useHealthPageQuery = () => {
     query HealthQuery {
       page: wpPage(databaseId: {eq: 1130}) {
         id
-        metadataCustomFields {
-          metaTitle
-          metaDescription
-          metaKeywords
+        slug
+        seo {
+          fullHead
+          title
+          metaDesc
         }
         pageHeroFields {
           headline

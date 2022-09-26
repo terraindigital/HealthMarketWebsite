@@ -8,6 +8,7 @@ export const Nav = styled.nav`
   min-width: 100%;
   min-width: 100vw;
   opacity: 0;
+  overflow-y: scroll;
   padding: 8.9rem 3.4rem 3.4rem;
   position: fixed;
   top: -9999px;
@@ -68,7 +69,7 @@ export const MenuItem = styled.li`
     right: -4rem;
     top: 50%;
     transform: rotateZ(45deg) translate(-50%, 0);
-    transition: transform 0.24s linear;
+    transition: transform 0.2s linear;
     width: 14px;
   }
 

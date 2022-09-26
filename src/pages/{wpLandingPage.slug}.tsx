@@ -536,8 +536,8 @@ export const Head = ({ data }) => {
     return (
         <>
             <PageHead
-                title={page.metadataCustomFields.metaTitle}
-                description={page.metadataCustomFields.metaDescription}/>
+                title={page.seo.title}
+                description={page.seo.metaDesc}/>
             <script
                 async
                 type="text/javascript"
@@ -551,12 +551,11 @@ export const pageQuery = graphql`
   query ($slug: String!) {
     page: wpLandingPage(slug: {eq: $slug}) {
       id
-      title
       slug
-      metadataCustomFields {
-        metaTitle
-        metaDescription
-        metaKeywords
+      seo {
+        fullHead
+        title
+        metaDesc
       }
       landingPageCustomFields {
         lpCta {

@@ -5,10 +5,11 @@ export const useHomePageQuery = () => {
     query homepageQuery {
       home: wpPage(isFrontPage: {eq: true}) {
         id
-        metadataCustomFields {
-          metaTitle
-          metaDescription
-          metaKeywords
+        slug
+        seo {
+          fullHead
+          title
+          metaDesc
         }
         pageHeroFields {
           heroImage {
