@@ -44,6 +44,7 @@ export const Radio = styled.div`
   font-size: 2rem;
   font-weight: 600;
   padding: 13px 34px;
+  text-align: center;
 
   &.accented {
     background-color: var(--color-accent);

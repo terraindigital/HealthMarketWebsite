@@ -158,7 +158,8 @@ export const Disclaimer = styled.div`
   margin-top: 2.1rem;
 
   p {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
+    margin-top: 0.8rem;
   }
 
   a {

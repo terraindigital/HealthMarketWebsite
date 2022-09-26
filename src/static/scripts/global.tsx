@@ -49,13 +49,13 @@ export const toggleForm = (el) => {
   parent.firstChild.classList.toggle('accented')
   if (parent.firstChild.classList.contains('accented')) {
     parent.firstChild.querySelector('input[type=radio]').checked = true
-    parent.firstChild.closest('form').action = "/plans" 
+    parent.firstChild.closest('form').action = "/plans/" 
   }
   // toggle second button state
   parent.firstChild.nextSibling.classList.toggle('accented')
   if (parent.firstChild.nextSibling.classList.contains('accented')) {
     parent.firstChild.nextSibling.querySelector('input[type=radio]').checked = true
-    parent.firstChild.nextSibling.closest('form').action = "/agents" 
+    parent.firstChild.nextSibling.closest('form').action = "/local-health-insurance-agent/search/" 
   }
 }
 
