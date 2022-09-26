@@ -55,6 +55,41 @@ export const MenuItem = styled.li`
     text-decoration: none;
   }
 
+  &.has-submenu > a {
+    position: relative;
+  }
+
+  &.has-submenu > a:after {
+    border-right: 2px solid var(--color-light);
+    border-top: 2px solid var(--color-light);
+    content: '';
+    height: 14px;
+    position: absolute;
+    right: -4rem;
+    top: 50%;
+    transform: rotateZ(45deg) translate(-50%, 0);
+    transition: transform 0.24s linear;
+    width: 14px;
+  }
+
+  & > .submenu {
+    height: 0;
+    opacity: 0;
+    position: relative;
+    top: -9999px;
+    transition: opacity 0.24s linear;
+  }
+
+  &.is-open > a:after {
+    transform: rotateZ(135deg) translate(-25%, 50%);
+  }
+
+  &.is-open > .submenu {
+    height: 100%;
+    opacity: 1;
+    top: 0;
+  }
+
   @media only screen and (max-width: 620px) {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;

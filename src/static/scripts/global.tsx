@@ -40,6 +40,10 @@ export const toggleNav = (isActive) => {
   }
 }
 
+export const toggleSubnav = (el) => {
+  const parent = el.target.parentElement
+  parent.classList.toggle('is-open');
+}
 
 export const toggleForm = (el) => {
   const parent = el.target.parentElement
