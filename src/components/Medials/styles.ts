@@ -44,7 +44,7 @@ export const Wrapper = styled.div`
     max-height: 215px;
   }
 
-  @media only screen and (max-width: 788px) {
+  @media only screen and (max-width: 1280px) {
     .chat-bubble {
       margin: 0 auto 2.1rem;
       max-height: 125px;
@@ -62,6 +62,7 @@ export const Inner = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0 2.1rem;
 
   background-color: var(--color-light);
   border-radius: 4px;
@@ -91,7 +92,7 @@ export const Inner = styled.div`
   .three-columns & {
     padding: 4rem 9.6rem;
 
-    @media only screen and (max-width: 788px) {
+    @media only screen and (max-width: 1280px) {
       padding: 4rem 2.1rem;
     }
   }
@@ -106,7 +107,7 @@ export const Inner = styled.div`
     }
   }
 
-  @media only screen and (max-width: 788px) {
+  @media only screen and (max-width: 1024px) {
     display: block;
     padding: 2.1rem 1.3rem;
     text-align: center;
