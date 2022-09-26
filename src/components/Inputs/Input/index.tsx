@@ -8,17 +8,17 @@ import { Wrapper, Label, InputField, HeroInputField } from "./styles"
 // Images
 import Pin from "../../../static/images/location.png"
 
-interface Props {
-  id?: String,
+interface Props extends Omit<React.HTMLProps<HTMLInputElement>, "as"> {
+  id?: string,
   hero?: boolean,
   centered?: boolean,
-  classes?: String,
-  type: String,
-  name: String,
-  pattern?: String,
-  placeholder: String,
+  classes?: string,
+  type: string,
+  name: string,
+  pattern?: string,
+  placeholder: string,
   required?: boolean,
-  value?: String
+  value?: string
 }
 
 const Input: FC<Props> = ({
@@ -31,21 +31,22 @@ const Input: FC<Props> = ({
   pattern = null,
   placeholder,
   required,
-  value = null
+  value = null,
+    ...props
 }) => {
   placeholder = (required) ? placeholder + `*` : placeholder;
 
   if (!hero) {
     return (
-      <InputField className={classes} id={id} type={type} name={name} pattern={pattern} placeholder={placeholder} required={required} value={value} />
+      <InputField className={classes} id={id} type={type} name={name} pattern={pattern ? pattern : undefined} placeholder={placeholder} required={required} value={value ? value : undefined} {...props} />
     )
   } else {
     return (
       <Wrapper className={(centered) ? `centered` : ``}>
-        <Label for={name}>
+        <Label htmlFor={name}>
           <img src={Pin} alt="map pin icon" />
         </Label>
-        <HeroInputField icon={Pin} id={id} type={type} name={name} placeholder={placeholder} value={value} />
+        <HeroInputField id={id} type={type} name={name} placeholder={placeholder} value={value ? value : undefined} {...props}  />
       </Wrapper>
     )
   }
