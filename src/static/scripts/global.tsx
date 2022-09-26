@@ -18,6 +18,13 @@ export const toggleSearch = () => {
   document.documentElement.classList.toggle('takeover-active')
 }
 
+export const isSearchBoxOpen = () => {
+  const searchBox = document.querySelector('.search-box')
+  const header = document.querySelector('.site-header')
+  if (!searchBox || !header) return
+  return (searchBox.classList.contains('active') && header.classList.contains('active') && document.documentElement.classList.contains('takeover-active'))
+}
+
 export const toggleNav = (isActive) => {
   const navBtn = document.querySelector('button.menu-button')
   const navMenu = document.querySelector('nav.menu.wrapper')
@@ -49,13 +56,13 @@ export const toggleForm = (el) => {
   parent.firstChild.classList.toggle('accented')
   if (parent.firstChild.classList.contains('accented')) {
     parent.firstChild.querySelector('input[type=radio]').checked = true
-    parent.firstChild.closest('form').action = "/plans/" 
+    parent.firstChild.closest('form').action = "/plans/"
   }
   // toggle second button state
   parent.firstChild.nextSibling.classList.toggle('accented')
   if (parent.firstChild.nextSibling.classList.contains('accented')) {
     parent.firstChild.nextSibling.querySelector('input[type=radio]').checked = true
-    parent.firstChild.nextSibling.closest('form').action = "/local-health-insurance-agent/search/" 
+    parent.firstChild.nextSibling.closest('form').action = "/local-health-insurance-agent/search/"
   }
 }
 
