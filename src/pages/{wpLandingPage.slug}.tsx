@@ -551,6 +551,7 @@ export const pageQuery = graphql`
   query ($slug: String!) {
     page: wpLandingPage(slug: {eq: $slug}) {
       id
+      title
       slug
       seo {
         fullHead
