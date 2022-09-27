@@ -101,7 +101,7 @@ const Autocomplete: FC<Props> = ({ api_key }) => {
           const longitude = e.target.dataset.longitude;
           const parent = document.querySelector('.location-options');
 
-          document.querySelector('#coordinates').value = encodeURI(latitude + "\,\ " + longitude);
+          document.querySelector('#coordinates').value = encodeURI(latitude + ", " + longitude);
 
           input.value = location;
           parent.innerHTML = '';
