@@ -16,7 +16,7 @@ export const Btn = styled.button`
   }
 
   .dark & > div,
-  .stuck & > div {
+  .is-stuck & > div {
     border-color: var(--color-dark);
     &:before, &:after { border-color: var(--color-dark); }
   }
