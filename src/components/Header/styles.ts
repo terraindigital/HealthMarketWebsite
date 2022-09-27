@@ -27,7 +27,7 @@ export const Wrapper = styled.div`
   }
 
   &.dark,
-  &.stuck {
+  &.is-stuck {
     color: var(--color-dark);
     a { color: var(--color-dark); }
     .header-right > div { border-color: var(--color-dark); }
@@ -35,8 +35,8 @@ export const Wrapper = styled.div`
     .header-right .text-size.increase:after { border-color: var(--color-dark); }
   }
 
-  &.static,
-  &.stuck {
+  &.is-static,
+  &.is-stuck {
     background-color: rgba(255, 255, 255, 1);
     box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.12);
     a .icon { filter: none; }

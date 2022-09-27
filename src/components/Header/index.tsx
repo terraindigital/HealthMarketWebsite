@@ -17,16 +17,16 @@ interface Props {
 
 const Header: FC<Props> = ({staticHeader=false, color}) => {
   const headerColor = (color) ? color : "dark";
-  const staticClass = (staticHeader) ? "static" : "";
+  const staticClass = (staticHeader) ? "is-static" : "";
 
   const stickyHeader = () => {
     const header = document.getElementsByClassName('site-header')[0]
     const offset = header.offsetHeight / 2
 
     if (window.pageYOffset > offset) {
-      header.classList.add('stuck')
+      header.classList.add('is-stuck')
     } else {
-      header.classList.remove('stuck')
+      header.classList.remove('is-stuck')
     }
   }
   

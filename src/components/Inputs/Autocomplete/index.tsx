@@ -75,8 +75,8 @@ const Autocomplete: FC<Props> = ({ api_key }) => {
           if (coords !== undefined) {
             options.innerHTML += `
               <div class="location-option"` +
-              `data-latitude="` + coords[0] + `"` +
-              `data-longitude="` + coords[1] + `"` +
+              `data-longitude="` + coords[0] + `"` +
+              `data-latitude="` + coords[1] + `"` +
               `>` + location + `</div>
             `;
           }
@@ -101,7 +101,7 @@ const Autocomplete: FC<Props> = ({ api_key }) => {
           const longitude = e.target.dataset.longitude;
           const parent = document.querySelector('.location-options');
 
-          document.querySelector('#coordinates').value = encodeURI(latitude + ', ' + longitude);
+          document.querySelector('#coordinates').value = encodeURI(latitude + "\,\ " + longitude);
 
           input.value = location;
           parent.innerHTML = '';
