@@ -17,7 +17,7 @@ interface Props {
 
 const Header: FC<Props> = ({staticHeader=false, color}) => {
   const headerColor = (color) ? color : "dark";
-  const staticClass = (staticHeader) ? "static" : "";
+  const staticClass = (staticHeader) ? "static-header" : "";
 
   const stickyHeader = () => {
     const header = document.getElementsByClassName('site-header')[0]
@@ -29,7 +29,7 @@ const Header: FC<Props> = ({staticHeader=false, color}) => {
       header.classList.remove('stuck')
     }
   }
-  
+
   if (typeof window !== "undefined") {
     window.onscroll = () => { stickyHeader() }
   }
