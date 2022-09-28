@@ -54,7 +54,7 @@ export const toggleSubnav = (el) => {
 
 export const toggleForm = (el) => {
   // set the urls to change the form action to
-  const plans = "https://shop.healthmarkets.com/en/about-me/plans-found?healthShortTermEnrollOnline=yes&medicareMAenrollonline=yes&medicarePDPenrollonline=yes&medicareSuppenrollonline=yes&visionenrollonline=yes&dentalenrollonline=yes";
+  const plans = "https://shop.healthmarkets.com/en/about-me/plans-found";
   const agents = "/local-health-insurance-agent/search/";
   // set the parent form
   const parent = el.target.parentElement

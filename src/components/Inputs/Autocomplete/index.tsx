@@ -24,6 +24,7 @@ const Autocomplete: FC<Props> = ({ api_key }) => {
 
   let locations = Array();
   let coordinates = Array();
+  let zipCodes = Array();
 
   const query = 'https://api.geocode.earth/v1/autocomplete?' +
                 `api_key=${api_key}&` +
@@ -55,9 +56,12 @@ const Autocomplete: FC<Props> = ({ api_key }) => {
         const place = data['features'][i]['properties'];
         
         coordinates.push(data['features'][i]['geometry']['coordinates']);
+        console.log(place);
+        zipCodes.push(place['postalcode']);
 
         if (place['locality'] !== undefined && place['region_a'] !== undefined) {
           const localityString = place['locality'] + ', ' + place['region_a'];
+
           if (!locations.includes(localityString)) {
             locations.push(localityString);
           }
@@ -71,12 +75,16 @@ const Autocomplete: FC<Props> = ({ api_key }) => {
         for (let i=0; i < num; i++) {
           const coords = coordinates[i];
           const location = locations[i];
+          const zipCode = zipCodes[i];
+
+          console.log(zipCode);
           
-          if (coords !== undefined) {
+          if (coords !== undefined && zipCode !== undefined) {
             options.innerHTML += `
               <div class="location-option"` +
               `data-longitude="` + coords[0] + `"` +
               `data-latitude="` + coords[1] + `"` +
+              `data-zip="` + zipCode + `"` +
               `>` + location + `</div>
             `;
           }
@@ -97,12 +105,18 @@ const Autocomplete: FC<Props> = ({ api_key }) => {
       Object.keys(options).map((i) => {
         options[i].addEventListener("click", (e) => {
           const location = e.target.innerText;
+          const zipCode = e.target.dataset.zip;
           const latitude = e.target.dataset.latitude;
           const longitude = e.target.dataset.longitude;
           const parent = document.querySelector('.location-options');
           const coordField = document.querySelector('#coordinates');
+          const zipField = document.querySelector('#zipCode');
           
-          if (coordField) coordField.value = encodeURI(latitude + ", " + longitude);
+          if (coordField) {
+            coordField.value = encodeURI(latitude + ", " + longitude);
+          } else if (zipField) {
+            zipField.value = zipCode;
+          }
 
           input.value = location;
           parent.innerHTML = '';
@@ -122,6 +136,7 @@ const Autocomplete: FC<Props> = ({ api_key }) => {
         <input type="hidden" name="medicareSuppenrollonline" value="yes" />
         <input type="hidden" name="visionenrollonline" value="yes" />
         <input type="hidden" name="dentalenrollonline" value="yes" />
+        <input type="hidden" id="zipCode" name="zip" value="" />
     </InputGroup>
   )
 }
