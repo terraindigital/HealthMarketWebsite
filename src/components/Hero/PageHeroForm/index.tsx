@@ -37,27 +37,26 @@ interface Props {
 // set geocode earth api key
 const api_key = 'ge-aee0e5253d70b022';
 
+// set the urls to change the form action to
+const plans = "https://shop.healthmarkets.com/en/about-me/plans-found";
+const agents = "/local-health-insurance-agent/search/";
+
 const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, inputId, buttons, hideFooter  }) => {
   // TODO: send queries to relevant pages
   return (
     <Wrapper className={`${(centered) ? `centered` : ``} ${(light) ? `light` : ``}`}>
-      <Form action="/plans/" autocomplete="off">
+      <Form id="zipCodeForm" action={plans} autocomplete="off">
         {(buttons || buttons === undefined) ? (
           <Buttons>
             <Radio onClick={toggleForm} className="accented">{btnLeftText}
-              <input id="radioSearchPlans" type="radio" value="/plans/" checked />
+              <input id="radioSearchPlans" type="radio" value={plans} checked />
             </Radio>
             <Radio onClick={toggleForm}>{btnRightText}
-              <input id="radioSearchAgents" type="radio" value="/local-health-insurance-agent/search/" />
+              <input id="radioSearchAgents" type="radio" value={agents} />
             </Radio>
           </Buttons>
         ) : null}
         <Autocomplete api_key={api_key} />
-        {/* <InputGroup> */}
-            {/* <img src={MapPin} alt="map location pin image" /> */}
-            {/* <div dangerouslySetInnerHTML={{ __html: `<ge-autocomplete api_key={api_key} boundary.country="US"></ge-autocomplete>` }}></div> */}
-            {/* <Input id={inputId} type="text" name={inputId} placeholder="Enter Zip Code/City" /> */}
-        {/* </InputGroup> */}
         {
           hideFooter ? (<></>) : (
           <Footer>

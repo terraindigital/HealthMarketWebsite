@@ -53,6 +53,10 @@ export const toggleSubnav = (el) => {
 }
 
 export const toggleForm = (el) => {
+  // set the urls to change the form action to
+  const plans = "https://shop.healthmarkets.com/en/about-me/plans-found?healthShortTermEnrollOnline=yes&medicareMAenrollonline=yes&medicarePDPenrollonline=yes&medicareSuppenrollonline=yes&visionenrollonline=yes&dentalenrollonline=yes";
+  const agents = "/local-health-insurance-agent/search/";
+  // set the parent form
   const parent = el.target.parentElement
   // if not already active...
   if (el.target.classList.contains('accented')) return
@@ -60,13 +64,75 @@ export const toggleForm = (el) => {
   parent.firstChild.classList.toggle('accented')
   if (parent.firstChild.classList.contains('accented')) {
     parent.firstChild.querySelector('input[type=radio]').checked = true
-    parent.firstChild.closest('form').action = "/plans/"
+    parent.firstChild.closest('form').action = plans
+
+    const healthShortTermEnrollOnline = document.createElement('input')
+    healthShortTermEnrollOnline.type = "hidden"
+    healthShortTermEnrollOnline.name = "healthShortTermEnrollOnline"
+    healthShortTermEnrollOnline.value = "yes"
+
+    const medicareMAenrollonline = document.createElement('input')
+    medicareMAenrollonline.type = "hidden"
+    medicareMAenrollonline.name = "medicareMAenrollonline"
+    medicareMAenrollonline.value = "yes"
+
+    const medicarePDPenrollonline = document.createElement('input')
+    medicarePDPenrollonline.type = "hidden"
+    medicarePDPenrollonline.name = "medicarePDPenrollonline"
+    medicarePDPenrollonline.value = "yes"
+
+    const medicareSuppenrollonline = document.createElement('input')
+    medicareSuppenrollonline.type = "hidden"
+    medicareSuppenrollonline.name = "medicareSuppenrollonline"
+    medicareSuppenrollonline.value = "yes"
+
+    const visionenrollonline = document.createElement('input')
+    visionenrollonline.type = "hidden"
+    visionenrollonline.name = "visionenrollonline"
+    visionenrollonline.value = "yes"
+
+    const dentalenrollonline = document.createElement('input')
+    dentalenrollonline.type = "hidden"
+    dentalenrollonline.name = "dentalenrollonline"
+    dentalenrollonline.value = "yes"
+
+    const configureLatLng = document.querySelector('#zipCodeField input#latLngField')
+
+    document.querySelector('#zipCodeField').removeChild(configureLatLng)
+    document.querySelector('#zipCodeField').append(
+      healthShortTermEnrollOnline,
+      medicareMAenrollonline,
+      medicarePDPenrollonline,
+      medicareSuppenrollonline,
+      visionenrollonline,
+      dentalenrollonline
+    )
   }
   // toggle second button state
   parent.firstChild.nextSibling.classList.toggle('accented')
   if (parent.firstChild.nextSibling.classList.contains('accented')) {
     parent.firstChild.nextSibling.querySelector('input[type=radio]').checked = true
-    parent.firstChild.nextSibling.closest('form').action = "/local-health-insurance-agent/search/"
+    parent.firstChild.nextSibling.closest('form').action = agents
+
+    const healthShortTermEnrollOnline = document.querySelector('input[name=healthShortTermEnrollOnline]')
+    const medicareMAenrollonline = document.querySelector('input[name=medicareMAenrollonline]')
+    const medicarePDPenrollonline = document.querySelector('input[name=medicarePDPenrollonline]')
+    const medicareSuppenrollonline = document.querySelector('input[name=medicareSuppenrollonline]')
+    const visionenrollonline = document.querySelector('input[name=visionenrollonline]')
+    const dentalenrollonline = document.querySelector('input[name=dentalenrollonline]')
+
+    const configureLatLng = document.createElement('input')
+    configureLatLng.id = "latLngField"
+    configureLatLng.type = "hidden"
+    configureLatLng.name = "configure[aroundLatLng]"
+
+    document.querySelector('#zipCodeField').removeChild(healthShortTermEnrollOnline)
+    document.querySelector('#zipCodeField').removeChild(medicareMAenrollonline)
+    document.querySelector('#zipCodeField').removeChild(medicarePDPenrollonline)
+    document.querySelector('#zipCodeField').removeChild(medicareSuppenrollonline)
+    document.querySelector('#zipCodeField').removeChild(visionenrollonline)
+    document.querySelector('#zipCodeField').removeChild(dentalenrollonline)
+    document.querySelector('#zipCodeField').appendChild(configureLatLng)
   }
 }
 

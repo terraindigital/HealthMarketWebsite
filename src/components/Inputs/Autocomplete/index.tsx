@@ -100,8 +100,9 @@ const Autocomplete: FC<Props> = ({ api_key }) => {
           const latitude = e.target.dataset.latitude;
           const longitude = e.target.dataset.longitude;
           const parent = document.querySelector('.location-options');
-
-          document.querySelector('#coordinates').value = encodeURI(latitude + ", " + longitude);
+          const coordField = document.querySelector('#coordinates');
+          
+          if (coordField) coordField.value = encodeURI(latitude + ", " + longitude);
 
           input.value = location;
           parent.innerHTML = '';
@@ -111,14 +112,16 @@ const Autocomplete: FC<Props> = ({ api_key }) => {
   })
 
   return (
-    <InputGroup>
+    <InputGroup id="zipCodeField">
         <img src={MapPin} alt="map location pin image" />
         <Input id="geocodeAutocomplete" type="text" placeholder="Enter Zip Code/City" onChange={getOptions} autocomplete="off" />
-        {/* TODO: populate these with coords after location selected */}
-        <input type="hidden" id="coordinates" name="configure[aroundLatLng]" />
-        <Options className="location-options">
-          {/* TODO: populate with location options */}
-        </Options>
+        <Options className="location-options" />
+        <input type="hidden" name="healthShortTermEnrollOnline" value="yes" />
+        <input type="hidden" name="medicareMAenrollonline" value="yes" />
+        <input type="hidden" name="medicarePDPenrollonline" value="yes" />
+        <input type="hidden" name="medicareSuppenrollonline" value="yes" />
+        <input type="hidden" name="visionenrollonline" value="yes" />
+        <input type="hidden" name="dentalenrollonline" value="yes" />
     </InputGroup>
   )
 }
