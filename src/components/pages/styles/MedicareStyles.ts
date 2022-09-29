@@ -14,7 +14,7 @@ export const PageStyles = css`
   }
 
   .button-container button {
-    max-width: 38.6rem;
+    max-width: 45rem;
     width: 100%;
   }
   
@@ -36,6 +36,10 @@ export const PageStyles = css`
 
     .medicare .hero + .section {
       padding-top: 4rem;
+    }
+
+    .button-container button {
+      max-width: 38.6rem;
     }
   
     .card-disclaimer {
