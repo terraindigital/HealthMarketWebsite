@@ -25,6 +25,7 @@ import Cards from "../../components/Cards";
 import Card from "../../components/Cards/Card";
 import Callouts from "../../components/Callouts";
 import Callout from "../../components/Callouts/Callout";
+import RelatedContent from "../../components/RelatedContent";
 import Footer from "../../components/Footer";
 
 const HealthInsurancePage = () => {
@@ -93,7 +94,7 @@ const HealthInsurancePage = () => {
       <Section
         color={page.suppPageCustomFields.suppSection2.color}
         heading={page.suppPageCustomFields.suppSection2.heading}>
-        <Cards>
+        {/* <Cards>
           <Card
             image={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent1.image.sourceUrl}
             title={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent1.title}
@@ -112,7 +113,8 @@ const HealthInsurancePage = () => {
             link={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent3.link}>
             <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent3.content}} />
           </Card>
-        </Cards>
+        </Cards> */}
+        <RelatedContent />
         <div className="full-rounded" style={{ textAlign: "center" }}>
           <Button background="accent" border="accent" color="light">View more articles</Button>
         </div>
@@ -138,6 +140,7 @@ export const Head = () => {
         type="text/javascript"
         src="https://cdne-uho-cdn-eastus-prod.azureedge.net/scripts/analytics-configuration.min.js"
       ></script>
+      <script src="//cdn.bc0a.com/autopilot/f00000000075672/autopilot_sdk.js"></script>
     </>
   )
 }
