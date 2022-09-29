@@ -43,6 +43,11 @@ const HeaderRight = () => {
         </Link>
       </Item>
       <Item className="hide-at-mobile">
+        <Link className="find-agent" to="/local-health-insurance-agent">
+          Find an agent
+        </Link>
+      </Item>
+      <Item className="hide-at-mobile">
         <TextSize className="decrease text-size" onClick={changeTextSize}>-</TextSize> Text Size <TextSize className="increase text-size" onClick={changeTextSize}>+</TextSize>
       </Item>
       <Item>
