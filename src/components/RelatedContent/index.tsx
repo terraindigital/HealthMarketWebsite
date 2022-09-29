@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Global } from "@emotion/react";
 
 // Styles
@@ -8,62 +8,39 @@ import {
 } from "./styles"
 
 // Scripts
-// const filterRelatedContent = (data) => {
-//   let output = '';
-
-//   Object.keys(data).map((i, el) => {
-//     const content = data[i];
-
-//     output += '<a target="_blank" href="';
-//     output += content.url;
-//     output += '" class="card">';
-//     // output += '<div class="card-header">';
-//     // output += '<img src="https://via.placeholder.com/384x294" placeholder="BLURRED" alt="" />';
-//     // output += '</div>';
-//     output += '<div class="card-content">';
-//     output += '<h4>';
-//     output += content.anchor_text;
-//     output += '</h4>';
-//     output += '<p>';
-//     output += content.meta_desc;
-//     output += '</p>';
-//     output += '</div>';
-//     output += '</a>';
-//   });
-
-//   return output;
-// }
 
 // Components
-import Cards from "../Cards";
 
 const RelatedContent = () => {
-  let delay = setInterval(()=>{
-    const container = document.querySelector('.be-related-link-container');
-    const links = document.querySelectorAll('.be-related-link');
 
-    let doesExist = (container !== undefined) ? true : false;
-    
-    if (doesExist) {
-      container?.classList.add('cards');
+  useEffect(() => {
+    let delay = setInterval(()=>{
+      const container = document.querySelector('.be-related-link-container');
+      const links = document.querySelectorAll('.be-related-link');
 
-      Object.keys(links).map((i) => {
-        const link = links[i];
-        const heading = link.querySelector('.headline');
-        const image = link.querySelector('.image')
+      let doesExist = (container !== undefined) ? true : false;
+      
+      if (doesExist) {
+        container?.classList.add('cards');
 
-        if (!document.body.contains(image)) {
-          const newImage = document.createElement('img');
-          newImage.src = "https://via.placeholder.com/384x294";
-          newImage.classList.add('.image');
-          link.insertBefore(newImage, heading);
-        }
+        Object.keys(links).map((i) => {
+          const link = links[i];
+          const heading = link.querySelector('.headline');
+          const image = link.querySelector('.image')
 
-        link.classList.add('card');
-        clearInterval(delay);
-      })
-    }
-  }, 50);
+          if (!document.body.contains(image)) {
+            const newImage = document.createElement('img');
+            newImage.src = "https://via.placeholder.com/384x294";
+            newImage.classList.add('.image');
+            link.insertBefore(newImage, heading);
+          }
+
+          link.classList.add('card');
+          clearInterval(delay);
+        })
+      }
+    }, 50);
+  })
 
   return (
     <Wrapper>
