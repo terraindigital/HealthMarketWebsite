@@ -30,10 +30,10 @@ const AfterNav = () => {
         </SearchButton>
       </Item>
       <Item>
-        <Link to="tel:8008279990">
+        <a href="tel:8008279990">
           <img className="icon" src={PhoneIcon} alt="telephone icon" />
           (800) 827-9990
-        </Link>
+        </a>
       </Item>
       <Item>
         <Link className="find-agent" to="/local-health-insurance-agent">

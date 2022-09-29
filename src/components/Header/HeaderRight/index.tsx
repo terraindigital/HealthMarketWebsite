@@ -37,10 +37,10 @@ const HeaderRight = () => {
   return (
     <Wrapper className="header-right">
       <Item className="hide-at-mobile">
-        <Link className="telephone" to="tel:8008279990">
+        <a className="telephone" href="tel:8008279990">
           <img className="phone icon" src={PhoneIcon} alt="telephone icon" />
           (800) 827-9990
-        </Link>
+        </a>
       </Item>
       <Item className="hide-at-mobile">
         <Link className="find-agent" to="/local-health-insurance-agent">
