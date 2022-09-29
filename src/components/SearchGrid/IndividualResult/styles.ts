@@ -8,11 +8,6 @@ export const ResultTitle  = styled.div`
   line-height: 32px;
   padding-bottom: 12px;
   transition: 0.3s;
-  & ais-highlight-0000000000 {
-    background-color: #FFF349;
-    border-radius: 4px;
-    padding: 0px 2px;
-  }
 `
 
 export const BreadcrumbPill = styled.div`
@@ -90,6 +85,10 @@ export const BodyText = styled.div`
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
+   & ais-highlight-0000000000 {
+    background-color: #FFF349;
+    border-radius: 4px;
+  }
 `
 
 export const BulletPoint = styled.div`
