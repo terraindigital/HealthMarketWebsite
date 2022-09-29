@@ -11,6 +11,7 @@ export const ComponentStyles = css`
     align-items: stretch;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 5.6rem;
   }
 
   @media only screen and (max-width: 788px) {
