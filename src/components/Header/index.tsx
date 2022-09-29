@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import React, { FC, useEffect } from "react"
 import { Link } from "gatsby"
 
 // Styles
@@ -29,6 +29,10 @@ const Header: FC<Props> = ({staticHeader=false, color}) => {
       header.classList.remove('is-stuck')
     }
   }
+
+  useEffect(() => {
+    stickyHeader();
+  })
   
   if (typeof window !== "undefined") {
     window.onscroll = () => { stickyHeader() }
