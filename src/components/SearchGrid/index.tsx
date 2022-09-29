@@ -2,9 +2,17 @@ import React from 'react'
 import { Container, Results, ResultsInner, ResultsHeadingArea, PaginationList, PaginationListItem, Divider, NoResultsArea } from "./styles"
 import Heading from "./Heading";
 import useLocationSearch from "../../hooks/useLocationSearch";
-import { InstantSearch, connectHits, connectPagination, connectSearchBox } from 'react-instantsearch-dom';
+import {
+    InstantSearch,
+    connectHits,
+    connectPagination,
+    connectSearchBox,
+    Index,
+    SearchBox
+} from 'react-instantsearch-dom';
 import IndividualResult from "./IndividualResult";
 import { Configure } from 'react-instantsearch-dom';
+import flattenSnippet from "./flatten-algolia-snippet";
 
 const Pagination = connectPagination(({ currentRefinement, nbPages, refine }) => {
     return (
@@ -53,39 +61,40 @@ const Pagination = connectPagination(({ currentRefinement, nbPages, refine }) =>
     )
 });
 
+const SearchTitle = connectSearchBox(({ currentRefinement }) => (
+    <>
+        <ResultsHeadingArea>
+            <Heading>{currentRefinement ? `Results for: ${currentRefinement}` : "Recommended"}</Heading>
+            <Pagination/>
+        </ResultsHeadingArea>
+    </>
+))
 
-const WrappedResults = connectSearchBox(connectHits(({ hits, currentRefinement }: { hits: { objectID: string, [key: string]: any }[], currentRefinement?: string }) => {
+const WrappedResults = connectHits(({ hits, category }: { hits: { objectID: string, [key: string]: any }[], category?: string }) => {
 
     return (
-        <Results>
-            <ResultsHeadingArea>
-                <Heading>{currentRefinement ? `Results for: ${currentRefinement}` : "Recommended"}</Heading>
-                <Pagination/>
-            </ResultsHeadingArea>
-            <Divider />
-            <ResultsInner>
-                {(hits && hits.length > 0) ? hits.map((hit: any) => {
-                    const foundProducts = (hit?.taxonomies?.product || []).map((x: any) => ({title: x}))
-                    return (
-                        <IndividualResult
-                            title={hit?.post_title}
-                            highlightTitle={hit?._snippetResult?.post_title?.value}
-                            breadcrumbs={[
-                                {title: "Resources"},
-                                ...foundProducts
-                            ]}
-                            bodyText={hit?._snippetResult?.content?.value}
-                            link={hit?.permalink}
-                        />
-                    )
-                }) : <NoResultsArea>
-                    <h3>No results</h3>
-                    <p>Try changing your search terms and try again.</p>
-                </NoResultsArea>}
-            </ResultsInner>
-        </Results>
+        <ResultsInner>
+            {(hits && hits.length > 0) ? hits.map((hit: any) => {
+                const foundProducts = (hit?.taxonomies?.product || []).map((x: any) => ({title: x}))
+                const flattedSnipped = flattenSnippet(hit._snippetResult)
+                return (
+                    <IndividualResult
+                        title={hit?.post_title}
+                        breadcrumbs={[
+                            {title: category},
+                            ...foundProducts
+                        ]}
+                        bodyText={flattedSnipped}
+                        link={hit?.permalink}
+                    />
+                )
+            }) : <NoResultsArea>
+                <h3>No results</h3>
+                <p>Try changing your search terms and try again.</p>
+            </NoResultsArea>}
+        </ResultsInner>
     )
-}))
+})
 
 /*onst WrappedPosts = connectHits(({ hits }) => {
 
@@ -134,10 +143,22 @@ const SearchGrid = ({ searchTerm = "" }) => {
 
     return (
         <Container>
-            <InstantSearch searchClient={searchClient} searchState={searchState} onSearchStateChange={onSearchStateChange} createURL={createURL} indexName="wp_core_posts_page">
-                <Configure hitsPerPage={12} />
+            <InstantSearch searchClient={searchClient} searchState={searchState} onSearchStateChange={onSearchStateChange} createURL={createURL} indexName="wp_content_searchable_posts">
                 <HiddenSearchBox searchTerm={searchTerm} />
-                <WrappedResults />
+                <Configure hitsPerPage={6} />
+                <Results>
+                    <SearchTitle/>
+                    <Divider />
+                    <WrappedResults category="Resources" />
+                    <Index indexName="wp_core_searchable_posts">
+                        <ResultsHeadingArea>
+                            <Heading>From our site</Heading>
+                            <Pagination/>
+                        </ResultsHeadingArea>
+                        <Divider/>
+                        <WrappedResults category="HealthMarkets.com" />
+                    </Index>
+                </Results>
             </InstantSearch>
             {/*<InstantSearch {...plansSearch} indexName="hm-agents">
                 <PlansByState>

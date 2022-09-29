@@ -3,19 +3,18 @@ import { BodyText, Breadcrumb, BulletPoint, Container, Result, ResultTitle, Link
 
 interface IndividualResultProps {
     title: string
-    highlightTitle: string
     breadcrumbs: { title: string }[]
     bodyText: string
     link: string
 }
 
-const IndividualResult = ({ title, highlightTitle, breadcrumbs, bodyText, link }: IndividualResultProps) => {
+const IndividualResult = ({ title, breadcrumbs, bodyText, link }: IndividualResultProps) => {
 
     return (
         <Container>
             <Linkbox href={link} title={title} />
             <Result>
-                <ResultTitle dangerouslySetInnerHTML={{ __html: highlightTitle }} />
+                <ResultTitle dangerouslySetInnerHTML={{ __html: title }} />
                 <Breadcrumb>{breadcrumbs.map(({ title }, i) => {
                     return (
                         <>
