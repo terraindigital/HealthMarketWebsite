@@ -16,7 +16,7 @@ const Medial: FC<Props> = ({ color, children }) => {
 
   useEffect(() => {
     fadeIn('.medial')
-  });
+  }, []);
 
   return (
     <Wrapper className={`medial ` + color + ` ` + columnCount}>

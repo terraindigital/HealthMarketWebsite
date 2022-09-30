@@ -50,11 +50,11 @@ const Autocomplete: FC<Props> = ({ api_key }) => {
     }
 
     const options = document.querySelector('.location-options')
-    
+
     if (data) {
       Object.keys(data['features']).map((i) => {
         const place = data['features'][i]['properties'];
-        
+
         coordinates.push(data['features'][i]['geometry']['coordinates']);
         console.log(place);
         zipCodes.push(place['postalcode']);
@@ -78,7 +78,7 @@ const Autocomplete: FC<Props> = ({ api_key }) => {
           const zipCode = zipCodes[i];
 
           console.log(zipCode);
-          
+
           if (coords !== undefined && zipCode !== undefined) {
             options.innerHTML += `
               <div class="location-option"` +
@@ -111,7 +111,7 @@ const Autocomplete: FC<Props> = ({ api_key }) => {
           const parent = document.querySelector('.location-options');
           const coordField = document.querySelector('#coordinates');
           const zipField = document.querySelector('#zipCode');
-          
+
           if (coordField) {
             coordField.value = encodeURI(latitude + ", " + longitude);
           } else if (zipField) {
@@ -123,7 +123,7 @@ const Autocomplete: FC<Props> = ({ api_key }) => {
         })
       })
     }
-  })
+  }, [])
 
   return (
     <InputGroup id="zipCodeField">
