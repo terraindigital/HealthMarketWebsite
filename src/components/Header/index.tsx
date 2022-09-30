@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import React, { FC, useEffect } from "react"
 import { Link } from "gatsby"
 
 // Styles
@@ -30,9 +30,10 @@ const Header: FC<Props> = ({staticHeader=false, color}) => {
     }
   }
 
-  if (typeof window !== "undefined") {
-    window.onscroll = () => { stickyHeader() }
-  }
+  useEffect(() => {
+    stickyHeader();
+  }, [])
+ 
 
   return (
     <Wrapper className={`site-header ` + headerColor + ` ` + staticClass}>
