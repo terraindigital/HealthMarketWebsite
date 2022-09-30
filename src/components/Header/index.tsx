@@ -32,17 +32,14 @@ const Header: FC<Props> = ({staticHeader=false, color}) => {
 
   useEffect(() => {
     stickyHeader();
-  })
-  
-  if (typeof window !== "undefined") {
-    window.onscroll = () => { stickyHeader() }
-  }
+  }, [])
+ 
 
   return (
     <Wrapper className={`site-header ` + headerColor + ` ` + staticClass}>
-      <Link to="/">
+      <a href={process.env.GATSBY_SITE_BASE_URL} title="Go to Healthmarkets.com">
         <Logo className="site-logo" src={headerLogo} />
-      </Link>
+      </a>
       <HeaderRight />
     </Wrapper>
   )
