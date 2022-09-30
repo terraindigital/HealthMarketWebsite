@@ -96,9 +96,6 @@ export const toggleForm = (el) => {
     dentalenrollonline.name = "dentalenrollonline"
     dentalenrollonline.value = "yes"
 
-    const configureLatLng = document.querySelector('#zipCodeField input#latLngField')
-
-    document.querySelector('#zipCodeField').removeChild(configureLatLng)
     document.querySelector('#zipCodeField').append(
       healthShortTermEnrollOnline,
       medicareMAenrollonline,
@@ -121,18 +118,12 @@ export const toggleForm = (el) => {
     const visionenrollonline = document.querySelector('input[name=visionenrollonline]')
     const dentalenrollonline = document.querySelector('input[name=dentalenrollonline]')
 
-    const configureLatLng = document.createElement('input')
-    configureLatLng.id = "latLngField"
-    configureLatLng.type = "hidden"
-    configureLatLng.name = "configure[aroundLatLng]"
-
     document.querySelector('#zipCodeField').removeChild(healthShortTermEnrollOnline)
     document.querySelector('#zipCodeField').removeChild(medicareMAenrollonline)
     document.querySelector('#zipCodeField').removeChild(medicarePDPenrollonline)
     document.querySelector('#zipCodeField').removeChild(medicareSuppenrollonline)
     document.querySelector('#zipCodeField').removeChild(visionenrollonline)
     document.querySelector('#zipCodeField').removeChild(dentalenrollonline)
-    document.querySelector('#zipCodeField').appendChild(configureLatLng)
   }
 }
 

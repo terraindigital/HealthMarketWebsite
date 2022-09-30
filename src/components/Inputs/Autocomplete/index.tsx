@@ -8,6 +8,31 @@ import {
   Options
 } from "./styles"
 
+// Scripts
+const optionListener = () => {
+  const options = document.querySelectorAll('.location-option');
+  const input = document.querySelector('#geocodeAutocomplete');
+
+  if (options && input) {
+    Object.keys(options).map((i) => {
+      options[i].addEventListener("click", (e) => {
+        const location = e.target.innerText;
+        const zipCode = e.target.dataset.zip;
+        const parent = document.querySelector('.location-options');
+        const zipField = document.querySelector('#zipCode');
+
+        if (zipField) {
+          console.log(zipCode);
+          zipField.value = zipCode;
+        }
+
+        input.value = location;
+        parent.innerHTML = '';
+      })
+    })
+  }
+}
+
 // Components
 
 // Images
@@ -56,7 +81,6 @@ const Autocomplete: FC<Props> = ({ api_key }) => {
         const place = data['features'][i]['properties'];
 
         coordinates.push(data['features'][i]['geometry']['coordinates']);
-        console.log(place);
         zipCodes.push(place['postalcode']);
 
         if (place['locality'] !== undefined && place['region_a'] !== undefined) {
@@ -77,8 +101,6 @@ const Autocomplete: FC<Props> = ({ api_key }) => {
           const location = locations[i];
           const zipCode = zipCodes[i];
 
-          console.log(zipCode);
-
           if (coords !== undefined && zipCode !== undefined) {
             options.innerHTML += `
               <div class="location-option"` +
@@ -88,6 +110,8 @@ const Autocomplete: FC<Props> = ({ api_key }) => {
               `>` + location + `</div>
             `;
           }
+          
+          optionListener();
         }
       }
     }
@@ -98,31 +122,7 @@ const Autocomplete: FC<Props> = ({ api_key }) => {
   }
 
   useEffect(() => {
-    const options = document.querySelectorAll('.location-option');
-    const input = document.querySelector('#geocodeAutocomplete');
-
-    if (options && input) {
-      Object.keys(options).map((i) => {
-        options[i].addEventListener("click", (e) => {
-          const location = e.target.innerText;
-          const zipCode = e.target.dataset.zip;
-          const latitude = e.target.dataset.latitude;
-          const longitude = e.target.dataset.longitude;
-          const parent = document.querySelector('.location-options');
-          const coordField = document.querySelector('#coordinates');
-          const zipField = document.querySelector('#zipCode');
-
-          if (coordField) {
-            coordField.value = encodeURI(latitude + ", " + longitude);
-          } else if (zipField) {
-            zipField.value = zipCode;
-          }
-
-          input.value = location;
-          parent.innerHTML = '';
-        })
-      })
-    }
+    optionListener();
   }, [])
 
   return (
