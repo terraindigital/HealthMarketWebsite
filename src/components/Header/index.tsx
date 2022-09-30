@@ -31,7 +31,9 @@ const Header: FC<Props> = ({staticHeader=false, color}) => {
   }
 
   useEffect(() => {
-    stickyHeader();
+    window.addEventListener("scroll", () => {
+      stickyHeader();
+    });
   }, [])
  
 
