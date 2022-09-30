@@ -19,7 +19,7 @@ const RelatedContent = () => {
       const links = document.querySelectorAll('.be-related-link');
 
       let doesExist = (container !== undefined) ? true : false;
-      
+
       if (doesExist) {
         container?.classList.add('cards');
 
@@ -40,7 +40,7 @@ const RelatedContent = () => {
         })
       }
     }, 50);
-  })
+  }, [])
 
   return (
     <Wrapper>

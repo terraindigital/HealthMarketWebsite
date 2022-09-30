@@ -23,7 +23,7 @@ interface Props {
 const ListItem: FC<Props> = ({ heading, children }) => {
   useEffect(() => {
     fadeIn('.list-item')
-  });
+  }, []);
 
   return (
     <Wrapper className="list-item">
