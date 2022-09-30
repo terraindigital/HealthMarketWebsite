@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   margin: 0;
   position: relative;
   text-align: left;
+  z-index: 1;
 
   &:after {
     content: '';
@@ -17,6 +18,7 @@ export const Wrapper = styled.div`
     top: 36px;
     transform: rotateZ(-45deg);
     width: 10px;
+    z-index: -1;
   }
 
   &:last-of-type {
