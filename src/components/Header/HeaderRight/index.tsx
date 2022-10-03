@@ -43,7 +43,7 @@ const HeaderRight = () => {
         </a>
       </Item>
       <Item className="hide-at-mobile">
-        <Link className="find-agent" to="/local-health-insurance-agent">
+        <Link className="find-agent" to="/resources/local-health-insurance-agent">
           Find an agent
         </Link>
       </Item>
