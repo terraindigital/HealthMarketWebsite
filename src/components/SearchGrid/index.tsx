@@ -96,7 +96,7 @@ const WrappedResults = connectHits(({ hits, category }: { hits: { objectID: stri
     )
 })
 
-/*onst WrappedPosts = connectHits(({ hits }) => {
+/*const WrappedPosts = connectHits(({ hits }) => {
 
     if (!hits || hits.length === 0) return null
     return (

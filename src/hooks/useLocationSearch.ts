@@ -23,8 +23,17 @@ const useLocationSearch = (props?: { searchTerm?: string,  basePath?: string }) 
     }, [searchTerm])
 
     const DEBOUNCE_TIME = 700;
-    const createURL = (state: any) => `?${qs.stringify(state)}`;
-    const urlToSearchState = (location: WindowLocation<unknown>) => qs.parse(location.search.slice(1));
+    const createURL = (state: any) => {
+        state.search = state.query;
+        state.query = undefined
+        return `?${qs.stringify(state)}`;
+    }
+    const urlToSearchState = (location: WindowLocation<unknown>) => {
+        const q =  qs.parse(location.search.slice(1));
+        q.query = q.search
+        q.search = undefined
+        return q
+    }
     const setStateId: React.MutableRefObject<NodeJS.Timeout | null | undefined> = React.useRef();
 
     const [searchState, setSearchState] = React.useState(
@@ -49,16 +58,16 @@ const useLocationSearch = (props?: { searchTerm?: string,  basePath?: string }) 
     React.useEffect(() => {
         const nextSearchState = urlToSearchState(location);
 
-        if (nextSearchState?.query && nextSearchState?.query.length === 5 && /^[0-9]+$/.test(nextSearchState.query as string)) {
+        if (nextSearchState?.search && nextSearchState?.search.length === 5 && /^[0-9]+$/.test(nextSearchState.search as string)) {
             // @ts-ignore
             postCodeIndex.search('', {
-                filters: `zip:${nextSearchState?.query} OR city:${nextSearchState?.query}`
+                filters: `zip:${nextSearchState?.search} OR city:${nextSearchState?.search}`
                 // @ts-ignore
             }).then(({hits}) => {
                 if (hits && hits.length > 0) {
                     // @ts-ignore
                     const searchTerm = hits[0].city + ", " + hits[0].state_id
-                    setSearchState({query: searchTerm});
+                    setSearchState({search: searchTerm});
                 }
             })
 
