@@ -64,7 +64,7 @@ const SearchField = () => {
           </div>
         </TopBar>
         <Results>
-          <SearchGrid searchTerm={query} />
+          {query && <SearchGrid searchTerm={query} />}
         </Results>
       </Inner>
     </Wrapper>
