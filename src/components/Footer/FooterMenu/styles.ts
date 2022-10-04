@@ -45,6 +45,18 @@ export const Wrapper = styled.div`
     }
   }
 
+  @media only screen and (max-width: 788px) {
+    flex-basis: calc(50% - 1.3rem);
+    width: calc(50% - 1.3rem);
+
+    margin-left: 1.3rem;
+    padding-top: 0;
+
+    &:nth-of-type(n+2) {
+      margin-left: 0;
+    }
+  }
+
   @media only screen and (max-width: 620px) {
     margin-left: 0;
     margin-top: 2.1rem;

@@ -6,6 +6,11 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   left: 0;
+  min-height: 165px;
+  padding-bottom: 3.4rem;
+  padding-left: 8.9rem;
+  padding-right: 8.9rem;
+  padding-top: 3.4rem;
   position: fixed;
   top: 0;
   width: 100%;
@@ -22,7 +27,7 @@ export const Wrapper = styled.div`
   }
 
   &.dark,
-  &.stuck {
+  &.is-stuck {
     color: var(--color-dark);
     a { color: var(--color-dark); }
     .header-right > div { border-color: var(--color-dark); }
@@ -30,15 +35,15 @@ export const Wrapper = styled.div`
     .header-right .text-size.increase:after { border-color: var(--color-dark); }
   }
 
-  &.static,
-  &.stuck {
+  &.is-static,
+  &.is-stuck {
     background-color: rgba(255, 255, 255, 1);
     box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.12);
     a .icon { filter: none; }
     .icon { filter: none; }
   }
 
-  &.nav-active {
+  &.takeover-active {
     color: var(--color-light);
     a { color: var(--color-light); }
     a .icon { filter: brightness(0) invert(1); }
@@ -49,27 +54,39 @@ export const Wrapper = styled.div`
     .header-right .text-size.increase:after { border-color: var(--color-light); }
   }
 
-  padding-bottom: 2.1rem;
-  padding-left: 8.9rem;
-  padding-right: 8.9rem;
-  padding-top: 3.4rem;
+  @media screen and (min-width: 1921px) {
+    padding-left: 40rem;
+    padding-right: 40rem;
+  }
 
   @media screen and (max-width: 1044px) {
     padding-left: 5.5rem;
     padding-right: 5.5rem;
   }
 
-  @media screen and (max-width: 920px) {
-    padding-left: 2.1rem;
-    padding-right: 2.1rem;
+  @media screen and (max-width: 788px) {
+    min-height: 0;
+    padding-left: 4.8rem;
+    padding-right: 4.8rem;
   }
 
   @media only screen and (max-width: 620px) {
+    min-height: auto;
+    padding-left: 2.1rem;
+    padding-right: 2.1rem;
     padding-top: 2.1rem;
   }
 `
 
 export const Logo = styled.img`
   margin: 0;
-  max-width: 120px;
+  max-width: 193px;
+
+  @media only screen and (max-width: 788px) {
+    max-width: 165px;
+  }
+
+  @media only screen and (max-width: 620px) {
+    max-width: 137px;
+  }
 `

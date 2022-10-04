@@ -14,7 +14,7 @@ import {
 
 // Components
 import Layout from "../../components/Layout";
-import Seo from "../../components/SEO";
+import PageHead from "../../components/PageHead";
 import Hero from "../../components/Hero";
 import PageHeroForm from "../../components/Hero/PageHeroForm";
 import Button from "../../components/Buttons/Button";
@@ -23,22 +23,22 @@ import Cards from "../../components/Cards";
 import Card from "../../components/Cards/Card";
 import FlexedSection from "../../components/Sections/FlexedSection";
 import Accordion from "../../components/Accordions";
-import Carousel from "../../components/Carousel";
-import Review from "../../components/Reviews/Review";
-import Medial from "../../components/Example/Medials";
-import Reviews from "../../components/Reviews";
+import Medial from "../../components/Medials";
+import Callouts from "../../components/Callouts";
+import Callout from "../../components/Callouts/Callout";
 import Footer from "../../components/Footer";
 
 const MedicarePage = () => {
   const { page } = useMedicarePageQuery();
+  const callouts = page.calloutsCustomField.callouts;
 
   return (
     <Layout pageClass="medicare">
       <Global styles={PageStyles} />
-      <Seo title="Medicare"/>
       <Hero
         image={page.pageHeroFields.heroImage.sourceUrl}
-        mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}>
+        mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
+        bgColor="#5899D1">
         <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
         <PageHeroForm
@@ -54,21 +54,27 @@ const MedicarePage = () => {
         <Cards openAtMobile>
           <Card
             icon={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard1.icon.sourceUrl}
-            title={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard1.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard1.content }} />
+            mobile={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard1.mobile.sourceUrl}
+            title={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard1.title}
+            link={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard1.link}>
+            <p dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard1.content }} />
           </Card>
           <Card
             icon={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard2.icon.sourceUrl}
-            title={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard2.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard2.content }} />
+            mobile={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard2.mobile.sourceUrl}
+            title={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard2.title}
+            link={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard2.link}>
+            <p dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard2.content }} />
           </Card>
           <Card
             icon={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.icon.sourceUrl}
-            title={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.content }} />
+            mobile={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.mobile.sourceUrl}
+            title={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.title}
+            link={page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.link}>
+            <p dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.content }} />
           </Card>
         </Cards>
-        <div dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.disclaimer }} />
+        <div className="card-disclaimer" dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.disclaimer }} />
       </Section>
       <FlexedSection
         color={page.medicarePageCustomFields.medicareSection2.color}
@@ -114,59 +120,44 @@ const MedicarePage = () => {
         </div>
       </Medial>
       <Section color="light">
-        
-      <div className="hide-at-mobile">
-          <Carousel type="reviews" background="half">
-            <Review
-              stars="5"
-              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-              author="Stephen Friedrichs"
-            />
-            <Review
-              stars="5"
-              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-              author="Stephen Friedrichs"
-            />
-            <Review
-              stars="5"
-              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-              author="Stephen Friedrichs"
-            />
-            <Review
-              stars="5"
-              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-              author="Stephen Friedrichs"
-            />
-            <Review
-              stars="5"
-              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-              author="Stephen Friedrichs"
-            />
-          </Carousel>
-        </div>
-        <div className="show-at-mobile">
-            <Reviews>
-                <Review
-                    stars="5"
-                    quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                    author="Stephen Friedrichs"
-                />
-                <Review
-                    stars="5"
-                    quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                    author="Stephen Friedrichs"
-                />
-            </Reviews>
-            <div style={{ textAlign: "center" }}>
-                <a href="#">See all reviews</a>
-            </div>
-        </div>
+        <Callouts>
+            {(callouts) ? (
+                Object.keys(callouts).map((index) => {
+                    const callout = callouts[index];
+                    return (
+                        <Callout
+                            number={callout.number}
+                            tagline={callout.tagline}
+                            title={callout.title}
+                            description={callout.description}
+                            disclaimer={callout.disclaimer}
+                        />
+                    )
+                })
+            ) : null}
+        </Callouts>
       </Section>
       <Footer>
-        <div dangerouslySetInnerHTML={{ __html: page.disclaimers.disclaimer }} />
+          {page.disclaimers.disclaimer}
       </Footer>
     </Layout>
   )
 }
 
 export default MedicarePage
+
+export const Head = () => {
+  const { page } = useMedicarePageQuery();
+  return (
+    <>
+      <PageHead
+        title={page.seo.title}
+        description={page.seo.metaDesc}/>
+      <script
+        async
+        type="text/javascript"
+        src="https://cdne-uho-cdn-eastus-prod.azureedge.net/scripts/analytics-configuration.min.js"
+      ></script>
+    </>
+  )
+}

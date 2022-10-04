@@ -13,7 +13,7 @@ interface Props {
 
 const List: FC<Props> = ({children}) => {
   return (
-    <Wrapper>
+    <Wrapper className="list">
       {children}
     </Wrapper>
   )

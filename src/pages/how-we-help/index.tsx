@@ -11,7 +11,7 @@ import {
 
 // Components
 import Layout from "../../components/Layout";
-import Seo from "../../components/SEO";
+import PageHead from "../../components/PageHead";
 import Hero from '../../components/Hero';
 import FlexedSection from '../../components/Sections/FlexedSection';
 import List from '../../components/Lists';
@@ -35,7 +35,6 @@ const HowWeHelpPage = () => {
   return (
     <Layout pageClass="how-we-help">
       <Global styles={PageStyles}/>
-      <Seo title="How We Help"/>
       <Hero
         image={hwh.pageHeroFields.heroImage.sourceUrl}
         mobileImage={hwh.pageHeroFields.mobileHeroImage.sourceUrl}
@@ -68,7 +67,7 @@ const HowWeHelpPage = () => {
           <img src={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.image.sourceUrl} alt="woman on computer" />
         </div>
         <div className="right content">
-          <h1>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.heading}</h1>
+          <h3>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.heading}</h3>
           <p>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.content}</p>
           <a href={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.button.link}>
             <Button background="accent" border="accent" color="light">
@@ -79,7 +78,7 @@ const HowWeHelpPage = () => {
       </SplitSection>
       <SplitSection color={hwh.howWeHelpCustomFields.hwhSection2.color}>
         <div className="left content hide-at-mobile">
-          <h1>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.heading}</h1>
+          <h3>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.heading}</h3>
           <p>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.content}</p>
           <a href={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.button.link}>
             <Button background="accent" border="accent" color="light">
@@ -94,7 +93,7 @@ const HowWeHelpPage = () => {
           <img src={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.image.sourceUrl} alt="woman on computer" />
         </div>
         <div className="right content show-at-mobile">
-          <h1>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.heading}</h1>
+          <h3>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.heading}</h3>
           <p>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.content}</p>
           <a href={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.button.link}>
             <Button background="accent" border="accent" color="light">
@@ -108,10 +107,12 @@ const HowWeHelpPage = () => {
           <img src={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock3.image.sourceUrl} alt="woman on computer" />
         </div>
         <div className="right content">
-          <h1>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock3.heading}</h1>
+          <h3>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock3.heading}</h3>
           <p>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock3.content}</p>
           <a href="https://shop.healthmarkets.com/">
-            <Button background="accent" border="accent" color="light">{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock3.button.text}</Button>
+            <Button background="accent" border="accent" color="light">
+              {hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock3.button.text}
+              </Button>
           </a>
         </div>
       </SplitSection>
@@ -147,16 +148,19 @@ const HowWeHelpPage = () => {
         <Cards openAtMobile>
           <Card
             icon={hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard1.icon.sourceUrl}
+            mobile={hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard1.mobile.sourceUrl}
             title={hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard1.heading}>
             <p>{hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard1.content}</p>
           </Card>
           <Card
             icon={hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard2.icon.sourceUrl}
+            mobile={hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard2.mobile.sourceUrl}
             title={hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard2.heading}>
             <p>{hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard2.content}</p>
           </Card>
           <Card
             icon={hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard3.icon.sourceUrl}
+            mobile={hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard3.mobile.sourceUrl}
             title={hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard3.heading}>
             <p>{hwh.howWeHelpCustomFields.hwhSection4.hwhCards.hwhCard3.content}</p>
           </Card>
@@ -170,7 +174,7 @@ const HowWeHelpPage = () => {
         </div>
       </Section>
       <Footer>
-        <div dangerouslySetInnerHTML={{ __html: hwh.disclaimers.disclaimer }} />
+        {hwh.disclaimers.disclaimer}
       </Footer>
     </Layout>
   );
@@ -178,4 +182,18 @@ const HowWeHelpPage = () => {
 
 export default HowWeHelpPage;
 
-
+export const Head = () => {
+  const { hwh } = useHowWeHelpPageQuery();
+  return (
+    <>
+      <PageHead
+        title={hwh.seo.title}
+        description={hwh.seo.metaDesc}/>
+      <script
+        async
+        type="text/javascript"
+        src="https://cdne-uho-cdn-eastus-prod.azureedge.net/scripts/analytics-configuration.min.js"
+      ></script>
+    </>
+  )
+}

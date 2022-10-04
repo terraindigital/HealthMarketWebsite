@@ -2,12 +2,6 @@ import {css} from "@emotion/react";
 import styled from "@emotion/styled";
 
 export const GlobalStyles = css`
-  @font-face {
-    font-family: "IvyPresto Display-SemiBold";
-    src:  url('../../assets/fonts/IvyPresto-Display-SemiBold.ttf') format('ttf'),
-          url('../../assets/fonts/IvyPresto-Display-SemiBold.woff') format('woff');
-  }
-
   html {
     font-size: 62.5%; /* 10px browser default */ 
     font-family: 'arial', sans-serif;
@@ -22,6 +16,7 @@ export const GlobalStyles = css`
     --color-dark: #4D4D4D;
     --color-primary: #009FDA;
     --color-primary-light: #F3FAFD;
+    --color-primary-dark: #0065BD;
     --color-accent: #69BE28;
     --color-accent-light: #F1FBEA;
   }
@@ -34,7 +29,7 @@ export const GlobalStyles = css`
     -moz-osx-font-smoothing: grayscale;
   }
 
-  .nav-active {
+  .takeover-active {
     overflow-y: hidden;
   }
 
@@ -42,7 +37,6 @@ export const GlobalStyles = css`
     color: #fff;
   }
 
-  h2,
   article,
   aside,
   details,
@@ -79,18 +73,6 @@ export const GlobalStyles = css`
     display: none;
   }
 
-  a {
-    background-color: transparent;
-    color: var(--color-accent);
-    
-    -webkit-text-decoration-skip: objects;
-  }
-
-  a:active,
-  a:hover {
-    outline-width: 0;
-  }
-
   abbr[title] {
     border-bottom: none;
     text-decoration: underline dotted;
@@ -103,13 +85,6 @@ export const GlobalStyles = css`
 
   dfn {
     font-style: italic;
-  }
-
-  h1 {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 2em;
-    margin: 0.67em 0;
   }
 
   mark {
@@ -301,30 +276,26 @@ export const GlobalStyles = css`
 
   p {
     font-family: var(--font-body);
-    font-size: 1.6rem;
-    line-height: 2.8rem;
+    line-height: 110%;
   }
   
   h1, h2, h3,
   h4, h5, h6 {
-    font-weight: 700;
+    line-height: 110%;
     margin-top: 0px;
   }
   
   h1, h2, h3 {
     font-family: var(--font-heading);
+    font-weight: 700;
   }
   
   h4, h5, h6 {
     font-family: var(--font-body);
+    font-weight: 600;
   }
 
-  h1 { font-size: 4.4rem; }
-  h2 { font-size: 3.0rem; }
-  h3 { font-size: 2.4rem; }
-  h4 { font-size: 2.0rem; }
-  h5 { font-size: 1.8rem; }
-  h6 { font-size: 1.6rem; }
+  /* Heading font-sizes are in /static/css/fonts.css */
 
   .font-heading {
     font-family: var(--font-heading);
@@ -575,6 +546,19 @@ export const GlobalStyles = css`
 /**
  * Media Queries
  */
+
+  .show-at-device {
+    display: none !important;
+  }
+
+  @media only screen and (max-width: 788px) {
+    .hide-at-device {
+      display: none !important;
+    }
+    .show-at-device {
+      display: block !important;
+    }
+  }
 
   .show-at-mobile {
     display: none !important;

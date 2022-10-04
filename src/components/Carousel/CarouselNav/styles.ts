@@ -7,11 +7,6 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  .half-background & {
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-
   &.carousel-pagination div {
     background-color: var(--color-muted);
     border-radius: 50%;

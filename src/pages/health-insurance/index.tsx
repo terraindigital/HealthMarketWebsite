@@ -14,7 +14,7 @@ import {
 
 // Components
 import Layout from "../../components/Layout";
-import Seo from "../../components/SEO";
+import PageHead from "../../components/PageHead";
 import Hero from "../../components/Hero";
 import PageHeroForm from "../../components/Hero/PageHeroForm";
 import Button from "../../components/Buttons/Button";
@@ -25,22 +25,22 @@ import Icons from "../../components/Icons";
 import Icon from "../../components/Icons/Icon";
 import FlexedSection from "../../components/Sections/FlexedSection";
 import Accordion from "../../components/Accordions";
-import Carousel from "../../components/Carousel";
-import Review from "../../components/Reviews/Review";
-import Reviews from "../../components/Reviews";
+import Callouts from "../../components/Callouts";
+import Callout from "../../components/Callouts/Callout";
 import Footer from "../../components/Footer";
 
 const HealthInsurancePage = () => {
   const { page } = useHealthPageQuery();
-  const plans = page.healthPageCustomFields.healthSection3.healthPlans
+  const plans = page.healthPageCustomFields.healthSection3.healthPlans;
+  const callouts = page.calloutsCustomField.callouts;
 
   return (
     <Layout pageClass="health-insurance">
       <Global styles={PageStyles} />
-      <Seo title="Health Insurance"/>
       <Hero
         image={page.pageHeroFields.heroImage.sourceUrl}
-        mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}>
+        mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
+        bgColor="#C8E3E0">
         <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
         <PageHeroForm
@@ -56,20 +56,44 @@ const HealthInsurancePage = () => {
         <Cards openAtMobile>
           <Card
             icon={page.healthPageCustomFields.healthSection1.healthCards.healthCard1.icon.sourceUrl}
-            title={page.healthPageCustomFields.healthSection1.healthCards.healthCard1.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection1.healthCards.healthCard1.content }} />
+            mobile={page.healthPageCustomFields.healthSection1.healthCards.healthCard1.mobile.sourceUrl}
+            title={page.healthPageCustomFields.healthSection1.healthCards.healthCard1.title}
+            link={page.healthPageCustomFields.healthSection1.healthCards.healthCard1.link}>
+            <p dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection1.healthCards.healthCard1.content }} />
           </Card>
           <Card
             icon={page.healthPageCustomFields.healthSection1.healthCards.healthCard2.icon.sourceUrl}
-            title={page.healthPageCustomFields.healthSection1.healthCards.healthCard2.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection1.healthCards.healthCard2.content }} />
+            mobile={page.healthPageCustomFields.healthSection1.healthCards.healthCard2.mobile.sourceUrl}
+            title={page.healthPageCustomFields.healthSection1.healthCards.healthCard2.title}
+            link={page.healthPageCustomFields.healthSection1.healthCards.healthCard2.link}>
+            <p dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection1.healthCards.healthCard2.content }} />
           </Card>
           <Card
             icon={page.healthPageCustomFields.healthSection1.healthCards.healthCard3.icon.sourceUrl}
-            title={page.healthPageCustomFields.healthSection1.healthCards.healthCard3.title}>
-            <div dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection1.healthCards.healthCard3.content }} />
+            mobile={page.healthPageCustomFields.healthSection1.healthCards.healthCard3.mobile.sourceUrl}
+            title={page.healthPageCustomFields.healthSection1.healthCards.healthCard3.title}
+            link={page.healthPageCustomFields.healthSection1.healthCards.healthCard3.link}>
+            <p dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection1.healthCards.healthCard3.content }} />
           </Card>
         </Cards>
+      </Section>
+      <Section
+        classes="show-at-mobile"
+        color="primary"
+        heading={page.healthPageCustomFields.healthSection3.heading}>
+        <Icons>
+          {(plans) ? (
+            Object.keys(plans).map((plan) => {
+              return (
+                <Icon
+                  icon={plans[plan].icon.sourceUrl}
+                  mobile={plans[plan].mobileIcon.sourceUrl}
+                  title={plans[plan].title}
+                  link={plans[plan].link} />
+              )
+            })
+          ) : null}
+        </Icons>
       </Section>
       <FlexedSection
         color={page.healthPageCustomFields.healthSection2.color}
@@ -83,13 +107,12 @@ const HealthInsurancePage = () => {
         <Accordion
           title={page.healthPageCustomFields.healthSection2.healthAccordions.healthAccordion3.title}
           content={page.healthPageCustomFields.healthSection2.healthAccordions.healthAccordion3.content} />
-        <div className="hide-at-mobile">
-          <a href="https://www.healthmarkets.com/plans/aca-health/">
-            <Button background="accent" border="accent" color="light">Show me options</Button>
-          </a>
-        </div>
+        <a className="hide-at-mobile" href={page.healthPageCustomFields.healthSection2.cta.link}>
+          <Button background="accent" border="accent" color="light">{page.healthPageCustomFields.healthSection2.cta.text}</Button>
+        </a>
       </FlexedSection>
       <Section
+        classes="hide-at-mobile"
         color={page.healthPageCustomFields.healthSection3.color}
         heading={page.healthPageCustomFields.healthSection3.heading}>
         <Icons>
@@ -98,6 +121,7 @@ const HealthInsurancePage = () => {
               return (
                 <Icon
                   icon={plans[plan].icon.sourceUrl}
+                  mobile={plans[plan].mobileIcon.sourceUrl}
                   title={plans[plan].title}
                   link={plans[plan].link} />
               )
@@ -106,52 +130,22 @@ const HealthInsurancePage = () => {
         </Icons>
       </Section>
       <Section color="light">
-        <div className="hide-at-mobile">
-          <Carousel type="reviews" background="half">
-            <Review
-              stars="5"
-              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-              author="Stephen Friedrichs"
-            />
-            <Review
-              stars="5"
-              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-              author="Stephen Friedrichs"
-            />
-            <Review
-              stars="5"
-              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-              author="Stephen Friedrichs"
-            />
-            <Review
-              stars="5"
-              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-              author="Stephen Friedrichs"
-            />
-            <Review
-              stars="5"
-              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-              author="Stephen Friedrichs"
-            />
-          </Carousel>
-        </div>
-        <div className="show-at-mobile">
-            <Reviews>
-                <Review
-                    stars="5"
-                    quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                    author="Stephen Friedrichs"
-                />
-                <Review
-                    stars="5"
-                    quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                    author="Stephen Friedrichs"
-                />
-            </Reviews>
-            <div style={{ textAlign: "center" }}>
-                <a href="#">See all reviews</a>
-            </div>
-        </div>
+        <Callouts>
+            {(callouts) ? (
+                Object.keys(callouts).map((index) => {
+                    const callout = callouts[index];
+                    return (
+                        <Callout
+                            number={callout.number}
+                            tagline={callout.tagline}
+                            title={callout.title}
+                            description={callout.description}
+                            disclaimer={callout.disclaimer}
+                        />
+                    )
+                })
+            ) : null}
+        </Callouts>
       </Section>
       <Section
         color={page.healthPageCustomFields.healthSection4.color}
@@ -159,29 +153,48 @@ const HealthInsurancePage = () => {
         <Cards>
           <Card
             image={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent1.image.sourceUrl}
-            title={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent1.heading}>
-            <div dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent1.content}} />
+            title={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent1.heading}
+            link={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent1.link}>
+            <p dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent1.content}} />
           </Card>
           <Card
             image={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent2.image.sourceUrl}
-            title={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent2.heading}>
-            <div dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent2.content}} />
+            title={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent2.heading}
+            link={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent2.link}>
+            <p dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent2.content}} />
           </Card>
           <Card
             image={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent3.image.sourceUrl}
-            title={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent3.heading}>
-            <div dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent3.content}} />
+            title={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent3.heading}
+            link={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent3.link}>
+            <p dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent3.content}} />
           </Card>
         </Cards>
         <div className="full-rounded" style={{ textAlign: "center" }}>
           <Button background="accent" border="accent" color="light">View more articles</Button>
         </div>
       </Section>
-      <Footer>
-        <div dangerouslySetInnerHTML={{ __html: page.disclaimers.disclaimer }} />
-      </Footer>
+        <Footer>
+            {page.disclaimers.disclaimer}
+        </Footer>
     </Layout>
   )
 }
 
 export default HealthInsurancePage
+
+export const Head = () => {
+  const { page } = useHealthPageQuery();
+  return (
+    <>
+      <PageHead
+        title={page.seo.title}
+        description={page.seo.metaDesc}/>
+      <script
+        async
+        type="text/javascript"
+        src="https://cdne-uho-cdn-eastus-prod.azureedge.net/scripts/analytics-configuration.min.js"
+      ></script>
+    </>
+  )
+}

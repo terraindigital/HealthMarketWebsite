@@ -1,17 +1,15 @@
 import styled from "@emotion/styled"
 
-// TODO: Global hero responsive check
-
 export const Wrapper = styled.div`
+  background-color: ${props => `${props.background}`};
   display: flex;
   min-height: 600px;
   min-height: 100%;
   min-height: 100vh;
-  overflow: hidden;
   position: relative;
 
-  padding-bottom: 8.9rem;
-  padding-top: 8.9rem;
+  padding-bottom: 10.4rem;
+  padding-top: 16.5rem;
 
   padding-left: 8.9rem;
   padding-right: 8.9rem;
@@ -20,6 +18,13 @@ export const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     vertical-align: middle;
+  }
+
+  @media screen and (min-width: 1921px) {
+    padding-left: 40rem;
+    padding-right: 40rem;
+    min-height: 65%;
+    min-height: 65vh;
   }
 
   @media screen and (max-width: 1044px) {
@@ -32,18 +37,16 @@ export const Wrapper = styled.div`
     padding-right: 2.1rem;
   }
 
-  @media only screen and (max-width: 620px) {
+  @media only screen and (max-width: 788px) {
+    padding-top: 16.6rem;
+    padding-bottom: 22rem;
+
     &.centered {
       display: block;
       min-height: auto;
-      padding-top: 166px;
-    }
-
-    .home &.centered {
-      padding-top: 97px;
     }
   }
-`;
+`
 
 export const Img = styled.img`
   left: 0;
@@ -53,24 +56,23 @@ export const Img = styled.img`
   position: absolute;
   top: 0;
   width: auto;
-  z-index: -1;
-
-  @media only screen and (max-width: 620px) {
-    bottom: 0;
-    top: auto;
-  }
+  z-index: 0;
 `
 
 export const Inner = styled.div`
   margin: 0;
+  max-width: 144rem;
+  position: relative;
+  width: 100%;
+  z-index: 1;
 
   &.half {
     display: flex;
     flex-direction: column;
     justify-content: center;
     
-    flex-basis: 50%;
-    width: 50%;
+    flex-basis: 72%;
+    width: 72%;
   }
 
   &.left {
@@ -90,6 +92,11 @@ export const Inner = styled.div`
   .boxed & {
     margin: 3.4rem 14.4rem;
     padding: 6rem 12rem;
+
+    @media only screen and (max-width: 788px) {
+      margin: 0 auto;
+      padding: 4rem 8rem;
+    }
 
     @media only screen and (max-width: 620px) {
       margin: 0 auto;

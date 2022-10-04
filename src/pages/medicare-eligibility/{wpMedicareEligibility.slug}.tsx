@@ -17,7 +17,7 @@ import DropdownOption from "../../components/Inputs/Dropdown/DropdownOption";
 import SplitSection from '../../components/Sections/SplitSection';
 import Button from '../../components/Buttons/Button';
 import Input from "../../components/Inputs/Input"
-import Seo from "../../components/SEO";
+import PageHead from "../../components/PageHead";
 import Footer from "../../components/Footer";
 
 interface PageInfo {
@@ -35,7 +35,6 @@ const MedicareEligibilityPage = ({data}: { data: PageInfo }) => {
   return (
     <Layout staticHeader>
       <Global styles={PageStyles}/>
-      <Seo title={page.title}/>
       <SplitSection align="top" color="muted">
         <Section page={`medicare-eligibility ` + page.slug} color="light">
           <h1>{page.title}</h1>
@@ -62,13 +61,29 @@ const MedicareEligibilityPage = ({data}: { data: PageInfo }) => {
         </RightContent>
       </SplitSection>
       <Footer>
-        <div dangerouslySetInnerHTML={{ __html: page.disclaimers.disclaimer }} />
+        {page.disclaimers.disclaimer}
       </Footer>
     </Layout>
   )
 }
 
 export default MedicareEligibilityPage
+
+export const Head = ({data}: { data: PageInfo }) => {
+  const { page } = data
+  return (
+    <>
+      <PageHead
+        title={page.metadataCustomFields.metaTitle}
+        description={page.metadataCustomFields.metaDescription}/>
+      <script
+        async
+        type="text/javascript"
+        src="https://cdne-uho-cdn-eastus-prod.azureedge.net/scripts/analytics-configuration.min.js"
+      ></script>
+    </>
+  )
+}
 
 export const pageQuery = graphql`
   query($slug: String!) {
@@ -77,6 +92,11 @@ export const pageQuery = graphql`
       title
       slug
       content
+      metadataCustomFields {
+        metaTitle
+        metaDescription
+        metaKeywords
+      }
       disclaimers {
         disclaimer
       }

@@ -2,7 +2,15 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 export const PageStyles = css`
-  @media only screen and (max-width: 620px) {
+  .how-we-help .split-section .inner h3 {
+    color: var(--color-primary);
+  }
+
+  .how-we-help .split-section .inner p {
+    padding: 3.2rem 0;
+  }
+
+  @media only screen and (max-width: 788px) {
     .how-we-help .hero {
       padding-bottom: 197px;
     }
@@ -34,14 +42,18 @@ export const PageStyles = css`
       padding: 3rem 1.6rem 4rem;
     }
 
-    .how-we-help .split-section .inner h1 {
-      font-size: 3.6rem;
-      line-height: 115%;
+    .how-we-help .split-section .inner img {
+      margin: 0;
+    }
+
+    .how-we-help .split-section .inner h3 {
+      padding: 2.4rem 0 0.8rem;
     }
 
     .how-we-help .split-section .inner p {
       font-size: 1.8rem;
       line-height: 120%;
+      padding: 0.8rem 0 2.4rem;
     }
 
     .how-we-help .split-section .inner button {
@@ -54,12 +66,8 @@ export const PageStyles = css`
     padding-top: 4rem;
   }
 
-  .how-we-help .accordion .title h2 {
-    max-width: 285px;
-  }
-
   .how-we-help .split-section + .section.light + .section.primary > div[class*=Heading] {
-    width: 100%;
+    width: calc(100% + 8.9rem);
   }
 
   .how-we-help .split-section + .section.light + .section.primary .heading h2 {
@@ -73,28 +81,21 @@ export const PageStyles = css`
   .how-we-help .split-section + .section.light + .section.primary .card > div:first-of-type p {
     display: none;
   }
+
+  @media only screen and (max-width: 788px) {
+    .how-we-help .split-section + .section.light + .section.primary .heading h2 {
+      max-width: 100%;
+    }
+  }
 `
 
 export const HeroHeading = styled.h1`
-  font-size: 8rem;
-  line-height: 110%;
-  margin-bottom: 3.4rem;
-  max-width: 1024px;
+  margin-bottom: 2.4rem;
   text-align: center;
-
-  @media only screen and (max-width: 620px) {
-    font-size: 4.5rem;
-  }
 `
 
-export const HeroSubheading = styled.h2`
+export const HeroSubheading = styled.h4`
   font-family: var(--font-body);
-  font-size: 2.4rem;
-  line-height: 110%;
-  margin-bottom: 0;
+  margin-bottom: 4rem;
   text-align: center;
-
-  @media only screen and (max-width: 620px) {
-    font-size: 2rem;
-  }
 `

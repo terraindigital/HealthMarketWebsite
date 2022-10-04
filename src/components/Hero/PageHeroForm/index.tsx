@@ -1,24 +1,28 @@
 // Library
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 
 // Styles
 import {
   Wrapper,
   Buttons,
-  Btn,
   Form,
-  InputGroup,
-  Input,
+  Radio,
   Footer,
-  CTA
+  CTA,
+  // InputGroup,
+  // Input
 } from "./styles"
+
+// Scripts
+import { toggleForm } from "../../../static/scripts/global"
 
 // Components
 import Button from "../../Buttons/Button"
+import Autocomplete from "../../Inputs/Autocomplete";
 
 // Images
-import MapPin from "../../../images/location.png"
-import PhoneIcon from "../../../images/phone-icon.png"
+// import MapPin from "../../../static/images/location.png"
+import PhoneIcon from "../../../static/images/phone-icon.png"
 
 interface Props {
   centered?: boolean,
@@ -30,48 +34,44 @@ interface Props {
   hideFooter?: boolean
 }
 
-const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, inputId, buttons, hideFooter  }) => {
-  // TODO: rendezvous with design re: this
-  const toggleForm = (el) => {
-    const parent = el.target.parentElement;
-    // if not already active...
-    if (el.target.classList.contains('accented')) return
-    // toggle button state
-    parent.firstChild.classList.toggle('accented')
-    parent.firstChild.nextSibling.classList.toggle('accented')
-    // toggle form state
-    parent.parentElement.classList.toggle('agent')
-  }
+// set geocode earth api key
+const api_key = 'ge-aee0e5253d70b022';
 
+// set the urls to change the form action to
+const plans = "https://shop.healthmarkets.com/en/about-me/plans-found";
+const agents = "/local-health-insurance-agent/search/";
+
+const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, inputId, buttons, hideFooter  }) => {
+  // TODO: send queries to relevant pages
   return (
     <Wrapper className={`${(centered) ? `centered` : ``} ${(light) ? `light` : ``}`}>
-      {(buttons || buttons === undefined) ? (
-        <Buttons>
-          <Btn className="accented" onClick={toggleForm}>{btnLeftText}</Btn>
-          <Btn onClick={toggleForm}>{btnRightText}</Btn>
-        </Buttons>
-      ) : null}
-      <Form>
-          <InputGroup>
-              <img src={MapPin} alt="map location pin image" />
-              <Input id={inputId} type="text" name={inputId} placeholder="Enter Zip Code/City" />
-          </InputGroup>
-          {
-            hideFooter ? (<></>) : (
-            <Footer>
-              <Button style={{borderRadius: "4px"}} background="accent" border="light" color="light">Search</Button>
-              {(buttons || buttons === undefined) ? (
-                <CTA>
-                  <img src={PhoneIcon} />
-                  <span>
-                    Call us 24/7 at <a href="tel:+18555652552">(855) 565-2552</a>
-                  </span>
-                </CTA>
-              ) : null}
-            </Footer>
-            )
-          }
-          
+      <Form id="zipCodeForm" action={plans} autocomplete="off">
+        {(buttons || buttons === undefined) ? (
+          <Buttons>
+            <Radio onClick={toggleForm} className="accented">{btnLeftText}
+              <input id="radioSearchPlans" type="radio" value={plans} checked />
+            </Radio>
+            <Radio onClick={toggleForm}>{btnRightText}
+              <input id="radioSearchAgents" type="radio" value={agents} />
+            </Radio>
+          </Buttons>
+        ) : null}
+        <Autocomplete api_key={api_key} />
+        {
+          hideFooter ? (<></>) : (
+          <Footer>
+            <Button style={{borderRadius: "4px"}} background="accent" border="light" color="light">Search</Button>
+            {(buttons || buttons === undefined) ? (
+              <CTA>
+                <img src={PhoneIcon} />
+                <span>
+                  Call us 24/7 at <a href="tel:+18555652552">(855) 565-2552</a>
+                </span>
+              </CTA>
+            ) : null}
+          </Footer>
+          )
+        }
       </Form>
     </Wrapper>
   )

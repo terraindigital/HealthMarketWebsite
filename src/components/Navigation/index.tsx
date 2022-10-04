@@ -4,6 +4,9 @@ import { Link } from "gatsby"
 // Styles
 import { Nav, Menu, MenuItem } from "./styles"
 
+// Scripts
+import { toggleSubnav } from "../../static/scripts/global"
+
 // Components
 import AfterNav from "./AfterNav"
 
@@ -18,17 +21,19 @@ const Navigation = () => {
       <Menu>
         {menu.menuItems.nodes.map(item =>
           !item.parentId ? (
-            <MenuItem key={item.id} className="item">
-                <Link to={item.url} activeClassName="active" className={item.childItems.nodes.length !== 0 ? 'parent' : null}>
+            <MenuItem key={item.id}
+              className={item.childItems.nodes.length !== 0 ? `item has-submenu` : `item`}
+              onClick={item.childItems.nodes.length !== 0 ? toggleSubnav : null}>
+                <a href={item.url} activeClassName="active" className={item.childItems.nodes.length !== 0 ? 'parent' : null}>
                     {item.label}
-                </Link>
+                </a>
                 {item.childItems.nodes.length !== 0 ? (
                     <Menu className="submenu">
                         {item.childItems.nodes.map(child => (
                             <MenuItem key={child.id} className="item">
-                                <Link to={child.url} activeClassName="active">
+                                <a href={child.url} activeClassName="active">
                                     {child.label}
-                                </Link>
+                                </a>
                             </MenuItem>
                         ))}
                     </Menu>

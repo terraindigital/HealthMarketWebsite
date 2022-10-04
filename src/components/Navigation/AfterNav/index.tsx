@@ -13,11 +13,11 @@ import {
 import {
   changeTextSize,
   toggleSearch
-} from "../../../assets/scripts/global";
+} from "../../../static/scripts/global";
 
 // Images
-import PhoneIcon from "../../../images/phone-icon.png"
-import SearchIcon from "../../../images/search-icon.png"
+import PhoneIcon from "../../../static/images/phone-icon.png"
+import SearchIcon from "../../../static/images/search-icon.png"
 
 // Components
 
@@ -25,13 +25,20 @@ const AfterNav = () => {
   return (
     <Wrapper className="show-at-mobile">
       <Item>
-        <SearchButton className="search-button icon" onClick={toggleSearch} src={SearchIcon} alt="magnifying glass icon" />
+        <SearchButton className="search-button" onClick={toggleSearch}>
+          <img className="icon" src={SearchIcon} alt="magnifying glass icon" />
+        </SearchButton>
       </Item>
       <Item>
-        <Link to="tel:8008279990">
+        <a href="tel:8008279990">
           <img className="icon" src={PhoneIcon} alt="telephone icon" />
           (800) 827-9990
-        </Link>
+        </a>
+      </Item>
+      <Item>
+        <a className="find-agent" href="/local-health-insurance-agent">
+          Find an agent
+        </a>
       </Item>
       <Item>
         Text Size <TextSize className="decrease text-size" onClick={changeTextSize}>-</TextSize> <TextSize className="increase text-size" onClick={changeTextSize}>+</TextSize>

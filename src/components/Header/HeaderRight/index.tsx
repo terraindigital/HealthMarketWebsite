@@ -1,43 +1,62 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import { Link } from "gatsby";
 
 // Styles
-import { Wrapper, Item, TextSize, SearchButton, MenuButton, Bars } from "./styles"
+import {
+  Wrapper,
+  Item,
+  TextSize,
+  SearchButton,
+  MenuButton,
+  Bars
+} from "./styles"
 
 // Scripts
 import {
   changeTextSize,
   toggleNav,
   toggleSearch
-} from "../../../assets/scripts/global"
+} from "../../../static/scripts/global"
 
 // Components
+import ToggleButton from "../../Buttons/ToggleButton"
 import Navigation from "../../Navigation"
 import SearchField from "../../SearchField"
 
 // Images
-import PhoneIcon from "../../../images/phone-icon.png"
-import SearchIcon from "../../../images/search-icon.png"
+import PhoneIcon from "../../../static/images/phone-icon.png"
+import SearchIcon from "../../../static/images/search-icon.png"
 
 const HeaderRight = () => {
+  const [isNavOpen, setNavOpen] = useState(false);
+
+  // const changeNavOpen = (value) => {
+  //   setNavOpen(value);
+  // }
+
   return (
     <Wrapper className="header-right">
       <Item className="hide-at-mobile">
-        <Link to="tel:8008279990">
-          <img className="icon" src={PhoneIcon} alt="telephone icon" />
+        <a className="telephone" href="tel:8008279990">
+          <img className="phone icon" src={PhoneIcon} alt="telephone icon" />
           (800) 827-9990
-        </Link>
+        </a>
+      </Item>
+      <Item className="hide-at-mobile">
+        <a className="find-agent" href="/local-health-insurance-agent">
+          Find an agent
+        </a>
       </Item>
       <Item className="hide-at-mobile">
         <TextSize className="decrease text-size" onClick={changeTextSize}>-</TextSize> Text Size <TextSize className="increase text-size" onClick={changeTextSize}>+</TextSize>
       </Item>
       <Item>
-        <SearchButton className="hide-at-mobile icon" onClick={toggleSearch} src={SearchIcon} alt="magnifying glass icon" />
-        {/* TODO: remove this vvvv */}
-        {/* <SearchButton className="hide-at-mobile icon" onClick={toggleMobileSearch} src={SearchIcon} alt="magnifying glass icon" /> */}
-        <MenuButton className="menu-button" onClick={toggleNav}>
+        <SearchButton className="hide-at-mobile" onClick={toggleSearch}>
+          <img className="icon" src={SearchIcon} alt="magnifying glass icon" />
+        </SearchButton>
+        <ToggleButton className="menu-button" callback={toggleNav}>
           <Bars />
-        </MenuButton>
+        </ToggleButton>
         <Navigation />
         <SearchField />
       </Item>

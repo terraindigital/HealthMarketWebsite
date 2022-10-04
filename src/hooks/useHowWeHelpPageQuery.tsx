@@ -5,6 +5,12 @@ export const useHowWeHelpPageQuery = () => {
     query hwhPageQuery {
       hwh: wpPage(databaseId: {eq: 395}) {
         id
+        slug
+        seo {
+          fullHead
+          title
+          metaDesc
+        }
         pageHeroFields {
           headline
           subheadline
@@ -122,6 +128,9 @@ export const useHowWeHelpPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobile {
+                  sourceUrl
+                }
                 heading
                 content
               }
@@ -129,11 +138,17 @@ export const useHowWeHelpPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobile {
+                  sourceUrl
+                }
                 heading
                 content
               }
               hwhCard3 {
                 icon {
+                  sourceUrl
+                }
+                mobile {
                   sourceUrl
                 }
                 heading

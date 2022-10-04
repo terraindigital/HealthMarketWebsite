@@ -1,16 +1,17 @@
 import React, { FC, useState, useEffect } from "react";
-
 import { useSwiper } from 'swiper/react';
+
 // Styles
 import {
   Wrapper,
   Prev,
   Next,
-  Dot } from "./styles"
+  Dot
+} from "./styles"
 
 interface Props {
   count: number,
-  current: number, 
+  current: number
 }
 
 const CarouselNav: FC<Props> =  ({count, current}) => {
@@ -21,63 +22,35 @@ const CarouselNav: FC<Props> =  ({count, current}) => {
   const renderDots = (num) => {
     const row = []
     for (let i: number=0; i < num; i++) {
-      row.push(<Dot className={(active % num) == i ? "swiper-pagination-bullet-active" : ""} onClick={() => {       
-        swiper.slideTo(i);
+      row.push(<Dot className={(active % num) == i ? "swiper-pagination-bullet-active" : ""} onClick={() => {
+        swiper.slideTo((i % 3) > 0 ? (i * 3) : 0);
         setActive(i);
-    }} />)
+      }} />)
     }
     return row
   }
 
-
-  useEffect(() => {
-    if (active != swiper.activeIndex) {
-      if (swiper.slides.length > active) {
-        swiper.el.querySelector(".swiper-slide-active")?.classList.remove("swiper-slide-active");
-        swiper.slides[active].classList.add("swiper-slide-active");
-      }
-    }
-  }, [active])
-
-  useEffect(() => {
-
-    // right touch
-    if (swiper.touches.diff > 0) {
-      if (active > swiper.activeIndex) {
-        setActive(swiper.activeIndex);
-      }
-    }
-    
-
-    // left touch
-    if (swiper.touches.diff < 0) {
-      if (active >= swiper.activeIndex && count > active + 1) {
-        setActive( active + 1);
-      } else {
-        setActive(swiper.activeIndex);
-      }
-    }
-  }, [current]);
-
   const slidePrev = () => {
-    let prev = (active + count - 1) % count;    
+    let prev = (active - 3) >= 0 ? active - 3 : 9;
+    console.log("prev: " + prev);
     swiper.slideTo(prev);
     setActive(prev);
   }
 
   const slideNext = () => {
-    let next = active + 1;
-    next = next % count;
+    let next = (active + 3) <= 9 ? active + 3 : 0;
+    console.log("next: " + next);
     swiper.slideTo(next);
     setActive(next);
   }
+
   return (
     <Wrapper className="carousel-nav">
-      <Prev onClick={() => count > 0 ? slidePrev() : swiper.slidePrev()} />
-        <Wrapper className="carousel-pagination">
-          {count > 0 ? renderDots(count) : <></>}
-        </Wrapper>
-      <Next onClick={() => count > 0 ? slideNext() : swiper.slideNext() } />
+      <Prev onClick={() => slidePrev()} />
+      <Wrapper className="carousel-pagination">
+        {count > 0 ? renderDots((count / 3)) : <></>}
+      </Wrapper>
+      <Next onClick={() => slideNext() } />
     </Wrapper>
   )
 }

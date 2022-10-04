@@ -2,6 +2,7 @@
 node_modules/
 .cache/
 public
+dist1
 src/gatsby-types.d.ts
 
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider

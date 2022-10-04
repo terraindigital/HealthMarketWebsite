@@ -5,6 +5,12 @@ export const useDentalPageQuery = () => {
     query DentalQuery {
       page: wpPage(databaseId: {eq: 1210}) {
         id
+        slug
+        seo {
+          fullHead
+          title
+          metaDesc
+        }
         pageHeroFields {
           headline
           subheadline
@@ -59,6 +65,7 @@ export const useDentalPageQuery = () => {
                 }
                 heading
                 content
+                link
               }
               dentalRelatedContent2 {
                 image {
@@ -66,6 +73,7 @@ export const useDentalPageQuery = () => {
                 }
                 heading
                 content
+                link
               }
               dentalRelatedContent3 {
                 image {
@@ -73,6 +81,7 @@ export const useDentalPageQuery = () => {
                 }
                 heading
                 content
+                link
               }
             }
             cta {
@@ -83,6 +92,32 @@ export const useDentalPageQuery = () => {
         }
         disclaimers {
           disclaimer
+        }
+        calloutsCustomField {
+          isActive
+          callouts {
+            callout1 {
+              number
+              tagline
+              title
+              description
+              disclaimer
+            }
+            callout2 {
+              number
+              tagline
+              title
+              description
+              disclaimer
+            }
+            callout3 {
+              number
+              tagline
+              title
+              description
+              disclaimer
+            }
+          }
         }
       }
     }

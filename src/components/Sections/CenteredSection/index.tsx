@@ -26,7 +26,7 @@ const CenteredSection: FC<Props> = ({ heading, color, children}) => {
   const bgColor = switchBgColor(color)
 
   return (
-    <Wrapper backgroundColor={bgColor} className={`centered section ` + color}>
+    <Wrapper backgroundColor={bgColor} className={`centered section ` + ((color === null) ? `light` : color)}>
       <Heading>
         <h2>{heading}</h2>
       </Heading>
