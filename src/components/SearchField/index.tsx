@@ -33,8 +33,8 @@ const SearchField = () => {
 
   React.useEffect(() => {
     const q = qs.parse(location.search.slice(1))
-    if (q.search || q.query) {
-      setQuery(q.search as string || q.search as string)
+    if (q.search) {
+      setQuery(q.search as string)
       if (!isSearchBoxOpen()) {
         toggleSearch()
       }

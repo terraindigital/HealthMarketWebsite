@@ -10,9 +10,11 @@ interface IndividualResultProps {
 
 const IndividualResult = ({ title, breadcrumbs, bodyText, link }: IndividualResultProps) => {
 
+    const parsedLink = new URL(link)
+
     return (
         <Container>
-            <Linkbox href={link} title={title} />
+            <Linkbox href={parsedLink.pathname} title={title} />
             <Result>
                 <ResultTitle dangerouslySetInnerHTML={{ __html: title }} />
                 <Breadcrumb>{breadcrumbs.map(({ title }, i) => {
