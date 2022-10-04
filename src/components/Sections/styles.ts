@@ -53,6 +53,10 @@ export const Heading = styled.div`
   justify-content: space-between;
   align-items: center;
 
+  .has-guarantee & {
+    justify-content: flex-start;
+  }
+
   h2 {
     color: var(--color-light);
     display: inline-block;
