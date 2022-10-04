@@ -61,7 +61,7 @@ const MedicareEligibilityPage = ({data}: { data: PageInfo }) => {
         </RightContent>
       </SplitSection>
       <Footer>
-        <div dangerouslySetInnerHTML={{ __html: page.disclaimers.disclaimer }} />
+        {page.disclaimers.disclaimer}
       </Footer>
     </Layout>
   )

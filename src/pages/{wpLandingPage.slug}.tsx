@@ -64,7 +64,7 @@ interface AccordionInfo {
 
 interface SectionInfo {
   bgColor: String,
-  contentType: String, 
+  contentType: String,
   isActive?: Boolean,
   headline: {
     headlineAlignment: String,
@@ -81,7 +81,7 @@ interface SectionInfo {
     icon8: IconInfo,
     icon9: IconInfo,
     icon10: IconInfo,
-    icon11: IconInfo  
+    icon11: IconInfo
   },
   list: {
     listItem1: ListInfo,
@@ -486,7 +486,7 @@ const LPPage = ({data}: { data: PageInfo }) => {
             }
           }
         })}
-        
+
         <Section color="light">
           <Callouts>
               {(callouts) ? (
@@ -523,7 +523,7 @@ const LPPage = ({data}: { data: PageInfo }) => {
         ) : null}
       </Wrapper>
       <Footer>
-          <div dangerouslySetInnerHTML={{ __html: page.disclaimers.disclaimer }} />
+        {page.disclaimers.disclaimer}
       </Footer>
     </Layout>
   )
