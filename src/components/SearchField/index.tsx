@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
+import { useLocation } from "@reach/router";
+import * as qs from "qs";
+import debounce from "debounce";
 
 // Styles
 import {
@@ -16,14 +19,11 @@ import {isSearchBoxOpen, toggleSearch} from "../../static/scripts/global";
 
 // Components
 import Input from "../Inputs/Input";
+import SearchGrid from "../SearchGrid";
 
 // Images
 import siteLogo from "../../static/images/HMIA_logo2.png"
 import Icon from "../../static/images/search-icon.png"
-import SearchGrid from "../SearchGrid";
-import {useLocation} from "@reach/router";
-import * as qs from "qs";
-import debounce from "debounce";
 
 const SearchField = () => {
 
