@@ -31,7 +31,7 @@ import Footer from "../../components/Footer";
 const DentalInsurancePage = () => {
   const { page } = useDentalPageQuery();
   const callouts = page.calloutsCustomField.callouts;
-  
+
   return (
     <Layout pageClass="dental-insurance">
       <Global styles={PageStyles} />
@@ -112,9 +112,9 @@ const DentalInsurancePage = () => {
           </a>
         </div>
       </Section>
-      <Footer>
-        <div dangerouslySetInnerHTML={{ __html: page.disclaimers.disclaimer }} />
-      </Footer>
+        <Footer>
+            {page.disclaimers.disclaimer}
+        </Footer>
     </Layout>
   )
 }

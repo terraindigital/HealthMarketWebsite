@@ -176,9 +176,9 @@ const HealthInsurancePage = () => {
           <Button background="accent" border="accent" color="light">View more articles</Button>
         </div>
       </Section>
-      <Footer>
-        <div dangerouslySetInnerHTML={{ __html: page.disclaimers.disclaimer }} />
-      </Footer>
+        <Footer>
+            {page.disclaimers.disclaimer}
+        </Footer>
     </Layout>
   )
 }

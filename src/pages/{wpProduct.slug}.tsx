@@ -80,7 +80,7 @@ interface SectionInfo {
     icon8: IconInfo,
     icon9: IconInfo,
     icon10: IconInfo,
-    icon11: IconInfo  
+    icon11: IconInfo
   },
   list: {
     listItem1: ListInfo,
@@ -506,7 +506,7 @@ const GPPage = ({data}: { data: PageInfo }) => {
             }
           }
         })}
-        
+
         <Section color="light">
           <Callouts>
             {(callouts) ? (
@@ -537,7 +537,7 @@ const GPPage = ({data}: { data: PageInfo }) => {
 
       </Wrapper>
       <Footer>
-          <div dangerouslySetInnerHTML={{ __html: page.disclaimers.disclaimer }} />
+        {page.disclaimers.disclaimer}
       </Footer>
     </Layout>
   )

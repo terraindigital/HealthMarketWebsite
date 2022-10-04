@@ -174,7 +174,7 @@ const HowWeHelpPage = () => {
         </div>
       </Section>
       <Footer>
-        <div dangerouslySetInnerHTML={{ __html: hwh.disclaimers.disclaimer }} />
+        {hwh.disclaimers.disclaimer}
       </Footer>
     </Layout>
   );

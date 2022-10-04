@@ -109,7 +109,7 @@ const IndexPage = ({path}: PageProps) => {
                 </Callouts>
             </Section>
             <Footer>
-                <div dangerouslySetInnerHTML={{ __html: home.disclaimers.disclaimer }} />
+                {home.disclaimers.disclaimer}
             </Footer>
         </Layout>
     );

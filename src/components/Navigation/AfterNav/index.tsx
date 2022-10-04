@@ -36,9 +36,9 @@ const AfterNav = () => {
         </a>
       </Item>
       <Item>
-        <Link className="find-agent" to="/local-health-insurance-agent">
+        <a className="find-agent" href="/local-health-insurance-agent">
           Find an agent
-        </Link>
+        </a>
       </Item>
       <Item>
         Text Size <TextSize className="decrease text-size" onClick={changeTextSize}>-</TextSize> <TextSize className="increase text-size" onClick={changeTextSize}>+</TextSize>
