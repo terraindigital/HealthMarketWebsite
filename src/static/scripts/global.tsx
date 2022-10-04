@@ -65,6 +65,7 @@ export const toggleForm = (el) => {
   if (parent.firstChild.classList.contains('accented')) {
     parent.firstChild.querySelector('input[type=radio]').checked = true
     parent.firstChild.closest('form').action = plans
+    document.querySelector('input#zipCode')?.setAttribute('name', 'zip')
 
     const healthShortTermEnrollOnline = document.createElement('input')
     healthShortTermEnrollOnline.type = "hidden"
@@ -110,6 +111,7 @@ export const toggleForm = (el) => {
   if (parent.firstChild.nextSibling.classList.contains('accented')) {
     parent.firstChild.nextSibling.querySelector('input[type=radio]').checked = true
     parent.firstChild.nextSibling.closest('form').action = agents
+    document.querySelector('input#zipCode')?.setAttribute('name', 'query')
 
     const healthShortTermEnrollOnline = document.querySelector('input[name=healthShortTermEnrollOnline]')
     const medicareMAenrollonline = document.querySelector('input[name=medicareMAenrollonline]')
