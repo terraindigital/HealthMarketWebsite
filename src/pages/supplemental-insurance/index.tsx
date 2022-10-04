@@ -51,6 +51,7 @@ const HealthInsurancePage = () => {
       <Section
         color={page.suppPageCustomFields.suppSection1.color}
         heading={page.suppPageCustomFields.suppSection1.heading}
+        classes="has-guarantee"
         guarantee={page.suppPageCustomFields.suppSection1.bestPrice.active ? (
           <>
             <BestPriceImage src={page.suppPageCustomFields.suppSection1.bestPrice.image.sourceUrl} />

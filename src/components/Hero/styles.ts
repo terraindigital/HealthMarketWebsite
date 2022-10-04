@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   min-height: 600px;
   min-height: 100%;
   min-height: 100vh;
+  overflow: hidden;
   position: relative;
 
   padding-bottom: 10.4rem;
