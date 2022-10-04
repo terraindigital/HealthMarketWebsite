@@ -62,8 +62,8 @@ interface AccordionInfo {
 }
 
 interface SectionInfo {
-  bgColor: string,
-  contentType: string, 
+  bgColor: String,
+  contentType: String,
   isActive?: Boolean,
   headline: {
     headlineAlignment: string,
