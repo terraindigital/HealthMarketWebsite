@@ -19,8 +19,9 @@ import Hero from "../../components/Hero";
 import PageHeroForm from "../../components/Hero/PageHeroForm";
 import Button from "../../components/Buttons/Button";
 import Section from "../../components/Sections";
-import Cards from "../../components/Cards";
-import Card from "../../components/Cards/Card";
+import RelatedContent from "../../components/RelatedContent";
+// import Cards from "../../components/Cards";
+// import Card from "../../components/Cards/Card";
 import FlexedSection from "../../components/Sections/FlexedSection";
 import Accordion from "../../components/Accordions";
 import Callouts from "../../components/Callouts";
@@ -82,7 +83,7 @@ const DentalInsurancePage = () => {
       <Section
         color={page.dentalPageCustomFields.dentalSection2.color}
         heading={page.dentalPageCustomFields.dentalSection2.heading}>
-        <Cards>
+        {/* <Cards>
           <Card
             image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.image.sourceUrl}
             title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.heading}
@@ -101,7 +102,8 @@ const DentalInsurancePage = () => {
             link={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.link}>
             <p dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.content}} />
           </Card>
-        </Cards>
+        </Cards> */}
+        <RelatedContent />
         <div className="full-rounded" style={{ textAlign: "center" }}>
           <a href={page.dentalPageCustomFields.dentalSection2.cta.link}>
             <Button background="accent" border="accent" color="light">

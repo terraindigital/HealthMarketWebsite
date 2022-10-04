@@ -21,6 +21,7 @@ import Button from "../../components/Buttons/Button";
 import Section from "../../components/Sections";
 import Cards from "../../components/Cards";
 import Card from "../../components/Cards/Card";
+import RelatedContent from "../../components/RelatedContent";
 import Icons from "../../components/Icons";
 import Icon from "../../components/Icons/Icon";
 import FlexedSection from "../../components/Sections/FlexedSection";
@@ -150,7 +151,7 @@ const HealthInsurancePage = () => {
       <Section
         color={page.healthPageCustomFields.healthSection4.color}
         heading={page.healthPageCustomFields.healthSection4.heading}>
-        <Cards>
+        {/* <Cards>
           <Card
             image={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent1.image.sourceUrl}
             title={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent1.heading}
@@ -169,7 +170,8 @@ const HealthInsurancePage = () => {
             link={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent3.link}>
             <p dangerouslySetInnerHTML={{ __html: page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent3.content}} />
           </Card>
-        </Cards>
+        </Cards> */}
+        <RelatedContent />
         <div className="full-rounded" style={{ textAlign: "center" }}>
           <Button background="accent" border="accent" color="light">View more articles</Button>
         </div>

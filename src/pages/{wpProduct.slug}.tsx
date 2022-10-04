@@ -26,6 +26,7 @@ import Callouts from "../components/Callouts";
 import ListItem from "../components/Lists/ListItem";
 import List from '../components/Lists';
 import Medial from '../components/Medials';
+import RelatedContent from "../components/RelatedContent";
 import PageHeroForm from '../components/Hero/PageHeroForm';
 import Footer from '../components/Footer';
 import Accordion from "../components/Accordions";
@@ -33,19 +34,19 @@ import Cards from "../components/Cards";
 import Card from "../components/Cards/Card";
 
 interface IconInfo {
-  link: String,
-  title: String,
+  link: string,
+  title: string,
   mobileIcon: {
-    sourceUrl: String
+    sourceUrl: string
   },
   icon: {
-    sourceUrl: String
+    sourceUrl: string
   }
 }
 
 interface ListInfo {
-  title: String,
-  content: String
+  title: string,
+  content: string
 }
 
 interface CardInfo {
@@ -56,17 +57,17 @@ interface CardInfo {
 }
 
 interface AccordionInfo {
-  title: String,
-  content: String
+  title: string,
+  content: string
 }
 
 interface SectionInfo {
-  bgColor: String,
-  contentType: String, 
+  bgColor: string,
+  contentType: string, 
   isActive?: Boolean,
   headline: {
-    headlineAlignment: String,
-    headlineText: String,
+    headlineAlignment: string,
+    headlineText: string,
   },
   icons: {
     icon1: IconInfo,
@@ -115,6 +116,13 @@ interface CalloutInfo {
   disclaimer: ReactNode
 }
 
+interface RelatedContentInfo {
+  image: string,
+  title: string,
+  link: string,
+  children: ReactNode
+}
+
 interface PageInfo {
   page: {
     id: string,
@@ -146,6 +154,16 @@ interface PageInfo {
           }
         }
       },
+      gpRelatedContent: {
+        bgColor: string,
+        headline: {
+          headlineAlignment: string,
+          headlineText: string
+        },
+        relatedContent1: RelatedContentInfo,
+        relatedContent2: RelatedContentInfo,
+        relatedContent3: RelatedContentInfo
+      }
       gpSections: {
         gpSection1: SectionInfo,
         gpSection2: SectionInfo,
@@ -507,6 +525,16 @@ const GPPage = ({data}: { data: PageInfo }) => {
             ) : null}
           </Callouts>
         </Section>
+      
+        <Section
+          color={page.generalProductCustomFields.gpRelatedContent.bgColor}
+          heading={page.generalProductCustomFields.gpRelatedContent.headline.headlineText}>
+          <RelatedContent />
+          <div className="full-rounded" style={{ textAlign: "center" }}>
+            <Button background="accent" border="accent" color="light">View more articles</Button>
+          </div>
+        </Section>
+
       </Wrapper>
       <Footer>
           <div dangerouslySetInnerHTML={{ __html: page.disclaimers.disclaimer }} />
@@ -598,6 +626,11 @@ export const pageQuery = graphql`
           }
         }
         gpRelatedContent {
+          headline {
+            headlineText
+            headlineAlignment
+          }
+          bgColor
           relatedContent1 {
             image {
               sourceUrl
