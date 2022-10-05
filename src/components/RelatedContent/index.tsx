@@ -1,5 +1,9 @@
 import React, { useEffect } from "react";
 import { Global } from "@emotion/react";
+import { graphql } from "gatsby";
+
+// Query
+import { useBEPhotoQuery } from "../../hooks/useBEPhotoQuery"
 
 // Styles
 import {
@@ -8,10 +12,16 @@ import {
 } from "./styles"
 
 // Scripts
+import { getRandomPhotos } from "../../static/scripts/global"
 
 // Components
 
 const RelatedContent = () => {
+  // define the photos from the query
+  let { photos } = useBEPhotoQuery();
+
+  // randomize the photo array
+  photos = getRandomPhotos(photos.nodes);
 
   useEffect(() => {
     let delay = setInterval(()=>{
@@ -30,7 +40,10 @@ const RelatedContent = () => {
 
           if (!document.body.contains(image)) {
             const newImage = document.createElement('img');
-            newImage.src = "https://via.placeholder.com/384x294";
+            newImage.src = photos[i].featuredImage.node.sourceUrl;
+
+            // filter through images and find three randoms
+
             newImage.classList.add('.image');
             link.insertBefore(newImage, heading);
           }

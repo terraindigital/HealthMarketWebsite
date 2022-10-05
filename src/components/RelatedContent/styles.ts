@@ -66,12 +66,24 @@ export const ComponentStyles = css`
     .related-content .cards .card {
       flex-basis: 100%;
       width: 100%;
+
+      margin-right: 0;
     }
   }
   
   .related-content .card img {
     display: inline;
+    height: 326px;
     margin-bottom: 0;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 620px) {
+    .related-content .card img {
+      height: 219px;
+      margin-bottom: 16px;
+    }
   }
 
   .related-content .card .headline {
