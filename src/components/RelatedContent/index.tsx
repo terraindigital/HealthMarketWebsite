@@ -36,15 +36,20 @@ const RelatedContent = () => {
         Object.keys(links).map((i) => {
           const link = links[i];
           const heading = link.querySelector('.headline');
-          const image = link.querySelector('.image')
 
-          if (!document.body.contains(image)) {
+          let images = link.querySelectorAll('.image');
+          images = Object.keys(images);
+
+          if (images.length > 0) {
+            for (let i=0; i > images.length; i++) {
+              const image = images[i];
+              image.parentNode.removeChild(image);
+            }
+          } else {
             const newImage = document.createElement('img');
             newImage.src = photos[i].featuredImage.node.sourceUrl;
 
-            // filter through images and find three randoms
-
-            newImage.classList.add('.image');
+            newImage.classList.add('image');
             link.insertBefore(newImage, heading);
           }
 
@@ -52,7 +57,7 @@ const RelatedContent = () => {
           clearInterval(delay);
         })
       }
-    }, 50);
+    }, 5);
   }, [])
 
   return (
