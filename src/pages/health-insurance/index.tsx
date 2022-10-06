@@ -173,7 +173,11 @@ const HealthInsurancePage = () => {
         </Cards> */}
         <RelatedContent />
         <div className="full-rounded" style={{ textAlign: "center" }}>
-          <Button background="accent" border="accent" color="light">View more articles</Button>
+          <a href={page.healthPageCustomFields.healthSection4.cta.link}>
+            <Button background="accent" border="accent" color="light">
+              {page.healthPageCustomFields.healthSection4.cta.text}
+            </Button>
+          </a>
         </div>
       </Section>
         <Footer>

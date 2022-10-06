@@ -32,6 +32,7 @@ const HealthInsurancePage = () => {
   const { page } = useSupplementalPageQuery();
   const plans = page.suppPageCustomFields.suppSection1.suppPlans;
   const callouts = page.calloutsCustomField.callouts;
+  const showBestPrice = page.suppPageCustomFields.suppSection1.bestPrice.active;
 
   return (
     <Layout pageClass="supplemental-insurance">
@@ -52,12 +53,12 @@ const HealthInsurancePage = () => {
         color={page.suppPageCustomFields.suppSection1.color}
         heading={page.suppPageCustomFields.suppSection1.heading}
         classes="has-guarantee"
-        guarantee={page.suppPageCustomFields.suppSection1.bestPrice.active ? (
+        guarantee={!showBestPrice ? false : (
           <>
             <BestPriceImage src={page.suppPageCustomFields.suppSection1.bestPrice.image.sourceUrl} />
             <BestPriceImageMobile src={page.suppPageCustomFields.suppSection1.bestPrice.mobileImage.sourceUrl} />
           </>
-        ) : null}>
+        )}>
         <Cards>
           {(plans) ? (
             Object.keys(plans).map((plan) => {
@@ -117,7 +118,11 @@ const HealthInsurancePage = () => {
         </Cards> */}
         <RelatedContent />
         <div className="full-rounded" style={{ textAlign: "center" }}>
-          <Button background="accent" border="accent" color="light">View more articles</Button>
+          <a href={page.suppPageCustomFields.suppSection2.cta.link}>
+            <Button background="accent" border="accent" color="light">
+              {page.suppPageCustomFields.suppSection2.cta.text}
+            </Button>
+          </a>
         </div>
       </Section>
       <Footer>

@@ -198,6 +198,10 @@ export const useSupplementalPageQuery = () => {
                 link
               }
             }
+            cta {
+              link
+              text
+            }
           }
         }
         disclaimers {
