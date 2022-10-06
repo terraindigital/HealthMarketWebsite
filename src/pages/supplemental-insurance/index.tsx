@@ -53,7 +53,8 @@ const HealthInsurancePage = () => {
         color={page.suppPageCustomFields.suppSection1.color}
         heading={page.suppPageCustomFields.suppSection1.heading}
         classes="has-guarantee"
-        guarantee={!showBestPrice ? false : (
+        guarantee={showBestPrice}
+        bestPrice={(
           <>
             <BestPriceImage src={page.suppPageCustomFields.suppSection1.bestPrice.image.sourceUrl} />
             <BestPriceImageMobile src={page.suppPageCustomFields.suppSection1.bestPrice.mobileImage.sourceUrl} />
