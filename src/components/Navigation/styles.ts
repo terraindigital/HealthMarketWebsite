@@ -50,7 +50,7 @@ export const MenuItem = styled.li`
 
   a {
     color: var(--color-light);
-    font-family: 'Playfair Display';
+    font-family: 'IvyPresto Display-SemiBold';
     font-size: 4.4rem;
     font-weight: bold;
     text-decoration: none;
