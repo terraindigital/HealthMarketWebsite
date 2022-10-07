@@ -162,7 +162,11 @@ interface PageInfo {
         },
         relatedContent1: RelatedContentInfo,
         relatedContent2: RelatedContentInfo,
-        relatedContent3: RelatedContentInfo
+        relatedContent3: RelatedContentInfo,
+        cta: {
+          text: string,
+          link: string
+        }
       }
       gpSections: {
         gpSection1: SectionInfo,
@@ -531,7 +535,11 @@ const GPPage = ({data}: { data: PageInfo }) => {
           heading={page.generalProductCustomFields.gpRelatedContent.headline.headlineText}>
           <RelatedContent />
           <div className="full-rounded" style={{ textAlign: "center" }}>
-            <Button background="accent" border="accent" color="light">View more articles</Button>
+            <a href={page.generalProductCustomFields.gpRelatedContent.cta.link}>
+              <Button background="accent" border="accent" color="light">
+                {page.generalProductCustomFields.gpRelatedContent.cta.text}
+              </Button>
+            </a>
           </div>
         </Section>
 
@@ -555,6 +563,7 @@ export const Head = ({ data }) => {
                 type="text/javascript"
                 src="https://cdne-uho-cdn-eastus-prod.azureedge.net/scripts/analytics-configuration.min.js"
             ></script>
+            <script src="//cdn.bc0a.com/autopilot/f00000000075672/autopilot_sdk.js"></script>
         </>
     )
 }
@@ -654,6 +663,10 @@ export const pageQuery = graphql`
             heading
             content
             link
+          }
+          cta {
+            link,
+            text
           }
         }
         gpSections {
