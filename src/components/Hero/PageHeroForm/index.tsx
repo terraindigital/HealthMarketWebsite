@@ -27,10 +27,11 @@ import PhoneIcon from "../../../static/images/phone-icon.png"
 interface Props {
   centered?: boolean,
   light?: boolean,
-  btnLeftText: String,
-  btnRightText: String,
-  inputId: String,
+  btnLeftText: string,
+  btnRightText: string,
+  inputId: string,
   buttons?: boolean,
+  footerContent: string,
   hideFooter?: boolean
 }
 
@@ -41,7 +42,7 @@ const api_key = 'ge-8876b9780ea0871d';
 const plans = "https://shop.healthmarkets.com/en/about-me/plans-found";
 const agents = "/local-health-insurance-agent/search/";
 
-const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, inputId, buttons, hideFooter  }) => {
+const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, inputId, buttons, footerContent, hideFooter  }) => {
   // TODO: send queries to relevant pages
   return (
     <Wrapper className={`${(centered) ? `centered` : ``} ${(light) ? `light` : ``}`}>
@@ -64,9 +65,7 @@ const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, i
             {(buttons || buttons === undefined) ? (
               <CTA>
                 <img src={PhoneIcon} />
-                <span>
-                  Call us 24/7 at <a href="tel:+18555652552">(855) 565-2552</a>
-                </span>
+                <span dangerouslySetInnerHTML={{ __html: footerContent }} />
               </CTA>
             ) : null}
           </Footer>

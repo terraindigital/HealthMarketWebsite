@@ -18,6 +18,12 @@ export const PageStyles = css`
     width: 100%;
   }
   
+  .hero-disclaimer {
+    color: var(--color-light);
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
   .card-disclaimer {
     font-size: 2rem;
     font-weight: 400;

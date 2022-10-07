@@ -31,6 +31,7 @@ export const useHealthPageQuery = () => {
               text
             }
           }
+          callUs
         }
         healthPageCustomFields {
           healthSection1 {

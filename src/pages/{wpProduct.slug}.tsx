@@ -152,7 +152,8 @@ interface PageInfo {
           heroButton2: {
             text: string
           }
-        }
+        },
+        callUs: string
       },
       gpRelatedContent: {
         bgColor: string,
@@ -633,6 +634,7 @@ export const pageQuery = graphql`
           heroImageMobile {
             sourceUrl
           }
+          callUs
         }
         gpRelatedContent {
           headline {

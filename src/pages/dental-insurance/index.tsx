@@ -44,7 +44,8 @@ const DentalInsurancePage = () => {
         <PageHeroForm
             btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
             btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
-            inputId="dentalPageHeroLocation" />
+            inputId="dentalPageHeroLocation"
+            footerContent={page.pageHeroFields.callUs} />
       </Hero>
       <FlexedSection
         color={page.dentalPageCustomFields.dentalSection1.color}

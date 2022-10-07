@@ -47,7 +47,8 @@ const HealthInsurancePage = () => {
             centered
             btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
             btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
-            inputId="supplementalPageHeroLocation" />
+            inputId="supplementalPageHeroLocation"
+            footerContent={page.pageHeroFields.callUs} />
       </Hero>
       <Section
         color={page.suppPageCustomFields.suppSection1.color}

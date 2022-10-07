@@ -45,7 +45,9 @@ const MedicarePage = () => {
             light
             btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
             btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
-            inputId="medicarePageHeroLocation" />
+            inputId="medicarePageHeroLocation"
+            footerContent={page.pageHeroFields.callUs} />
+        <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.disclaimer }} />
       </Hero>
       <Section
         page="medicare"
@@ -74,7 +76,6 @@ const MedicarePage = () => {
             <p dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.medicareCards.medicareCard3.content }} />
           </Card>
         </Cards>
-        <div className="card-disclaimer" dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.disclaimer }} />
       </Section>
       <FlexedSection
         color={page.medicarePageCustomFields.medicareSection2.color}

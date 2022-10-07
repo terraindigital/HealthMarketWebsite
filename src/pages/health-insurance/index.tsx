@@ -48,7 +48,8 @@ const HealthInsurancePage = () => {
             light
             btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
             btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
-            inputId="healthPageHeroLocation" />
+            inputId="healthPageHeroLocation"
+            footerContent={page.pageHeroFields.callUs} />
       </Hero>
       <Section
         page="health-insurance"
