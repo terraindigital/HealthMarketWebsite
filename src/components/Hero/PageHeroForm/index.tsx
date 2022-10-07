@@ -35,7 +35,7 @@ interface Props {
 }
 
 // set geocode earth api key
-const api_key = 'ge-aee0e5253d70b022';
+const api_key = 'ge-8876b9780ea0871d';
 
 // set the urls to change the form action to
 const plans = "https://shop.healthmarkets.com/en/about-me/plans-found";
