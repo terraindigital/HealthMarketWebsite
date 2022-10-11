@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   min-height: 600px;
   min-height: 100%;
   min-height: 100vh;
-  overflow: hidden;
+  // overflow: hidden;
   position: relative;
 
   padding-bottom: 10.4rem;
@@ -65,7 +65,7 @@ export const Inner = styled.div`
   max-width: 144rem;
   position: relative;
   width: 100%;
-  z-index: 1;
+  z-index: 12;
 
   &.half {
     display: flex;

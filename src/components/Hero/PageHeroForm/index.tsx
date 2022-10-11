@@ -18,7 +18,7 @@ import { toggleForm } from "../../../static/scripts/global"
 
 // Components
 import Button from "../../Buttons/Button"
-import Autocomplete from "../../Inputs/Autocomplete";
+import AutocompleteField from "../../Inputs/Geocode/AutocompleteField";
 
 // Images
 // import MapPin from "../../../static/images/location.png"
@@ -57,7 +57,16 @@ const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, i
             </Radio>
           </Buttons>
         ) : null}
-        <Autocomplete api_key={api_key} />
+        <AutocompleteField />
+        <div id="zipCodeField" className="hidden-inputs">
+          <input type="hidden" name="healthShortTermEnrollOnline" value="yes" />
+          <input type="hidden" name="medicareMAenrollonline" value="yes" />
+          <input type="hidden" name="medicarePDPenrollonline" value="yes" />
+          <input type="hidden" name="medicareSuppenrollonline" value="yes" />
+          <input type="hidden" name="visionenrollonline" value="yes" />
+          <input type="hidden" name="dentalenrollonline" value="yes" />
+          <input type="hidden" id="zipCode" name="zip" value="" />
+        </div>
         {
           hideFooter ? (<></>) : (
           <Footer>

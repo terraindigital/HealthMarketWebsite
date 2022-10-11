@@ -129,6 +129,10 @@ export const Head = () => {
                 type="text/javascript"
                 src="https://cdne-uho-cdn-eastus-prod.azureedge.net/scripts/analytics-configuration.min.js"
             ></script>
+            <script
+                type="module"
+                src="https://cdn.jsdelivr.net/npm/@geocodeearth/autocomplete-element/dist/bundle.js">
+            </script>
         </>
     )
 }

@@ -144,42 +144,6 @@ export const fadeIn = (selector) => {
   });
 }
 
-export const handleFormSubmit = (e) => {
-  e.preventDefault();
-  // set form variable for data extraction
-  const formData = e.target;
-  // set up our data variable
-  let data = {};
-  // set a line of business array
-  let lob = Array();
-  // loop through and snag each piece of data
-  Object.keys(formData).map((i) => {
-    const input = formData[i];
-    // if input is not a checkbox continue
-    if (input.type !== "checkbox") {
-      data[input.name] = input.value;
-    } else {
-      (input.checked) ? lob.push(input.name) : null;
-    }
-  });
-  // add the line of business array to the data
-  data['lob'] = lob;
-  // run the data through the email script
-  sendFormData(data);
-}
-
-export const sendFormData = (data) => {
-  console.log(data.fName);
-  console.log(data.lName);
-  console.log(data.email);
-  console.log(data.phNumber);
-  console.log(data.zipCode);
-  Object.keys(data.lob).map((i) => {
-    console.log("lob: " + data.lob[i]);
-  });
-  console.log(data.tellUsMore);
-}
-
 export const getRandomPhotos = (obj) => {
   let arr = Array();
   

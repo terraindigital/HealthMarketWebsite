@@ -37,6 +37,7 @@ const optionListener = () => {
 
 // Images
 import MapPin from "../../../static/images/location.png"
+import { text } from "node:stream/consumers";
 
 interface Props {
   api_key: String
@@ -51,16 +52,21 @@ const Autocomplete: FC<Props> = ({ api_key }) => {
   let coordinates = Array();
   let zipCodes = Array();
 
-  const query = 'https://api.geocode.earth/v1/autocomplete?' +
+  let query = 'https://api.geocode.earth/v1/autocomplete?' +
                 `api_key=${api_key}&` +
                 `boundary.country=US&` +
+                `layers=locality&` +
                 `text=`;
 
   const getOptions = (e) => {
     const value = e.target.value;
 
     if (value && value != '') {
-      axios(query + value)
+      query = query + value;
+
+      console.log(query);
+
+      axios(query)
         .then(response => {
           setData(response.data);
         })
@@ -77,14 +83,23 @@ const Autocomplete: FC<Props> = ({ api_key }) => {
     const options = document.querySelector('.location-options')
 
     if (data) {
+      console.log(data['features']);
+
       Object.keys(data['features']).map((i) => {
         const place = data['features'][i]['properties'];
+
+        console.log(place);
 
         coordinates.push(data['features'][i]['geometry']['coordinates']);
         zipCodes.push(place['postalcode']);
 
-        if (place['locality'] !== undefined && place['region_a'] !== undefined) {
-          const localityString = place['locality'] + ', ' + place['region_a'];
+        if (place['postalcode'] !== undefined &&
+            place['locality'] !== undefined &&
+            place['region_a'] !== undefined) {
+          const localityString = place['postalcode'] + ', ' +
+                                 place['locality'] + ', ' +
+                                 place['county'] + ', ' +
+                                 place['region_a'];
 
           if (!locations.includes(localityString)) {
             locations.push(localityString);
@@ -93,7 +108,7 @@ const Autocomplete: FC<Props> = ({ api_key }) => {
       });
 
       if (locations.length > 0 && options) {
-        const num = (locations.length > 4) ? 4 : locations.length;
+        const num = (locations.length > 10) ? 10 : locations.length;
         options.innerHTML = '';
 
         for (let i=0; i < num; i++) {
@@ -123,20 +138,29 @@ const Autocomplete: FC<Props> = ({ api_key }) => {
 
   useEffect(() => {
     optionListener();
+
+    // const geField = document.querySelector('ge-autocomplete');
+    // geField.setAttribute('boundary.country', 'US');
   }, [])
 
   return (
     <InputGroup id="zipCodeField">
-        <img src={MapPin} alt="map location pin image" />
-        <Input id="geocodeAutocomplete" type="text" placeholder="Enter Zip Code/City" onChange={getOptions} autocomplete="off" />
-        <Options className="location-options" />
-        <input type="hidden" name="healthShortTermEnrollOnline" value="yes" />
-        <input type="hidden" name="medicareMAenrollonline" value="yes" />
-        <input type="hidden" name="medicarePDPenrollonline" value="yes" />
-        <input type="hidden" name="medicareSuppenrollonline" value="yes" />
-        <input type="hidden" name="visionenrollonline" value="yes" />
-        <input type="hidden" name="dentalenrollonline" value="yes" />
-        <input type="hidden" id="zipCode" name="zip" value="" />
+      {/* <img src={MapPin} alt="map location pin image" />
+      <ge-autocomplete
+        api_key={api_key}
+        placeholder="Enter Zip Code/City"
+        size="5"
+      ></ge-autocomplete> */}
+      <img src={MapPin} alt="map location pin image" />
+      <Input id="geocodeAutocomplete" type="text" placeholder="Enter Zip Code/City" onChange={getOptions} autocomplete="off" />
+      <Options className="location-options" />
+      <input type="hidden" name="healthShortTermEnrollOnline" value="yes" />
+      <input type="hidden" name="medicareMAenrollonline" value="yes" />
+      <input type="hidden" name="medicarePDPenrollonline" value="yes" />
+      <input type="hidden" name="medicareSuppenrollonline" value="yes" />
+      <input type="hidden" name="visionenrollonline" value="yes" />
+      <input type="hidden" name="dentalenrollonline" value="yes" />
+      <input type="hidden" id="zipCode" name="zip" value="" />
     </InputGroup>
   )
 }

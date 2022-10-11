@@ -13,6 +13,7 @@ export const GlobalStyles = css`
 
     --color-light: #FFFFFF;
     --color-muted: #D6D6D6;
+    --color-muted-light: #D9D9D9;
     --color-dark: #4D4D4D;
     --color-primary: #009FDA;
     --color-primary-light: #F3FAFD;
