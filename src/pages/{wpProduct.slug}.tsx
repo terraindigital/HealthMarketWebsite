@@ -211,7 +211,8 @@ const GPPage = ({data}: { data: PageInfo }) => {
             btnLeftText={page.generalProductCustomFields.gpHero.heroButtons.heroButton1.text}
             btnRightText={page.generalProductCustomFields.gpHero.heroButtons.heroButton2.text}
             inputId={`${page.title.replaceAll(' ', '')}HeroLocation`}
-            buttons={page.generalProductCustomFields.gpHero.heroButtons.showButtons} />
+            buttons={page.generalProductCustomFields.gpHero.heroButtons.showButtons}
+            footerContent={page.generalProductCustomFields.gpHero.callUs} />
         </Hero>
 
         {Object.keys(sections).map((i) => {

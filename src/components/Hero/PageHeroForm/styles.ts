@@ -155,9 +155,16 @@ export const CTA = styled.div`
     margin-right: 0.8rem;
   }
 
-  a, span > p {
+  span > p > a, span > p {
     font-size: 2.4rem;
     font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  @media only screen and (max-width: 620px) {
+    span > p > a, span > p {
+      font-size: 18px;
+    }
   }
 
   .light & {

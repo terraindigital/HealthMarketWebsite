@@ -32,6 +32,10 @@ export const PageStyles = css`
     text-align: center;
   }
 
+  .card-link > p:first-of-type {
+    margin-bottom: 23px;
+  }
+
   @media only screen and (max-width: 788px) {
     .medicare .hero .half {
       display: block;
