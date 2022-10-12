@@ -87,6 +87,48 @@ export const PageStyles = css`
       max-width: 100%;
     }
   }
+
+  @media only screen and (max-width: 1024px) {
+    .how-we-help .flexed.section {
+      display: block;
+    }
+
+    .how-we-help .flexed.section > div[class*=Heading] {
+      display: block;
+      flex-basis: 100%;
+      margin-bottom: 3.4rem;
+      transform: translateX(-2.1rem);
+      width: 100%;
+    }
+
+    .how-we-help .flexed.section > div[class*=Inner] {
+      flex-basis: 100%;
+      width: 100%;
+      margin: 0 auto;
+      max-width: 55rem;
+    }
+
+    .how-we-help .flexed.section > div[class*=Inner] .list {
+      margin-left: 4rem;
+    }
+
+    .how-we-help .flexed.section > div[class*=Inner] > a button {
+      border-radius: 4px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 3.4rem;
+      max-width: 33.3rem;
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 1280px) and (min-width: 1025px) {
+    .how-we-help .flexed.section > div[class*=Inner] {
+      flex-basis: 32%;
+      width: 32%;
+    }
+  }
 `
 
 export const HeroHeading = styled.h1`
