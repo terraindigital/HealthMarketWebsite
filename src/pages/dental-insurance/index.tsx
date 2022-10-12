@@ -1,5 +1,5 @@
 // Library
-import * as React from "react"
+import React, { useEffect, useState } from "react";
 import { Global } from "@emotion/react";
 
 // Query
@@ -20,8 +20,8 @@ import PageHeroForm from "../../components/Hero/PageHeroForm";
 import Button from "../../components/Buttons/Button";
 import Section from "../../components/Sections";
 import RelatedContent from "../../components/RelatedContent";
-// import Cards from "../../components/Cards";
-// import Card from "../../components/Cards/Card";
+import Cards from "../../components/Cards";
+import Card from "../../components/Cards/Card";
 import FlexedSection from "../../components/Sections/FlexedSection";
 import Accordion from "../../components/Accordions";
 import Callouts from "../../components/Callouts";
@@ -31,6 +31,22 @@ import Footer from "../../components/Footer";
 const DentalInsurancePage = () => {
   const { page } = useDentalPageQuery();
   const callouts = page.calloutsCustomField.callouts;
+
+  const [hasChildren, setHasChildren] = useState(false);
+
+  useEffect(() => {
+    let n = 0;
+    let delay = setInterval(() => {
+      const beContainer = document.getElementById('relatedContent');
+      if (n > 0 && beContainer?.childElementCount > 0) {
+        setHasChildren(true);
+      } else {
+        setHasChildren(false);
+      }
+      if (n >= 5) clearInterval(delay);
+      n++;
+    }, 50);
+  }, []);
 
   return (
     <Layout pageClass="dental-insurance">
@@ -84,27 +100,29 @@ const DentalInsurancePage = () => {
       <Section
         color={page.dentalPageCustomFields.dentalSection2.color}
         heading={page.dentalPageCustomFields.dentalSection2.heading}>
-        {/* <Cards>
-          <Card
-            image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.image.sourceUrl}
-            title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.heading}
-            link={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.link}>
-            <p dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.content}} />
-          </Card>
-          <Card
-            image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.image.sourceUrl}
-            title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.heading}
-            link={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.link}>
-            <p dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.content}} />
-          </Card>
-          <Card
-            image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.image.sourceUrl}
-            title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.heading}
-            link={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.link}>
-            <p dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.content}} />
-          </Card>
-        </Cards> */}
         <RelatedContent />
+        {(!hasChildren) ? (
+          <Cards>
+            <Card
+              image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.image.sourceUrl}
+              title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.heading}
+              link={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.link}>
+              <p dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.content}} />
+            </Card>
+            <Card
+              image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.image.sourceUrl}
+              title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.heading}
+              link={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.link}>
+              <p dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.content}} />
+            </Card>
+            <Card
+              image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.image.sourceUrl}
+              title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.heading}
+              link={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.link}>
+              <p dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.content}} />
+            </Card>
+          </Cards>
+        ) : null}
         <div className="full-rounded" style={{ textAlign: "center" }}>
           <a href={page.dentalPageCustomFields.dentalSection2.cta.link}>
             <Button background="accent" border="accent" color="light">

@@ -1,5 +1,5 @@
 // Library
-import * as React from "react"
+import React, { useEffect, useState } from "react";
 import { Global } from "@emotion/react";
 
 // Query
@@ -33,6 +33,22 @@ const HealthInsurancePage = () => {
   const plans = page.suppPageCustomFields.suppSection1.suppPlans;
   const callouts = page.calloutsCustomField.callouts;
   const showBestPrice = page.suppPageCustomFields.suppSection1.bestPrice.active;
+
+  const [hasChildren, setHasChildren] = useState(false);
+
+  useEffect(() => {
+    let n = 0;
+    let delay = setInterval(() => {
+      const beContainer = document.getElementById('relatedContent');
+      if (n > 0 && beContainer?.childElementCount > 0) {
+        setHasChildren(true);
+      } else {
+        setHasChildren(false);
+      }
+      if (n >= 5) clearInterval(delay);
+      n++;
+    }, 50);
+  }, []);
 
   return (
     <Layout pageClass="supplemental-insurance">
@@ -98,27 +114,29 @@ const HealthInsurancePage = () => {
       <Section
         color={page.suppPageCustomFields.suppSection2.color}
         heading={page.suppPageCustomFields.suppSection2.heading}>
-        {/* <Cards>
-          <Card
-            image={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent1.image.sourceUrl}
-            title={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent1.title}
-            link={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent1.link}>
-            <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent1.content}} />
-          </Card>
-          <Card
-            image={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent2.image.sourceUrl}
-            title={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent2.title}
-            link={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent2.link}>
-            <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent2.content}} />
-          </Card>
-          <Card
-            image={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent3.image.sourceUrl}
-            title={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent3.title}
-            link={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent3.link}>
-            <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent3.content}} />
-          </Card>
-        </Cards> */}
         <RelatedContent />
+        {(!hasChildren) ? (
+          <Cards>
+            <Card
+              image={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent1.image.sourceUrl}
+              title={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent1.title}
+              link={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent1.link}>
+              <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent1.content}} />
+            </Card>
+            <Card
+              image={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent2.image.sourceUrl}
+              title={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent2.title}
+              link={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent2.link}>
+              <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent2.content}} />
+            </Card>
+            <Card
+              image={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent3.image.sourceUrl}
+              title={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent3.title}
+              link={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent3.link}>
+              <div dangerouslySetInnerHTML={{ __html: page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent3.content}} />
+            </Card>
+          </Cards>
+        ) : null}
         <div className="full-rounded" style={{ textAlign: "center" }}>
           <a href={page.suppPageCustomFields.suppSection2.cta.link}>
             <Button background="accent" border="accent" color="light">

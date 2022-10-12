@@ -1,5 +1,5 @@
 // Library
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import { Global } from "@emotion/react";
 import { graphql } from "gatsby";
 
@@ -189,9 +189,28 @@ interface PageInfo {
 }
 
 const GPPage = ({data}: { data: PageInfo }) => {
+  const [hasChildren, setHasChildren] = useState(false);
+
   const { page } = data;
   const sections = page.generalProductCustomFields.gpSections;
   const callouts = page.calloutsCustomField.callouts;
+  const relatedContent = page.generalProductCustomFields.gpRelatedContent;
+
+  console.log(relatedContent);
+
+  useEffect(() => {
+    let n = 0;
+    let delay = setInterval(() => {
+      const beContainer = document.getElementById('relatedContent');
+      if (n > 0 && beContainer?.childElementCount > 0) {
+        setHasChildren(true);
+      } else {
+        setHasChildren(false);
+      }
+      if (n >= 5) clearInterval(delay);
+      n++;
+    }, 50);
+  }, []);
 
   return (
     <Layout pageClass={page.slug}>
@@ -536,6 +555,28 @@ const GPPage = ({data}: { data: PageInfo }) => {
           color={page.generalProductCustomFields.gpRelatedContent.bgColor}
           heading={page.generalProductCustomFields.gpRelatedContent.headline.headlineText}>
           <RelatedContent />
+          {/* {(!hasChildren) ? (
+            <Cards>
+              <Card
+                image={relatedContent.relatedContent1.image.sourceUrl}
+                title={relatedContent.relatedContent1.heading}
+                link={relatedContent.relatedContent1.link}>
+                <p dangerouslySetInnerHTML={{ __html: relatedContent.relatedContent1.content}} />
+              </Card>
+              <Card
+                image={relatedContent.relatedContent2.image.sourceUrl}
+                title={relatedContent.relatedContent2.heading}
+                link={relatedContent.relatedContent2.link}>
+                <p dangerouslySetInnerHTML={{ __html: relatedContent.relatedContent2.content}} />
+              </Card>
+              <Card
+                image={relatedContent.relatedContent3.image.sourceUrl}
+                title={relatedContent.relatedContent3.heading}
+                link={relatedContent.relatedContent3.link}>
+                <p dangerouslySetInnerHTML={{ __html: relatedContent.relatedContent3.content}} />
+              </Card>
+            </Cards>
+          ) : null } */}
           <div className="full-rounded" style={{ textAlign: "center" }}>
             <a href={page.generalProductCustomFields.gpRelatedContent.cta.link}>
               <Button background="accent" border="accent" color="light">
