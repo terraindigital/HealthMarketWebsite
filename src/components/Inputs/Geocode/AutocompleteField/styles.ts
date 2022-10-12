@@ -44,11 +44,15 @@ export const Styles = css`
   .suggestions {
     background-color: var(--color-light);
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
-    left: 50%;
+    left: 0;
     margin: 0 auto;
     position: absolute;
-    transform: translateX(-50%);
     width: 82rem;
+  }
+
+  .centered .suggestions {
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .suggestion {
