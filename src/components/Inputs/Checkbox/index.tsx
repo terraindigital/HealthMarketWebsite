@@ -14,7 +14,7 @@ const Checkbox: FC<Props> = ({ id, name, label, required=false }) => {
   return (
     <Wrapper>
       <Input id={id} type="checkbox" name={name} required={required} />
-      <Label for={id}>{label}</Label>
+      <Label for={id}>{(id === 'medicare') ? label + `*` : label}</Label>
     </Wrapper>
   )
 }

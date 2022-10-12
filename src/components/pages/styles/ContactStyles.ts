@@ -41,6 +41,10 @@ export const PageStyles = css`
     color: var(--color-accent);
   }
 
+  .contact.section .contact-disclaimer {
+    margin-bottom: 4rem;
+  }
+
   @media only screen and (max-width: 1440px) {
     .contact.section .section .inner .left h4 {
       font-size: 3.2rem;

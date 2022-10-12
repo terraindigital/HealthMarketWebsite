@@ -48,7 +48,7 @@ const ContactPage = () => {
               </CheckboxGroup>
               <TextArea id="tellUsMore" name="tellUsMore" placeholder="Tell us more — What are your insurance needs?" />
               <p className="contact-disclaimer"><small>By clicking “Submit” I expressly consent to my contact information being provided to HealthMarkets orone of their licensed insurance agents for future contact regarding health, life, supplemental, Medicare Advantage or Medicare Supplement insurance, depending on my need.  I understand I may receive phone calls (including to any wireless number that I provide) including automatic telephone dialing systems orby artificial/pre-recorded messages text message and/or emails for the purpose of marketing insurance products and services. By providing my information, I understand that my consent is not a condition of purchase of any product or services, and carrier messaging and data rates may apply. I may revoke this consent at any time by contacting us at <a href="tel:8886379621">888-637-9621</a> to be place on our do-not-call list. <a href="#">Privacy Policy</a></small></p>
-              <Button background="accent" border="accent" color="light">Submit</Button>
+              <Button background="accent" border="accent" color="light">Agree and Submit</Button>
             </form>
           </div>
           <div className="right">
