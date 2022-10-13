@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import { useLocation } from "@reach/router";
 import * as qs from "qs";
 import debounce from "debounce";
@@ -47,9 +46,9 @@ const SearchField = () => {
     <Wrapper className="search-box">
       <Inner>
         <TopBar>
-          <Link to="/">
+          <a href="/">
             <Logo src={siteLogo} />
-          </Link>
+          </a>
           <CloseButton onClick={toggleSearch} />
           <div>
             <form className="search-box" onSubmit={(e) => e.preventDefault()}>

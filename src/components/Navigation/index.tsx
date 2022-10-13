@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 
 // Styles
 import { Nav, Menu, MenuItem } from "./styles"
@@ -10,16 +9,11 @@ import { toggleSubnav } from "../../static/scripts/global"
 // Components
 import AfterNav from "./AfterNav"
 
-// Queries
-import { useMainMenuQuery } from "../../hooks/useMainMenuQuery"
-
-const Navigation = () => {
-  const { menu } = useMainMenuQuery();
-
+const Navigation = ({ headerData }: { headerData: any }) => {
   return (
     <Nav className="menu wrapper">
       <Menu>
-        {menu.menuItems.nodes.map(item =>
+        {headerData?.menuItems && headerData?.menuItems?.nodes.map(item =>
           !item.parentId ? (
             <MenuItem key={item.id}
               className={item.childItems.nodes.length !== 0 ? `item has-submenu` : `item`}

@@ -1,4 +1,3 @@
-import {Link} from "gatsby";
 import React from "react";
 import {PlansByStateLinks} from "./styles";
 import {useMedicareMenuQuery} from "../../hooks/plans-by-state/useMedicareMenuQuery";

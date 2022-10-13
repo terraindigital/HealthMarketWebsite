@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import { Link } from "gatsby";
 
 // Styles
 import { Wrapper } from "./styles"

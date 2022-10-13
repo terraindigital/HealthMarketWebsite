@@ -1,5 +1,4 @@
 import React, { FC, useEffect } from "react"
-import { Link } from "gatsby"
 
 // Styles
 import { Wrapper, Logo } from "./styles"
@@ -11,11 +10,12 @@ import HeaderRight from "./HeaderRight"
 import headerLogo from "../../static/images/HMIA_logo2.png"
 
 interface Props {
+  headerData?: any
   staticHeader?: boolean,
   color?: String
 }
 
-const Header: FC<Props> = ({staticHeader=false, color}) => {
+const Header: FC<Props> = ({ headerData, staticHeader=false, color}) => {
   const headerColor = (color) ? color : "dark";
   const staticClass = (staticHeader) ? "is-static" : "";
 
@@ -37,14 +37,14 @@ const Header: FC<Props> = ({staticHeader=false, color}) => {
       stickyHeader();
     });
   }, [])
- 
+
 
   return (
     <Wrapper className={`site-header ` + headerColor + ` ` + staticClass}>
       <a href={process.env.GATSBY_SITE_BASE_URL} title="Go to Healthmarkets.com">
         <Logo className="site-logo" src={headerLogo} />
       </a>
-      <HeaderRight />
+      <HeaderRight headerData={headerData} />
     </Wrapper>
   )
 }
