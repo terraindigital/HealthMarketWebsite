@@ -83,11 +83,11 @@ export const Styles = css`
   }
   
   @media only screen and (max-width: 788px) {
-    input {
+    input.geocode.input {
       font-size: 1.6rem;
       max-width: 100%;
       min-width: 100%;
-      width: 68.8vw;
+      width: 88.8vw;
     }
   }
 
@@ -101,8 +101,10 @@ export const Styles = css`
       }
     }
 
-    input {
+    input.geocode.input {
       padding: 1.6rem 5.6rem 1.8rem 4.2rem;
+      min-width: 24rem;
+      width: 100%;
     }
   }
 `

@@ -27,8 +27,11 @@ export const Buttons = styled.div`
     justify-content: center;
 
     div {
+      align-items: center;
+      display: flex;
       font-size: 1.6rem;
-      line-height: 120%;
+      justify-content: center;
+      line-height: 3.4rem;
       min-height: 5.6rem;
       min-width: calc(50% - 2.1rem);
       padding: 0.9rem 1.1rem;
@@ -52,7 +55,9 @@ export const Radio = styled.div`
   }
 
   input[type=radio] {
+    height: 0;
     visibility: hidden;
+    width: 0;
   }
 `
 

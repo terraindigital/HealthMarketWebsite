@@ -46,12 +46,14 @@ export const Input = styled.input`
   @media only screen and (max-width: 788px) {
     font-size: 1.6rem;
     max-width: 100%;
-    min-width: 100%;
-    width: 68.8vw;
+    min-width: 68.8vw;
+    width: 100%;
   }
 
   @media only screen and (max-width: 620px) {
     padding: 1.6rem 5.6rem 1.8rem 4.2rem;
+    min-width: auto;
+    width: 100%;
   }
 `
 
