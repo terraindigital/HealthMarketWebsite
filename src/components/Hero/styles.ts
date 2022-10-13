@@ -51,8 +51,9 @@ export const Wrapper = styled.div`
 
 export const Img = styled.img`
   left: 0;
-  min-height: 100%;
+  height: 100%;
   object-fit: cover;
+  max-height: 100%;
   min-width: 100%;
   position: absolute;
   top: 0;
