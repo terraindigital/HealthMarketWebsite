@@ -106,8 +106,13 @@ export const MobileWrapper = styled.div`
 `
 
 export const Header = styled.div`
-  img {
+  max-height: 220px;
+  overflow: hidden;
+
+  .image > & > img {
     margin-bottom: 0;
+    min-height: 220px;
+    width: 100%;
   }
 
   h4 {

@@ -11,9 +11,8 @@ import {
 
 // Scripts
 const toggleOpenState = (el) => {
-  console.log(el);
   const card = el.target.closest('.card.icon');
-  card.classList.toggle('active');
+  if (card) card.classList.toggle('active');
 }
 
 interface Props {
@@ -26,7 +25,7 @@ interface Props {
 }
 
 const Card: FC<Props> = ({ image=null, icon=null, mobile=null, link=null, title, children }) => {
-  const imageClass = (icon !== null) ? "icon" : ""
+  const imageClass = (icon !== null) ? "icon" : "image"
 
   return (
     <>
