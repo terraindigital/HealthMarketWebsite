@@ -2,6 +2,7 @@ import * as React from "react";
 import { renderToString } from "react-dom/server";
 const createEmotionServer = require('@emotion/server/create-instance')
 const createEmotionCache = require('../../wp-renderer/utils/create-emotion-cache')
+const { CacheProvider } = require("@emotion/react");
 
 export const replaceRenderer = ({
                                     replaceBodyHTMLString,

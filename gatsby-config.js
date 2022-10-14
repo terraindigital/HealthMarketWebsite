@@ -1,5 +1,4 @@
-import type {GatsbyConfig} from 'gatsby';
-import {config as envConfig} from "dotenv";
+const {config: envConfig} = require("dotenv");
 
 envConfig({
     path: `.env.${process.env.NODE_ENV}`,
