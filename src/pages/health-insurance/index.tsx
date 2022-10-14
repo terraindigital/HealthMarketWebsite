@@ -218,11 +218,11 @@ export const Head = () => {
       <PageHead
         title={page.seo.title}
         description={page.seo.metaDesc}/>
-      {/* <script
+      <script
         async
         type="text/javascript"
         src="https://cdne-uho-cdn-eastus-prod.azureedge.net/scripts/analytics-configuration.min.js"
-      ></script> */}
+      ></script>
       <script src="//cdn.bc0a.com/autopilot/f00000000075672/autopilot_sdk.js"></script>
     </>
   )
