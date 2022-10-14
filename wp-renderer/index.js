@@ -268,7 +268,10 @@ const compileForUsage = async () => {
         endpoint: "header",
         envVars: {
             "process.env.HEADER_DATA": JSON.stringify(headerDataJSON.data.menu),
-            "process.env.GATSBY_SITE_BASE_URL": JSON.stringify("https://www.dev.healthmarkets.com")
+            "process.env.GATSBY_SITE_BASE_URL": JSON.stringify("https://www.dev.healthmarkets.com"),
+            "process.env.GATSBY_ALGOLIA_APP_ID": JSON.stringify("1G61FT24T0"),
+            "process.env.GATSBY_ALGOLIA_SEARCH_API_KEY": JSON.stringify("24f222ee53732a1e310c9873bfac25ac")
+
         },
     })
 
