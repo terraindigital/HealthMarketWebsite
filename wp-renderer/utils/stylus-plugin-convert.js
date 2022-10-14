@@ -5,7 +5,8 @@ const {
 const pxRegexp = /"[^"]+"|'[^']+'|url\([^)]+\)|(\d*\.?\d+)rem/g;
 
 module.exports = ({ allowList, blockList} = {}) => (element) => {
-    const remSize = 16 * 0.625 * 1.6 * 0.65
+    const remSize = 16 * 0.625 * 1.6 * 0.625 // 10px
+    const pxSize = 16
     if (element.type === DECLARATION) {
         const declarationHasPx = element.value.match(pxRegexp);
 
@@ -15,7 +16,7 @@ module.exports = ({ allowList, blockList} = {}) => (element) => {
 
             const expression = (element.children ).replace(
                 pxRegexp,
-                (match, group) => (group ? Number(group) * remSize + 'px' : match),
+                (match, group) => (group ? (Number(group) * remSize) / pxSize + 'rem' : match),
             );
             const reconstructedDeclaration = element.props + ':' + expression + ';';
 

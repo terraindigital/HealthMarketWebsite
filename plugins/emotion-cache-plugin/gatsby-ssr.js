@@ -12,7 +12,6 @@ export const replaceRenderer = ({
 
     const cache = createEmotionCache("healthmarkets22")
     const { extractCriticalToChunks, constructStyleTagsFromChunks } = createEmotionServer.default(cache)
-
     const html = renderToString(React.createElement(
         CacheProvider,
         {

@@ -252,8 +252,6 @@ const compileForUsage = async () => {
 
     const headerDataJSON = await headerDataRequest.json()
 
-    console.log(headerDataJSON)
-
     const headerData = await bundleAndRender({
         clientPathname: "./components/header.client.js",
         serverPathname: "./components/header.server.js",

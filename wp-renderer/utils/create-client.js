@@ -9,7 +9,7 @@ const createEmotionCache = require('./create-emotion-cache')
 module.exports = (App, uniqueId) => {
     let history = createHistory(window)
     const cache = createEmotionCache(uniqueId)
-    const root = ReactDOM.createRoot(document.getElementById(uniqueId));
+    const root = ReactDOM.createRoot(document.querySelector(`.${uniqueId}`));
     root.render(React.createElement(LocationProvider, {
         history,
         children: [

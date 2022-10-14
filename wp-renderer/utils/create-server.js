@@ -29,5 +29,5 @@ module.exports = (App, uniqueId) => () => {
     const chunks = extractCriticalToChunks(html)
     const styles = constructStyleTagsFromChunks(chunks)
 
-    return styles + `<div id="${uniqueId}">${html}</div>`
+    return styles + `<div class="${uniqueId}">${html}</div>`
 }

@@ -15,7 +15,7 @@ export interface LayoutProps {
 
 const LayoutComponent: FC<LayoutProps> = ({ headerData, pageClass, staticHeader, headerColor, children }) => {
     return (
-        <Wrapper id="healthmarkets22" className={pageClass}>
+        <Wrapper className={`healthmarkets22 ${pageClass ? pageClass : ""}`}>
             <Global styles={GlobalStyles}/>
             <Header headerData={headerData} staticHeader={staticHeader} color={headerColor}/>
             {children}

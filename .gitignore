@@ -1,6 +1,7 @@
 # Gatsby
 node_modules/
 .cache/
+.wordpress-cache/
 public
 dist1
 src/gatsby-types.d.ts
