@@ -124,15 +124,11 @@ export const Head = () => {
             <PageHead
                 title={home.seo.title}
                 description={home.seo.metaDesc}/>
-            <script
+            {/* <script
                 async
                 type="text/javascript"
                 src="https://cdne-uho-cdn-eastus-prod.azureedge.net/scripts/analytics-configuration.min.js"
-            ></script>
-            <script
-                type="module"
-                src="https://cdn.jsdelivr.net/npm/@geocodeearth/autocomplete-element/dist/bundle.js">
-            </script>
+            ></script> */}
         </>
     )
 }
