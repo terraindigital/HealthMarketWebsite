@@ -43,14 +43,14 @@ module.exports = {
             siteUrl: `https://www.healthmarkets.com`,
           },
         },
-        {
-          resolve: `gatsby-plugin-google-tagmanager`,
-          options: {
-            id: `GTM-5D4VMW`,
-            includeInDevelopment: true,
-            defaultDataLayer: {}
-          }
-        },
+        // {
+        //   resolve: `gatsby-plugin-google-tagmanager`,
+        //   options: {
+        //     id: `GTM-5D4VMW`,
+        //     includeInDevelopment: true,
+        //     defaultDataLayer: {}
+        //   }
+        // },
         'gatsby-plugin-image',
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-sitemap',
