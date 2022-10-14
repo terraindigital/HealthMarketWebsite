@@ -128,9 +128,25 @@ export const getUrlData = () => {
     var pair = cookie[i].split('=');
 
     whitelist.map(j => {
-      if (pair[0].trim() === j) {
-          uri = (num !== 0) ? '\&' + uri : uri;
-        uri += cookie[i].trim();
+      let key = pair[0].trim();
+      let content = pair[1].trim();
+      let obj = false;
+      if (key === j) {
+        if (num > 0) { uri += '&'; }
+        
+        try {
+          obj = JSON.parse(content);
+          Object.keys(obj).map(k => {
+            key = k.trim();
+            content = obj[k].trim();
+          });
+        } catch (e) {
+          key = pair[0].trim();
+          content = pair[1].trim();
+        }
+
+        uri = uri + key + '=' + content;
+
         num++;
       }
     });
@@ -162,6 +178,8 @@ export const sendForm = (e) => {
   // setup the data
   form.action = setUrlData(form.action) + '&zip=' + zipField.defaultValue;
 
+  console.log(form.action);
+
   // send the form
   form.submit();
 }
@@ -177,8 +195,10 @@ export const routeLink = (e) => {
   const link = (tagname !== 'a') ? e.target.parentElement : e.target;
 
   // get the target url
-  const url = link.href;
+  const url = setUrlData(link.href);
+
+  console.log(url);
 
   // send the user to that url
-  window.location.assign(setUrlData(url));
+  window.location.assign(url);
 }
