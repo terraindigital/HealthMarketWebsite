@@ -12,6 +12,9 @@ import {
   HeroSubheading
 } from "../../components/pages/styles/DentalInsStyles";
 
+// Scripts
+import { routeLink } from "../../static/scripts/global";
+
 // Components
 import Layout from "../../components/Layout";
 import PageHead from "../../components/PageHead";
@@ -75,7 +78,7 @@ const DentalInsurancePage = () => {
         <Accordion
           title={page.dentalPageCustomFields.dentalSection1.dentalAccordions.dentalAccordion3.heading}
           content={page.dentalPageCustomFields.dentalSection1.dentalAccordions.dentalAccordion3.content} />
-        <a className="hide-at-mobile" href={page.dentalPageCustomFields.dentalSection1.cta.link}>
+        <a className="hide-at-mobile" href={page.dentalPageCustomFields.dentalSection1.cta.link} onClick={routeLink}>
           <Button background="accent" border="accent" color="light">{page.dentalPageCustomFields.dentalSection1.cta.text}</Button>
         </a>
       </FlexedSection>

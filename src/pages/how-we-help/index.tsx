@@ -9,6 +9,9 @@ import {
   HeroSubheading
 } from '../../components/pages/styles/HowWeHelpStyles';
 
+// Scripts
+import { routeLink } from '../../static/scripts/global';
+
 // Components
 import Layout from "../../components/Layout";
 import PageHead from "../../components/PageHead";
@@ -56,7 +59,7 @@ const HowWeHelpPage = () => {
               <p>{hwh.howWeHelpCustomFields.hwhSection1.hwhListItems.hwhListItem3.content}</p>
           </ListItem>
         </List>
-        <a href={hwh.howWeHelpCustomFields.hwhSection1.cta.link}>
+        <a href={hwh.howWeHelpCustomFields.hwhSection1.cta.link} onClick={routeLink}>
           <Button background="accent" border="accent" color="light">
             {hwh.howWeHelpCustomFields.hwhSection1.cta.text}
           </Button>
@@ -69,7 +72,7 @@ const HowWeHelpPage = () => {
         <div className="right content">
           <h3>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.heading}</h3>
           <p>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.content}</p>
-          <a href={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.button.link}>
+          <a href={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.button.link} onClick={routeLink}>
             <Button background="accent" border="accent" color="light">
               {hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.button.text}
             </Button>
@@ -80,7 +83,7 @@ const HowWeHelpPage = () => {
         <div className="left content hide-at-mobile">
           <h3>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.heading}</h3>
           <p>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.content}</p>
-          <a href={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.button.link}>
+          <a href={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.button.link} onClick={routeLink}>
             <Button background="accent" border="accent" color="light">
               {hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.button.text}
             </Button>
@@ -95,7 +98,7 @@ const HowWeHelpPage = () => {
         <div className="right content show-at-mobile">
           <h3>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.heading}</h3>
           <p>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.content}</p>
-          <a href={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.button.link}>
+          <a href={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.button.link} onClick={routeLink}>
             <Button background="accent" border="accent" color="light">
               {hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.button.text}
             </Button>
@@ -109,7 +112,7 @@ const HowWeHelpPage = () => {
         <div className="right content">
           <h3>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock3.heading}</h3>
           <p>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock3.content}</p>
-          <a href="https://shop.healthmarkets.com/">
+          <a href={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock3.button.link} onClick={routeLink}>
             <Button background="accent" border="accent" color="light">
               {hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock3.button.text}
               </Button>
@@ -135,7 +138,7 @@ const HowWeHelpPage = () => {
             title={hwh.howWeHelpCustomFields.hwhSection3.hwhAccordions.hwhAccordion4.heading}
             content={hwh.howWeHelpCustomFields.hwhSection3.hwhAccordions.hwhAccordion4.content}
         />
-        <a href={hwh.howWeHelpCustomFields.hwhSection3.cta.link}>
+        <a href={hwh.howWeHelpCustomFields.hwhSection3.cta.link} onClick={routeLink}>
           <Button background="accent" border="accent" color="light">
             {hwh.howWeHelpCustomFields.hwhSection3.cta.text}
           </Button>
@@ -166,7 +169,7 @@ const HowWeHelpPage = () => {
           </Card>
         </Cards>
         <div className="hide-at-mobile" style={{ textAlign: "center", marginTop: "5.5rem" }}>
-          <a href={hwh.howWeHelpCustomFields.hwhSection4.cta.link}>
+          <a href={hwh.howWeHelpCustomFields.hwhSection4.cta.link} onClick={routeLink}>
             <Button background="accent" border="accent" color="light">
               {hwh.howWeHelpCustomFields.hwhSection4.cta.text}
             </Button>

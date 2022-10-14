@@ -14,7 +14,10 @@ import {
 } from "./styles"
 
 // Scripts
-import { toggleForm } from "../../../static/scripts/global"
+import {
+  toggleForm,
+  sendForm
+} from "../../../static/scripts/global"
 
 // Components
 import Button from "../../Buttons/Button"
@@ -39,14 +42,15 @@ interface Props {
 const api_key = 'ge-8876b9780ea0871d';
 
 // set the urls to change the form action to
-const plans = "https://shop.healthmarkets.com/en/about-me/plans-found";
+const plans = "https://shop.healthmarkets.com/en/about-me/info";
 const agents = "/local-health-insurance-agent/search/";
 
 const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, inputId, buttons, footerContent, hideFooter  }) => {
-  // TODO: send queries to relevant pages
+  const [hasUTM, setHasUTM] = useState(false);
+
   return (
     <Wrapper className={`${(centered) ? `centered` : ``} ${(light) ? `light` : ``}`}>
-      <Form id="zipCodeForm" action={plans} autocomplete="off">
+      <Form id="zipCodeForm" action={plans} autocomplete="off" onSubmit={(e) => { sendForm(e) }}>
         {(buttons || buttons === undefined) ? (
           <Buttons>
             <Radio onClick={toggleForm} className="accented">{btnLeftText}
@@ -59,12 +63,6 @@ const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, i
         ) : null}
         <AutocompleteField />
         <div id="zipCodeField" className="hidden-inputs">
-          <input type="hidden" name="healthShortTermEnrollOnline" value="yes" />
-          <input type="hidden" name="medicareMAenrollonline" value="yes" />
-          <input type="hidden" name="medicarePDPenrollonline" value="yes" />
-          <input type="hidden" name="medicareSuppenrollonline" value="yes" />
-          <input type="hidden" name="visionenrollonline" value="yes" />
-          <input type="hidden" name="dentalenrollonline" value="yes" />
           <input type="hidden" id="zipCode" name="zip" value="" />
         </div>
         {

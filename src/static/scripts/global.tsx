@@ -66,45 +66,6 @@ export const toggleForm = (el) => {
     parent.firstChild.querySelector('input[type=radio]').checked = true
     parent.firstChild.closest('form').action = plans
     document.querySelector('input#zipCode')?.setAttribute('name', 'zip')
-
-    const healthShortTermEnrollOnline = document.createElement('input')
-    healthShortTermEnrollOnline.type = "hidden"
-    healthShortTermEnrollOnline.name = "healthShortTermEnrollOnline"
-    healthShortTermEnrollOnline.value = "yes"
-
-    const medicareMAenrollonline = document.createElement('input')
-    medicareMAenrollonline.type = "hidden"
-    medicareMAenrollonline.name = "medicareMAenrollonline"
-    medicareMAenrollonline.value = "yes"
-
-    const medicarePDPenrollonline = document.createElement('input')
-    medicarePDPenrollonline.type = "hidden"
-    medicarePDPenrollonline.name = "medicarePDPenrollonline"
-    medicarePDPenrollonline.value = "yes"
-
-    const medicareSuppenrollonline = document.createElement('input')
-    medicareSuppenrollonline.type = "hidden"
-    medicareSuppenrollonline.name = "medicareSuppenrollonline"
-    medicareSuppenrollonline.value = "yes"
-
-    const visionenrollonline = document.createElement('input')
-    visionenrollonline.type = "hidden"
-    visionenrollonline.name = "visionenrollonline"
-    visionenrollonline.value = "yes"
-
-    const dentalenrollonline = document.createElement('input')
-    dentalenrollonline.type = "hidden"
-    dentalenrollonline.name = "dentalenrollonline"
-    dentalenrollonline.value = "yes"
-
-    document.querySelector('#zipCodeField').append(
-      healthShortTermEnrollOnline,
-      medicareMAenrollonline,
-      medicarePDPenrollonline,
-      medicareSuppenrollonline,
-      visionenrollonline,
-      dentalenrollonline
-    )
   }
   // toggle second button state
   parent.firstChild.nextSibling.classList.toggle('accented')
@@ -112,20 +73,6 @@ export const toggleForm = (el) => {
     parent.firstChild.nextSibling.querySelector('input[type=radio]').checked = true
     parent.firstChild.nextSibling.closest('form').action = agents
     document.querySelector('input#zipCode')?.setAttribute('name', 'query')
-
-    const healthShortTermEnrollOnline = document.querySelector('input[name=healthShortTermEnrollOnline]')
-    const medicareMAenrollonline = document.querySelector('input[name=medicareMAenrollonline]')
-    const medicarePDPenrollonline = document.querySelector('input[name=medicarePDPenrollonline]')
-    const medicareSuppenrollonline = document.querySelector('input[name=medicareSuppenrollonline]')
-    const visionenrollonline = document.querySelector('input[name=visionenrollonline]')
-    const dentalenrollonline = document.querySelector('input[name=dentalenrollonline]')
-
-    document.querySelector('#zipCodeField').removeChild(healthShortTermEnrollOnline)
-    document.querySelector('#zipCodeField').removeChild(medicareMAenrollonline)
-    document.querySelector('#zipCodeField').removeChild(medicarePDPenrollonline)
-    document.querySelector('#zipCodeField').removeChild(medicareSuppenrollonline)
-    document.querySelector('#zipCodeField').removeChild(visionenrollonline)
-    document.querySelector('#zipCodeField').removeChild(dentalenrollonline)
   }
 }
 
@@ -159,4 +106,79 @@ export const getRandomPhotos = (obj) => {
   }
 
   return arr;
+}
+
+export const getUrlData = () => {
+  const qs = require('qs');
+  const whitelist = [
+    "_hm_cp",
+    "_ga",
+    "_fbp"
+  ];
+  let uri = '';
+  let num = 0;
+
+  // grab the data
+  let cookie = document.cookie;
+
+  // parse the data
+  cookie = cookie.split(';');
+
+  for (let i=0; i < cookie.length; i++) {
+    var pair = cookie[i].split('=');
+
+    whitelist.map(j => {
+      if (pair[0].trim() === j) {
+          uri = (num !== 0) ? '\&' + uri : uri;
+        uri += cookie[i].trim();
+        num++;
+      }
+    });
+  }
+
+  // return the data
+  return uri;
+}
+
+export const setUrlData = (url) => {
+  // grab the pieces
+  const uri = getUrlData();
+
+  // append the pieces to the url
+  const link = url + (!url.includes('?') ? '?' : '\&') + uri;
+
+  // return the url
+  return link;
+}
+
+export const sendForm = (e) => {
+  // prevent the form from submitting before we add our pieces
+  e.preventDefault();
+  const form = e.target;
+
+  // get the zip code value
+  const zipField = form.querySelector('#zipCode');
+
+  // setup the data
+  form.action = setUrlData(form.action) + '&zip=' + zipField.defaultValue;
+
+  // send the form
+  form.submit();
+}
+
+export const routeLink = (e) => {
+  // prevent the link from navigating
+  e.preventDefault();
+
+  // get the tagname
+  const tagname = e.target.localName;
+
+  // if it's not 'a' find 'a'
+  const link = (tagname !== 'a') ? e.target.parentElement : e.target;
+
+  // get the target url
+  const url = link.href;
+
+  // send the user to that url
+  window.location.assign(setUrlData(url));
 }

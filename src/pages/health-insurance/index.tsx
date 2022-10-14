@@ -12,6 +12,9 @@ import {
   HeroSubheading
 } from "../../components/pages/styles/HealthInsStyles";
 
+// Scripts
+import { routeLink } from "../../static/scripts/global";
+
 // Components
 import Layout from "../../components/Layout";
 import PageHead from "../../components/PageHead";
@@ -125,7 +128,7 @@ const HealthInsurancePage = () => {
         <Accordion
           title={page.healthPageCustomFields.healthSection2.healthAccordions.healthAccordion3.title}
           content={page.healthPageCustomFields.healthSection2.healthAccordions.healthAccordion3.content} />
-        <a className="hide-at-mobile" href={page.healthPageCustomFields.healthSection2.cta.link}>
+        <a className="hide-at-mobile" href={page.healthPageCustomFields.healthSection2.cta.link} onClick={routeLink}>
           <Button background="accent" border="accent" color="light">{page.healthPageCustomFields.healthSection2.cta.text}</Button>
         </a>
       </FlexedSection>
