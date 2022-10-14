@@ -7,11 +7,11 @@ import {useLifeInsuranceMenuQuery} from "../../hooks/plans-by-state/useLifeInsur
 import {useMedicareEligibilityMenuQuery} from "../../hooks/plans-by-state/useMedicareEligibilityMenuQuery";
 
 const PlansByStateMenu = () => {
-    const {medicareEligibility} = useMedicareEligibilityMenuQuery();
-    const {medicare} = useMedicareMenuQuery();
-    const {healthInsurance} = useHealthInsuranceMenuQuery();
-    const {dentalInsurance} = useDentalInsuranceMenuQuery();
-    const {lifeInsurance} = useLifeInsuranceMenuQuery();
+    const { wpcontent: { allMedicareEligibility: medicareEligibility } } = useMedicareEligibilityMenuQuery();
+    const { wpcontent: { allPlansByState: medicare } } = useMedicareMenuQuery();
+    const { wpcontent: { allPlansByState: healthInsurance } } = useHealthInsuranceMenuQuery();
+    const { wpcontent: { allPlansByState: dentalInsurance } } = useDentalInsuranceMenuQuery();
+    const { wpcontent: { allPlansByState: lifeInsurance } } = useLifeInsuranceMenuQuery();
 
     return (
         <PlansByStateLinks>

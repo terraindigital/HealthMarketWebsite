@@ -16,12 +16,11 @@ module.exports = {
     // If you use VSCode you can also use the GraphQL plugin
     // Learn more at: https://gatsby.dev/graphql-typegen
     assetPrefix: '/core-assets',
-    graphqlTypegen: true,
     plugins: [
         {
             resolve: `gatsby-source-wordpress`,
             options: {
-                url: process.env.WPGRAPHQL_URL,
+                url: "https://hmnm2022.wpengine.com/graphql",
                 develop: {
                     hardCacheMediaFiles: true,
                     hardCacheData: true
@@ -36,7 +35,7 @@ module.exports = {
                 // Field name under which it will be available. Used in your Gatsby query. This is also an arbitrary name.
                 fieldName: "wpcontent",
                 // GraphQL endpoint, relative to your WordPress home URL.
-                url: process.env.WPGRAPHQL_URL,
+                url: "https://hmnm2022.wpengine.com/graphql",
             },
         },
         /*{
