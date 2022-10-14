@@ -3,7 +3,7 @@ import React, {FC} from "react";
 import LayoutComponent, {LayoutProps} from "./component";
 
 const Layout: FC<Omit<LayoutProps, "headerData">> = (props) => {
-    const { menu } = useMainMenuQuery();
+    const { wpcontent: { menu } } = useMainMenuQuery();
     return (
        <LayoutComponent {...props} headerData={menu} />
     )

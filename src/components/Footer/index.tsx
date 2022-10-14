@@ -13,10 +13,10 @@ interface Props {
 }
 
 const Footer: FC<Omit<FooterProps, "data">> = ({ complianceCode, children }) => {
-  const { productMenu } = useFooterProductMenuQuery()
-  const { connectMenu } = useFooterConnectMenuQuery()
-  const { counselMenu } = useFooterGetCounselMenuQuery()
-  const { getToKnowUsMenu } = useFooterGetToKnowUsMenuQuery()
+  const { wpcontent: { menu: productMenu } } = useFooterProductMenuQuery();
+  const { wpcontent: { menu: connectMenu } } = useFooterConnectMenuQuery()
+  const { wpcontent: { menu: counselMenu } } = useFooterGetCounselMenuQuery()
+  const { wpcontent: { menu: getToKnowUsMenu } } = useFooterGetToKnowUsMenuQuery();
 
   return <FooterComponent data={{
     productMenu,

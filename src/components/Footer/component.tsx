@@ -44,7 +44,7 @@ const FooterComponent: FC<FooterProps> = ({ data, complianceCode, children }) =>
   const { productMenu, connectMenu, counselMenu, getToKnowUsMenu } = data
 
   return (
-      <FooterWrapper>
+      <FooterWrapper className="healthmarkets22">
         <WidgetAreaOne>
           <FooterLogo>
             <a href="/">

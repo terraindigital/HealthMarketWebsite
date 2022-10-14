@@ -29,6 +29,17 @@ module.exports = {
                 }
             }
         },
+        {
+            resolve: "gatsby-source-graphql",
+            options: {
+                // Remote schema query type. This is an arbitrary name.
+                typeName: "WPGraphQL",
+                // Field name under which it will be available. Used in your Gatsby query. This is also an arbitrary name.
+                fieldName: "wpcontent",
+                // GraphQL endpoint, relative to your WordPress home URL.
+                url: process.env.WPGRAPHQL_URL,
+            },
+        },
         /*{
             resolve: `gatsby-plugin-emotion`,
             options: {
