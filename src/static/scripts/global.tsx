@@ -113,7 +113,11 @@ export const getUrlData = () => {
   const whitelist = [
     "_hm_cp",
     "_ga",
-    "_fbp"
+    "_fbp",
+    "_gid",
+    "gclid",
+    "fbclid",
+    "msclkid"
   ];
   let uri = '';
   let num = 0;
