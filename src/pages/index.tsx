@@ -124,11 +124,11 @@ export const Head = () => {
             <PageHead
                 title={home.seo.title}
                 description={home.seo.metaDesc}/>
-            {/* <script
+            <script
                 async
                 type="text/javascript"
                 src="https://cdne-uho-cdn-eastus-prod.azureedge.net/scripts/analytics-configuration.min.js"
-            ></script> */}
+            ></script>
         </>
     )
 }
