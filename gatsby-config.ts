@@ -25,12 +25,12 @@ module.exports = {
                 url: process.env.WPGRAPHQL_URL,
             }
         },
-        {
+        /*{
             resolve: `gatsby-plugin-emotion`,
             options: {
                 cssPropOptimization: true,
             }
-        },
+        },*/
         {
             resolve: `gatsby-plugin-google-analytics`,
             options: {
@@ -74,11 +74,11 @@ module.exports = {
             resolve: `gatsby-plugin-google-fonts`,
             options: {
               fonts: [
-                `playfair display\:400,700`,
                 `open sans\:400,700`
               ]
             }
-        }
+        },
+        'emotion-cache-plugin'
     ],
 };
 

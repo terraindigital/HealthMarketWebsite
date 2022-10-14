@@ -1,7 +1,7 @@
 import React, {FC, ReactNode} from 'react';
 
 // Styles
-import { Wrapper, Heading, Inner } from "./styles";
+import { Wrapper, Heading, Inner, OuterWrapper } from "./styles";
 
 interface Props {
   color: String,
@@ -37,6 +37,7 @@ const Section: FC<Props> = ({ heading, subheading, guarantee, bestPrice, classes
   if (classes) { classList += ` ${classes}`}
 
   return (
+      <OuterWrapper>
     <Wrapper backgroundColor={bgColor} className={classList}>
       <Heading className="heading">
         {(heading) ? (<h2>{heading}</h2>) : null}
@@ -47,6 +48,7 @@ const Section: FC<Props> = ({ heading, subheading, guarantee, bestPrice, classes
         {children}
       </Inner>
     </Wrapper>
+      </OuterWrapper>
   )
 };
 

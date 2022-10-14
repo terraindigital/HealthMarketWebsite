@@ -1,7 +1,7 @@
 import React, {FC, ReactNode} from 'react';
 import {Global} from "@emotion/react";
 import {GlobalStyles, Wrapper} from "./styles";
-
+import '../../static/css/typography.css'
 // Components
 import Header from "../Header"
 
@@ -15,7 +15,7 @@ export interface LayoutProps {
 
 const LayoutComponent: FC<LayoutProps> = ({ headerData, pageClass, staticHeader, headerColor, children }) => {
     return (
-        <Wrapper className={pageClass}>
+        <Wrapper id="healthmarkets22" className={pageClass}>
             <Global styles={GlobalStyles}/>
             <Header headerData={headerData} staticHeader={staticHeader} color={headerColor}/>
             {children}
