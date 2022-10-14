@@ -44,12 +44,12 @@ module.exports = {
                 cssPropOptimization: true,
             }
         },*/
-        {
-            resolve: `gatsby-plugin-google-analytics`,
-            options: {
-                trackingId: 'GA_TRACKING_ID',
-            },
-        },
+        // {
+        //     resolve: `gatsby-plugin-google-analytics`,
+        //     options: {
+        //         trackingId: 'GA_TRACKING_ID',
+        //     },
+        // },
         {
           resolve: `gatsby-plugin-canonical-urls`,
           options: {
