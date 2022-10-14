@@ -1,5 +1,11 @@
 import styled from "@emotion/styled"
 
+export const OuterWrapper = styled.div`
+    overflow-x: hidden;
+    width: 100%;
+`
+
+
 export const Wrapper = styled.div`
   background-color: ${({ backgroundColor }) => backgroundColor};
   position: relative;

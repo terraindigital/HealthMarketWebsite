@@ -3,13 +3,15 @@ import {graphql, useStaticQuery} from "gatsby";
 export const useMedicareEligibilityMenuQuery = () => {
     const data = useStaticQuery(graphql`
         query medicareEligibilityMenuQuery {
-          medicareEligibility: allWpMedicareEligibility {
-            nodes {
-              title
-              slug
+            wpcontent {
+                allMedicareEligibility(first: 100) {
+                    nodes {
+                        title
+                        slug
+                    }
+                }
             }
-          }
         }
-      `)
+    `)
     return data
 }

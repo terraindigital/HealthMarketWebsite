@@ -5,7 +5,7 @@ import { Pagination, Navigation } from 'swiper';
 // Styles
 import 'swiper/css';
 import {
-  Wrapper
+  Wrapper,
 } from './styles';
 
 // Components
@@ -84,7 +84,7 @@ const Carousel: FC<Props> = ({ children }) => {
         <div className="hide-at-mobile">
           <CarouselNav current={current} count={children.length}/>
         </div>
-      </Swiper>  
+      </Swiper>
     </Wrapper>
   )
 };

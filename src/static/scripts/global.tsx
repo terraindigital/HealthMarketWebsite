@@ -93,7 +93,7 @@ export const fadeIn = (selector) => {
 
 export const getRandomPhotos = (obj) => {
   let arr = Array();
-  
+
   Object.keys(obj).map(i => {
     arr.push(obj[i]);
   });
@@ -133,7 +133,7 @@ export const getUrlData = () => {
       let obj = false;
       if (key === j) {
         if (num > 0) { uri += '&'; }
-        
+
         try {
           obj = JSON.parse(content);
           Object.keys(obj).map(k => {

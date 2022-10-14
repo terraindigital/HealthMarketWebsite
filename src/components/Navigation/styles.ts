@@ -1,4 +1,3 @@
-import {css} from "@emotion/react"
 import styled from "@emotion/styled"
 
 export const Nav = styled.nav`
@@ -9,7 +8,7 @@ export const Nav = styled.nav`
   min-width: 100vw;
   opacity: 0;
   overflow-y: scroll;
-  padding: 8.9rem 3.4rem 3.4rem;
+  padding: 14rem 3.4rem 3.4rem;
   position: fixed;
   top: -9999px;
   transition: opacity 0.22s linear;
@@ -50,7 +49,7 @@ export const MenuItem = styled.li`
 
   a {
     color: var(--color-light);
-    font-family: 'Playfair Display';
+    font-family: var(--font-heading);
     font-size: 4.4rem;
     font-weight: bold;
     text-decoration: none;

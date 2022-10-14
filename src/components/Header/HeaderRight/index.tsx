@@ -1,5 +1,4 @@
-import React, { useState, useCallback } from "react";
-import { Link } from "gatsby";
+import React, { useState } from "react";
 
 // Styles
 import {
@@ -7,7 +6,6 @@ import {
   Item,
   TextSize,
   SearchButton,
-  MenuButton,
   Bars
 } from "./styles"
 
@@ -27,7 +25,7 @@ import SearchField from "../../SearchField"
 import PhoneIcon from "../../../static/images/phone-icon.png"
 import SearchIcon from "../../../static/images/search-icon.png"
 
-const HeaderRight = () => {
+const HeaderRight = ({ headerData }: { headerData: any }) => {
   const [isNavOpen, setNavOpen] = useState(false);
 
   // const changeNavOpen = (value) => {
@@ -57,7 +55,7 @@ const HeaderRight = () => {
         <ToggleButton className="menu-button" callback={toggleNav}>
           <Bars />
         </ToggleButton>
-        <Navigation />
+        <Navigation headerData={headerData} />
         <SearchField />
       </Item>
     </Wrapper>
