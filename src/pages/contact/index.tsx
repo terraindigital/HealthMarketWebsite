@@ -78,11 +78,6 @@ export const Head = () => {
       <PageHead
         title={page.seo.title}
         description={page.seo.metaDesc}/>
-      <script
-        async
-        type="text/javascript"
-        src="https://cdne-uho-cdn-eastus-prod.azureedge.net/scripts/analytics-configuration.min.js"
-      ></script>
     </>
   )
 }
