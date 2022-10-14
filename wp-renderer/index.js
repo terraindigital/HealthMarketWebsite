@@ -7,6 +7,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HTMLInlineCSSWebpackPlugin = require("html-inline-css-webpack-plugin").default;
 const stylesFromHTML = require("styles-from-html")
+const InlineChunkHtmlPlugin = require('react-dev-utils/InlineChunkHtmlPlugin');
 
 const constructOutputPath = (pathname, endpoint) => {
     return path.join(__dirname, "../public/__healthmarkets/", endpoint)
@@ -18,7 +19,7 @@ const clientCfg = (pathname, endpoint, envs = {}) => ({
     output: {
         path: constructOutputPath(pathname, endpoint),
         filename: "[name].js",
-        libraryTarget: "umd",
+        iife: true,
         globalObject: "this",
         publicPath: '',
     },
@@ -34,6 +35,7 @@ const clientCfg = (pathname, endpoint, envs = {}) => ({
         new webpack.ProvidePlugin({
             process: 'process/browser',
         }),
+        new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [/index/]),
         new MiniCssExtractPlugin({
             filename: "[name].css",
             chunkFilename: "[id].css"
@@ -43,13 +45,13 @@ const clientCfg = (pathname, endpoint, envs = {}) => ({
         }),
         new HTMLInlineCSSWebpackPlugin({
             replace: {
-                removeTarget: false,
+                removeTarget: true,
                 target: '<style></style>',
             }
         }),
     ],
     optimization: {
-        minimize: false
+        minimize: true
     },
     module: {
         rules: [
@@ -197,20 +199,28 @@ const bundleAndRender = async ({ clientPathname, serverPathname, endpoint, envVa
     })
 
     const outputPath = constructOutputPath(headerServerInput, endpoint)
+    const firstPassHtml = fs.readFileSync(`${outputPath}/index.html`, { encoding: "utf-8" })
+    const webpackedHTMLStyle = stylesFromHTML(firstPassHtml).css
 
-    const contents = fs.readFileSync(`${outputPath}/server.js`, 'utf8');
-    const app = requireFromString(contents);
+    const scriptRe = /<script\b[^>]*>[\s\S]*?<\/script\b[^>]*>/g
+    const scriptResults = firstPassHtml.match(scriptRe)[0]
+
+    const serverFile = fs.readFileSync(`${outputPath}/server.js`, { encoding: 'utf-8' });
+    const app = requireFromString(serverFile);
     const prerenderedHTML = app()
-    const webpackedHTMLStyle = stylesFromHTML(fs.readFileSync(`${outputPath}/index.html`, { encoding: "utf-8" })).css
-    const renderedFinal = (`<style>${webpackedHTMLStyle}</style>` + prerenderedHTML + `<script type="text/javascript" src="/index.js"></script>`).trim();
 
+    const renderedFinal = (`<style>${webpackedHTMLStyle}</style>` + prerenderedHTML).trim();
 
+    fs.rmSync(`${outputPath}/server.js`)
+    fs.writeFileSync(`${outputPath}/index.html`, renderedFinal, { encoding: "utf-8" })
 
     const orig = fs.readFileSync(`./utils/original.html`, { encoding: "utf-8" })
-
-    const replaced = orig.replace("<!-- TEMPLATE HERE -->", renderedFinal)
+    const replaced = orig.replace("<!-- TEMPLATE HERE -->", "<!-- START OF HM2022 -->" + renderedFinal + "<!-- END OF HM2022 -->")
 
     fs.writeFileSync(`${outputPath}/index.html`, replaced, { encoding: "utf-8" })
+
+    fs.rmSync(`${outputPath}/index.css`)
+    //fs.rmSync(`${outputPath}/index.js`)
 
     return renderedFinal;
 }
