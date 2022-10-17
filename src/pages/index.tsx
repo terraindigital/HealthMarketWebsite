@@ -43,7 +43,8 @@ const IndexPage = ({path}: PageProps) => {
                     btnLeftText={home.pageHeroFields.heroButtons.heroButton1.text}
                     btnRightText={home.pageHeroFields.heroButtons.heroButton2.text}
                     inputId="homepageHeroLocation"
-                    buttons />
+                    buttons
+                    hideFooter />
             </Hero>
             <Section
                 heading={home.homePageCustomFields.homeSection1.heading}

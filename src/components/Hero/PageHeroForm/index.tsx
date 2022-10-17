@@ -46,7 +46,7 @@ const plans = "https://shop.healthmarkets.com/en/about-me/info";
 const agents = "/local-health-insurance-agent/search/";
 
 const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, inputId, buttons, footerContent, hideFooter  }) => {
-  const [hasUTM, setHasUTM] = useState(false);
+  console.log(hideFooter);
 
   return (
     <Wrapper className={`${(centered) ? `centered` : ``} ${(light) ? `light` : ``}`}>
@@ -65,19 +65,15 @@ const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, i
         <div id="zipCodeField" className="hidden-inputs">
           <input type="hidden" id="zipCode" name="zip" value="" />
         </div>
-        {
-          hideFooter ? (<></>) : (
-          <Footer>
-            <Button style={{borderRadius: "4px"}} background="accent" border="light" color="light">Search</Button>
-            {(buttons || buttons === undefined) ? (
-              <CTA>
-                <img src={PhoneIcon} />
-                <span dangerouslySetInnerHTML={{ __html: footerContent }} />
-              </CTA>
-            ) : null}
-          </Footer>
-          )
-        }
+        <Footer>
+          <Button style={{borderRadius: "4px"}} background="accent" border="light" color="light">Search</Button>
+          {(!hideFooter || hideFooter === undefined) ? (
+            <CTA>
+              <img src={PhoneIcon} />
+              <span dangerouslySetInnerHTML={{ __html: footerContent }} />
+            </CTA>
+          ) : null}
+        </Footer>
       </Form>
     </Wrapper>
   )
