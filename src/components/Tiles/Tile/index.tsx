@@ -25,7 +25,7 @@ const Tile: FC<Props> = ({ image, title, selected, link, children }) => {
         alt="Tile Image"
       />
       <Content>
-        <h2>{title}</h2>
+        <h4>{title}</h4>
         {children}
       </Content>
       </a>

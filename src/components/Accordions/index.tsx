@@ -1,5 +1,4 @@
 import React, {FC, ReactNode} from 'react';
-import { parentPort } from 'worker_threads';
 
 // Styles
 import {
@@ -15,7 +14,7 @@ interface Props {
 }
 
 const toggleAccordion = (el) => {
-  const parent = el.target.parentElement
+  const parent = el.target.closest('.accordion')
   parent.classList.toggle('active')
 }
 
@@ -26,8 +25,10 @@ const Accordion: FC<Props> = ({ title, content, html=false }) => {
         <h2>{title}</h2>
       </Title>
       <Content className="content">
-        {(!html) ? content : (
-          <div dangerouslySetInnerHTML={{ __html: content }} />
+        {(!html) ? (
+          <p>{content}</p>
+        ) : (
+          <p dangerouslySetInnerHTML={{ __html: content }} />
         )}
       </Content>
     </Wrapper>

@@ -37,7 +37,7 @@ export const TextSize = styled.div`
   }
 `
 
-export const SearchButton = styled.img`
+export const SearchButton = styled.button`
   cursor: pointer;
 
   &.icon {

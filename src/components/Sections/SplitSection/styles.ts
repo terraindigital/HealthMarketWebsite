@@ -3,11 +3,16 @@ import styled from "@emotion/styled";
 export const Wrapper = styled.div`
   background-color: ${({ backgroundColor }) => backgroundColor};
 
-  padding-bottom: 8.9rem;
-  padding-top: 8.9rem;
+  padding-bottom: 10.4rem;
+  padding-top: 10.4rem;
 
   padding-left: 8.9rem;
   padding-right: 8.9rem;
+
+  @media screen and (min-width: 1921px) {
+    padding-left: 40rem;
+    padding-right: 40rem;
+  }
 
   @media screen and (max-width: 1044px) {
     padding-left: 5.5rem;
@@ -58,7 +63,7 @@ export const Wrapper = styled.div`
       margin-left: 3.4rem;
     }
 
-    @media only screen and (max-width: 620px) {
+    @media only screen and (max-width: 788px) {
       display: block;
       
       .left,

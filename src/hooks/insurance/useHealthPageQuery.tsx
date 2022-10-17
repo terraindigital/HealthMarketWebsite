@@ -5,6 +5,12 @@ export const useHealthPageQuery = () => {
     query HealthQuery {
       page: wpPage(databaseId: {eq: 1130}) {
         id
+        slug
+        seo {
+          fullHead
+          title
+          metaDesc
+        }
         pageHeroFields {
           headline
           subheadline
@@ -25,6 +31,7 @@ export const useHealthPageQuery = () => {
               text
             }
           }
+          callUs
         }
         healthPageCustomFields {
           healthSection1 {
@@ -35,22 +42,34 @@ export const useHealthPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobile {
+                  sourceUrl
+                }
                 title
                 content
+                link
               }
               healthCard2 {
                 icon {
                   sourceUrl
                 }
+                mobile {
+                  sourceUrl
+                }
                 title
                 content
+                link
               }
               healthCard3 {
                 icon {
                   sourceUrl
                 }
+                mobile {
+                  sourceUrl
+                }
                 title
                 content
+                link
               }
             }
           }
@@ -84,11 +103,17 @@ export const useHealthPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 title
                 link
               }
               healthPlan2 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 title
@@ -98,11 +123,17 @@ export const useHealthPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 title
                 link
               }
               healthPlan4 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 title
@@ -112,11 +143,17 @@ export const useHealthPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 title
                 link
               }
               healthPlan6 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 title
@@ -126,11 +163,17 @@ export const useHealthPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 title
                 link
               }
               healthPlan8 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 title
@@ -140,6 +183,9 @@ export const useHealthPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 title
                 link
               }
@@ -147,11 +193,17 @@ export const useHealthPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 title
                 link
               }
               healthPlan11 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 title
@@ -169,6 +221,7 @@ export const useHealthPageQuery = () => {
                 }
                 heading
                 content
+                link
               }
               healthRelatedContent2 {
                 image {
@@ -176,6 +229,7 @@ export const useHealthPageQuery = () => {
                 }
                 heading
                 content
+                link
               }
               healthRelatedContent3 {
                 image {
@@ -183,6 +237,7 @@ export const useHealthPageQuery = () => {
                 }
                 heading
                 content
+                link
               }
             }
             cta {
@@ -193,6 +248,32 @@ export const useHealthPageQuery = () => {
         }
         disclaimers {
           disclaimer
+        }
+        calloutsCustomField {
+          isActive
+          callouts {
+            callout1 {
+              number
+              tagline
+              title
+              description
+              disclaimer
+            }
+            callout2 {
+              number
+              tagline
+              title
+              description
+              disclaimer
+            }
+            callout3 {
+              number
+              tagline
+              title
+              description
+              disclaimer
+            }
+          }
         }
       }
     }

@@ -1,26 +1,12 @@
-import React, {FC, ReactNode} from 'react';
-import {Global} from "@emotion/react";
-import {GlobalStyles, Wrapper} from "./styles";
+import {useMainMenuQuery} from "../../hooks/useMainMenuQuery";
+import React, {FC} from "react";
+import LayoutComponent, {LayoutProps} from "./component";
 
-// Components
-import Header from "../Header"
-import Footer from "../Footer"
-
-interface Props {
-    pageClass?: String,
-    staticHeader?: boolean,
-    headerColor?: String,
-    children: ReactNode
-}
-
-const Layout: FC<Props> = ({ pageClass, staticHeader, headerColor, children }) => {
+const Layout: FC<Omit<LayoutProps, "headerData">> = (props) => {
+    const { wpcontent: { menu } } = useMainMenuQuery();
     return (
-        <Wrapper className={pageClass}>
-            <Global styles={GlobalStyles}/>
-            <Header staticHeader={staticHeader} color={headerColor}/>
-            {children}
-        </Wrapper>
+       <LayoutComponent {...props} headerData={menu} />
     )
 };
 
-export default Layout;
+export default Layout

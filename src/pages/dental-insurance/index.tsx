@@ -1,5 +1,5 @@
 // Library
-import * as React from "react"
+import React, { useEffect, useState } from "react";
 import { Global } from "@emotion/react";
 
 // Query
@@ -12,38 +12,59 @@ import {
   HeroSubheading
 } from "../../components/pages/styles/DentalInsStyles";
 
+// Scripts
+import { routeLink } from "../../static/scripts/global";
+
 // Components
 import Layout from "../../components/Layout";
-import Seo from "../../components/SEO";
+import PageHead from "../../components/PageHead";
 import Hero from "../../components/Hero";
 import PageHeroForm from "../../components/Hero/PageHeroForm";
 import Button from "../../components/Buttons/Button";
 import Section from "../../components/Sections";
+import RelatedContent from "../../components/RelatedContent";
 import Cards from "../../components/Cards";
 import Card from "../../components/Cards/Card";
 import FlexedSection from "../../components/Sections/FlexedSection";
 import Accordion from "../../components/Accordions";
-import Carousel from "../../components/Carousel";
-import Review from "../../components/Reviews/Review";
-import Reviews from "../../components/Reviews";
+import Callouts from "../../components/Callouts";
+import Callout from "../../components/Callouts/Callout";
 import Footer from "../../components/Footer";
 
 const DentalInsurancePage = () => {
   const { page } = useDentalPageQuery();
-  
+  const callouts = page.calloutsCustomField.callouts;
+
+  const [hasChildren, setHasChildren] = useState(false);
+
+  useEffect(() => {
+    let n = 0;
+    let delay = setInterval(() => {
+      const beContainer = document.getElementById('relatedContent');
+      if (n > 0 && beContainer?.childElementCount > 0) {
+        setHasChildren(true);
+      } else {
+        setHasChildren(false);
+      }
+      if (n >= 5) clearInterval(delay);
+      n++;
+    }, 50);
+  }, []);
+
   return (
     <Layout pageClass="dental-insurance">
       <Global styles={PageStyles} />
-      <Seo title="Dental Insurance"/>
       <Hero
         image={page.pageHeroFields.heroImage.sourceUrl}
-        mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}>
+        mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
+        bgColor="#BBD9F1">
         <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
         <PageHeroForm
             btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
             btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
-            inputId="dentalPageHeroLocation" />
+            inputId="dentalPageHeroLocation"
+            footerContent={page.pageHeroFields.callUs} />
       </Hero>
       <FlexedSection
         color={page.dentalPageCustomFields.dentalSection1.color}
@@ -57,80 +78,54 @@ const DentalInsurancePage = () => {
         <Accordion
           title={page.dentalPageCustomFields.dentalSection1.dentalAccordions.dentalAccordion3.heading}
           content={page.dentalPageCustomFields.dentalSection1.dentalAccordions.dentalAccordion3.content} />
-        <div className="hide-at-mobile">
-          <a href="https://shop.healthmarkets.com/dental">
-            <Button background="accent" border="accent" color="light">Show me options</Button>
-          </a>
-        </div>
+        <a className="hide-at-mobile" href={page.dentalPageCustomFields.dentalSection1.cta.link} onClick={routeLink}>
+          <Button background="accent" border="accent" color="light">{page.dentalPageCustomFields.dentalSection1.cta.text}</Button>
+        </a>
       </FlexedSection>
       <Section color="light">
-        <div className="hide-at-mobile">
-          <Carousel type="reviews" background="half">
-            <Review
-              stars="5"
-              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-              author="Stephen Friedrichs"
-            />
-            <Review
-              stars="5"
-              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-              author="Stephen Friedrichs"
-            />
-            <Review
-              stars="5"
-              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-              author="Stephen Friedrichs"
-            />
-            <Review
-              stars="5"
-              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-              author="Stephen Friedrichs"
-            />
-            <Review
-              stars="5"
-              quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-              author="Stephen Friedrichs"
-            />
-          </Carousel>
-        </div>
-        <div className="show-at-mobile">
-            <Reviews>
-                <Review
-                    stars="5"
-                    quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                    author="Stephen Friedrichs"
-                />
-                <Review
-                    stars="5"
-                    quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                    author="Stephen Friedrichs"
-                />
-            </Reviews>
-            <div style={{ textAlign: "center" }}>
-                <a href="#">See all reviews</a>
-            </div>
-        </div>
+        <Callouts>
+            {(callouts) ? (
+                Object.keys(callouts).map((index) => {
+                    const callout = callouts[index];
+                    return (
+                        <Callout
+                            number={callout.number}
+                            tagline={callout.tagline}
+                            title={callout.title}
+                            description={callout.description}
+                            disclaimer={callout.disclaimer}
+                        />
+                    )
+                })
+            ) : null}
+        </Callouts>
       </Section>
       <Section
         color={page.dentalPageCustomFields.dentalSection2.color}
         heading={page.dentalPageCustomFields.dentalSection2.heading}>
-        <Cards>
-          <Card
-            image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.image.sourceUrl}
-            title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.heading}>
-            <div dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.content}} />
-          </Card>
-          <Card
-            image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.image.sourceUrl}
-            title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.heading}>
-            <div dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.content}} />
-          </Card>
-          <Card
-            image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.image.sourceUrl}
-            title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.heading}>
-            <div dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.content}} />
-          </Card>
-        </Cards>
+        <RelatedContent />
+        {(!hasChildren) ? (
+          <Cards>
+            <Card
+              image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.image.sourceUrl}
+              title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.heading}
+              link={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.link}>
+              <p dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.content}} />
+            </Card>
+            <Card
+              image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.image.sourceUrl}
+              title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.heading}
+              link={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.link}>
+              <p dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.content}} />
+            </Card>
+            <Card
+              image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.image.sourceUrl}
+              title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.heading}
+              link={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.link}>
+              <p dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.content}} />
+            </Card>
+          </Cards>
+        ) : null}
         <div className="full-rounded" style={{ textAlign: "center" }}>
           <a href={page.dentalPageCustomFields.dentalSection2.cta.link}>
             <Button background="accent" border="accent" color="light">
@@ -139,11 +134,23 @@ const DentalInsurancePage = () => {
           </a>
         </div>
       </Section>
-      <Footer>
-        <div dangerouslySetInnerHTML={{ __html: page.disclaimers.disclaimer }} />
-      </Footer>
+        <Footer>
+            {page.disclaimers.disclaimer}
+        </Footer>
     </Layout>
   )
 }
 
 export default DentalInsurancePage
+
+export const Head = () => {
+  const { page } = useDentalPageQuery();
+  return (
+    <>
+      <PageHead
+        title={page.seo.title}
+        description={page.seo.metaDesc}/>
+      <script src="//cdn.bc0a.com/autopilot/f00000000075672/autopilot_sdk.js"></script>
+    </>
+  )
+}

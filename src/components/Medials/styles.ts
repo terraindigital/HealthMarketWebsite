@@ -5,16 +5,32 @@ export const Wrapper = styled.div`
   &.primary { background-color: var(--color-primary-light); }
   &.accent { background-color: var(--color-accent-light); }
 
-  padding: 8.9rem;
+  overflow-y: hidden;
 
-  @media screen and (max-width: 1044px) {
-    padding-left: 55px;
-    padding-right: 55px;
+  padding: 10.4rem 8.9rem;
+
+  @media screen and (min-width: 1921px) {
+    padding-left: 40rem;
+    padding-right: 40rem;
   }
 
-  @media screen and (max-width: 920px) {
-    padding-left: 21px;
-    padding-right: 21px;
+  @media screen and (max-width: 1044px) {
+    padding-left: 5.5rem;
+    padding-right: 5.5rem;
+  }
+
+  @media screen and (max-width: 788px) {
+    padding-left: 11rem;
+    padding-right: 11rem;
+    padding-bottom: 8rem;
+    padding-top: 8rem;
+  }
+
+  @media screen and (max-width: 620px) {
+    padding-left: 2.1rem;
+    padding-right: 2.1rem;
+    padding-bottom: 4rem;
+    padding-top: 4rem;
   }
 
   .section.accent + &.accent,
@@ -25,15 +41,18 @@ export const Wrapper = styled.div`
   }
 
   .chat-bubble {
-    max-height: 128px;
+    max-height: 215px;
+  }
+
+  @media only screen and (max-width: 1280px) {
+    .chat-bubble {
+      margin: 0 auto 2.1rem;
+      max-height: 125px;
+    }
   }
 
   @media only screen and (max-width: 620px) {
-    padding-bottom: 3.4rem;
-    padding-top: 3.4rem;
-    
     .chat-bubble {
-      margin: 0 auto 2.1rem;
       max-height: 75px;
     }
   }
@@ -43,19 +62,52 @@ export const Inner = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0 2.1rem;
 
   background-color: var(--color-light);
   border-radius: 4px;
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
-  padding: 5.5rem;
 
-  h1, h2 {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.56s linear;
+
+  .animate & {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .two-columns & {
+    padding: 8.3rem 14.6rem 8.3rem 12.8rem;
+
+    @media only screen and (max-width: 1460px) {
+      padding: 5.5rem 12.8rem 5.5rem 10.3rem;
+    }
+
+    @media only screen and (max-width: 788px) {
+      padding: 4rem 2.1rem;
+    }
+  }
+
+  .three-columns & {
+    padding: 4rem 9.6rem;
+
+    @media only screen and (max-width: 1280px) {
+      padding: 4rem 2.1rem;
+    }
+  }
+
+  h3 {
     color: var(--color-primary);
     line-height: 1.25em;
     margin: 0px;
+
+    &:last-of-type {
+      margin-bottom: 2.4rem;
+    }
   }
 
-  @media only screen and (max-width: 620px) {
+  @media only screen and (max-width: 1024px) {
     display: block;
     padding: 2.1rem 1.3rem;
     text-align: center;

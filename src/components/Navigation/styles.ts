@@ -1,4 +1,3 @@
-import {css} from "@emotion/react"
 import styled from "@emotion/styled"
 
 export const Nav = styled.nav`
@@ -8,7 +7,8 @@ export const Nav = styled.nav`
   min-width: 100%;
   min-width: 100vw;
   opacity: 0;
-  padding: 8.9rem 3.4rem 3.4rem;
+  overflow-y: scroll;
+  padding: 14rem 3.4rem 3.4rem;
   position: fixed;
   top: -9999px;
   transition: opacity 0.22s linear;
@@ -32,7 +32,7 @@ export const Menu = styled.ul`
 
   &.submenu {
     .item a {
-      font-family: 'Open Sans';
+      font-family: var(--font-body);
       font-size: 2.4rem;
       font-weight: bold;
 
@@ -49,10 +49,45 @@ export const MenuItem = styled.li`
 
   a {
     color: var(--color-light);
-    font-family: 'Playfair Display';
+    font-family: var(--font-heading);
     font-size: 4.4rem;
     font-weight: bold;
     text-decoration: none;
+  }
+
+  &.has-submenu > a {
+    position: relative;
+  }
+
+  &.has-submenu > a:after {
+    border-right: 2px solid var(--color-light);
+    border-top: 2px solid var(--color-light);
+    content: '';
+    height: 14px;
+    position: absolute;
+    right: -4rem;
+    top: 50%;
+    transform: rotateZ(45deg) translate(-50%, 0);
+    transition: transform 0.2s linear;
+    width: 14px;
+  }
+
+  & > .submenu {
+    height: 0;
+    opacity: 0;
+    position: relative;
+    top: -9999px;
+    transition: opacity 0.24s linear;
+  }
+
+  &.is-open > a:after {
+    transform: rotateZ(135deg) translate(-25%, 50%);
+  }
+
+  &.is-open > .submenu {
+    height: 100%;
+    opacity: 1;
+    top: 0;
   }
 
   @media only screen and (max-width: 620px) {

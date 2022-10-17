@@ -5,6 +5,12 @@ export const useHomePageQuery = () => {
     query homepageQuery {
       home: wpPage(isFrontPage: {eq: true}) {
         id
+        slug
+        seo {
+          fullHead
+          title
+          metaDesc
+        }
         pageHeroFields {
           heroImage {
             sourceUrl
@@ -67,6 +73,55 @@ export const useHomePageQuery = () => {
                 title
                 link
               }
+              tile6 {
+                image {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              tile7 {
+                image {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              tile8 {
+                image {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              tile9 {
+                image {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              tile10 {
+                image {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              tile11 {
+                image {
+                  sourceUrl
+                }
+                title
+                link
+              }
+              tile12 {
+                image {
+                  sourceUrl
+                }
+                title
+                link
+              }
             }
           }
           homeSection2 {
@@ -113,6 +168,32 @@ export const useHomePageQuery = () => {
         }
         disclaimers {
           disclaimer
+        }
+        calloutsCustomField {
+          isActive
+          callouts {
+            callout1 {
+              number
+              tagline
+              title
+              description
+              disclaimer
+            }
+            callout2 {
+              number
+              tagline
+              title
+              description
+              disclaimer
+            }
+            callout3 {
+              number
+              tagline
+              title
+              description
+              disclaimer
+            }
+          }
         }
       }
     }

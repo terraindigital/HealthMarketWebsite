@@ -9,11 +9,34 @@ export const PageStyles = css`
     min-width: 320px;
   }
 
-  .button-container button:first-of-type {
+  .button-container a:first-of-type {
     margin-bottom: 2.1rem;
   }
 
-  @media only screen and (max-width: 620px) {
+  .button-container button {
+    max-width: 45rem;
+    width: 100%;
+  }
+  
+  .hero-disclaimer {
+    color: var(--color-light);
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+  .card-disclaimer {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 6.4rem auto 0;
+    max-width: 106.8rem;
+    text-align: center;
+  }
+
+  .card-link > p:first-of-type {
+    margin-bottom: 23px;
+  }
+
+  @media only screen and (max-width: 788px) {
     .medicare .hero .half {
       display: block;
       flex-basis: 100%;
@@ -24,31 +47,41 @@ export const PageStyles = css`
     .medicare .hero + .section {
       padding-top: 4rem;
     }
+
+    .button-container button {
+      max-width: 38.6rem;
+    }
+  
+    .card-disclaimer {
+      font-size: 1.6rem;
+      margin-top: 2.7rem;
+    }
+  }
+
+  @media only screen and (max-width: 620px) {
+    .button-container {
+      min-width: 100%;
+    }
+    
+    .medicare .hero > img {
+      bottom: -8rem;
+      top: auto;
+    }
   }
 `
 
 export const HeroHeading = styled.h1`
   color: var(--color-light);
-  font-size: 8rem;
-  line-height: 110%;
-  margin-bottom: 3.4rem;
-  max-width: 1024px;
+  margin-bottom: 2.4rem;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
-
-  @media only screen and (max-width: 620px) {
-    font-size: 5rem;
-  }
 `
 
-export const HeroSubheading = styled.h2`
+export const HeroSubheading = styled.h4`
   color: var(--color-light);
   font-family: var(--font-body);
-  font-size: 2.4rem;
-  line-height: 110%;
-  margin-bottom: 3.4rem;
+  margin-bottom: 4rem;
 
   @media only screen and (max-width: 620px) {
     color: var(--color-light);
-    font-size: 2rem;
   }
 `

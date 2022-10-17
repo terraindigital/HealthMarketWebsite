@@ -19,28 +19,45 @@ export const Buttons = styled.div`
     justify-content: center;
   }
 
-  button {
-    min-width: 305px;
+  div {
+    min-width: 410px;
   }
 
-  @media only screen and (max-width: 620px) {
-    button {
-      font-size: 14px;
-      min-width: 50%;
-      padding: 11px;
+  @media only screen and (max-width: 788px) {
+    justify-content: center;
+
+    div {
+      align-items: center;
+      display: flex;
+      font-size: 1.6rem;
+      justify-content: center;
+      line-height: 3.4rem;
+      min-height: 5.6rem;
+      min-width: calc(50% - 2.1rem);
+      padding: 0.9rem 1.1rem;
     }
   }
 `
 
-export const Btn = styled.button`
+export const Radio = styled.div`
   background-color: var(--color-light);
   border: 2px solid var(--color-accent);
   color: var(--color-accent);
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 600;
   padding: 13px 34px;
+  text-align: center;
 
   &.accented {
     background-color: var(--color-accent);
     color: var(--color-light);
+  }
+
+  input[type=radio] {
+    height: 0;
+    visibility: hidden;
+    width: 0;
   }
 `
 
@@ -55,17 +72,21 @@ export const InputGroup = styled.div`
   text-align: center;
 
   img {
-    height: 18px;
-    left: 14px;
+    height: 24px;
+    left: 30px;
     position: absolute;
     top: 50%;
-    transform: translateY(-11px);
+    transform: translateY(-14px);
     z-index: 1;
   }
 
   @media only screen and (max-width: 620px) {
-    margin-top: 0.8rem;
+    margin-top: 1.6rem;
     width: 100%;
+
+    img {
+      left: 14px;
+    }
   }
 `
 
@@ -76,23 +97,31 @@ export const Input = styled.input`
   border-top: none;
   color: var(--color-dark);
   display: block;
+  font-size: 2rem;
   margin: 0 auto;
-  min-width: 61rem;
-  padding: 2.1rem 2.1rem 2.1rem 4rem;
+  min-width: 82rem;
+  padding: 2.1rem 2.1rem 2.1rem 6.2rem;
   position: relative;
 
   &::placeholder {
     color: var(--color-accent);
+    opacity: 0.6;
+  }
+
+  @media only screen and (max-width: 788px) {
+    font-size: 1.6rem;
+    max-width: 100%;
+    min-width: 100%;
+    width: 68.8vw;
   }
 
   @media only screen and (max-width: 620px) {
-    min-width: 100%;
+    padding: 1.6rem 5.6rem 1.8rem 4.2rem;
   }
 `
 
 export const Footer = styled.div`
-  margin-top: 4.8rem;
-  max-width: 335px;
+  margin-top: 3.2rem;
 
   .centered & {
     margin-left: auto;
@@ -100,11 +129,16 @@ export const Footer = styled.div`
   }
 
   button {
+    max-width: 33.3rem;
     width: 100%;
+
+    @media only screen and (max-width: 620px) {
+      max-width: 100%;
+    }
   }
 
-  @media only screen and (max-width: 620px) {
-    margin-top: 1.6rem;
+  @media only screen and (max-width: 788px) {
+    margin-top: 2.4rem;
     max-width: 100%;
   }
 `
@@ -115,7 +149,6 @@ export const CTA = styled.div`
   flex-wrap: no-wrap;
   margin-top: 1.6rem;
 
-  // TODO: remove or do this better
   .home & { display: none; }
 
   .centered & {
@@ -127,8 +160,16 @@ export const CTA = styled.div`
     margin-right: 0.8rem;
   }
 
-  a, span {
-    color: var(--color-dark);
+  span > p > a, span > p {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  @media only screen and (max-width: 620px) {
+    span > p > a, span > p {
+      font-size: 18px;
+    }
   }
 
   .light & {
@@ -138,6 +179,19 @@ export const CTA = styled.div`
   
     a, span {
       color: var(--color-light);
+    }
+  }
+
+  @media only screen and (max-width: 788px) {
+    justify-content: center;
+    
+    a, span {
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    img {
+      max-height: 18px;
     }
   }
 `

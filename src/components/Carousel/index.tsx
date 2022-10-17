@@ -1,75 +1,66 @@
 import React, { FC, ReactNode, Children, useState } from 'react';
-
-// Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper';
-
-// Swiper Styles
-import 'swiper/css'
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { Pagination, Navigation } from 'swiper';
 
 // Styles
-import { Wrapper } from "./styles"
+import 'swiper/css';
+import {
+  Wrapper,
+} from './styles';
+
 // Components
-import Reviews from "../Reviews"
-import Tiles from "../Tiles"
-import CarouselNav from "./CarouselNav"
+import CarouselNav from './CarouselNav';
 
 interface Props {
-  type: String,
-  background?: String,
   children: ReactNode
 }
 
-const Carousel: FC<Props> = ({ type, background, children }) => {
-  const bgStyle = (background) ? ((background === "half") ? "half-background" : "full-background " + background) : ""
+const Carousel: FC<Props> = ({ children }) => {
+  // use swiper
+  const swiper = useSwiper();
   const [current, setCurrent] = useState(0);
 
-  if (type === "reviews") {
-    return (
-      <Wrapper className={type + ` ` + bgStyle}>
-        <Swiper 
-        spaceBetween={0} slidesPerView={1}
-        modules={[Pagination]}
-        loop={true}
-        pagination={{ 
+  return (
+    <Wrapper>
+      <Swiper
+        modules={[Navigation, Pagination]}
+        spacebetween={34}
+        centeredSlides={true}
+        centeredSlideBounds={false}
+        allowTouchMove={true}
+        pagination={{
           el: '.carousel-pagination',
           clickable: true,
-          renderBullet: (index, className) =>  {
+          renderBullet: (index, className) => {
             return '<div class="' + className + '"></div>';
           }
         }}
-        >
-        <Reviews>
-          {
-          Array.isArray(children) ? (
-            Children.map(children, (child: ReactNode) => <SwiperSlide>{child}</SwiperSlide>)
-          ) : ({children})
-          }
-        </Reviews>
-        <CarouselNav count={0}/>
-        </Swiper>
-      </Wrapper>
-    )
-  } else if (type === "tiles") {
-    return (
-      <Wrapper className={type}>
-        <Swiper 
-        spaceBetween={0} slidesPerView={2}
-        centeredSlides={true}
-        centeredSlidesBounds={true}
         breakpoints={{
+          620: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+            slidesPerGroupAuto: false,
+            centeredSlides: false,
+            centeredSlidesBounds: false
+          },
           768: {
             slidesPerView: 2,
+            slidesPerGroup: 2,
+            slidesPerGroupAuto: true,
             centeredSlides: false,
             centeredSlidesBounds: false
           },
-          960: {
+          1024: {
             slidesPerView: 3,
+            slidesPerGroup: 3,
+            slidesPerGroupAuto: true,
             centeredSlides: false,
             centeredSlidesBounds: false
           },
-          1200: {
+          1920: {
             slidesPerView: 4,
+            slidesPerGroup: 4,
+            slidesPerGroupAuto: true,
             centeredSlides: false,
             centeredSlidesBounds: false
           }
@@ -84,19 +75,18 @@ const Carousel: FC<Props> = ({ type, background, children }) => {
         onResize={(swiper) => {
           setCurrent(new Date().getTime());
         }}
-        >
-        <Tiles>
-          {
+      >
+        {
           Array.isArray(children) ? (
-            Children.map(children, (child: ReactNode) => <SwiperSlide>{child}</SwiperSlide>)
+            Children.map(children, (child: ReactNode) => (<SwiperSlide>{child}</SwiperSlide>))
           ) : ({children})
-          }
-        </Tiles>
-        <CarouselNav current={current} count={children.length}/>
-        </Swiper>        
-      </Wrapper>
-    )
-  }
+        }
+        <div className="hide-at-mobile">
+          <CarouselNav current={current} count={children.length}/>
+        </div>
+      </Swiper>
+    </Wrapper>
+  )
 };
 
 export default Carousel

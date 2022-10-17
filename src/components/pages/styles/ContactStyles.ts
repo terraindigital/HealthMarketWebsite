@@ -15,101 +15,92 @@ export const PageStyles = css`
     padding: 0;
   }
 
-  .contact.section .section div h3 {
+  .contact.section .section div h4 {
     font-family: var(--font-body);
-    font-size: 2.4rem;
+  }
+  
+  .contact.section .section .inner .left h4 {
+    font-size: 3.6rem;
+    line-height: 115%;
+    margin-bottom: 6.4rem;
+    margin-top: 2.4rem;
   }
     
-  .contact.section .section div h3 + form p a {
-    color: var(--color-primary);
+  .contact.section .section div .inner .left form p:last-of-type {
+    margin-bottom: 4.3rem;
+    margin-top: 4.8rem;
   }
 
-  .contact.section .section div .reviews {
-    margin-top: 14.4rem;
-  }
-
-  .contact.section .section div .reviews:before {
+  .contact.section .inner .right .callout {
     background-color: var(--color-light);
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .contact.section .section div .review:before {
-    display: none;
+  .contact.section .inner .right .callout h1 {
+    color: var(--color-accent);
   }
 
-  .contact.section .section div .reviews.full-background .review[class*=Wrapper] {
-    text-align: left;
+  .contact.section .contact-disclaimer {
+    margin-bottom: 4rem;
   }
 
-  .contact.section .section div .reviews.full-background .review[class*=Wrapper] div {
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-
-  .contact.section .section div .reviews.full-background .inner {
-    text-align: left;
-  }
-
-  .contact.section .section div .reviews.full-background .carousel-nav {
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin-left: 5.5rem;
-  }
-
-  .contact.section .section div .reviews .review blockquote {
-    font-size: 4rem;
-  }
-
-  @media only screen and (max-width: 620px) {
-    .contact.section .section div h3 + form {
-      margin-top: 4rem;
-    }
-    
-    .contact.section .section div h3 + form h6 {
-      display: none;
-    }
-    
-    .contact.section .section div h3 + form p {
-      text-align: center;
-    }
-    
-    .contact.section .section div h3 + form button {
-      border-radius: 4px;
-      width: 100%;
-    }
-
-    .contact.section .section div .reviews {
-      margin-top: 4rem;
-    }
-
-    .contact.section .section div .reviews > div[class*=Wrapper] {
-      display: flex;
-      margin: 0;
-    }
-
-    .contact.section .section div .reviews > div > .review {
-      padding: 2.4rem 1.3rem;
-    }
-
-    .contact.section .section div .reviews.full-background .review[class*=Wrapper] div {
-      justify-content: center;
-    }
-
-    .contact.section .section div .reviews > div > .review figure {
-      text-align: center;
-    }
-
-    .contact.section .section div .reviews > div > .review blockquote {
+  @media only screen and (max-width: 1440px) {
+    .contact.section .section .inner .left h4 {
       font-size: 3.2rem;
     }
 
-    .contact.section .section div .reviews > div > .review figcaption {
-      margin: 1.6rem auto 0px;
+    .contact.section .inner .right .callout {
+      margin-top: 2.6rem;
+    }
+  }
+
+  @media only screen and (max-width: 788px) {
+    .contact.section {
+      margin-top: 12.6rem;
     }
 
-    .contact.section .section div .reviews.full-background .carousel-nav {
-      justify-content: center;
-      margin: 0px;
-      transform: translateY(-3.2rem);
+    .contact.section .section .inner .left h4 {
+      font-size: 2.4rem;
+      margin-bottom: 4rem;
+    }
+    
+    .contact.section .section div h4 + form input {
+      margin-top: 0;
+      margin-bottom: 4.2rem;
+    }
+    
+    .contact.section .section div h4 + form input:last-of-type {
+      margin-bottom: 4rem;
+    }
+    
+    .contact.section .section div h4 + form input[type="checkbox"] {
+      margin-bottom: 0;
+    }
+    
+    .contact.section .section div h4 + form h6 {
+      display: none;
+    }
+
+    .contact.section .contact-disclaimer {
+      text-align: center;
+    }
+    
+    .contact.section .section div h4 + form button {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 2.4rem;
+      max-width: 33.3rem;
+      width: 100%;
+    }
+
+    .contact.section .inner .right .callout {
+      margin-top: 4rem;
+    }
+
+    .contact.section {
+      padding-bottom: 4rem;
     }
   }
 `

@@ -1,0 +1,208 @@
+export const changeTextSize = (el) => {
+  const html = document.getElementsByTagName('html')[0]
+  const textSize = el.target.classList[0]
+  const fontSize = parseFloat(window.getComputedStyle(html, null).fontSize)
+  if (textSize === "increase") {
+    html.style.fontSize = (fontSize + 1) + "px"
+  } else if (textSize === "decrease") {
+    html.style.fontSize = (fontSize - 1) + "px"
+  }
+}
+
+export const toggleSearch = () => {
+  const searchBox = document.querySelector('.search-box')
+  const header = document.querySelector('.site-header')
+  if (!searchBox || !header) return
+  searchBox.classList.toggle('active')
+  header.classList.toggle('active')
+  document.documentElement.classList.toggle('takeover-active')
+}
+
+export const isSearchBoxOpen = () => {
+  const searchBox = document.querySelector('.search-box')
+  const header = document.querySelector('.site-header')
+  if (!searchBox || !header) return
+  return (searchBox.classList.contains('active') && header.classList.contains('active') && document.documentElement.classList.contains('takeover-active'))
+}
+
+export const toggleNav = (isActive) => {
+  const navBtn = document.querySelector('button.menu-button')
+  const navMenu = document.querySelector('nav.menu.wrapper')
+  const header = document.querySelector('.site-header')
+
+  // if we don't have a menu button, menu, or header, exit
+  if (!navBtn || !navMenu || !header) return
+
+  // if we're not open, remove the active classes
+  if (!isActive) {
+    navBtn.classList.remove('nav-active')
+    navMenu.classList.remove('active')
+    header.classList.remove('takeover-active')
+    document.documentElement.classList.remove('takeover-active')
+  } else {
+    navBtn.classList.add('nav-active')
+    navMenu.classList.add('active')
+    header.classList.add('takeover-active')
+    document.documentElement.classList.add('takeover-active')
+  }
+}
+
+export const toggleSubnav = (el) => {
+  const parent = el.target.parentElement
+  parent.classList.toggle('is-open');
+}
+
+export const toggleForm = (el) => {
+  // set the urls to change the form action to
+  const plans = "https://shop.healthmarkets.com/en/about-me/info";
+  const agents = "/local-health-insurance-agent/search/";
+  // set the parent form
+  const parent = el.target.parentElement
+  // if not already active...
+  if (el.target.classList.contains('accented')) return
+  // toggle first button state
+  parent.firstChild.classList.toggle('accented')
+  if (parent.firstChild.classList.contains('accented')) {
+    parent.firstChild.querySelector('input[type=radio]').checked = true
+    parent.firstChild.closest('form').action = plans
+    document.querySelector('input#zipCode')?.setAttribute('name', 'zip')
+  }
+  // toggle second button state
+  parent.firstChild.nextSibling.classList.toggle('accented')
+  if (parent.firstChild.nextSibling.classList.contains('accented')) {
+    parent.firstChild.nextSibling.querySelector('input[type=radio]').checked = true
+    parent.firstChild.nextSibling.closest('form').action = agents
+    document.querySelector('input#zipCode')?.setAttribute('name', 'query')
+  }
+}
+
+export const fadeIn = (selector) => {
+  const targets = document.querySelectorAll(selector)
+
+  Object.keys(targets).map((i) => {
+    window.addEventListener("scroll", () => {
+      const scrollTop = window.pageYOffset
+      const targetTop = targets[i].offsetTop
+
+      if ((scrollTop + window.innerHeight) >= targetTop) {
+        targets[i].classList.add('animate')
+      }
+    })
+  });
+}
+
+export const getRandomPhotos = (obj) => {
+  let arr = Array();
+
+  Object.keys(obj).map(i => {
+    arr.push(obj[i]);
+  });
+
+  for (let i = arr.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      let temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+  }
+
+  return arr;
+}
+
+export const getUrlData = () => {
+  const qs = require('qs');
+  const whitelist = [
+    "_hm_cp",
+    "_ga",
+    "_fbp",
+    "_gid",
+    "gclid",
+    "fbclid",
+    "msclkid"
+  ];
+  let uri = '';
+  let num = 0;
+
+  // grab the data
+  let cookie = document.cookie;
+
+  // parse the data
+  cookie = cookie.split(';');
+
+  for (let i=0; i < cookie.length; i++) {
+    var pair = cookie[i].split('=');
+
+    whitelist.map(j => {
+      let key = pair[0].trim();
+      let content = pair[1].trim();
+      let obj = false;
+      if (key === j) {
+        if (num > 0) { uri += '&'; }
+
+        try {
+          obj = JSON.parse(content);
+          Object.keys(obj).map(k => {
+            key = k.trim();
+            content = obj[k].trim();
+          });
+        } catch (e) {
+          key = pair[0].trim();
+          content = pair[1].trim();
+        }
+
+        uri = uri + key + '=' + content;
+
+        num++;
+      }
+    });
+  }
+
+  // return the data
+  return uri;
+}
+
+export const setUrlData = (url) => {
+  // grab the pieces
+  const uri = getUrlData();
+
+  // append the pieces to the url
+  const link = url + (!url.includes('?') ? '?' : '\&') + uri;
+
+  // return the url
+  return link;
+}
+
+export const sendForm = (e) => {
+  // prevent the form from submitting before we add our pieces
+  e.preventDefault();
+  const form = e.target;
+
+  // get the zip code value
+  const zipField = form.querySelector('#zipCode');
+
+  // setup the data
+  form.action = setUrlData(form.action) + '&zip=' + zipField.defaultValue;
+
+  console.log(form.action);
+
+  // send the form
+  form.submit();
+}
+
+export const routeLink = (e) => {
+  // prevent the link from navigating
+  e.preventDefault();
+
+  // get the tagname
+  const tagname = e.target.localName;
+
+  // if it's not 'a' find 'a'
+  const link = (tagname !== 'a') ? e.target.parentElement : e.target;
+
+  // get the target url
+  const url = setUrlData(link.href);
+
+  console.log(url);
+
+  // send the user to that url
+  window.location.assign(url);
+}

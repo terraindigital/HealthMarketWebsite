@@ -3,19 +3,16 @@ import styled from "@emotion/styled"
 export const Wrapper = styled.div`
   background-color: var(--color-accent);
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
-  margin: 3.4rem auto;
+  margin: 0 1.7rem;
   position: relative;
   text-align: center;
 
-  &.selected {
-    margin: 0 3.4rem;
-    transform: scale(1.1, 1.1)
-               translate(-9px, -5px);
+  // animation
+  transition: transform 0.22s ease-in-out;
 
-    @media only screen and (max-width: 620px) {
-      margin: 3.4rem 2.1rem 3.4rem 0rem;
-      transform: none;
-    }
+  &:hover {
+    transform: scale(1.1, 1.1)
+                translate(1px, -5px);
   }
 
   & > a {
@@ -26,60 +23,61 @@ export const Wrapper = styled.div`
     margin-bottom: 0;
   }
 
-
-
-  h2 {
+  h4 {
     color: var(--color-light);
     font-family: var(--font-body);
-    font-size: 3.2rem;
-    line-height: 115%;
     margin-bottom: 0;
   }
 
   img {
-    height: 400px;
+    height: 488px;
     object-fit: cover;
     margin-bottom: 0;
     width: 100%;
-  }
-
-  flex-basis: calc(25% - 2.1rem);
-  min-width: calc(25% - 2.1rem);
-  margin-left: 1.05rem;
-  margin-right: 1.05rem;
-
-  @media only screen and (max-width: 1600px) {
-    h2 {
-      font-size: 2rem;
-    }
   }
   
   @media only screen and (max-width: 1044px) {
     flex-basis: calc(33% - 2.1rem);
     min-width: calc(33% - 2.1rem);
+    margin-left: 1.05rem;
+    margin-right: 1.05rem;
   }
 
   @media only screen and (max-width: 920px) {
     flex-basis: calc(50% - 2.1rem);
     min-width: calc(50% - 2.1rem);
+    margin-left: 1.05rem;
+    margin-right: 1.05rem;
+
+    img {
+      height: 360px;
+    }
   }
 
   @media only screen and (max-width: 620px) {
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
     flex-basis: 183px;
-    min-width: 183px;
+    width: 183px;
 
     img {
-      height: 233px;
-    }
-
-    h2 {
-      font-size: 1.6rem;
+      height: 182px;
     }
   }
 `
 
 export const Content = styled.div`
-  margin-top: 2.1rem;
-  padding: 0 3.4rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  height: 11.3rem;
+  justify-content: center;
+  padding: 1.9rem 3.4rem;
+
+  @media only screen and (max-width: 1460px) {
+    height: 9.3rem;
+  }
+
+  @media only screen and (max-width: 788px) {
+    height: 6.6rem;
+    padding: 1.1rem 1.9rem;
+  }
 `

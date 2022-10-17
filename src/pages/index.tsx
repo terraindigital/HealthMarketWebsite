@@ -6,11 +6,11 @@ import { PageProps } from 'gatsby';
 import { useHomePageQuery } from '../hooks/useHomePageQuery';
 
 // Styles
-import { HeroHeading, HeroSubheading } from '../components/Hero/Variants/homePageStyles';
+import { HeroHeading, HeroSubheading } from '../components/pages/styles/homePageStyles';
 
 // Components
-import Layout from "../components/Layout"
-import Seo from "../components/SEO"
+import Layout from "../components/Layout";
+import PageHead from "../components/PageHead";
 import Hero from '../components/Hero';
 import PageHeroForm from '../components/Hero/PageHeroForm';
 import Button from '../components/Buttons/Button';
@@ -21,16 +21,17 @@ import Medial from '../components/Medials';
 import FlexedSection from '../components/Sections/FlexedSection';
 import List from '../components/Lists';
 import ListItem from '../components/Lists/ListItem';
-import Reviews from '../components/Reviews';
-import Review from '../components/Reviews/Review';
+import Callouts from '../components/Callouts';
+import Callout from '../components/Callouts/Callout';
 import Footer from '../components/Footer';
 
 const IndexPage = ({path}: PageProps) => {
     const { home } = useHomePageQuery();
+    const tiles = home.homePageCustomFields.homeSection1.tiles;
+    const callouts = home.calloutsCustomField.callouts;
 
     return (
         <Layout pageClass="home" headerColor="light">
-            <Seo title="Home"/>
             <Hero
                 image={home.pageHeroFields.heroImage.sourceUrl}
                 mobileImage={home.pageHeroFields.mobileHeroImage.sourceUrl}
@@ -42,38 +43,25 @@ const IndexPage = ({path}: PageProps) => {
                     btnLeftText={home.pageHeroFields.heroButtons.heroButton1.text}
                     btnRightText={home.pageHeroFields.heroButtons.heroButton2.text}
                     inputId="homepageHeroLocation"
-                    button />
+                    buttons
+                    hideFooter />
             </Hero>
             <Section
                 heading={home.homePageCustomFields.homeSection1.heading}
                 subheading={home.homePageCustomFields.homeSection1.subheading}
                 color={home.homePageCustomFields.homeSection1.color}>
-                <Carousel type="tiles">
-                    <Tile
-                        image={home.homePageCustomFields.homeSection1.tiles.tile1.image.sourceUrl}
-                        title={home.homePageCustomFields.homeSection1.tiles.tile1.title}
-                        link={home.homePageCustomFields.homeSection1.tiles.tile1.link}
-                        />
-                    <Tile
-                        image={home.homePageCustomFields.homeSection1.tiles.tile2.image.sourceUrl}
-                        title={home.homePageCustomFields.homeSection1.tiles.tile2.title}
-                        link={home.homePageCustomFields.homeSection1.tiles.tile2.link}
-                        />
-                    <Tile
-                        image={home.homePageCustomFields.homeSection1.tiles.tile3.image.sourceUrl}
-                        title={home.homePageCustomFields.homeSection1.tiles.tile3.title}
-                        link={home.homePageCustomFields.homeSection1.tiles.tile3.link}
-                        />
-                    <Tile
-                        image={home.homePageCustomFields.homeSection1.tiles.tile4.image.sourceUrl}
-                        title={home.homePageCustomFields.homeSection1.tiles.tile4.title}
-                        link={home.homePageCustomFields.homeSection1.tiles.tile4.link}
-                        />
-                    <Tile
-                        image={home.homePageCustomFields.homeSection1.tiles.tile5.image.sourceUrl}
-                        title={home.homePageCustomFields.homeSection1.tiles.tile5.title}
-                        link={home.homePageCustomFields.homeSection1.tiles.tile5.link}
-                        />
+                <Carousel>
+                    {(tiles) ? (
+                        Object.keys(tiles).map((tile) => {
+                        return (
+                            <Tile
+                                image={tiles[tile].image.sourceUrl}
+                                title={tiles[tile].title}
+                                link={tiles[tile].link}
+                            />
+                        )
+                        })
+                    ) : null}
                 </Carousel>
             </Section>
             <Medial color={home.homePageCustomFields.homeSection2.color}>
@@ -104,55 +92,25 @@ const IndexPage = ({path}: PageProps) => {
                 </a>
             </FlexedSection>
             <Section color="light">
-                <div className="hide-at-mobile">
-                    <Carousel type="reviews" background="half">
-                        <Review
-                            stars="5"
-                            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                            author="Stephen Friedrichs"
-                        />
-                        <Review
-                            stars="5"
-                            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                            author="Stephen Friedrichs"
-                        />
-                        <Review
-                            stars="5"
-                            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                            author="Stephen Friedrichs"
-                        />
-                        <Review
-                            stars="5"
-                            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                            author="Stephen Friedrichs"
-                        />
-                        <Review
-                            stars="5"
-                            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                            author="Stephen Friedrichs"
-                        />
-                    </Carousel>
-                </div>
-                <div className="show-at-mobile">
-                    <Reviews>
-                        <Review
-                            stars="5"
-                            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                            author="Stephen Friedrichs"
-                        />
-                        <Review
-                            stars="5"
-                            quote='"Laura Roush is an excellent resource for personalized coverage tailored to your needs!"'
-                            author="Stephen Friedrichs"
-                        />
-                    </Reviews>
-                    <div style={{ textAlign: "center" }}>
-                        <a href="#">See all reviews</a>
-                    </div>
-                </div>
+                <Callouts>
+                    {(callouts) ? (
+                        Object.keys(callouts).map((index) => {
+                            const callout = callouts[index];
+                            return (
+                                <Callout
+                                    number={callout.number}
+                                    tagline={callout.tagline}
+                                    title={callout.title}
+                                    description={callout.description}
+                                    disclaimer={callout.disclaimer}
+                                />
+                            )
+                        })
+                    ) : null}
+                </Callouts>
             </Section>
             <Footer>
-                <div dangerouslySetInnerHTML={{ __html: home.disclaimers.disclaimer }} />
+                {home.disclaimers.disclaimer}
             </Footer>
         </Layout>
     );
@@ -160,4 +118,13 @@ const IndexPage = ({path}: PageProps) => {
 
 export default IndexPage;
 
-
+export const Head = () => {
+    const { home } = useHomePageQuery();
+    return (
+        <>
+            <PageHead
+                title={home.seo.title}
+                description={home.seo.metaDesc}/>
+        </>
+    )
+}

@@ -1,12 +1,19 @@
-import React, { FC, ReactNode } from "react"
+import React, { FC, ReactNode, useEffect } from "react"
 
 // Styles
-import { Wrapper, Check, Heading } from "./styles"
+import {
+  Wrapper,
+  Check,
+  Heading
+} from "./styles"
+
+// Scripts
+import { fadeIn } from "../../../static/scripts/global"
 
 // Components
 
 // Images
-import checkImg from "../../../images/list-check.png"
+import checkImg from "../../../static/images/list-check.png"
 
 interface Props {
   heading: String,
@@ -14,8 +21,12 @@ interface Props {
 }
 
 const ListItem: FC<Props> = ({ heading, children }) => {
+  useEffect(() => {
+    fadeIn('.list-item')
+  }, []);
+
   return (
-    <Wrapper>
+    <Wrapper className="list-item">
       <Check>
         <img src={checkImg} alt="list checkmark" />
       </Check>

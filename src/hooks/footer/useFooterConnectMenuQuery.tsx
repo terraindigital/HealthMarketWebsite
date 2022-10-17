@@ -3,13 +3,16 @@ import { useStaticQuery, graphql } from "gatsby";
 export const useFooterConnectMenuQuery = () => {
   const data = useStaticQuery(graphql`
     query connectMenu {
-      connectMenu: wpMenu(databaseId: {eq: 84}) {
-        menuItems {
-          nodes {
-            id
-            label
-            cssClasses
-            url
+      wpcontent {
+        menu(id: "84", idType: DATABASE_ID) {
+          menuItems {
+            nodes {
+              id
+              label
+              parentId
+              url
+              cssClasses
+            }
           }
         }
       }

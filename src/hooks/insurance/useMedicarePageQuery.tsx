@@ -5,6 +5,12 @@ export const useMedicarePageQuery = () => {
     query MedicareQuery {
       page: wpPage(databaseId: {eq: 1340}) {
         id
+        slug
+        seo {
+          fullHead
+          title
+          metaDesc
+        }
         pageHeroFields {
           headline
           subheadline
@@ -25,6 +31,7 @@ export const useMedicarePageQuery = () => {
               text
             }
           }
+          callUs
         }
         medicarePageCustomFields {
           medicareSection1 {
@@ -35,6 +42,9 @@ export const useMedicarePageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobile {
+                  sourceUrl
+                }
                 link
                 title
                 content
@@ -43,12 +53,18 @@ export const useMedicarePageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobile {
+                  sourceUrl
+                }
                 link
                 title
                 content
               }
               medicareCard3 {
                 icon {
+                  sourceUrl
+                }
+                mobile {
                   sourceUrl
                 }
                 link
@@ -123,6 +139,32 @@ export const useMedicarePageQuery = () => {
         }
         disclaimers {
           disclaimer
+        }
+        calloutsCustomField {
+          isActive
+          callouts {
+            callout1 {
+              number
+              tagline
+              title
+              description
+              disclaimer
+            }
+            callout2 {
+              number
+              tagline
+              title
+              description
+              disclaimer
+            }
+            callout3 {
+              number
+              tagline
+              title
+              description
+              disclaimer
+            }
+          }
         }
       }
     }

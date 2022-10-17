@@ -1,5 +1,4 @@
-import React, { FC } from "react"
-import { Link } from "gatsby"
+import React, { FC, useEffect } from "react"
 
 // Styles
 import { Wrapper, Logo } from "./styles"
@@ -8,38 +7,44 @@ import { Wrapper, Logo } from "./styles"
 import HeaderRight from "./HeaderRight"
 
 // Images
-import headerLogo from "../../images/HMIA_logo2.png"
+import headerLogo from "../../static/images/HMIA_logo2.png"
 
 interface Props {
+  headerData?: any
   staticHeader?: boolean,
   color?: String
 }
 
-const Header: FC<Props> = ({staticHeader=false, color}) => {
+const Header: FC<Props> = ({ headerData, staticHeader=false, color}) => {
   const headerColor = (color) ? color : "dark";
-  const staticClass = (staticHeader) ? "static" : "";
+  const staticClass = (staticHeader) ? "is-static" : "";
 
   const stickyHeader = () => {
     const header = document.getElementsByClassName('site-header')[0]
     const offset = header.offsetHeight / 2
 
     if (window.pageYOffset > offset) {
-      header.classList.add('stuck')
+      header.classList.add('is-stuck')
     } else {
-      header.classList.remove('stuck')
+      header.classList.remove('is-stuck')
     }
   }
-  
-  if (typeof window !== "undefined") {
-    window.onscroll = () => { stickyHeader() }
-  }
+
+  useEffect(() => {
+    stickyHeader();
+
+    window.addEventListener("scroll", () => {
+      stickyHeader();
+    });
+  }, [])
+
 
   return (
     <Wrapper className={`site-header ` + headerColor + ` ` + staticClass}>
-      <Link to="/">
+      <a href={process.env.GATSBY_SITE_BASE_URL} title="Go to Healthmarkets.com">
         <Logo className="site-logo" src={headerLogo} />
-      </Link>
-      <HeaderRight />
+      </a>
+      <HeaderRight headerData={headerData} />
     </Wrapper>
   )
 }

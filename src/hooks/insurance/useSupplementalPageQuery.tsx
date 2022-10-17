@@ -5,6 +5,12 @@ export const useSupplementalPageQuery = () => {
     query SuppQuery {
       page: wpPage(databaseId: {eq: 1254}) {
         id
+        slug
+        seo {
+          fullHead
+          title
+          metaDesc
+        }
         pageHeroFields {
           headline
           subheadline
@@ -25,6 +31,7 @@ export const useSupplementalPageQuery = () => {
               text
             }
           }
+          callUs
         }
         suppPageCustomFields {
           suppSection1 {
@@ -44,12 +51,18 @@ export const useSupplementalPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
                 content
               }
               suppPlan2 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -60,12 +73,18 @@ export const useSupplementalPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
                 content
               }
               suppPlan4 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -76,12 +95,18 @@ export const useSupplementalPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
                 content
               }
               suppPlan6 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -92,12 +117,18 @@ export const useSupplementalPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
                 content
               }
               suppPlan8 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -108,6 +139,9 @@ export const useSupplementalPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
                 content
@@ -116,12 +150,18 @@ export const useSupplementalPageQuery = () => {
                 icon {
                   sourceUrl
                 }
+                mobileIcon {
+                  sourceUrl
+                }
                 link
                 title
                 content
               }
               suppPlan11 {
                 icon {
+                  sourceUrl
+                }
+                mobileIcon {
                   sourceUrl
                 }
                 link
@@ -140,6 +180,7 @@ export const useSupplementalPageQuery = () => {
                 }
                 title
                 content
+                link
               }
               relatedContent2 {
                 image {
@@ -147,6 +188,7 @@ export const useSupplementalPageQuery = () => {
                 }
                 title
                 content
+                link
               }
               relatedContent3 {
                 image {
@@ -154,12 +196,43 @@ export const useSupplementalPageQuery = () => {
                 }
                 title
                 content
+                link
               }
+            }
+            cta {
+              link
+              text
             }
           }
         }
         disclaimers {
           disclaimer
+        }
+        calloutsCustomField {
+          isActive
+          callouts {
+            callout1 {
+              number
+              tagline
+              title
+              description
+              disclaimer
+            }
+            callout2 {
+              number
+              tagline
+              title
+              description
+              disclaimer
+            }
+            callout3 {
+              number
+              tagline
+              title
+              description
+              disclaimer
+            }
+          }
         }
       }
     }

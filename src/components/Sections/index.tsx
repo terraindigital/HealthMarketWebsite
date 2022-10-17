@@ -1,13 +1,16 @@
 import React, {FC, ReactNode} from 'react';
 
 // Styles
-import { Wrapper, Heading, Inner } from "./styles";
+import { Wrapper, Heading, Inner, OuterWrapper } from "./styles";
 
 interface Props {
   color: String,
   children: ReactNode
   heading?: String,
   subheading?: String,
+  guarantee: boolean,
+  bestPrice?: ReactNode,
+  classes?: String,
   page?: String
 }
 
@@ -26,22 +29,26 @@ const switchBgColor = (bgColor) => {
   }
 }
 
-const Section: FC<Props> = ({ heading, subheading, page, color, children}) => {
+const Section: FC<Props> = ({ heading, subheading, guarantee, bestPrice, classes, page, color, children}) => {
   const bgColor = switchBgColor(color)
-  const pageClass = (page) ? page : ""
+
+  let classList = "section";
+  if (page) { classList += ` ${page}`}
+  if (classes) { classList += ` ${classes}`}
 
   return (
-    <Wrapper backgroundColor={bgColor} className={`section ` + color + ` ` + pageClass}>
-      {(heading) ? (
-        <Heading className="heading">
-          <h2>{heading}</h2>
-          <h3>{subheading}</h3>
-        </Heading>
-      ) : null}
+      <OuterWrapper>
+    <Wrapper backgroundColor={bgColor} className={classList}>
+      <Heading className="heading">
+        {(heading) ? (<h2>{heading}</h2>) : null}
+        {(subheading) ? (<h4>{subheading}</h4>) : null}
+        {(guarantee !== 'false') ? bestPrice : <></>}
+      </Heading>
       <Inner>
         {children}
       </Inner>
     </Wrapper>
+      </OuterWrapper>
   )
 };
 
