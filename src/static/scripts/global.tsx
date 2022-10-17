@@ -117,7 +117,8 @@ export const getUrlData = () => {
     "_gid",
     "gclid",
     "fbclid",
-    "msclkid"
+    "msclkid",
+    "MarketingRefCode"
   ];
   let uri = '';
   let num = 0;
