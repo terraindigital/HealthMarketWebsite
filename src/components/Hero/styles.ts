@@ -75,6 +75,12 @@ export const Inner = styled.div`
     
     flex-basis: 72%;
     width: 72%;
+
+    @media only screen and (max-width: 620px) {
+      flex-basis: 100%;
+      text-align: center;
+      width: 100%;
+    }
   }
 
   &.left {
