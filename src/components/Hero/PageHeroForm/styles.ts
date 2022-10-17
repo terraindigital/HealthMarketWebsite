@@ -161,6 +161,7 @@ export const CTA = styled.div`
   }
 
   span > p > a, span > p {
+    color: var(--color-dark);
     font-size: 2.4rem;
     font-weight: 600;
     margin-bottom: 0;
