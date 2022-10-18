@@ -140,9 +140,6 @@ const getWhitelist = () => {
   return [
     "_hm_cp",
     "lob",
-    "_ga",
-    "_fbp",
-    "_gid",
     "gclid",
     "fbclid",
     "msclkid",
