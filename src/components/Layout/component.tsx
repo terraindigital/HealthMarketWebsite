@@ -1,7 +1,13 @@
-import React, {FC, ReactNode} from 'react';
+import React, {FC, ReactNode, useEffect} from 'react';
 import {Global} from "@emotion/react";
+
+// Styles
 import {GlobalStyles, Wrapper} from "./styles";
 import '../../static/css/typography.css'
+
+// Scripts
+import { hmAnalytics } from '../../static/scripts/global';
+
 // Components
 import Header from "../Header"
 
@@ -14,8 +20,12 @@ export interface LayoutProps {
 }
 
 const LayoutComponent: FC<LayoutProps> = ({ headerData, pageClass, staticHeader, headerColor, children }) => {
+    useEffect(() => {
+        hmAnalytics();
+    }, [])
+
     return (
-        <Wrapper className={`healthmarkets22 ${pageClass ? pageClass : ""}`}>
+        <Wrapper className={`healthmarkets22 ${pageClass ? pageClass : ""} page`}>
             <Global styles={GlobalStyles}/>
             <Header headerData={headerData} staticHeader={staticHeader} color={headerColor}/>
             {children}
