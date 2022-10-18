@@ -83,7 +83,6 @@ const AutocompleteField = ({ showFilters = false,  className, placeholder, defau
                                       setAddress(suggestion.description);
                                       populateZipCode(suggestion);
                                       maybeSetCounty(suggestion);
-                                      setLob();
                                     }
                                   })}
                                 >

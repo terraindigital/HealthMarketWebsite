@@ -140,9 +140,6 @@ const getWhitelist = () => {
   return [
     "_hm_cp",
     "lob",
-    "_ga",
-    "_fbp",
-    "_gid",
     "gclid",
     "fbclid",
     "msclkid",
@@ -186,9 +183,11 @@ export const getUrlData = () => {
           let str = '';
           obj = JSON.parse(content);
           Object.keys(obj).map(k => {
+            if (m > 0) { uri += '&'; }
             const objK = k.trim();
             const objV = obj[k].trim();
-            uri = uri + '&' + objK + '=' + objV;
+            uri = uri + objK + '=' + objV;
+            m++;
           });
         } catch (e) {
           uri = uri + key + '=' + content;
@@ -241,14 +240,18 @@ export const hmAnalytics = () => {
   if (track) {
     track = track.split(';');
     Object.keys(track).map(i => {
-      let pair = track[i];
+      let qs = track[i];
       let obj = {};
-      console.log(pair);
-      pair = pair.split('=');
-      if (whitelist.includes(pair[0])) {
-        obj[pair[0]] = pair[1];
-        params = Object.assign(params, obj);
-      }
+      qs = qs.split('&');
+      qs.map(pair => {
+        pair = pair.split('=');
+        if (whitelist.includes(pair[0])) {
+          obj[pair[0]] = pair[1];
+          if (!Object.hasOwn(params, pair[0])) {
+            params[pair[0]] = pair[1];
+          }
+        }
+      });
     });
   }
 
@@ -266,14 +269,16 @@ export const sendForm = (e) => {
 
   // get the zip code value
   const zipField = form.querySelector('#zipCode');
+  const countyField = form.querySelector('#county');
 
   // setup the data
-  form.action = setUrlData(form.action) + '&zip=' + zipField.defaultValue;
-
-  console.log(form.action);
+  form.action = setUrlData(form.action) +
+                '&zip=' + zipField.defaultValue +
+                '&county=' + countyField.defaultValue;
 
   // send the form
-  form.submit();
+  console.log(form.action);
+  window.location.assign(form.action);
 }
 
 export const routeLink = (e) => {
@@ -289,8 +294,7 @@ export const routeLink = (e) => {
   // get the target url
   const url = setUrlData(link.href);
 
-  console.log(url);
-
   // send the user to that url
+  console.log(url);
   window.location.assign(url);
 }

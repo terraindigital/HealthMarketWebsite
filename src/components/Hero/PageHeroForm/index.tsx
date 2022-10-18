@@ -42,7 +42,7 @@ interface Props {
 const api_key = 'ge-8876b9780ea0871d';
 
 // set the urls to change the form action to
-const plans = "https://shop.healthmarkets.com/en/about-me/info";
+const plans = "https://shop.healthmarkets.com/en/about-me/info/";
 const agents = "/local-health-insurance-agent/search/";
 
 const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, inputId, buttons, footerContent, hideFooter  }) => {
@@ -63,8 +63,8 @@ const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, i
         ) : null}
         <AutocompleteField />
         <div id="zipCodeField" className="hidden-inputs">
-          <input type="hidden" id="zipCode" name="zip" value="" />
-          <input type="hidden" id="county" name="county" value="" />
+          <input type="hidden" id="zipCode" value="" />
+          <input type="hidden" id="county" value="" />
         </div>
         <Footer>
           <Button style={{borderRadius: "4px"}} background="accent" border="light" color="light">Search</Button>
