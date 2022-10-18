@@ -64,6 +64,7 @@ const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, i
         <AutocompleteField />
         <div id="zipCodeField" className="hidden-inputs">
           <input type="hidden" id="zipCode" name="zip" value="" />
+          <input type="hidden" id="county" name="county" value="" />
         </div>
         <Footer>
           <Button style={{borderRadius: "4px"}} background="accent" border="light" color="light">Search</Button>

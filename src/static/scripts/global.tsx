@@ -118,7 +118,10 @@ export const getUrlData = () => {
     "gclid",
     "fbclid",
     "msclkid",
-    "MarketingRefCode"
+    "MarketingRefCode",
+    "utm_medium",
+    "utm_campaign",
+    "lob"
   ];
   let uri = '';
   let num = 0;
@@ -206,4 +209,32 @@ export const routeLink = (e) => {
 
   // send the user to that url
   window.location.assign(url);
+}
+
+export const populateZipCode = (suggestion) => {
+  const zipField = document.querySelector('#zipCodeField #zipCode');
+  if (suggestion.postalcode !== undefined) {
+    zipField?.setAttribute('value', suggestion.postalcode);
+  } else {
+    const localityString = suggestion.locality + ", " + suggestion.region;
+    zipField?.setAttribute('value', localityString);
+  }
+}
+
+export const maybeSetCounty = (suggestion) => {
+  const countyField = document.querySelector('#zipCodeField #county');
+  let countyString = '';
+  if (suggestion.county !== undefined) {
+    countyString = suggestion.county;
+
+    if (countyString.includes('Parish')) {
+      countyString = countyString.replace('Parish', '').trim();
+    }
+    
+    if (countyString.includes('County')) {
+      countyString = countyString.replace('County', '').trim();
+    }
+    
+    countyField?.setAttribute('value', countyString);
+  }
 }

@@ -6,6 +6,11 @@ import {useLocation} from "@reach/router";
 import { Styles } from "./styles";
 import { Global } from "@emotion/react";
 import MapPin from "../../../../static/images/location.png"
+import {
+  populateZipCode,
+  maybeSetCounty,
+  setLob
+} from "../../../../static/scripts/global"
 
 const AutocompleteField = ({ showFilters = false,  className, placeholder, defaultValue = "", onSetCoordinates, hideOnMobile, hideOnDesktop, ...props }: React.HTMLProps<HTMLDivElement> & { placeholder: string, showFilters?: boolean, onSetCoordinates?: any, hideOnMobile?: boolean, hideOnDesktop?: boolean }) => {
     const [address, setAddress] = React.useState<string>(defaultValue as string);
@@ -23,16 +28,6 @@ const AutocompleteField = ({ showFilters = false,  className, placeholder, defau
             setProducedSearchState(q)
         }
     }, [location])
-
-    const populateZipCode = (suggestion) => {
-      const zipField = document.querySelector('#zipCodeField #zipCode');
-      if (suggestion.postalcode !== undefined) {
-        zipField?.setAttribute('value', suggestion.postalcode);
-      } else {
-        const localityString = suggestion.locality + ", " + suggestion.region;
-        zipField?.setAttribute('value', localityString);
-      }
-    }
 
     return (
       <>
@@ -87,6 +82,8 @@ const AutocompleteField = ({ showFilters = false,  className, placeholder, defau
                                     onClick: () => {
                                       setAddress(suggestion.description);
                                       populateZipCode(suggestion);
+                                      maybeSetCounty(suggestion);
+                                      setLob();
                                     }
                                   })}
                                 >

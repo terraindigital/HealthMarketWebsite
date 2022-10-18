@@ -160,8 +160,11 @@ export const CTA = styled.div`
     margin-right: 0.8rem;
   }
 
-  span > p > a, span > p {
+  a, span {
     color: var(--color-dark);
+  }
+
+  span > p > a, span > p {
     font-size: 2.4rem;
     font-weight: 600;
     margin-bottom: 0;
