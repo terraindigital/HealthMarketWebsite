@@ -186,9 +186,11 @@ export const getUrlData = () => {
           let str = '';
           obj = JSON.parse(content);
           Object.keys(obj).map(k => {
+            if (m > 0) { uri += '&'; }
             const objK = k.trim();
             const objV = obj[k].trim();
-            uri = uri + '&' + objK + '=' + objV;
+            uri = uri + objK + '=' + objV;
+            m++;
           });
         } catch (e) {
           uri = uri + key + '=' + content;
@@ -211,6 +213,7 @@ export const setUrlData = (url) => {
   const link = url + (!url.includes('?') ? '?' : '\&') + uri;
 
   // return the url
+  console.log(link);
   return link;
 }
 
@@ -241,21 +244,25 @@ export const hmAnalytics = () => {
   if (track) {
     track = track.split(';');
     Object.keys(track).map(i => {
-      let pair = track[i];
+      let qs = track[i];
       let obj = {};
-      console.log(pair);
-      pair = pair.split('=');
-      if (whitelist.includes(pair[0])) {
-        obj[pair[0]] = pair[1];
-        params = Object.assign(params, obj);
-      }
+      qs = qs.split('&');
+      qs.map(pair => {
+        pair = pair.split('=');
+        if (whitelist.includes(pair[0])) {
+          obj[pair[0]] = pair[1];
+          if (!Object.hasOwn(params, pair[0])) {
+            params = Object.assign(params, obj);
+          }
+        }
+      });
     });
   }
 
   // store params in _hm_cp
+  console.log(params);
   params = JSON.stringify(params);
   cookie = "_hm_cp=" + params + "; expires=" + expiry + "; path=/";
-  console.log(cookie);
   document.cookie = cookie;
 }
 
@@ -266,14 +273,17 @@ export const sendForm = (e) => {
 
   // get the zip code value
   const zipField = form.querySelector('#zipCode');
+  const countyField = form.querySelector('#county');
 
   // setup the data
-  form.action = setUrlData(form.action) + '&zip=' + zipField.defaultValue;
+  form.action = setUrlData(form.action) +
+                '&zip=' + zipField.defaultValue +
+                '&county=' + countyField.defaultValue;
 
   console.log(form.action);
 
   // send the form
-  form.submit();
+  window.location.assign(form.action);
 }
 
 export const routeLink = (e) => {
@@ -290,6 +300,7 @@ export const routeLink = (e) => {
   const url = setUrlData(link.href);
 
   console.log(url);
+  // TODO: double ampersands & params
 
   // send the user to that url
   window.location.assign(url);
