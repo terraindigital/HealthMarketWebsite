@@ -213,7 +213,6 @@ export const setUrlData = (url) => {
   const link = url + (!url.includes('?') ? '?' : '\&') + uri;
 
   // return the url
-  console.log(link);
   return link;
 }
 
@@ -252,7 +251,7 @@ export const hmAnalytics = () => {
         if (whitelist.includes(pair[0])) {
           obj[pair[0]] = pair[1];
           if (!Object.hasOwn(params, pair[0])) {
-            params = Object.assign(params, obj);
+            params[pair[0]] = pair[1];
           }
         }
       });
@@ -260,9 +259,9 @@ export const hmAnalytics = () => {
   }
 
   // store params in _hm_cp
-  console.log(params);
   params = JSON.stringify(params);
   cookie = "_hm_cp=" + params + "; expires=" + expiry + "; path=/";
+  console.log(cookie);
   document.cookie = cookie;
 }
 
@@ -280,9 +279,8 @@ export const sendForm = (e) => {
                 '&zip=' + zipField.defaultValue +
                 '&county=' + countyField.defaultValue;
 
-  console.log(form.action);
-
   // send the form
+  console.log(form.action);
   window.location.assign(form.action);
 }
 
@@ -299,9 +297,7 @@ export const routeLink = (e) => {
   // get the target url
   const url = setUrlData(link.href);
 
-  console.log(url);
-  // TODO: double ampersands & params
-
   // send the user to that url
+  console.log(url);
   window.location.assign(url);
 }
