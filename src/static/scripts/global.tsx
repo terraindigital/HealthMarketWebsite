@@ -76,6 +76,34 @@ export const toggleForm = (el) => {
   }
 }
 
+export const populateZipCode = (suggestion) => {
+  const zipField = document.querySelector('#zipCodeField #zipCode');
+  if (suggestion.postalcode !== undefined) {
+    zipField?.setAttribute('value', suggestion.postalcode);
+  } else {
+    const localityString = suggestion.locality + ", " + suggestion.region;
+    zipField?.setAttribute('value', localityString);
+  }
+}
+
+export const maybeSetCounty = (suggestion) => {
+  const countyField = document.querySelector('#zipCodeField #county');
+  let countyString = '';
+  if (suggestion.county !== undefined) {
+    countyString = suggestion.county;
+
+    if (countyString.includes('Parish')) {
+      countyString = countyString.replace('Parish', '').trim();
+    }
+    
+    if (countyString.includes('County')) {
+      countyString = countyString.replace('County', '').trim();
+    }
+    
+    countyField?.setAttribute('value', countyString);
+  }
+}
+
 export const fadeIn = (selector) => {
   const targets = document.querySelectorAll(selector)
 
@@ -108,10 +136,10 @@ export const getRandomPhotos = (obj) => {
   return arr;
 }
 
-export const getUrlData = () => {
-  const qs = require('qs');
-  const whitelist = [
+const getWhitelist = () => {
+  return [
     "_hm_cp",
+    "lob",
     "_ga",
     "_fbp",
     "_gid",
@@ -119,12 +147,24 @@ export const getUrlData = () => {
     "fbclid",
     "msclkid",
     "MarketingRefCode",
-    "utm_medium",
     "utm_campaign",
-    "lob"
+    "utm_source",
+    "utm_medium"
   ];
+}
+
+const getExpiry = () => {
+  let expiry = new Date();
+  expiry = expiry.setDate(expiry.getDate() + 30);
+  expiry = new Date(expiry);
+  return expiry.toUTCString();
+}
+
+export const getUrlData = () => {
+  const whitelist = getWhitelist();
   let uri = '';
-  let num = 0;
+  let n = 0;
+  let m = 0;
 
   // grab the data
   let cookie = document.cookie;
@@ -140,22 +180,21 @@ export const getUrlData = () => {
       let content = pair[1].trim();
       let obj = false;
       if (key === j) {
-        if (num > 0) { uri += '&'; }
+        if (n > 0) { uri += '&'; }
 
         try {
+          let str = '';
           obj = JSON.parse(content);
           Object.keys(obj).map(k => {
-            key = k.trim();
-            content = obj[k].trim();
+            const objK = k.trim();
+            const objV = obj[k].trim();
+            uri = uri + '&' + objK + '=' + objV;
           });
         } catch (e) {
-          key = pair[0].trim();
-          content = pair[1].trim();
+          uri = uri + key + '=' + content;
         }
 
-        uri = uri + key + '=' + content;
-
-        num++;
+        n++;
       }
     });
   }
@@ -173,6 +212,51 @@ export const setUrlData = (url) => {
 
   // return the url
   return link;
+}
+
+export const hmAnalytics = () => {
+  // set our variables
+  const whitelist = getWhitelist();
+  const expiry = getExpiry();
+  let query = window.location.search;
+  let track = getUrlData();
+  let params = {};
+  let cookie = '';
+
+  // unpack query and add to params
+  if (query) {
+    query = query.replace('?','').split('&');
+    Object.keys(query).map(i => {
+      let pair = query[i];
+      let obj = {};
+      pair = pair.split('=');
+      if (whitelist.includes(pair[0])) {
+        obj[pair[0]] = pair[1];
+        params = Object.assign(params, obj);
+      }
+    });
+  }
+
+  // unpack tracked data and add to params
+  if (track) {
+    track = track.split(';');
+    Object.keys(track).map(i => {
+      let pair = track[i];
+      let obj = {};
+      console.log(pair);
+      pair = pair.split('=');
+      if (whitelist.includes(pair[0])) {
+        obj[pair[0]] = pair[1];
+        params = Object.assign(params, obj);
+      }
+    });
+  }
+
+  // store params in _hm_cp
+  params = JSON.stringify(params);
+  cookie = "_hm_cp=" + params + "; expires=" + expiry + "; path=/";
+  console.log(cookie);
+  document.cookie = cookie;
 }
 
 export const sendForm = (e) => {
@@ -209,32 +293,4 @@ export const routeLink = (e) => {
 
   // send the user to that url
   window.location.assign(url);
-}
-
-export const populateZipCode = (suggestion) => {
-  const zipField = document.querySelector('#zipCodeField #zipCode');
-  if (suggestion.postalcode !== undefined) {
-    zipField?.setAttribute('value', suggestion.postalcode);
-  } else {
-    const localityString = suggestion.locality + ", " + suggestion.region;
-    zipField?.setAttribute('value', localityString);
-  }
-}
-
-export const maybeSetCounty = (suggestion) => {
-  const countyField = document.querySelector('#zipCodeField #county');
-  let countyString = '';
-  if (suggestion.county !== undefined) {
-    countyString = suggestion.county;
-
-    if (countyString.includes('Parish')) {
-      countyString = countyString.replace('Parish', '').trim();
-    }
-    
-    if (countyString.includes('County')) {
-      countyString = countyString.replace('County', '').trim();
-    }
-    
-    countyField?.setAttribute('value', countyString);
-  }
 }
