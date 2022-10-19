@@ -240,10 +240,8 @@ export const hmAnalytics = () => {
         }
       }
       if (whitelist.includes(pair[0])) {
-        if (typeof(pair) !== 'object') {
-          obj[pair[0]] = pair[1];
-          params = Object.assign(params, obj);
-        }
+        obj[pair[0]] = pair[1];
+        params = Object.assign(params, obj);
       }
     });
   }
@@ -268,11 +266,9 @@ export const hmAnalytics = () => {
           }
         }
         if (whitelist.includes(pair[0])) {
-          if (typeof(pair) !== 'object') {
-            obj[pair[0]] = pair[1];
-            if (!Object.hasOwn(params, pair[0])) {
-              params[pair[0]] = pair[1];
-            }
+          obj[pair[0]] = pair[1];
+          if (!Object.hasOwn(params, pair[0])) {
+            params[pair[0]] = pair[1];
           }
         }
       });
