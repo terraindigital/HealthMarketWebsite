@@ -18,7 +18,7 @@ const PlansByStateMenu = () => {
             <h6>Medicare Eligibility by State</h6>
             <div className="medicare-eligibility-by-state">
                 {medicareEligibility.nodes.map((node: { title: string; slug: string }, index: number) => (
-                        <a href={`https://healthmarkets.com/content/medicare-eligibility-${node.title.toLowerCase().replaceAll(' ', '-')}`}>
+                        <a href={`https://www.healthmarkets.com/content/medicare-eligibility-${node.title.toLowerCase().replaceAll(' ', '-')}`}>
                             {node.slug.toUpperCase()}
                         </a>
                     )
@@ -27,7 +27,7 @@ const PlansByStateMenu = () => {
             <h6>Medicare Plans by State</h6>
             <div className="medicare-plans-by-state">
                 {medicare.nodes.map((node: { title: string; slug: string }, index: number) => (
-                        <a href={`https://healthmarkets.com/plans-by-state/${node.slug}/medicare/${node.slug}`}>
+                        <a href={`https://www.healthmarkets.com/plans-by-state/${node.slug}/medicare/${node.slug}`}>
                             {node.slug.toUpperCase()}
                         </a>
                     )
@@ -36,7 +36,7 @@ const PlansByStateMenu = () => {
             <h6>Health Insurance Plans by State</h6>
             <div className="health-insurance-by-state">
                 {healthInsurance.nodes.map((node: { title: string; slug: string }, index: number) => (
-                        <a href={`https://healthmarkets.com/plans/aca-health/${node.title.replace(/\s+/g, '-').toLowerCase()}`}>
+                        <a href={`https://www.healthmarkets.com/plans/aca-health/${node.title.replace(/\s+/g, '-').toLowerCase()}`}>
                             {node.slug.toUpperCase()}
                         </a>
                     )
@@ -45,7 +45,7 @@ const PlansByStateMenu = () => {
             <h6>Dental Insurance Plans by State</h6>
             <div className="dental-insurance-by-state">
                 {dentalInsurance.nodes.map((node: { title: string; slug: string }, index: number) => (
-                        <a href={`https://healthmarkets.com/plans-by-state/${node.slug}/dental-insurance/${node.slug}`}>
+                        <a href={`https://www.healthmarkets.com/plans-by-state/${node.slug}/dental-insurance/${node.slug}`}>
                             {node.slug.toUpperCase()}
                         </a>
                     )
@@ -54,7 +54,7 @@ const PlansByStateMenu = () => {
             <h6>Life Insurance Plans by State</h6>
             <div className="life-insurance-by-state">
                 {lifeInsurance.nodes.map((node: { title: string; slug: string }, index: number) => (
-                        <a href={`https://healthmarkets.com/plans-by-state/${node.slug}/life-insurance/${node.slug}`}>
+                        <a href={`https://www.healthmarkets.com/plans-by-state/${node.slug}/life-insurance/${node.slug}`}>
                             {node.slug.toUpperCase()}
                         </a>
                     )
