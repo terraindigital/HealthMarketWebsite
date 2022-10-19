@@ -272,8 +272,8 @@ export const sendForm = (e) => {
 
   // setup the data
   if (zipField.getAttribute('name') === 'query') {
-    form.action = form.action + '#agent-top' +
-                  '?query=' + zipField.defaultValue;
+    form.action = form.action + '?query=' +
+                  zipField.defaultValue + '#agents-top';
   } else {
     form.action = setUrlData(form.action) +
                   '&zip=' + zipField.defaultValue +
