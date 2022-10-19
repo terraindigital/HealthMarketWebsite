@@ -37,14 +37,14 @@ export const PageStyles = css`
   }
 
   @media only screen and (max-width: 788px) {
-    .medicare .hero .half {
+    .hero .half {
       display: block;
       flex-basis: 100%;
       text-align: center;
       width: 100%;
     }
 
-    .medicare .hero + .section {
+    .hero + .section {
       padding-top: 4rem;
     }
 
@@ -63,7 +63,7 @@ export const PageStyles = css`
       min-width: 100%;
     }
     
-    .medicare .hero > img {
+    .hero > img {
       bottom: -8rem;
       top: auto;
     }

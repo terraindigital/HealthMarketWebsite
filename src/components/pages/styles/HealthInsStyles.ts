@@ -9,14 +9,14 @@ export const PageStyles = css`
   }
 
   @media only screen and (max-width: 788px) {
-    .health-insurance .hero .half {
+    .hero .half {
       display: block;
       flex-basis: 100%;
       text-align: center;
       width: 100%;
     }
 
-    .health-insurance .hero + .section {
+    .hero + .section {
       padding-top: 4rem;
     }
 
@@ -26,7 +26,7 @@ export const PageStyles = css`
   }
 
   @media only screen and (max-width: 620px) {
-    .health-insurance .hero > img {
+    .hero > img {
       bottom: -8rem;
       top: auto;
     }
@@ -35,7 +35,7 @@ export const PageStyles = css`
       margin-top: 1.1rem;
     }
 
-    .health-insurance .flexed.section + .hide-at-mobile + .section {
+    .flexed.section + .hide-at-mobile + .section {
       padding-top: 0;
     }
   }

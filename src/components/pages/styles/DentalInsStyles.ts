@@ -9,20 +9,20 @@ export const PageStyles = css`
   }
 
   @media only screen and (max-width: 788px) {
-    .dental-insurance .hero .half {
+    .hero .half {
       display: block;
       flex-basis: 100%;
       text-align: center;
       width: 100%;
     }
 
-    .dental-insurance .hero + .section {
+    .hero + .section {
       padding-top: 4rem;
     }
   }
 
   @media only screen and (max-width: 620px) {
-    .dental-insurance .hero > img {
+    .hero > img {
       bottom: -8rem;
       top: auto;
     }
