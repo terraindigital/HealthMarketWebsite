@@ -272,16 +272,16 @@ export const sendForm = (e) => {
 
   // setup the data
   if (zipField.getAttribute('name') === 'query') {
-    form.action = form.action + '?query=' + zipField.defaultValue;
-    // send the form
-    form.submit();
+    form.action = form.action + '#agent-top' +
+                  '?query=' + zipField.defaultValue;
   } else {
     form.action = setUrlData(form.action) +
                   '&zip=' + zipField.defaultValue +
                   '&county=' + countyField.defaultValue;
-    // send the form
-    window.location.assign(form.action);
   }
+
+  // send the form
+  window.location.assign(form.action);
 }
 
 export const routeLink = (e) => {
