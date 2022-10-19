@@ -20,7 +20,7 @@ module.exports = {
         {
             resolve: `gatsby-source-wordpress`,
             options: {
-                url: "https://hmnm2022.wpengine.com/graphql",
+                url: "https://hmhdlscore.wpengine.com/graphql",
                 develop: {
                     hardCacheMediaFiles: true,
                     hardCacheData: true
