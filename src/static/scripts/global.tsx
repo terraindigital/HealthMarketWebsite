@@ -258,7 +258,6 @@ export const hmAnalytics = () => {
   // store params in _hm_cp
   params = JSON.stringify(params);
   cookie = "_hm_cp=" + params + "; expires=" + expiry + "; path=/";
-  console.log(cookie);
   document.cookie = cookie;
 }
 
@@ -272,13 +271,17 @@ export const sendForm = (e) => {
   const countyField = form.querySelector('#county');
 
   // setup the data
-  form.action = setUrlData(form.action) +
-                '&zip=' + zipField.defaultValue +
-                '&county=' + countyField.defaultValue;
-
-  // send the form
-  console.log(form.action);
-  window.location.assign(form.action);
+  if (zipField.getAttribute('name') === 'query') {
+    form.action = form.action + '?query=' + zipField.defaultValue;
+    // send the form
+    form.submit();
+  } else {
+    form.action = setUrlData(form.action) +
+                  '&zip=' + zipField.defaultValue +
+                  '&county=' + countyField.defaultValue;
+    // send the form
+    window.location.assign(form.action);
+  }
 }
 
 export const routeLink = (e) => {
@@ -295,6 +298,5 @@ export const routeLink = (e) => {
   const url = setUrlData(link.href);
 
   // send the user to that url
-  console.log(url);
   window.location.assign(url);
 }
