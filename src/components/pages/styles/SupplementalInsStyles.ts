@@ -13,7 +13,7 @@ export const PageStyles = css`
       display: flex;
     }
 
-    .supplemental-insurance .hero + .section .heading h2 {
+    .hero + .section .heading h2 {
       max-width: 100%;
       padding-right: 3.6rem;
     }
