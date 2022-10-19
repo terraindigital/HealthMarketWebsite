@@ -229,9 +229,21 @@ export const hmAnalytics = () => {
       let pair = query[i];
       let obj = {};
       pair = pair.split('=');
+      // only if what's passed is "_hm_cp"
+      if (pair[0] === '_hm_cp') {
+        pair[1] = pair[1].replaceAll('%22', '"');
+        try {
+          pair = JSON.parse(pair[1]);
+          Object.assign(params, pair);
+        } catch (e) {
+          console.log(e);
+        }
+      }
       if (whitelist.includes(pair[0])) {
-        obj[pair[0]] = pair[1];
-        params = Object.assign(params, obj);
+        if (typeof(pair) !== 'object') {
+          obj[pair[0]] = pair[1];
+          params = Object.assign(params, obj);
+        }
       }
     });
   }
@@ -245,10 +257,22 @@ export const hmAnalytics = () => {
       qs = qs.split('&');
       qs.map(pair => {
         pair = pair.split('=');
+        // only if what's passed is "_hm_cp"
+        if (pair[0] === '_hm_cp') {
+          pair[1] = pair[1].replaceAll('%22', '"');
+          try {
+            pair = JSON.parse(pair[1]);
+            Object.assign(params, pair);
+          } catch (e) {
+            console.log(e);
+          }
+        }
         if (whitelist.includes(pair[0])) {
-          obj[pair[0]] = pair[1];
-          if (!Object.hasOwn(params, pair[0])) {
-            params[pair[0]] = pair[1];
+          if (typeof(pair) !== 'object') {
+            obj[pair[0]] = pair[1];
+            if (!Object.hasOwn(params, pair[0])) {
+              params[pair[0]] = pair[1];
+            }
           }
         }
       });
@@ -258,6 +282,7 @@ export const hmAnalytics = () => {
   // store params in _hm_cp
   params = JSON.stringify(params);
   cookie = "_hm_cp=" + params + "; expires=" + expiry + "; path=/";
+  console.log(cookie);
   document.cookie = cookie;
 }
 
