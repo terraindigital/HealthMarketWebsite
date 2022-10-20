@@ -20,7 +20,7 @@ export const ComponentStyles = css`
     }
   }
 
-  .related-content.be-ix-link-block .cards.be-ix-link-container .card.be-ix-related-link {
+  .related-content.be-ix-link-block .cards.be-ix-link-container .card.be-related-link {
     background-color: var(--color-light) !important;
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1) !important;
     margin: 0 2.1rem 2.1rem 0 !important;
@@ -32,7 +32,7 @@ export const ComponentStyles = css`
     width: calc(33% - 2.1rem) !important;
   }
 
-  .related-content.be-ix-link-block .cards.be-ix-link-container .card.be-ix-related-link:hover {
+  .related-content.be-ix-link-block .cards.be-ix-link-container .card.be-related-link:hover {
     background-color: var(--color-light) !important;
   }
 
@@ -45,7 +45,7 @@ export const ComponentStyles = css`
   }
 
   @media only screen and (max-width: 788px) {
-    .related-content.be-ix-link-block .cards.be-ix-link-container .card.be-ix-related-link {
+    .related-content.be-ix-link-block .cards.be-ix-link-container .card.be-related-link {
       flex-basis: calc(50% - 2.1rem) !important;
       width: calc(50% - 2.1rem) !important;
 
@@ -66,7 +66,7 @@ export const ComponentStyles = css`
   }
 
   @media only screen and (max-width: 620px) {
-    .related-content.be-ix-link-block .cards.be-ix-link-container .card.be-ix-related-link {
+    .related-content.be-ix-link-block .cards.be-ix-link-container .card.be-related-link {
       flex-basis: 100% !important;
       width: 100% !important;
 
@@ -74,7 +74,7 @@ export const ComponentStyles = css`
     }
   }
   
-  .related-content.be-ix-link-block .card.be-ix-related-link img {
+  .related-content.be-ix-link-block .card.be-related-link img {
     display: inline !important;
     height: 326px !important;
     margin-bottom: 0 !important;
@@ -83,19 +83,19 @@ export const ComponentStyles = css`
   }
 
   @media only screen and (max-width: 620px) {
-    .related-content.be-ix-link-block .card.be-ix-related-link img {
+    .related-content.be-ix-link-block .card.be-related-link img {
       height: 219px !important;
       margin-bottom: 16px !important;
     }
   }
 
-  .related-content.be-ix-link-block .card.be-ix-related-link .headline {
+  .related-content.be-ix-link-block .card.be-related-link .headline {
     color: var(--color-primary) !important;
     font-family: var(--font-heading) !important;
     padding: 3.2rem 3.2rem 2.4rem !important;
   }
 
-  .related-content.be-ix-link-block .card.be-ix-related-link .desc {
+  .related-content.be-ix-link-block .card.be-related-link .desc {
     color: var(--color-dark) !important;
     font-weight: 600 !important;
     line-height: 140% !important;
@@ -104,7 +104,7 @@ export const ComponentStyles = css`
   }
 
   @media only screen and (max-width: 620px) {
-    .related-content.be-ix-link-block .card.be-ix-related-link .headline {
+    .related-content.be-ix-link-block .card.be-related-link .headline {
       padding-top: 0 !important;
     }
   }
