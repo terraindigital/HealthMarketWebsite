@@ -2,6 +2,11 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
 export const ComponentStyles = css`
+  .related-content.be-ix-link-block {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
   .related-content.be-ix-link-block .be-label {
     display: none !important;
   }
@@ -22,7 +27,9 @@ export const ComponentStyles = css`
 
   .related-content.be-ix-link-block .cards.be-related-link-container .card.be-related-link {
     background-color: var(--color-light) !important;
+    border: none !important;
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1) !important;
+    flex: auto !important;
     margin: 0 2.1rem 2.1rem 0 !important;
     padding: 0 !important;
     position: relative !important;
@@ -92,11 +99,13 @@ export const ComponentStyles = css`
   .related-content.be-ix-link-block .card.be-related-link .headline {
     color: var(--color-primary) !important;
     font-family: var(--font-heading) !important;
+    font-size: 32px !important;
     padding: 3.2rem 3.2rem 2.4rem !important;
   }
 
   .related-content.be-ix-link-block .card.be-related-link .desc {
     color: var(--color-dark) !important;
+    font-size: 20px !important;
     font-weight: 600 !important;
     line-height: 140% !important;
     margin-bottom: 2.4rem !important;
