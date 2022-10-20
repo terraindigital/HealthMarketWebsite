@@ -6,7 +6,7 @@ export const ComponentStyles = css`
     display: none !important;
   }
 
-  .related-content.be-ix-link-block .cards.be-ix-link-container {
+  .related-content.be-ix-link-block .cards.be-link-container {
     display: flex !important;
     align-items: stretch !important;
     justify-content: center !important;
@@ -15,12 +15,12 @@ export const ComponentStyles = css`
   }
 
   @media only screen and (max-width: 788px) {
-    .related-content.be-ix-link-block .cards.be-ix-link-container {
+    .related-content.be-ix-link-block .cards.be-link-container {
       justify-content: center !important;
     }
   }
 
-  .related-content.be-ix-link-block .cards.be-ix-link-container .card.be-related-link {
+  .related-content.be-ix-link-block .cards.be-link-container .card.be-related-link {
     background-color: var(--color-light) !important;
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1) !important;
     margin: 0 2.1rem 2.1rem 0 !important;
@@ -32,41 +32,41 @@ export const ComponentStyles = css`
     width: calc(33% - 2.1rem) !important;
   }
 
-  .related-content.be-ix-link-block .cards.be-ix-link-container .card.be-related-link:hover {
+  .related-content.be-ix-link-block .cards.be-link-container .card.be-related-link:hover {
     background-color: var(--color-light) !important;
   }
 
-  .related-content.be-ix-link-block .cards.be-ix-link-container .card:nth-of-type(3n-3) {
+  .related-content.be-ix-link-block .cards.be-link-container .card:nth-of-type(3n-3) {
     margin-right: 0 !important;
   }
 
-  .related-content.be-ix-link-block .cards.be-ix-link-container .card:last-of-type {
+  .related-content.be-ix-link-block .cards.be-link-container .card:last-of-type {
     margin-right: 0 !important;
   }
 
   @media only screen and (max-width: 788px) {
-    .related-content.be-ix-link-block .cards.be-ix-link-container .card.be-related-link {
+    .related-content.be-ix-link-block .cards.be-link-container .card.be-related-link {
       flex-basis: calc(50% - 2.1rem) !important;
       width: calc(50% - 2.1rem) !important;
 
       margin-right: 2.1rem !important;
     }
 
-    .related-content.be-ix-link-block .cards.be-ix-link-container .card:nth-of-type(3n-3) {
+    .related-content.be-ix-link-block .cards.be-link-container .card:nth-of-type(3n-3) {
       margin-right: 2.1rem !important;
     }
 
-    .related-content.be-ix-link-block .cards.be-ix-link-container .card:nth-of-type(2n-2) {
+    .related-content.be-ix-link-block .cards.be-link-container .card:nth-of-type(2n-2) {
       margin-right: 0 !important;
     }
 
-    .related-content.be-ix-link-block .cards.be-ix-link-container .card:last-of-type {
+    .related-content.be-ix-link-block .cards.be-link-container .card:last-of-type {
       margin-right: 0 !important;
     }
   }
 
   @media only screen and (max-width: 620px) {
-    .related-content.be-ix-link-block .cards.be-ix-link-container .card.be-related-link {
+    .related-content.be-ix-link-block .cards.be-link-container .card.be-related-link {
       flex-basis: 100% !important;
       width: 100% !important;
 
