@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   position: relative;
 
   padding-bottom: 10.4rem;
-  padding-top: 16.5rem;
+  padding-top: 21rem;
 
   padding-left: 8.9rem;
   padding-right: 8.9rem;
@@ -53,6 +53,7 @@ export const Img = styled.img`
   left: 0;
   height: 100%;
   object-fit: cover;
+  object-position: top;
   max-height: 100%;
   min-width: 100%;
   position: absolute;

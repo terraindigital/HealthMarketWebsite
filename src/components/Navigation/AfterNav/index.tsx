@@ -22,7 +22,7 @@ import SearchIcon from "../../../static/images/search-icon.png"
 
 const AfterNav = () => {
   return (
-    <Wrapper className="show-at-mobile">
+    <Wrapper className="show-at-device">
       <Item>
         <SearchButton className="search-button" onClick={toggleSearch}>
           <img className="icon" src={SearchIcon} alt="magnifying glass icon" />

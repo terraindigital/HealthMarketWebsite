@@ -951,7 +951,7 @@ export const GlobalStyles = css`
       font-weight: 600;
     }
     
-    h1 { font-size: 12.0rem; }
+    h1 { font-size: 10.0rem; }
     h2 { font-size: 9.0rem;  }
     h3 { font-size: 6.5rem;  }
     h4 { font-size: 3.2rem;  }
@@ -960,7 +960,7 @@ export const GlobalStyles = css`
     p  { font-size: 2.0rem;  }
     
     @media only screen and (max-width: 1600px) {
-      h1 { font-size: 10.0rem; }
+      h1 { font-size: 8.0rem; }
       h2 { font-size: 7.5rem;  }
       h3 { font-size: 5.4rem;  }
       h4 { font-size: 2.4rem;  }
@@ -970,7 +970,7 @@ export const GlobalStyles = css`
     }
     
     @media only screen and (max-width: 1044px) {
-      h1 { font-size: 8.0rem; }
+      h1 { font-size: 7.0rem; }
       h2 { font-size: 6.0rem; }
       h3 { font-size: 4.8rem; }
       h4 { font-size: 3.2rem; }
