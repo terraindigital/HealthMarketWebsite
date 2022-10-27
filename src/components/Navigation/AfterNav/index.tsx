@@ -29,9 +29,9 @@ const AfterNav = () => {
         </SearchButton>
       </Item>
       <Item>
-        <a href="tel:8008279990">
+        <a href="tel:8178134562">
           <img className="icon" src={PhoneIcon} alt="telephone icon" />
-          (800) 827-9990
+          (817) 813-4562
         </a>
       </Item>
       <Item>
