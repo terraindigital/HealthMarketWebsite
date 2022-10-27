@@ -129,7 +129,7 @@ const HealthInsurancePage = () => {
           title={page.healthPageCustomFields.healthSection2.healthAccordions.healthAccordion3.title}
           content={page.healthPageCustomFields.healthSection2.healthAccordions.healthAccordion3.content} />
         <a className="hide-at-mobile" href={page.healthPageCustomFields.healthSection2.cta.link} onClick={routeLink}>
-          <Button background="accent" border="accent" color="light">{page.healthPageCustomFields.healthSection2.cta.text}</Button>
+          <Button background="accent-alt" border="light" color="light">{page.healthPageCustomFields.healthSection2.cta.text}</Button>
         </a>
       </FlexedSection>
       <Section
@@ -196,7 +196,7 @@ const HealthInsurancePage = () => {
         ) : null }
         <div className="full-rounded" style={{ textAlign: "center" }}>
           <a href={page.healthPageCustomFields.healthSection4.cta.link}>
-            <Button background="accent" border="accent" color="light">
+            <Button background="accent-alt" border="light" color="light">
               {page.healthPageCustomFields.healthSection4.cta.text}
             </Button>
           </a>

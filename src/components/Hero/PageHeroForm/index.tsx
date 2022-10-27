@@ -67,7 +67,7 @@ const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, i
           <input type="hidden" id="county" value="" />
         </div>
         <Footer>
-          <Button style={{borderRadius: "4px"}} background="accent" border="light" color="light">Search</Button>
+          <Button style={{borderRadius: "4px"}} background="accent-alt" border="light" color="light">Search</Button>
           {(!hideFooter || hideFooter === undefined) ? (
             <CTA>
               <img src={PhoneIcon} />

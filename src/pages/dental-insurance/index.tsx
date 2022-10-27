@@ -79,7 +79,7 @@ const DentalInsurancePage = () => {
           title={page.dentalPageCustomFields.dentalSection1.dentalAccordions.dentalAccordion3.heading}
           content={page.dentalPageCustomFields.dentalSection1.dentalAccordions.dentalAccordion3.content} />
         <a className="hide-at-mobile" href={page.dentalPageCustomFields.dentalSection1.cta.link} onClick={routeLink}>
-          <Button background="accent" border="accent" color="light">{page.dentalPageCustomFields.dentalSection1.cta.text}</Button>
+          <Button background="accent-alt" border="light" color="light">{page.dentalPageCustomFields.dentalSection1.cta.text}</Button>
         </a>
       </FlexedSection>
       <Section color="light">
@@ -128,7 +128,7 @@ const DentalInsurancePage = () => {
         ) : null}
         <div className="full-rounded" style={{ textAlign: "center" }}>
           <a href={page.dentalPageCustomFields.dentalSection2.cta.link}>
-            <Button background="accent" border="accent" color="light">
+            <Button background="accent-alt" border="light" color="light">
               {page.dentalPageCustomFields.dentalSection2.cta.text}
             </Button>
           </a>

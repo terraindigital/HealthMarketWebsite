@@ -15,8 +15,8 @@ export const Btn = styled.button`
   transition: all 0.22s ease-in-out;
 
   &:hover {
-    background-color: var(--color-light);
-    color: ${props => props.border !== 'light' ? `var(--color-${props.border})` : `var(--color-accent)`};
+    background-color: ${props => props.border !== 'light' ? `var(--color-${props.border})` : `var(--color-accent)`};
+    color: var(--color-light);
   }
 
   @media only screen and (max-width: 1460px) {

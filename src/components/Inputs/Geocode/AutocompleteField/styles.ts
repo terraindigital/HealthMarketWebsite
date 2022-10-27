@@ -17,13 +17,13 @@ export const Styles = css`
     left: 30px;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-70%);
     z-index: 1;
   }
 
   input.geocode.input {
     background-color: var(--color-light);
-    border-bottom: 2px solid var(--color-accent);
+    border-bottom: 7px solid var(--color-accent);
     border-left: none;
     border-right: none;
     border-top: none;
@@ -37,8 +37,8 @@ export const Styles = css`
   }
   
   input.geocode.input::placeholder {
-    color: var(--color-accent);
-    opacity: 0.6;
+    color: var(--color-accent-alt);
+    /* opacity: 0.6; */
   }
 
   .suggestions {

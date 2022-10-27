@@ -381,6 +381,7 @@ export const GlobalStyles = css`
         --font-body: 'Open Sans', Arial, Helvetica, sans-serif;
     
         --color-light: #FFFFFF;
+        --color-light-alt: #F6F4F2;
         --color-muted: #D6D6D6;
         --color-muted-light: #D9D9D9;
         --color-dark: #4D4D4D;
@@ -389,6 +390,7 @@ export const GlobalStyles = css`
         --color-primary-dark: #0065BD;
         --color-accent: #69BE28;
         --color-accent-light: #F1FBEA;
+        --color-accent-alt: #009B3A;
     }
   
   .show-at-device {

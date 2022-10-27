@@ -41,8 +41,8 @@ export const Buttons = styled.div`
 
 export const Radio = styled.div`
   background-color: var(--color-light);
-  border: 2px solid var(--color-accent);
-  color: var(--color-accent);
+  border: 2px solid var(--color-light);
+  color: var(--color-accent-alt);
   cursor: pointer;
   font-size: 2rem;
   font-weight: 600;
@@ -50,7 +50,7 @@ export const Radio = styled.div`
   text-align: center;
 
   &.accented {
-    background-color: var(--color-accent);
+    background-color: var(--color-accent-alt);
     color: var(--color-light);
   }
 
@@ -91,7 +91,7 @@ export const InputGroup = styled.div`
 `
 
 export const Input = styled.input`
-  border-bottom: 2px solid var(--color-accent);
+  border-bottom: 7px solid var(--color-accent);
   border-left: none;
   border-right: none;
   border-top: none;
@@ -104,7 +104,7 @@ export const Input = styled.input`
   position: relative;
 
   &::placeholder {
-    color: var(--color-accent);
+    color: var(--color-accent-alt);
     opacity: 0.6;
   }
 

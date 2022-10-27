@@ -38,7 +38,7 @@ export const PageStyles = css`
   }
 
   .contact.section .inner .right .callout h1 {
-    color: var(--color-accent);
+    color: var(--color-accent-alt);
   }
 
   .contact.section .contact-disclaimer {

@@ -1,8 +1,9 @@
 import styled from "@emotion/styled"
 
 export const Wrapper = styled.div`
-  background-color: var(--color-accent);
-  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-light-alt);
+  border: 0px solid var(--color-accent);
+  box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.2);
   margin: 0 1.7rem;
   position: relative;
   text-align: center;
@@ -11,8 +12,9 @@ export const Wrapper = styled.div`
   transition: transform 0.22s ease-in-out;
 
   &:hover {
+    border-width: 4px;
     transform: scale(1.1, 1.1)
-                translate(1px, -5px);
+               translate(1px, -5px);
   }
 
   & > a {
@@ -24,7 +26,7 @@ export const Wrapper = styled.div`
   }
 
   h4 {
-    color: var(--color-light);
+    color: var(--color-accent-alt);
     font-family: var(--font-body);
     margin-bottom: 0;
   }
