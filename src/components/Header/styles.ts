@@ -50,12 +50,12 @@ export const Wrapper = styled.div`
     padding-right: 40rem;
   }
 
-  @media screen and (max-width: 1044px) {
-    padding-left: 5.5rem;
-    padding-right: 5.5rem;
-  }
+  // @media screen and (max-width: 1044px) {
+  //   padding-left: 5.5rem;
+  //   padding-right: 5.5rem;
+  // }
 
-  @media only screen and (max-width: 788px) {
+  @media only screen and (max-width: 1024px) {
     min-height: auto;
     padding-bottom: 2.1rem;
     padding-left: 2.1rem;
@@ -68,7 +68,7 @@ export const Logo = styled.img`
   margin: 0;
   max-width: 193px;
 
-  @media only screen and (max-width: 788px) {
+  @media only screen and (max-width: 1024px) {
     max-width: 165px;
   }
 

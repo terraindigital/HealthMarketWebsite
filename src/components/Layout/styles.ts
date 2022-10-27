@@ -395,7 +395,7 @@ export const GlobalStyles = css`
     display: none;
   }
 
-  @media only screen and (max-width: 788px) {
+  @media only screen and (max-width: 920px) {
     .hide-at-device {
       display: none;
     }
