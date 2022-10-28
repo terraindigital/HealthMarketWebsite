@@ -20,7 +20,7 @@ module.exports = {
         {
             resolve: `gatsby-source-wordpress`,
             options: {
-                url: `${process.env.GATSBY_SOURCE_URL}/graphql`,
+                url: process.env.WPGRAPHQL_URL,
                 develop: {
                     hardCacheMediaFiles: true,
                     hardCacheData: true
@@ -35,7 +35,7 @@ module.exports = {
                 // Field name under which it will be available. Used in your Gatsby query. This is also an arbitrary name.
                 fieldName: "wpcontent",
                 // GraphQL endpoint, relative to your WordPress home URL.
-                url: `${process.env.GATSBY_SOURCE_URL}/graphql`,
+                url: process.env.WPGRAPHQL_URL,
             },
         },
         /*{
