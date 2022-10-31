@@ -35,7 +35,7 @@ const HeaderRight = ({ headerData }: { headerData: any }) => {
   return (
     <Wrapper className="header-right">
       <Item className="hide-at-device">
-        <a href="tel:18178134562">
+        <a href="tel:+18178134562">
           <img className="phone icon" src={PhoneIcon} alt="telephone icon" />
           1-817-813-4562
         </a>
