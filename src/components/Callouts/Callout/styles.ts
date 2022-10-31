@@ -9,11 +9,11 @@ export const Wrapper = styled.div`
 `
 
 export const Heading = styled.div`
-  border-bottom: 2px solid var(--color-accent);
+  border-bottom: 2px solid var(--color-accent-alt);
 `
 
 export const Number = styled.h1`
-  color: var(--color-accent);
+  color: var(--color-accent-alt);
   margin-bottom: 3.2rem;
 
   @media only screen and (max-width: 1650px) {
@@ -47,7 +47,7 @@ export const Body = styled.div`
 `
 
 export const Title = styled.h4`
-  color: var(--color-accent);
+  color: var(--color-accent-alt);
   font-family: var(--font-heading);
   margin-bottom: 1.6rem;
   margin-top: 3.2rem;

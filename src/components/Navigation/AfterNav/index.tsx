@@ -22,16 +22,16 @@ import SearchIcon from "../../../static/images/search-icon.png"
 
 const AfterNav = () => {
   return (
-    <Wrapper className="show-at-mobile">
+    <Wrapper className="show-at-device">
       <Item>
         <SearchButton className="search-button" onClick={toggleSearch}>
           <img className="icon" src={SearchIcon} alt="magnifying glass icon" />
         </SearchButton>
       </Item>
       <Item>
-        <a href="tel:8008279990">
+        <a href="tel:18178134562">
           <img className="icon" src={PhoneIcon} alt="telephone icon" />
-          (800) 827-9990
+          1-817-813-4562
         </a>
       </Item>
       <Item>

@@ -60,7 +60,7 @@ const HowWeHelpPage = () => {
           </ListItem>
         </List>
         <a href={hwh.howWeHelpCustomFields.hwhSection1.cta.link} onClick={routeLink}>
-          <Button background="accent" border="accent" color="light">
+          <Button background="accent-alt" border="light" color="light">
             {hwh.howWeHelpCustomFields.hwhSection1.cta.text}
           </Button>
         </a>
@@ -73,7 +73,7 @@ const HowWeHelpPage = () => {
           <h3>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.heading}</h3>
           <p>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.content}</p>
           <a href={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.button.link} onClick={routeLink}>
-            <Button background="accent" border="accent" color="light">
+            <Button background="accent-alt" border="light" color="light">
               {hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock1.button.text}
             </Button>
           </a>
@@ -84,7 +84,7 @@ const HowWeHelpPage = () => {
           <h3>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.heading}</h3>
           <p>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.content}</p>
           <a href={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.button.link} onClick={routeLink}>
-            <Button background="accent" border="accent" color="light">
+            <Button background="accent-alt" border="light" color="light">
               {hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.button.text}
             </Button>
           </a>
@@ -99,7 +99,7 @@ const HowWeHelpPage = () => {
           <h3>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.heading}</h3>
           <p>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.content}</p>
           <a href={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.button.link} onClick={routeLink}>
-            <Button background="accent" border="accent" color="light">
+            <Button background="accent-alt" border="light" color="light">
               {hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock2.button.text}
             </Button>
           </a>
@@ -113,7 +113,7 @@ const HowWeHelpPage = () => {
           <h3>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock3.heading}</h3>
           <p>{hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock3.content}</p>
           <a href={hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock3.button.link} onClick={routeLink}>
-            <Button background="accent" border="accent" color="light">
+            <Button background="accent-alt" border="light" color="light">
               {hwh.howWeHelpCustomFields.hwhSection2.hwhBlocks.hwhBlock3.button.text}
               </Button>
           </a>
@@ -139,7 +139,7 @@ const HowWeHelpPage = () => {
             content={hwh.howWeHelpCustomFields.hwhSection3.hwhAccordions.hwhAccordion4.content}
         />
         <a href={hwh.howWeHelpCustomFields.hwhSection3.cta.link} onClick={routeLink}>
-          <Button background="accent" border="accent" color="light">
+          <Button background="accent-alt" border="light" color="light">
             {hwh.howWeHelpCustomFields.hwhSection3.cta.text}
           </Button>
         </a>
@@ -170,7 +170,7 @@ const HowWeHelpPage = () => {
         </Cards>
         <div className="hide-at-mobile" style={{ textAlign: "center", marginTop: "5.5rem" }}>
           <a href={hwh.howWeHelpCustomFields.hwhSection4.cta.link} onClick={routeLink}>
-            <Button background="accent" border="accent" color="light">
+            <Button background="accent-alt" border="light" color="light">
               {hwh.howWeHelpCustomFields.hwhSection4.cta.text}
             </Button>
           </a>

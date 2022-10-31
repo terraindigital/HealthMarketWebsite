@@ -68,7 +68,7 @@ const IndexPage = ({path}: PageProps) => {
                 <img className="chat-bubble" src={home.homePageCustomFields.homeSection2.columns.column1.image.sourceUrl} alt="Chat bubble icon" />
                 <div dangerouslySetInnerHTML={{ __html: home.homePageCustomFields.homeSection2.columns.column2.heading }} />
                 <a href={home.homePageCustomFields.homeSection2.columns.column3.button.link}>
-                    <Button background="accent" border="accent" color="light">
+                    <Button background="accent-alt" border="light" color="light">
                         {home.homePageCustomFields.homeSection2.columns.column3.button.text}
                     </Button>
                 </a>
@@ -88,7 +88,7 @@ const IndexPage = ({path}: PageProps) => {
                     </ListItem>
                 </List>
                 <a href={home.homePageCustomFields.homeSection3.sectionCta.link}>
-                    <Button background="accent" border="accent" color="light">{home.homePageCustomFields.homeSection3.sectionCta.text}</Button>
+                    <Button background="accent-alt" border="light" color="light">{home.homePageCustomFields.homeSection3.sectionCta.text}</Button>
                 </a>
             </FlexedSection>
             <Section color="light">

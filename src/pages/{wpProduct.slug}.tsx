@@ -579,7 +579,7 @@ const GPPage = ({data}: { data: PageInfo }) => {
           ) : null } */}
           <div className="full-rounded" style={{ textAlign: "center" }}>
             <a href={page.generalProductCustomFields.gpRelatedContent.cta.link}>
-              <Button background="accent" border="accent" color="light">
+              <Button background="accent-alt" border="light" color="light">
                 {page.generalProductCustomFields.gpRelatedContent.cta.text}
               </Button>
             </a>

@@ -109,12 +109,12 @@ const MedicarePage = () => {
         <div dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection3.medicareColumns.medicareColumn1.heading }} />
         <div className="button-container">
           <a href={page.medicarePageCustomFields.medicareSection3.medicareColumns.medicareColumn2.button.button1.link}>
-            <Button background="accent" border="accent" color="light">
+            <Button background="accent-alt" border="light" color="light">
               {page.medicarePageCustomFields.medicareSection3.medicareColumns.medicareColumn2.button.button1.text}
             </Button>
           </a>
           <a href={page.medicarePageCustomFields.medicareSection3.medicareColumns.medicareColumn2.button.button2.link}>
-            <Button background="accent" border="accent" color="light">
+            <Button background="accent-alt" border="light" color="light">
               {page.medicarePageCustomFields.medicareSection3.medicareColumns.medicareColumn2.button.button2.text}
             </Button>
           </a>

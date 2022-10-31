@@ -381,6 +381,7 @@ export const GlobalStyles = css`
         --font-body: 'Open Sans', Arial, Helvetica, sans-serif;
     
         --color-light: #FFFFFF;
+        --color-light-alt: #F6F4F2;
         --color-muted: #D6D6D6;
         --color-muted-light: #D9D9D9;
         --color-dark: #4D4D4D;
@@ -389,13 +390,14 @@ export const GlobalStyles = css`
         --color-primary-dark: #0065BD;
         --color-accent: #69BE28;
         --color-accent-light: #F1FBEA;
+        --color-accent-alt: #009B3A;
     }
   
   .show-at-device {
     display: none;
   }
 
-  @media only screen and (max-width: 788px) {
+  @media only screen and (max-width: 920px) {
     .hide-at-device {
       display: none;
     }
@@ -951,7 +953,7 @@ export const GlobalStyles = css`
       font-weight: 600;
     }
     
-    h1 { font-size: 12.0rem; }
+    h1 { font-size: 10.0rem; }
     h2 { font-size: 9.0rem;  }
     h3 { font-size: 6.5rem;  }
     h4 { font-size: 3.2rem;  }
@@ -960,7 +962,7 @@ export const GlobalStyles = css`
     p  { font-size: 2.0rem;  }
     
     @media only screen and (max-width: 1600px) {
-      h1 { font-size: 10.0rem; }
+      h1 { font-size: 8.0rem; }
       h2 { font-size: 7.5rem;  }
       h3 { font-size: 5.4rem;  }
       h4 { font-size: 2.4rem;  }
@@ -970,7 +972,7 @@ export const GlobalStyles = css`
     }
     
     @media only screen and (max-width: 1044px) {
-      h1 { font-size: 8.0rem; }
+      h1 { font-size: 7.0rem; }
       h2 { font-size: 6.0rem; }
       h3 { font-size: 4.8rem; }
       h4 { font-size: 3.2rem; }

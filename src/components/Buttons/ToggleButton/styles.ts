@@ -10,12 +10,7 @@ export const Btn = styled.button`
   padding: 0;
   width: 34px;
 
-  .light & > div {
-    border-color: var(--color-light);
-    &:before, &:after { border-color: var(--color-light); }
-  }
-
-  .dark & > div,
+  & > div,
   .is-stuck & > div {
     border-color: var(--color-dark);
     &:before, &:after { border-color: var(--color-dark); }

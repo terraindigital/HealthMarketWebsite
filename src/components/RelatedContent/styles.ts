@@ -38,7 +38,7 @@ export const ComponentStyles = css`
     flex-basis: calc(33% - 2.1rem) !important;
     width: calc(33% - 2.1rem) !important;
   }
-
+  
   .related-content.be-ix-link-block .cards.be-related-link-container .card.be-related-link:hover {
     background-color: var(--color-light) !important;
   }

@@ -12,7 +12,7 @@ const Buttons = () => (
       <Button background="light" border="primary" color="primary">Find a local agent</Button>
     </div>
     <div style={{ marginBottom: '13px' }}>
-      <Button background="accent" border="accent" color="light">Get a FREE Quote</Button>
+      <Button background="accent-alt" border="light" color="light">Get a FREE Quote</Button>
     </div>
     <div style={{ marginBottom: '13px' }}>
       <Button background="light" border="accent" color="accent">Find a local agent</Button>

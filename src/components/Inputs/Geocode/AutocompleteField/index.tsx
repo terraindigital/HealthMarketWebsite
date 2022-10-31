@@ -5,11 +5,10 @@ import GeocodeAutocomplete from "../GeocodeAutocomplete";
 import {useLocation} from "@reach/router";
 import { Styles } from "./styles";
 import { Global } from "@emotion/react";
-import MapPin from "../../../../static/images/location.png"
+import SearchIcon from "../../../../static/images/search-green.png"
 import {
   populateZipCode,
-  maybeSetCounty,
-  setLob
+  maybeSetCounty
 } from "../../../../static/scripts/global"
 
 const AutocompleteField = ({ showFilters = false,  className, placeholder, defaultValue = "", onSetCoordinates, hideOnMobile, hideOnDesktop, ...props }: React.HTMLProps<HTMLDivElement> & { placeholder: string, showFilters?: boolean, onSetCoordinates?: any, hideOnMobile?: boolean, hideOnDesktop?: boolean }) => {
@@ -58,7 +57,7 @@ const AutocompleteField = ({ showFilters = false,  className, placeholder, defau
                   <>
                       <div className="geocode autocomplete" {...props}>
                           <div className="input group">
-                            <img src={MapPin} alt="map location pin image" />
+                            <img src={SearchIcon} alt="map location pin image" />
                             <input
                               {...getInputProps({
                                 value: address,

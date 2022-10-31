@@ -107,6 +107,12 @@ export const BBBSeal = styled.div`
     max-width: 250px;
   }
 
+  @media only screen and (max-width: 788px) {
+    img {
+      max-width: 100%;
+    }
+  }
+
   @media only screen and (max-width: 620px) {
     display: none;
   }

@@ -139,7 +139,7 @@ const HealthInsurancePage = () => {
         ) : null}
         <div className="full-rounded" style={{ textAlign: "center" }}>
           <a href={page.suppPageCustomFields.suppSection2.cta.link}>
-            <Button background="accent" border="accent" color="light">
+            <Button background="accent-alt" border="light" color="light">
               {page.suppPageCustomFields.suppSection2.cta.text}
             </Button>
           </a>
