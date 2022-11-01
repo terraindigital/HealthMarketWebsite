@@ -132,7 +132,9 @@ export const Header = styled.div`
   }
 
   @media only screen and (max-width: 620px) {
+    max-height: none;
     min-height: 5.9rem;
+    overflow: visible;
     
     .icon & {
       align-items: center;
@@ -141,22 +143,18 @@ export const Header = styled.div`
       padding: 0px;
       position: relative;
 
-      &:after,
-      &:before {
-        border-left: 1px solid var(--color-primary);
-        border-right: 1px solid var(--color-primary);
-        border-radius: 2px;
+      &:after {
         content: '';
-        height: 0.9rem;
+        border-bottom: 2px solid var(--color-primary);
+        border-right: 2px solid var(--color-primary);
+        display: block;
+        height: 10px;
         position: absolute;
         right: 0;
-        top: calc(50% - 0.65rem);
-        width: 0;
+        transform: rotateZ(45deg);
+        width: 10px;
         z-index: 1;
       }
-
-      &:before { transform: rotateZ(-45deg) translateY(calc(-50% + 1px)); }
-      &:after { transform: rotateZ(45deg) translateY(calc(50% - 1px)); }
 
       img {
         height: auto;
@@ -175,35 +173,34 @@ export const Header = styled.div`
     }
 
     .icon.active & {
-      &:before {
-        right: 0.175rem;
-        transform: rotateZ(-135deg) translateX(-0.325rem);
-      }
       &:after {
-        right: 0.175rem;
-        transform: rotateZ(135deg) translateX(0.325rem);
+        transform: rotateZ(-135deg);
       }
     }
   }
 `
 
 export const ImgContainer = styled.div`
-  height: 220px;
   overflow: hidden;
   position: relative;
+
+  &.image {
+    height: 220px;
+  }
 `
 
 export const Img = styled.img`
   display: inline;
-  position: absolute;
-  max-height: 100%;
-  max-width: none;
-  min-width: 100%;
-  min-height: 100%;
+  object-fit: cover;
 
-  @media only screen and (max-width: 620px) {
-    max-height: none;
-    max-width: 620px;
+  .image & {
+    height: 220px;
+
+    @media only screen and (max-width: 620px) {
+      height: auto;
+      min-height: 220px;
+      min-width: 100%;
+    }
   }
 `
 
