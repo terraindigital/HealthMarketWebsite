@@ -106,14 +106,11 @@ export const MobileWrapper = styled.div`
 `
 
 export const Header = styled.div`
-  max-height: 220px;
-  overflow: hidden;
-
-  .image > & > img {
-    margin-bottom: 0;
-    min-height: 220px;
-    width: 100%;
-  }
+  // .image > & > img {
+  //   margin-bottom: 0;
+  //   min-height: 220px;
+  //   width: 100%;
+  // }
 
   h4 {
     color: var(--color-primary);
@@ -190,8 +187,24 @@ export const Header = styled.div`
   }
 `
 
+export const ImgContainer = styled.div`
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+`
+
 export const Img = styled.img`
   display: inline;
+  position: absolute;
+  max-height: 100%;
+  max-width: none;
+  min-width: 100%;
+  min-height: 100%;
+
+  @media only screen and (max-width: 620px) {
+    max-height: none;
+    max-width: 620px;
+  }
 `
 
 export const Content = styled.div`

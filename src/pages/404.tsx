@@ -24,6 +24,9 @@ const codeStyles = {
     borderRadius: 4,
 };
 
+// scripts
+import { routeLink } from '../static/scripts/global'
+
 // markup
 const NotFoundPage = () => (
     <main style={pageStyles}>
@@ -49,7 +52,7 @@ const NotFoundPage = () => (
                 </>
             ) : null}
             <br />
-            <Link to="/">Go home</Link>
+            <a href="/" onClick={routeLink}>Go home</a>
             .
         </p>
     </main>

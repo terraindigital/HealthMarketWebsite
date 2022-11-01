@@ -3,6 +3,9 @@ import React, { FC, useEffect } from "react"
 // Styles
 import { Wrapper, Logo } from "./styles"
 
+// Scripts
+import { routeLink } from '../../static/scripts/global'
+
 // Components
 import HeaderRight from "./HeaderRight"
 
@@ -41,7 +44,7 @@ const Header: FC<Props> = ({ headerData, staticHeader=false, color}) => {
 
   return (
     <Wrapper className={`site-header ` + headerColor + ` ` + staticClass}>
-      <a href={process.env.GATSBY_SITE_BASE_URL} title="Go to Healthmarkets.com">
+      <a href={process.env.GATSBY_SITE_BASE_URL} title="Go to Healthmarkets.com" onClick={routeLink}>
         <Logo className="site-logo" src={headerLogo} />
       </a>
       <HeaderRight headerData={headerData} />

@@ -14,6 +14,9 @@ import {
   BestPriceImageMobile
 } from "../../components/pages/styles/SupplementalInsStyles";
 
+// Scripts
+import { routeLink } from '../../static/scripts/global';
+
 // Components
 import Layout from "../../components/Layout";
 import PageHead from "../../components/PageHead";
@@ -138,7 +141,7 @@ const HealthInsurancePage = () => {
           </Cards>
         ) : null}
         <div className="full-rounded" style={{ textAlign: "center" }}>
-          <a href={page.suppPageCustomFields.suppSection2.cta.link}>
+          <a href={page.suppPageCustomFields.suppSection2.cta.link} onClick={routeLink}>
             <Button background="accent-alt" border="light" color="light">
               {page.suppPageCustomFields.suppSection2.cta.text}
             </Button>
