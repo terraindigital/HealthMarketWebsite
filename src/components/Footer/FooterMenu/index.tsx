@@ -3,6 +3,9 @@ import React, { FC } from "react";
 // Styles
 import { Wrapper } from "./styles"
 
+// Scripts
+import { routeLink } from '../../../static/scripts/global'
+
 interface Props {
   menu: Object,
   title: String
@@ -14,7 +17,7 @@ const FooterMenu: FC<Props> = ({ menu, title }) => (
     <ul>
       {menu.menuItems.nodes.map(item =>
         <li key={item.id} className={`item ${item.cssClasses.map(className => className)}`}>
-          <a href={item.url}>
+          <a href={item.url} onClick={routeLink}>
             {item.label}
           </a>
         </li>

@@ -6,7 +6,10 @@ import {GlobalStyles, Wrapper} from "./styles";
 import '../../static/css/typography.css'
 
 // Scripts
-import { hmAnalytics } from '../../static/scripts/global';
+import {
+    hmAnalytics,
+    initLinks
+} from '../../static/scripts/global';
 
 // Components
 import Header from "../Header"
@@ -22,6 +25,7 @@ export interface LayoutProps {
 const LayoutComponent: FC<LayoutProps> = ({ headerData, pageClass, staticHeader, headerColor, children }) => {
     useEffect(() => {
         hmAnalytics();
+        initLinks();
     }, [])
 
     return (

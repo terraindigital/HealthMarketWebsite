@@ -278,7 +278,7 @@ export const hmAnalytics = () => {
   // store params in _hm_cp
   params = JSON.stringify(params);
   cookie = "_hm_cp=" + params + "; expires=" + expiry + "; path=/";
-  console.log(cookie);
+  // console.log(cookie);
   document.cookie = cookie;
 }
 
@@ -286,6 +286,7 @@ export const sendForm = (e) => {
   // prevent the form from submitting before we add our pieces
   e.preventDefault();
   const form = e.target;
+  let queryBits = '';
 
   // get the zip code value
   const zipField = form.querySelector('#zipCode');
@@ -293,13 +294,24 @@ export const sendForm = (e) => {
 
   // setup the data
   if (zipField.getAttribute('name') === 'query') {
-    form.action = form.action + '?query=' +
-                  zipField.defaultValue + '#agents-top';
+    queryBits = 'query=' + zipField.defaultValue + '/#agents-top';
   } else {
-    form.action = setUrlData(form.action) +
-                  '&zip=' + zipField.defaultValue +
-                  '&county=' + countyField.defaultValue;
+    queryBits = 'zip=' + zipField.defaultValue +
+                '&county=' + countyField.defaultValue;
   }
+
+  // build the first part of our new url
+  form.action = setUrlData(form.action)
+
+  // figure out if we need an extra character to join these together
+  if (form.action.slice(-1) === "?" || form.action.slice(-1) === "&") {
+    queryBits = queryBits;
+  } else {
+    queryBits = '&' + queryBits;
+  }
+
+  // join the action and the query bits
+  form.action = form.action + queryBits;
 
   // send the form
   window.location.assign(form.action);
@@ -313,11 +325,33 @@ export const routeLink = (e) => {
   const tagname = e.target.localName;
 
   // if it's not 'a' find 'a'
-  const link = (tagname !== 'a') ? e.target.parentElement : e.target;
+  const element = (tagname !== 'A') ? getParent(e.target) : e.target;
 
-  // get the target url
-  const url = setUrlData(link.href);
+  if (element) {
+    // get the target url
+    const url = setUrlData(element.href);
 
-  // send the user to that url
-  window.location.assign(url);
+    // send the user to that url
+    window.location.assign(url);
+  }
+}
+
+const getParent = (el) => {
+  let parent = el;
+  let num = 0;
+
+  while(parent.tagName !== 'A' && num < 5) {
+    parent = parent.parentElement;
+    num++
+  }
+
+  return parent;
+} 
+
+export const initLinks = () => {
+  const links = document.querySelectorAll(`[data-cta="true"]`);
+
+  links.forEach(link => {
+    link.addEventListener("click", (e) => { routeLink(e); });
+  });
 }

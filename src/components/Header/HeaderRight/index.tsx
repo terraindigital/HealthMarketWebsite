@@ -13,7 +13,8 @@ import {
 import {
   changeTextSize,
   toggleNav,
-  toggleSearch
+  toggleSearch,
+  routeLink
 } from "../../../static/scripts/global"
 
 // Components
@@ -35,13 +36,13 @@ const HeaderRight = ({ headerData }: { headerData: any }) => {
   return (
     <Wrapper className="header-right">
       <Item className="hide-at-device">
-        <a href="tel:18178134562">
+        <a href="tel:+18178134562">
           <img className="phone icon" src={PhoneIcon} alt="telephone icon" />
           1-817-813-4562
         </a>
       </Item>
       <Item className="hide-at-device">
-        <a className="find-agent" href="/local-health-insurance-agent">
+        <a className="find-agent" href="/local-health-insurance-agent/" onClick={routeLink}>
           Find an agent
         </a>
       </Item>

@@ -15,9 +15,12 @@ import {
   Disclaimer,
 } from "./styles"
 
+// Scripts
+import { routeLink } from "../../static/scripts/global"
+
 // Components
 import FooterMenu from "./FooterMenu"
-import PlansByStateMenu from "./PlansByStateMenu";
+import PlansByStateMenu from "./PlansByStateMenu"
 
 // Queries
 import { useFooterProductMenuQuery } from "../../hooks/footer/useFooterProductMenuQuery"
@@ -49,7 +52,7 @@ const FooterComponent: FC<FooterProps> = ({ data, complianceCode, children }) =>
         <FooterWrapper>
           <WidgetAreaOne>
             <FooterLogo>
-              <a href="/">
+              <a href="/" onClick={routeLink}>
                 <img src={Logo} alt="footer logo" />
               </a>
             </FooterLogo>

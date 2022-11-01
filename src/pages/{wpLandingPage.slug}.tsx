@@ -11,6 +11,9 @@ import {
   HeroSubheading
 } from '../components/pages/styles/LandingPageStyles';
 
+// Scripts
+import { routeLink } from '../static/scripts/global';
+
 // Components
 import Layout from "../components/Layout";
 import PageHead from "../components/PageHead";
@@ -254,7 +257,7 @@ const LPPage = ({data}: { data: PageInfo }) => {
                     </List>
                     {(section.cta.showCta) ? (
                       <div style={{ marginTop: "5.5rem" }}>
-                        <a href={section.cta.link}>
+                        <a href={section.cta.link} onClick={routeLink}>
                           <Button
                             background={section.cta.background}
                             border={section.cta.border}
@@ -280,7 +283,7 @@ const LPPage = ({data}: { data: PageInfo }) => {
                     </List>
                     {(section.cta.showCta) ? (
                       <div>
-                        <a href={section.cta.link}>
+                        <a href={section.cta.link} onClick={routeLink}>
                           <Button
                             background={section.cta.background}
                             border={section.cta.border}
@@ -306,7 +309,7 @@ const LPPage = ({data}: { data: PageInfo }) => {
                       content={section.accordions.content} />
                     {(section.cta.showCta) ? (
                       <div style={{ marginTop: "5.5rem" }}>
-                        <a href={section.cta.link}>
+                        <a href={section.cta.link} onClick={routeLink}>
                           <Button
                             background={section.cta.background}
                             border={section.cta.border}
@@ -328,7 +331,7 @@ const LPPage = ({data}: { data: PageInfo }) => {
                       content={section.accordions.content} />
                     {(section.cta.showCta) ? (
                       <div>
-                        <a href={section.cta.link}>
+                        <a href={section.cta.link} onClick={routeLink}>
                           <Button
                             background={section.cta.background}
                             border={section.cta.border}
@@ -366,7 +369,7 @@ const LPPage = ({data}: { data: PageInfo }) => {
                     </Cards>
                     {(section.cta.showCta) ? (
                       <div style={{ marginTop: "5.5rem" }}>
-                        <a href={section.cta.link}>
+                        <a href={section.cta.link} onClick={routeLink}>
                           <Button
                             background={section.cta.background}
                             border={section.cta.border}
@@ -400,7 +403,7 @@ const LPPage = ({data}: { data: PageInfo }) => {
                     </Cards>
                     {(section.cta.showCta) ? (
                       <div>
-                        <a href={section.cta.link}>
+                        <a href={section.cta.link} onClick={routeLink}>
                           <Button
                             background={section.cta.background}
                             border={section.cta.border}
@@ -437,7 +440,7 @@ const LPPage = ({data}: { data: PageInfo }) => {
                     </Icons>
                     {(section.cta.showCta) ? (
                       <div style={{ marginTop: "5.5rem" }}>
-                        <a href={section.cta.link}>
+                        <a href={section.cta.link} onClick={routeLink}>
                           <Button
                             background={section.cta.background}
                             border={section.cta.border}
@@ -470,7 +473,7 @@ const LPPage = ({data}: { data: PageInfo }) => {
                     </Icons>
                     {(section.cta.showCta) ? (
                       <div>
-                        <a href={section.cta.link}>
+                        <a href={section.cta.link} onClick={routeLink}>
                           <Button
                             background={section.cta.background}
                             border={section.cta.border}
@@ -511,7 +514,7 @@ const LPPage = ({data}: { data: PageInfo }) => {
             color={page.landingPageCustomFields.lpCta.bgColor}>
               <img className="chat-bubble" src={page.landingPageCustomFields.lpCta.ctaColumns.column1.image?.sourceUrl} alt="Chat bubble icon" />
               <h1 dangerouslySetInnerHTML={{ __html: page.landingPageCustomFields.lpCta.ctaColumns.column2.heading }} />
-              <a href={page.landingPageCustomFields.lpCta.ctaColumns.column3?.button?.link}>
+              <a href={page.landingPageCustomFields.lpCta.ctaColumns.column3?.button?.link} onClick={routeLink}>
                   <Button
                     background={(page.landingPageCustomFields.lpCta.bgColor === "accent") ? "primary" : "accent"}
                     border={(page.landingPageCustomFields.lpCta.bgColor === "accent") ? "primary" : "accent"}
