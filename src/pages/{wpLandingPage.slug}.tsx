@@ -8,7 +8,8 @@ import {
   PageStyles,
   Wrapper,
   HeroHeading,
-  HeroSubheading
+  HeroSubheading,
+  InputGroup
 } from '../components/pages/styles/LandingPageStyles';
 
 // Scripts
@@ -34,6 +35,10 @@ import Footer from '../components/Footer';
 import Accordion from "../components/Accordions";
 import Cards from "../components/Cards";
 import Card from "../components/Cards/Card";
+import Input from "../components/Inputs/Input";
+import CheckboxGroup from "../components/Inputs/Checkbox/CheckboxGroup";
+import Checkbox from "../components/Inputs/Checkbox";
+import TextArea from "../components/Inputs/TextArea";
 
 interface IconInfo {
   link: String,
@@ -131,6 +136,7 @@ interface PageInfo {
     landingPageCustomFields: {
       lpCta: {
         showCta?: boolean,
+        ctaLocation?: boolean,
         ctaStyle: string,
         bgColor: string,
         ctaColumns: {
@@ -226,16 +232,41 @@ const LPPage = ({data}: { data: PageInfo }) => {
           bgColor={(page.landingPageCustomFields.lpHero.bgColor) ? page.landingPageCustomFields.lpHero.bgColor : "#ffffff"}
           centered={(page.landingPageCustomFields.lpHero.alignment === "centered")}
           boxed={(page.landingPageCustomFields.lpHero.contentStyle === "boxed")}
+          half={(page.landingPageCustomFields.lpHero.contentStyle === "half")}
           color={page.landingPageCustomFields.lpHero.contentBgColor}
           >
           <HeroHeading>{page.landingPageCustomFields.lpHero.heroHeadline}</HeroHeading>
           <HeroSubheading>{page.landingPageCustomFields.lpHero.heroSubheadline}</HeroSubheading>
-          <PageHeroForm
-            centered={(page.landingPageCustomFields.lpHero.alignment === "centered")}
-            btnLeftText={page.landingPageCustomFields.lpHero.heroButtons.heroButton1.text}
-            btnRightText={page.landingPageCustomFields.lpHero.heroButtons.heroButton2.text}
-            inputId={`${page.title.replaceAll(' ', '')}HeroLocation`}
-            buttons={page.landingPageCustomFields.lpHero.heroButtons.showButtons} />
+          {(page.landingPageCustomFields.lpHero.contentStyle !== "half") ? (
+            <PageHeroForm
+              centered={(page.landingPageCustomFields.lpHero.alignment === "centered")}
+              btnLeftText={page.landingPageCustomFields.lpHero.heroButtons.heroButton1.text}
+              btnRightText={page.landingPageCustomFields.lpHero.heroButtons.heroButton2.text}
+              inputId={`${page.title.replaceAll(' ', '')}HeroLocation`}
+              buttons={page.landingPageCustomFields.lpHero.heroButtons.showButtons} />
+          ) : (
+            <form>
+              <InputGroup>
+                <Input id="fName" type="text" name="fName" placeholder="First name" required />
+                <Input id="lName" type="text" name="lName" placeholder="Last name" required />
+              </InputGroup>
+              <InputGroup>
+                <Input id="zipCode" type="number" name="zipCode" pattern="[0-9]{5}" placeholder="Zip code" required />
+                <Input id="email" type="email" name="email" placeholder="Email" required />
+              </InputGroup>
+              <CheckboxGroup title="Select all that apply">
+                <Checkbox id="medicare" name="medicare" label="Medicare Insurance" />
+                <Checkbox id="shortTerm" name="shortTerm" label="Short Term Health Insurance" />
+                <Checkbox id="acaHealth" name="acaHealth" label="ACA Health Insurance" />
+                <Checkbox id="dental" name="dental" label="Dental Insurance" />
+                <Checkbox id="supplemental" name="supplemental" label="Supplemental Insurance" />
+                <Checkbox id="vision" name="vision" label="Vision Insurance" />
+              </CheckboxGroup>
+              <TextArea id="tellUsMore" name="tellUsMore" placeholder="Tell us more — What are your insurance needs?" />
+              <p className="contact-disclaimer"><small>By clicking “Submit” I expressly consent to my contact information being provided to HealthMarkets orone of their licensed insurance agents for future contact regarding health, life, supplemental, Medicare Advantage or Medicare Supplement insurance, depending on my need.  I understand I may receive phone calls (including to any wireless number that I provide) including automatic telephone dialing systems orby artificial/pre-recorded messages text message and/or emails for the purpose of marketing insurance products and services. By providing my information, I understand that my consent is not a condition of purchase of any product or services, and carrier messaging and data rates may apply. I may revoke this consent at any time by contacting us at <a href="tel:8886379621">888-637-9621</a> to be place on our do-not-call list. <a href="#">Privacy Policy</a></small></p>
+              <Button background="accent-alt" border="light" color="light">Agree and Submit</Button>
+            </form>
+          )}
         </Hero>
 
         {Object.keys(sections).map((i) => {
@@ -490,6 +521,22 @@ const LPPage = ({data}: { data: PageInfo }) => {
           }
         })}
 
+        {(page.landingPageCustomFields.lpCta.showCta && page.landingPageCustomFields.lpCta.ctaLocation === 'before') ? (
+          <Medial
+            color={page.landingPageCustomFields.lpCta.bgColor}>
+              <img className="chat-bubble" src={page.landingPageCustomFields.lpCta.ctaColumns.column1.image?.sourceUrl} alt="Chat bubble icon" />
+              <h1 dangerouslySetInnerHTML={{ __html: page.landingPageCustomFields.lpCta.ctaColumns.column2.heading }} />
+              <a href={page.landingPageCustomFields.lpCta.ctaColumns.column3?.button?.link} onClick={routeLink}>
+                  <Button
+                    background={(page.landingPageCustomFields.lpCta.bgColor === "accent") ? "primary" : "accent"}
+                    border={(page.landingPageCustomFields.lpCta.bgColor === "accent") ? "primary" : "accent"}
+                    color="light">
+                      {page.landingPageCustomFields.lpCta.ctaColumns.column3?.button?.text}
+                  </Button>
+              </a>
+          </Medial>
+        ) : null}
+
         <Section color="light">
           <Callouts>
               {(callouts) ? (
@@ -509,7 +556,7 @@ const LPPage = ({data}: { data: PageInfo }) => {
           </Callouts>
         </Section>
 
-        {(page.landingPageCustomFields.lpCta.showCta) ? (
+        {(page.landingPageCustomFields.lpCta.showCta && page.landingPageCustomFields.lpCta.ctaLocation === 'after') ? (
           <Medial
             color={page.landingPageCustomFields.lpCta.bgColor}>
               <img className="chat-bubble" src={page.landingPageCustomFields.lpCta.ctaColumns.column1.image?.sourceUrl} alt="Chat bubble icon" />
@@ -559,6 +606,7 @@ export const pageQuery = graphql`
       landingPageCustomFields {
         lpCta {
           showCta
+          ctaLocation
           ctaStyle
           bgColor
           ctaColumns {

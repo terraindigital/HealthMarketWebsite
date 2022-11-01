@@ -55,3 +55,34 @@ export const HeroSubheading = styled.h4`
     margin-bottom: 4rem;
   }
 `
+
+export const InputGroup = styled.div`
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+  justify-content: space-between;
+
+  input {
+    flex-basis: calc(50% - (35px / 2));
+    width: calc(50% - (35px / 2));
+  }
+
+  @media only screen and (max-width: 1200px) and (min-width: 1024px) {
+    gap: 0;
+
+    input {
+      flex-basis: 100%;
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 788px) {\
+    gap: 0;
+
+    input {
+      flex-basis: 100%;
+      width: 100%;
+    }
+  }
+`
