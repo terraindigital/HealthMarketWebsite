@@ -35,7 +35,7 @@ const Card: FC<Props> = ({ image=null, icon=null, mobile=null, link=null, title,
     <>
       <Wrapper className={`card hide-at-mobile ${imageClass}`} href={link} onClick={routeLink}>
         <Header className="card-header">
-          <ImgContainer>
+          <ImgContainer className={(image !== null) ? 'image' : 'icon'}>
             <Img
               src={(image !== null) ? image : icon}
               placeholder="BLURRED"
@@ -52,7 +52,7 @@ const Card: FC<Props> = ({ image=null, icon=null, mobile=null, link=null, title,
       </Wrapper>
       <MobileWrapper className={`card show-at-mobile ${imageClass}`}>
         <Header className="card-header" onClick={toggleOpenState}>
-          <ImgContainer>
+          <ImgContainer className={(image !== null) ? 'image' : 'icon'}>
             <Img
               src={(image !== null) ? image : (mobile != null) ? mobile : icon}
               placeholder="BLURRED"

@@ -67,7 +67,7 @@ export const MenuItem = styled.li`
     position: absolute;
     right: -4rem;
     top: 50%;
-    transform: rotateZ(45deg) translate(-50%, 0);
+    transform: rotateZ(135deg) translate(-50%, 0);
     transition: transform 0.2s linear;
     width: 14px;
   }
@@ -81,7 +81,7 @@ export const MenuItem = styled.li`
   }
 
   &.is-open > a:after {
-    transform: rotateZ(135deg) translate(-25%, 50%);
+    transform: rotateZ(-45deg) translate(10%, 40%);
   }
 
   &.is-open > .submenu {

@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
     position: absolute;
     right: 0;
     top: 36px;
-    transform: rotateZ(-45deg);
+    transform: rotateZ(45deg);
     width: 10px;
     z-index: -1;
   }
@@ -37,7 +37,7 @@ export const Wrapper = styled.div`
 
   &.active {
     &:after {
-      transform: rotateZ(45deg)
+      transform: rotateZ(-135deg)
     }
 
     .title {
