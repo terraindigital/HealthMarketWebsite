@@ -296,8 +296,8 @@ const LPPage = ({data}: { data: PageInfo }) => {
                       <div style={{ marginTop: "5.5rem" }}>
                         <a href={section.cta.link} onClick={routeLink}>
                           <Button
-                            background={section.cta.background}
-                            border={section.cta.border}
+                            background={(section.cta.background === "accent") ? "accent-alt" : section.cta.background}
+                            border={(section.cta.border === "accent") ? "light" : section.cta.border}
                             color={section.cta.color}>
                             {section.cta.text}
                           </Button>
@@ -322,8 +322,8 @@ const LPPage = ({data}: { data: PageInfo }) => {
                       <div>
                         <a href={section.cta.link} onClick={routeLink}>
                           <Button
-                            background={section.cta.background}
-                            border={section.cta.border}
+                            background={(section.cta.background === "accent") ? "accent-alt" : section.cta.background}
+                            border={(section.cta.border === "accent") ? "light" : section.cta.border}
                             color={section.cta.color}>
                             {section.cta.text}
                           </Button>
@@ -348,8 +348,8 @@ const LPPage = ({data}: { data: PageInfo }) => {
                       <div style={{ marginTop: "5.5rem" }}>
                         <a href={section.cta.link} onClick={routeLink}>
                           <Button
-                            background={section.cta.background}
-                            border={section.cta.border}
+                            background={(section.cta.background === "accent") ? "accent-alt" : section.cta.background}
+                            border={(section.cta.border === "accent") ? "light" : section.cta.border}
                             color={section.cta.color}>
                             {section.cta.text}
                           </Button>
@@ -370,8 +370,8 @@ const LPPage = ({data}: { data: PageInfo }) => {
                       <div>
                         <a href={section.cta.link} onClick={routeLink}>
                           <Button
-                            background={section.cta.background}
-                            border={section.cta.border}
+                            background={(section.cta.background === "accent") ? "accent-alt" : section.cta.background}
+                            border={(section.cta.border === "accent") ? "light" : section.cta.border}
                             color={section.cta.color}>
                             {section.cta.text}
                           </Button>
@@ -408,8 +408,8 @@ const LPPage = ({data}: { data: PageInfo }) => {
                       <div style={{ marginTop: "5.5rem" }}>
                         <a href={section.cta.link} onClick={routeLink}>
                           <Button
-                            background={section.cta.background}
-                            border={section.cta.border}
+                            background={(section.cta.background === "accent") ? "accent-alt" : section.cta.background}
+                            border={(section.cta.border === "accent") ? "light" : section.cta.border}
                             color={section.cta.color}>
                             {section.cta.text}
                           </Button>
@@ -442,8 +442,8 @@ const LPPage = ({data}: { data: PageInfo }) => {
                       <div>
                         <a href={section.cta.link} onClick={routeLink}>
                           <Button
-                            background={section.cta.background}
-                            border={section.cta.border}
+                            background={(section.cta.background === "accent") ? "accent-alt" : section.cta.background}
+                            border={(section.cta.border === "accent") ? "light" : section.cta.border}
                             color={section.cta.color}>
                             {section.cta.text}
                           </Button>
@@ -479,8 +479,8 @@ const LPPage = ({data}: { data: PageInfo }) => {
                       <div style={{ marginTop: "5.5rem" }}>
                         <a href={section.cta.link} onClick={routeLink}>
                           <Button
-                            background={section.cta.background}
-                            border={section.cta.border}
+                            background={(section.cta.background === "accent") ? "accent-alt" : section.cta.background}
+                            border={(section.cta.border === "accent") ? "light" : section.cta.border}
                             color={section.cta.color}>
                             {section.cta.text}
                           </Button>
@@ -512,8 +512,8 @@ const LPPage = ({data}: { data: PageInfo }) => {
                       <div>
                         <a href={section.cta.link} onClick={routeLink}>
                           <Button
-                            background={section.cta.background}
-                            border={section.cta.border}
+                            background={(section.cta.background === "accent") ? "accent-alt" : section.cta.background}
+                            border={(section.cta.border === "accent") ? "light" : section.cta.border}
                             color={section.cta.color}>
                             {section.cta.text}
                           </Button>
