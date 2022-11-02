@@ -1,5 +1,5 @@
 // Library
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import { Global } from '@emotion/react';
 
 // Queries
@@ -7,6 +7,9 @@ import { useContactPageQuery } from '../../hooks/useContactPageQuery';
 
 // Styles
 import { PageStyles } from "../../components/pages/styles/ContactStyles";
+
+// Scripts
+import { medicareDisclaimerPopUp } from "../../static/scripts/global";
 
 // Components
 import Layout from '../../components/Layout';
@@ -24,6 +27,10 @@ import Footer from '../../components/Footer';
 const ContactPage = () => {
   const { page } = useContactPageQuery();
   const callout = page.calloutsCustomField.callouts.callout1;
+
+  useEffect(() => {
+    medicareDisclaimerPopUp();
+  })
 
   return (
     <Layout staticHeader>
@@ -47,6 +54,7 @@ const ContactPage = () => {
                 <Checkbox id="vision" name="vision" label="Vision Insurance" />
               </CheckboxGroup>
               <TextArea id="tellUsMore" name="tellUsMore" placeholder="Tell us more — What are your insurance needs?" />
+              <p className="contact-disclaimer" data-disclaimer="medicare"><small>We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov or 1-800-MEDICARE (TTY users should call 1- 844-704-7357), 24 hours a day/7 days a week, to get information on all of your options.</small></p>
               <p className="contact-disclaimer"><small>By clicking “Submit” I expressly consent to my contact information being provided to HealthMarkets orone of their licensed insurance agents for future contact regarding health, life, supplemental, Medicare Advantage or Medicare Supplement insurance, depending on my need.  I understand I may receive phone calls (including to any wireless number that I provide) including automatic telephone dialing systems orby artificial/pre-recorded messages text message and/or emails for the purpose of marketing insurance products and services. By providing my information, I understand that my consent is not a condition of purchase of any product or services, and carrier messaging and data rates may apply. I may revoke this consent at any time by contacting us at <a href="tel:8886379621">888-637-9621</a> to be place on our do-not-call list. <a href="#">Privacy Policy</a></small></p>
               <Button background="accent-alt" border="light" color="light">Agree and Submit</Button>
             </form>

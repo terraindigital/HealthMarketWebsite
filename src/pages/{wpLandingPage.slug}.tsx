@@ -1,5 +1,5 @@
 // Library
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect } from "react";
 import { Global } from "@emotion/react";
 import { graphql } from "gatsby";
 
@@ -13,7 +13,10 @@ import {
 } from '../components/pages/styles/LandingPageStyles';
 
 // Scripts
-import { routeLink } from '../static/scripts/global';
+import {
+  routeLink,
+  medicareDisclaimerPopUp
+} from '../static/scripts/global';
 
 // Components
 import Layout from "../components/Layout";
@@ -38,7 +41,6 @@ import Card from "../components/Cards/Card";
 import Input from "../components/Inputs/Input";
 import CheckboxGroup from "../components/Inputs/Checkbox/CheckboxGroup";
 import Checkbox from "../components/Inputs/Checkbox";
-import TextArea from "../components/Inputs/TextArea";
 
 interface IconInfo {
   link: String,
@@ -136,7 +138,7 @@ interface PageInfo {
     landingPageCustomFields: {
       lpCta: {
         showCta?: boolean,
-        ctaLocation?: boolean,
+        ctaLocation?: string,
         ctaStyle: string,
         bgColor: string,
         ctaColumns: {
@@ -222,6 +224,10 @@ const LPPage = ({data}: { data: PageInfo }) => {
   const sections = page.landingPageCustomFields.lpSections;
   const callouts = page.calloutsCustomField.callouts;
 
+  useEffect(() => {
+    medicareDisclaimerPopUp();
+  })
+
   return (
     <Layout pageClass={page.slug}>
       <Global styles={PageStyles} />
@@ -255,14 +261,14 @@ const LPPage = ({data}: { data: PageInfo }) => {
                 <Input id="email" type="email" name="email" placeholder="Email" required />
               </InputGroup>
               <CheckboxGroup title="Select all that apply">
-                <Checkbox id="medicare" name="medicare" label="Medicare Insurance" />
-                <Checkbox id="shortTerm" name="shortTerm" label="Short Term Health Insurance" />
-                <Checkbox id="acaHealth" name="acaHealth" label="ACA Health Insurance" />
-                <Checkbox id="dental" name="dental" label="Dental Insurance" />
-                <Checkbox id="supplemental" name="supplemental" label="Supplemental Insurance" />
-                <Checkbox id="vision" name="vision" label="Vision Insurance" />
+                <Checkbox id="health" name="health" label="Health PLans" />
+                <Checkbox id="medicare" name="medicare" label="Medicare Plans" />
+                <Checkbox id="dental" name="dental" label="Dental Plans" />
+                <Checkbox id="vision" name="vision" label="Vision Plans" />
+                <Checkbox id="live" name="live" label="Life Plans" />
+                <Checkbox id="supplemental" name="supplemental" label="Supplemental Plans" />
               </CheckboxGroup>
-              <TextArea id="tellUsMore" name="tellUsMore" placeholder="Tell us more — What are your insurance needs?" />
+              <p className="contact-disclaimer" data-disclaimer="medicare"><small>We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov or 1-800-MEDICARE (TTY users should call 1- 844-704-7357), 24 hours a day/7 days a week, to get information on all of your options.</small></p>
               <p className="contact-disclaimer"><small>By clicking “Submit” I expressly consent to my contact information being provided to HealthMarkets orone of their licensed insurance agents for future contact regarding health, life, supplemental, Medicare Advantage or Medicare Supplement insurance, depending on my need.  I understand I may receive phone calls (including to any wireless number that I provide) including automatic telephone dialing systems orby artificial/pre-recorded messages text message and/or emails for the purpose of marketing insurance products and services. By providing my information, I understand that my consent is not a condition of purchase of any product or services, and carrier messaging and data rates may apply. I may revoke this consent at any time by contacting us at <a href="tel:8886379621">888-637-9621</a> to be place on our do-not-call list. <a href="#">Privacy Policy</a></small></p>
               <Button background="accent-alt" border="light" color="light">Agree and Submit</Button>
             </form>
@@ -528,8 +534,8 @@ const LPPage = ({data}: { data: PageInfo }) => {
               <h1 dangerouslySetInnerHTML={{ __html: page.landingPageCustomFields.lpCta.ctaColumns.column2.heading }} />
               <a href={page.landingPageCustomFields.lpCta.ctaColumns.column3?.button?.link} onClick={routeLink}>
                   <Button
-                    background={(page.landingPageCustomFields.lpCta.bgColor === "accent") ? "primary" : "accent"}
-                    border={(page.landingPageCustomFields.lpCta.bgColor === "accent") ? "primary" : "accent"}
+                    background={(page.landingPageCustomFields.lpCta.bgColor === "accent") ? "primary" : "accent-alt"}
+                    border={(page.landingPageCustomFields.lpCta.bgColor === "accent") ? "primary" : "light"}
                     color="light">
                       {page.landingPageCustomFields.lpCta.ctaColumns.column3?.button?.text}
                   </Button>
@@ -563,8 +569,8 @@ const LPPage = ({data}: { data: PageInfo }) => {
               <h1 dangerouslySetInnerHTML={{ __html: page.landingPageCustomFields.lpCta.ctaColumns.column2.heading }} />
               <a href={page.landingPageCustomFields.lpCta.ctaColumns.column3?.button?.link} onClick={routeLink}>
                   <Button
-                    background={(page.landingPageCustomFields.lpCta.bgColor === "accent") ? "primary" : "accent"}
-                    border={(page.landingPageCustomFields.lpCta.bgColor === "accent") ? "primary" : "accent"}
+                    background={(page.landingPageCustomFields.lpCta.bgColor === "accent") ? "primary" : "accent-alt"}
+                    border={(page.landingPageCustomFields.lpCta.bgColor === "accent") ? "primary" : "accent-alt"}
                     color="light">
                       {page.landingPageCustomFields.lpCta.ctaColumns.column3?.button?.text}
                   </Button>

@@ -81,7 +81,7 @@ export const Img = styled.img`
   z-index: 0;
 
   .half & {
-    object-position: right top;
+    object-position: 75% 0%;
     min-width: 50%;
     width: 50%;
 
@@ -89,7 +89,7 @@ export const Img = styled.img`
       object-position: 75% 0%;
     }
 
-    @media only screen and (max-width: 1024px) {
+    @media only screen and (max-width: 1200px) {
       object-fit: contain;
       object-position: center top;
       min-width: 100%;
@@ -97,7 +97,9 @@ export const Img = styled.img`
     }
 
     @media only screen and (max-width: 900px) {
-      object-position: center 91px;
+      object-fit: cover;
+      object-position: 75% 91px;
+      max-height: 50vh;
     }
   }
 `
@@ -178,15 +180,14 @@ export const Inner = styled.div`
     padding: 65px 77px 55px;
     padding-right: 89px;
 
-    @media only screen and (max-width: 1024px) {
+    @media only screen and (max-width: 1200px) {
       flex-basis: 100%;
       width: 100%;
-      margin-top: 300px;
+      margin-top: 360px;
       padding: 65px 55px 55px;
     }
 
     @media only screen and (max-width: 620px) {
-      margin-top: 150px;
       padding: 65px 21px 55px;
     }
   }

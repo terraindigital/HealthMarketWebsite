@@ -199,8 +199,6 @@ const GPPage = ({data}: { data: PageInfo }) => {
   const callouts = page.calloutsCustomField.callouts;
   const relatedContent = page.generalProductCustomFields.gpRelatedContent;
 
-  console.log(relatedContent);
-
   useEffect(() => {
     let n = 0;
     let delay = setInterval(() => {

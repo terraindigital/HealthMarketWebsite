@@ -45,6 +45,30 @@ export const PageStyles = css`
     margin-bottom: 4rem;
   }
 
+  .contact.section .contact-disclaimer[data-disclaimer=medicare] + .contact-disclaimer {
+    background-color: var(--color-muted-alt);
+    position: relative;
+    z-index: 1;
+  }
+
+  .contact.section .contact-disclaimer[data-disclaimer=medicare] {
+    height: 0;
+    margin-bottom: 0;
+    opacity: 0;
+    position: relative;
+    top: -9999px;
+    transition: opacity 0.22s ease-in,
+                margin-bottom 0.22s ease-in;
+    z-index: 0;
+  }
+
+  .contact.section .contact-disclaimer[data-disclaimer=medicare].is-visible {
+    height: auto;
+    margin-bottom: 2rem;
+    opacity: 1;
+    top: 0;
+  }
+
   @media only screen and (max-width: 1440px) {
     .contact.section .section .inner .left h4 {
       font-size: 3.2rem;
