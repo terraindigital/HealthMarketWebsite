@@ -127,7 +127,7 @@ const DentalInsurancePage = () => {
           </Cards>
         ) : null}
         <div className="full-rounded" style={{ textAlign: "center" }}>
-          <a href={page.dentalPageCustomFields.dentalSection2.cta.link}>
+          <a href={page.dentalPageCustomFields.dentalSection2.cta.link} onClick={routeLink}>
             <Button background="accent-alt" border="light" color="light">
               {page.dentalPageCustomFields.dentalSection2.cta.text}
             </Button>

@@ -11,7 +11,8 @@ import {
 // Scripts
 import {
   changeTextSize,
-  toggleSearch
+  toggleSearch,
+  routeLink
 } from "../../../static/scripts/global";
 
 // Images
@@ -35,7 +36,7 @@ const AfterNav = () => {
         </a>
       </Item>
       <Item>
-        <a className="find-agent" href="/local-health-insurance-agent">
+        <a className="find-agent" href="/local-health-insurance-agent/" onClick={routeLink}>
           Find an agent
         </a>
       </Item>
