@@ -5,6 +5,19 @@ export const PageStyles = css`
   .contact-disclaimer {
     margin-bottom: 3.2rem;
   }
+
+
+  @media only screen and (max-width: 1200px) {
+    .contact-disclaimer {
+      text-align: center;
+    }
+
+    .contact-disclaimer + button {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 `
 
 export const Wrapper = styled.div`
@@ -33,6 +46,10 @@ export const HeroHeading = styled.h1`
     margin-bottom: 2.4rem;
     text-align: left;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+
+    @media only screen and (max-width: 1200px) {
+      text-align: center;
+    }
   }
 `
 
@@ -57,6 +74,10 @@ export const HeroSubheading = styled.h4`
     font-family: var(--font-body);
     margin-bottom: 4rem;
     text-align: left;
+
+    @media only screen and (max-width: 1200px) {
+      text-align: center;
+    }
   }
 `
 
