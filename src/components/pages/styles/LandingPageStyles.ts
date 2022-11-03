@@ -5,30 +5,6 @@ export const PageStyles = css`
   .contact-disclaimer {
     margin-bottom: 3.2rem;
   }
-
-  .contact-disclaimer[data-disclaimer=medicare] + .contact-disclaimer {
-    background-color: var(--color-light);
-    position: relative;
-    z-index: 1;
-  }
-  
-  .contact-disclaimer[data-disclaimer=medicare] {
-    height: 0;
-    margin-bottom: 0;
-    opacity: 0;
-    position: relative;
-    top: -9999px;
-    transition: opacity 0.22s ease-in,
-                margin-bottom 0.22s ease-in;
-    z-index: 0;
-  }
-  
-  .contact-disclaimer[data-disclaimer=medicare].is-visible {
-    height: auto;
-    margin-bottom: 2rem;
-    opacity: 1;
-    top: 0;
-  }
 `
 
 export const Wrapper = styled.div`
@@ -52,9 +28,10 @@ export const HeroHeading = styled.h1`
     }
   }
 
-  .hero .half & {
+  .hero.half & {
     color: var(--color-light);
     margin-bottom: 2.4rem;
+    text-align: left;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
   }
 `
@@ -75,10 +52,11 @@ export const HeroSubheading = styled.h4`
     }
   }
 
-  .hero .half & {
+  .hero.half & {
     color: var(--color-dark);
     font-family: var(--font-body);
     margin-bottom: 4rem;
+    text-align: left;
   }
 `
 
