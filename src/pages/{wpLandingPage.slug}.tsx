@@ -14,8 +14,7 @@ import {
 
 // Scripts
 import {
-  routeLink,
-  medicareDisclaimerPopUp
+  routeLink
 } from '../static/scripts/global';
 
 // Components
@@ -224,10 +223,6 @@ const LPPage = ({data}: { data: PageInfo }) => {
   const sections = page.landingPageCustomFields.lpSections;
   const callouts = page.calloutsCustomField.callouts;
 
-  useEffect(() => {
-    medicareDisclaimerPopUp();
-  })
-
   return (
     <Layout pageClass={page.slug}>
       <Global styles={PageStyles} />
@@ -261,7 +256,7 @@ const LPPage = ({data}: { data: PageInfo }) => {
                 <Input id="email" type="email" name="email" placeholder="Email" required />
               </InputGroup>
               <CheckboxGroup title="Select all that apply">
-                <Checkbox id="health" name="health" label="Health PLans" />
+                <Checkbox id="health" name="health" label="Health Plans" />
                 <Checkbox id="medicare" name="medicare" label="Medicare Plans" />
                 <Checkbox id="dental" name="dental" label="Dental Plans" />
                 <Checkbox id="vision" name="vision" label="Vision Plans" />

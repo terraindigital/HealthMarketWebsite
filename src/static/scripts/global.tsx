@@ -136,15 +136,6 @@ export const getRandomPhotos = (obj) => {
   return arr;
 }
 
-export const medicareDisclaimerPopUp = () => {
-  const checkbox = document.querySelector('input#medicare[type=checkbox]');
-  const disclaimer = document.querySelector('[data-disclaimer=medicare]');
-
-  checkbox?.addEventListener('click', () => {
-    disclaimer?.classList.toggle('is-visible');
-  })
-}
-
 const getWhitelist = () => {
   return [
     "_hm_cp",
