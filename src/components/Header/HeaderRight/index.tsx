@@ -13,7 +13,8 @@ import {
 import {
   changeTextSize,
   toggleNav,
-  toggleSearch
+  toggleSearch,
+  routeLink
 } from "../../../static/scripts/global"
 
 // Components
@@ -41,7 +42,7 @@ const HeaderRight = ({ headerData }: { headerData: any }) => {
         </a>
       </Item>
       <Item className="hide-at-device">
-        <a className="find-agent" href="/local-health-insurance-agent">
+        <a className="find-agent" href="/local-health-insurance-agent/" onClick={routeLink}>
           Find an agent
         </a>
       </Item>

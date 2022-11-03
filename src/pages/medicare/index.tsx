@@ -12,6 +12,9 @@ import {
   HeroSubheading
 } from "../../components/pages/styles/MedicareStyles";
 
+// Scripts
+import { routeLink } from '../../static/scripts/global';
+
 // Components
 import Layout from "../../components/Layout";
 import PageHead from "../../components/PageHead";
@@ -108,12 +111,12 @@ const MedicarePage = () => {
       <Medial color={page.medicarePageCustomFields.medicareSection3.color}>
         <div dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection3.medicareColumns.medicareColumn1.heading }} />
         <div className="button-container">
-          <a href={page.medicarePageCustomFields.medicareSection3.medicareColumns.medicareColumn2.button.button1.link}>
+          <a href={page.medicarePageCustomFields.medicareSection3.medicareColumns.medicareColumn2.button.button1.link} onClick={routeLink}>
             <Button background="accent-alt" border="light" color="light">
               {page.medicarePageCustomFields.medicareSection3.medicareColumns.medicareColumn2.button.button1.text}
             </Button>
           </a>
-          <a href={page.medicarePageCustomFields.medicareSection3.medicareColumns.medicareColumn2.button.button2.link}>
+          <a href={page.medicarePageCustomFields.medicareSection3.medicareColumns.medicareColumn2.button.button2.link} onClick={routeLink}>
             <Button background="accent-alt" border="light" color="light">
               {page.medicarePageCustomFields.medicareSection3.medicareColumns.medicareColumn2.button.button2.text}
             </Button>

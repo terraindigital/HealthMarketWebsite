@@ -11,6 +11,9 @@ import {
   HeroSubheading
 } from '../components/pages/styles/GeneralProductPageStyles';
 
+// Scripts
+import { routeLink } from '../static/scripts/global'
+
 // Components
 import Layout from "../components/Layout";
 import PageHead from "../components/PageHead";
@@ -196,8 +199,6 @@ const GPPage = ({data}: { data: PageInfo }) => {
   const callouts = page.calloutsCustomField.callouts;
   const relatedContent = page.generalProductCustomFields.gpRelatedContent;
 
-  console.log(relatedContent);
-
   useEffect(() => {
     let n = 0;
     let delay = setInterval(() => {
@@ -260,7 +261,7 @@ const GPPage = ({data}: { data: PageInfo }) => {
                     </List>
                     {(section.cta.showCta) ? (
                       <div style={{ marginTop: "5.5rem" }}>
-                        <a href={section.cta.link}>
+                        <a href={section.cta.link} onClick={routeLink}>
                           <Button
                             background={section.cta.background}
                             border={section.cta.border}
@@ -293,7 +294,7 @@ const GPPage = ({data}: { data: PageInfo }) => {
                     </List>
                     {(section.cta.showCta) ? (
                       <div>
-                        <a href={section.cta.link}>
+                        <a href={section.cta.link} onClick={routeLink}>
                           <Button
                             background={section.cta.background}
                             border={section.cta.border}
@@ -329,7 +330,7 @@ const GPPage = ({data}: { data: PageInfo }) => {
                     ) : null}
                     {(section.cta.showCta) ? (
                       <div style={{ marginTop: "5.5rem" }}>
-                        <a href={section.cta.link}>
+                        <a href={section.cta.link} onClick={routeLink}>
                           <Button
                             background={section.cta.background}
                             border={section.cta.border}
@@ -361,7 +362,7 @@ const GPPage = ({data}: { data: PageInfo }) => {
                     ) : null}
                     {(section.cta.showCta) ? (
                       <div>
-                        <a href={section.cta.link}>
+                        <a href={section.cta.link} onClick={routeLink}>
                           <Button
                             background={section.cta.background}
                             border={section.cta.border}
@@ -403,7 +404,7 @@ const GPPage = ({data}: { data: PageInfo }) => {
                     </Cards>
                     {(section.cta.showCta) ? (
                       <div style={{ marginTop: "5.5rem" }}>
-                        <a href={section.cta.link}>
+                        <a href={section.cta.link} onClick={routeLink}>
                           <Button
                             background={section.cta.background}
                             border={section.cta.border}
@@ -441,7 +442,7 @@ const GPPage = ({data}: { data: PageInfo }) => {
                     </Cards>
                     {(section.cta.showCta) ? (
                       <div>
-                        <a href={section.cta.link}>
+                        <a href={section.cta.link} onClick={routeLink}>
                           <Button
                             background={section.cta.background}
                             border={section.cta.border}
@@ -480,7 +481,7 @@ const GPPage = ({data}: { data: PageInfo }) => {
                     </Icons>
                     {(section.cta.showCta) ? (
                       <div style={{ marginTop: "5.5rem" }}>
-                        <a href={section.cta.link}>
+                        <a href={section.cta.link} onClick={routeLink}>
                           <Button
                             background={section.cta.background}
                             border={section.cta.border}
@@ -515,7 +516,7 @@ const GPPage = ({data}: { data: PageInfo }) => {
                     </Icons>
                     {(section.cta.showCta) ? (
                       <div>
-                        <a href={section.cta.link}>
+                        <a href={section.cta.link} onClick={routeLink}>
                           <Button
                             background={section.cta.background}
                             border={section.cta.border}
@@ -578,7 +579,7 @@ const GPPage = ({data}: { data: PageInfo }) => {
             </Cards>
           ) : null } */}
           <div className="full-rounded" style={{ textAlign: "center" }}>
-            <a href={page.generalProductCustomFields.gpRelatedContent.cta.link}>
+            <a href={page.generalProductCustomFields.gpRelatedContent.cta.link} onClick={routeLink}>
               <Button background="accent-alt" border="light" color="light">
                 {page.generalProductCustomFields.gpRelatedContent.cta.text}
               </Button>

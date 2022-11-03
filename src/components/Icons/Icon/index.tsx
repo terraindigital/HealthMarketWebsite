@@ -3,6 +3,9 @@ import React, { FC, ReactNode} from "react"
 // Styles
 import { Wrapper, Img, Content } from "./styles"
 
+// Scripts
+import { routeLink } from "../../../static/scripts/global"
+
 interface Props {
   icon: String,
   mobile: String,
@@ -12,7 +15,7 @@ interface Props {
 
 const Icon: FC<Props> = ({ icon, mobile, title, link }) => {
   return (
-    <Wrapper href={(link) ? link : ''}>
+    <Wrapper href={(link) ? link : ''} onClick={routeLink}>
       <Img
         src={icon}
         placeholder="BLURRED"

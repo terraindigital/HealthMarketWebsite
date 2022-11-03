@@ -21,6 +21,25 @@ export const Wrapper = styled.div`
     vertical-align: middle;
   }
 
+  &.half {
+    align-items: stretch;
+    justify-content: flex-end;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 120px;
+
+    &.half > div > h1 {
+      color: var(--color-primary);
+      text-shadow: none;
+    }
+
+    &.half > div > h4 {
+      font-size: 24px;
+      font-weight: 500;
+    }
+  }
+
   @media screen and (min-width: 1921px) {
     padding-left: 40rem;
     padding-right: 40rem;
@@ -60,6 +79,29 @@ export const Img = styled.img`
   top: 0;
   width: auto;
   z-index: 0;
+
+  .half & {
+    object-position: 75% 0%;
+    min-width: 50%;
+    width: 50%;
+
+    @media only screen and (max-width: 1440px) {
+      object-position: 75% 0%;
+    }
+
+    @media only screen and (max-width: 1200px) {
+      object-fit: contain;
+      object-position: center top;
+      min-width: 100%;
+      width: auto;
+    }
+
+    @media only screen and (max-width: 900px) {
+      object-fit: cover;
+      object-position: 75% 91px;
+      max-height: 50vh;
+    }
+  }
 `
 
 export const Inner = styled.div`
@@ -126,6 +168,27 @@ export const Inner = styled.div`
 
     @media only screen and (max-width: 620px) {
       background-color: transparent;
+    }
+  }
+
+  .half & {
+    flex-basis: 50%;
+    width: 50%;
+
+    background-color: var(--color-light);
+    justify-content: flex-start;
+    padding: 65px 77px 55px;
+    padding-right: 89px;
+
+    @media only screen and (max-width: 1200px) {
+      flex-basis: 100%;
+      width: 100%;
+      margin-top: 360px;
+      padding: 65px 55px 55px;
+    }
+
+    @media only screen and (max-width: 620px) {
+      padding: 65px 21px 55px;
     }
   }
 

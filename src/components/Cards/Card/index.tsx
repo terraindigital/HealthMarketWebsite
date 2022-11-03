@@ -6,8 +6,12 @@ import {
   MobileWrapper,
   Header,
   Img,
+  ImgContainer,
   Content
 } from "./styles"
+
+// Scripts
+import { routeLink } from "../../../static/scripts/global";
 
 // Scripts
 const toggleOpenState = (el) => {
@@ -29,30 +33,34 @@ const Card: FC<Props> = ({ image=null, icon=null, mobile=null, link=null, title,
 
   return (
     <>
-      <Wrapper className={`card hide-at-mobile ${imageClass}`} href={link}>
-        <Header className="card-header" onClick={toggleOpenState}>
-          <Img
-            src={(image !== null) ? image : icon}
-            placeholder="BLURRED"
-            maxWidth={(image === null) ? 128 : null}
-            maxHeight={(image === null) ? 98 : null}
-            alt="Card Icon Image"
-          />
+      <Wrapper className={`card hide-at-mobile ${imageClass}`} href={link} onClick={routeLink}>
+        <Header className="card-header">
+          <ImgContainer className={(image !== null) ? 'image' : 'icon'}>
+            <Img
+              src={(image !== null) ? image : icon}
+              placeholder="BLURRED"
+              maxWidth={(image === null) ? 128 : null}
+              maxHeight={(image === null) ? 98 : null}
+              alt="Card Icon Image"
+            />
+          </ImgContainer>
         </Header>
         <Content className="card-content">
           <h4 className="hide-at-mobile">{title}</h4>
           {children}
         </Content>
       </Wrapper>
-      <MobileWrapper className={`card show-at-mobile ${imageClass}`} href={link}>
+      <MobileWrapper className={`card show-at-mobile ${imageClass}`}>
         <Header className="card-header" onClick={toggleOpenState}>
-          <Img
-            src={(image !== null) ? image : (mobile != null) ? mobile : icon}
-            placeholder="BLURRED"
-            maxWidth={(image === null) ? 128 : null}
-            maxHeight={(image === null) ? 98 : null}
-            alt="Card Icon Image"
-          />
+          <ImgContainer className={(image !== null) ? 'image' : 'icon'}>
+            <Img
+              src={(image !== null) ? image : (mobile != null) ? mobile : icon}
+              placeholder="BLURRED"
+              maxWidth={(image === null) ? 128 : null}
+              maxHeight={(image === null) ? 98 : null}
+              alt="Card Icon Image"
+            />
+          </ImgContainer>
           <h4 className="show-at-mobile">{title}</h4>
         </Header>
         <Content className="card-content">
