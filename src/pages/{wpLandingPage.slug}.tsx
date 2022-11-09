@@ -281,11 +281,13 @@ const LPPage = ({data}: { data: PageInfo }) => {
                     color={(section.bgColor) ? section.bgColor : "light"}
                     heading={section.headline.headlineText}>
                     <List>
-                      {Object.keys(section.list).map((listItem) => (
-                        <ListItem heading={section.list[listItem].title}>
-                          <p>{section.list[listItem].content}</p>
-                        </ListItem>
-                      ))}
+                      {Object.keys(section.list).map((listItem) => 
+                        (!section.list[listItem].title) ? null : (
+                          <ListItem heading={section.list[listItem].title}>
+                            <p>{section.list[listItem].content}</p>
+                          </ListItem>
+                        )
+                      )}
                     </List>
                     {(section.cta.showCta) ? (
                       <div style={{ marginTop: "5.5rem" }}>
@@ -307,11 +309,13 @@ const LPPage = ({data}: { data: PageInfo }) => {
                     color={(section.bgColor) ? section.bgColor : "light"}
                     heading={section.headline.headlineText}>
                     <List>
-                      {Object.keys(section.list).map((listItem) => (
-                        <ListItem heading={section.list[listItem].title}>
-                          <p>{section.list[listItem].content}</p>
-                        </ListItem>
-                      ))}
+                      {Object.keys(section.list).map((listItem) => 
+                        (!section.list[listItem].title) ? null : (
+                          <ListItem heading={section.list[listItem].title}>
+                            <p>{section.list[listItem].content}</p>
+                          </ListItem>
+                        )
+                      )}
                     </List>
                     {(section.cta.showCta) ? (
                       <div>
