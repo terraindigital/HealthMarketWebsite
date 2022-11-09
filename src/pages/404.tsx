@@ -1,61 +1,76 @@
-import * as React from 'react';
-import { Link } from 'gatsby';
+import React from "react";
+import Layout from "../components/Layout";
+import { Left, Wrapper, Right, ListWrapper, List, Container } from "../components/404/styles";
+import LittleGirl from "../static/images/little-girl-image.png";
+import Magnifier from "../static/images/magnifying-glass.png";
+import PriceTag from "../static/images/price-tag.png";
 
-// styles
-const pageStyles = {
-    color: '#232129',
-    padding: '96px',
-    fontFamily: '-apple-system, Roboto, sans-serif, serif',
+function NotFound() {
+    return (
+        <Layout>
+            <Container>
+                <Wrapper>
+                    <Left>
+                        <h1>Uh-oh,</h1>
+                        <h3>Something may be broken</h3>
+                        <p>
+                            The page you are looking for can't be found. Get your{" "}
+                            <a href="https://shop.healthmarkets.com/"> FitScore®</a>, <br />{" "}
+                            <a href="https://www.healthmarkets.com/local-health-insurance-agent/">
+                                Find an agent,
+                            </a>{" "}
+                            or follow the links below to access more pages.
+                        </p>
+                        <ListWrapper>
+                            <ListItems
+                                icon={Magnifier}
+                                list={listItemsOne}
+                                text="Get Counsel"
+                            />
+                            <ListItems
+                                icon={PriceTag}
+                                list={listItemsTwo}
+                                text="Compare affordable insurance plans"
+                            />
+                        </ListWrapper>
+                    </Left>
+                    <Right>
+                        <img src={LittleGirl} />
+                    </Right>
+                </Wrapper>
+            </Container>
+        </Layout>
+    );
+}
+
+const ListItems = ({ icon, list, text }: any) => {
+    return (
+        <List>
+            <img src={icon} alt="icon" />
+            <div className="line" />
+            <p className="text">{text}</p>
+            <ul>
+                {Object.keys(list).map(function(key){
+                    return <li><a href={list[key]}>{key}</a></li>;
+                })}
+            </ul>
+        </List>
+    );
 };
-const headingStyles = {
-    marginTop: 0,
-    marginBottom: 64,
-    maxWidth: 320,
+
+const listItemsOne = {
+    "Find an Agent":
+        "https://www.healthmarkets.com/local-health-insurance-agent/",
+    "Get your FitScore®": "https://shop.healthmarkets.com/",
+};
+const listItemsTwo = {
+    "Health" : "https://www.healthmarkets.com/health-insurance/",
+    "Medicare": "https://www.healthmarkets.com/medicare/",
+    "Small Business": "https://www.healthmarkets.com/small-business/",
+    "Dental": "https://www.healthmarkets.com/debtal/",
+    "Vision": "https://www.healthmarkets.com/vision/",
+    "Life": "https://www.healthmarkets.com/life/",
+    "Supplemental": "https://www.healthmarkets.com/supplemental/",
 };
 
-const paragraphStyles = {
-    marginBottom: 48,
-};
-const codeStyles = {
-    color: '#8A6534',
-    padding: 4,
-    backgroundColor: '#FFF4DB',
-    fontSize: '1.25rem',
-    borderRadius: 4,
-};
-
-// scripts
-import { routeLink } from '../static/scripts/global'
-
-// markup
-const NotFoundPage = () => (
-    <main style={pageStyles}>
-        <title>Not found</title>
-        <h1 style={headingStyles}>Page not found</h1>
-        <p style={paragraphStyles}>
-            Sorry
-            {' '}
-            <span role="img" aria-label="Pensive emoji">
-                😔
-            </span>
-            {' '}
-            we couldn’t find what you were looking for.
-            <br />
-            {process.env.NODE_ENV === 'development' ? (
-                <>
-                    <br />
-                    Try creating a page in
-                    {' '}
-                    <code style={codeStyles}>src/pages/</code>
-                    .
-                    <br />
-                </>
-            ) : null}
-            <br />
-            <a href="/" onClick={routeLink}>Go home</a>
-            .
-        </p>
-    </main>
-);
-
-export default NotFoundPage;
+export default NotFound;
