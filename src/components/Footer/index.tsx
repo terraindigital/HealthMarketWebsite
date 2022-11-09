@@ -8,7 +8,7 @@ import { useFooterGetToKnowUsMenuQuery } from "../../hooks/footer/useFooterGetTo
 import FooterComponent, {FooterProps} from "./component";
 
 interface Props {
-  complianceCode: string
+  complianceCode?: string
   children: string
 }
 

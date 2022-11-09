@@ -4,6 +4,7 @@ import { Left, Wrapper, Right, ListWrapper, List, Container } from "../component
 import LittleGirl from "../static/images/little-girl-image.png";
 import Magnifier from "../static/images/magnifying-glass.png";
 import PriceTag from "../static/images/price-tag.png";
+import Footer from "../components/Footer";
 
 function NotFound() {
     return (
@@ -39,6 +40,7 @@ function NotFound() {
                     </Right>
                 </Wrapper>
             </Container>
+            <Footer />
         </Layout>
     );
 }
