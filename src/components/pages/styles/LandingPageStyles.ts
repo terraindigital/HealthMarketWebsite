@@ -6,6 +6,17 @@ export const PageStyles = css`
     margin-bottom: 3.2rem;
   }
 
+  .contact-disclaimer.is-closed[data-disclaimer=medicare] {
+    display: none;
+    position: relative;
+    top: -9999px;
+    transition: top 0.22s ease-in;
+  }
+
+  .contact-disclaimer[data-disclaimer=medicare] {
+    display: block;
+    top: 0;
+  }
 
   @media only screen and (max-width: 1200px) {
     .contact-disclaimer {

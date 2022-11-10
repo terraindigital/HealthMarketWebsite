@@ -223,6 +223,19 @@ const LPPage = ({data}: { data: PageInfo }) => {
   const sections = page.landingPageCustomFields.lpSections;
   const callouts = page.calloutsCustomField.callouts;
 
+  useEffect(() => {
+    const checkbox = document.querySelector('input#medicare');
+    const disclaimer = document.querySelector('[data-disclaimer=medicare]');
+
+    if (page.slug !== 'medicare-quoter-lp'
+      && page.landingPageCustomFields.lpHero.contentStyle === 'half') {
+      disclaimer?.classList.add('is-closed');
+      checkbox?.addEventListener('click', () => {
+        disclaimer?.classList.toggle('is-closed');
+      });
+    }
+  });
+
   return (
     <Layout pageClass={page.slug}>
       <Global styles={PageStyles} />
