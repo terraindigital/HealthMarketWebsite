@@ -69,7 +69,7 @@ export const Img = styled.img`
   width: auto;
   z-index: 0;
   .half & {
-    object-position: 75% 0%;
+    object-position: 75% 120px;
     min-width: 50%;
     width: 50%;
     @media only screen and (max-width: 1440px) {
