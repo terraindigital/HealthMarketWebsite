@@ -69,21 +69,21 @@ export const Img = styled.img`
   width: auto;
   z-index: 0;
   .half & {
-    object-position: 75% 120px;
+    object-position: center 120px;
     min-width: 50%;
     width: 50%;
     @media only screen and (max-width: 1440px) {
-      object-position: 75% 0%;
+      object-position: center 120px;
     }
     @media only screen and (max-width: 1200px) {
       object-fit: contain;
-      object-position: center top;
+      object-position: center 91px;
       min-width: 100%;
       width: auto;
     }
     @media only screen and (max-width: 900px) {
       object-fit: cover;
-      object-position: 75% 91px;
+      object-position: center 91px;
       max-height: 50vh;
     }
   }
