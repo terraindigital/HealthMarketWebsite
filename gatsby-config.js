@@ -100,7 +100,7 @@ module.exports = {
                 dependencies: ['objectID', 'permalink', 'email', 'commercial_health', 'life', 'supplemental', 'wellness', 'medicare', 'city', 'state', 'active'],
                 getSlug: (data) => {
                     if (data.email.includes('healthmarkets')) {
-                        return data.email.replace('@healthmarkets.com', '')
+                        return data.email.replace('@healthmarkets.com', '').toLowerCase()
                     }
                     return undefined;
                 },
