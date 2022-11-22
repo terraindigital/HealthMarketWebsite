@@ -15,8 +15,8 @@ exports.createPages = async ({ graphql, actions }) => {
     )
 
     agentData.data.allAgents.nodes.forEach(({ slug, permalink }) => {
-        createRedirect({ fromPath: `/${slug}`, toPath: `https://www.healthmarkets.com/local-health-insurance-agent/${slug.replace(/\\./g, '')}`, isPermanent: true, statusCode: 301, redirectInBrowser: true })
-        createRedirect({ fromPath: `/${slug.replace(/\./g, '')}`, toPath: `https://www.healthmarkets.com/local-health-insurance-agent/${slug.replace(/\\./g, '')}`, isPermanent: true, statusCode: 301, redirectInBrowser: true })
+        createRedirect({ fromPath: `/${slug}`, toPath: `https://www.healthmarkets.com/local-health-insurance-agent/${slug.replace(/\./g, '')}`, isPermanent: true, statusCode: 301, redirectInBrowser: true })
+        createRedirect({ fromPath: `/${slug.replace(/\./g, '')}`, toPath: `https://www.healthmarkets.com/local-health-insurance-agent/${slug.replace(/\./g, '')}`, isPermanent: true, statusCode: 301, redirectInBrowser: true })
 
 
         if (permalink) {
