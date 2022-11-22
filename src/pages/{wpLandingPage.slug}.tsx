@@ -1,5 +1,5 @@
 // Library
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect } from "react";
 import { Global } from "@emotion/react";
 import { graphql } from "gatsby";
 
@@ -8,11 +8,14 @@ import {
   PageStyles,
   Wrapper,
   HeroHeading,
-  HeroSubheading
+  HeroSubheading,
+  InputGroup
 } from '../components/pages/styles/LandingPageStyles';
 
 // Scripts
-import { routeLink } from '../static/scripts/global';
+import {
+  routeLink
+} from '../static/scripts/global';
 
 // Components
 import Layout from "../components/Layout";
@@ -34,6 +37,9 @@ import Footer from '../components/Footer';
 import Accordion from "../components/Accordions";
 import Cards from "../components/Cards";
 import Card from "../components/Cards/Card";
+import Input from "../components/Inputs/Input";
+import CheckboxGroup from "../components/Inputs/Checkbox/CheckboxGroup";
+import Checkbox from "../components/Inputs/Checkbox";
 
 interface IconInfo {
   link: String,
@@ -131,6 +137,7 @@ interface PageInfo {
     landingPageCustomFields: {
       lpCta: {
         showCta?: boolean,
+        ctaLocation?: string,
         ctaStyle: string,
         bgColor: string,
         ctaColumns: {
@@ -216,6 +223,19 @@ const LPPage = ({data}: { data: PageInfo }) => {
   const sections = page.landingPageCustomFields.lpSections;
   const callouts = page.calloutsCustomField.callouts;
 
+  useEffect(() => {
+    const checkbox = document.querySelector('input#medicare');
+    const disclaimer = document.querySelector('[data-disclaimer=medicare]');
+
+    if (page.slug !== 'medicare-quoter-lp'
+      && page.landingPageCustomFields.lpHero.contentStyle === 'half') {
+      disclaimer?.classList.add('is-closed');
+      checkbox?.addEventListener('click', () => {
+        disclaimer?.classList.toggle('is-closed');
+      });
+    }
+  });
+
   return (
     <Layout pageClass={page.slug}>
       <Global styles={PageStyles} />
@@ -226,16 +246,41 @@ const LPPage = ({data}: { data: PageInfo }) => {
           bgColor={(page.landingPageCustomFields.lpHero.bgColor) ? page.landingPageCustomFields.lpHero.bgColor : "#ffffff"}
           centered={(page.landingPageCustomFields.lpHero.alignment === "centered")}
           boxed={(page.landingPageCustomFields.lpHero.contentStyle === "boxed")}
+          half={(page.landingPageCustomFields.lpHero.contentStyle === "half")}
           color={page.landingPageCustomFields.lpHero.contentBgColor}
           >
           <HeroHeading>{page.landingPageCustomFields.lpHero.heroHeadline}</HeroHeading>
           <HeroSubheading>{page.landingPageCustomFields.lpHero.heroSubheadline}</HeroSubheading>
-          <PageHeroForm
-            centered={(page.landingPageCustomFields.lpHero.alignment === "centered")}
-            btnLeftText={page.landingPageCustomFields.lpHero.heroButtons.heroButton1.text}
-            btnRightText={page.landingPageCustomFields.lpHero.heroButtons.heroButton2.text}
-            inputId={`${page.title.replaceAll(' ', '')}HeroLocation`}
-            buttons={page.landingPageCustomFields.lpHero.heroButtons.showButtons} />
+          {(page.landingPageCustomFields.lpHero.contentStyle !== "half") ? (
+            <PageHeroForm
+              centered={(page.landingPageCustomFields.lpHero.alignment === "centered")}
+              btnLeftText={page.landingPageCustomFields.lpHero.heroButtons.heroButton1.text}
+              btnRightText={page.landingPageCustomFields.lpHero.heroButtons.heroButton2.text}
+              inputId={`${page.title.replaceAll(' ', '')}HeroLocation`}
+              buttons={page.landingPageCustomFields.lpHero.heroButtons.showButtons} />
+          ) : (
+            <form>
+              <InputGroup>
+                <Input id="fName" type="text" name="fName" placeholder="First name" required />
+                <Input id="lName" type="text" name="lName" placeholder="Last name" required />
+              </InputGroup>
+              <InputGroup>
+                <Input id="zipCode" type="number" name="zipCode" pattern="[0-9]{5}" placeholder="Zip code" required />
+                <Input id="email" type="email" name="email" placeholder="Email" required />
+              </InputGroup>
+              <CheckboxGroup title="Select all that apply">
+                <Checkbox id="health" name="health" label="Health plans" />
+                <Checkbox id="medicare" name="medicare" label="Medicare plans" />
+                <Checkbox id="dental" name="dental" label="Dental plans" />
+                <Checkbox id="vision" name="vision" label="Vision plans" />
+                <Checkbox id="live" name="live" label="Life plans" />
+                <Checkbox id="supplemental" name="supplemental" label="Supplemental plans" />
+              </CheckboxGroup>
+              <p className="contact-disclaimer" data-disclaimer="medicare"><small>We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov or 1-800-MEDICARE (TTY users should call 1- 844-704-7357), 24 hours a day/7 days a week, to get information on all of your options.</small></p>
+              <p className="contact-disclaimer"><small>By clicking “Agree and submit” I expressly consent to my contact information being provided to HealthMarkets orone of their licensed insurance agents for future contact regarding health, life, supplemental, Medicare Advantage or Medicare Supplement insurance, depending on my need.  I understand I may receive phone calls (including to any wireless number that I provide) including automatic telephone dialing systems orby artificial/pre-recorded messages text message and/or emails for the purpose of marketing insurance products and services. By providing my information, I understand that my consent is not a condition of purchase of any product or services, and carrier messaging and data rates may apply. I may revoke this consent at any time by contacting us at <a href="tel:8886379621">888-637-9621</a> to be place on our do-not-call list. <a href="#">Privacy Policy</a></small></p>
+              <Button background="accent-alt" border="light" color="light">Agree and submit</Button>
+            </form>
+          )}
         </Hero>
 
         {Object.keys(sections).map((i) => {
@@ -249,18 +294,20 @@ const LPPage = ({data}: { data: PageInfo }) => {
                     color={(section.bgColor) ? section.bgColor : "light"}
                     heading={section.headline.headlineText}>
                     <List>
-                      {Object.keys(section.list).map((listItem) => (
-                        <ListItem heading={section.list[listItem].title}>
-                          <p>{section.list[listItem].content}</p>
-                        </ListItem>
-                      ))}
+                      {Object.keys(section.list).map((listItem) => 
+                        (!section.list[listItem].title) ? null : (
+                          <ListItem heading={section.list[listItem].title}>
+                            <p>{section.list[listItem].content}</p>
+                          </ListItem>
+                        )
+                      )}
                     </List>
                     {(section.cta.showCta) ? (
                       <div style={{ marginTop: "5.5rem" }}>
                         <a href={section.cta.link} onClick={routeLink}>
                           <Button
-                            background={section.cta.background}
-                            border={section.cta.border}
+                            background={(section.cta.background === "accent") ? "accent-alt" : section.cta.background}
+                            border={(section.cta.border === "accent") ? "light" : section.cta.border}
                             color={section.cta.color}>
                             {section.cta.text}
                           </Button>
@@ -275,18 +322,20 @@ const LPPage = ({data}: { data: PageInfo }) => {
                     color={(section.bgColor) ? section.bgColor : "light"}
                     heading={section.headline.headlineText}>
                     <List>
-                      {Object.keys(section.list).map((listItem) => (
-                        <ListItem heading={section.list[listItem].title}>
-                          <p>{section.list[listItem].content}</p>
-                        </ListItem>
-                      ))}
+                      {Object.keys(section.list).map((listItem) => 
+                        (!section.list[listItem].title) ? null : (
+                          <ListItem heading={section.list[listItem].title}>
+                            <p>{section.list[listItem].content}</p>
+                          </ListItem>
+                        )
+                      )}
                     </List>
                     {(section.cta.showCta) ? (
                       <div>
                         <a href={section.cta.link} onClick={routeLink}>
                           <Button
-                            background={section.cta.background}
-                            border={section.cta.border}
+                            background={(section.cta.background === "accent") ? "accent-alt" : section.cta.background}
+                            border={(section.cta.border === "accent") ? "light" : section.cta.border}
                             color={section.cta.color}>
                             {section.cta.text}
                           </Button>
@@ -311,8 +360,8 @@ const LPPage = ({data}: { data: PageInfo }) => {
                       <div style={{ marginTop: "5.5rem" }}>
                         <a href={section.cta.link} onClick={routeLink}>
                           <Button
-                            background={section.cta.background}
-                            border={section.cta.border}
+                            background={(section.cta.background === "accent") ? "accent-alt" : section.cta.background}
+                            border={(section.cta.border === "accent") ? "light" : section.cta.border}
                             color={section.cta.color}>
                             {section.cta.text}
                           </Button>
@@ -333,8 +382,8 @@ const LPPage = ({data}: { data: PageInfo }) => {
                       <div>
                         <a href={section.cta.link} onClick={routeLink}>
                           <Button
-                            background={section.cta.background}
-                            border={section.cta.border}
+                            background={(section.cta.background === "accent") ? "accent-alt" : section.cta.background}
+                            border={(section.cta.border === "accent") ? "light" : section.cta.border}
                             color={section.cta.color}>
                             {section.cta.text}
                           </Button>
@@ -371,8 +420,8 @@ const LPPage = ({data}: { data: PageInfo }) => {
                       <div style={{ marginTop: "5.5rem" }}>
                         <a href={section.cta.link} onClick={routeLink}>
                           <Button
-                            background={section.cta.background}
-                            border={section.cta.border}
+                            background={(section.cta.background === "accent") ? "accent-alt" : section.cta.background}
+                            border={(section.cta.border === "accent") ? "light" : section.cta.border}
                             color={section.cta.color}>
                             {section.cta.text}
                           </Button>
@@ -405,8 +454,8 @@ const LPPage = ({data}: { data: PageInfo }) => {
                       <div>
                         <a href={section.cta.link} onClick={routeLink}>
                           <Button
-                            background={section.cta.background}
-                            border={section.cta.border}
+                            background={(section.cta.background === "accent") ? "accent-alt" : section.cta.background}
+                            border={(section.cta.border === "accent") ? "light" : section.cta.border}
                             color={section.cta.color}>
                             {section.cta.text}
                           </Button>
@@ -442,8 +491,8 @@ const LPPage = ({data}: { data: PageInfo }) => {
                       <div style={{ marginTop: "5.5rem" }}>
                         <a href={section.cta.link} onClick={routeLink}>
                           <Button
-                            background={section.cta.background}
-                            border={section.cta.border}
+                            background={(section.cta.background === "accent") ? "accent-alt" : section.cta.background}
+                            border={(section.cta.border === "accent") ? "light" : section.cta.border}
                             color={section.cta.color}>
                             {section.cta.text}
                           </Button>
@@ -475,8 +524,8 @@ const LPPage = ({data}: { data: PageInfo }) => {
                       <div>
                         <a href={section.cta.link} onClick={routeLink}>
                           <Button
-                            background={section.cta.background}
-                            border={section.cta.border}
+                            background={(section.cta.background === "accent") ? "accent-alt" : section.cta.background}
+                            border={(section.cta.border === "accent") ? "light" : section.cta.border}
                             color={section.cta.color}>
                             {section.cta.text}
                           </Button>
@@ -489,6 +538,22 @@ const LPPage = ({data}: { data: PageInfo }) => {
             }
           }
         })}
+
+        {(page.landingPageCustomFields.lpCta.showCta && page.landingPageCustomFields.lpCta.ctaLocation === 'before') ? (
+          <Medial
+            color={page.landingPageCustomFields.lpCta.bgColor}>
+              <img className="chat-bubble" src={page.landingPageCustomFields.lpCta.ctaColumns.column1.image?.sourceUrl} alt="Chat bubble icon" />
+              <h1 dangerouslySetInnerHTML={{ __html: page.landingPageCustomFields.lpCta.ctaColumns.column2.heading }} />
+              <a href={page.landingPageCustomFields.lpCta.ctaColumns.column3?.button?.link} onClick={routeLink}>
+                  <Button
+                    background={(page.landingPageCustomFields.lpCta.bgColor === "accent") ? "primary" : "accent-alt"}
+                    border={(page.landingPageCustomFields.lpCta.bgColor === "accent") ? "primary" : "light"}
+                    color="light">
+                      {page.landingPageCustomFields.lpCta.ctaColumns.column3?.button?.text}
+                  </Button>
+              </a>
+          </Medial>
+        ) : null}
 
         <Section color="light">
           <Callouts>
@@ -509,15 +574,15 @@ const LPPage = ({data}: { data: PageInfo }) => {
           </Callouts>
         </Section>
 
-        {(page.landingPageCustomFields.lpCta.showCta) ? (
+        {(page.landingPageCustomFields.lpCta.showCta && page.landingPageCustomFields.lpCta.ctaLocation === 'after') ? (
           <Medial
             color={page.landingPageCustomFields.lpCta.bgColor}>
               <img className="chat-bubble" src={page.landingPageCustomFields.lpCta.ctaColumns.column1.image?.sourceUrl} alt="Chat bubble icon" />
               <h1 dangerouslySetInnerHTML={{ __html: page.landingPageCustomFields.lpCta.ctaColumns.column2.heading }} />
               <a href={page.landingPageCustomFields.lpCta.ctaColumns.column3?.button?.link} onClick={routeLink}>
                   <Button
-                    background={(page.landingPageCustomFields.lpCta.bgColor === "accent") ? "primary" : "accent"}
-                    border={(page.landingPageCustomFields.lpCta.bgColor === "accent") ? "primary" : "accent"}
+                    background={(page.landingPageCustomFields.lpCta.bgColor === "accent") ? "primary" : "accent-alt"}
+                    border={(page.landingPageCustomFields.lpCta.bgColor === "accent") ? "primary" : "accent-alt"}
                     color="light">
                       {page.landingPageCustomFields.lpCta.ctaColumns.column3?.button?.text}
                   </Button>
@@ -559,6 +624,7 @@ export const pageQuery = graphql`
       landingPageCustomFields {
         lpCta {
           showCta
+          ctaLocation
           ctaStyle
           bgColor
           ctaColumns {

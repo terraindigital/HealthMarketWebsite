@@ -1,3 +1,5 @@
+
+
 import React, { FC, ReactNode } from "react"
 
 // Styles
@@ -9,14 +11,16 @@ interface Props {
   bgColor?: String,
   centered?: boolean,
   boxed?: boolean,
+  half?: boolean,
   color?: string,
   children: ReactNode
 }
 
-const Hero: FC<Props> = ({ image, mobileImage, bgColor, centered, boxed, color, children }) => {
+const Hero: FC<Props> = ({ image, mobileImage, bgColor, centered, boxed, half, color, children }) => {
   let classes = "hero"
   if (centered) { classes += " centered" }
   if (boxed) { classes += " boxed" }
+  if (half) { classes += " half" }
   if (color != null) { classes = classes + " " + color }
 
   return (

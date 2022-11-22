@@ -214,10 +214,14 @@ export const Content = styled.div`
     padding: 0rem 0rem 2.4rem;
   }
 
-  p {
+  & > p {
     font-weight: 600;
     line-height: 140%;
     margin-bottom: 0;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 
   .icon & {
