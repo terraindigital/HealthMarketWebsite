@@ -101,7 +101,7 @@ module.exports = {
                 getSlug: (data) => {
                     if (data.email.includes('healthmarkets')) {
                         const replaced = data.email.replace('@healthmarkets.com', '');
-                        return replaced.replace('.', '').toLowerCase();
+                        return replaced.toLowerCase();
                     }
                     return undefined;
                 },
