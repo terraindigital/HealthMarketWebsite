@@ -1,4 +1,4 @@
-
+const articleRedirects = require("./redirects/article-redirects.json")
 
 exports.createPages = async ({ graphql, actions }) => {
     const { createRedirect } = actions
@@ -25,5 +25,9 @@ exports.createPages = async ({ graphql, actions }) => {
                 createRedirect({ fromPath: stripped, toPath: `https://www.healthmarkets.com/local-health-insurance-agent/${slug}`, isPermanent: true, statusCode: 301, redirectInBrowser: true })
             }
         }
+    })
+
+    articleRedirects.forEach(({ source, destination, status }) => {
+        createRedirect({ fromPath: source, toPath: destination, statusCode: status, redirectInBrowser: true })
     })
 }
