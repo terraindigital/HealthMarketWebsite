@@ -8,19 +8,15 @@ export const Wrapper = styled.div`
   min-height: 100vh;
   overflow: hidden;
   position: relative;
-
   padding-bottom: 10.4rem;
   padding-top: 21rem;
-
   padding-left: 8.9rem;
   padding-right: 8.9rem;
-
   &.centered {
     align-items: center;
     justify-content: center;
     vertical-align: middle;
   }
-
   &.half {
     align-items: stretch;
     justify-content: flex-end;
@@ -28,18 +24,15 @@ export const Wrapper = styled.div`
     padding-left: 0;
     padding-right: 0;
     padding-top: 120px;
-
     &.half > div > h1 {
       color: var(--color-primary);
       text-shadow: none;
     }
-
     &.half > div > h4 {
       font-size: 24px;
       font-weight: 500;
     }
   }
-
   @media screen and (min-width: 1921px) {
     padding-left: 40rem;
     padding-right: 40rem;
@@ -52,16 +45,13 @@ export const Wrapper = styled.div`
     padding-right: 5.5rem;
     padding-top: 5.5rem;
   }
-
   @media screen and (max-width: 920px) {
     padding-left: 2.1rem;
     padding-right: 2.1rem;
   }
-
   @media only screen and (max-width: 788px) {
     padding-top: 3.4rem;
     padding-bottom: 22rem;
-
     &.centered {
       display: block;
       min-height: auto;
@@ -80,26 +70,22 @@ export const Img = styled.img`
   top: 0;
   width: auto;
   z-index: 0;
-
   .half & {
-    object-position: 75% 0%;
+    object-position: center 120px;
     min-width: 50%;
     width: 50%;
-
     @media only screen and (max-width: 1440px) {
-      object-position: 75% 0%;
+      object-position: center 120px;
     }
-
     @media only screen and (max-width: 1200px) {
       object-fit: contain;
-      object-position: center top;
+      object-position: center 91px;
       min-width: 100%;
       width: auto;
     }
-
     @media only screen and (max-width: 900px) {
       object-fit: cover;
-      object-position: 75% 91px;
+      object-position: center 91px;
       max-height: 50vh;
     }
   }
@@ -111,7 +97,6 @@ export const Inner = styled.div`
   position: relative;
   width: 100%;
   z-index: 12;
-
   &.half {
     display: flex;
     flex-direction: column;
@@ -129,13 +114,11 @@ export const Inner = styled.div`
       text-align: center;
     }
   }
-
   &.left {
     padding-bottom: 11rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     @media only screen and (max-width: 620px) {
       padding-top: 4rem;
       padding-bottom: 31rem;
@@ -143,60 +126,48 @@ export const Inner = styled.div`
       width: 100%;
     }
   }
-
   .boxed & {
     margin: 3.4rem 14.4rem;
     padding: 6rem 12rem;
-
     @media only screen and (max-width: 788px) {
       margin: 0 auto;
       padding: 4rem 8rem;
     }
-
     @media only screen and (max-width: 620px) {
       margin: 0 auto;
       padding: 0;
     }
   }
-
   .boxed.primary & {
     background-color: var(--color-primary);
-
     @media only screen and (max-width: 620px) {
       background-color: transparent;
     }
   }
-
   .boxed.accent & {
     background-color: var(--color-accent);
-
     @media only screen and (max-width: 620px) {
       background-color: transparent;
     }
   }
-
   .half & {
     flex-basis: 50%;
     width: 50%;
-
     background-color: var(--color-light);
     justify-content: flex-start;
     padding: 65px 77px 55px;
     padding-right: 89px;
-
     @media only screen and (max-width: 1200px) {
       flex-basis: 100%;
       width: 100%;
       margin-top: 360px;
       padding: 65px 55px 55px;
     }
-
     @media only screen and (max-width: 620px) {
       padding: 65px 21px 55px;
     }
   }
-
   @media only screen and (max-width: 340px) {
     width: 100%;
   }
-`;
+`
