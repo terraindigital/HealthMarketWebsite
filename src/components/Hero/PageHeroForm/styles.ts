@@ -23,9 +23,11 @@ export const Buttons = styled.div`
     min-width: 410px;
   }
 
-  @media only screen and (max-width: 788px) {
+  @media only screen and (max-width: 1024px) {
     justify-content: center;
+  }
 
+  @media only screen and (max-width: 920px) {
     div {
       align-items: center;
       display: flex;
@@ -35,6 +37,15 @@ export const Buttons = styled.div`
       min-height: 5.6rem;
       min-width: calc(50% - 2.1rem);
       padding: 0.9rem 1.1rem;
+    }
+  }
+
+  @media only screen and (max-width: 620px) {
+    display: block;
+
+    div {
+      min-width: normal;
+      width: 100%;
     }
   }
 `

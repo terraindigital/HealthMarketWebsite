@@ -47,9 +47,10 @@ export const Wrapper = styled.div`
     min-height: 65vh;
   }
 
-  @media screen and (max-width: 1044px) {
+  @media screen and (max-width: 1280px) {
     padding-left: 5.5rem;
     padding-right: 5.5rem;
+    padding-top: 5.5rem;
   }
 
   @media screen and (max-width: 920px) {
@@ -58,7 +59,7 @@ export const Wrapper = styled.div`
   }
 
   @media only screen and (max-width: 788px) {
-    padding-top: 16.6rem;
+    padding-top: 3.4rem;
     padding-bottom: 22rem;
 
     &.centered {
@@ -119,10 +120,13 @@ export const Inner = styled.div`
     flex-basis: 72%;
     width: 72%;
 
-    @media only screen and (max-width: 620px) {
+    @media only screen and (max-width: 1280px) {
       flex-basis: 100%;
-      text-align: center;
       width: 100%;
+    }
+
+    @media only screen and (max-width: 1024px) {
+      text-align: center;
     }
   }
 

@@ -971,17 +971,17 @@ export const GlobalStyles = css`
       p  { font-size: 1.8rem;  }
     }
     
-    @media only screen and (max-width: 1044px) {
+    /* @media only screen and (max-width: 1280px) {
       h1 { font-size: 7.0rem; }
       h2 { font-size: 6.0rem; }
       h3 { font-size: 4.8rem; }
-      h4 { font-size: 3.2rem; }
+      h4 { font-size: 2.4rem; }
       h5 { font-size: 2.0rem; }
       h6 { font-size: 1.8rem; }
       p  { font-size: 1.8rem; }
-    }
+    } */
     
-    @media only screen and (max-width: 620px) {
+    @media only screen and (max-width: 1280px) {
       h1 { font-size: 6.0rem; }
       h2 { font-size: 4.5rem; }
       h3 { font-size: 3.2rem; }
