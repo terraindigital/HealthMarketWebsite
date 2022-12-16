@@ -82,7 +82,7 @@ export const Styles = css`
     padding-left: 24px;
   }
   
-  @media only screen and (max-width: 788px) {
+  @media only screen and (max-width: 920px) {
     input.geocode.input {
       font-size: 1.6rem;
       max-width: 100%;

@@ -22,6 +22,14 @@ const FooterMenu: FC<Props> = ({ menu, title }) => (
           </a>
         </li>
       )}
+      {(title === 'Get to Know Us') ? 
+        <li id="doNotTrack" className="item doNotTrack">
+          <div>
+            <a href='https://submit-irm.trustarc.com/services/validation/10525e43-877a-42dd-ae69-031a183e6adf' target='_blank'> 
+              <img src='https://submit-irm.trustarc.com/services/validation/10525e43-877a-42dd-ae69-031a183e6adf/image' alt='TrustArc'/>
+            </a>
+          </div>
+        </li> : null}
     </ul>
   </Wrapper>
 )
