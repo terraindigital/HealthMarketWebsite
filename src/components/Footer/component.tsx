@@ -46,6 +46,7 @@ export interface FooterProps {
 
 const FooterComponent: FC<FooterProps> = ({ data, complianceCode, children }) => {
   const { productMenu, connectMenu, counselMenu, getToKnowUsMenu } = data
+  let year = new Date().getFullYear().toString();
 
   return (
       <div className="healthmarkets22">
@@ -78,20 +79,20 @@ const FooterComponent: FC<FooterProps> = ({ data, complianceCode, children }) =>
                 <FooterMenu menu={getToKnowUsMenu} title="Get to Know Us" />
               </FooterMenuWrapper>
               <Disclaimer className="hide-at-device">
-                <p>&copy; 2022 HealthMarkets Insurance Agency. All rights reserved.</p>
+                <p>&copy; {year} HealthMarkets Insurance Agency. All rights reserved.</p>
                 <span dangerouslySetInnerHTML={{ __html: children }} />
                 <p className="text-white">{complianceCode}</p>
               </Disclaimer>
             </WidgetWrapper>
             <PlansByStateMenu/>
             <Disclaimer className="show-at-mobile">
-              <p>&copy; 2022 HealthMarkets Insurance Agency. All rights reserved.</p>
+              <p>&copy; {year} HealthMarkets Insurance Agency. All rights reserved.</p>
               <span dangerouslySetInnerHTML={{ __html: children }} />
               <p className="text-white">{complianceCode}</p>
             </Disclaimer>
           </WidgetAreaTwo>
           <Disclaimer className="show-at-device hide-at-mobile">
-            <p>&copy; 2022 HealthMarkets Insurance Agency. All rights reserved.</p>
+            <p>&copy; {year} HealthMarkets Insurance Agency. All rights reserved.</p>
             <span dangerouslySetInnerHTML={{ __html: children }} />
             <p className="text-white">{complianceCode}</p>
           </Disclaimer>
