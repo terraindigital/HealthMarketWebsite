@@ -95,11 +95,11 @@ export const maybeSetCounty = (suggestion) => {
     if (countyString.includes('Parish')) {
       countyString = countyString.replace('Parish', '').trim();
     }
-    
+
     if (countyString.includes('County')) {
       countyString = countyString.replace('County', '').trim();
     }
-    
+
     countyField?.setAttribute('value', countyString);
   }
 }
@@ -163,43 +163,47 @@ export const getUrlData = () => {
   let n = 0;
   let m = 0;
 
-  // grab the data
-  let cookie = document.cookie;
+  try {
+    // grab the data
+    let cookie = document.cookie;
 
-  // parse the data
-  cookie = cookie.split(';');
+    // parse the data
+    cookie = cookie.split(';');
 
-  for (let i=0; i < cookie.length; i++) {
-    var pair = cookie[i].split('=');
+    for (let i=0; i < cookie.length; i++) {
+      var pair = cookie[i].split('=');
 
-    whitelist.map(j => {
-      let key = pair[0].trim();
-      let content = pair[1].trim();
-      let obj = false;
-      if (key === j) {
-        if (n > 0) { uri += '&'; }
+      whitelist.map(j => {
+        let key = pair[0].trim();
+        let content = pair[1].trim();
+        let obj = false;
+        if (key === j) {
+          if (n > 0) { uri += '&'; }
 
-        try {
-          let str = '';
-          obj = JSON.parse(content);
-          Object.keys(obj).map(k => {
-            if (m > 0) { uri += '&'; }
-            const objK = k.trim();
-            const objV = obj[k].trim();
-            uri = uri + objK + '=' + objV;
-            m++;
-          });
-        } catch (e) {
-          uri = uri + key + '=' + content;
+          try {
+            let str = '';
+            obj = JSON.parse(content);
+            Object.keys(obj).map(k => {
+              if (m > 0) { uri += '&'; }
+              const objK = k.trim();
+              const objV = obj[k].trim();
+              uri = uri + objK + '=' + objV;
+              m++;
+            });
+          } catch (e) {
+            uri = uri + key + '=' + content;
+          }
+
+          n++;
         }
+      });
+    }
 
-        n++;
-      }
-    });
+    // return the data
+    return uri;
+  } catch (e) {
+    return "";
   }
-
-  // return the data
-  return uri;
 }
 
 export const setUrlData = (url) => {
@@ -346,7 +350,7 @@ const getParent = (el) => {
   }
 
   return parent;
-} 
+}
 
 export const initLinks = () => {
   const links = document.querySelectorAll(`[data-cta="true"]`);
