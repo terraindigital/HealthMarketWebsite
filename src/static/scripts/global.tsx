@@ -359,3 +359,17 @@ export const initLinks = () => {
     link.addEventListener("click", (e) => { routeLink(e); });
   });
 }
+
+export const modal = () => {
+  let modal = document.querySelectorAll('.is-modal');
+
+  modal.forEach(mdl => {
+    let modalClose = mdl.querySelectorAll('.modal-close');
+
+    modalClose?.forEach(closeBtn => {
+      closeBtn?.addEventListener("click", (e) => {
+        mdl.classList.remove('is-active');
+      })
+    });
+  });
+}
