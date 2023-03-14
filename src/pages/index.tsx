@@ -55,9 +55,10 @@ const IndexPage = ({path}: PageProps) => {
                 color={home.homePageCustomFields.homeSection1.color}>
                 <Carousel>
                     {(tiles) ? (
-                        Object.keys(tiles).map((tile) => {
+                        Object.keys(tiles).map((tile, i) => {
                         return (
                             <Tile
+                                key={`title-${i}`}
                                 image={tiles[tile].image.sourceUrl}
                                 title={tiles[tile].title}
                                 link={tiles[tile].link}
@@ -101,6 +102,7 @@ const IndexPage = ({path}: PageProps) => {
                             const callout = callouts[index];
                             return (
                                 <Callout
+                                    key={`callout-${index}`}
                                     number={callout.number}
                                     tagline={callout.tagline}
                                     title={callout.title}
