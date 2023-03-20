@@ -130,18 +130,21 @@ const MedicareAdvantagePage = () => {
         <Cards>
           <Card
             image={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent1.image.sourceUrl}
+            imgStyle={{width: '100%'}}
             title={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent1.heading}
             link={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent1.link}>
             <p dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent1.content}} />
           </Card>
           <Card
             image={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent2.image.sourceUrl}
+            imgStyle={{width: '100%'}}
             title={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent2.heading}
             link={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent2.link}>
             <p dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent2.content}} />
           </Card>
           <Card
             image={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent3.image.sourceUrl}
+            imgStyle={{width: '100%'}}
             title={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent3.heading}
             link={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent3.link}>
             <p dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent3.content}} />
