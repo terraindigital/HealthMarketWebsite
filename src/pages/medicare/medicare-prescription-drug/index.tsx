@@ -6,7 +6,7 @@ import {Global} from "@emotion/react";
 import {useMedicarePrescriptionDrugPageQuery} from "../../../hooks/insurance/useMedicarePrescriptionDrugPageQuery";
 
 // Styles
-import {HeroDisclaimerLight, HeroHeadingLight, HeroSubheadingLight, PageStyles, SectionDescription, SectionSubHeading, ShopCta} from "../../../components/pages/styles/MedicarePrescriptionDrugStyles";
+import {ColoredListItem, HeroDisclaimerLight, HeroHeadingLight, HeroSubheadingLight, PageStyles, SectionDescription, SectionSubHeading, ShopCta} from "../../../components/pages/styles/MedicarePrescriptionDrugStyles";
 
 // Scripts
 import {routeLink} from "../../../static/scripts/global";
@@ -57,7 +57,11 @@ const MedicarePrescriptionDrugPage = () => {
                 </SectionSubHeading>
                 <List>
                     {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.listItems?.split("\n").filter((item: string) => Boolean(item.trim())).map((item: string, i: number) => (
-                        <ListItem key={`item-${i}`}>{item}</ListItem>
+                        <ListItem key={`item-${i}`}>
+                            <ColoredListItem>
+                                {item}
+                            </ColoredListItem>
+                        </ListItem>
                     ))}
                 </List>
                 <ShopCta href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.sectionCta.link} onClick={routeLink}>

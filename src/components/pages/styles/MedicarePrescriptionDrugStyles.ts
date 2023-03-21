@@ -197,6 +197,7 @@ export const SectionSubHeading = styled.h3`
 `
 
 export const SectionDescription = styled.p`
+  color: #4D4D4D;
   text-align: left;
   font-size: 32px;
   @media only screen and (min-width: 789px) {
@@ -206,4 +207,8 @@ export const SectionDescription = styled.p`
 
 export const ShopCta = styled.a`
   margin-left: -6rem;
+`;
+
+export const ColoredListItem = styled.span`
+    color: #4D4D4D;
 `;
