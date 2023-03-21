@@ -130,19 +130,19 @@ const MedicareAdvantagePage = () => {
         <Cards>
           <Card
             image={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent1.image.sourceUrl}
-            title={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent1.heading}
+            title={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent1.title}
             link={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent1.link}>
             <p dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent1.content}} />
           </Card>
           <Card
             image={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent2.image.sourceUrl}
-            title={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent2.heading}
+            title={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent2.title}
             link={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent2.link}>
             <p dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent2.content}} />
           </Card>
           <Card
             image={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent3.image.sourceUrl}
-            title={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent3.heading}
+            title={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent3.title}
             link={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent3.link}>
             <p dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent3.content}} />
           </Card>
