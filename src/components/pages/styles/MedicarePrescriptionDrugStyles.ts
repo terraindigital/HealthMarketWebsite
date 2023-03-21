@@ -212,3 +212,7 @@ export const ShopCta = styled.a`
 export const ColoredListItem = styled.span`
     color: #4D4D4D;
 `;
+
+export const ColoredParagraph = styled.p`
+    color: #4D4D4D;
+`;

@@ -6,7 +6,7 @@ import {Global} from "@emotion/react";
 import {useMedicarePrescriptionDrugPageQuery} from "../../../hooks/insurance/useMedicarePrescriptionDrugPageQuery";
 
 // Styles
-import {ColoredListItem, HeroDisclaimerLight, HeroHeadingLight, HeroSubheadingLight, PageStyles, SectionDescription, SectionSubHeading, ShopCta} from "../../../components/pages/styles/MedicarePrescriptionDrugStyles";
+import {ColoredListItem, ColoredParagraph, HeroDisclaimerLight, HeroHeadingLight, HeroSubheadingLight, PageStyles, SectionDescription, SectionSubHeading, ShopCta} from "../../../components/pages/styles/MedicarePrescriptionDrugStyles";
 
 // Scripts
 import {routeLink} from "../../../static/scripts/global";
@@ -75,7 +75,7 @@ const MedicarePrescriptionDrugPage = () => {
             <Medial color={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.color}>
                 <div>
                     <h3>{page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.title}</h3>
-                    <p>{page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.subtitle}</p>
+                    <ColoredParagraph>{page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.subtitle}</ColoredParagraph>
                 </div>
                 <div className="button-container" style={{textAlign: 'center'}}>
                     <Img
