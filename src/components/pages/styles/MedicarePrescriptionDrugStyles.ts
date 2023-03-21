@@ -174,14 +174,6 @@ export const HeroSubheadingLight = styled.h4`
   text-align: center;
 `
 
-export const HeroCta = styled.span`
-  p {
-    a {
-      text-decoration: none;
-    }
-  }
-`
-
 export const HeroDisclaimerLight = styled.span`
   color: var(--color-light);
   margin-top: 16px;
