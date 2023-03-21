@@ -6,7 +6,7 @@ import {Global} from "@emotion/react";
 import {useMedicarePrescriptionDrugPageQuery} from "../../../hooks/insurance/useMedicarePrescriptionDrugPageQuery";
 
 // Styles
-import {HeroDisclaimerLight, HeroHeading, HeroHeadingLight, HeroSubheading, HeroSubheadingLight, PageStyles} from "../../../components/pages/styles/SupplementalInsStyles";
+import {HeroDisclaimerLight, HeroHeadingLight, HeroSubheadingLight, PageStyles} from "../../../components/pages/styles/MedicarePrescriptionDrugStyles";
 
 // Scripts
 import {routeLink} from "../../../static/scripts/global";

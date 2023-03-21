@@ -26,43 +26,11 @@ export const HeroHeading = styled.h1`
   text-align: center;
 `
 
-export const HeroHeadingLight = styled.h1`
-  color: var(--color-light);
-  margin-bottom: 2.4rem;
-  text-align: center;
-`
-
 export const HeroSubheading = styled.h4`
   color: var(--color-dark);
   font-family: var(--font-body);
   margin-bottom: 4rem;
   text-align: center;
-`
-
-export const HeroSubheadingLight = styled.h4`
-  color: var(--color-light);
-  font-family: var(--font-body);
-  margin-bottom: 4rem;
-  text-align: center;
-`
-
-export const HeroCta = styled.span`
-  p {
-    a {
-      text-decoration: none;
-    }
-  }
-`
-
-export const HeroDisclaimerLight = styled.span`
-  color: var(--color-light);
-  margin-top: 16px;
-  p {
-    a {
-      text-decoration: none;
-      color: var(--color-light);
-    }
-  }
 `
 
 export const BestPriceImage = styled.img `
