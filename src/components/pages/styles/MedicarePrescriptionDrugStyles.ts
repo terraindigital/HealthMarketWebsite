@@ -184,3 +184,26 @@ export const HeroDisclaimerLight = styled.span`
     }
   }
 `
+
+export const SectionSubHeading = styled.h3`
+  color: #009FDA;
+  font-size: 65px;
+  margin: 60px 0 30px 0;
+  text-align: left;
+
+  @media only screen and (min-width: 789px) {
+    margin-left: -6rem;
+  }
+`
+
+export const SectionDescription = styled.p`
+  text-align: left;
+  font-size: 32px;
+  @media only screen and (min-width: 789px) {
+    margin-left: -6rem;
+  }
+`
+
+export const ShopCta = styled.a`
+  margin-left: -6rem;
+`;

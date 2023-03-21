@@ -6,7 +6,7 @@ import {Global} from "@emotion/react";
 import {useMedicarePrescriptionDrugPageQuery} from "../../../hooks/insurance/useMedicarePrescriptionDrugPageQuery";
 
 // Styles
-import {HeroDisclaimerLight, HeroHeadingLight, HeroSubheadingLight, PageStyles} from "../../../components/pages/styles/MedicarePrescriptionDrugStyles";
+import {HeroDisclaimerLight, HeroHeadingLight, HeroSubheadingLight, PageStyles, SectionDescription, SectionSubHeading, ShopCta} from "../../../components/pages/styles/MedicarePrescriptionDrugStyles";
 
 // Scripts
 import {routeLink} from "../../../static/scripts/global";
@@ -27,30 +27,6 @@ import RelatedContent from "../../../components/RelatedContent";
 import List from "../../../components/Lists";
 import ListItem from "../../../components/Lists/ListItem";
 import {Img} from "../../../components/Cards/Card/styles";
-import styled from "@emotion/styled";
-
-export const SectionSubHeading = styled.h3`
-  color: #009FDA;
-  font-size: 65px;
-  margin: 60px 0 30px 0;
-  text-align: left;
-
-  @media only screen and (min-width: 789px) {
-    margin-left: -6rem;
-  }
-`
-
-export const SectionDescription = styled.p`
-  text-align: left;
-  font-size: 32px;
-  @media only screen and (min-width: 789px) {
-    margin-left: -6rem;
-  }
-`
-
-const ShopCta = styled.a`
-  margin-left: -6rem;
-`;
 
 const MedicarePrescriptionDrugPage = () => {
     const { page } = useMedicarePrescriptionDrugPageQuery();
