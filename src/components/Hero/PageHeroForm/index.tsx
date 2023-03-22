@@ -22,11 +22,11 @@ import {
 // Components
 import Button from "../../Buttons/Button"
 import AutocompleteField from "../../Inputs/Geocode/AutocompleteField";
+import styled from "@emotion/styled";
 
 // Images
 // import MapPin from "../../../static/images/location.png"
 import PhoneIcon from "../../../static/images/phone-icon.png"
-import {HeroCta} from "../../pages/styles/SupplementalInsStyles";
 
 interface Props {
   centered?: boolean,
@@ -81,5 +81,13 @@ const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, i
     </Wrapper>
   )
 }
+
+export const HeroCta = styled.span`
+  p {
+    a {
+      text-decoration: none;
+    }
+  }
+`
 
 export default PageHeroForm
