@@ -16,8 +16,8 @@ import { fadeIn } from "../../../static/scripts/global"
 import checkImg from "../../../static/images/list-check.png"
 
 interface Props {
-  heading: String,
-  children: ReactNode
+  heading?: string,
+  children?: ReactNode,
 }
 
 const ListItem: FC<Props> = ({ heading, children }) => {
@@ -30,7 +30,7 @@ const ListItem: FC<Props> = ({ heading, children }) => {
       <Check>
         <img src={checkImg} alt="list checkmark" />
       </Check>
-      <Heading dangerouslySetInnerHTML={{ __html: heading }} />
+      <Heading dangerouslySetInnerHTML={{ __html: heading || '' }} />
       {children}
     </Wrapper>
   )

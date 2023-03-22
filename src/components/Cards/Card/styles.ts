@@ -195,6 +195,7 @@ export const Img = styled.img`
 
   .image & {
     height: 220px;
+    min-width: 100%;
 
     @media only screen and (max-width: 620px) {
       height: auto;
