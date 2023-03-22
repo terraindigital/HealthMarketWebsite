@@ -26,15 +26,13 @@ import AutocompleteField from "../../Inputs/Geocode/AutocompleteField";
 // Images
 // import MapPin from "../../../static/images/location.png"
 import PhoneIcon from "../../../static/images/phone-icon.png"
-import {HeroCta} from "../../pages/styles/SupplementalInsStyles";
 
 interface Props {
   centered?: boolean,
   light?: boolean,
   btnLeftText: string,
   btnRightText: string,
-  /** @deprecated Not used anymore */
-  inputId?: string,
+  inputId: string,
   buttons?: boolean,
   footerContent: string,
   hideFooter?: boolean
@@ -73,7 +71,7 @@ const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, i
           {(!hideFooter || hideFooter === undefined) ? (
             <CTA>
               <img src={PhoneIcon} />
-              <HeroCta dangerouslySetInnerHTML={{ __html: footerContent }} />
+              <span dangerouslySetInnerHTML={{ __html: footerContent }} />
             </CTA>
           ) : null}
         </Footer>
