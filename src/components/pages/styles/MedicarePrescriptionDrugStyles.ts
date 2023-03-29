@@ -1,4 +1,4 @@
-import { css } from "@emotion/react";
+import {css} from "@emotion/react";
 import styled from "@emotion/styled";
 
 export const PageStyles = css`
@@ -165,12 +165,14 @@ export const HeroHeadingResponsive = styled.h1`
   color: var(--color-dark);
   margin-bottom: 2.4rem;
   max-width: 80%;
+  text-align: center;
 
   @media screen and (max-width: 1044px) {
     max-width: 100%;
   }
 
   @media only screen and (min-width: 621px) {
+    text-align: left;
     color: var(--color-light);
   }
 `
@@ -180,8 +182,10 @@ export const HeroSubheadingResponsive = styled.h4`
   font-family: var(--font-body);
   margin-bottom: 4rem;
   line-height: 2.8rem;
+  text-align: center;
 
   @media only screen and (min-width: 621px) {
+    text-align: left;
     color: var(--color-light);
   }
 `
@@ -189,6 +193,8 @@ export const HeroSubheadingResponsive = styled.h4`
 export const HeroDisclaimerResponsive = styled.span`
   color: var(--color-dark);
   margin-top: 16px;
+  text-align: center;
+
   p {
     a {
       text-decoration: none;
@@ -197,12 +203,14 @@ export const HeroDisclaimerResponsive = styled.span`
   }
 
   @media only screen and (min-width: 621px) {
-      color: var(--color-light);
-      p {
-        a {
-          color: var(--color-ligh);
-        }
+    color: var(--color-light);
+    text-align: left;
+
+    p {
+      a {
+        color: var(--color-ligh);
       }
+    }
   }
 `
 
