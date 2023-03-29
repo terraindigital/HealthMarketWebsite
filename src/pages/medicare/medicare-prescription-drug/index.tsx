@@ -10,9 +10,9 @@ import {useMedicarePrescriptionDrugPageQuery} from "../../../hooks/insurance/use
 import {
     BelowHeroMobileImg,
     ColoredListItem,
-    ColoredParagraph,
-    HeroDisclaimerLight,
-    HeroHeadingLight,
+    ColoredParagraph, HeroDisclaimerDark,
+    HeroDisclaimerLight, HeroHeadingDark,
+    HeroHeadingLight, HeroSubheadingDark,
     HeroSubheadingLight,
     PageStyles,
     SectionDescription,
@@ -52,14 +52,14 @@ const MedicarePrescriptionDrugPage = () => {
                 // The hero in this page will be displayed below the form and disclaimer, so, now we only display a single pixel image as mobile hero image.
                 mobileImage={'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjePrg9n8ACO4DoC5ZRGcAAAAASUVORK5CYII='}
                 bgColor="#e5e0db">
-                <HeroHeadingLight>{page.pageHeroFields.headline}</HeroHeadingLight>
-                <HeroSubheadingLight>{page.pageHeroFields.subheadline}</HeroSubheadingLight>
+                <HeroHeadingDark>{page.pageHeroFields.headline}</HeroHeadingDark>
+                <HeroSubheadingDark>{page.pageHeroFields.subheadline}</HeroSubheadingDark>
                 <PageHeroForm
                     light
                     btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
                     btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
                     footerContent={page.pageHeroFields.callUs} />
-                <HeroDisclaimerLight dangerouslySetInnerHTML={{ __html: page.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer }}/>
+                <HeroDisclaimerDark dangerouslySetInnerHTML={{ __html: page.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer }}/>
                 <BelowHeroMobileImg src={page.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero" />
             </Hero>
             <FlexedSection

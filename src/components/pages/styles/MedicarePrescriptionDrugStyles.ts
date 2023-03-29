@@ -171,10 +171,19 @@ export const HeroHeadingLight = styled.h1`
   }
 `
 
+export const HeroHeadingDark = styled(HeroHeadingLight)`
+  color: var(--color-dark);
+`
+
 export const HeroSubheadingLight = styled.h4`
   color: var(--color-light);
   font-family: var(--font-body);
   margin-bottom: 4rem;
+  line-height: 2.8rem;
+`
+
+export const HeroSubheadingDark = styled(HeroSubheadingLight)`
+  color: var(--color-dark);
 `
 
 export const HeroDisclaimerLight = styled.span`
@@ -184,6 +193,15 @@ export const HeroDisclaimerLight = styled.span`
     a {
       text-decoration: none;
       color: var(--color-light);
+    }
+  }
+`
+
+export const HeroDisclaimerDark = styled(HeroDisclaimerLight)`
+  color: var(--color-dark);
+  p {
+    a {
+      color: var(--color-dark);
     }
   }
 `
