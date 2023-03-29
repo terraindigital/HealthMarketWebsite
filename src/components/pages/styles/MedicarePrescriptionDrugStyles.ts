@@ -161,48 +161,48 @@ export const PostAccordionText = styled.div`
   }
 `
 
-export const HeroHeadingLight = styled.h1`
-  color: var(--color-light);
+export const HeroHeadingResponsive = styled.h1`
+  color: var(--color-dark);
   margin-bottom: 2.4rem;
   max-width: 80%;
 
   @media screen and (max-width: 1044px) {
     max-width: 100%;
   }
+
+  @media only screen and (min-width: 621px) {
+    color: var(--color-light);
+  }
 `
 
-export const HeroHeadingDark = styled(HeroHeadingLight)`
+export const HeroSubheadingResponsive = styled.h4`
   color: var(--color-dark);
-`
-
-export const HeroSubheadingLight = styled.h4`
-  color: var(--color-light);
   font-family: var(--font-body);
   margin-bottom: 4rem;
   line-height: 2.8rem;
+
+  @media only screen and (min-width: 621px) {
+    color: var(--color-light);
+  }
 `
 
-export const HeroSubheadingDark = styled(HeroSubheadingLight)`
+export const HeroDisclaimerResponsive = styled.span`
   color: var(--color-dark);
-`
-
-export const HeroDisclaimerLight = styled.span`
-  color: var(--color-light);
   margin-top: 16px;
   p {
     a {
       text-decoration: none;
-      color: var(--color-light);
-    }
-  }
-`
-
-export const HeroDisclaimerDark = styled(HeroDisclaimerLight)`
-  color: var(--color-dark);
-  p {
-    a {
       color: var(--color-dark);
     }
+  }
+
+  @media only screen and (min-width: 621px) {
+      color: var(--color-light);
+      p {
+        a {
+          color: var(--color-ligh);
+        }
+      }
   }
 `
 
