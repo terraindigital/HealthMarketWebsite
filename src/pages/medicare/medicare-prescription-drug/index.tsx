@@ -1,19 +1,18 @@
 // Library
-import React, {FC, ReactNode} from "react";
+import React from "react";
 import {Global} from "@emotion/react";
 
 // Query
 import {useMedicarePrescriptionDrugPageQuery} from "../../../hooks/insurance/useMedicarePrescriptionDrugPageQuery";
 
 // Styles
-
 import {
     BelowHeroMobileImg,
     ColoredListItem,
-    ColoredParagraph, HeroDisclaimerDark,
-    HeroDisclaimerLight, HeroHeadingDark,
-    HeroHeadingLight, HeroSubheadingDark,
-    HeroSubheadingLight,
+    ColoredParagraph,
+    HeroDisclaimerDark,
+    HeroHeadingDark,
+    HeroSubheadingDark,
     PageStyles,
     SectionDescription,
     SectionSubHeading,
@@ -41,10 +40,10 @@ import ListItem from "../../../components/Lists/ListItem";
 import {Img} from "../../../components/Cards/Card/styles";
 
 const MedicarePrescriptionDrugPage = () => {
-    const { page } = useMedicarePrescriptionDrugPageQuery();
+    const {page} = useMedicarePrescriptionDrugPageQuery();
     return (
         <Layout pageClass="medicare-prescription-drug">
-            <Global styles={PageStyles} />
+            <Global styles={PageStyles}/>
             <Hero
                 wrapperStyle={{paddingBottom: '0'}}
                 mobileImgStyle={{display: 'none'}}
@@ -58,9 +57,9 @@ const MedicarePrescriptionDrugPage = () => {
                     light
                     btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
                     btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
-                    footerContent={page.pageHeroFields.callUs} />
-                <HeroDisclaimerDark dangerouslySetInnerHTML={{ __html: page.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer }}/>
-                <BelowHeroMobileImg src={page.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero" />
+                    footerContent={page.pageHeroFields.callUs}/>
+                <HeroDisclaimerDark dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer}}/>
+                <BelowHeroMobileImg src={page.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero"/>
             </Hero>
             <FlexedSection
                 heading={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.heading}
@@ -109,31 +108,31 @@ const MedicarePrescriptionDrugPage = () => {
             <Section
                 color={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.sectionColor}
                 heading={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.sectionHeading}>
-                <RelatedContent />
+                <RelatedContent/>
                 <Cards>
                     <Card
                         image={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.image.sourceUrl}
                         imgStyle={{width: '100%'}}
                         title={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.title}
                         link={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.link}>
-                        <p dangerouslySetInnerHTML={{ __html: page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.content}} />
+                        <p dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.content}}/>
                     </Card>
                     <Card
                         image={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated2.image.sourceUrl}
                         imgStyle={{width: '100%'}}
                         title={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated2.title}
                         link={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated2.link}>
-                        <p dangerouslySetInnerHTML={{ __html: page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated2.content}} />
+                        <p dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated2.content}}/>
                     </Card>
                     <Card
                         image={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated3.image.sourceUrl}
                         imgStyle={{width: '100%'}}
                         title={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated3.title}
                         link={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated3.link}>
-                        <p dangerouslySetInnerHTML={{ __html: page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated3.content}} />
+                        <p dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated3.content}}/>
                     </Card>
                 </Cards>
-                <div className="full-rounded" style={{ textAlign: "center" }}>
+                <div className="full-rounded" style={{textAlign: "center"}}>
                     <a href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.ctaLink} onClick={routeLink}>
                         <Button background="accent-alt" border="light" color="light">
                             {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.ctaText}
@@ -151,12 +150,12 @@ const MedicarePrescriptionDrugPage = () => {
 export default MedicarePrescriptionDrugPage;
 
 export const Head = () => {
-    const { page } = useMedicarePrescriptionDrugPageQuery();
+    const {page} = useMedicarePrescriptionDrugPageQuery();
     return (
         <>
             <PageHead
                 title={page.seo.title}
-                description={page.seo.metaDesc} />
+                description={page.seo.metaDesc}/>
         </>
     );
 };
