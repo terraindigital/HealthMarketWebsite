@@ -1,5 +1,5 @@
 // Library
-import React from "react";
+import React, {FC, ReactNode} from "react";
 import {Global} from "@emotion/react";
 
 // Query
@@ -7,7 +7,18 @@ import {useMedicarePrescriptionDrugPageQuery} from "../../../hooks/insurance/use
 
 // Styles
 
-import {ColoredListItem, ColoredParagraph, HeroDisclaimerLight, HeroHeadingLight, HeroSubheadingLight, PageStyles, SectionDescription, SectionSubHeading, ShopCta} from "../../../components/pages/styles/MedicarePrescriptionDrugStyles";
+import {
+    BelowHeroMobileImg,
+    ColoredListItem,
+    ColoredParagraph,
+    HeroDisclaimerLight,
+    HeroHeadingLight,
+    HeroSubheadingLight,
+    PageStyles,
+    SectionDescription,
+    SectionSubHeading,
+    ShopCta
+} from "../../../components/pages/styles/MedicarePrescriptionDrugStyles";
 
 // Scripts
 import {routeLink} from "../../../static/scripts/global";
@@ -35,8 +46,11 @@ const MedicarePrescriptionDrugPage = () => {
         <Layout pageClass="medicare-prescription-drug">
             <Global styles={PageStyles} />
             <Hero
+                wrapperStyle={{paddingBottom: '0'}}
+                mobileImgStyle={{display: 'none'}}
                 image={page.pageHeroFields.heroImage.sourceUrl}
-                mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
+                // The hero in this page will be displayed below the form and disclaimer, so, now we only display a single pixel image as mobile hero image.
+                mobileImage={'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjePrg9n8ACO4DoC5ZRGcAAAAASUVORK5CYII='}
                 bgColor="#e5e0db">
                 <HeroHeadingLight>{page.pageHeroFields.headline}</HeroHeadingLight>
                 <HeroSubheadingLight>{page.pageHeroFields.subheadline}</HeroSubheadingLight>
@@ -46,6 +60,7 @@ const MedicarePrescriptionDrugPage = () => {
                     btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
                     footerContent={page.pageHeroFields.callUs} />
                 <HeroDisclaimerLight dangerouslySetInnerHTML={{ __html: page.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer }}/>
+                <BelowHeroMobileImg src={page.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero" />
             </Hero>
             <FlexedSection
                 heading={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.heading}

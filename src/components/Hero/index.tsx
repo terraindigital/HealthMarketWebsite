@@ -1,6 +1,6 @@
 
 
-import React, { FC, ReactNode } from "react"
+import React, {CSSProperties, FC, ReactNode} from "react"
 
 // Styles
 import { Wrapper, Img, Inner } from "./styles"
@@ -14,9 +14,12 @@ interface Props {
   half?: boolean,
   color?: string,
   children: ReactNode
+  wrapperStyle?: CSSProperties
+  desktopImgStyle?: CSSProperties
+  mobileImgStyle?: CSSProperties
 }
 
-const Hero: FC<Props> = ({ image, mobileImage, bgColor, centered, boxed, half, color, children }) => {
+const Hero: FC<Props> = ({ image, mobileImage, bgColor, centered, boxed, half, color, children, desktopImgStyle, mobileImgStyle, wrapperStyle }) => {
   let classes = "hero"
   if (centered) { classes += " centered" }
   if (boxed) { classes += " boxed" }
@@ -24,10 +27,10 @@ const Hero: FC<Props> = ({ image, mobileImage, bgColor, centered, boxed, half, c
   if (color != null) { classes = classes + " " + color }
 
   return (
-    <Wrapper className={classes} background={bgColor}>
-      <Img className={(mobileImage) ? "hide-at-mobile" : ""} src={image} alt="Hero" />
+    <Wrapper className={classes} background={bgColor} style={wrapperStyle}>
+      <Img className={(mobileImage) ? "hide-at-mobile" : ""} src={image} alt="Hero" style={desktopImgStyle}/>
       {(mobileImage) ? (
-        <Img className="show-at-mobile" src={mobileImage} alt="Hero" />
+        <Img className="show-at-mobile" src={mobileImage} alt="Hero" style={mobileImgStyle} />
       ) : null}
       <Inner className={(!centered) ? "half" : ""}>
         {children}

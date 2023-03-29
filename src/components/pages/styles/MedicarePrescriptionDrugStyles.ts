@@ -219,3 +219,12 @@ export const ColoredListItem = styled.span`
 export const ColoredParagraph = styled.p`
     color: #4D4D4D;
 `;
+
+export const BelowHeroMobileImg = styled.img`
+  margin: 0 -2rem 0 -2rem;
+  width: 100vw;
+  max-width: unset;
+  @media only screen and (min-width: 621px) {
+    display: none;
+  }
+`
