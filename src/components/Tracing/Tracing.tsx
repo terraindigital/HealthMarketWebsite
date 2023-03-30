@@ -1,9 +1,10 @@
 // @ts-nocheck
-import React, { useEffect, useRef, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import medicarePrescriptionDrugDesktop from './medicare-prescription-drug-desktop.png';
 import medicarePrescriptionDrugMobile from './medicare-prescription-drug-mobile-2.png';
 
-const initialScroll = 90 + 1000;
+const JUMP = 2;
+const initialScroll = 90 + (1000 * JUMP);
 
 /**
  * Component used to display a foreground image with some degree of opacity. Useful to trace the original design.
@@ -15,7 +16,7 @@ export const Tracing = () => {
 
     const [show, setShow] = useState(true);
     const showRef = useRef(show);
-    const [opacity, setOpacity] = useState(0.5);
+    const [opacity, setOpacity] = useState(0.1);
     const prevX = useRef(null);
     const smooth = 0.01;
     const THROTTLE_DURATION = 10;
@@ -37,7 +38,7 @@ export const Tracing = () => {
 
     useEffect(() => {
         const saveMousePosition = throttlify((event) => {
-            handleMouseMove({ ctrlKey: event.ctrlKey, clientX: event.clientX });
+            handleMouseMove({ctrlKey: event.ctrlKey, clientX: event.clientX});
         });
 
         document.addEventListener('mousemove', saveMousePosition);
@@ -46,7 +47,7 @@ export const Tracing = () => {
         };
     }, [setOpacity]);
 
-    const handleMouseMove = ({ clientX, ctrlKey }) => {
+    const handleMouseMove = ({clientX, ctrlKey}) => {
         if (!showRef.current) return;
         if (!ctrlKey) {
             prevX.current = null;
@@ -65,7 +66,7 @@ export const Tracing = () => {
         setTimeout(() => document.body.parentElement.scrollTop = initialScroll, 1000);
     }, []);
 
-    const handleKey = ({ altKey, code, ctrlKey, shiftKey }) => {
+    const handleKey = ({altKey, code, ctrlKey, shiftKey}) => {
         document.body.parentElement.scrollTop = initialScroll;
         if (altKey && ctrlKey && shiftKey && code === 'KeyA') {
             setShow((value) => {
@@ -98,7 +99,7 @@ export const Tracing = () => {
                 top: 0,
                 top: '-38px',
                  */
-                top: '-1038px',
+                top: `-${(JUMP * 1000) + 38}px`,
                 bottom: 0,
                 left: 0,
                 width: '100%',
