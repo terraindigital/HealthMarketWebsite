@@ -74,9 +74,9 @@ const MedicarePrescriptionDrugPage = () => {
                 </SectionCard>
             </SectionContainer>
             <SectionContainerWhite>
-                <SectionTitle>
+                <SectionTitleRelated>
                     Related content
-                </SectionTitle>
+                </SectionTitleRelated>
             </SectionContainerWhite>
             <Footer>
                 {page.disclaimers.disclaimer}
@@ -157,9 +157,13 @@ const SectionTitle = styled.h2`
   color: #FFFFFF;
   background: #009FDA;
 
-  width: 275px;
-  height: 112px;
-  padding: 18px 26px 0;
+  margin-right: 115px;
+  padding: 18px 26px 14px;
+`;
+
+const SectionTitleRelated = styled(SectionTitle)`
+  margin-right: 52px;
+  padding: 6px 0px 12px 33px;
 `;
 
 const SectionSubtitle = styled.h2`
