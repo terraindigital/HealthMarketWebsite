@@ -114,6 +114,9 @@ const MedicarePrescriptionDrugPage = () => {
                         </RelatedText>
                     </RelatedCard>
                 </RelatedCards>
+                <CtaButtonSecondary>
+                    View more articles
+                </CtaButtonSecondary>
             </SectionContainerWhite>
             <Footer>
                 {page.disclaimers.disclaimer}
@@ -124,6 +127,7 @@ const MedicarePrescriptionDrugPage = () => {
 
 const RelatedCards = styled.div`
   margin-top: 25px;
+  margin-bottom: 32px;
 `;
 
 const RelatedCard = styled.div`
@@ -131,6 +135,10 @@ const RelatedCard = styled.div`
   background: #F9F9F9;
   box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.15);
   padding: 0px 0px 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 `;
 
 const RelatedImage = styled.img`
@@ -293,6 +301,13 @@ const CtaButton = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+const CtaButtonSecondary = styled(CtaButton)`
+  margin: 0 34px;
+  background: #009B3A;
+  height: 58px;
+  border: none;
 `;
 
 const CardButton = styled(CtaButton)`
