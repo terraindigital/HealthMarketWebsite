@@ -108,6 +108,7 @@ export const Tracing = () => {
                 backgroundSize: '100%',
                 opacity,
                 zIndex: 5050,
+                filter: 'grayscale(0)',
             }}
         />
     );
