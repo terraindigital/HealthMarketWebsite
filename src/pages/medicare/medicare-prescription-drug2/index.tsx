@@ -89,11 +89,14 @@ const MedicarePrescriptionDrugPage = () => {
                     </RelatedCard>
                     <RelatedCard>
                         <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.image.sourceUrl} alt=""/>
-                        <RelatedTitle>What Is The Affordable Care Act?</RelatedTitle>
+                        <RelatedTitle>
+                            Ilisa Gillmer | Health And Life Insurance Agent
+                            Los Angeles, CA 90066
+                        </RelatedTitle>
                         <RelatedText>
                             6-MINUTE READ
                             <br/>
-                            What is the Affordable Care Act?
+                            My name is Ilisa Gillmer and I am a native to Los Angeles for over 50 years!
                         </RelatedText>
                     </RelatedCard>
                 </RelatedCards>
@@ -129,7 +132,7 @@ const RelatedTitle = styled.h2`
   font-weight: 600;
   font-size: 24px;
   line-height: 150%;
-  padding: 17px 54px 0 24px;
+  padding: 17px 17px 0 24px;
 
   color: #009FDA;
 `;

@@ -3,7 +3,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import medicarePrescriptionDrugDesktop from './medicare-prescription-drug-desktop.png';
 import medicarePrescriptionDrugMobile from './medicare-prescription-drug-mobile-2.png';
 
-const JUMP = 2 * 1000;
+const JUMP = 2 * 1000 + 500;
 const initialScroll = 90 + JUMP;
 
 /**
