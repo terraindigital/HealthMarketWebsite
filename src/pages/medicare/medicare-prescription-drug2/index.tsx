@@ -37,6 +37,7 @@ const MedicarePrescriptionDrugPage = () => {
                 </DisclaimerText>
                 {/*<HeroDisclaimerResponsive dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer}}/>*/}
             </PageContainer>
+            <HeroMobileImg src={page.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero"/>
             <Footer>
                 {page.disclaimers.disclaimer}
             </Footer>
@@ -117,5 +118,15 @@ const Subtitle = styled.h2`
 
   color: #4D4D4D;
 `;
+
+const HeroMobileImg = styled.img`
+  background: #E3DEDA;
+  margin-top: -14px;
+
+  @media only screen and (min-width: 621px) {
+    display: none;
+  }
+`
+
 
 export default MedicarePrescriptionDrugPage;

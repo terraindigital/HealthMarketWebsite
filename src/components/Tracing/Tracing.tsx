@@ -3,17 +3,19 @@ import React, { useEffect, useRef, useState } from 'react';
 import medicarePrescriptionDrugDesktop from './medicare-prescription-drug-desktop.png';
 import medicarePrescriptionDrugMobile from './medicare-prescription-drug-mobile.png';
 
+const initialScroll = 90 + 1000;
+
 /**
  * Component used to display a foreground image with some degree of opacity. Useful to trace the original design.
  * @constructor
  */
 export const Tracing = () => {
-    const isLargeScreen = true;
+    const isLargeScreen = false;
     const bgImage = isLargeScreen ? medicarePrescriptionDrugDesktop : medicarePrescriptionDrugMobile;
 
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState(true);
     const showRef = useRef(show);
-    const [opacity, setOpacity] = useState(1);
+    const [opacity, setOpacity] = useState(0.5);
     const prevX = useRef(null);
     const smooth = 0.01;
     const THROTTLE_DURATION = 10;
@@ -58,7 +60,13 @@ export const Tracing = () => {
         setOpacity((currentOpacity) => Math.max(0, Math.min(1, currentOpacity + delta * smooth)));
     };
 
+    useEffect(() => {
+        setTimeout(() => document.body.parentElement.scrollTop = initialScroll, 100);
+        setTimeout(() => document.body.parentElement.scrollTop = initialScroll, 1000);
+    }, []);
+
     const handleKey = ({ altKey, code, ctrlKey, shiftKey }) => {
+        document.body.parentElement.scrollTop = initialScroll;
         if (altKey && ctrlKey && shiftKey && code === 'KeyA') {
             setShow((value) => {
                 showRef.current = !value;
@@ -86,10 +94,14 @@ export const Tracing = () => {
                 pointerEvents: 'none',
                 backgroundImage: `url('${bgImage}')`,
                 position: 'fixed',
+                /*
                 top: 0,
+                top: '-38px',
+                 */
+                top: '-1038px',
+                bottom: 0,
                 left: 0,
                 width: '100%',
-                height: '100%',
                 border: 'none',
                 boxSizing: 'border-box',
                 backgroundSize: '100%',
