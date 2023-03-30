@@ -14,6 +14,9 @@ import styled from "@emotion/styled";
 import PageHeroForm from "../../../components/Hero/PageHeroForm";
 import PhoneIcon from "../../../static/images/phone-icon.png";
 import checkImgSvg from "../../../static/images/list-check.svg";
+import {ShopCta} from "../../../components/pages/styles/MedicarePrescriptionDrugStyles";
+import {routeLink} from "../../../static/scripts/global";
+import Button from "../../../components/Buttons/Button";
 
 const MedicarePrescriptionDrugPage = () => {
     const {page} = useMedicarePrescriptionDrugPageQuery();
@@ -55,6 +58,9 @@ const MedicarePrescriptionDrugPage = () => {
                         <ListItem key={`list-item-${i}`}>{item}</ListItem>
                     ))}
                 </ListContainer>
+                <CtaButton href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.sectionCta.link} onClick={routeLink}>
+                    {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.sectionCta.text}
+                </CtaButton>
             </SectionContainer>
             <Footer>
                 {page.disclaimers.disclaimer}
@@ -107,7 +113,27 @@ const SectionSubtitle = styled.h2`
 const ListContainer = styled.ul`
   padding: 0px 30px;
   list-style: none;
-  margin: 22px 0 0;
+  margin: 22px 0 39px;
+`;
+
+const CtaButton = styled.a`
+  background: #009FDA;
+  border: 3px solid #FFFFFF;
+  border-radius: 4px;
+
+  margin: 0 30px;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  height: 60px;
+  text-align: center;
+  color: #FFFFFF;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const ListItem = styled.li`
