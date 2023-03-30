@@ -20,13 +20,15 @@ const MedicarePrescriptionDrugPage = () => {
     return (
         <Layout>
             <Tracing/>
-            <MainTitle>Compare Medicare Part D plans</MainTitle>
-            <Subtitle>Find prescription drug coverage that fits your lifestyle</Subtitle>
-            <PageHeroForm
-                light
-                btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
-                btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
-                footerContent={page.pageHeroFields.callUs}/>
+            <PageContainer>
+                <MainTitle>Compare Medicare Part D plans</MainTitle>
+                <Subtitle>Find prescription drug coverage that fits your lifestyle</Subtitle>
+                <PageHeroForm
+                    light
+                    btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
+                    btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
+                    footerContent={page.pageHeroFields.callUs}/>
+            </PageContainer>
             <Footer>
                 {page.disclaimers.disclaimer}
             </Footer>
@@ -34,8 +36,12 @@ const MedicarePrescriptionDrugPage = () => {
     );
 };
 
+const PageContainer = styled.div`
+    padding: 0 24px;
+`;
+
 const MainTitle = styled.h1`
-  width: 286px;
+  padding: 0 24px;
 
   font-family: 'IvyPresto Display';
   font-family: 'IvyPresto Display-SemiBold', serif;;
@@ -55,7 +61,6 @@ const MainTitle = styled.h1`
 const Subtitle = styled.h2`
   margin: 0 auto 50px;
   
-  width: 328px;
   height: 48px;
 
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
