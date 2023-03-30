@@ -101,6 +101,18 @@ const MedicarePrescriptionDrugPage = () => {
                             My name is Ilisa Gillmer and I am a native to Los Angeles for over 50 years!
                         </RelatedText>
                     </RelatedCard>
+                    <RelatedCard>
+                        <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.image.sourceUrl} alt=""/>
+                        <RelatedTitle>
+                            Amy Powell | Health And Life Insurance Agent | Phoenix, AZ 85016
+                        </RelatedTitle>
+                        <RelatedTime>
+                            6-MINUTE READ
+                        </RelatedTime>
+                        <RelatedText>
+                            I am very proud to represent HealthMarkets Insurance Company.
+                        </RelatedText>
+                    </RelatedCard>
                 </RelatedCards>
             </SectionContainerWhite>
             <Footer>
@@ -115,10 +127,10 @@ const RelatedCards = styled.div`
 `;
 
 const RelatedCard = styled.div`
-  margin: 0 16px 30px;
+  margin: 0 16px 28px;
   background: #F9F9F9;
   box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.15);
-  padding: 0px 0px 24px;
+  padding: 0px 0px 20px;
 `;
 
 const RelatedImage = styled.img`
