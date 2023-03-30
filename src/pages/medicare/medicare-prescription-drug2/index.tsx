@@ -118,6 +118,20 @@ const MedicarePrescriptionDrugPage = () => {
                     View more articles
                 </CtaButtonSecondary>
             </SectionContainerWhite>
+            <SectionContainerQuestions>
+                <SectionCardQuestions>
+                    <CardTitleQuestions>
+                        Still have questions?
+                        Contact us.
+                    </CardTitleQuestions>
+                    <CardButton style={{marginBottom: '10px'}}>
+                        Call 900-000-0000
+                    </CardButton>
+                    <CardButton>
+                        Find a licensed insurance agent
+                    </CardButton>
+                </SectionCardQuestions>
+            </SectionContainerQuestions>
             <Footer>
                 {page.disclaimers.disclaimer}
             </Footer>
@@ -192,6 +206,14 @@ const SectionCard = styled.div`
   padding: 37px 12px 40px;
 `;
 
+const SectionCardQuestions = styled.div`
+  background: #FFFFFF;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin: 0px 18px;
+  padding: 40px 19px;
+`;
+
 const CalculatorLogo = styled.img`
   margin: 0 auto;
   width: 120px;
@@ -210,6 +232,18 @@ const CardTitle = styled.h2`
 
   color: #009FDA;
   margin-top: 16px;
+`;
+
+const CardTitleQuestions = styled.h2`
+  font-family: 'IvyPresto Display-SemiBold', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 100%;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #009FDA;
+  margin: 0 0 22px;
 `;
 
 const CardText = styled.div`
@@ -236,6 +270,12 @@ const HeroContainer = styled.div`
 const SectionContainer = styled.div`
   background: #f3fafd;
   padding: 40px 0px 38px;
+`;
+
+const SectionContainerQuestions = styled.div`
+  background: #f3fafd;
+  padding-top: 42px;
+  padding-bottom: 130px;
 `;
 
 const SectionContainerWhite = styled(SectionContainer)`
