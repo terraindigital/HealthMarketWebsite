@@ -18,7 +18,8 @@ import calculatorSvg from "../../../static/images/calculator-logo.svg";
 import {routeLink} from "../../../static/scripts/global";
 
 const NAV_STARTS_FLOATING = 1281;
-const STARTS_DESKTOP = 621;
+// const STARTS_DESKTOP = 621;
+const STARTS_DESKTOP = 1025;
 
 const MedicarePrescriptionDrugPage = () => {
     const {page} = useMedicarePrescriptionDrugPageQuery();
@@ -508,7 +509,7 @@ const MainTitle = styled.h1`
     letter-spacing: 2px;
     color: #FFFFFF;
     text-align: left;
-    padding: 0 475px 0 0px;
+    padding: 0 26% 0 0px;
     margin: 0 0 33px 0;
   }
 `;
