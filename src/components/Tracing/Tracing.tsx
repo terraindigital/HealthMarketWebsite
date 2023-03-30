@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React, { useEffect, useRef, useState } from 'react';
 import medicarePrescriptionDrugDesktop from './medicare-prescription-drug-desktop.png';
-import medicarePrescriptionDrugMobile from './medicare-prescription-drug-mobile.png';
+import medicarePrescriptionDrugMobile from './medicare-prescription-drug-mobile-2.png';
 
 const initialScroll = 90 + 1000;
 

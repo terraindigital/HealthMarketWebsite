@@ -19,7 +19,7 @@ const MedicarePrescriptionDrugPage = () => {
     return (
         <Layout>
             <Tracing/>
-            <PageContainer>
+            <HeroContainer>
                 <MainTitle>Compare Medicare Part D plans</MainTitle>
                 <Subtitle>Find prescription drug coverage that fits your lifestyle</Subtitle>
                 <PageHeroForm
@@ -29,15 +29,24 @@ const MedicarePrescriptionDrugPage = () => {
                     hideFooter
                 />
                 <CallUsCtn>
-                    <img src={PhoneIcon} />
+                    <img src={PhoneIcon}/>
                     <CallUsText>Call XXX-XXX-XXXX to speak to a licensed insurance agent.</CallUsText>
                 </CallUsCtn>
                 <DisclaimerText>
                     We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov or 1-800-MEDICARE to get information on all of your options.
                 </DisclaimerText>
                 {/*<HeroDisclaimerResponsive dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer}}/>*/}
-            </PageContainer>
+            </HeroContainer>
             <HeroMobileImg src={page.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero"/>
+            <SectionContainer>
+                <SectionTitle>
+                    Prescription Drug
+                </SectionTitle>
+                <SectionText>
+                    A Medicare prescription drug plan can be a smart way to manage the cost of the medications you take now—and those you may need in the future. If you’re entitled to Part A and/or enrolled in Part B of Original Medicare,
+                    you’re eligible to join a Part D plan, which helps cover prescription drugs. HealthMarkets can help you understand your eligibility and help you find the Medicare Part D plans that are available.
+                </SectionText>
+            </SectionContainer>
             <Footer>
                 {page.disclaimers.disclaimer}
             </Footer>
@@ -45,9 +54,44 @@ const MedicarePrescriptionDrugPage = () => {
     );
 };
 
-const PageContainer = styled.div`
+const HeroContainer = styled.div`
   padding: 0 24px;
   background-color: #E3DEDA;
+`;
+
+const SectionContainer = styled.div`
+  background: #f3fafd;
+  padding: 40px 0px;
+`;
+
+const SectionTitle = styled.h2`
+  font-family: 'IvyPresto Display';
+  font-family: 'IvyPresto Display-SemiBold', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 100%;
+
+  letter-spacing: 0.02em;
+
+  color: #FFFFFF;
+  background: #009FDA;
+
+  width: 275px;
+  height: 112px;
+  padding: 18px 26px 0;
+`;
+
+const SectionText = styled.div`
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+
+  color: #4D4D4D;
+  padding: 0 36px;
+  margin-top: 40px;
 `;
 
 const CallUsCtn = styled.div`
@@ -88,7 +132,7 @@ const MainTitle = styled.h1`
   padding: 0 24px;
 
   font-family: 'IvyPresto Display';
-  font-family: 'IvyPresto Display-SemiBold', serif;;
+  font-family: 'IvyPresto Display-SemiBold', serif;
 
   font-style: normal;
   font-weight: 600;
@@ -121,7 +165,7 @@ const Subtitle = styled.h2`
 
 const HeroMobileImg = styled.img`
   background: #E3DEDA;
-  margin-top: -14px;
+  margin: -14px 0 0;
 
   @media only screen and (min-width: 621px) {
     display: none;
