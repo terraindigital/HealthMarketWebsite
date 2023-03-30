@@ -22,116 +22,118 @@ const MedicarePrescriptionDrugPage = () => {
     return (
         <Layout>
             <Tracing/>
-            <HeroContainer>
-                <MainTitle>Compare Medicare Part D plans</MainTitle>
-                <Subtitle>Find prescription drug coverage that fits your lifestyle</Subtitle>
-                <PageHeroForm
-                    light
-                    btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
-                    btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
-                    hideFooter
-                />
-                <CallUsCtn>
-                    <img src={PhoneIcon}/>
-                    <CallUsText>Call XXX-XXX-XXXX to speak to a licensed insurance agent.</CallUsText>
-                </CallUsCtn>
-                <DisclaimerText>
-                    We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov or 1-800-MEDICARE to get information on all of your options.
-                </DisclaimerText>
-                {/*<HeroDisclaimerResponsive dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer}}/>*/}
-            </HeroContainer>
-            <HeroMobileImg src={page.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero"/>
-            <SectionContainer>
-                <SectionTitle>
-                    Prescription Drug
-                </SectionTitle>
-                <SectionText>
-                    A Medicare prescription drug plan can be a smart way to manage the cost of the medications you take now—and those you may need in the future. If you’re entitled to Part A and/or enrolled in Part B of Original Medicare,
-                    you’re eligible to join a Part D plan, which helps cover prescription drugs. HealthMarkets can help you understand your eligibility and help you find the Medicare Part D plans that are available.
-                </SectionText>
-                <SectionSubtitle>
-                    Plan facts
-                </SectionSubtitle>
-                <ListContainer>
-                    {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.listItems?.split("\n").filter((item: string) => Boolean(item.trim())).map((item: string, i: number) => (
-                        <ListItem key={`list-item-${i}`}>{item}</ListItem>
-                    ))}
-                </ListContainer>
-                <CtaButton href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.sectionCta.link} onClick={routeLink}>
-                    {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.sectionCta.text}
-                </CtaButton>
-                <SectionCard>
-                    <CalculatorLogo src={calculatorSvg} alt="Calculator logo"/>
-                    <CardTitle>
-                        HealthMarkets' Extra Help Calculator
-                    </CardTitle>
-                    <CardText>
-                        Find out if you could save on prescription drug costs with a Part D plan.
-                    </CardText>
-                    <CardButton>
-                        Call 900-000-0000
-                    </CardButton>
-                </SectionCard>
-            </SectionContainer>
-            <SectionContainerWhite>
-                <SectionTitleRelated>
-                    Related content
-                </SectionTitleRelated>
-                <RelatedCards>
-                    <RelatedCard>
-                        <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.image.sourceUrl} alt=""/>
-                        <RelatedTitle>What Is The Affordable Care Act?</RelatedTitle>
-                        <RelatedTime>
-                            6-MINUTE READ
-                        </RelatedTime>
-                        <RelatedText>
-                            What is the Affordable Care Act?
-                        </RelatedText>
-                    </RelatedCard>
-                    <RelatedCard>
-                        <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.image.sourceUrl} alt=""/>
-                        <RelatedTitle>
-                            Ilisa Gillmer | Health And Life Insurance Agent
-                            Los Angeles, CA 90066
-                        </RelatedTitle>
-                        <RelatedTime>
-                            6-MINUTE READ
-                        </RelatedTime>
-                        <RelatedText>
-                            My name is Ilisa Gillmer and I am a native to Los Angeles for over 50 years!
-                        </RelatedText>
-                    </RelatedCard>
-                    <RelatedCard>
-                        <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.image.sourceUrl} alt=""/>
-                        <RelatedTitle>
-                            Amy Powell | Health And Life Insurance Agent | Phoenix, AZ 85016
-                        </RelatedTitle>
-                        <RelatedTime>
-                            6-MINUTE READ
-                        </RelatedTime>
-                        <RelatedText>
-                            I am very proud to represent HealthMarkets Insurance Company.
-                        </RelatedText>
-                    </RelatedCard>
-                </RelatedCards>
-                <CtaButtonSecondary>
-                    View more articles
-                </CtaButtonSecondary>
-            </SectionContainerWhite>
-            <SectionContainerQuestions>
-                <SectionCardQuestions>
-                    <CardTitleQuestions>
-                        Still have questions?
-                        Contact us.
-                    </CardTitleQuestions>
-                    <CardButton style={{marginBottom: '10px'}}>
-                        Call 900-000-0000
-                    </CardButton>
-                    <CardButton>
-                        Find a licensed insurance agent
-                    </CardButton>
-                </SectionCardQuestions>
-            </SectionContainerQuestions>
+            <PageContainer>
+                <HeroContainer>
+                    <MainTitle>Compare Medicare Part D plans</MainTitle>
+                    <Subtitle>Find prescription drug coverage that fits your lifestyle</Subtitle>
+                    <PageHeroForm
+                        light
+                        btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
+                        btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
+                        hideFooter
+                    />
+                    <CallUsCtn>
+                        <img src={PhoneIcon}/>
+                        <CallUsText>Call XXX-XXX-XXXX to speak to a licensed insurance agent.</CallUsText>
+                    </CallUsCtn>
+                    <DisclaimerText>
+                        We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov or 1-800-MEDICARE to get information on all of your options.
+                    </DisclaimerText>
+                    {/*<HeroDisclaimerResponsive dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer}}/>*/}
+                </HeroContainer>
+                <HeroMobileImg src={page.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero"/>
+                <SectionContainer>
+                    <SectionTitle>
+                        Prescription Drug
+                    </SectionTitle>
+                    <SectionText>
+                        A Medicare prescription drug plan can be a smart way to manage the cost of the medications you take now—and those you may need in the future. If you’re entitled to Part A and/or enrolled in Part B of Original Medicare,
+                        you’re eligible to join a Part D plan, which helps cover prescription drugs. HealthMarkets can help you understand your eligibility and help you find the Medicare Part D plans that are available.
+                    </SectionText>
+                    <SectionSubtitle>
+                        Plan facts
+                    </SectionSubtitle>
+                    <ListContainer>
+                        {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.listItems?.split("\n").filter((item: string) => Boolean(item.trim())).map((item: string, i: number) => (
+                            <ListItem key={`list-item-${i}`}>{item}</ListItem>
+                        ))}
+                    </ListContainer>
+                    <CtaButton href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.sectionCta.link} onClick={routeLink}>
+                        {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.sectionCta.text}
+                    </CtaButton>
+                    <SectionCard>
+                        <CalculatorLogo src={calculatorSvg} alt="Calculator logo"/>
+                        <CardTitle>
+                            HealthMarkets' Extra Help Calculator
+                        </CardTitle>
+                        <CardText>
+                            Find out if you could save on prescription drug costs with a Part D plan.
+                        </CardText>
+                        <CardButton>
+                            Call 900-000-0000
+                        </CardButton>
+                    </SectionCard>
+                </SectionContainer>
+                <SectionContainerWhite>
+                    <SectionTitleRelated>
+                        Related content
+                    </SectionTitleRelated>
+                    <RelatedCards>
+                        <RelatedCard>
+                            <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.image.sourceUrl} alt=""/>
+                            <RelatedTitle>What Is The Affordable Care Act?</RelatedTitle>
+                            <RelatedTime>
+                                6-MINUTE READ
+                            </RelatedTime>
+                            <RelatedText>
+                                What is the Affordable Care Act?
+                            </RelatedText>
+                        </RelatedCard>
+                        <RelatedCard>
+                            <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.image.sourceUrl} alt=""/>
+                            <RelatedTitle>
+                                Ilisa Gillmer | Health And Life Insurance Agent
+                                Los Angeles, CA 90066
+                            </RelatedTitle>
+                            <RelatedTime>
+                                6-MINUTE READ
+                            </RelatedTime>
+                            <RelatedText>
+                                My name is Ilisa Gillmer and I am a native to Los Angeles for over 50 years!
+                            </RelatedText>
+                        </RelatedCard>
+                        <RelatedCard>
+                            <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.image.sourceUrl} alt=""/>
+                            <RelatedTitle>
+                                Amy Powell | Health And Life Insurance Agent | Phoenix, AZ 85016
+                            </RelatedTitle>
+                            <RelatedTime>
+                                6-MINUTE READ
+                            </RelatedTime>
+                            <RelatedText>
+                                I am very proud to represent HealthMarkets Insurance Company.
+                            </RelatedText>
+                        </RelatedCard>
+                    </RelatedCards>
+                    <CtaButtonSecondary>
+                        View more articles
+                    </CtaButtonSecondary>
+                </SectionContainerWhite>
+                <SectionContainerQuestions>
+                    <SectionCardQuestions>
+                        <CardTitleQuestions>
+                            Still have questions?
+                            Contact us.
+                        </CardTitleQuestions>
+                        <CardButton style={{marginBottom: '10px'}}>
+                            Call 900-000-0000
+                        </CardButton>
+                        <CardButton>
+                            Find a licensed insurance agent
+                        </CardButton>
+                    </SectionCardQuestions>
+                </SectionContainerQuestions>
+            </PageContainer>
             <Footer>
                 {page.disclaimers.disclaimer}
             </Footer>
@@ -265,6 +267,12 @@ const CardText = styled.div`
 const HeroContainer = styled.div`
   padding: 0 24px;
   background-color: #E3DEDA;
+`;
+
+const PageContainer = styled.div`
+  @media screen and (min-width: 1281px) {
+    margin-top: 120px;
+  }
 `;
 
 const SectionContainer = styled.div`
