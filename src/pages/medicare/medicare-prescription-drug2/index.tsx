@@ -13,6 +13,7 @@ import {Tracing} from "../../../components/Tracing/Tracing";
 import styled from "@emotion/styled";
 import PageHeroForm from "../../../components/Hero/PageHeroForm";
 import PhoneIcon from "../../../static/images/phone-icon.png";
+import checkImgSvg from "../../../static/images/list-check.svg";
 
 const MedicarePrescriptionDrugPage = () => {
     const {page} = useMedicarePrescriptionDrugPageQuery();
@@ -110,13 +111,39 @@ const ListContainer = styled.ul`
 `;
 
 const ListItem = styled.li`
-  font-family: 'Open Sans';
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
-
+  margin: 0 0 24px;
+  padding-left: 44px;
+  position: relative;
   color: #4D4D4D;
+
+  &::after {
+    content: '';
+    width: 26px;
+    height: 26px;
+    display: block;
+    border-radius: 100%;
+    position: absolute;
+    left: 1px;
+    top: calc(50% - 13px);
+    border: 2px solid var(--color-accent);
+  }
+
+  &::before {
+    content: '';
+    width: 26px;
+    height: 26px;
+    display: block;
+    position: absolute;
+    left: 5px;
+    background-repeat: no-repeat;
+    top: calc(50% - 14px);
+    background-image: url("${checkImgSvg}");
+  }
 `;
 
 const SectionText = styled.div`
