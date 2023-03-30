@@ -14,9 +14,8 @@ import styled from "@emotion/styled";
 import PageHeroForm from "../../../components/Hero/PageHeroForm";
 import PhoneIcon from "../../../static/images/phone-icon.png";
 import checkImgSvg from "../../../static/images/list-check.svg";
-import {ShopCta} from "../../../components/pages/styles/MedicarePrescriptionDrugStyles";
+import calculatorSvg from "../../../static/images/calculator-logo.svg";
 import {routeLink} from "../../../static/scripts/global";
-import Button from "../../../components/Buttons/Button";
 
 const MedicarePrescriptionDrugPage = () => {
     const {page} = useMedicarePrescriptionDrugPageQuery();
@@ -61,6 +60,18 @@ const MedicarePrescriptionDrugPage = () => {
                 <CtaButton href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.sectionCta.link} onClick={routeLink}>
                     {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.sectionCta.text}
                 </CtaButton>
+                <SectionCard>
+                    <CalculatorLogo src={calculatorSvg} alt="Calculator logo"/>
+                    <CardTitle>
+                        Health Markets' Extra Help Calculator
+                    </CardTitle>
+                    <CardText>
+                        Find out if you could save on prescription drug costs with a Part D plan.
+                    </CardText>
+                    <CardButton>
+                        Call 900-000-0000
+                    </CardButton>
+                </SectionCard>
             </SectionContainer>
             <Footer>
                 {page.disclaimers.disclaimer}
@@ -69,6 +80,51 @@ const MedicarePrescriptionDrugPage = () => {
     );
 };
 
+const SectionCard = styled.div`
+  background: #FFFFFF;
+
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin: 40px 21px 0px;
+  padding: 37px 12px 20px;
+`;
+
+const CalculatorLogo = styled.img`
+  margin: 0 auto;
+  width: 120px;
+  height: 80px;
+`;
+
+const CardTitle = styled.h2`
+  font-family: 'IvyPresto Display-SemiBold', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 100%;
+
+  text-align: center;
+  letter-spacing: 0.02em;
+
+  color: #009FDA;
+  margin-top: 16px;
+`;
+
+const CardText = styled.div`
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+
+  display: flex;
+  align-items: center;
+
+  color: #4D4D4D;
+  margin-top: 21px;
+  margin-bottom: 15px;
+  padding: 0 8px;
+`;
+
 const HeroContainer = styled.div`
   padding: 0 24px;
   background-color: #E3DEDA;
@@ -76,7 +132,7 @@ const HeroContainer = styled.div`
 
 const SectionContainer = styled.div`
   background: #f3fafd;
-  padding: 40px 0px;
+  padding: 40px 0px 0;
 `;
 
 const SectionTitle = styled.h2`
@@ -134,6 +190,13 @@ const CtaButton = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+const CardButton = styled(CtaButton)`
+  height: 42px;
+  background: #009B3A;
+  border: 2px solid #FFFFFF;
+  margin: 0;
 `;
 
 const ListItem = styled.li`
