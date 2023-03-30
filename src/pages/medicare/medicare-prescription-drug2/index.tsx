@@ -13,6 +13,7 @@ import Layout from "../../../components/Layout";
 import Footer from "../../../components/Footer";
 import {Tracing} from "../../../components/Tracing/Tracing";
 import styled from "@emotion/styled";
+import PageHeroForm from "../../../components/Hero/PageHeroForm";
 
 const MedicarePrescriptionDrugPage = () => {
     const {page} = useMedicarePrescriptionDrugPageQuery();
@@ -21,6 +22,11 @@ const MedicarePrescriptionDrugPage = () => {
             <Tracing/>
             <MainTitle>Compare Medicare Part D plans</MainTitle>
             <Subtitle>Find prescription drug coverage that fits your lifestyle</Subtitle>
+            <PageHeroForm
+                light
+                btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
+                btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
+                footerContent={page.pageHeroFields.callUs}/>
             <Footer>
                 {page.disclaimers.disclaimer}
             </Footer>
