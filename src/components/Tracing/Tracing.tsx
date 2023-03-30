@@ -3,8 +3,8 @@ import React, {useEffect, useRef, useState} from 'react';
 import medicarePrescriptionDrugDesktop from './medicare-prescription-drug-desktop.png';
 import medicarePrescriptionDrugMobile from './medicare-prescription-drug-mobile-2.png';
 
-const JUMP = 2;
-const initialScroll = 90 + (1000 * JUMP);
+const JUMP = 2 * 1000;
+const initialScroll = 90 + JUMP;
 
 /**
  * Component used to display a foreground image with some degree of opacity. Useful to trace the original design.
@@ -99,7 +99,7 @@ export const Tracing = () => {
                 top: 0,
                 top: '-38px',
                  */
-                top: `-${(JUMP * 1000) + 38}px`,
+                top: `-${JUMP + 38}px`,
                 bottom: 0,
                 left: 0,
                 width: '100%',
