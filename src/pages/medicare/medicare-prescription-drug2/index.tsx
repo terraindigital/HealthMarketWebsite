@@ -63,7 +63,7 @@ const MedicarePrescriptionDrugPage = () => {
                 <SectionCard>
                     <CalculatorLogo src={calculatorSvg} alt="Calculator logo"/>
                     <CardTitle>
-                        Health Markets' Extra Help Calculator
+                        HealthMarkets' Extra Help Calculator
                     </CardTitle>
                     <CardText>
                         Find out if you could save on prescription drug costs with a Part D plan.
@@ -73,6 +73,11 @@ const MedicarePrescriptionDrugPage = () => {
                     </CardButton>
                 </SectionCard>
             </SectionContainer>
+            <SectionContainerWhite>
+                <SectionTitle>
+                    Related content
+                </SectionTitle>
+            </SectionContainerWhite>
             <Footer>
                 {page.disclaimers.disclaimer}
             </Footer>
@@ -86,7 +91,7 @@ const SectionCard = styled.div`
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   margin: 40px 21px 0px;
-  padding: 37px 12px 20px;
+  padding: 37px 12px 40px;
 `;
 
 const CalculatorLogo = styled.img`
@@ -132,7 +137,11 @@ const HeroContainer = styled.div`
 
 const SectionContainer = styled.div`
   background: #f3fafd;
-  padding: 40px 0px 0;
+  padding: 40px 0px 38px;
+`;
+
+const SectionContainerWhite = styled(SectionContainer)`
+  background: #ffffff;
 `;
 
 const SectionTitle = styled.h2`
