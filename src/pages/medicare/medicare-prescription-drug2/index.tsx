@@ -77,6 +77,26 @@ const MedicarePrescriptionDrugPage = () => {
                 <SectionTitleRelated>
                     Related content
                 </SectionTitleRelated>
+                <RelatedCards>
+                    <RelatedCard>
+                        <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.image.sourceUrl} alt=""/>
+                        <RelatedTitle>What Is The Affordable Care Act?</RelatedTitle>
+                        <RelatedText>
+                            6-MINUTE READ
+                            <br/>
+                            What is the Affordable Care Act?
+                        </RelatedText>
+                    </RelatedCard>
+                    <RelatedCard>
+                        <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.image.sourceUrl} alt=""/>
+                        <RelatedTitle>What Is The Affordable Care Act?</RelatedTitle>
+                        <RelatedText>
+                            6-MINUTE READ
+                            <br/>
+                            What is the Affordable Care Act?
+                        </RelatedText>
+                    </RelatedCard>
+                </RelatedCards>
             </SectionContainerWhite>
             <Footer>
                 {page.disclaimers.disclaimer}
@@ -84,6 +104,47 @@ const MedicarePrescriptionDrugPage = () => {
         </Layout>
     );
 };
+
+const RelatedCards = styled.div`
+  margin-top: 25px;
+`;
+
+const RelatedCard = styled.div`
+  margin: 0 15px 24px;
+  background: #F9F9F9;
+  box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.15);
+  padding: 0px 0px 24px;
+`;
+
+const RelatedImage = styled.img`
+  height: 218px;
+  width: 100%;
+  object-fit: cover;
+  margin: 0 0 0px;
+`;
+
+const RelatedTitle = styled.h2`
+  font-family: 'IvyPresto Display-SemiBold', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 150%;
+  padding: 17px 54px 0 24px;
+
+  color: #009FDA;
+`;
+
+const RelatedText = styled.div`
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 175%;
+
+  color: #828282;
+
+  padding: 23px 24px 0;
+`;
 
 const SectionCard = styled.div`
   background: #FFFFFF;
