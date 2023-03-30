@@ -32,6 +32,9 @@ const MedicarePrescriptionDrugPage = () => {
                     <img src={PhoneIcon} />
                     <CallUsText>Call XXX-XXX-XXXX to speak to a licensed insurance agent.</CallUsText>
                 </CallUsCtn>
+                <DisclaimerText>
+                    We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov or 1-800-MEDICARE to get information on all of your options.
+                </DisclaimerText>
                 {/*<HeroDisclaimerResponsive dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer}}/>*/}
             </PageContainer>
             <Footer>
@@ -63,6 +66,19 @@ const CallUsText = styled.div`
   font-weight: 600;
   font-size: 16px;
   line-height: 100%;
+
+  color: #4D4D4D;
+`;
+
+const DisclaimerText = styled.div`
+  margin-top: 12px;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 110%;
+
+  text-align: center;
 
   color: #4D4D4D;
 `;
