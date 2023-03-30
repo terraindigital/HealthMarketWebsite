@@ -46,6 +46,9 @@ const MedicarePrescriptionDrugPage = () => {
                     A Medicare prescription drug plan can be a smart way to manage the cost of the medications you take now—and those you may need in the future. If you’re entitled to Part A and/or enrolled in Part B of Original Medicare,
                     you’re eligible to join a Part D plan, which helps cover prescription drugs. HealthMarkets can help you understand your eligibility and help you find the Medicare Part D plans that are available.
                 </SectionText>
+                <SectionSubtitle>
+                    Plan facts
+                </SectionSubtitle>
             </SectionContainer>
             <Footer>
                 {page.disclaimers.disclaimer}
@@ -80,6 +83,19 @@ const SectionTitle = styled.h2`
   width: 275px;
   height: 112px;
   padding: 18px 26px 0;
+`;
+
+const SectionSubtitle = styled.h2`
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 130%;
+
+  color: #009FDA;
+
+  padding: 0 30px;
+  margin-top: 40px;
 `;
 
 const SectionText = styled.div`
