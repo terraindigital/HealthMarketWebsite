@@ -81,9 +81,10 @@ const MedicarePrescriptionDrugPage = () => {
                     <RelatedCard>
                         <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.image.sourceUrl} alt=""/>
                         <RelatedTitle>What Is The Affordable Care Act?</RelatedTitle>
-                        <RelatedText>
+                        <RelatedTime>
                             6-MINUTE READ
-                            <br/>
+                        </RelatedTime>
+                        <RelatedText>
                             What is the Affordable Care Act?
                         </RelatedText>
                     </RelatedCard>
@@ -93,9 +94,10 @@ const MedicarePrescriptionDrugPage = () => {
                             Ilisa Gillmer | Health And Life Insurance Agent
                             Los Angeles, CA 90066
                         </RelatedTitle>
-                        <RelatedText>
+                        <RelatedTime>
                             6-MINUTE READ
-                            <br/>
+                        </RelatedTime>
+                        <RelatedText>
                             My name is Ilisa Gillmer and I am a native to Los Angeles for over 50 years!
                         </RelatedText>
                     </RelatedCard>
@@ -113,7 +115,7 @@ const RelatedCards = styled.div`
 `;
 
 const RelatedCard = styled.div`
-  margin: 0 15px 24px;
+  margin: 0 16px 30px;
   background: #F9F9F9;
   box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.15);
   padding: 0px 0px 24px;
@@ -137,16 +139,28 @@ const RelatedTitle = styled.h2`
   color: #009FDA;
 `;
 
+const RelatedTime = styled.div`
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+
+  color: #828282;
+
+  padding: 24px 24px 0;
+`;
+
 const RelatedText = styled.div`
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
-  line-height: 175%;
+  line-height: 140%;
 
   color: #828282;
 
-  padding: 23px 24px 0;
+  padding: 4px 24px 0;
 `;
 
 const SectionCard = styled.div`
