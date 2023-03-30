@@ -12,7 +12,7 @@ import Footer from "../../../components/Footer";
 import {Tracing} from "../../../components/Tracing/Tracing";
 import styled from "@emotion/styled";
 import PageHeroForm from "../../../components/Hero/PageHeroForm";
-import PhoneIcon from "../../../static/images/phone-icon.png";
+import PhoneIconSvg from "../../../static/images/phone-icon.svg";
 import checkImgSvg from "../../../static/images/list-check.svg";
 import calculatorSvg from "../../../static/images/calculator-logo.svg";
 import {routeLink} from "../../../static/scripts/global";
@@ -36,7 +36,7 @@ const MedicarePrescriptionDrugPage = () => {
                         hideFooter
                     />
                     <CallUsCtn>
-                        <img src={PhoneIcon}/>
+                        <img src={PhoneIconSvg}/>
                         <CallUsText>Call XXX-XXX-XXXX to speak to a licensed insurance agent.</CallUsText>
                     </CallUsCtn>
                     <DisclaimerText>
@@ -431,6 +431,16 @@ const CallUsCtn = styled.div`
     width: 19px;
     margin: 4px 15px 0 2px;
   }
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    margin-top: 64px;
+    padding: 0 0;
+
+    > img {
+      margin: 4px 15px 0 2px;
+      width: 26px;
+    }
+  }
 `;
 
 const CallUsText = styled.div`
@@ -441,6 +451,13 @@ const CallUsText = styled.div`
   line-height: 100%;
 
   color: #4D4D4D;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    font-size: 24px;
+    line-height: 150%;
+
+    color: #FFFFFF;
+  }
 `;
 
 const DisclaimerText = styled.div`
@@ -454,6 +471,18 @@ const DisclaimerText = styled.div`
   text-align: center;
 
   color: #4D4D4D;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+
+    color: #FFFFFF;
+
+    text-align: left;
+    margin-top: 33px;
+    max-width: 760px;
+  }
 `;
 
 const MainTitle = styled.h1`
