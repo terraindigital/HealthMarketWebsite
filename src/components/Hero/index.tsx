@@ -17,9 +17,10 @@ interface Props {
   wrapperStyle?: CSSProperties
   desktopImgStyle?: CSSProperties
   mobileImgStyle?: CSSProperties
+  innerStyle?: CSSProperties
 }
 
-const Hero: FC<Props> = ({ image, mobileImage, bgColor, centered, boxed, half, color, children, desktopImgStyle, mobileImgStyle, wrapperStyle }) => {
+const Hero: FC<Props> = ({ image, mobileImage, bgColor, centered, boxed, half, color, children, desktopImgStyle, mobileImgStyle, wrapperStyle, innerStyle }) => {
   let classes = "hero"
   if (centered) { classes += " centered" }
   if (boxed) { classes += " boxed" }
@@ -32,7 +33,7 @@ const Hero: FC<Props> = ({ image, mobileImage, bgColor, centered, boxed, half, c
       {(mobileImage) ? (
         <Img className="show-at-mobile" src={mobileImage} alt="Hero" style={mobileImgStyle} />
       ) : null}
-      <Inner className={(!centered) ? "half" : ""}>
+      <Inner className={(!centered) ? "half" : ""} style={innerStyle}>
         {children}
       </Inner>
     </Wrapper>

@@ -167,6 +167,11 @@ export const HeroHeadingResponsive = styled.h1`
   max-width: 80%;
   text-align: center;
 
+  font-style: normal;
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 115%;
+
   @media screen and (max-width: 1044px) {
     max-width: 100%;
   }
@@ -174,6 +179,11 @@ export const HeroHeadingResponsive = styled.h1`
   @media only screen and (min-width: 621px) {
     text-align: left;
     color: var(--color-light);
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 120px;
+    line-height: 110%;
   }
 `
 
@@ -181,12 +191,21 @@ export const HeroSubheadingResponsive = styled.h4`
   color: var(--color-dark);
   font-family: var(--font-body);
   margin-bottom: 4rem;
-  line-height: 2.8rem;
   text-align: center;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
 
   @media only screen and (min-width: 621px) {
     text-align: left;
     color: var(--color-light);
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 140%;
   }
 `
 
@@ -194,6 +213,11 @@ export const HeroDisclaimerResponsive = styled.span`
   color: var(--color-dark);
   margin-top: 16px;
   text-align: center;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 110%;
 
   p {
     a {
@@ -205,6 +229,11 @@ export const HeroDisclaimerResponsive = styled.span`
   @media only screen and (min-width: 621px) {
     color: var(--color-light);
     text-align: left;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
 
     p {
       a {
@@ -228,9 +257,21 @@ export const SectionSubHeading = styled.h3`
 export const SectionDescription = styled.p`
   color: #4D4D4D;
   text-align: left;
-  font-size: 32px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+
   @media only screen and (min-width: 789px) {
     margin-left: -6rem;
+  }
+
+  @media only screen and (min-width: 621px) {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 140%;
   }
 `
 

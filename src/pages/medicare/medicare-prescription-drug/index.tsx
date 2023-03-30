@@ -46,6 +46,9 @@ const MedicarePrescriptionDrugPage = () => {
             <Global styles={PageStyles}/>
             <Hero
                 wrapperStyle={{paddingBottom: '0'}}
+                innerStyle={{
+                    justifyContent: 'flex-start',
+            }}
                 mobileImgStyle={{display: 'none'}}
                 image={page.pageHeroFields.heroImage.sourceUrl}
                 // The hero in this page will be displayed below the form and disclaimer, so, now we only display a single pixel image as mobile hero image.
