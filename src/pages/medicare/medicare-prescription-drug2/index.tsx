@@ -49,6 +49,11 @@ const MedicarePrescriptionDrugPage = () => {
                 <SectionSubtitle>
                     Plan facts
                 </SectionSubtitle>
+                <ListContainer>
+                    {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.listItems?.split("\n").filter((item: string) => Boolean(item.trim())).map((item: string, i: number) => (
+                        <ListItem key={`list-item-${i}`}>{item}</ListItem>
+                    ))}
+                </ListContainer>
             </SectionContainer>
             <Footer>
                 {page.disclaimers.disclaimer}
@@ -96,6 +101,22 @@ const SectionSubtitle = styled.h2`
 
   padding: 0 30px;
   margin-top: 40px;
+`;
+
+const ListContainer = styled.ul`
+  padding: 0px 30px;
+  list-style: none;
+  margin: 22px 0 0;
+`;
+
+const ListItem = styled.li`
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+
+  color: #4D4D4D;
 `;
 
 const SectionText = styled.div`
