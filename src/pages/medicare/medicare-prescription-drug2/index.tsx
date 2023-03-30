@@ -17,6 +17,9 @@ import checkImgSvg from "../../../static/images/list-check.svg";
 import calculatorSvg from "../../../static/images/calculator-logo.svg";
 import {routeLink} from "../../../static/scripts/global";
 
+const NAV_STARTS_FLOATING = 1281;
+const STARTS_DESKTOP = 621;
+
 const MedicarePrescriptionDrugPage = () => {
     const {page} = useMedicarePrescriptionDrugPageQuery();
     return (
@@ -37,7 +40,8 @@ const MedicarePrescriptionDrugPage = () => {
                         <CallUsText>Call XXX-XXX-XXXX to speak to a licensed insurance agent.</CallUsText>
                     </CallUsCtn>
                     <DisclaimerText>
-                        We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov or 1-800-MEDICARE to get information on all of your options.
+                        We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov or 1-800-MEDICARE to get information on all of your
+                        options.
                     </DisclaimerText>
                     {/*<HeroDisclaimerResponsive dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer}}/>*/}
                 </HeroContainer>
@@ -47,7 +51,8 @@ const MedicarePrescriptionDrugPage = () => {
                         Prescription Drug
                     </SectionTitle>
                     <SectionText>
-                        A Medicare prescription drug plan can be a smart way to manage the cost of the medications you take now—and those you may need in the future. If you’re entitled to Part A and/or enrolled in Part B of Original Medicare,
+                        A Medicare prescription drug plan can be a smart way to manage the cost of the medications you take now—and those you may need in the future. If you’re entitled to Part A and/or enrolled in Part B of Original
+                        Medicare,
                         you’re eligible to join a Part D plan, which helps cover prescription drugs. HealthMarkets can help you understand your eligibility and help you find the Medicare Part D plans that are available.
                     </SectionText>
                     <SectionSubtitle>
@@ -267,10 +272,14 @@ const CardText = styled.div`
 const HeroContainer = styled.div`
   padding: 0 24px;
   background-color: #E3DEDA;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    padding: 102px 122px 0;
+  }
 `;
 
 const PageContainer = styled.div`
-  @media screen and (min-width: 1281px) {
+  @media screen and (min-width: ${NAV_STARTS_FLOATING}px) {
     margin-top: 120px;
   }
 `;
@@ -463,6 +472,16 @@ const MainTitle = styled.h1`
   color: #4D4D4D;
 
   margin: 0 auto 14px;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    font-size: 120px;
+    line-height: 110%;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+    text-align: left;
+    padding: 0 475px 0 0px;
+    margin: 0 0 33px 0;
+  }
 `;
 
 const Subtitle = styled.h2`
@@ -480,13 +499,22 @@ const Subtitle = styled.h2`
   text-align: center;
 
   color: #4D4D4D;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    text-align: left;
+    font-size: 32px;
+    line-height: 140%;
+    margin: 0 auto 28px;
+
+    color: #FFFFFF;
+  }
 `;
 
 const HeroMobileImg = styled.img`
   background: #E3DEDA;
   margin: -14px 0 0;
 
-  @media only screen and (min-width: 621px) {
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
     display: none;
   }
 `
