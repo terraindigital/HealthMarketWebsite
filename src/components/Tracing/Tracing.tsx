@@ -5,7 +5,7 @@ import medicarePrescriptionDrugMobile from './medicare-prescription-drug-mobile-
 
 const MOBILE_OFFSET = 38 - 90;
 const DESKTOP_OFFSET = 42;
-const JUMP = 1000;
+const JUMP = 2000;
 const IS_MOBILE = false;
 const OFFSET = IS_MOBILE ? MOBILE_OFFSET : DESKTOP_OFFSET;
 

@@ -377,12 +377,26 @@ const SectionSubtitle = styled.h2`
 
   padding: 0 30px;
   margin-top: 40px;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    font-family: 'IvyPresto Display-SemiBold', serif;
+    font-weight: 600;
+    font-size: 65px;
+    line-height: 110%;
+    letter-spacing: 0.02em;
+    margin-top: 101px;
+  }
 `;
 
 const ListContainer = styled.ul`
   padding: 0px 30px;
   list-style: none;
   margin: 22px 0 39px;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    margin-top: 46px;
+    max-width: 710px;
+  }
 `;
 
 const CtaButton = styled.a`
@@ -430,10 +444,22 @@ const ListItem = styled.li`
   position: relative;
   color: #4D4D4D;
 
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    font-size: 24px;
+    margin-bottom: 21px;
+    padding-left: 71px;
+  }
+
   &::after {
     content: '';
     width: 26px;
     height: 26px;
+    @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+      width: 40px;
+      height: 40px;
+      top: calc(50% - 17px);
+      left: 2px;
+    }
     display: block;
     border-radius: 100%;
     position: absolute;
@@ -446,6 +472,13 @@ const ListItem = styled.li`
     content: '';
     width: 26px;
     height: 26px;
+    @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+      width: 40px;
+      height: 40px;
+      background-size: contain;
+      top: calc(50% - 23px);
+      left: 8px;
+    }
     display: block;
     position: absolute;
     left: 5px;
