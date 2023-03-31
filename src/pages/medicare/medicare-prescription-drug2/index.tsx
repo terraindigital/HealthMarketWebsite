@@ -468,7 +468,7 @@ const SectionTitle = styled.h2`
   background: #009FDA;
 
   padding: 18px 26px 14px;
-  width: 275px;
+  width: 70%;
 
   @media only screen and (min-width: ${STARTS_DESKTOP}px) {
     width: unset;
