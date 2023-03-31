@@ -492,9 +492,8 @@ const CardButton = styled(CtaButton)`
   margin: 0;
 
   @media only screen and (min-width: ${STARTS_DESKTOP}px) {
-    height: unset;
-    padding: 33px 76px;
-    line-height: 1px;
+    padding: 33px 15px;
+    min-width: 360px;
   }
 `;
 
