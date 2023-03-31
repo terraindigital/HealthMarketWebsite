@@ -431,7 +431,9 @@ const SectionColumns = styled.div`
 
 const SectionColumnLeft = styled.div`
   @media only screen and (min-width: ${STARTS_DESKTOP}px) {
-    min-width: 40.6%;
+    width: 40.6%;
+    flex-shrink: 0;
+    max-width: 780px;
   }
 `;
 
