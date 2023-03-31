@@ -529,7 +529,7 @@ const ListContainer = styled.ul`
   @media only screen and (min-width: ${STARTS_DESKTOP}px) {
     margin-top: 46px;
     max-width: 710px;
-    margin-bottom: 41px;
+    margin-bottom: 30px;
   }
 `;
 
@@ -617,7 +617,6 @@ const ListItem = styled.li`
 
   @media only screen and (min-width: ${STARTS_DESKTOP}px) {
     font-size: 24px;
-    margin-bottom: 21px;
     padding-left: 71px;
   }
 
