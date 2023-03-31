@@ -396,6 +396,7 @@ const ListContainer = styled.ul`
   @media only screen and (min-width: ${STARTS_DESKTOP}px) {
     margin-top: 46px;
     max-width: 710px;
+    margin-bottom: 41px;
   }
 `;
 
@@ -410,13 +411,18 @@ const CtaButton = styled.a`
   font-weight: 700;
   font-size: 16px;
   line-height: 22px;
-  height: 60px;
   text-align: center;
   color: #FFFFFF;
-
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    padding: 18px 96px;
+    font-size: 24px;
+    line-height: 33px;
+    background: #009B3A;
+  }
 `;
 
 const CtaButtonSecondary = styled(CtaButton)`
@@ -443,6 +449,10 @@ const ListItem = styled.li`
   padding-left: 44px;
   position: relative;
   color: #4D4D4D;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   @media only screen and (min-width: ${STARTS_DESKTOP}px) {
     font-size: 24px;
