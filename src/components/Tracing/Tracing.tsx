@@ -3,8 +3,8 @@ import React, {useEffect, useRef, useState} from 'react';
 import medicarePrescriptionDrugDesktop from './medicare-prescription-drug-desktop.png';
 import medicarePrescriptionDrugMobile from './medicare-prescription-drug-mobile-2.png';
 
-const JUMP = 2 * 1000 + 500;
-const initialScroll = 90 + JUMP;
+const OFFSET = 38;
+const JUMP = 100;
 
 /**
  * Component used to display a foreground image with some degree of opacity. Useful to trace the original design.
@@ -16,7 +16,7 @@ export const Tracing = () => {
 
     const [show, setShow] = useState(true);
     const showRef = useRef(show);
-    const [opacity, setOpacity] = useState(0.1);
+    const [opacity, setOpacity] = useState(0.5);
     const prevX = useRef(null);
     const smooth = 0.01;
     const THROTTLE_DURATION = 10;
@@ -62,12 +62,14 @@ export const Tracing = () => {
     };
 
     useEffect(() => {
-        setTimeout(() => document.body.parentElement.scrollTop = initialScroll, 100);
-        setTimeout(() => document.body.parentElement.scrollTop = initialScroll, 1000);
+        const x = setInterval(() => document.body.parentElement.scrollTop = JUMP, 10);
+        return () => {
+            if (x) clearInterval(x);
+        };
     }, []);
 
     const handleKey = ({altKey, code, ctrlKey, shiftKey}) => {
-        document.body.parentElement.scrollTop = initialScroll;
+        document.body.parentElement.scrollTop = JUMP;
         if (altKey && ctrlKey && shiftKey && code === 'KeyA') {
             setShow((value) => {
                 showRef.current = !value;
@@ -95,11 +97,7 @@ export const Tracing = () => {
                 pointerEvents: 'none',
                 backgroundImage: `url('${bgImage}')`,
                 position: 'fixed',
-                /*
-                top: 0,
-                top: '-38px',
-                 */
-                top: `-${JUMP + 38}px`,
+                top: `-${JUMP + OFFSET}px`,
                 bottom: 0,
                 left: 0,
                 width: '100%',
@@ -108,7 +106,7 @@ export const Tracing = () => {
                 backgroundSize: '100%',
                 opacity,
                 zIndex: 5050,
-                filter: 'grayscale(0)',
+                filter: 'grayscale(.5)',
             }}
         />
     );
