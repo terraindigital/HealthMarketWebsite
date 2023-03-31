@@ -286,9 +286,9 @@ const HeroContainer = styled.div`
     background-color: #F3FAFD;
     position: relative;
     padding: 102px 122px 110px;
-    background-size: 1868px;
+    background-size: 100%;
     background-repeat: no-repeat;
-    background-position-x: 51px;
+    background-position-x: right;
     background-image: url(${({bg = ''}: {bg?: string}) => bg});
   }
 `;
@@ -350,13 +350,14 @@ const SectionTitle = styled.h2`
   color: #FFFFFF;
   background: #009FDA;
 
-  margin-right: 115px;
   padding: 18px 26px 14px;
+  width: 275px;
 
   @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    width: unset;
     font-size: 90px;
     margin: 0;
-    padding: 44px 0 40px 240px;
+    padding: 44px 0 40px 31%;
   }
 `;
 
@@ -470,7 +471,7 @@ const SectionText = styled.div`
     font-size: 32px;
     line-height: 140%;
     margin-top: 0px;
-    padding: 3px 245px 3px 35px;
+    padding: 3px 22% 3px 35px;
   }
 `;
 
@@ -598,6 +599,9 @@ const Subtitle = styled.h2`
 const HeroMobileImg = styled.img`
   background: #E3DEDA;
   margin: -14px 0 0;
+  width: 100%;
+  height: 380px;
+  object-fit: contain;
 
   @media only screen and (min-width: ${STARTS_DESKTOP}px) {
     display: none;
