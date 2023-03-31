@@ -28,23 +28,26 @@ const MedicarePrescriptionDrugPage = () => {
             <Tracing/>
             <PageContainer>
                 <HeroContainer>
-                    <MainTitle>Compare Medicare Part D plans</MainTitle>
-                    <Subtitle>Find prescription drug coverage that fits your lifestyle</Subtitle>
-                    <PageHeroForm
-                        light
-                        btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
-                        btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
-                        hideFooter
-                    />
-                    <CallUsCtn>
-                        <img src={PhoneIconSvg}/>
-                        <CallUsText>Call XXX-XXX-XXXX to speak to a licensed insurance agent.</CallUsText>
-                    </CallUsCtn>
-                    <DisclaimerText>
-                        We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov or 1-800-MEDICARE to get information on all of your
-                        options.
-                    </DisclaimerText>
-                    {/*<HeroDisclaimerResponsive dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer}}/>*/}
+                    <HeroDesktopImg src={page.pageHeroFields.heroImage.sourceUrl} alt="Hero"/>
+                    <HeroContent>
+                        <MainTitle>Compare Medicare Part D plans</MainTitle>
+                        <Subtitle>Find prescription drug coverage that fits your lifestyle</Subtitle>
+                        <PageHeroForm
+                            light
+                            btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
+                            btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
+                            hideFooter
+                        />
+                        <CallUsCtn>
+                            <img src={PhoneIconSvg}/>
+                            <CallUsText>Call XXX-XXX-XXXX to speak to a licensed insurance agent.</CallUsText>
+                        </CallUsCtn>
+                        <DisclaimerText>
+                            We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov or 1-800-MEDICARE to get information on all of your
+                            options.
+                        </DisclaimerText>
+                        {/*<HeroDisclaimerResponsive dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer}}/>*/}
+                    </HeroContent>
                 </HeroContainer>
                 <HeroMobileImg src={page.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero"/>
                 <SectionContainer>
@@ -275,7 +278,9 @@ const HeroContainer = styled.div`
   background-color: #E3DEDA;
 
   @media only screen and (min-width: ${STARTS_DESKTOP}px) {
-    padding: 102px 122px 0;
+    background-color: #F3FAFD;
+    position: relative;
+    padding: 102px 122px 110px;
   }
 `;
 
@@ -486,6 +491,10 @@ const DisclaimerText = styled.div`
   }
 `;
 
+const HeroContent = styled.div`
+    position: relative;
+`;
+
 const MainTitle = styled.h1`
   padding: 0 24px;
 
@@ -546,6 +555,23 @@ const HeroMobileImg = styled.img`
 
   @media only screen and (min-width: ${STARTS_DESKTOP}px) {
     display: none;
+  }
+`
+
+const HeroDesktopImg = styled.img`
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 1867px;
+  height: 100%;
+  object-position: top;
+  max-width: unset;
+  margin: 0;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    display: block;
   }
 `
 
