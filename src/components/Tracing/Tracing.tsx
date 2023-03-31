@@ -4,15 +4,15 @@ import medicarePrescriptionDrugDesktop from './medicare-prescription-drug-deskto
 import medicarePrescriptionDrugMobile from './medicare-prescription-drug-mobile-2.png';
 
 const OFFSET = 38;
-const JUMP = 100;
+const JUMP = 0;
+const IS_MOBILE = false;
 
 /**
  * Component used to display a foreground image with some degree of opacity. Useful to trace the original design.
  * @constructor
  */
 export const Tracing = () => {
-    const isLargeScreen = false;
-    const bgImage = isLargeScreen ? medicarePrescriptionDrugDesktop : medicarePrescriptionDrugMobile;
+    const bgImage = IS_MOBILE ? medicarePrescriptionDrugMobile : medicarePrescriptionDrugDesktop;
 
     const [show, setShow] = useState(true);
     const showRef = useRef(show);
