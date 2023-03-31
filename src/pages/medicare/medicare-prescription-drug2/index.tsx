@@ -150,12 +150,14 @@ const MedicarePrescriptionDrugPage = () => {
                             Still have questions?
                             Contact us.
                         </CardTitleQuestions>
-                        <CardButton style={{marginBottom: '10px'}}>
-                            Call 900-000-0000
-                        </CardButton>
-                        <CardButton>
-                            Find a licensed insurance agent
-                        </CardButton>
+                        <CardButtonsContainer>
+                            <CardButton style={{marginBottom: '10px'}}>
+                                Call 900-000-0000
+                            </CardButton>
+                            <CardButton>
+                                Find a licensed insurance agent
+                            </CardButton>
+                        </CardButtonsContainer>
                     </SectionCardQuestions>
                 </SectionContainerQuestions>
             </PageContainer>
@@ -294,6 +296,14 @@ const SectionCardQuestions = styled.div`
   border-radius: 4px;
   margin: 0px 18px;
   padding: 40px 19px;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    display: flex;
+    flex-direction: row;
+    max-width: 1432px;
+    margin: 0 auto;
+    padding: 0;
+  }
 `;
 
 const CalculatorLogo = styled.img`
@@ -340,6 +350,17 @@ const CardTitleQuestions = styled.h2`
   letter-spacing: 0.02em;
   color: #009FDA;
   margin: 0 0 22px;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    font-size: 65px;
+    line-height: 110%;
+    margin: 0;
+    padding: 84px 0 72px 100px;
+    text-align: left;
+    width: 50%;
+    min-width: 50%;
+    max-width: 50%;
+  }
 `;
 
 const CardText = styled.div`
@@ -421,6 +442,9 @@ const SectionContainerQuestions = styled.div`
   background: #f3fafd;
   padding-top: 42px;
   padding-bottom: 130px;
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    padding-top: 108px;
+  }
 `;
 
 const SectionContainerWhite = styled(SectionContainer)`
@@ -549,6 +573,18 @@ const CtaButtonSecondary = styled(CtaButton)`
     padding: 16px 56px;
     line-height: 38px;
     height: fit-content;
+  }
+`;
+
+const CardButtonsContainer = styled.div`
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    min-width: 50%;
+    max-width: 50%;
+    justify-content: center;
+    padding: 0 79px 0 203px;
   }
 `;
 
