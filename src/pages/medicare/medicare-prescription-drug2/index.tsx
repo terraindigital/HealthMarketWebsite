@@ -76,16 +76,20 @@ const MedicarePrescriptionDrugPage = () => {
                         </SectionColumnRight>
                     </SectionColumns>
                     <SectionCard>
-                        <CalculatorLogo src={calculatorSvg} alt="Calculator logo"/>
-                        <CardTitle>
-                            HealthMarkets' Extra Help Calculator
-                        </CardTitle>
-                        <CardText>
-                            Find out if you could save on prescription drug costs with a Part D plan.
-                        </CardText>
-                        <CardButton>
-                            Call 900-000-0000
-                        </CardButton>
+                        <SectionCardTop>
+                            <CalculatorLogo src={calculatorSvg} alt="Calculator logo"/>
+                            <CardTitle>
+                                HealthMarkets Extra Help Calculator
+                            </CardTitle>
+                        </SectionCardTop>
+                        <SectionCardBottom>
+                            <CardText>
+                                Find out if you could save on prescription drug costs with a Part D plan.
+                            </CardText>
+                            <CardButton>
+                                Call 900-000-0000
+                            </CardButton>
+                        </SectionCardBottom>
                     </SectionCard>
                 </SectionContainer>
                 <SectionContainerWhite>
@@ -224,6 +228,24 @@ const SectionCard = styled.div`
   @media only screen and (min-width: ${STARTS_DESKTOP}px) {
     margin: 103px auto 0;
     max-width: 1432px;
+    padding: 51px 75px 0 98px;
+  }
+`;
+
+const SectionCardTop = styled.div`
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+`;
+
+const SectionCardBottom = styled.div`
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 `;
 
@@ -239,6 +261,12 @@ const CalculatorLogo = styled.img`
   margin: 0 auto;
   width: 120px;
   height: 80px;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    width: 172px;
+    height: 114px;
+    margin: 10px 95px 0 0;
+  }
 `;
 
 const CardTitle = styled.h2`
@@ -253,6 +281,14 @@ const CardTitle = styled.h2`
 
   color: #009FDA;
   margin-top: 16px;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    font-size: 65px;
+    line-height: 110%;
+    margin: 0;
+    max-width: 600px;
+    text-align: left;
+  }
 `;
 
 const CardTitleQuestions = styled.h2`
@@ -281,6 +317,15 @@ const CardText = styled.div`
   margin-top: 21px;
   margin-bottom: 15px;
   padding: 0 8px;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    margin: 0 0 0;
+    padding: 15px 0 0;
+    max-width: 600px;
+  }
 `;
 
 const HeroContainer = styled.div`
@@ -294,7 +339,7 @@ const HeroContainer = styled.div`
     background-size: 100%;
     background-repeat: no-repeat;
     background-position-x: right;
-    background-image: url(${({bg = ''}: {bg?: string}) => bg});
+    background-image: url(${({bg = ''}: { bg?: string }) => bg});
   }
 `;
 
@@ -315,8 +360,8 @@ const SectionContainer = styled.div`
 
 const SectionColumns = styled.div`
   @media only screen and (min-width: ${STARTS_DESKTOP}px) {
-      display: flex;
-      flex-direction: row;
+    display: flex;
+    flex-direction: row;
   }
 `;
 
@@ -445,6 +490,12 @@ const CardButton = styled(CtaButton)`
   background: #009B3A;
   border: 2px solid #FFFFFF;
   margin: 0;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    height: unset;
+    padding: 33px 76px;
+    line-height: 1px;
+  }
 `;
 
 const ListItem = styled.li`
@@ -587,10 +638,6 @@ const DisclaimerText = styled.div`
     margin-top: 33px;
     max-width: 760px;
   }
-`;
-
-const HeroContent = styled.div`
-    position: relative;
 `;
 
 const MainTitle = styled.h1`
