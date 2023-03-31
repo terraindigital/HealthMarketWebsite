@@ -169,6 +169,12 @@ const MedicarePrescriptionDrugPage = () => {
 const RelatedCards = styled.div`
   margin-top: 25px;
   margin-bottom: 32px;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    margin: 80px auto 0;
+    max-width: 1440px;
+    display: flex;
+  }
 `;
 
 const RelatedCard = styled.div`
@@ -180,6 +186,12 @@ const RelatedCard = styled.div`
   &:last-child {
     margin-bottom: 0;
   }
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    flex: 1;
+    height: 580px;
+    margin: 0 12px 0 0;
+  }
 `;
 
 const RelatedImage = styled.img`
@@ -187,6 +199,10 @@ const RelatedImage = styled.img`
   width: 100%;
   object-fit: cover;
   margin: 0 0 0px;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    height: 280px;
+  }
 `;
 
 const RelatedTitle = styled.h2`
@@ -198,6 +214,12 @@ const RelatedTitle = styled.h2`
   padding: 17px 17px 0 24px;
 
   color: #009FDA;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    font-size: 32px;
+    line-height: 112%;
+    padding: 33px 37px 0px;
+  }
 `;
 
 const RelatedTime = styled.div`
@@ -210,6 +232,11 @@ const RelatedTime = styled.div`
   color: #828282;
 
   padding: 24px 24px 0;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    font-size: 20px;
+    padding: 23px 35px 0;
+  }
 `;
 
 const RelatedText = styled.div`
@@ -222,6 +249,11 @@ const RelatedText = styled.div`
   color: #828282;
 
   padding: 4px 24px 0;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    font-size: 20px;
+    padding: 2px 35px 0;
+  }
 `;
 
 const SectionCard = styled.div`
