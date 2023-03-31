@@ -25,8 +25,7 @@ const PhoneIcon = () => (
 );
 
 const NAV_STARTS_FLOATING = 1281;
-// const STARTS_DESKTOP = 621;
-const STARTS_DESKTOP = 1025;
+const STARTS_DESKTOP = 789;
 
 const MedicarePrescriptionDrugPage = () => {
     const {page} = useMedicarePrescriptionDrugPageQuery();
@@ -395,7 +394,7 @@ const HeroContainer = styled.div`
   @media only screen and (min-width: ${STARTS_DESKTOP}px) {
     background-color: #F3FAFD;
     position: relative;
-    padding: 102px 122px 110px;
+    padding: 5.4% 6.4%;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position-x: right;
