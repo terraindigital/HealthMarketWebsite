@@ -395,7 +395,7 @@ const HeroContainer = styled.div`
     background-color: #F3FAFD;
     position: relative;
     padding: 5.4% 6.4%;
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position-x: right;
     background-image: url(${({bg = ''}: { bg?: string }) => bg});
