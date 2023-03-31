@@ -778,9 +778,7 @@ const MainTitle = styled.h1`
 `;
 
 const Subtitle = styled.h2`
-  margin: 0 auto 50px;
-
-  height: 48px;
+  margin: 0 auto 24px;
 
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 
