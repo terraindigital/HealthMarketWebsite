@@ -391,7 +391,7 @@ const SectionSubtitle = styled.h2`
 const ListContainer = styled.ul`
   padding: 0px 30px;
   list-style: none;
-  margin: 22px 0 39px;
+  margin: 22px 0 40px;
 
   @media only screen and (min-width: ${STARTS_DESKTOP}px) {
     margin-top: 46px;
@@ -413,11 +413,13 @@ const CtaButton = styled.a`
   line-height: 22px;
   text-align: center;
   color: #FFFFFF;
-  display: inline-flex;
+  display: flex;
+  padding: 15px 0px;
   align-items: center;
   justify-content: center;
 
   @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    display: inline-flex;
     padding: 18px 96px;
     font-size: 24px;
     line-height: 33px;
