@@ -5,7 +5,7 @@ import medicarePrescriptionDrugMobile from './medicare-prescription-drug-mobile-
 
 const MOBILE_OFFSET = 38;
 const DESKTOP_OFFSET = 42;
-const JUMP = 900;
+const JUMP = 0;
 const IS_MOBILE = false;
 const OFFSET = IS_MOBILE ? MOBILE_OFFSET : DESKTOP_OFFSET;
 
@@ -18,7 +18,7 @@ export const Tracing = () => {
 
     const [show, setShow] = useState(true);
     const showRef = useRef(show);
-    const [opacity, setOpacity] = useState(0.5);
+    const [opacity, setOpacity] = useState(0.1);
     const prevX = useRef(null);
     const smooth = 0.01;
     const THROTTLE_DURATION = 10;
@@ -64,7 +64,7 @@ export const Tracing = () => {
     };
 
     useEffect(() => {
-        const x = setInterval(() => document.body.parentElement.scrollTop = JUMP, 10);
+        const x = setTimeout(() => document.body.parentElement.scrollTop = JUMP, 1000);
         return () => {
             if (x) clearInterval(x);
         };
