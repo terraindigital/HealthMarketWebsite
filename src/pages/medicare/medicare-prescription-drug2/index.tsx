@@ -803,7 +803,7 @@ const Subtitle = styled.h2`
 
 const HeroMobileImg = styled.img`
   background: #E3DEDA;
-  margin: -14px 0 0;
+  margin: 0;
   width: 100%;
   height: 380px;
   object-fit: contain;
