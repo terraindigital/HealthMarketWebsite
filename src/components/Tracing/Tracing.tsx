@@ -3,9 +3,11 @@ import React, {useEffect, useRef, useState} from 'react';
 import medicarePrescriptionDrugDesktop from './medicare-prescription-drug-desktop.png';
 import medicarePrescriptionDrugMobile from './medicare-prescription-drug-mobile-2.png';
 
-const OFFSET = 38;
-const JUMP = 0;
+const MOBILE_OFFSET = 38;
+const DESKTOP_OFFSET = 42;
+const JUMP = 900;
 const IS_MOBILE = false;
+const OFFSET = IS_MOBILE ? MOBILE_OFFSET : DESKTOP_OFFSET;
 
 /**
  * Component used to display a foreground image with some degree of opacity. Useful to trace the original design.
