@@ -294,6 +294,10 @@ const PageContainer = styled.div`
 const SectionContainer = styled.div`
   background: #f3fafd;
   padding: 40px 0px 38px;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    padding: 104px 0 0;
+  }
 `;
 
 const SectionContainerQuestions = styled.div`
@@ -307,7 +311,6 @@ const SectionContainerWhite = styled(SectionContainer)`
 `;
 
 const SectionTitle = styled.h2`
-  font-family: 'IvyPresto Display';
   font-family: 'IvyPresto Display-SemiBold', serif;
   font-style: normal;
   font-weight: 600;
@@ -321,6 +324,10 @@ const SectionTitle = styled.h2`
 
   margin-right: 115px;
   padding: 18px 26px 14px;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    font-size: 90px;
+  }
 `;
 
 const SectionTitleRelated = styled(SectionTitle)`
