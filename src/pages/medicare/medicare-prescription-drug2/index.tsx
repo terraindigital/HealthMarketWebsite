@@ -418,10 +418,29 @@ const SectionTitle = styled.h2`
   }
 `;
 
-const SectionTitleRelated = styled(SectionTitle)`
-  margin-right: 52px;
+const SectionTitleRelated = styled.h2`
+  font-family: 'IvyPresto Display-SemiBold', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 100%;
+
+  letter-spacing: 0.02em;
+
+  color: #FFFFFF;
+  background: #009FDA;
+
   padding: 6px 0px 12px 33px;
   width: 340px;
+  margin-right: 52px;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    width: unset;
+    font-size: 90px;
+    padding: 32px 74px 41px 245px;
+    display: inline-block;
+    margin: 0;
+  }
 `;
 
 const SectionSubtitle = styled.h2`
