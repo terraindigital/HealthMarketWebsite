@@ -364,6 +364,7 @@ const SectionTitle = styled.h2`
 const SectionTitleRelated = styled(SectionTitle)`
   margin-right: 52px;
   padding: 6px 0px 12px 33px;
+  width: 340px;
 `;
 
 const SectionSubtitle = styled.h2`
