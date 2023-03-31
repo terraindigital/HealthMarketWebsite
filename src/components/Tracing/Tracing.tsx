@@ -3,9 +3,9 @@ import React, {useEffect, useRef, useState} from 'react';
 import medicarePrescriptionDrugDesktop from './medicare-prescription-drug-desktop.png';
 import medicarePrescriptionDrugMobile from './medicare-prescription-drug-mobile-2.png';
 
-const MOBILE_OFFSET = 38;
+const MOBILE_OFFSET = 38 - 90;
 const DESKTOP_OFFSET = 42;
-const JUMP = 900;
+const JUMP = 1000;
 const IS_MOBILE = false;
 const OFFSET = IS_MOBILE ? MOBILE_OFFSET : DESKTOP_OFFSET;
 
@@ -108,7 +108,7 @@ export const Tracing = () => {
                 backgroundSize: '100%',
                 opacity,
                 zIndex: 5050,
-                filter: 'grayscale(.5)',
+                filter: 'grayscale(.1)',
             }}
         />
     );

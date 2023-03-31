@@ -48,25 +48,33 @@ const MedicarePrescriptionDrugPage = () => {
                 </HeroContainer>
                 <HeroMobileImg src={page.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero"/>
                 <SectionContainer>
-                    <SectionTitle>
-                        Prescription Drug
-                    </SectionTitle>
-                    <SectionText>
-                        A Medicare prescription drug plan can be a smart way to manage the cost of the medications you take now—and those you may need in the future. If you’re entitled to Part A and/or enrolled in Part B of Original
-                        Medicare,
-                        you’re eligible to join a Part D plan, which helps cover prescription drugs. HealthMarkets can help you understand your eligibility and help you find the Medicare Part D plans that are available.
-                    </SectionText>
-                    <SectionSubtitle>
-                        Plan facts
-                    </SectionSubtitle>
-                    <ListContainer>
-                        {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.listItems?.split("\n").filter((item: string) => Boolean(item.trim())).map((item: string, i: number) => (
-                            <ListItem key={`list-item-${i}`}>{item}</ListItem>
-                        ))}
-                    </ListContainer>
-                    <CtaButton href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.sectionCta.link} onClick={routeLink}>
-                        {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.sectionCta.text}
-                    </CtaButton>
+                    <SectionColumns>
+                        <SectionColumnLeft>
+                            <SectionTitle>
+                                {/*TODO: This text is different in mobile*/}
+                                {/*Prescription Drug*/}
+                                Prescription drug plans
+                            </SectionTitle>
+                        </SectionColumnLeft>
+                        <SectionColumnRight>
+                            <SectionText>
+                                A Medicare prescription drug plan can be a smart way to manage the cost of the medications you take now—and those you may need in the future. If you’re entitled to Part A and/or enrolled in Part B of Original
+                                Medicare,
+                                you’re eligible to join a Part D plan, which helps cover prescription drugs. HealthMarkets can help you understand your eligibility and help you find the Medicare Part D plans that are available.
+                            </SectionText>
+                            <SectionSubtitle>
+                                Plan facts
+                            </SectionSubtitle>
+                            <ListContainer>
+                                {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.listItems?.split("\n").filter((item: string) => Boolean(item.trim())).map((item: string, i: number) => (
+                                    <ListItem key={`list-item-${i}`}>{item}</ListItem>
+                                ))}
+                            </ListContainer>
+                            <CtaButton href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.sectionCta.link} onClick={routeLink}>
+                                {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.sectionCta.text}
+                            </CtaButton>
+                        </SectionColumnRight>
+                    </SectionColumns>
                     <SectionCard>
                         <CalculatorLogo src={calculatorSvg} alt="Calculator logo"/>
                         <CardTitle>
@@ -300,6 +308,26 @@ const SectionContainer = styled.div`
   }
 `;
 
+const SectionColumns = styled.div`
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+      display: flex;
+      flex-direction: row;
+  }
+`;
+
+const SectionColumnLeft = styled.div`
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    min-width: 40.6%;
+  }
+`;
+
+const SectionColumnRight = styled.div`
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    flex-grow: 1;
+    padding-left: 37px;
+  }
+`;
+
 const SectionContainerQuestions = styled.div`
   background: #f3fafd;
   padding-top: 42px;
@@ -327,6 +355,8 @@ const SectionTitle = styled.h2`
 
   @media only screen and (min-width: ${STARTS_DESKTOP}px) {
     font-size: 90px;
+    margin: 0;
+    padding: 44px 0 40px 240px;
   }
 `;
 
@@ -434,6 +464,14 @@ const SectionText = styled.div`
   color: #4D4D4D;
   padding: 0 36px;
   margin-top: 40px;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 140%;
+    margin-top: 0px;
+    padding: 3px 245px 3px 35px;
+  }
 `;
 
 const CallUsCtn = styled.div`
