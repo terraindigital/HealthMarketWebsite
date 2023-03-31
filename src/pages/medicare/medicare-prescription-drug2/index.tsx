@@ -220,6 +220,11 @@ const SectionCard = styled.div`
   border-radius: 4px;
   margin: 40px 21px 0px;
   padding: 37px 12px 40px;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    margin: 103px auto 0;
+    max-width: 1432px;
+  }
 `;
 
 const SectionCardQuestions = styled.div`

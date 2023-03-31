@@ -6,7 +6,7 @@ import medicarePrescriptionDrugMobile from './medicare-prescription-drug-mobile-
 const MOBILE_OFFSET = 38 - 90;
 const DESKTOP_OFFSET = 42;
 const JUMP = 2000;
-const IS_MOBILE = true;
+const IS_MOBILE = false;
 const OFFSET = IS_MOBILE ? MOBILE_OFFSET : DESKTOP_OFFSET;
 
 /**
@@ -108,7 +108,7 @@ export const Tracing = () => {
                 backgroundSize: '100%',
                 opacity,
                 zIndex: 5050,
-                filter: 'grayscale(.1)',
+                filter: 'grayscale(.95)',
             }}
         />
     );
