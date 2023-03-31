@@ -27,7 +27,7 @@ const MedicarePrescriptionDrugPage = () => {
         <Layout>
             <Tracing/>
             <PageContainer>
-                <HeroContainer style={{backgroundImage: `url(${page.pageHeroFields.heroImage.sourceUrl})`}}>
+                <HeroContainer bg={page.pageHeroFields.heroImage.sourceUrl}>
                     <MainTitle>Compare Medicare Part D plans</MainTitle>
                     <Subtitle>Find prescription drug coverage that fits your lifestyle</Subtitle>
                     <PageHeroForm
@@ -281,6 +281,7 @@ const HeroContainer = styled.div`
     background-size: 1868px;
     background-repeat: no-repeat;
     background-position-x: 51px;
+    background-image: url(${({bg = ''}: {bg?: string}) => bg});
   }
 `;
 
