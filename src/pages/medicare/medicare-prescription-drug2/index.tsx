@@ -235,7 +235,7 @@ const SectionCard = styled.div`
   @media only screen and (min-width: ${STARTS_DESKTOP}px) {
     margin: 103px auto 0;
     max-width: 1432px;
-    padding: 51px 75px 0 98px;
+    padding: 51px 75px 60px 98px;
   }
 `;
 
@@ -361,7 +361,7 @@ const SectionContainer = styled.div`
   padding: 40px 0px 38px;
 
   @media only screen and (min-width: ${STARTS_DESKTOP}px) {
-    padding: 104px 0 0;
+    padding: 104px 0 100px;
   }
 `;
 
