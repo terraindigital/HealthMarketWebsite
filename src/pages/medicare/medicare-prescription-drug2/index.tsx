@@ -171,7 +171,7 @@ const RelatedCards = styled.div`
   margin-bottom: 32px;
 
   @media only screen and (min-width: ${STARTS_DESKTOP}px) {
-    margin: 80px auto 0;
+    margin: 80px auto;
     max-width: 1440px;
     display: flex;
   }
@@ -541,6 +541,15 @@ const CtaButtonSecondary = styled(CtaButton)`
   background: #009B3A;
   height: 58px;
   border: none;
+
+  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    margin: 0 auto;
+    display: flex;
+    width: fit-content;
+    padding: 16px 56px;
+    line-height: 38px;
+    height: fit-content;
+  }
 `;
 
 const CardButton = styled(CtaButton)`
