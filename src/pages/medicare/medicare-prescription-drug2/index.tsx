@@ -34,25 +34,27 @@ const MedicarePrescriptionDrugPage = () => {
             <Tracing/>
             <PageContainer>
                 <HeroContainer bg={page.pageHeroFields.heroImage.sourceUrl}>
-                    <MainTitle>Compare Medicare Part D plans</MainTitle>
-                    <Subtitle>Find prescription drug coverage that fits your lifestyle</Subtitle>
-                    <PageHeroForm
-                        light
-                        btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
-                        btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
-                        hideFooter
-                    />
-                    <CallUsCtn>
-                        <PhoneIcon/>
-                        <CallUsText>Call XXX-XXX-XXXX to speak to a licensed insurance agent</CallUsText>
-                    </CallUsCtn>
-                    <DisclaimerText>
-                        We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov or 1-800-MEDICARE to get information on all of your
-                        options.
-                    </DisclaimerText>
+                    <HeroPadding>
+                        <MainTitle>Compare Medicare Part D plans</MainTitle>
+                        <Subtitle>Find prescription drug coverage that fits your lifestyle</Subtitle>
+                        <PageHeroForm
+                            light
+                            btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
+                            btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
+                            hideFooter
+                        />
+                        <CallUsCtn>
+                            <PhoneIcon/>
+                            <CallUsText>Call XXX-XXX-XXXX to speak to a licensed insurance agent</CallUsText>
+                        </CallUsCtn>
+                        <DisclaimerText>
+                            We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov or 1-800-MEDICARE to get information on all of your
+                            options.
+                        </DisclaimerText>
+                    </HeroPadding>
                     {/*<HeroDisclaimerResponsive dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer}}/>*/}
+                    <HeroMobileImg src={page.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero"/>
                 </HeroContainer>
-                <HeroMobileImg src={page.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero"/>
                 <SectionContainer>
                     <SectionColumns>
                         <SectionColumnLeft>
@@ -387,8 +389,11 @@ const CardText = styled.div`
   }
 `;
 
-const HeroContainer = styled.div`
+const HeroPadding = styled.div`
   padding: 0 24px;
+`;
+
+const HeroContainer = styled.div`
   background-color: #E3DEDA;
 
   @media only screen and (min-width: ${STARTS_DESKTOP}px) {
@@ -802,10 +807,12 @@ const Subtitle = styled.h2`
 
 const HeroMobileImg = styled.img`
   background: #E3DEDA;
-  margin: 0;
+  margin: 0 auto;
   width: 100%;
-  height: 380px;
-  object-fit: contain;
+  object-fit: cover;
+  height: 367px;
+  object-position: top;
+  max-width: 400px;
 
   @media only screen and (min-width: ${STARTS_DESKTOP}px) {
     display: none;

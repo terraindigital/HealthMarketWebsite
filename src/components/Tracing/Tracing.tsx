@@ -3,10 +3,10 @@ import React, {useEffect, useRef, useState} from 'react';
 import medicarePrescriptionDrugDesktop from './medicare-prescription-drug-desktop.png';
 import medicarePrescriptionDrugMobile from './medicare-prescription-drug-mobile-2.png';
 
-const MOBILE_OFFSET = 38 - 0;
+const MOBILE_OFFSET = 38 - 63;
 const DESKTOP_OFFSET = 42;
 const JUMP = 500;
-const IS_MOBILE = false;
+const IS_MOBILE = true;
 const OFFSET = IS_MOBILE ? MOBILE_OFFSET : DESKTOP_OFFSET;
 
 /**
@@ -18,7 +18,7 @@ export const Tracing = () => {
 
     const [show, setShow] = useState(true);
     const showRef = useRef(show);
-    const [opacity, setOpacity] = useState(0.0);
+    const [opacity, setOpacity] = useState(0.5);
     const prevX = useRef(null);
     const smooth = 0.01;
     const THROTTLE_DURATION = 10;
