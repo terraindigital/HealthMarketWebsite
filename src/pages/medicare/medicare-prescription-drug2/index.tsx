@@ -426,14 +426,14 @@ const SectionContainer = styled.div`
 `;
 
 const SectionColumns = styled.div`
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
     display: flex;
     flex-direction: row;
   }
 `;
 
 const SectionColumnLeft = styled.div`
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
     width: 40.6%;
     flex-shrink: 0;
     max-width: 780px;
@@ -441,7 +441,7 @@ const SectionColumnLeft = styled.div`
 `;
 
 const SectionColumnRight = styled.div`
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
     flex-grow: 1;
     padding-left: 37px;
   }
@@ -475,7 +475,7 @@ const SectionTitle = styled.h2`
   padding: 18px 26px 14px;
   width: 70%;
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
     width: unset;
     font-size: 90px;
     margin: 0;
@@ -520,7 +520,7 @@ const SectionSubtitle = styled.h2`
   padding: 0 30px;
   margin-top: 40px;
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
     font-family: 'IvyPresto Display-SemiBold', serif;
     font-weight: 600;
     font-size: 65px;
@@ -535,7 +535,7 @@ const ListContainer = styled.ul`
   list-style: none;
   margin: 22px 0 40px;
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
     margin-top: 46px;
     max-width: 710px;
     margin-bottom: 30px;
@@ -560,7 +560,7 @@ const CtaButton = styled.a`
   align-items: center;
   justify-content: center;
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
     display: inline-flex;
     padding: 18px 96px;
     font-size: 24px;
@@ -569,13 +569,26 @@ const CtaButton = styled.a`
   }
 `;
 
-const CtaButtonSecondary = styled(CtaButton)`
+const CtaButtonSecondary = styled.a`
+  border-radius: 4px;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  color: #FFFFFF;
+  display: flex;
+  padding: 15px 0px;
+  align-items: center;
+  justify-content: center;
   margin: 0 34px;
   background: #009B3A;
   height: 58px;
   border: none;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    font-size: 24px;
     margin: 0 auto;
     display: flex;
     width: fit-content;
@@ -597,13 +610,28 @@ const CardButtonsContainer = styled.div`
   }
 `;
 
-const CardButton = styled(CtaButton)`
+const CardButton = styled.a`
+  border-radius: 4px;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  color: #FFFFFF;
+  display: flex;
+  padding: 15px 0px;
+  align-items: center;
+  justify-content: center;
   height: 42px;
   background: #009B3A;
   border: 2px solid #FFFFFF;
   margin: 0;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    display: inline-flex;
+    font-size: 24px;
+    line-height: 33px;
     padding: 33px 15px;
     min-width: 360px;
   }
@@ -678,7 +706,7 @@ const SectionText = styled.div`
   padding: 0 36px;
   margin-top: 40px;
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
     font-weight: 600;
     font-size: 32px;
     line-height: 140%;
