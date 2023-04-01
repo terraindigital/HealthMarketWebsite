@@ -476,7 +476,7 @@ const SectionTitle = styled.h2`
     width: unset;
     font-size: 90px;
     margin: 0;
-    padding: 44px 0 40px 31%;
+    padding: 40px 20px 40px 240px;
   }
 `;
 
