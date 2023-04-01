@@ -81,22 +81,24 @@ const MedicarePrescriptionDrugPage = () => {
                             </CtaButton>
                         </SectionColumnRight>
                     </SectionColumns>
-                    <SectionCard>
-                        <SectionCardTop>
-                            <CalculatorLogo src={calculatorSvg} alt="Calculator logo"/>
-                            <CardTitle>
-                                HealthMarkets Extra Help Calculator
-                            </CardTitle>
-                        </SectionCardTop>
-                        <SectionCardBottom>
-                            <CardText>
-                                Find out if you could save on prescription drug costs with a Part D plan.
-                            </CardText>
-                            <CardButton>
-                                Call 900-000-0000
-                            </CardButton>
-                        </SectionCardBottom>
-                    </SectionCard>
+                    <CardPadding>
+                        <SectionCard>
+                            <SectionCardTop>
+                                <CalculatorLogo src={calculatorSvg} alt="Calculator logo"/>
+                                <CardTitle>
+                                    HealthMarkets Extra Help Calculator
+                                </CardTitle>
+                            </SectionCardTop>
+                            <SectionCardBottom>
+                                <CardText>
+                                    Find out if you could save on prescription drug costs with a Part D plan.
+                                </CardText>
+                                <CardButton>
+                                    Call 900-000-0000
+                                </CardButton>
+                            </SectionCardBottom>
+                        </SectionCard>
+                    </CardPadding>
                 </SectionContainer>
                 <SectionContainerWhite>
                     <SectionTitleRelated>
@@ -257,18 +259,25 @@ const RelatedText = styled.div`
   }
 `;
 
+const CardPadding = styled.div`
+  padding: 40px 21px 0px;
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    padding-top: 100px;
+  }
+`;
+
 const SectionCard = styled.div`
   background: #FFFFFF;
 
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
-  margin: 40px 21px 0px;
   padding: 37px 12px 40px;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    margin: 103px auto 0;
     max-width: 1432px;
     padding: 51px 75px 60px 98px;
+    margin-left: auto;
+    margin-right: auto;
   }
 `;
 

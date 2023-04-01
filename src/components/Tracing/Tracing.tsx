@@ -2,11 +2,12 @@
 import React, {useEffect, useRef, useState} from 'react';
 import medicarePrescriptionDrugDesktop from './medicare-prescription-drug-desktop.png';
 import medicarePrescriptionDrugMobile from './medicare-prescription-drug-mobile-2.png';
+import {BREAKPOINT_MD} from "../../breakpoints";
 
 const MOBILE_OFFSET = 38 - 63;
 const DESKTOP_OFFSET = 42;
-const JUMP = 1000;
-const IS_MOBILE = false;
+const JUMP = 2000;
+const IS_MOBILE = window.innerWidth < BREAKPOINT_MD;
 const OFFSET = IS_MOBILE ? MOBILE_OFFSET : DESKTOP_OFFSET;
 
 /**
@@ -18,7 +19,7 @@ export const Tracing = () => {
 
     const [show, setShow] = useState(true);
     const showRef = useRef(show);
-    const [opacity, setOpacity] = useState(0.05);
+    const [opacity, setOpacity] = useState(0.5);
     const prevX = useRef(null);
     const smooth = 0.01;
     const THROTTLE_DURATION = 10;
