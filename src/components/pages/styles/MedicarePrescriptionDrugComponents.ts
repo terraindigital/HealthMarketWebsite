@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import {BREAKPOINT_MD, BREAKPOINT_XL} from "../../../breakpoints";
+import {BREAKPOINT_XL} from "../../../breakpoints";
 import checkImgSvg from "../../../static/images/list-check.svg";
 
 export const SectionColumns = styled.div`
@@ -117,7 +117,7 @@ export const ListItem = styled.li`
     margin-bottom: 0;
   }
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
     font-size: 24px;
     padding-left: 71px;
   }
@@ -126,7 +126,7 @@ export const ListItem = styled.li`
     content: '';
     width: 26px;
     height: 26px;
-    @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    @media only screen and (min-width: ${BREAKPOINT_XL}px) {
       width: 40px;
       height: 40px;
       top: calc(50% - 17px);
@@ -144,7 +144,7 @@ export const ListItem = styled.li`
     content: '';
     width: 26px;
     height: 26px;
-    @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    @media only screen and (min-width: ${BREAKPOINT_XL}px) {
       width: 40px;
       height: 40px;
       background-size: contain;
