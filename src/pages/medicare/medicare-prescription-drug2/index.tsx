@@ -460,8 +460,8 @@ const SectionTitleRelated = styled.h2`
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     width: unset;
-    font-size: 90px;
-    padding: 32px 74px 41px 245px;
+    font-size: 4.7vw;
+    padding: 1.7vw 3.9vw 2.2vw 12.7vw;
     display: inline-block;
     margin: 0;
   }
