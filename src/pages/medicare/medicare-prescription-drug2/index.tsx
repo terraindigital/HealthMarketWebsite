@@ -25,7 +25,10 @@ const PhoneIcon = () => (
 );
 
 const NAV_STARTS_FLOATING = 1281;
-const STARTS_DESKTOP = 789;
+const BREAKPOINT_SM = 600;
+const BREAKPOINT_MD = 900;
+const BREAKPOINT_LG = 1200;
+const BREAKPOINT_XL = 1536;
 
 const MedicarePrescriptionDrugPage = () => {
     const {page} = useMedicarePrescriptionDrugPageQuery();
@@ -173,7 +176,7 @@ const RelatedCards = styled.div`
   margin-top: 25px;
   margin-bottom: 32px;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     margin: 80px auto;
     max-width: 1440px;
     display: flex;
@@ -190,7 +193,7 @@ const RelatedCard = styled.div`
     margin-bottom: 0;
   }
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     flex: 1;
     height: 580px;
     margin: 0 12px 0 0;
@@ -203,7 +206,7 @@ const RelatedImage = styled.img`
   object-fit: cover;
   margin: 0 0 0px;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     height: 280px;
   }
 `;
@@ -218,7 +221,7 @@ const RelatedTitle = styled.h2`
 
   color: #009FDA;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-size: 32px;
     line-height: 112%;
     padding: 33px 37px 0px;
@@ -236,7 +239,7 @@ const RelatedTime = styled.div`
 
   padding: 24px 24px 0;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-size: 20px;
     padding: 23px 35px 0;
   }
@@ -253,7 +256,7 @@ const RelatedText = styled.div`
 
   padding: 4px 24px 0;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-size: 20px;
     padding: 2px 35px 0;
   }
@@ -267,7 +270,7 @@ const SectionCard = styled.div`
   margin: 40px 21px 0px;
   padding: 37px 12px 40px;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     margin: 103px auto 0;
     max-width: 1432px;
     padding: 51px 75px 60px 98px;
@@ -275,7 +278,7 @@ const SectionCard = styled.div`
 `;
 
 const SectionCardTop = styled.div`
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -283,7 +286,7 @@ const SectionCardTop = styled.div`
 `;
 
 const SectionCardBottom = styled.div`
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -298,7 +301,7 @@ const SectionCardQuestions = styled.div`
   margin: 0px 18px;
   padding: 40px 19px;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     display: flex;
     flex-direction: row;
     max-width: 1432px;
@@ -312,7 +315,7 @@ const CalculatorLogo = styled.img`
   width: 120px;
   height: 80px;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     width: 172px;
     height: 114px;
     margin: 10px 95px 0 0;
@@ -332,7 +335,7 @@ const CardTitle = styled.h2`
   color: #009FDA;
   margin-top: 16px;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-size: 65px;
     line-height: 110%;
     margin: 0;
@@ -352,7 +355,7 @@ const CardTitleQuestions = styled.h2`
   color: #009FDA;
   margin: 0 0 22px;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-size: 65px;
     line-height: 110%;
     margin: 0;
@@ -379,7 +382,7 @@ const CardText = styled.div`
   margin-bottom: 15px;
   padding: 0 8px;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-weight: 600;
     font-size: 24px;
     line-height: 150%;
@@ -396,7 +399,7 @@ const HeroPadding = styled.div`
 const HeroContainer = styled.div`
   background-color: #E3DEDA;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     background-color: #F3FAFD;
     position: relative;
     padding: 5.4% 6.4%;
@@ -417,20 +420,20 @@ const SectionContainer = styled.div`
   background: #f3fafd;
   padding: 40px 0px 38px;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     padding: 104px 0 100px;
   }
 `;
 
 const SectionColumns = styled.div`
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     display: flex;
     flex-direction: row;
   }
 `;
 
 const SectionColumnLeft = styled.div`
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     width: 40.6%;
     flex-shrink: 0;
     max-width: 780px;
@@ -438,7 +441,7 @@ const SectionColumnLeft = styled.div`
 `;
 
 const SectionColumnRight = styled.div`
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     flex-grow: 1;
     padding-left: 37px;
   }
@@ -448,7 +451,7 @@ const SectionContainerQuestions = styled.div`
   background: #f3fafd;
   padding-top: 42px;
   padding-bottom: 130px;
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     padding-top: 108px;
   }
 `;
@@ -472,7 +475,7 @@ const SectionTitle = styled.h2`
   padding: 18px 26px 14px;
   width: 70%;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     width: unset;
     font-size: 90px;
     margin: 0;
@@ -496,7 +499,7 @@ const SectionTitleRelated = styled.h2`
   width: 340px;
   margin-right: 52px;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     width: unset;
     font-size: 90px;
     padding: 32px 74px 41px 245px;
@@ -517,7 +520,7 @@ const SectionSubtitle = styled.h2`
   padding: 0 30px;
   margin-top: 40px;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-family: 'IvyPresto Display-SemiBold', serif;
     font-weight: 600;
     font-size: 65px;
@@ -532,7 +535,7 @@ const ListContainer = styled.ul`
   list-style: none;
   margin: 22px 0 40px;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     margin-top: 46px;
     max-width: 710px;
     margin-bottom: 30px;
@@ -557,7 +560,7 @@ const CtaButton = styled.a`
   align-items: center;
   justify-content: center;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     display: inline-flex;
     padding: 18px 96px;
     font-size: 24px;
@@ -572,7 +575,7 @@ const CtaButtonSecondary = styled(CtaButton)`
   height: 58px;
   border: none;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     margin: 0 auto;
     display: flex;
     width: fit-content;
@@ -583,7 +586,7 @@ const CtaButtonSecondary = styled(CtaButton)`
 `;
 
 const CardButtonsContainer = styled.div`
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -600,7 +603,7 @@ const CardButton = styled(CtaButton)`
   border: 2px solid #FFFFFF;
   margin: 0;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     padding: 33px 15px;
     min-width: 360px;
   }
@@ -621,7 +624,7 @@ const ListItem = styled.li`
     margin-bottom: 0;
   }
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-size: 24px;
     padding-left: 71px;
   }
@@ -630,7 +633,7 @@ const ListItem = styled.li`
     content: '';
     width: 26px;
     height: 26px;
-    @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    @media only screen and (min-width: ${BREAKPOINT_MD}px) {
       width: 40px;
       height: 40px;
       top: calc(50% - 17px);
@@ -648,7 +651,7 @@ const ListItem = styled.li`
     content: '';
     width: 26px;
     height: 26px;
-    @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+    @media only screen and (min-width: ${BREAKPOINT_MD}px) {
       width: 40px;
       height: 40px;
       background-size: contain;
@@ -675,7 +678,7 @@ const SectionText = styled.div`
   padding: 0 36px;
   margin-top: 40px;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-weight: 600;
     font-size: 32px;
     line-height: 140%;
@@ -689,7 +692,7 @@ const CallUsCtn = styled.div`
   align-items: center;
   padding: 0 38px;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     margin-top: 64px;
     padding: 0 0;
   }
@@ -704,7 +707,7 @@ const StyledSvg = styled.svg`
     fill: #4D4D4D;
   }
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     margin: 2px 15px 0 2px;
     width: 26px;
     * {
@@ -722,7 +725,7 @@ const CallUsText = styled.div`
 
   color: #4D4D4D;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-size: 24px;
     line-height: 150%;
 
@@ -742,7 +745,7 @@ const DisclaimerText = styled.div`
 
   color: #4D4D4D;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-weight: 600;
     font-size: 20px;
     line-height: 140%;
@@ -772,7 +775,7 @@ const MainTitle = styled.h1`
 
   margin: 0 auto 14px;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-size: 120px;
     line-height: 110%;
     letter-spacing: 2px;
@@ -797,7 +800,7 @@ const Subtitle = styled.h2`
 
   color: #4D4D4D;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     text-align: left;
     font-size: 32px;
     line-height: 140%;
@@ -816,7 +819,7 @@ const HeroMobileImg = styled.img`
   object-position: top;
   max-width: 400px;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     display: none;
   }
 `
@@ -833,7 +836,7 @@ const HeroDesktopImg = styled.img`
   max-width: unset;
   margin: 0;
 
-  @media only screen and (min-width: ${STARTS_DESKTOP}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     display: block;
   }
 `
