@@ -41,11 +41,9 @@ export const SectionTitle = styled.h2`
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     width: unset;
-    //font-size: 90px;
-    font-size: 4vw;
+    font-size: 4.7vw;
     margin: 0;
-    //padding: 40px 20px 40px 240px;
-    padding: 40px 3vw 40px 12vw;
+    padding: 2.2vw 2.2vw 2.2vw 12.5vw;
   }
 `;
 

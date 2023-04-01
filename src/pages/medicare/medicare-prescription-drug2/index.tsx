@@ -397,7 +397,7 @@ const HeroContainer = styled.div`
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     background-color: #F3FAFD;
     position: relative;
-    padding: 5.4% 6.4%;
+    padding: 5.6% 5.2%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: right;
