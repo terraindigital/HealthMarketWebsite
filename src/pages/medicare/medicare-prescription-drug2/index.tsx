@@ -15,6 +15,7 @@ import PageHeroForm from "../../../components/Hero/PageHeroForm";
 import checkImgSvg from "../../../static/images/list-check.svg";
 import calculatorSvg from "../../../static/images/calculator-logo.svg";
 import {routeLink} from "../../../static/scripts/global";
+import {BREAKPOINT_MD, BREAKPOINT_XL, NAV_STARTS_FLOATING} from "../../../breakpoints";
 
 const PhoneIcon = () => (
     <StyledSvg width="26" height="28" viewBox="0 0 26 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,12 +24,6 @@ const PhoneIcon = () => (
         <path d="M25.0928 11.0698C24.597 11.0698 24.1858 10.627 24.1858 10.093C24.1858 5.6 20.7998 1.95349 16.6277 1.95349C16.1319 1.95349 15.7207 1.5107 15.7207 0.976744C15.7207 0.442791 16.1319 0 16.6277 0C21.7914 0 25.9998 4.53209 25.9998 10.093C25.9998 10.627 25.5886 11.0698 25.0928 11.0698Z" fill="white"/>
     </StyledSvg>
 );
-
-const NAV_STARTS_FLOATING = 1281;
-const BREAKPOINT_SM = 600;
-const BREAKPOINT_MD = 900;
-const BREAKPOINT_LG = 1200;
-const BREAKPOINT_XL = 1536;
 
 const MedicarePrescriptionDrugPage = () => {
     const {page} = useMedicarePrescriptionDrugPageQuery();
