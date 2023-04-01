@@ -1,16 +1,16 @@
 import styled from "@emotion/styled";
-import {BREAKPOINT_XL} from "../../../breakpoints";
+import {BREAKPOINT_MD} from "../../../breakpoints";
 import checkImgSvg from "../../../static/images/list-check.svg";
 
 export const SectionColumns = styled.div`
-  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     display: flex;
     flex-direction: row;
   }
 `;
 
 export const SectionColumnLeft = styled.div`
-  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     width: 40.6%;
     flex-shrink: 0;
     max-width: 780px;
@@ -18,7 +18,7 @@ export const SectionColumnLeft = styled.div`
 `;
 
 export const SectionColumnRight = styled.div`
-  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     flex-grow: 1;
     padding-left: 37px;
   }
@@ -39,11 +39,13 @@ export const SectionTitle = styled.h2`
   padding: 18px 26px 14px;
   width: 70%;
 
-  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     width: unset;
-    font-size: 90px;
+    //font-size: 90px;
+    font-size: 4vw;
     margin: 0;
-    padding: 40px 20px 40px 240px;
+    //padding: 40px 20px 40px 240px;
+    padding: 40px 3vw 40px 12vw;
   }
 `;
 
@@ -58,7 +60,7 @@ export const SectionText = styled.div`
   padding: 0 36px;
   margin-top: 40px;
 
-  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-weight: 600;
     font-size: 32px;
     line-height: 140%;
@@ -79,7 +81,7 @@ export const SectionSubtitle = styled.h2`
   padding: 0 30px;
   margin-top: 40px;
 
-  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-family: 'IvyPresto Display-SemiBold', serif;
     font-weight: 600;
     font-size: 65px;
@@ -94,7 +96,7 @@ export const ListContainer = styled.ul`
   list-style: none;
   margin: 22px 0 40px;
 
-  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     margin-top: 46px;
     max-width: 710px;
     margin-bottom: 30px;
@@ -117,7 +119,7 @@ export const ListItem = styled.li`
     margin-bottom: 0;
   }
 
-  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-size: 24px;
     padding-left: 71px;
   }
@@ -126,7 +128,7 @@ export const ListItem = styled.li`
     content: '';
     width: 26px;
     height: 26px;
-    @media only screen and (min-width: ${BREAKPOINT_XL}px) {
+    @media only screen and (min-width: ${BREAKPOINT_MD}px) {
       width: 40px;
       height: 40px;
       top: calc(50% - 17px);
@@ -144,7 +146,7 @@ export const ListItem = styled.li`
     content: '';
     width: 26px;
     height: 26px;
-    @media only screen and (min-width: ${BREAKPOINT_XL}px) {
+    @media only screen and (min-width: ${BREAKPOINT_MD}px) {
       width: 40px;
       height: 40px;
       background-size: contain;
@@ -178,7 +180,7 @@ export const CtaButton = styled.a`
   align-items: center;
   justify-content: center;
 
-  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     display: inline-flex;
     padding: 18px 96px;
     font-size: 24px;
