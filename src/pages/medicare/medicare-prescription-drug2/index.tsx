@@ -25,6 +25,23 @@ const PhoneIcon = () => (
     </StyledSvg>
 );
 
+const TheUl = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 358px));
+  grid-gap: 16px;
+  padding: 0 16px;
+  justify-content: center;
+  list-style: none;
+  background: wheat;
+  margin: 0 auto;
+`;
+
+const TheLi = styled.ul`
+  height: 50px;
+  border: 1px solid green;
+  margin: 0;
+`;
+
 const MedicarePrescriptionDrugPage = () => {
     const {page} = useMedicarePrescriptionDrugPageQuery();
     return (
@@ -104,6 +121,12 @@ const MedicarePrescriptionDrugPage = () => {
                     <SectionTitleRelated>
                         Related content
                     </SectionTitleRelated>
+                    <TheUl>
+                        <TheLi></TheLi>
+                        <TheLi></TheLi>
+                        <TheLi></TheLi>
+                        <TheLi></TheLi>
+                    </TheUl>
                     <RelatedCards>
                         <RelatedCard>
                             <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.image.sourceUrl} alt=""/>
