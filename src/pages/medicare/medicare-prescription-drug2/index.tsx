@@ -139,7 +139,7 @@ const MedicarePrescriptionDrugPage = () => {
                             </RelatedText>
                         </RelatedCard>
                         <RelatedCard>
-                            <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.image.sourceUrl} alt=""/>
+                            <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated2.image.sourceUrl} alt=""/>
                             <RelatedTitle>
                                 Ilisa Gillmer | Health And Life Insurance Agent
                                 Los Angeles, CA 90066
@@ -152,7 +152,7 @@ const MedicarePrescriptionDrugPage = () => {
                             </RelatedText>
                         </RelatedCard>
                         <RelatedCard>
-                            <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.image.sourceUrl} alt=""/>
+                            <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated3.image.sourceUrl} alt=""/>
                             <RelatedTitle>
                                 Amy Powell | Health And Life Insurance Agent | Phoenix, AZ 85016
                             </RelatedTitle>
