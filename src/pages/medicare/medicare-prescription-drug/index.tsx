@@ -158,7 +158,7 @@ const MedicarePrescriptionDrugPage = () => {
                     </TheLi>
                 </TheUl>
             </PageContainer>
-            <Footer>
+            <Footer complianceCode="">
                 {page.disclaimers.disclaimer}
             </Footer>
         </Layout>
