@@ -582,8 +582,13 @@ const CallUsCtn = styled.div`
 `;
 
 const StyledSvg = styled.svg`
-  width: 32px;
-  margin: 4px 15px 0 2px;
+  width: 16px;
+  max-width: 16px;
+  min-width: 16px;
+  height: 18px;
+  max-height: 18px;
+  min-height: 18px;
+  margin: 0 15px 0 0;
 
   * {
     stroke: transparent;
@@ -591,8 +596,13 @@ const StyledSvg = styled.svg`
   }
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    margin: 2px 15px 0 2px;
     width: 26px;
+    max-width: 26px;
+    min-width: 26px;
+    height: 28px;
+    max-height: 28px;
+    min-height: 28px;
+
     * {
       fill: #ffffff;
     }
