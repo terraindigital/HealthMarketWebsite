@@ -18,20 +18,16 @@ query MedicarePrescriptionDrugPageQuery {
         }
       }
       medicarePrescriptionDrugSection2 {
-        color
         title
         subtitle
-        buttonText
-        buttonUrl
-        buttonImage {
-          sourceUrl
-        }
+        buttonTextDesktop
+        buttonUrlDesktop
+        buttonTextMobile
+        buttonUrlMobile
       }
       medicarePrescriptionDrugRelated {
         sectionHeading
         sectionColor
-        ctaText
-        ctaLink
         medicarePrescriptionDrugRelated1 {
           title
           content

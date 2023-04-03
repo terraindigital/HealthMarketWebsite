@@ -90,20 +90,20 @@ const MedicarePrescriptionDrugPage = () => {
             {/*Don't delete this div. It prevents adding a padding-top: 0 in the 'Medial'.*/}
             <div/>
 
-            <Medial color={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.color}>
+            <Medial>
                 <div>
                     <h3>{page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.title}</h3>
                     <ColoredParagraph>{page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.subtitle}</ColoredParagraph>
                 </div>
                 <div className="button-container" style={{textAlign: 'center'}}>
                     <Img
-                        src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.buttonImage?.sourceUrl}
+                        src=''
                         style={{width: '171px', height: '112px'}}
                         alt="Calculator Icon"
                     />
-                    <a href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.buttonUrl} onClick={routeLink}>
+                    <a href={''} onClick={routeLink}>
                         <Button background="accent-alt" border="light" color="light">
-                            {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.buttonText}
+                            {''}
                         </Button>
                     </a>
                 </div>

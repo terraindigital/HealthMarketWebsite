@@ -85,8 +85,11 @@ const MedicarePrescriptionDrugPage = () => {
                                 <CardText>
                                     {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.subtitle}
                                 </CardText>
-                                <CardButton>
-                                    Call 900-000-0000
+                                <CardButton href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.buttonUrlDesktop} only='desktop'>
+                                    {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.buttonTextDesktop}
+                                </CardButton>
+                                <CardButton href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.buttonUrlMobile} only='mobile'>
+                                    {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.buttonTextMobile}
                                 </CardButton>
                             </SectionCardBottom>
                         </SectionCard>
@@ -516,7 +519,7 @@ const CardButton = styled.a`
   line-height: 22px;
   text-align: center;
   color: #FFFFFF;
-  display: flex;
+  display: ${({only}: { only: 'desktop' | 'mobile' }) => only === 'mobile' ? 'flex' : 'none'};
   padding: 8px;
   align-items: center;
   justify-content: center;
@@ -525,6 +528,7 @@ const CardButton = styled.a`
   margin: 0;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    display: ${({only}: { only: 'desktop' | 'mobile' }) => only === 'desktop' ? 'flex' : 'none'};
     font-size: 24px;
     line-height: 33px;
     padding: 16px;
