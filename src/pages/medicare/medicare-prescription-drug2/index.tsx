@@ -25,24 +25,6 @@ const PhoneIcon = () => (
     </StyledSvg>
 );
 
-const TheUl = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 358px));
-  grid-gap: 16px;
-  padding: 0 16px;
-  justify-content: center;
-  list-style: none;
-  background: wheat;
-  margin: 25px auto 32px;
-`;
-
-const TheLi = styled.ul`
-  background: #F9F9F9;
-  margin: 0;
-  box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.15);
-  padding: 0px 0px 20px;
-`;
-
 const MedicarePrescriptionDrugPage = () => {
     const {page} = useMedicarePrescriptionDrugPageQuery();
     return (
@@ -159,43 +141,6 @@ const MedicarePrescriptionDrugPage = () => {
                             </RelatedText>
                         </TheLi>
                     </TheUl>
-                    <RelatedCards>
-                        <RelatedCard>
-                            <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.image.sourceUrl} alt=""/>
-                            <RelatedTitle>What Is The Affordable Care Act?</RelatedTitle>
-                            <RelatedTime>
-                                6-MINUTE READ
-                            </RelatedTime>
-                            <RelatedText>
-                                What is the Affordable Care Act?
-                            </RelatedText>
-                        </RelatedCard>
-                        <RelatedCard>
-                            <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated2.image.sourceUrl} alt=""/>
-                            <RelatedTitle>
-                                Ilisa Gillmer | Health And Life Insurance Agent
-                                Los Angeles, CA 90066
-                            </RelatedTitle>
-                            <RelatedTime>
-                                6-MINUTE READ
-                            </RelatedTime>
-                            <RelatedText>
-                                My name is Ilisa Gillmer and I am a native to Los Angeles for over 50 years!
-                            </RelatedText>
-                        </RelatedCard>
-                        <RelatedCard>
-                            <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated3.image.sourceUrl} alt=""/>
-                            <RelatedTitle>
-                                Amy Powell | Health And Life Insurance Agent | Phoenix, AZ 85016
-                            </RelatedTitle>
-                            <RelatedTime>
-                                6-MINUTE READ
-                            </RelatedTime>
-                            <RelatedText>
-                                I am very proud to represent HealthMarkets Insurance Company.
-                            </RelatedText>
-                        </RelatedCard>
-                    </RelatedCards>
                     <CtaButtonSecondary>
                         View more articles
                     </CtaButtonSecondary>
@@ -223,6 +168,23 @@ const MedicarePrescriptionDrugPage = () => {
         </Layout>
     );
 };
+
+const TheUl = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 358px));
+  grid-gap: 16px;
+  padding: 0 16px;
+  justify-content: center;
+  list-style: none;
+  margin: 25px auto 32px;
+`;
+
+const TheLi = styled.li`
+  background: #F9F9F9;
+  margin: 0;
+  box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.15);
+  padding: 0px 0px 20px;
+`;
 
 const RelatedCards = styled.div`
   margin-top: 25px;
