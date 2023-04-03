@@ -138,15 +138,14 @@ const MedicarePrescriptionDrugPage = () => {
                 <TheUl>
                     <TheLi>
                         <CardTitleQuestions>
-                            Still have questions?
-                            Contact us.
+                            {page.medicarePrescriptionDrugPageCustomFields.stillHaveQuestions.title}
                         </CardTitleQuestions>
                         <CardButtonsContainer>
-                            <CardButtonBig>
-                                Call 900-000-0000
+                            <CardButtonBig href={page.medicarePrescriptionDrugPageCustomFields.stillHaveQuestions.button1Url}>
+                                {page.medicarePrescriptionDrugPageCustomFields.stillHaveQuestions.button1Text}
                             </CardButtonBig>
-                            <CardButtonBig>
-                                Find a licensed insurance agent
+                            <CardButtonBig href={page.medicarePrescriptionDrugPageCustomFields.stillHaveQuestions.button2Url}>
+                                {page.medicarePrescriptionDrugPageCustomFields.stillHaveQuestions.button2Text}
                             </CardButtonBig>
                         </CardButtonsContainer>
                     </TheLi>
