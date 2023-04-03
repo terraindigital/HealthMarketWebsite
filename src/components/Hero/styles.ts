@@ -39,6 +39,11 @@ export const Wrapper = styled.div`
     min-height: 65%;
     min-height: 65vh;
   }
+  
+  @media screen and (min-width: 1281px) {
+    margin-top: 120px;
+    padding-top: 0;
+  }
 
   @media screen and (max-width: 1280px) {
     padding-left: 5.5rem;
