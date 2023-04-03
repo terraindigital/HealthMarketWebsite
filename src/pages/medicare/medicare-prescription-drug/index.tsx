@@ -40,6 +40,8 @@ const MedicarePrescriptionDrugPage = () => {
                             btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
                             btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
                             hideFooter
+                            footerContent={''}
+                            inputId={'medicare-prescription-drug'}
                         />
                         <CallUsCtn>
                             <PhoneIcon/>
