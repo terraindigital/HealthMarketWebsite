@@ -432,8 +432,13 @@ const SectionContainer = styled.div`
   }
 `;
 
-const SectionContainerWhite = styled(SectionContainer)`
+const SectionContainerWhite = styled.div`
   background: #ffffff;
+  padding: 40px 0px 38px;
+
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    padding: 104px 0 100px;
+  }
 `;
 
 const SectionTitleRelated = styled.h2`
