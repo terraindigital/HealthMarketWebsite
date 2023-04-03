@@ -215,20 +215,6 @@ const TheLi = styled.li`
   }
 `;
 
-const SectionCardQuestions = styled.div`
-  background: #FFFFFF;
-  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  margin: 0px 18px;
-  padding: 40px 19px;
-`;
-
-const SectionContainerQuestions = styled.div`
-  background: #f3fafd;
-  padding-top: 42px;
-  padding-bottom: 130px;
-`;
-
 const RelatedImage = styled.img`
   height: 218px;
   width: 100%;
