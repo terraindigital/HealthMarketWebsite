@@ -199,6 +199,12 @@ const TheUl = styled.ul`
   margin: 0;
   background: #f3fafd;
   padding: 42px 18px 130px;
+
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    padding: 108px 0 186px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1432px));
+    justify-content: center;
+  }
 `;
 
 const TheLi = styled.li`
@@ -206,6 +212,19 @@ const TheLi = styled.li`
   margin: 0;
   padding: 40px 20px;
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    display: flex;
+    padding: 87px 75px 70px 102px;
+
+    > *:first-child {
+      padding-right: 30px;
+    }
+
+    > *:last-child {
+      padding-left: 30px;
+    }
+  }
 `;
 
 const SectionCardQuestions = styled.div`
@@ -214,23 +233,12 @@ const SectionCardQuestions = styled.div`
   border-radius: 4px;
   margin: 0px 18px;
   padding: 40px 19px;
-
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    display: flex;
-    flex-direction: row;
-    max-width: 1432px;
-    margin: 0 auto;
-    padding: 0;
-  }
 `;
 
 const SectionContainerQuestions = styled.div`
   background: #f3fafd;
   padding-top: 42px;
   padding-bottom: 130px;
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    padding-top: 108px;
-  }
 `;
 
 const RelatedImage = styled.img`
@@ -383,7 +391,7 @@ const CardTitleQuestions = styled.h2`
     font-size: 65px;
     line-height: 110%;
     margin: 0;
-    padding: 84px 0 72px 100px;
+    padding: 0;
     text-align: left;
     width: 50%;
     min-width: 50%;
@@ -515,7 +523,6 @@ const CardButtonsContainer = styled.div`
     min-width: 50%;
     max-width: 50%;
     justify-content: center;
-    padding: 0 79px 0 203px;
   }
 `;
 
@@ -529,7 +536,7 @@ const CardButton = styled.a`
   text-align: center;
   color: #FFFFFF;
   display: flex;
-  padding: 15px 0px;
+  padding: 8px 0px;
   align-items: center;
   justify-content: center;
   background: #009B3A;
@@ -537,10 +544,9 @@ const CardButton = styled.a`
   margin: 0;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    display: inline-flex;
     font-size: 24px;
     line-height: 33px;
-    padding: 33px 15px;
+    padding: 16px;
     min-width: 360px;
   }
 `;
