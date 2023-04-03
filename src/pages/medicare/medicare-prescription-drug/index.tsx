@@ -15,6 +15,7 @@ import calculatorSvg from "../../../static/images/calculator-logo.svg";
 import {routeLink} from "../../../static/scripts/global";
 import {BREAKPOINT_MD, NAV_STARTS_FLOATING} from "../../../breakpoints";
 import {CtaButton, ListContainer, ListItem, SectionColumnLeft, SectionColumnRight, SectionColumns, SectionSubtitle, SectionText, SectionTitle} from "../../../components/pages/styles/MedicarePrescriptionDrugComponents";
+import PageHead from "../../../components/PageHead";
 
 const PhoneIcon = () => (
     <StyledSvg width="26" height="28" viewBox="0 0 26 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -732,3 +733,14 @@ const HeroMobileImg = styled.img`
 `
 
 export default MedicarePrescriptionDrugPage;
+
+export const Head = () => {
+    const { page } = useMedicarePrescriptionDrugPageQuery();
+    return (
+        <>
+            <PageHead
+                title={page.seo.title}
+                description={page.seo.metaDesc}/>
+        </>
+    )
+}
