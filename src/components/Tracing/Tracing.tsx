@@ -1,19 +1,25 @@
 // @ts-nocheck
-import React, { useEffect, useRef, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import medicarePrescriptionDrugDesktop from './medicare-prescription-drug-desktop.png';
-import medicarePrescriptionDrugMobile from './medicare-prescription-drug-mobile.png';
+import medicarePrescriptionDrugMobile from './medicare-prescription-drug-mobile-2.png';
+import {BREAKPOINT_MD} from "../../breakpoints";
+
+const MOBILE_OFFSET = 38 - 63;
+const DESKTOP_OFFSET = 42;
+const JUMP = 2500;
+const IS_MOBILE = window.innerWidth < BREAKPOINT_MD;
+const OFFSET = IS_MOBILE ? MOBILE_OFFSET : DESKTOP_OFFSET;
 
 /**
  * Component used to display a foreground image with some degree of opacity. Useful to trace the original design.
  * @constructor
  */
 export const Tracing = () => {
-    const isLargeScreen = true;
-    const bgImage = isLargeScreen ? medicarePrescriptionDrugDesktop : medicarePrescriptionDrugMobile;
+    const bgImage = IS_MOBILE ? medicarePrescriptionDrugMobile : medicarePrescriptionDrugDesktop;
 
-    const [show, setShow] = useState(false);
+    const [show, setShow] = useState(true);
     const showRef = useRef(show);
-    const [opacity, setOpacity] = useState(1);
+    const [opacity, setOpacity] = useState(0.05);
     const prevX = useRef(null);
     const smooth = 0.01;
     const THROTTLE_DURATION = 10;
@@ -35,7 +41,7 @@ export const Tracing = () => {
 
     useEffect(() => {
         const saveMousePosition = throttlify((event) => {
-            handleMouseMove({ ctrlKey: event.ctrlKey, clientX: event.clientX });
+            handleMouseMove({ctrlKey: event.ctrlKey, clientX: event.clientX});
         });
 
         document.addEventListener('mousemove', saveMousePosition);
@@ -44,7 +50,7 @@ export const Tracing = () => {
         };
     }, [setOpacity]);
 
-    const handleMouseMove = ({ clientX, ctrlKey }) => {
+    const handleMouseMove = ({clientX, ctrlKey}) => {
         if (!showRef.current) return;
         if (!ctrlKey) {
             prevX.current = null;
@@ -58,7 +64,15 @@ export const Tracing = () => {
         setOpacity((currentOpacity) => Math.max(0, Math.min(1, currentOpacity + delta * smooth)));
     };
 
-    const handleKey = ({ altKey, code, ctrlKey, shiftKey }) => {
+    useEffect(() => {
+        const x = setTimeout(() => document.body.parentElement.scrollTop = JUMP, 100);
+        return () => {
+            if (x) clearInterval(x);
+        };
+    }, []);
+
+    const handleKey = ({altKey, code, ctrlKey, shiftKey}) => {
+        document.body.parentElement.scrollTop = JUMP;
         if (altKey && ctrlKey && shiftKey && code === 'KeyA') {
             setShow((value) => {
                 showRef.current = !value;
@@ -86,15 +100,16 @@ export const Tracing = () => {
                 pointerEvents: 'none',
                 backgroundImage: `url('${bgImage}')`,
                 position: 'fixed',
-                top: 0,
+                top: `-${JUMP + OFFSET}px`,
+                bottom: 0,
                 left: 0,
                 width: '100%',
-                height: '100%',
                 border: 'none',
                 boxSizing: 'border-box',
                 backgroundSize: '100%',
                 opacity,
                 zIndex: 5050,
+                filter: 'grayscale(.95)',
             }}
         />
     );
