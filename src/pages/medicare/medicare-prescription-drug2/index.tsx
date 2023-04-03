@@ -33,8 +33,8 @@ const MedicarePrescriptionDrugPage = () => {
             <PageContainer>
                 <HeroContainer bg={page.pageHeroFields.heroImage.sourceUrl}>
                     <HeroPadding>
-                        <MainTitle>Compare Medicare Part D plans</MainTitle>
-                        <Subtitle>Find prescription drug coverage that fits your lifestyle</Subtitle>
+                        <MainTitle>{page.pageHeroFields.headline}</MainTitle>
+                        <Subtitle>{page.pageHeroFields.subheadline}</Subtitle>
                         <PageHeroForm
                             light
                             btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
@@ -43,33 +43,25 @@ const MedicarePrescriptionDrugPage = () => {
                         />
                         <CallUsCtn>
                             <PhoneIcon/>
-                            <CallUsText>Call XXX-XXX-XXXX to speak to a licensed insurance agent</CallUsText>
+                            <CallUsText dangerouslySetInnerHTML={{__html: page.pageHeroFields.callUs}}/>
                         </CallUsCtn>
-                        <DisclaimerText>
-                            We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov or 1-800-MEDICARE to get information on all of your
-                            options.
-                        </DisclaimerText>
+                        <DisclaimerText dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer}}/>
                     </HeroPadding>
-                    {/*<HeroDisclaimerResponsive dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer}}/>*/}
                     <HeroMobileImg src={page.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero"/>
                 </HeroContainer>
                 <SectionContainer>
                     <SectionColumns>
                         <SectionColumnLeft>
                             <SectionTitle>
-                                {/*TODO: This text is different in mobile*/}
-                                {/*Prescription Drug*/}
-                                Prescription drug plans
+                                {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.heading}
                             </SectionTitle>
                         </SectionColumnLeft>
                         <SectionColumnRight>
                             <SectionText>
-                                A Medicare prescription drug plan can be a smart way to manage the cost of the medications you take now—and those you may need in the future. If you’re entitled to Part A and/or enrolled in Part B of Original
-                                Medicare,
-                                you’re eligible to join a Part D plan, which helps cover prescription drugs. HealthMarkets can help you understand your eligibility and help you find the Medicare Part D plans that are available.
+                                {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.subheading}
                             </SectionText>
                             <SectionSubtitle>
-                                Plan facts
+                                {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.listTitle}
                             </SectionSubtitle>
                             <ListContainer>
                                 {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection1.listItems?.split("\n").filter((item: string) => Boolean(item.trim())).map((item: string, i: number) => (
@@ -86,12 +78,12 @@ const MedicarePrescriptionDrugPage = () => {
                             <SectionCardTop>
                                 <CalculatorLogo src={calculatorSvg} alt="Calculator logo"/>
                                 <CardTitle>
-                                    HealthMarkets Extra Help Calculator
+                                    {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.title}
                                 </CardTitle>
                             </SectionCardTop>
                             <SectionCardBottom>
                                 <CardText>
-                                    Find out if you could save on prescription drug costs with a Part D plan.
+                                    {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.subtitle}
                                 </CardText>
                                 <CardButton>
                                     Call 900-000-0000
@@ -608,14 +600,28 @@ const CallUsText = styled.div`
   font-weight: 600;
   font-size: 16px;
   line-height: 100%;
+  display: flex;
 
   color: #4D4D4D;
+
+  a {
+    text-decoration: none;
+    color: #4D4D4D;
+  }
+
+  p {
+    margin: 0;
+  }
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-size: 24px;
     line-height: 150%;
 
     color: #FFFFFF;
+
+    a {
+      color: #FFFFFF;
+    }
   }
 `;
 
@@ -631,12 +637,26 @@ const DisclaimerText = styled.div`
 
   color: #4D4D4D;
 
+  a {
+    text-decoration: none;
+    color: #4D4D4D;
+  }
+
+  p {
+    margin: 0;
+  }
+
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-weight: 600;
     font-size: 20px;
     line-height: 140%;
 
     color: #FFFFFF;
+
+    a {
+      color: #FFFFFF;
+    }
+
 
     text-align: left;
     margin-top: 33px;
