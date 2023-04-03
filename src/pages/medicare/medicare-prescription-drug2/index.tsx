@@ -152,12 +152,12 @@ const MedicarePrescriptionDrugPage = () => {
                             Contact us.
                         </CardTitleQuestions>
                         <CardButtonsContainer>
-                            <CardButton style={{marginBottom: '10px'}}>
+                            <CardButtonBig>
                                 Call 900-000-0000
-                            </CardButton>
-                            <CardButton>
+                            </CardButtonBig>
+                            <CardButtonBig>
                                 Find a licensed insurance agent
-                            </CardButton>
+                            </CardButtonBig>
                         </CardButtonsContainer>
                     </TheLi>
                 </TheUl>
@@ -215,15 +215,8 @@ const TheLi = styled.li`
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     display: flex;
-    padding: 87px 75px 70px 102px;
-
-    > *:first-child {
-      padding-right: 30px;
-    }
-
-    > *:last-child {
-      padding-left: 30px;
-    }
+    justify-content: space-between;
+    padding: 70px 75px 70px 102px;
   }
 `;
 
@@ -391,11 +384,10 @@ const CardTitleQuestions = styled.h2`
     font-size: 65px;
     line-height: 110%;
     margin: 0;
-    padding: 0;
     text-align: left;
     width: 50%;
-    min-width: 50%;
-    max-width: 50%;
+    padding-right: 30px;
+    padding-top: 15px;
   }
 `;
 
@@ -519,9 +511,6 @@ const CardButtonsContainer = styled.div`
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    min-width: 50%;
-    max-width: 50%;
     justify-content: center;
   }
 `;
@@ -536,7 +525,7 @@ const CardButton = styled.a`
   text-align: center;
   color: #FFFFFF;
   display: flex;
-  padding: 8px 0px;
+  padding: 8px;
   align-items: center;
   justify-content: center;
   background: #009B3A;
@@ -548,6 +537,39 @@ const CardButton = styled.a`
     line-height: 33px;
     padding: 16px;
     min-width: 360px;
+  }
+`;
+
+const CardButtonBig = styled.a`
+  border-radius: 4px;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  color: #FFFFFF;
+  display: flex;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+  background: #009B3A;
+  border: 2px solid #FFFFFF;
+  margin: 0;
+
+  &:not(:first-child) {
+    margin-top: 10px;
+  }
+
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    font-size: 24px;
+    line-height: 33px;
+    padding: 16px 30px;
+    min-width: 360px;
+
+    &:not(:first-child) {
+      margin-top: 18px;
+    }
   }
 `;
 
