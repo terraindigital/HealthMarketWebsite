@@ -40,14 +40,16 @@ const MedicarePrescriptionDrugPage = () => {
                     <HeroPadding>
                         <MainTitle>{page.pageHeroFields.headline}</MainTitle>
                         <Subtitle>{page.pageHeroFields.subheadline}</Subtitle>
-                        <PageHeroForm
-                            light
-                            btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
-                            btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
-                            hideFooter
-                            footerContent={''}
-                            inputId={'medicare-prescription-drug'}
-                        />
+                        <HeroFormSection>
+                            <PageHeroForm
+                                light
+                                btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
+                                btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
+                                hideFooter
+                                footerContent={''}
+                                inputId={'medicare-prescription-drug'}
+                            />
+                        </HeroFormSection>
                         <CallUsCtn>
                             <PhoneIcon/>
                             <CallUsText dangerouslySetInnerHTML={{__html: page.pageHeroFields.callUs}}/>
@@ -723,6 +725,13 @@ const Subtitle = styled.h2`
   }
 `;
 
+const HeroFormSection = styled.div`
+  text-align: center;
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    text-align: left;
+  }
+`;
+
 const HeroMobileImg = styled.img`
   background: #E3DEDA;
   margin: 0 auto;
@@ -740,7 +749,7 @@ const HeroMobileImg = styled.img`
 export default MedicarePrescriptionDrugPage;
 
 export const Head = () => {
-    const { page } = useMedicarePrescriptionDrugPageQuery();
+    const {page} = useMedicarePrescriptionDrugPageQuery();
     return (
         <>
             <PageHead
