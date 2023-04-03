@@ -193,34 +193,6 @@ const TheLi = styled.li`
   padding: 0px 0px 20px;
 `;
 
-const RelatedCards = styled.div`
-  margin-top: 25px;
-  margin-bottom: 32px;
-
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    margin: 80px auto;
-    max-width: 1440px;
-    display: flex;
-  }
-`;
-
-const RelatedCard = styled.div`
-  margin: 0 16px 28px;
-  background: #F9F9F9;
-  box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.15);
-  padding: 0px 0px 20px;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    flex: 1;
-    height: 580px;
-    margin: 0 12px 0 0;
-  }
-`;
-
 const RelatedImage = styled.img`
   height: 218px;
   width: 100%;
