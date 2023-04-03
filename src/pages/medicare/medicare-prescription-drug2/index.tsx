@@ -97,47 +97,42 @@ const MedicarePrescriptionDrugPage = () => {
                 </SectionContainer>
                 <SectionContainerWhite>
                     <SectionTitleRelated>
-                        Related content
+                        {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.sectionHeading}
                     </SectionTitleRelated>
                     <RelatedCards>
-                        <RelatedCard>
+                        <RelatedCard href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.link}>
                             <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.image.sourceUrl} alt=""/>
-                            <RelatedTitle>What Is The Affordable Care Act?</RelatedTitle>
+                            <RelatedTitle>
+                                {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.title}
+                            </RelatedTitle>
                             <RelatedTime>
                                 6-MINUTE READ
                             </RelatedTime>
-                            <RelatedText>
-                                What is the Affordable Care Act? HealthMarkets can answer this question and others that you may have about health insurance.
-                            </RelatedText>
+                            <RelatedText dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.content}}/>
                         </RelatedCard>
-                        <RelatedCard>
+                        <RelatedCard href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated2.link}>
                             <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated2.image.sourceUrl} alt=""/>
                             <RelatedTitle>
-                                Ilisa Gillmer | Health And Life Insurance Agent
-                                Los Angeles, CA 90066
+                                {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated2.title}
                             </RelatedTitle>
                             <RelatedTime>
                                 6-MINUTE READ
                             </RelatedTime>
-                            <RelatedText>
-                                My name is Ilisa Gillmer and I am a native to Los Angeles for over 50 years!
-                            </RelatedText>
+                            <RelatedText dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated2.content}}/>
                         </RelatedCard>
-                        <RelatedCard>
+                        <RelatedCard href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated3.link}>
                             <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated3.image.sourceUrl} alt=""/>
                             <RelatedTitle>
-                                Amy Powell | Health And Life Insurance Agent | Phoenix, AZ 85016
+                                {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated3.title}
                             </RelatedTitle>
                             <RelatedTime>
                                 6-MINUTE READ
                             </RelatedTime>
-                            <RelatedText>
-                                I am very proud to represent HealthMarkets Insurance Company in the states of Arizona.
-                            </RelatedText>
+                            <RelatedText dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated3.content}}/>
                         </RelatedCard>
                     </RelatedCards>
-                    <CtaButtonSecondary>
-                        View more articles
+                    <CtaButtonSecondary href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.ctaLink}>
+                        {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.ctaText}
                     </CtaButtonSecondary>
                 </SectionContainerWhite>
                 <TheUl>
@@ -181,14 +176,14 @@ const RelatedCards = styled.ul`
   }
 `;
 
-const RelatedCard = styled.li`
+const RelatedCard = styled.a`
   background: #F9F9F9;
   margin: 0;
   box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.15);
   padding: 0px 0px 20px;
 `;
 
-const TheUl = styled.ul`
+const TheUl = styled.div`
   display: grid;
   list-style: none;
   margin: 0;

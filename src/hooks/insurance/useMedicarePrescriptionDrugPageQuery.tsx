@@ -28,6 +28,8 @@ query MedicarePrescriptionDrugPageQuery {
       medicarePrescriptionDrugRelated {
         sectionHeading
         sectionColor
+        ctaText
+        ctaLink
         medicarePrescriptionDrugRelated1 {
           title
           content
