@@ -172,11 +172,11 @@ const MedicarePrescriptionDrugPage = () => {
 const TheUl = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 358px));
-  grid-gap: 16px;
+  grid-gap: 30px;
   padding: 0 16px;
   justify-content: center;
   list-style: none;
-  margin: 25px auto 32px;
+  margin: 25px auto 30px;
 `;
 
 const TheLi = styled.li`
