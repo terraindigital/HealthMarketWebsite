@@ -104,8 +104,8 @@ const MedicarePrescriptionDrugPage = () => {
                     <SectionTitleRelated>
                         Related content
                     </SectionTitleRelated>
-                    <TheUl>
-                        <TheLi>
+                    <RelatedCards>
+                        <RelatedCard>
                             <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.image.sourceUrl} alt=""/>
                             <RelatedTitle>What Is The Affordable Care Act?</RelatedTitle>
                             <RelatedTime>
@@ -114,8 +114,8 @@ const MedicarePrescriptionDrugPage = () => {
                             <RelatedText>
                                 What is the Affordable Care Act? HealthMarkets can answer this question and others that you may have about health insurance.
                             </RelatedText>
-                        </TheLi>
-                        <TheLi>
+                        </RelatedCard>
+                        <RelatedCard>
                             <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated2.image.sourceUrl} alt=""/>
                             <RelatedTitle>
                                 Ilisa Gillmer | Health And Life Insurance Agent
@@ -127,8 +127,8 @@ const MedicarePrescriptionDrugPage = () => {
                             <RelatedText>
                                 My name is Ilisa Gillmer and I am a native to Los Angeles for over 50 years!
                             </RelatedText>
-                        </TheLi>
-                        <TheLi>
+                        </RelatedCard>
+                        <RelatedCard>
                             <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated3.image.sourceUrl} alt=""/>
                             <RelatedTitle>
                                 Amy Powell | Health And Life Insurance Agent | Phoenix, AZ 85016
@@ -139,8 +139,8 @@ const MedicarePrescriptionDrugPage = () => {
                             <RelatedText>
                                 I am very proud to represent HealthMarkets Insurance Company in the states of Arizona.
                             </RelatedText>
-                        </TheLi>
-                    </TheUl>
+                        </RelatedCard>
+                    </RelatedCards>
                     <CtaButtonSecondary>
                         View more articles
                     </CtaButtonSecondary>
@@ -169,7 +169,7 @@ const MedicarePrescriptionDrugPage = () => {
     );
 };
 
-const TheUl = styled.ul`
+const RelatedCards = styled.ul`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 358px));
   grid-gap: 30px;
@@ -186,7 +186,7 @@ const TheUl = styled.ul`
   }
 `;
 
-const TheLi = styled.li`
+const RelatedCard = styled.li`
   background: #F9F9F9;
   margin: 0;
   box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.15);
