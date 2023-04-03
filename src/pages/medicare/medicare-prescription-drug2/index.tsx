@@ -112,7 +112,7 @@ const MedicarePrescriptionDrugPage = () => {
                                 6-MINUTE READ
                             </RelatedTime>
                             <RelatedText>
-                                What is the Affordable Care Act?
+                                What is the Affordable Care Act? HealthMarkets can answer this question and others that you may have about health insurance.
                             </RelatedText>
                         </TheLi>
                         <TheLi>
@@ -137,7 +137,7 @@ const MedicarePrescriptionDrugPage = () => {
                                 6-MINUTE READ
                             </RelatedTime>
                             <RelatedText>
-                                I am very proud to represent HealthMarkets Insurance Company.
+                                I am very proud to represent HealthMarkets Insurance Company in the states of Arizona.
                             </RelatedText>
                         </TheLi>
                     </TheUl>
@@ -177,6 +177,13 @@ const TheUl = styled.ul`
   justify-content: center;
   list-style: none;
   margin: 25px auto 30px;
+
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    margin-top: 80px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 464px));
+    grid-gap: 20px;
+    margin-bottom: 82px;
+  }
 `;
 
 const TheLi = styled.li`
@@ -238,7 +245,7 @@ const RelatedTitle = styled.h2`
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-size: 32px;
     line-height: 112%;
-    padding: 33px 37px 0px;
+    padding: 33px 30px 0;
   }
 `;
 
@@ -255,7 +262,7 @@ const RelatedTime = styled.div`
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-size: 20px;
-    padding: 23px 35px 0;
+    padding: 23px 28px 0;
   }
 `;
 
@@ -272,7 +279,7 @@ const RelatedText = styled.div`
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-size: 20px;
-    padding: 2px 35px 0;
+    padding: 2px 28px 0;
   }
 `;
 
