@@ -201,7 +201,7 @@ const TheUl = styled.ul`
   padding: 42px 18px 130px;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    padding: 108px 0 186px;
+    padding: 108px 21px 186px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1432px));
     justify-content: center;
   }
