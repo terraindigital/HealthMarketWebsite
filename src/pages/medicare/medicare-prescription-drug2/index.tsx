@@ -491,10 +491,10 @@ const CtaButtonSecondary = styled.a`
   padding: 15px 0px;
   align-items: center;
   justify-content: center;
-  margin: 0 34px;
+  margin: 0 auto;
   background: #009B3A;
-  height: 58px;
   border: none;
+  max-width: 335px;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-size: 24px;
