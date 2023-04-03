@@ -361,6 +361,7 @@ const CardTitle = styled.h2`
     margin: 0;
     max-width: 600px;
     text-align: left;
+    padding-right: 30px;
   }
 `;
 
@@ -406,7 +407,7 @@ const CardText = styled.div`
     font-size: 24px;
     line-height: 150%;
     margin: 0 0 0;
-    padding: 15px 0 0;
+    padding: 15px 30px 0 0;
     max-width: 600px;
   }
 `;
