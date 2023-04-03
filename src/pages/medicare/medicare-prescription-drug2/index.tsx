@@ -145,8 +145,8 @@ const MedicarePrescriptionDrugPage = () => {
                         View more articles
                     </CtaButtonSecondary>
                 </SectionContainerWhite>
-                <SectionContainerQuestions>
-                    <SectionCardQuestions>
+                <TheUl>
+                    <TheLi>
                         <CardTitleQuestions>
                             Still have questions?
                             Contact us.
@@ -159,8 +159,8 @@ const MedicarePrescriptionDrugPage = () => {
                                 Find a licensed insurance agent
                             </CardButton>
                         </CardButtonsContainer>
-                    </SectionCardQuestions>
-                </SectionContainerQuestions>
+                    </TheLi>
+                </TheUl>
             </PageContainer>
             <Footer>
                 {page.disclaimers.disclaimer}
@@ -191,6 +191,46 @@ const RelatedCard = styled.li`
   margin: 0;
   box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.15);
   padding: 0px 0px 20px;
+`;
+
+const TheUl = styled.ul`
+  display: grid;
+  list-style: none;
+  margin: 0;
+  background: #f3fafd;
+  padding: 42px 18px 130px;
+`;
+
+const TheLi = styled.li`
+  background: #F9F9F9;
+  margin: 0;
+  padding: 40px 20px;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+`;
+
+const SectionCardQuestions = styled.div`
+  background: #FFFFFF;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin: 0px 18px;
+  padding: 40px 19px;
+
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    display: flex;
+    flex-direction: row;
+    max-width: 1432px;
+    margin: 0 auto;
+    padding: 0;
+  }
+`;
+
+const SectionContainerQuestions = styled.div`
+  background: #f3fafd;
+  padding-top: 42px;
+  padding-bottom: 130px;
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    padding-top: 108px;
+  }
 `;
 
 const RelatedImage = styled.img`
@@ -291,22 +331,6 @@ const SectionCardBottom = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-  }
-`;
-
-const SectionCardQuestions = styled.div`
-  background: #FFFFFF;
-  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  margin: 0px 18px;
-  padding: 40px 19px;
-
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    display: flex;
-    flex-direction: row;
-    max-width: 1432px;
-    margin: 0 auto;
-    padding: 0;
   }
 `;
 
@@ -425,15 +449,6 @@ const SectionContainer = styled.div`
   }
 `;
 
-const SectionContainerQuestions = styled.div`
-  background: #f3fafd;
-  padding-top: 42px;
-  padding-bottom: 130px;
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    padding-top: 108px;
-  }
-`;
-
 const SectionContainerWhite = styled(SectionContainer)`
   background: #ffffff;
 `;
@@ -517,7 +532,6 @@ const CardButton = styled.a`
   padding: 15px 0px;
   align-items: center;
   justify-content: center;
-  height: 42px;
   background: #009B3A;
   border: 2px solid #FFFFFF;
   margin: 0;
@@ -667,23 +681,5 @@ const HeroMobileImg = styled.img`
     display: none;
   }
 `
-
-const HeroDesktopImg = styled.img`
-  display: none;
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: 1867px;
-  height: 100%;
-  object-position: top;
-  max-width: unset;
-  margin: 0;
-
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    display: block;
-  }
-`
-
 
 export default MedicarePrescriptionDrugPage;
