@@ -13,7 +13,7 @@ import styled from "@emotion/styled";
 import PageHeroForm from "../../../components/Hero/PageHeroForm";
 import calculatorSvg from "../../../static/images/calculator-logo.svg";
 import {routeLink} from "../../../static/scripts/global";
-import {BREAKPOINT_MD, NAV_STARTS_FLOATING} from "../../../breakpoints";
+import {BREAKPOINT_LG, BREAKPOINT_MD, BREAKPOINT_SM, NAV_STARTS_FLOATING} from "../../../breakpoints";
 import {CtaButton, ListContainer, ListItem, SectionColumnLeft, SectionColumnRight, SectionColumns, SectionSubtitle, SectionText, SectionTitle} from "../../../components/pages/styles/MedicarePrescriptionDrugComponents";
 import PageHead from "../../../components/PageHead";
 
@@ -36,18 +36,23 @@ const MedicarePrescriptionDrugPage = () => {
     return (
         <Layout>
             <PageContainer>
-                <HeroContainer bg={page.pageHeroFields.heroImage.sourceUrl}>
+                <HeroContainer>
+                    <HeroDesktopImg src={page.pageHeroFields.heroImage.sourceUrl} alt="Hero"/>
+                    <HeroDesktopOpacity/>
                     <HeroPadding>
                         <MainTitle>{page.pageHeroFields.headline}</MainTitle>
                         <Subtitle>{page.pageHeroFields.subheadline}</Subtitle>
-                        <PageHeroForm
-                            light
-                            btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
-                            btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
-                            hideFooter
-                            footerContent={''}
-                            inputId={'medicare-prescription-drug'}
-                        />
+                        <HeroFormSection>
+                            <PageHeroForm
+                                light
+                                centered
+                                btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
+                                btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
+                                hideFooter
+                                footerContent={''}
+                                inputId={'medicare-prescription-drug'}
+                            />
+                        </HeroFormSection>
                         <CallUsCtn>
                             <PhoneIcon/>
                             <CallUsText dangerouslySetInnerHTML={{__html: page.pageHeroFields.callUs}}/>
@@ -158,7 +163,7 @@ const MedicarePrescriptionDrugPage = () => {
                     </TheLi>
                 </TheUl>
             </PageContainer>
-            <Footer>
+            <Footer complianceCode="">
                 {page.disclaimers.disclaimer}
             </Footer>
         </Layout>
@@ -401,19 +406,26 @@ const CardText = styled.div`
 
 const HeroPadding = styled.div`
   padding: 0 24px;
+  z-index: 100;
+  position: relative;
 `;
 
 const HeroContainer = styled.div`
   background-color: #E3DEDA;
+  position: relative;
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+    height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
     background-color: #F3FAFD;
-    position: relative;
+    padding: 0;
+  }
+  
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
+    height: auto;
+    display: block;
     padding: 5.6% 5.2%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position-x: right;
-    background-image: url(${({bg = ''}: { bg?: string }) => bg});
   }
 `;
 
@@ -432,8 +444,13 @@ const SectionContainer = styled.div`
   }
 `;
 
-const SectionContainerWhite = styled(SectionContainer)`
+const SectionContainerWhite = styled.div`
   background: #ffffff;
+  padding: 40px 0px 38px;
+
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    padding: 104px 0 100px;
+  }
 `;
 
 const SectionTitleRelated = styled.h2`
@@ -560,11 +577,16 @@ const CardButtonBig = styled.a`
 const CallUsCtn = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0 38px;
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
     margin-top: 64px;
     padding: 0 0;
+  }
+
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
+    justify-content: flex-start;
   }
 `;
 
@@ -582,17 +604,19 @@ const StyledSvg = styled.svg`
     fill: #4D4D4D;
   }
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+    * {
+      fill: #ffffff;
+    }
+  }
+
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
     width: 26px;
     max-width: 26px;
     min-width: 26px;
     height: 28px;
     max-height: 28px;
     min-height: 28px;
-
-    * {
-      fill: #ffffff;
-    }
   }
 `;
 
@@ -604,9 +628,7 @@ const CallUsText = styled.div`
   line-height: 100%;
   display: flex;
 
-  color: #4D4D4D;
-
-  a {
+  &, p, a {
     text-decoration: none;
     color: #4D4D4D;
   }
@@ -615,15 +637,15 @@ const CallUsText = styled.div`
     margin: 0;
   }
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    font-size: 24px;
-    line-height: 150%;
-
-    color: #FFFFFF;
-
-    a {
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+    &, p, a {
       color: #FFFFFF;
     }
+  }
+
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
+    font-size: 24px;
+    line-height: 150%;
   }
 `;
 
@@ -637,9 +659,7 @@ const DisclaimerText = styled.div`
 
   text-align: center;
 
-  color: #4D4D4D;
-
-  a {
+  &, p, a {
     text-decoration: none;
     color: #4D4D4D;
   }
@@ -648,18 +668,16 @@ const DisclaimerText = styled.div`
     margin: 0;
   }
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+    &, p, a {
+      color: #FFFFFF;
+    }
+  }
+
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
     font-weight: 600;
     font-size: 20px;
     line-height: 140%;
-
-    color: #FFFFFF;
-
-    a {
-      color: #FFFFFF;
-    }
-
-
     text-align: left;
     margin-top: 33px;
     max-width: 760px;
@@ -669,7 +687,6 @@ const DisclaimerText = styled.div`
 const MainTitle = styled.h1`
   padding: 0 24px;
 
-  font-family: 'IvyPresto Display';
   font-family: 'IvyPresto Display-SemiBold', serif;
 
   font-style: normal;
@@ -683,11 +700,14 @@ const MainTitle = styled.h1`
 
   margin: 0 auto 14px;
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+    color: #FFFFFF;
+  }
+
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
     font-size: 120px;
     line-height: 110%;
     letter-spacing: 2px;
-    color: #FFFFFF;
     text-align: left;
     padding: 0 26% 0 0px;
     margin: 0 0 33px 0;
@@ -708,13 +728,22 @@ const Subtitle = styled.h2`
 
   color: #4D4D4D;
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+    color: #FFFFFF;
+  }
+
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
     text-align: left;
     font-size: 32px;
     line-height: 140%;
     margin: 0 auto 28px;
+  }
+`;
 
-    color: #FFFFFF;
+const HeroFormSection = styled.div`
+  text-align: center;
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
+    text-align: left;
   }
 `;
 
@@ -727,15 +756,57 @@ const HeroMobileImg = styled.img`
   object-position: top;
   max-width: 400px;
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
     display: none;
   }
 `
 
+const HeroDesktopImg = styled.img`
+  // Desktop hero not shown by default, only at a certain screen size.
+  display: none;
+  
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+    display: block;
+    position: absolute;
+    object-fit: cover;
+    object-position: right;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+  }
+`;
+
+const HeroDesktopOpacity = styled.span`
+  // Desktop hero overly not shown by default, only at a certain screen size.
+  display: none;
+
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+    // Dark overlay because bg image is to bright.
+    display: block;
+    background: rgb(0 0 0 / 9%);
+    pointer-events: none;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
+    display: none;
+  }
+`;
+
 export default MedicarePrescriptionDrugPage;
 
 export const Head = () => {
-    const { page } = useMedicarePrescriptionDrugPageQuery();
+    const {page} = useMedicarePrescriptionDrugPageQuery();
     return (
         <>
             <PageHead
