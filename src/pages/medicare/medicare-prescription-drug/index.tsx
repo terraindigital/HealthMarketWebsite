@@ -13,7 +13,7 @@ import styled from "@emotion/styled";
 import PageHeroForm from "../../../components/Hero/PageHeroForm";
 import calculatorSvg from "../../../static/images/calculator-logo.svg";
 import {routeLink} from "../../../static/scripts/global";
-import {BREAKPOINT_MD, NAV_STARTS_FLOATING} from "../../../breakpoints";
+import {BREAKPOINT_MD, BREAKPOINT_SM, NAV_STARTS_FLOATING} from "../../../breakpoints";
 import {CtaButton, ListContainer, ListItem, SectionColumnLeft, SectionColumnRight, SectionColumns, SectionSubtitle, SectionText, SectionTitle} from "../../../components/pages/styles/MedicarePrescriptionDrugComponents";
 import PageHead from "../../../components/PageHead";
 
@@ -408,7 +408,7 @@ const HeroPadding = styled.div`
 const HeroContainer = styled.div`
   background-color: #E3DEDA;
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
     background-color: #F3FAFD;
     position: relative;
     padding: 5.6% 5.2%;
@@ -569,7 +569,7 @@ const CallUsCtn = styled.div`
   align-items: center;
   padding: 0 38px;
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
     margin-top: 64px;
     padding: 0 0;
   }
@@ -589,6 +589,12 @@ const StyledSvg = styled.svg`
     fill: #4D4D4D;
   }
 
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+    * {
+      fill: #ffffff;
+    }
+  }
+
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     width: 26px;
     max-width: 26px;
@@ -596,10 +602,6 @@ const StyledSvg = styled.svg`
     height: 28px;
     max-height: 28px;
     min-height: 28px;
-
-    * {
-      fill: #ffffff;
-    }
   }
 `;
 
@@ -611,9 +613,7 @@ const CallUsText = styled.div`
   line-height: 100%;
   display: flex;
 
-  color: #4D4D4D;
-
-  a {
+  &, p, a {
     text-decoration: none;
     color: #4D4D4D;
   }
@@ -622,15 +622,15 @@ const CallUsText = styled.div`
     margin: 0;
   }
 
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+    &, p, a {
+      color: #FFFFFF;
+    }
+  }
+
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-size: 24px;
     line-height: 150%;
-
-    color: #FFFFFF;
-
-    a {
-      color: #FFFFFF;
-    }
   }
 `;
 
@@ -644,9 +644,7 @@ const DisclaimerText = styled.div`
 
   text-align: center;
 
-  color: #4D4D4D;
-
-  a {
+  &, p, a {
     text-decoration: none;
     color: #4D4D4D;
   }
@@ -655,18 +653,16 @@ const DisclaimerText = styled.div`
     margin: 0;
   }
 
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+    &, p, a {
+      color: #FFFFFF;
+    }
+  }
+
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-weight: 600;
     font-size: 20px;
     line-height: 140%;
-
-    color: #FFFFFF;
-
-    a {
-      color: #FFFFFF;
-    }
-
-
     text-align: left;
     margin-top: 33px;
     max-width: 760px;
@@ -676,7 +672,6 @@ const DisclaimerText = styled.div`
 const MainTitle = styled.h1`
   padding: 0 24px;
 
-  font-family: 'IvyPresto Display';
   font-family: 'IvyPresto Display-SemiBold', serif;
 
   font-style: normal;
@@ -690,11 +685,14 @@ const MainTitle = styled.h1`
 
   margin: 0 auto 14px;
 
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+    color: #FFFFFF;
+  }
+
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-size: 120px;
     line-height: 110%;
     letter-spacing: 2px;
-    color: #FFFFFF;
     text-align: left;
     padding: 0 26% 0 0px;
     margin: 0 0 33px 0;
@@ -715,13 +713,15 @@ const Subtitle = styled.h2`
 
   color: #4D4D4D;
 
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+    color: #FFFFFF;
+  }
+
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     text-align: left;
     font-size: 32px;
     line-height: 140%;
     margin: 0 auto 28px;
-
-    color: #FFFFFF;
   }
 `;
 
@@ -741,7 +741,7 @@ const HeroMobileImg = styled.img`
   object-position: top;
   max-width: 400px;
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
     display: none;
   }
 `
