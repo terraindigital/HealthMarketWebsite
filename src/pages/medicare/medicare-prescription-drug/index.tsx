@@ -13,7 +13,7 @@ import styled from "@emotion/styled";
 import PageHeroForm from "../../../components/Hero/PageHeroForm";
 import calculatorSvg from "../../../static/images/calculator-logo.svg";
 import {routeLink} from "../../../static/scripts/global";
-import {BREAKPOINT_MD, BREAKPOINT_SM, NAV_STARTS_FLOATING} from "../../../breakpoints";
+import {BREAKPOINT_LG, BREAKPOINT_MD, BREAKPOINT_SM, NAV_STARTS_FLOATING} from "../../../breakpoints";
 import {CtaButton, ListContainer, ListItem, SectionColumnLeft, SectionColumnRight, SectionColumns, SectionSubtitle, SectionText, SectionTitle} from "../../../components/pages/styles/MedicarePrescriptionDrugComponents";
 import PageHead from "../../../components/PageHead";
 
@@ -43,6 +43,7 @@ const MedicarePrescriptionDrugPage = () => {
                         <HeroFormSection>
                             <PageHeroForm
                                 light
+                                centered
                                 btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
                                 btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
                                 hideFooter
@@ -421,7 +422,7 @@ const HeroContainer = styled.div`
     background-image: url(${({bg = ''}: { bg?: string }) => bg});
   }
   
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
     height: auto;
     display: block;
     padding: 5.6% 5.2%;
@@ -584,7 +585,7 @@ const CallUsCtn = styled.div`
     padding: 0 0;
   }
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
     justify-content: flex-start;
   }
 `;
@@ -609,7 +610,7 @@ const StyledSvg = styled.svg`
     }
   }
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
     width: 26px;
     max-width: 26px;
     min-width: 26px;
@@ -642,7 +643,7 @@ const CallUsText = styled.div`
     }
   }
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
     font-size: 24px;
     line-height: 150%;
   }
@@ -673,7 +674,7 @@ const DisclaimerText = styled.div`
     }
   }
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
     font-weight: 600;
     font-size: 20px;
     line-height: 140%;
@@ -703,7 +704,7 @@ const MainTitle = styled.h1`
     color: #FFFFFF;
   }
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
     font-size: 120px;
     line-height: 110%;
     letter-spacing: 2px;
@@ -731,7 +732,7 @@ const Subtitle = styled.h2`
     color: #FFFFFF;
   }
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
     text-align: left;
     font-size: 32px;
     line-height: 140%;
@@ -741,7 +742,7 @@ const Subtitle = styled.h2`
 
 const HeroFormSection = styled.div`
   text-align: center;
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
     text-align: left;
   }
 `;
