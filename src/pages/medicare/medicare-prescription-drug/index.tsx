@@ -699,10 +699,10 @@ const MainTitle = styled.h1`
   color: #4D4D4D;
 
   margin: 0 auto 14px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
 
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
     color: #FFFFFF;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
   }
 
   @media only screen and (min-width: ${BREAKPOINT_LG}px) {
@@ -712,6 +712,7 @@ const MainTitle = styled.h1`
     text-align: left;
     padding: 0 26% 0 0px;
     margin: 0 0 33px 0;
+    text-shadow: none;
   }
 `;
 
