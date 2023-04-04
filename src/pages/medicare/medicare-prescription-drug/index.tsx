@@ -407,15 +407,24 @@ const HeroPadding = styled.div`
 
 const HeroContainer = styled.div`
   background-color: #E3DEDA;
+  position: relative;
 
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+    height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
     background-color: #F3FAFD;
-    position: relative;
-    padding: 5.6% 5.2%;
+    padding: 0;
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: right;
     background-image: url(${({bg = ''}: { bg?: string }) => bg});
+  }
+  
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    height: auto;
+    display: block;
+    padding: 5.6% 5.2%;
   }
 `;
 
@@ -567,11 +576,16 @@ const CardButtonBig = styled.a`
 const CallUsCtn = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0 38px;
 
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
     margin-top: 64px;
     padding: 0 0;
+  }
+
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    justify-content: flex-start;
   }
 `;
 
