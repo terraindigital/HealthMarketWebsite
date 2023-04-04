@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import {BREAKPOINT_LG, BREAKPOINT_MD, BREAKPOINT_XL} from "../../../breakpoints";
+import {BREAKPOINT_LG, BREAKPOINT_MD, BREAKPOINT_SM, BREAKPOINT_XL} from "../../../breakpoints";
 import checkImgSvg from "../../../static/images/list-check.svg";
 
 export const SectionColumns = styled.div`
@@ -176,7 +176,7 @@ export const CtaButton = styled.a`
   border: 3px solid #FFFFFF;
   border-radius: 4px;
 
-  margin: 0 30px;
+  margin: 0 auto;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -185,9 +185,16 @@ export const CtaButton = styled.a`
   text-align: center;
   color: #FFFFFF;
   display: flex;
-  padding: 15px 0px;
+  padding: 15px;
   align-items: center;
   justify-content: center;
+  max-width: 335px;
+
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+    max-width: unset;
+    width: fit-content;
+    padding: 15px 34px;
+  }
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     display: inline-flex;

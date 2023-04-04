@@ -488,13 +488,19 @@ const CtaButtonSecondary = styled.a`
   text-align: center;
   color: #FFFFFF;
   display: flex;
-  padding: 15px 0px;
+  padding: 15px;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
   background: #009B3A;
   border: none;
   max-width: 335px;
+
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+    max-width: unset;
+    width: fit-content;
+    padding: 15px 34px;
+  }
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-size: 24px;
@@ -530,7 +536,13 @@ const CardButton = styled.a`
   justify-content: center;
   background: #009B3A;
   border: 2px solid #FFFFFF;
-  margin: 0;
+  margin: 0 auto;
+
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+    max-width: unset;
+    width: fit-content;
+    padding: 15px 34px;
+  }
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     display: ${({only}: { only: 'desktop' | 'mobile' }) => only === 'desktop' ? 'flex' : 'none'};
@@ -556,7 +568,8 @@ const CardButtonBig = styled.a`
   justify-content: center;
   background: #009B3A;
   border: 2px solid #FFFFFF;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 300px;
 
   &:not(:first-child) {
     margin-top: 10px;
