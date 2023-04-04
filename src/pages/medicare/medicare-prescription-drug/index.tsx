@@ -36,7 +36,9 @@ const MedicarePrescriptionDrugPage = () => {
     return (
         <Layout>
             <PageContainer>
-                <HeroContainer bg={page.pageHeroFields.heroImage.sourceUrl}>
+                <HeroContainer>
+                    <HeroDesktopImg src={page.pageHeroFields.heroImage.sourceUrl} alt="Hero"/>
+                    <HeroDesktopOpacity/>
                     <HeroPadding>
                         <MainTitle>{page.pageHeroFields.headline}</MainTitle>
                         <Subtitle>{page.pageHeroFields.subheadline}</Subtitle>
@@ -404,6 +406,8 @@ const CardText = styled.div`
 
 const HeroPadding = styled.div`
   padding: 0 24px;
+  z-index: 100;
+  position: relative;
 `;
 
 const HeroContainer = styled.div`
@@ -416,10 +420,6 @@ const HeroContainer = styled.div`
     align-items: center;
     background-color: #F3FAFD;
     padding: 0;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position-x: right;
-    background-image: url(${({bg = ''}: { bg?: string }) => bg});
   }
   
   @media only screen and (min-width: ${BREAKPOINT_LG}px) {
@@ -760,6 +760,48 @@ const HeroMobileImg = styled.img`
     display: none;
   }
 `
+
+const HeroDesktopImg = styled.img`
+  // Desktop hero not shown by default, only at a certain screen size.
+  display: none;
+  
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+    display: block;
+    position: absolute;
+    object-fit: cover;
+    object-position: right;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+  }
+`;
+
+const HeroDesktopOpacity = styled.span`
+  // Desktop hero overly not shown by default, only at a certain screen size.
+  display: none;
+
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+    // Dark overlay because bg image is to bright.
+    display: block;
+    background: rgb(0 0 0 / 9%);
+    pointer-events: none;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
+    display: none;
+  }
+`;
 
 export default MedicarePrescriptionDrugPage;
 
