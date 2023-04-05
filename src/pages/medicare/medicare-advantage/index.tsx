@@ -7,11 +7,15 @@ import { useMedicareAdvantagePageQuery } from "../../../hooks/insurance/useMedic
 
 // Styles
 import {
-  PageStyles,
-  HeroHeading,
-  HeroSubheading,
-  GuideCTA,
-  PostAccordionText
+    PageStyles,
+    HeroHeading,
+    HeroSubheading,
+    GuideCTA,
+    PostAccordionText,
+    MedicareAccordion,
+    MedicareCardText,
+    MedicareCtaTitle,
+    MedicareMedial,
 } from "../../../components/pages/styles/MedicareAdvantageStyles";
 
 // Scripts
@@ -27,8 +31,6 @@ import Section from "../../../components/Sections";
 import Cards from "../../../components/Cards";
 import Card from "../../../components/Cards/Card";
 import FlexedSection from "../../../components/Sections/FlexedSection";
-import Accordion from "../../../components/Accordions";
-import Medial from "../../../components/Medials";
 import Footer from "../../../components/Footer";
 import RelatedContent from "../../../components/RelatedContent";
 
@@ -55,15 +57,15 @@ const MedicareAdvantagePage = () => {
       <FlexedSection
         color={page.medicareAdvantagePageCustomFields.medicareAdvSection1.color}
         heading={page.medicareAdvantagePageCustomFields.medicareAdvSection1.heading}>
-        <Accordion
+        <MedicareAccordion
           title={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion1.heading}
           content={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion1.content}
           html />
-        <Accordion
+        <MedicareAccordion
           title={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion2.heading}
           content={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion2.content}
           html />
-        <Accordion
+        <MedicareAccordion
           title={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion3.heading}
           content={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion3.content}
           html />
@@ -78,27 +80,27 @@ const MedicareAdvantagePage = () => {
             mobile={page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard1.mobile.sourceUrl}
             title={page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard1.title}
             link={page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard1.link}>
-            <p className="card-link" dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard1.content }} />
+              <MedicareCardText className="card-link" dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard1.content }}/>
           </Card>
           <Card
             icon={page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard2.icon.sourceUrl}
             mobile={page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard2.mobile.sourceUrl}
             title={page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard2.title}
             link={page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard2.link}>
-            <p className="card-link" dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard2.content }} />
+            <MedicareCardText className="card-link" dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard2.content }}/>
           </Card>
           <Card
             icon={page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard3.icon.sourceUrl}
             mobile={page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard3.mobile.sourceUrl}
             title={page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard3.title}
             link={page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard3.link}>
-            <p className="card-link" dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard3.content }} />
+            <MedicareCardText className="card-link" dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard3.content }}/>
           </Card>
         </Cards>
       </Section>
 
       <GuideCTA>
-        <div>{page.guideCTA.title}</div>
+        <MedicareCtaTitle>{page.guideCTA.title}</MedicareCtaTitle>
         <a href={page.guideCTA.link} onClick={routeLink}>
           <Button background="accent-alt" border="light" color="light">
             {page.guideCTA.linkText}
@@ -106,9 +108,7 @@ const MedicareAdvantagePage = () => {
         </a>
       </GuideCTA>
 
-      
-
-      <Medial color={page.medicareAdvantagePageCustomFields.medicareAdvSection3.color}>
+      <MedicareMedial color={page.medicareAdvantagePageCustomFields.medicareAdvSection3.color}>
         <div dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection3.medicareAdvColumns.medicareAdvColumn1.heading }} />
         <div className="button-container">
           <a href={page.medicareAdvantagePageCustomFields.medicareAdvSection3.medicareAdvColumns.medicareAdvColumn2.button.button1.link} onClick={routeLink}>
@@ -122,7 +122,7 @@ const MedicareAdvantagePage = () => {
             </Button>
           </a>
         </div>
-      </Medial>
+      </MedicareMedial>
       <Section
         color={page.medicareAdvantagePageCustomFields.medicareAdvSection4.color}
         heading={page.medicareAdvantagePageCustomFields.medicareAdvSection4.heading}>
@@ -147,7 +147,7 @@ const MedicareAdvantagePage = () => {
             <p dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent3.content}} />
           </Card>
         </Cards>
-       
+
         <div className="full-rounded" style={{ textAlign: "center" }}>
           <a href={page.medicareAdvantagePageCustomFields.medicareAdvSection4.cta.link} onClick={routeLink}>
             <Button background="accent-alt" border="light" color="light">
