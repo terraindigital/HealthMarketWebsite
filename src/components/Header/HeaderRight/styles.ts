@@ -2,9 +2,9 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
   display: flex;
-  flex-wrap: no-wrap;
+  flex-wrap: nowrap;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-end;
   position: relative;
 `
@@ -14,6 +14,7 @@ export const Item = styled.div`
   font-size: 2rem;
   font-weight: bold;
   padding: 0 1.6rem;
+  white-space: nowrap;
 
   &:last-child {
     border-right: none;
@@ -43,6 +44,13 @@ export const Item = styled.div`
     }
   }
 `
+
+export const AgentItem = styled(Item)`
+  white-space: normal;
+  text-align: center;
+  flex-basis: 190px;
+  flex-grow: 1;
+`;
 
 export const TextSize = styled.span`
   color: transparent;

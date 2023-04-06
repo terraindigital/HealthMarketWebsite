@@ -2,11 +2,11 @@ import React, { useState } from "react";
 
 // Styles
 import {
-  Wrapper,
-  Item,
-  TextSize,
-  SearchButton,
-  Bars
+    Wrapper,
+    Item,
+    TextSize,
+    SearchButton,
+    Bars, AgentItem
 } from "./styles"
 
 // Scripts
@@ -41,11 +41,11 @@ const HeaderRight = ({ headerData }: { headerData: any }) => {
           1-817-813-4562
         </a>
       </Item>
-      <Item className="hide-at-device">
+      <AgentItem className="hide-at-device">
         <a className="find-agent" href="/local-health-insurance-agent/" onClick={routeLink}>
-          Find an agent
+          Find a licensed insurance agent
         </a>
-      </Item>
+      </AgentItem>
       <Item className="hide-at-device">
         <TextSize className="decrease text-size" onClick={changeTextSize}>-</TextSize> Text Size <TextSize className="increase text-size" onClick={changeTextSize}>+</TextSize>
       </Item>
