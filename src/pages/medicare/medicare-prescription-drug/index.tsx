@@ -151,7 +151,7 @@ const MedicarePrescriptionDrugPage = () => {
                         </CardTitleQuestions>
                         <CardButtonsContainer>
                             <CardButtonBig href={page.medicarePrescriptionDrugPageCustomFields.stillHaveQuestions.button1Url}>
-                                {page.medicarePrescriptionDrugPageCustomFields.stillHaveQuestions.button1Text}
+                                {page.medicarePrescriptionDrugPageCustomFields.stillHaveQuestions.button1Text}, TTY 771
                             </CardButtonBig>
                             <CardButtonBig href={page.medicarePrescriptionDrugPageCustomFields.stillHaveQuestions.button2Url}>
                                 {page.medicarePrescriptionDrugPageCustomFields.stillHaveQuestions.button2Text}
@@ -566,7 +566,7 @@ const CardButtonBig = styled.a`
   background: #009B3A;
   border: 2px solid #FFFFFF;
   margin: 0 auto;
-  max-width: 300px;
+  max-width: 393px;
 
   &:not(:first-child) {
     margin-top: 10px;
