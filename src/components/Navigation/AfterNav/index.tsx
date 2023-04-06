@@ -37,7 +37,7 @@ const AfterNav = () => {
       </Item>
       <Item>
         <a className="find-agent" href="/local-health-insurance-agent/" onClick={routeLink}>
-          Find an agent
+          Find a licensed insurance agent
         </a>
       </Item>
       <Item>
