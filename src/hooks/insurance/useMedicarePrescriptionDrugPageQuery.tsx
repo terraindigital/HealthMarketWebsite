@@ -18,14 +18,12 @@ query MedicarePrescriptionDrugPageQuery {
         }
       }
       medicarePrescriptionDrugSection2 {
-        color
         title
         subtitle
-        buttonText
-        buttonUrl
-        buttonImage {
-          sourceUrl
-        }
+        buttonTextDesktop
+        buttonUrlDesktop
+        buttonTextMobile
+        buttonUrlMobile
       }
       medicarePrescriptionDrugRelated {
         sectionHeading
@@ -56,6 +54,13 @@ query MedicarePrescriptionDrugPageQuery {
             sourceUrl
           }
         }
+      }
+      stillHaveQuestions {
+        title
+        button1Text
+        button1Url
+        button2Text
+        button2Url
       }
     }
     pageHeroFields {
