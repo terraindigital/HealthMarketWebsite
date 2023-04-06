@@ -42,17 +42,14 @@ const MedicarePrescriptionDrugPage = () => {
                     <HeroPadding>
                         <MainTitle>{page.pageHeroFields.headline}</MainTitle>
                         <Subtitle>{page.pageHeroFields.subheadline}</Subtitle>
-                        <HeroFormSection>
-                            <PageHeroForm
-                                light
-                                centered
-                                btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
-                                btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
-                                hideFooter
-                                footerContent={''}
-                                inputId={'medicare-prescription-drug'}
-                            />
-                        </HeroFormSection>
+                        <PageHeroFormStyled
+                            light
+                            btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
+                            btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
+                            hideFooter
+                            footerContent={''}
+                            inputId={'medicare-prescription-drug'}
+                        />
                         <CallUsCtn>
                             <PhoneIcon/>
                             <CallUsText dangerouslySetInnerHTML={{__html: page.pageHeroFields.callUs}}/>
@@ -755,10 +752,13 @@ const Subtitle = styled.h2`
   }
 `;
 
-const HeroFormSection = styled.div`
-  text-align: center;
-  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
-    text-align: left;
+const PageHeroFormStyled = styled(PageHeroForm)`
+  form {
+    text-align: center;
+    @media only screen and (min-width: ${1025}px) {
+      // Exactly at this width the form starts being aligned to the left.
+      text-align: left;
+    }
   }
 `;
 
