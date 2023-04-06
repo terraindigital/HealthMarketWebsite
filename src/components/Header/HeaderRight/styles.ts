@@ -10,15 +10,11 @@ export const Wrapper = styled.div`
 `
 
 export const Item = styled.div`
-  border-right: 1px solid var(--color-dark);
   font-size: 2rem;
   font-weight: bold;
   padding: 0 1.6rem;
   white-space: nowrap;
-
-  &:last-child {
-    border-right: none;
-  }
+  position: relative;
 
   .telephone {
     font-weight: 700;
@@ -42,6 +38,17 @@ export const Item = styled.div`
     &:last-child {
       padding-right: 0;
     }
+  }
+  
+  &:not(:last-child)::after {
+    content: '';
+    height: 30px;
+    width: 1px;
+    background: var(--color-dark);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
 `
 
