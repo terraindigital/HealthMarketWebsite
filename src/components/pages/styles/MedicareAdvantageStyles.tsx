@@ -4,7 +4,7 @@ import React, {CSSProperties, FC, ReactNode, useEffect} from "react";
 import {Content, Wrapper} from "../../Accordions/styles";
 import {fadeIn} from "../../../static/scripts/global";
 import {Wrapper as MedialWrapper} from "../../Medials/styles";
-import {Img, Wrapper as HeroWrapper} from "../../Hero/styles";
+import {Img} from "../../Hero/styles";
 
 export const PageStyles = css`
   .button-container {
@@ -438,3 +438,68 @@ export const MedicareAdvantageHero: FC<MedicareAdvantageHeroProps> = ({ image, m
         </HeroWrapper>
     )
 }
+
+export const HeroWrapper = styled.div`
+  background-color: ${props => `${props.background}`};
+  display: flex;
+  min-height: 600px;
+  min-height: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 10.4rem;
+  padding-top: 21rem;
+  padding-left: 8.9rem;
+  padding-right: 8.9rem;
+  &.centered {
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+  }
+  &.half {
+    align-items: stretch;
+    justify-content: flex-end;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 120px;
+    &.half > div > h1 {
+      color: var(--color-primary);
+      text-shadow: none;
+    }
+    &.half > div > h4 {
+      font-size: 24px;
+      font-weight: 500;
+    }
+  }
+  @media screen and (min-width: 1921px) {
+    padding-left: 40rem;
+    padding-right: 40rem;
+    min-height: 65%;
+    min-height: 65vh;
+  }
+  
+  @media screen and (min-width: 1281px) {
+    margin-top: 120px;
+    padding-top: 0;
+  }
+
+  @media screen and (max-width: 1280px) {
+    padding-left: 5.5rem;
+    padding-right: 5.5rem;
+    padding-top: 5.5rem;
+  }
+  @media screen and (max-width: 920px) {
+    padding-left: 2.1rem;
+    padding-right: 2.1rem;
+  }
+  @media only screen and (max-width: 788px) {
+    //padding-top: 14px;
+    padding-top: 3.4rem;
+    padding-bottom: 22rem;
+    &.centered {
+      display: block;
+      min-height: auto;
+    }
+  }
+`
