@@ -127,6 +127,38 @@ const CallUsText = styled.div`
   }
 `;
 
+const DisclaimerText = styled.div`
+  margin-top: 14px;
+  text-align: center;
+
+  &, p, a {
+    font-size: 12px;
+    line-height: 110%;
+    padding: 0 2px;
+    text-decoration: none;
+    color: #4D4D4D;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+    &, p, a {
+      color: #FFFFFF;
+    }
+  }
+
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 140%;
+    text-align: left;
+    margin-top: 33px;
+    max-width: 760px;
+  }
+`;
+
 const MedicareAdvantagePage = () => {
   const { page } = useMedicareAdvantagePageQuery();
 
@@ -155,7 +187,12 @@ const MedicareAdvantagePage = () => {
               </CallUsText>
               {/*<CallUsText dangerouslySetInnerHTML={{__html: page.pageHeroFields.callUs}}/>*/}
           </CallUsCtn>
-        <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvPostHeroDisclaimer }} />
+        <DisclaimerText className="hero-disclaimer">
+            <p>
+                We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area.  Please contact Medicare.gov or 1-800-MEDICARE to get information on all of your options.
+            </p>
+        </DisclaimerText>
+        {/*<div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvPostHeroDisclaimer }} />*/}
       </MedicareAdvantageHero>
       <FlexedSection
         color={page.medicareAdvantagePageCustomFields.medicareAdvSection1.color}
