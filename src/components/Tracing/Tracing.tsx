@@ -7,6 +7,24 @@ import {BREAKPOINT_MD} from "../../breakpoints";
 const JUMP = 0;
 const IS_MOBILE = window.innerWidth < BREAKPOINT_MD;
 
+const storedOpacity = {
+    get Value() {
+        return +localStorage.getItem('tracingOpacity') || 0;
+    },
+    set Value(value) {
+        localStorage.setItem('tracingOpacity', value);
+    }
+};
+
+const storedOffset = {
+    get Value() {
+        return +localStorage.getItem('tracingOffset') || 0;
+    },
+    set Value(value) {
+        localStorage.setItem('tracingOffset', value);
+    }
+};
+
 /**
  * Component used to display a foreground image with some degree of opacity. Useful to trace the original design.
  * @constructor
@@ -16,8 +34,8 @@ export const Tracing = () => {
 
     const [show, setShow] = useState(true);
     const showRef = useRef(show);
-    const [opacity, setOpacity] = useState(0.5);
-    const [offset, setOffset] = useState(0);
+    const [opacity, setOpacity] = useState(storedOpacity.Value);
+    const [offset, setOffset] = useState(storedOffset.Value);
     const prevX = useRef(null);
     const prevY = useRef(null);
     const smooth = 0.01;
@@ -61,7 +79,11 @@ export const Tracing = () => {
         if (shouldChangeOpacity) {
             const delta = clientX - (prevX.current || clientX);
             prevX.current = clientX;
-            setOpacity((currentOpacity) => Math.max(0, Math.min(1, currentOpacity + delta * smooth)));
+            setOpacity((currentOpacity) => {
+                const newOpacity = Math.max(0, Math.min(1, currentOpacity + delta * smooth))
+                storedOpacity.Value = newOpacity;
+                return newOpacity;
+            });
         } else {
             prevX.current = null;
         }
@@ -71,7 +93,9 @@ export const Tracing = () => {
             prevY.current = clientY;
             setOffset((currentOffset) => {
                 const theSmooth = shouldSmoothOffset ? offsetSmoothSlow : offsetSmooth;
-                return Math.min(0, currentOffset + delta * theSmooth);
+                const theOffset = Math.min(0, currentOffset + delta * theSmooth);
+                storedOffset.Value = theOffset;
+                return theOffset;
             });
         } else {
             prevY.current = null;
