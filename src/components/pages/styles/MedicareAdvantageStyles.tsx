@@ -347,7 +347,7 @@ export const MedicareAdvantageHeroInner = styled.div`
   &.half {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     
     flex-basis: 72%;
     width: 72%;
