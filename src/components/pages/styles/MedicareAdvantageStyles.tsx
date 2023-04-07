@@ -4,7 +4,7 @@ import React, {CSSProperties, FC, ReactNode, useEffect} from "react";
 import {Content, Wrapper} from "../../Accordions/styles";
 import {fadeIn} from "../../../static/scripts/global";
 import {Wrapper as MedialWrapper} from "../../Medials/styles";
-import {Img, Inner, Wrapper as HeroWrapper} from "../../Hero/styles";
+import {Img, Wrapper as HeroWrapper} from "../../Hero/styles";
 
 export const PageStyles = css`
   .button-container {
@@ -338,6 +338,87 @@ interface MedicareAdvantageHeroProps {
     innerStyle?: CSSProperties
 }
 
+export const MedicareAdvantageHeroInner = styled.div`
+  margin: 0;
+  max-width: 144rem;
+  position: relative;
+  width: 100%;
+  z-index: 12;
+  &.half {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    flex-basis: 72%;
+    width: 72%;
+
+    @media only screen and (max-width: 1280px) {
+      flex-basis: 100%;
+      width: 100%;
+    }
+
+    @media only screen and (max-width: 1024px) {
+      text-align: center;
+    }
+  }
+  &.left {
+    padding-bottom: 11rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @media only screen and (max-width: 620px) {
+      padding-top: 4rem;
+      padding-bottom: 31rem;
+      align-items: center;
+      width: 100%;
+    }
+  }
+  .boxed & {
+    margin: 3.4rem 14.4rem;
+    padding: 6rem 12rem;
+    @media only screen and (max-width: 788px) {
+      margin: 0 auto;
+      padding: 4rem 8rem;
+    }
+    @media only screen and (max-width: 620px) {
+      margin: 0 auto;
+      padding: 0;
+    }
+  }
+  .boxed.primary & {
+    background-color: var(--color-primary);
+    @media only screen and (max-width: 620px) {
+      background-color: transparent;
+    }
+  }
+  .boxed.accent & {
+    background-color: var(--color-accent);
+    @media only screen and (max-width: 620px) {
+      background-color: transparent;
+    }
+  }
+  .half & {
+    flex-basis: 50%;
+    width: 50%;
+    background-color: var(--color-light);
+    justify-content: flex-start;
+    padding: 65px 77px 55px;
+    padding-right: 89px;
+    @media only screen and (max-width: 1200px) {
+      flex-basis: 100%;
+      width: 100%;
+      margin-top: 360px;
+      padding: 65px 55px 55px;
+    }
+    @media only screen and (max-width: 620px) {
+      padding: 65px 21px 55px;
+    }
+  }
+  @media only screen and (max-width: 340px) {
+    width: 100%;
+  }
+`
+
 export const MedicareAdvantageHero: FC<MedicareAdvantageHeroProps> = ({ image, mobileImage, bgColor, centered, boxed, half, color, children, desktopImgStyle, mobileImgStyle, wrapperStyle, innerStyle }) => {
     let classes = "hero"
     if (centered) { classes += " centered" }
@@ -351,9 +432,9 @@ export const MedicareAdvantageHero: FC<MedicareAdvantageHeroProps> = ({ image, m
             {(mobileImage) ? (
                 <Img className="show-at-mobile" src={mobileImage} alt="Hero" style={mobileImgStyle} />
             ) : null}
-            <Inner className={(!centered) ? "half" : ""} style={innerStyle}>
+            <MedicareAdvantageHeroInner className={(!centered) ? "half" : ""} style={innerStyle}>
                 {children}
-            </Inner>
+            </MedicareAdvantageHeroInner>
         </HeroWrapper>
     )
 }
