@@ -16,6 +16,7 @@ import {
     MedicareCardText,
     MedicareCtaTitle,
     MedicareMedial,
+    MedicareAdvantageHero,
 } from "../../../components/pages/styles/MedicareAdvantageStyles";
 
 // Scripts
@@ -33,12 +34,14 @@ import Card from "../../../components/Cards/Card";
 import FlexedSection from "../../../components/Sections/FlexedSection";
 import Footer from "../../../components/Footer";
 import RelatedContent from "../../../components/RelatedContent";
+import {Tracing} from "../../../components/Tracing/Tracing";
 
 const MedicareAdvantagePage = () => {
   const { page } = useMedicareAdvantagePageQuery();
 
   return (
     <Layout pageClass="medicare-advantage">
+      <Tracing/>
       <Global styles={PageStyles} />
       <Hero
         image={page.pageHeroFields.heroImage.sourceUrl}

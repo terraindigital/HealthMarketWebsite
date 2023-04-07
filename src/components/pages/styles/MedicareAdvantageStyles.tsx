@@ -1,9 +1,10 @@
 import {css} from "@emotion/react";
 import styled from "@emotion/styled";
-import React, {FC, ReactNode, useEffect} from "react";
+import React, {CSSProperties, FC, ReactNode, useEffect} from "react";
 import {Content, Wrapper} from "../../Accordions/styles";
 import {fadeIn} from "../../../static/scripts/global";
 import {Wrapper as MedialWrapper} from "../../Medials/styles";
+import {Img, Inner, Wrapper as HeroWrapper} from "../../Hero/styles";
 
 export const PageStyles = css`
   .button-container {
@@ -321,3 +322,38 @@ const MedicareInner = styled.div`
     }
   }
 `
+
+interface MedicareAdvantageHeroProps {
+    image: string,
+    mobileImage?: string,
+    bgColor?: string,
+    centered?: boolean,
+    boxed?: boolean,
+    half?: boolean,
+    color?: string,
+    children: ReactNode
+    wrapperStyle?: CSSProperties
+    desktopImgStyle?: CSSProperties
+    mobileImgStyle?: CSSProperties
+    innerStyle?: CSSProperties
+}
+
+export const MedicareAdvantageHero: FC<MedicareAdvantageHeroProps> = ({ image, mobileImage, bgColor, centered, boxed, half, color, children, desktopImgStyle, mobileImgStyle, wrapperStyle, innerStyle }) => {
+    let classes = "hero"
+    if (centered) { classes += " centered" }
+    if (boxed) { classes += " boxed" }
+    if (half) { classes += " half" }
+    if (color != null) { classes = classes + " " + color }
+
+    return (
+        <HeroWrapper className={classes} background={bgColor} style={wrapperStyle}>
+            <Img className={(mobileImage) ? "hide-at-mobile" : ""} src={image} alt="Hero" style={desktopImgStyle}/>
+            {(mobileImage) ? (
+                <Img className="show-at-mobile" src={mobileImage} alt="Hero" style={mobileImgStyle} />
+            ) : null}
+            <Inner className={(!centered) ? "half" : ""} style={innerStyle}>
+                {children}
+            </Inner>
+        </HeroWrapper>
+    )
+}
