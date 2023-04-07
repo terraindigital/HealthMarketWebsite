@@ -182,17 +182,9 @@ const MedicareAdvantagePage = () => {
         />
           <CallUsCtn>
               <PhoneIcon/>
-              <CallUsText>
-                  Call XXX-XXX-XXXX to speak to a licensed insurance agent
-              </CallUsText>
-              {/*<CallUsText dangerouslySetInnerHTML={{__html: page.pageHeroFields.callUs}}/>*/}
+              <CallUsText dangerouslySetInnerHTML={{__html: page.pageHeroFields.callUs}}/>
           </CallUsCtn>
-        <DisclaimerText className="hero-disclaimer">
-            <p>
-                We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area.  Please contact Medicare.gov or 1-800-MEDICARE to get information on all of your options.
-            </p>
-        </DisclaimerText>
-        {/*<div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvPostHeroDisclaimer }} />*/}
+        <DisclaimerText className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvPostHeroDisclaimer }}/>
       </MedicareAdvantageHero>
       <FlexedSection
         color={page.medicareAdvantagePageCustomFields.medicareAdvSection1.color}
