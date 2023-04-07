@@ -100,10 +100,10 @@ const MedicareAdvantagePage = () => {
       </Section>
 
       <GuideCTA>
-        <MedicareCtaTitle>{page.guideCTA.title}</MedicareCtaTitle>
-        <a href={page.guideCTA.link} onClick={routeLink}>
+        <MedicareCtaTitle>{page.medicareAdvantagePageCustomFields.guideCta.headline}</MedicareCtaTitle>
+        <a href={page.medicareAdvantagePageCustomFields.guideCta.button.link} onClick={routeLink}>
           <Button background="accent-alt" border="light" color="light">
-            {page.guideCTA.linkText}
+            {page.medicareAdvantagePageCustomFields.guideCta.button.text}
           </Button>
         </a>
       </GuideCTA>
