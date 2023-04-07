@@ -41,7 +41,7 @@ const CallUsCtn = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 38px;
+  padding: 0 38px 0 45px;
 
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
     margin-top: 64px;
@@ -103,7 +103,8 @@ const CallUsText = styled.div`
   font-weight: 600;
   font-size: 16px;
   line-height: 100%;
-  display: flex;
+  padding-right: 3px;
+  text-align: left;
 
   &, p, a {
     text-decoration: none;
