@@ -4,11 +4,8 @@ import medicarePrescriptionDrugDesktop from './medicare-advantage-desktop.png';
 import medicarePrescriptionDrugMobile from './medicare-advantage-mobile.png';
 import {BREAKPOINT_MD} from "../../breakpoints";
 
-const MOBILE_OFFSET = 38 - 63;
-const DESKTOP_OFFSET = 880;
-const JUMP = 2200;
+const JUMP = 0;
 const IS_MOBILE = window.innerWidth < BREAKPOINT_MD;
-const OFFSET = IS_MOBILE ? MOBILE_OFFSET : DESKTOP_OFFSET;
 
 /**
  * Component used to display a foreground image with some degree of opacity. Useful to trace the original design.
@@ -20,8 +17,12 @@ export const Tracing = () => {
     const [show, setShow] = useState(true);
     const showRef = useRef(show);
     const [opacity, setOpacity] = useState(0.5);
+    const [offset, setOffset] = useState(0);
     const prevX = useRef(null);
+    const prevY = useRef(null);
     const smooth = 0.01;
+    const offsetSmooth = 1;
+    const offsetSmoothSlow = 0.1;
     const THROTTLE_DURATION = 10;
 
     const throttle = (() => {
@@ -41,7 +42,7 @@ export const Tracing = () => {
 
     useEffect(() => {
         const saveMousePosition = throttlify((event) => {
-            handleMouseMove({ctrlKey: event.ctrlKey, clientX: event.clientX});
+            handleMouseMove({ctrlKey: event.ctrlKey, clientX: event.clientX, shiftKey: event.shiftKey, clientY: event.clientY, altKey: event.altKey});
         });
 
         document.addEventListener('mousemove', saveMousePosition);
@@ -50,18 +51,31 @@ export const Tracing = () => {
         };
     }, [setOpacity]);
 
-    const handleMouseMove = ({clientX, ctrlKey}) => {
+    const handleMouseMove = ({clientX, clientY, ctrlKey, shiftKey, altKey}) => {
         if (!showRef.current) return;
-        if (!ctrlKey) {
+
+        const shouldChangeOpacity = Boolean(ctrlKey);
+        const shouldChangeOffset = Boolean(shiftKey);
+        const shouldSmoothOffset = Boolean(altKey);
+
+        if (shouldChangeOpacity) {
+            const delta = clientX - (prevX.current || clientX);
+            prevX.current = clientX;
+            setOpacity((currentOpacity) => Math.max(0, Math.min(1, currentOpacity + delta * smooth)));
+        } else {
             prevX.current = null;
-            return;
         }
 
-        if (prevX.current === null) prevX.current = clientX;
-        const delta = clientX - prevX.current;
-        prevX.current = clientX;
-
-        setOpacity((currentOpacity) => Math.max(0, Math.min(1, currentOpacity + delta * smooth)));
+        if (shouldChangeOffset) {
+            const delta = clientY - (prevY.current || clientY);
+            prevY.current = clientY;
+            setOffset((currentOffset) => {
+                const theSmooth = shouldSmoothOffset ? offsetSmoothSlow : offsetSmooth;
+                return Math.min(0, currentOffset + delta * theSmooth);
+            });
+        } else {
+            prevY.current = null;
+        }
     };
 
     useEffect(() => {
@@ -100,7 +114,7 @@ export const Tracing = () => {
                 pointerEvents: 'none',
                 backgroundImage: `url('${bgImage}')`,
                 position: 'fixed',
-                top: `-${JUMP + OFFSET}px`,
+                top: `${offset}px`,
                 bottom: 0,
                 left: 0,
                 width: '100%',
