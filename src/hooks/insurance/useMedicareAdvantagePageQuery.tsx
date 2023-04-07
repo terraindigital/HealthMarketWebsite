@@ -165,6 +165,13 @@ export const useMedicareAdvantagePageQuery = () => {
               text
             }
           }
+          guideCta {
+            button {
+              text
+              link
+            }
+            headline
+          }
         }
         disclaimers {
           disclaimer

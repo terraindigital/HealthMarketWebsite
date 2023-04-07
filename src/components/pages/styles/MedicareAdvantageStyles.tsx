@@ -44,6 +44,11 @@ export const PageStyles = css`
     padding-bottom: 0;
   }
 
+  .hero .half {
+    flex-basis: 50% !important;
+    width: 50% !important;
+  }
+
   @media only screen and (max-width: 788px) {
     .hero .half {
       display: block;
