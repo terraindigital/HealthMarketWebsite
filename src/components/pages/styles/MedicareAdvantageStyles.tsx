@@ -98,7 +98,7 @@ export const PageStyles = css`
 
 export const HeroHeading = styled.h1`
   color: var(--color-light);
-  margin-bottom: 2.4rem;
+  margin-bottom: 15px;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
 
   @media only screen and (max-width: 1280px) {
