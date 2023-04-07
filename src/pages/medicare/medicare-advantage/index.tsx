@@ -25,7 +25,6 @@ import { routeLink } from '../../../static/scripts/global';
 // Components
 import Layout from "../../../components/Layout";
 import PageHead from "../../../components/PageHead";
-import Hero from "../../../components/Hero";
 import PageHeroForm from "../../../components/Hero/PageHeroForm";
 import Button from "../../../components/Buttons/Button";
 import Section from "../../../components/Sections";
@@ -43,7 +42,7 @@ const MedicareAdvantagePage = () => {
     <Layout pageClass="medicare-advantage">
       <Tracing/>
       <Global styles={PageStyles} />
-      <Hero
+      <MedicareAdvantageHero
         image={page.pageHeroFields.heroImage.sourceUrl}
         mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
         bgColor="#F2F2F2">
@@ -56,7 +55,7 @@ const MedicareAdvantagePage = () => {
             inputId="medicarePageHeroLocation"
             footerContent={page.pageHeroFields.callUs} />
         <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvPostHeroDisclaimer }} />
-      </Hero>
+      </MedicareAdvantageHero>
       <FlexedSection
         color={page.medicareAdvantagePageCustomFields.medicareAdvSection1.color}
         heading={page.medicareAdvantagePageCustomFields.medicareAdvSection1.heading}>
