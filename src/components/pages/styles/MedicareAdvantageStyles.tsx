@@ -494,8 +494,7 @@ export const HeroWrapper = styled.div`
     padding-right: 2.1rem;
   }
   @media only screen and (max-width: 788px) {
-    //padding-top: 14px;
-    padding-top: 3.4rem;
+    padding-top: 14px;
     padding-bottom: 22rem;
     &.centered {
       display: block;
