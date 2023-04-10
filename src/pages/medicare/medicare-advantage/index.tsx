@@ -33,7 +33,6 @@ import Card from "../../../components/Cards/Card";
 import FlexedSection from "../../../components/Sections/FlexedSection";
 import Footer from "../../../components/Footer";
 import RelatedContent from "../../../components/RelatedContent";
-import {Tracing} from "../../../components/Tracing/Tracing";
 import styled from "@emotion/styled";
 import {BREAKPOINT_LG, BREAKPOINT_SM} from "../../../breakpoints";
 
@@ -164,7 +163,6 @@ const MedicareAdvantagePage = () => {
 
   return (
     <Layout pageClass="medicare-advantage">
-      <Tracing/>
       <Global styles={PageStyles} />
       <MedicareAdvantageHero
         image={page.pageHeroFields.heroImage.sourceUrl}
