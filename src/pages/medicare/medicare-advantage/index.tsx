@@ -165,6 +165,7 @@ const MedicareAdvantagePage = () => {
     <Layout pageClass="medicare-advantage">
       <Global styles={PageStyles} />
       <MedicareAdvantageHero
+        centered
         image={page.pageHeroFields.heroImage.sourceUrl}
         mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
         bgColor="#F2F2F2">

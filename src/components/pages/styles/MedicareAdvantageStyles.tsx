@@ -460,7 +460,7 @@ export const HeroWrapper = styled.div`
   padding-right: 8.9rem;
   &.centered {
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     vertical-align: middle;
   }
   &.half {
