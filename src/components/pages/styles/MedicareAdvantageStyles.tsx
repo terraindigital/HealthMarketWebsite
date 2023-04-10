@@ -83,7 +83,9 @@ export const PageStyles = css`
     
     .hero > img {
       bottom: -8rem;
-      top: auto;
+      //top: auto;
+      // In order to match figma, we need -100px.
+      top: -100px;
     }
 
     .hero-disclaimer {
