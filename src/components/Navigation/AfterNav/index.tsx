@@ -32,12 +32,12 @@ const AfterNav = () => {
       <Item>
         <a href="tel:+18178134562">
           <img className="icon" src={PhoneIcon} alt="telephone icon" />
-          1-817-813-4562, TTY 771
+          1-817-813-4562
         </a>
       </Item>
       <Item>
         <a className="find-agent" href="/local-health-insurance-agent/" onClick={routeLink}>
-          Find a licensed insurance agent
+          Find an agent
         </a>
       </Item>
       <Item>
