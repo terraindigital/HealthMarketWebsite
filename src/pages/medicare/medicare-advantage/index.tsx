@@ -16,7 +16,7 @@ import {
     MedicareCardText,
     MedicareCtaTitle,
     MedicareMedial,
-    MedicareAdvantageHero,
+    MedicareAdvantageHero, MedicareFlexedSection,
 } from "../../../components/pages/styles/MedicareAdvantageStyles";
 
 // Scripts
@@ -101,7 +101,7 @@ const MedicareAdvantagePage = () => {
         <HeroMobileImg src={page.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero"/>
       </HeroContainer>
 
-      <FlexedSection
+      <MedicareFlexedSection
         color={page.medicareAdvantagePageCustomFields.medicareAdvSection1.color}
         heading={page.medicareAdvantagePageCustomFields.medicareAdvSection1.heading}>
         <MedicareAccordion
@@ -117,7 +117,7 @@ const MedicareAdvantagePage = () => {
           content={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion3.content}
           html />
         <PostAccordionText dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvPostAccordionText }} />
-      </FlexedSection>
+      </MedicareFlexedSection>
       <Section
         page="medicare-advantage"
         color={page.medicareAdvantagePageCustomFields.medicareAdvSection2.color}>

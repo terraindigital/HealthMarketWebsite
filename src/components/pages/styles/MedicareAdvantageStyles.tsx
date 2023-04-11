@@ -5,6 +5,7 @@ import {Content, Wrapper} from "../../Accordions/styles";
 import {fadeIn} from "../../../static/scripts/global";
 import {Wrapper as MedialWrapper} from "../../Medials/styles";
 import {Img} from "../../Hero/styles";
+import {Heading, Inner, Wrapper as FlexedWrapper} from "../../Sections/FlexedSection/styles";
 
 export const PageStyles = css`
   .button-container {
@@ -507,5 +508,114 @@ export const HeroWrapper = styled.div`
       display: block;
       min-height: auto;
     }
+  }
+`
+
+interface MedicareFlexedSectionProps {
+    heading: String,
+    color: String,
+    children: ReactNode
+}
+
+const switchBgColor = (bgColor) => {
+    switch (bgColor) {
+        case 'primary':
+            return "#F3FAFD"
+        case 'accent':
+            return "#F1FBEA"
+        case 'dark':
+            return "#4D4D4D"
+        default:
+            return "#FFFFFF"
+    }
+}
+
+export const MedicareFlexedSection: FC<MedicareFlexedSectionProps> = ({ heading, color, children}) => {
+    const bgColor = switchBgColor(color)
+
+    return (
+        <FlexedWrapper backgroundColor={bgColor} className={`flexed section ` + color}>
+            <FlexedHeading>
+                <h2>{heading}</h2>
+            </FlexedHeading>
+            <Inner>
+                {children}
+            </Inner>
+        </FlexedWrapper>
+    )
+};
+
+const FlexedHeading = styled.div`
+  display: block;
+  flex-basis: 50%;
+  width: 50%;
+
+  h2 {
+    color: var(--color-light);
+    display: inline-block;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 2.8rem 8.8rem 2.8rem 0rem;
+    position: relative;
+    z-index: 1;
+
+    &:before {
+      background-color: var(--color-primary);
+      bottom: 0;
+      content: '';
+      left: -14.4rem;
+      position: absolute;
+      top: 0;
+      width: calc(100% + 14.4rem);
+      z-index: -1;
+    }
+
+    @media only screen and (min-width: 1921px) {
+      &:before {
+        left: -40rem;
+        width: calc(100% + 40rem);
+      }
+    }
+
+    @media only screen and (max-width: 1460px) {
+      &:before {
+        left: -8.9rem;
+        width: calc(100% + 8.9rem);
+      }
+    }
+
+    @media only screen and (max-width: 788px) {
+      font-size: 5.6rem;
+      letter-spacing: 0.02em;
+      line-height: 115%;
+      max-width: 100%;
+      padding: 0.5rem 2.1rem;
+
+      &:before {
+        left: -4.8rem;
+        width: calc(100% + 4.8rem);
+      }
+    }
+
+    @media only screen and (max-width: 620px) {
+      font-size: 4rem;
+
+      &:before {
+        left: -2.1rem;
+        width: calc(100% + 2.1rem);
+      }
+    }
+  }
+
+  @media only screen and (max-width: 788px) {
+    display: block;
+    flex-basis: 100%;
+    margin-bottom: 3.4rem;
+    transform: translateX(-2.1rem);
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 620px) {
+    margin-bottom: 2.4rem;
   }
 `
