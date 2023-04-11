@@ -99,7 +99,7 @@ export const PageStyles = css`
     }
 
     .card-header .icon {
-      margin-left: 24px;
+      margin-left: 19px;
     }
   }
 `
