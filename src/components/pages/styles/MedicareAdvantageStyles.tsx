@@ -625,10 +625,17 @@ const FlexedHeading = styled.div`
 export const MedicareAccordionContent = styled.div`
   color: var(--color-dark);
   margin: 0 0 1.7rem 0;
+  padding-left: 18px;
+  padding-right: 12px;
 
   p {
+    font-style: normal;
     font-weight: 400;
-    line-height: 130%;
+    font-size: 16px;
+    line-height: 120%;
+    color: #4D4D4D;
+    
+    margin-bottom: 19px;
 
     & + p {
       margin-top: 1.6rem;
