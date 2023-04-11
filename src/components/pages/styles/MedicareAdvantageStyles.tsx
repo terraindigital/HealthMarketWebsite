@@ -229,13 +229,13 @@ const MedicareAccordionWrapper = styled.div`
     border-bottom: 2px solid var(--color-primary);
     border-right: 2px solid var(--color-primary);
     display: block;
-    height: 10px;
     position: absolute;
-    right: 0;
-    top: 36px;
     transform: rotateZ(45deg);
-    width: 10px;
     z-index: -1;
+    top: 39px;
+    right: 5px;
+    height: 13px;
+    width: 13px;
   }
 
   &:last-of-type {
@@ -260,7 +260,7 @@ const MedicareAccordionWrapper = styled.div`
     .title {
       border-color: transparent;
     }
-    
+
     .content {
       height: auto;
       top: 0px;
@@ -278,7 +278,7 @@ const MedicareAccordionWrapper = styled.div`
     margin-bottom: 1.6rem;
 
     &:after {
-      top: 28px;
+      top: 39px;
     }
   }
 
@@ -287,7 +287,7 @@ const MedicareAccordionWrapper = styled.div`
 
     &:last-of-type { margin-bottom: 0rem; }
   }
-`;
+`
 
 export const MedicareAccordion: FC<AccordionProps> = ({title, content, html = false}) => {
     const toggleAccordion = el => el.target.closest('.accordion').classList.toggle('active');
