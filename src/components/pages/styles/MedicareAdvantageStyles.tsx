@@ -807,7 +807,7 @@ export const MedicareAdvantageSectionWrapper = styled.div`
     padding-left: 2.1rem;
     padding-right: 2.1rem;
     padding-bottom: 4rem;
-    padding-top: 4rem;
+    padding-top: 14px;
   }
 
   // if section below has the same background, remove its padding-top
