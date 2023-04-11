@@ -76,32 +76,11 @@ const MedicareAdvantagePage = () => {
       <Tracing/>
       <PageContainer>
       <Global styles={PageStyles} />
-      <MedicareAdvantageHero
-        centered
-        image={page.pageHeroFields.heroImage.sourceUrl}
-        mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
-        bgColor="#F2F2F2">
-        <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
-        <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
-        <PageHeroForm
-            light
-            btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
-            btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
-            inputId="medicarePageHeroLocation"
-            hideFooter
-            footerContent={''}
-        />
-          <CallUsCtn>
-              <PhoneIcon/>
-              <CallUsText dangerouslySetInnerHTML={{__html: page.pageHeroFields.callUs}}/>
-          </CallUsCtn>
-        <DisclaimerText className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvPostHeroDisclaimer }}/>
-      </MedicareAdvantageHero>
 
-      {/*Duplicated starts*/}
       <HeroContainer>
         <HeroDesktopImg src={page.pageHeroFields.heroImage.sourceUrl} alt="Hero"/>
         <HeroDesktopOpacity/>
+
         <HeroPadding>
           <MainTitle>{page.pageHeroFields.headline}</MainTitle>
           <Subtitle>{page.pageHeroFields.subheadline}</Subtitle>
@@ -111,18 +90,17 @@ const MedicareAdvantagePage = () => {
             btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
             hideFooter
             footerContent={''}
-            inputId={'medicare-prescription-drug'}
+            inputId="medicarePageHeroLocation"
           />
           <CallUsCtn>
             <PhoneIcon/>
             <CallUsText dangerouslySetInnerHTML={{__html: page.pageHeroFields.callUs}}/>
           </CallUsCtn>
-          <DisclaimerText dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer}}/>
+          <DisclaimerText className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvPostHeroDisclaimer }}/>
         </HeroPadding>
         <HeroMobileImg src={heroMobileImage} alt="Hero"/>
         {/*<HeroMobileImg src={page.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero"/>*/}
       </HeroContainer>
-      {/* Duplicated ends */}
 
       <FlexedSection
         color={page.medicareAdvantagePageCustomFields.medicareAdvSection1.color}
