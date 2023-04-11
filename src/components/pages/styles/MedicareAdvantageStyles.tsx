@@ -5,7 +5,7 @@ import {Content, Wrapper} from "../../Accordions/styles";
 import {fadeIn} from "../../../static/scripts/global";
 import {Wrapper as MedialWrapper} from "../../Medials/styles";
 import {Img} from "../../Hero/styles";
-import {Heading, Inner, Wrapper as FlexedWrapper} from "../../Sections/FlexedSection/styles";
+import {Inner, Wrapper as FlexedWrapper} from "../../Sections/FlexedSection/styles";
 
 export const PageStyles = css`
   .button-container {
@@ -187,21 +187,22 @@ export const PostAccordionText = styled.div`
 const MedicareAccordionTitle = styled.div`
   border-bottom: 1px solid var(--color-dark);
   margin-bottom: 0;
-  padding: 2.2rem 0 2.4rem;
+  padding: 2.2rem 0 2.4rem 10px;
 
   h2 {
     color: var(--color-primary);
     font-size: 3.6rem;
     margin: 0px;
+    line-height: 130%;
   }
 
   @media only screen and (max-width: 788px) {
-    padding: 1.6rem 0;
+    padding: 1.6rem 0 1.6rem 10px;
   }
 
   @media only screen and (max-width: 620px) {
     margin-bottom: 0px;
-    
+
     h2 {
       font-family: var(--font-body);
       font-size: 2rem;
@@ -224,13 +225,13 @@ export const MedicareAccordion: FC<AccordionProps> = ({title, content, html = fa
             <MedicareAccordionTitle className="title" onClick={toggleAccordion}>
                 <h2>{title}</h2>
             </MedicareAccordionTitle>
-            <Content className="content">
+            <MedicareAccordionContent className="content">
                 {(!html) ? (
                     <p>{content}</p>
                 ) : (
                     <p dangerouslySetInnerHTML={{__html: content}}/>
                 )}
-            </Content>
+            </MedicareAccordionContent>
         </Wrapper>
     )
 };
@@ -558,6 +559,7 @@ const FlexedHeading = styled.div`
     padding: 2.8rem 8.8rem 2.8rem 0rem;
     position: relative;
     z-index: 1;
+    line-height: 100%;
 
     &:before {
       background-color: var(--color-primary);
@@ -587,9 +589,8 @@ const FlexedHeading = styled.div`
     @media only screen and (max-width: 788px) {
       font-size: 5.6rem;
       letter-spacing: 0.02em;
-      line-height: 115%;
       max-width: 100%;
-      padding: 10px 32px;
+      padding: 16px 32px;
 
       &:before {
         left: -4.8rem;
@@ -620,3 +621,25 @@ const FlexedHeading = styled.div`
     margin-bottom: 2.4rem;
   }
 `
+
+export const MedicareAccordionContent = styled.div`
+  color: var(--color-dark);
+  margin: 0 0 1.7rem 0;
+
+  p {
+    font-weight: 400;
+    line-height: 130%;
+
+    & + p {
+      margin-top: 1.6rem;
+    }
+  }
+
+  @media only screen and (max-width: 788px) {
+    margin-bottom: 0px;
+  }
+
+  @media only screen and (max-width: 620px) {
+    margin-bottom: 0px;
+  }
+`;
