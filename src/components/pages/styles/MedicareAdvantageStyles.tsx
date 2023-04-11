@@ -1,7 +1,6 @@
 import {css} from "@emotion/react";
 import styled from "@emotion/styled";
 import React, {CSSProperties, FC, ReactNode, useEffect} from "react";
-import {Content, Wrapper} from "../../Accordions/styles";
 import {fadeIn} from "../../../static/scripts/global";
 import {Wrapper as MedialWrapper} from "../../Medials/styles";
 import {Img} from "../../Hero/styles";
@@ -218,10 +217,82 @@ interface AccordionProps {
     html?: boolean
 }
 
+const MedicareAccordionWrapper = styled.div`
+  cursor: pointer;
+  margin: 0;
+  position: relative;
+  text-align: left;
+  z-index: 1;
+
+  &:after {
+    content: '';
+    border-bottom: 2px solid var(--color-primary);
+    border-right: 2px solid var(--color-primary);
+    display: block;
+    height: 10px;
+    position: absolute;
+    right: 0;
+    top: 36px;
+    transform: rotateZ(45deg);
+    width: 10px;
+    z-index: -1;
+  }
+
+  &:last-of-type {
+    margin-bottom: 3.2rem;
+  }
+
+  .content {
+    height: 0;
+    position: relative;
+    top: -9999px;
+  }
+
+  .title {
+    border-color: var(--color-dark);
+  }
+
+  &.active {
+    &:after {
+      transform: rotateZ(-135deg)
+    }
+
+    .title {
+      border-color: transparent;
+    }
+    
+    .content {
+      height: auto;
+      top: 0px;
+    }
+  }
+
+  // centered accordions
+  .centered & {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90rem;
+  }
+
+  @media only screen and (max-width: 788px) {
+    margin-bottom: 1.6rem;
+
+    &:after {
+      top: 28px;
+    }
+  }
+
+  @media only screen and (max-width: 620px) {
+    margin-bottom: 0;
+
+    &:last-of-type { margin-bottom: 0rem; }
+  }
+`;
+
 export const MedicareAccordion: FC<AccordionProps> = ({title, content, html = false}) => {
     const toggleAccordion = el => el.target.closest('.accordion').classList.toggle('active');
     return (
-        <Wrapper className="accordion">
+        <MedicareAccordionWrapper className="accordion">
             <MedicareAccordionTitle className="title" onClick={toggleAccordion}>
                 <h2>{title}</h2>
             </MedicareAccordionTitle>
@@ -232,7 +303,7 @@ export const MedicareAccordion: FC<AccordionProps> = ({title, content, html = fa
                     <p dangerouslySetInnerHTML={{__html: content}}/>
                 )}
             </MedicareAccordionContent>
-        </Wrapper>
+        </MedicareAccordionWrapper>
     )
 };
 
