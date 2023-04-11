@@ -98,8 +98,7 @@ const MedicareAdvantagePage = () => {
           </CallUsCtn>
           <DisclaimerText className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvPostHeroDisclaimer }}/>
         </HeroPadding>
-        <HeroMobileImg src={heroMobileImage} alt="Hero"/>
-        {/*<HeroMobileImg src={page.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero"/>*/}
+        <HeroMobileImg src={page.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero"/>
       </HeroContainer>
 
       <FlexedSection
@@ -446,11 +445,10 @@ const DisclaimerText = styled.div`
 `;
 
 const HeroMobileImg = styled.img`
-  background: #E3DEDA;
   margin: 0 auto;
   width: 100%;
   object-fit: cover;
-  height: 367px;
+  height: 423px;
   object-position: top;
   max-width: 400px;
 
