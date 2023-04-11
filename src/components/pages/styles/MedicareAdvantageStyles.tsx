@@ -589,7 +589,7 @@ const FlexedHeading = styled.div`
       letter-spacing: 0.02em;
       line-height: 115%;
       max-width: 100%;
-      padding: 0.5rem 2.1rem;
+      padding: 10px 32px;
 
       &:before {
         left: -4.8rem;
@@ -598,6 +598,7 @@ const FlexedHeading = styled.div`
     }
 
     @media only screen and (max-width: 620px) {
+      max-width: 250px;
       font-size: 4rem;
 
       &:before {
