@@ -360,6 +360,7 @@ const CallUsCtn = styled.div`
   padding: 0 38px 0 45px;
 
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+    justify-content: flex-start;
     margin-top: 70px;
     padding: 0 0;
   }
@@ -402,6 +403,8 @@ const CallUsText = styled.div`
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
     &, p, a {
       color: #FFFFFF;
+      font-size: 18px;
+      line-height: 150%;
     }
   }
 
@@ -430,8 +433,11 @@ const DisclaimerText = styled.div`
   }
 
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+    text-align: left;
     &, p, a {
       color: #FFFFFF;
+      line-height: 140%;
+      font-size: 14px;
     }
   }
 
