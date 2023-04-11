@@ -34,7 +34,7 @@ import FlexedSection from "../../../components/Sections/FlexedSection";
 import Footer from "../../../components/Footer";
 import RelatedContent from "../../../components/RelatedContent";
 import styled from "@emotion/styled";
-import {BREAKPOINT_LG, BREAKPOINT_SM, NAV_STARTS_FLOATING} from "../../../breakpoints";
+import {BREAKPOINT_LG, BREAKPOINT_SM, BREAKPOINT_XL, NAV_STARTS_FLOATING} from "../../../breakpoints";
 import {Tracing} from "../../../components/Tracing/Tracing";
 import heroMobileImage from "../../../static/images/medicare-advantage-hero-mobile.png";
 
@@ -310,9 +310,12 @@ const MainTitle = styled.h1`
     line-height: 110%;
     letter-spacing: 2px;
     text-align: left;
-    padding: 0 37% 0 0px;
+    padding: 0;
     margin: 0 0 33px 0;
     text-shadow: none;
+  }
+  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
+    padding: 0 37% 0 0px;
   }
 `;
 
@@ -339,6 +342,9 @@ const Subtitle = styled.h2`
     font-size: 32px;
     line-height: 140%;
     margin: 0 auto 28px;
+  }
+
+  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
     padding-right: 67%;
   }
 `;
