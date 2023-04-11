@@ -164,13 +164,14 @@ export const GuideCTA = styled.div`
 
 export const PostAccordionText = styled.div`
   margin-top: 104px;
+  padding: 0 15px;
   
-  a {
+  &, a, p {
     text-decoration: none;
-  }
-
-  p {
-    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
   }
 
   @media only screen and (max-width: 620px) {

@@ -116,6 +116,7 @@ const MedicareAdvantagePage = () => {
           title={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion3.heading}
           content={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion3.content}
           html />
+        <hr style={{marginTop: '-4px'}}/>
         <PostAccordionText dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvPostAccordionText }} />
       </MedicareFlexedSection>
       <Section
