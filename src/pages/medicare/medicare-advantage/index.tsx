@@ -280,13 +280,13 @@ const HeroDesktopOpacity = styled.span`
 `;
 
 const HeroPadding = styled.div`
-  padding: 0 24px;
+  padding: 0 22px;
   z-index: 100;
   position: relative;
 `;
 
 const MainTitle = styled.h1`
-  padding: 0 24px;
+  padding: 0;
 
   font-family: 'IvyPresto Display-SemiBold', serif;
 
