@@ -232,7 +232,7 @@ const HeroContainer = styled.div`
   @media only screen and (min-width: ${BREAKPOINT_LG}px) {
     height: auto;
     display: block;
-    padding: 5.6% 5.2%;
+    padding: 4.9% 5.2%;
   }
 `;
 
@@ -310,7 +310,7 @@ const MainTitle = styled.h1`
     line-height: 110%;
     letter-spacing: 2px;
     text-align: left;
-    padding: 0 26% 0 0px;
+    padding: 0 37% 0 0px;
     margin: 0 0 33px 0;
     text-shadow: none;
   }
@@ -339,6 +339,7 @@ const Subtitle = styled.h2`
     font-size: 32px;
     line-height: 140%;
     margin: 0 auto 28px;
+    padding-right: 67%;
   }
 `;
 
@@ -359,7 +360,7 @@ const CallUsCtn = styled.div`
   padding: 0 38px 0 45px;
 
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
-    margin-top: 64px;
+    margin-top: 70px;
     padding: 0 0;
   }
 
@@ -386,8 +387,6 @@ const CallUsText = styled.div`
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
-  line-height: 100%;
   padding-right: 3px;
   text-align: left;
 
@@ -407,8 +406,10 @@ const CallUsText = styled.div`
   }
 
   @media only screen and (min-width: ${BREAKPOINT_LG}px) {
-    font-size: 24px;
-    line-height: 150%;
+    &, p, a {
+        font-size: 24px;
+        line-height: 150%;
+    }
   }
 `;
 
@@ -435,12 +436,14 @@ const DisclaimerText = styled.div`
   }
 
   @media only screen and (min-width: ${BREAKPOINT_LG}px) {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 140%;
     text-align: left;
     margin-top: 33px;
     max-width: 760px;
+    &, p, a {
+        font-weight: 600;
+        line-height: 140%;
+        font-size: 20px;
+    }
   }
 `;
 
