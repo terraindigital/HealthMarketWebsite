@@ -5,6 +5,7 @@ import {fadeIn} from "../../../static/scripts/global";
 import {Wrapper as MedialWrapper} from "../../Medials/styles";
 import {Img} from "../../Hero/styles";
 import {Inner, Wrapper as FlexedWrapper} from "../../Sections/FlexedSection/styles";
+import {Heading, OuterWrapper, Wrapper} from "../../Sections/styles";
 
 export const PageStyles = css`
   .button-container {
@@ -585,12 +586,12 @@ export const HeroWrapper = styled.div`
 `
 
 interface MedicareFlexedSectionProps {
-    heading: String,
-    color: String,
+    heading: string,
+    color: string,
     children: ReactNode
 }
 
-const switchBgColor = (bgColor) => {
+const switchBgColor = (bgColor: string) => {
     switch (bgColor) {
         case 'primary':
             return "#F3FAFD"
@@ -598,6 +599,8 @@ const switchBgColor = (bgColor) => {
             return "#F1FBEA"
         case 'dark':
             return "#4D4D4D"
+        case 'muted':
+            return "#F6F4F2"
         default:
             return "#FFFFFF"
     }
@@ -720,5 +723,55 @@ export const MedicareAccordionContent = styled.div`
 
   @media only screen and (max-width: 620px) {
     margin-bottom: 0px;
+  }
+`;
+
+interface MedicareAdvantageSectionProps {
+    color: string,
+    children: ReactNode
+    heading?: string,
+    subheading?: string,
+    guarantee?: boolean,
+    bestPrice?: ReactNode,
+    classes?: string,
+    page?: string
+}
+
+
+
+export const MedicareAdvantageSection: FC<MedicareAdvantageSectionProps> = ({ heading, subheading, guarantee, bestPrice, classes, page, color, children}) => {
+    const bgColor = switchBgColor(color)
+
+    let classList = "section";
+    if (page) { classList += ` ${page}`}
+    if (classes) { classList += ` ${classes}`}
+
+    return (
+        <OuterWrapper>
+            <Wrapper backgroundColor={bgColor} className={classList}>
+                <Heading className="heading">
+                    {(heading) ? (<h2>{heading}</h2>) : null}
+                    {(subheading) ? (<h4>{subheading}</h4>) : null}
+                    {(guarantee !== 'false') ? bestPrice : <></>}
+                </Heading>
+                <MedicareAdvantageSectionInner>
+                    {children}
+                </MedicareAdvantageSectionInner>
+            </Wrapper>
+        </OuterWrapper>
+    )
+};
+
+export const MedicareAdvantageSectionInner = styled.div`
+  .heading + & {
+    padding-top: 8rem;
+
+    @media only screen and (max-width: 1460px) {
+      padding-top: 4.8rem;
+    }
+
+    @media only screen and (max-width: 620px) {
+      padding-top: 2.4rem;
+    }
   }
 `;

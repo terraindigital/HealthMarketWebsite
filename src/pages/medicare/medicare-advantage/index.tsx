@@ -8,15 +8,14 @@ import { useMedicareAdvantagePageQuery } from "../../../hooks/insurance/useMedic
 // Styles
 import {
     PageStyles,
-    HeroHeading,
-    HeroSubheading,
     GuideCTA,
     PostAccordionText,
     MedicareAccordion,
     MedicareCardText,
     MedicareCtaTitle,
     MedicareMedial,
-    MedicareAdvantageHero, MedicareFlexedSection,
+    MedicareFlexedSection,
+    MedicareAdvantageSection,
 } from "../../../components/pages/styles/MedicareAdvantageStyles";
 
 // Scripts
@@ -119,7 +118,7 @@ const MedicareAdvantagePage = () => {
         <hr style={{marginTop: '-4px'}}/>
         <PostAccordionText dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvPostAccordionText }} />
       </MedicareFlexedSection>
-      <Section
+      <MedicareAdvantageSection
         page="medicare-advantage"
         color={page.medicareAdvantagePageCustomFields.medicareAdvSection2.color}>
         <Cards openAtMobile>
@@ -145,7 +144,7 @@ const MedicareAdvantagePage = () => {
             <MedicareCardText className="card-link" dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard3.content }}/>
           </Card>
         </Cards>
-      </Section>
+      </MedicareAdvantageSection>
 
       <GuideCTA>
         <MedicareCtaTitle>{page.medicareAdvantagePageCustomFields.guideCta.headline}</MedicareCtaTitle>
