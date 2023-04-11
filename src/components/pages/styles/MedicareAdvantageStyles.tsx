@@ -152,14 +152,8 @@ export const GuideCTA = styled.div`
   }
 
   @media screen and (max-width: 620px) {
-    padding-left: 2.1rem;
-    padding-right: 2.1rem;
+    padding: 0 32px;
     text-align: left;
-  }
-
-  & > div {
-    padding-bottom: 2rem;
-    font-size: 2rem;
   }
 `
 
@@ -319,9 +313,10 @@ export const MedicareCardText = styled.p`
 export const MedicareCtaTitle = styled.div`
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-weight: 600;
-  font-size: 32px!important;
-  line-height: 140%;
+  font-size: 18px;
+  line-height: 120%;
   color: #4D4D4D;
+  padding: 0px 0px 28px;
 `;
 
 interface MedicareMedialProps {
