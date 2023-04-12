@@ -623,17 +623,13 @@ export const MedicareFlexedSection: FC<MedicareFlexedSectionProps> = ({ heading,
 };
 
 const FlexedWrapper = styled.div`
-  background-color: ${({ backgroundColor }) => backgroundColor};
+  background-color: ${({backgroundColor}) => backgroundColor};
 
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
 
-  padding-bottom: 10.4rem;
-  padding-top: 10.4rem;
-
-  padding-left: 8.9rem;
-  padding-right: 8.9rem;
+  padding: 10.4rem 8.9rem;
 
   @media screen and (min-width: 1921px) {
     padding-left: 40rem;
@@ -647,17 +643,11 @@ const FlexedWrapper = styled.div`
 
   @media screen and (max-width: 788px) {
     display: block;
-    padding-left: 4.8rem;
-    padding-right: 4.8rem;
-    padding-bottom: 8rem;
-    padding-top: 8rem;
+    padding: 8rem 4.8rem;
   }
 
   @media screen and (max-width: 620px) {
-    padding-left: 2.1rem;
-    padding-right: 2.1rem;
-    padding-bottom: 4rem;
-    padding-top: 4rem;
+    padding: 4rem 2.1rem;
   }
 `
 
