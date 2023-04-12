@@ -33,7 +33,6 @@ import Footer from "../../../components/Footer";
 import RelatedContent from "../../../components/RelatedContent";
 import styled from "@emotion/styled";
 import {BREAKPOINT_LG, BREAKPOINT_MD, BREAKPOINT_SM, BREAKPOINT_XL, NAV_STARTS_FLOATING} from "../../../breakpoints";
-import {Tracing} from "../../../components/Tracing/Tracing";
 
 const StyledSvg = styled.svg`
   width: 16px;
@@ -70,7 +69,6 @@ const MedicareAdvantagePage = () => {
 
   return (
     <Layout pageClass="medicare-advantage">
-      <Tracing/>
       <PageContainer>
       <Global styles={PageStyles} />
 
