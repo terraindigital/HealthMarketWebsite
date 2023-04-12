@@ -243,7 +243,7 @@ const MedicareAdvantagePage = () => {
 
 const SectionContainer = styled.div`
   background: #f3fafd;
-  padding: 40px 0px 38px;
+  padding: 40px 0 0;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     padding: 104px 0 100px;
