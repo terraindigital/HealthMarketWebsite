@@ -116,7 +116,6 @@ const MedicareAdvantagePage = () => {
                 <MedicareAccordionFixedContent dangerouslySetInnerHTML={{__html: page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion3.content}}/>
               </MedicareAccordionFixed>
             </AccordionPadding>
-            <AccordionSeparator/>
             <SectionText dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvPostAccordionText }}/>
           </SectionColumnRight>
         </SectionColumns>
@@ -301,14 +300,9 @@ export const AccordionPadding = styled.div`
   margin-top: 41px;
 `;
 
-export const AccordionSeparator = styled.hr`
-  width: 85%;
-  margin: -4px auto 0;
-`;
-
 export const SectionText = styled.div`
   padding: 0 36px;
-  margin-top: 40px;
+  margin-top: 52px;
   color: #4D4D4D;
 
   &, p, a {
