@@ -247,7 +247,7 @@ const SectionContainer = styled.div`
   padding: 40px 0 0;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    padding: 104px 0 100px;
+    padding: 104px 0 0;
   }
 `;
 
