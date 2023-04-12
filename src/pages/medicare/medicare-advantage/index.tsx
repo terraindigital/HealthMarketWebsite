@@ -287,6 +287,10 @@ export const SectionTitle = styled.h2`
     margin: 0;
     padding: 2.2vw 2.2vw 2.2vw 12.5vw;
   }
+
+  @media only screen and (min-width: ${BREAKPOINT_XL + 200}px) {
+    font-size: 90px;
+  }
 `;
 
 export const SectionColumnRight = styled.div`
@@ -315,7 +319,7 @@ export const SectionText = styled.div`
   }
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    margin-top: 0px;
+    margin-top: 106px;
     padding: 3px 35px 3px 35px;
 
     &, p, a {
@@ -331,10 +335,10 @@ export const SectionText = styled.div`
   }
 
   @media only screen and (min-width: ${BREAKPOINT_XL}px) {
-    padding: 3px 22% 3px 35px;
+    padding: 3px 22% 3px 107px;
     &, p, a {
       //Big size (originally 32px) until large screens
-      font-size: 1.67vw;
+      font-size: 32px;
     }
   }
 `;
