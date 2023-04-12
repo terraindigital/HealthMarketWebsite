@@ -6,7 +6,16 @@ import {Global} from "@emotion/react";
 import {useMedicareAdvantagePageQuery} from "../../../hooks/insurance/useMedicareAdvantagePageQuery"
 
 // Styles
-import {GuideCTA, MedicareAccordion, MedicareAdvantageSection, MedicareCardText, MedicareCtaTitle, MedicareFlexedSection, MedicareMedial, PageStyles, PostAccordionText,} from "../../../components/pages/styles/MedicareAdvantageStyles";
+import {
+  GuideCTA,
+  MedicareAccordionFixed,
+  MedicareAccordionFixedContent,
+  MedicareAdvantageSection,
+  MedicareCardText,
+  MedicareCtaTitle,
+  MedicareMedial,
+  PageStyles,
+} from "../../../components/pages/styles/MedicareAdvantageStyles";
 
 // Scripts
 import {routeLink} from '../../../static/scripts/global';
@@ -97,18 +106,15 @@ const MedicareAdvantagePage = () => {
           </SectionColumnLeft>
           <SectionColumnRight>
             <AccordionPadding>
-              <MedicareAccordion
-                title={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion1.heading}
-                content={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion1.content}
-                html />
-              <MedicareAccordion
-                title={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion2.heading}
-                content={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion2.content}
-                html />
-              <MedicareAccordion
-                title={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion3.heading}
-                content={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion3.content}
-                html />
+              <MedicareAccordionFixed title={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion1.heading}>
+                <MedicareAccordionFixedContent dangerouslySetInnerHTML={{__html: page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion1.content}}/>
+              </MedicareAccordionFixed>
+              <MedicareAccordionFixed title={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion2.heading}>
+                <MedicareAccordionFixedContent dangerouslySetInnerHTML={{__html: page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion2.content}}/>
+              </MedicareAccordionFixed>
+              <MedicareAccordionFixed title={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion3.heading}>
+                <MedicareAccordionFixedContent dangerouslySetInnerHTML={{__html: page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion3.content}}/>
+              </MedicareAccordionFixed>
             </AccordionPadding>
             <AccordionSeparator/>
             <SectionText dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvPostAccordionText }}/>
@@ -116,6 +122,7 @@ const MedicareAdvantagePage = () => {
         </SectionColumns>
       </SectionContainer>
 
+      {/*
       <MedicareFlexedSection
         color={page.medicareAdvantagePageCustomFields.medicareAdvSection1.color}
         heading={page.medicareAdvantagePageCustomFields.medicareAdvSection1.heading}>
@@ -134,6 +141,7 @@ const MedicareAdvantagePage = () => {
         <hr style={{marginTop: '-4px'}}/>
         <PostAccordionText dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvPostAccordionText }} />
       </MedicareFlexedSection>
+      */}
       <MedicareAdvantageSection
         page="medicare-advantage"
         color={page.medicareAdvantagePageCustomFields.medicareAdvSection2.color}>
@@ -289,8 +297,8 @@ export const SectionColumnRight = styled.div`
 `;
 
 export const AccordionPadding = styled.div`
-  padding: 0px 21px;
-  margin-top: 25px;
+  padding: 0px 0 0px 30px;
+  margin-top: 41px;
 `;
 
 export const AccordionSeparator = styled.hr`

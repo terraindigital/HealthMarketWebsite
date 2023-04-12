@@ -304,6 +304,72 @@ export const MedicareAccordion: FC<AccordionProps> = ({title, content, html = fa
     )
 };
 
+interface MedicareAccordionFixedProps {
+    title: string,
+    children?: ReactNode,
+}
+
+export const MedicareAccordionFixed: FC<MedicareAccordionFixedProps> = ({title, children}) => {
+    return (
+      <MedicareAccordionFixedStyled>
+          <MedicareAccordionFixedTitle>{title}</MedicareAccordionFixedTitle>
+          {children}
+      </MedicareAccordionFixedStyled>
+    );
+}
+
+const MedicareAccordionFixedStyled = styled.div`
+    position: relative;
+
+    :not(:first-child) {
+        margin-top: 31px;
+    }
+
+    ::after {
+        content: '';
+        position: absolute;
+        left: 1px;
+        right: 24px;
+        bottom: -12px;
+        height: 1px;
+        background: #828282;
+    }
+`;
+
+const MedicareAccordionFixedTitle = styled.h2`
+    cursor: pointer;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 130%;
+    color: #009FDA;
+    padding-right: 80px;
+`;
+
+export const MedicareAccordionFixedContent = styled.div`
+    margin-top: 17px;
+    padding-left: 9px;
+    padding-right: 32px;
+
+    &, p, a {
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 120%;
+        color: #4D4D4D;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    > p:not(:last-child) {
+        margin-bottom: 19px;
+    }
+`;
+
 export const MedicareCardText = styled.p`
   p {
     font-weight: 400;
