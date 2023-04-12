@@ -33,7 +33,7 @@ import FlexedSection from "../../../components/Sections/FlexedSection";
 import Footer from "../../../components/Footer";
 import RelatedContent from "../../../components/RelatedContent";
 import styled from "@emotion/styled";
-import {BREAKPOINT_LG, BREAKPOINT_SM, BREAKPOINT_XL, NAV_STARTS_FLOATING} from "../../../breakpoints";
+import {BREAKPOINT_LG, BREAKPOINT_MD, BREAKPOINT_SM, BREAKPOINT_XL, NAV_STARTS_FLOATING} from "../../../breakpoints";
 import {Tracing} from "../../../components/Tracing/Tracing";
 import heroMobileImage from "../../../static/images/medicare-advantage-hero-mobile.png";
 
@@ -147,7 +147,12 @@ const MedicareAdvantagePage = () => {
       </MedicareAdvantageSection>
 
       <GuideCTA>
-        <MedicareCtaTitle>{page.medicareAdvantagePageCustomFields.guideCta.headline}</MedicareCtaTitle>
+        <MedicareCtaTitle only="mobile">
+            {page.medicareAdvantagePageCustomFields.guideCta.headlineMobile}
+        </MedicareCtaTitle>
+        <MedicareCtaTitle only="desktop">
+            {page.medicareAdvantagePageCustomFields.guideCta.headline}
+        </MedicareCtaTitle>
         <a href={page.medicareAdvantagePageCustomFields.guideCta.button.link} onClick={routeLink}>
           <Button background="accent-alt" border="light" color="light">
             {page.medicareAdvantagePageCustomFields.guideCta.button.text}

@@ -6,6 +6,7 @@ import {Wrapper as MedialWrapper} from "../../Medials/styles";
 import {Img} from "../../Hero/styles";
 import {Inner, Wrapper as FlexedWrapper} from "../../Sections/FlexedSection/styles";
 import {Heading, OuterWrapper} from "../../Sections/styles";
+import {BREAKPOINT_SM} from "../../../breakpoints";
 
 export const PageStyles = css`
   .button-container {
@@ -317,6 +318,11 @@ export const MedicareCtaTitle = styled.div`
   line-height: 120%;
   color: #4D4D4D;
   padding: 0px 0px 28px;
+  display: ${({only}: { only: 'desktop' | 'mobile' }) => only === 'mobile' ? 'block' : 'none'};
+  
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+    display: ${({only}: { only: 'desktop' | 'mobile' }) => only === 'desktop' ? 'block' : 'none'};
+  }
 `;
 
 interface MedicareMedialProps {

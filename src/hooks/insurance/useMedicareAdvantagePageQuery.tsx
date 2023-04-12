@@ -171,6 +171,7 @@ export const useMedicareAdvantagePageQuery = () => {
               link
             }
             headline
+            headlineMobile
           }
         }
         disclaimers {
