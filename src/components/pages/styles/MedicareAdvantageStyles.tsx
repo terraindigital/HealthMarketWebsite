@@ -317,7 +317,7 @@ export const MedicareCtaTitle = styled.div`
   font-size: 18px;
   line-height: 120%;
   color: #4D4D4D;
-  padding: 0px 0px 28px;
+  padding: 0px 0px 26px;
   display: ${({only}: { only: 'desktop' | 'mobile' }) => only === 'mobile' ? 'block' : 'none'};
   
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
