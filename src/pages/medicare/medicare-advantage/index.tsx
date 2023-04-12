@@ -1,25 +1,15 @@
 // Library
 import * as React from "react"
-import { Global } from "@emotion/react";
+import {Global} from "@emotion/react";
 
 // Query
-import { useMedicareAdvantagePageQuery } from "../../../hooks/insurance/useMedicareAdvantagePageQuery"
+import {useMedicareAdvantagePageQuery} from "../../../hooks/insurance/useMedicareAdvantagePageQuery"
 
 // Styles
-import {
-    PageStyles,
-    GuideCTA,
-    PostAccordionText,
-    MedicareAccordion,
-    MedicareCardText,
-    MedicareCtaTitle,
-    MedicareMedial,
-    MedicareFlexedSection,
-    MedicareAdvantageSection,
-} from "../../../components/pages/styles/MedicareAdvantageStyles";
+import {GuideCTA, MedicareAccordion, MedicareAdvantageSection, MedicareCardText, MedicareCtaTitle, MedicareFlexedSection, MedicareMedial, PageStyles, PostAccordionText,} from "../../../components/pages/styles/MedicareAdvantageStyles";
 
 // Scripts
-import { routeLink } from '../../../static/scripts/global';
+import {routeLink} from '../../../static/scripts/global';
 
 // Components
 import Layout from "../../../components/Layout";
@@ -29,13 +19,11 @@ import Button from "../../../components/Buttons/Button";
 import Section from "../../../components/Sections";
 import Cards from "../../../components/Cards";
 import Card from "../../../components/Cards/Card";
-import FlexedSection from "../../../components/Sections/FlexedSection";
 import Footer from "../../../components/Footer";
 import RelatedContent from "../../../components/RelatedContent";
 import styled from "@emotion/styled";
 import {BREAKPOINT_LG, BREAKPOINT_MD, BREAKPOINT_SM, BREAKPOINT_XL, NAV_STARTS_FLOATING} from "../../../breakpoints";
 import {Tracing} from "../../../components/Tracing/Tracing";
-import heroMobileImage from "../../../static/images/medicare-advantage-hero-mobile.png";
 
 const StyledSvg = styled.svg`
   width: 16px;
@@ -99,6 +87,19 @@ const MedicareAdvantagePage = () => {
         </HeroPadding>
         <HeroMobileImg src={page.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero"/>
       </HeroContainer>
+
+      <SectionContainer>
+        <SectionColumns>
+          <SectionColumnLeft>
+            <SectionTitle>
+              {page.medicareAdvantagePageCustomFields.medicareAdvSection1.heading}
+            </SectionTitle>
+          </SectionColumnLeft>
+          <SectionColumnRight>
+            <SectionText dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvPostAccordionText }}/>
+          </SectionColumnRight>
+        </SectionColumns>
+      </SectionContainer>
 
       <MedicareFlexedSection
         color={page.medicareAdvantagePageCustomFields.medicareAdvSection1.color}
@@ -215,6 +216,107 @@ const MedicareAdvantagePage = () => {
     </Layout>
   )
 }
+
+// Medicare advantage section - START
+
+const SectionContainer = styled.div`
+  background: #f3fafd;
+  padding: 40px 0px 38px;
+
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    padding: 104px 0 100px;
+  }
+`;
+
+export const SectionColumns = styled.div`
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    display: flex;
+    flex-direction: row;
+  }
+`;
+
+export const SectionColumnLeft = styled.div`
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    width: 40.6%;
+    flex-shrink: 0;
+    max-width: 780px;
+  }
+`;
+
+export const SectionTitle = styled.h2`
+  font-family: 'IvyPresto Display-SemiBold', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 100%;
+
+  letter-spacing: 0.02em;
+
+  color: #FFFFFF;
+  background: #009FDA;
+
+  padding: 18px 26px 14px;
+  width: 70%;
+
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    width: unset;
+    font-size: 4.7vw;
+    margin: 0;
+    padding: 2.2vw 2.2vw 2.2vw 12.5vw;
+  }
+`;
+
+export const SectionColumnRight = styled.div`
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    flex-grow: 1;
+    padding-left: 37px;
+  }
+`;
+
+export const SectionText = styled.div`
+  padding: 0 36px;
+  margin-top: 40px;
+  color: #4D4D4D;
+
+  &, p, a {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    text-decoration: none;
+  }
+
+  a {
+    color: #009FDA;
+  }
+
+  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    margin-top: 0px;
+    padding: 3px 35px 3px 35px;
+
+    &, p, a {
+      font-weight: 600;
+      // Same size as list items
+      font-size: 24px;
+      line-height: 140%;
+    }
+  }
+
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
+    padding: 3px 60px 3px 35px;
+  }
+
+  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
+    padding: 3px 22% 3px 35px;
+    &, p, a {
+      //Big size (originally 32px) until large screens
+      font-size: 1.67vw;
+    }
+  }
+`;
+
+// Medicare advantage section - END
 
 const PageContainer = styled.div`
   @media screen and (min-width: ${NAV_STARTS_FLOATING}px) {
