@@ -317,7 +317,7 @@ export const MedicareAccordionFixed: FC<MedicareAccordionFixedProps> = ({title, 
     <MedicareAccordionFixedStyled>
       <MedicareAccordionFixedTitle onClick={() => setShow(old => !old)}>
         {title}
-        <Chevron/>
+        {show ? <ChevronUp/> : <ChevronDown/>}
       </MedicareAccordionFixedTitle>
       {show ? children : null}
     </MedicareAccordionFixedStyled>
@@ -362,11 +362,17 @@ const MedicareAccordionFixedTitle = styled.h2`
     }
 `;
 
-const Chevron = () => (
+const ChevronUp = () => (
   <svg width="25" height="13" viewBox="0 0 25 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M23 11.5L12.8265 2.14507C12.4337 1.7839 11.8266 1.79473 11.4469 2.16969L2 11.5" stroke="#009FDA" strokeWidth={3} strokeLinecap="round"/>
+    <path d="M23 11.5L12.8265 2.14507C12.4337 1.7839 11.8266 1.79473 11.4469 2.16969L2 11.5" stroke="#009FDA" strokeWidth={3} strokeLinecap="round"/>
   </svg>
 
+)
+
+const ChevronDown = () => (
+  <svg width="25" height="13" viewBox="0 0 25 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M23 1.5L12.8265 10.8549C12.4337 11.2161 11.8266 11.2053 11.4469 10.8303L2 1.5" stroke="#009FDA" strokeWidth={3} strokeLinecap="round"/>
+  </svg>
 )
 
 export const MedicareAccordionFixedContent = styled.div`
