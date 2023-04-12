@@ -6,7 +6,7 @@ import {Wrapper as MedialWrapper} from "../../Medials/styles";
 import {Img} from "../../Hero/styles";
 import {Inner} from "../../Sections/FlexedSection/styles";
 import {Heading, OuterWrapper} from "../../Sections/styles";
-import {BREAKPOINT_SM} from "../../../breakpoints";
+import {BREAKPOINT_LG, BREAKPOINT_SM, BREAKPOINT_XL} from "../../../breakpoints";
 
 export const PageStyles = css`
   .button-container {
@@ -326,11 +326,24 @@ export const MedicareAccordionFixed: FC<MedicareAccordionFixedProps> = ({title, 
   );
 }
 
+export const AccordionPadding = styled.div`
+  padding: 0px 0 0px 30px;
+  margin-top: 41px;
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
+    margin-top: 0;
+    padding: 0px 0 0px 98px;
+  }
+`;
+
 const MedicareAccordionFixedStyled = styled.div`
   position: relative;
 
   :not(:first-child) {
     margin-top: 31px;
+
+    @media only screen and (min-width: ${BREAKPOINT_LG}px) {
+      margin-top: 64px;
+    }
   }
 
   ::after {
@@ -341,6 +354,16 @@ const MedicareAccordionFixedStyled = styled.div`
     bottom: -12px;
     height: 1px;
     background: #828282;
+
+    @media only screen and (min-width: ${BREAKPOINT_LG}px) {
+      margin-bottom: -20px;
+      right: 80px;
+      left: 9px;
+    }
+
+    @media only screen and (min-width: ${BREAKPOINT_XL}px) {
+      right: 243px;
+    }
   }
 `;
 
@@ -352,15 +375,32 @@ const MedicareAccordionFixedTitle = styled.h2`
   font-size: 20px;
   line-height: 130%;
   color: #009FDA;
-  padding-right: 80px;
+  padding-right: 22px;
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
+    font-family: 'IvyPresto Display-SemiBold', serif;
+    font-size: 36px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    padding-left: 9px;
+    padding-right: 80px;
+  }
+
+  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
+    padding-right: 243px;
+  }
+
 
   svg {
-    position: absolute;
-    right: 22px;
-    bottom: 50%;
-    transform: translateY(50%);
     width: 19px;
+
+    @media only screen and (min-width: ${BREAKPOINT_LG}px) {
+      width: 25px;
+    }
   }
 `;
 
@@ -382,6 +422,15 @@ export const MedicareAccordionFixedContent = styled.div`
   padding-left: 9px;
   padding-right: 32px;
 
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
+    margin-top: 38px;
+    padding-right: 80px;
+  }
+
+  @media only screen and (min-width: ${BREAKPOINT_XL}px) {
+    padding-right: 237px;
+  }
+
   &, p, a {
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     font-style: normal;
@@ -389,6 +438,11 @@ export const MedicareAccordionFixedContent = styled.div`
     font-size: 16px;
     line-height: 120%;
     color: #4D4D4D;
+
+    @media only screen and (min-width: ${BREAKPOINT_LG}px) {
+      font-size: 20px;
+      line-height: 140%;
+    }
   }
 
   p {

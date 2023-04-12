@@ -7,6 +7,7 @@ import {useMedicareAdvantagePageQuery} from "../../../hooks/insurance/useMedicar
 
 // Styles
 import {
+  AccordionPadding,
   GuideCTA,
   MedicareAccordionFixed,
   MedicareAccordionFixedContent,
@@ -293,11 +294,6 @@ export const SectionColumnRight = styled.div`
     flex-grow: 1;
     padding-left: 37px;
   }
-`;
-
-export const AccordionPadding = styled.div`
-  padding: 0px 0 0px 30px;
-  margin-top: 41px;
 `;
 
 export const SectionText = styled.div`
