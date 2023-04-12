@@ -1,6 +1,6 @@
 import {css} from "@emotion/react";
 import styled from "@emotion/styled";
-import React, {CSSProperties, FC, ReactNode, useEffect} from "react";
+import React, {CSSProperties, FC, ReactNode, useEffect, useState} from "react";
 import {fadeIn} from "../../../static/scripts/global";
 import {Wrapper as MedialWrapper} from "../../Medials/styles";
 import {Img} from "../../Hero/styles";
@@ -306,16 +306,22 @@ export const MedicareAccordion: FC<AccordionProps> = ({title, content, html = fa
 
 interface MedicareAccordionFixedProps {
     title: string,
+    showByDefault?: boolean,
     children?: ReactNode,
 }
 
-export const MedicareAccordionFixed: FC<MedicareAccordionFixedProps> = ({title, children}) => {
-    return (
-      <MedicareAccordionFixedStyled>
-          <MedicareAccordionFixedTitle>{title}</MedicareAccordionFixedTitle>
-          {children}
-      </MedicareAccordionFixedStyled>
-    );
+export const MedicareAccordionFixed: FC<MedicareAccordionFixedProps> = ({title, children, showByDefault}) => {
+  const [show, setShow] = useState(showByDefault);
+
+  return (
+    <MedicareAccordionFixedStyled>
+      <MedicareAccordionFixedTitle onClick={() => setShow(old => !old)}>
+        {title}
+        <Chevron/>
+      </MedicareAccordionFixedTitle>
+      {show ? children : null}
+    </MedicareAccordionFixedStyled>
+  );
 }
 
 const MedicareAccordionFixedStyled = styled.div`
@@ -345,7 +351,23 @@ const MedicareAccordionFixedTitle = styled.h2`
     line-height: 130%;
     color: #009FDA;
     padding-right: 80px;
+    position: relative;
+    
+    svg {
+        position: absolute;
+        right: 22px;
+        bottom: 50%;
+        transform: translateY(50%);
+        width: 19px;
+    }
 `;
+
+const Chevron = () => (
+  <svg width="25" height="13" viewBox="0 0 25 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M23 11.5L12.8265 2.14507C12.4337 1.7839 11.8266 1.79473 11.4469 2.16969L2 11.5" stroke="#009FDA" strokeWidth={3} strokeLinecap="round"/>
+  </svg>
+
+)
 
 export const MedicareAccordionFixedContent = styled.div`
     margin-top: 17px;
