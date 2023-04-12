@@ -24,7 +24,7 @@ export const PageStyles = css`
     max-width: 45rem;
     width: 100%;
   }
-  
+
   .hero-disclaimer {
     color: var(--color-light);
     font-size: 2rem;
@@ -67,7 +67,7 @@ export const PageStyles = css`
     .button-container button {
       max-width: 38.6rem;
     }
-  
+
     .card-disclaimer {
       font-size: 1.6rem;
       margin-top: 2.7rem;
@@ -87,7 +87,7 @@ export const PageStyles = css`
     .hero .half .light img {
       filter: none;
     }
-    
+
     .hero > img {
       bottom: -8rem;
       //top: auto;
@@ -108,11 +108,11 @@ export const PageStyles = css`
 export const HeroHeading = styled.h1`
   color: var(--color-light);
   margin-bottom: 15px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
 
   @media only screen and (max-width: 1280px) {
-      font-size: 50px;
-      line-height: 115%;
+    font-size: 50px;
+    line-height: 115%;
   }
 
   @media only screen and (max-width: 620px) {
@@ -161,7 +161,7 @@ export const GuideCTA = styled.div`
 export const PostAccordionText = styled.div`
   margin-top: 104px;
   padding: 0 15px;
-  
+
   &, a, p {
     text-decoration: none;
     font-style: normal;
@@ -209,9 +209,9 @@ const MedicareAccordionTitle = styled.div`
 `
 
 interface AccordionProps {
-    title: string,
-    content: string,
-    html?: boolean
+  title: string,
+  content: string,
+  html?: boolean
 }
 
 const MedicareAccordionWrapper = styled.div`
@@ -282,32 +282,34 @@ const MedicareAccordionWrapper = styled.div`
   @media only screen and (max-width: 620px) {
     margin-bottom: 0;
 
-    &:last-of-type { margin-bottom: 0rem; }
+    &:last-of-type {
+      margin-bottom: 0rem;
+    }
   }
 `
 
 export const MedicareAccordion: FC<AccordionProps> = ({title, content, html = false}) => {
-    const toggleAccordion = el => el.target.closest('.accordion').classList.toggle('active');
-    return (
-        <MedicareAccordionWrapper className="accordion">
-            <MedicareAccordionTitle className="title" onClick={toggleAccordion}>
-                <h2>{title}</h2>
-            </MedicareAccordionTitle>
-            <MedicareAccordionContent className="content">
-                {(!html) ? (
-                    <p>{content}</p>
-                ) : (
-                    <p dangerouslySetInnerHTML={{__html: content}}/>
-                )}
-            </MedicareAccordionContent>
-        </MedicareAccordionWrapper>
-    )
+  const toggleAccordion = el => el.target.closest('.accordion').classList.toggle('active');
+  return (
+    <MedicareAccordionWrapper className="accordion">
+      <MedicareAccordionTitle className="title" onClick={toggleAccordion}>
+        <h2>{title}</h2>
+      </MedicareAccordionTitle>
+      <MedicareAccordionContent className="content">
+        {(!html) ? (
+          <p>{content}</p>
+        ) : (
+          <p dangerouslySetInnerHTML={{__html: content}}/>
+        )}
+      </MedicareAccordionContent>
+    </MedicareAccordionWrapper>
+  )
 };
 
 interface MedicareAccordionFixedProps {
-    title: string,
-    showByDefault?: boolean,
-    children?: ReactNode,
+  title: string,
+  showByDefault?: boolean,
+  children?: ReactNode,
 }
 
 export const MedicareAccordionFixed: FC<MedicareAccordionFixedProps> = ({title, children, showByDefault}) => {
@@ -325,41 +327,41 @@ export const MedicareAccordionFixed: FC<MedicareAccordionFixedProps> = ({title, 
 }
 
 const MedicareAccordionFixedStyled = styled.div`
-    position: relative;
+  position: relative;
 
-    :not(:first-child) {
-        margin-top: 31px;
-    }
+  :not(:first-child) {
+    margin-top: 31px;
+  }
 
-    ::after {
-        content: '';
-        position: absolute;
-        left: 1px;
-        right: 24px;
-        bottom: -12px;
-        height: 1px;
-        background: #828282;
-    }
+  ::after {
+    content: '';
+    position: absolute;
+    left: 1px;
+    right: 24px;
+    bottom: -12px;
+    height: 1px;
+    background: #828282;
+  }
 `;
 
 const MedicareAccordionFixedTitle = styled.h2`
-    cursor: pointer;
-    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 130%;
-    color: #009FDA;
-    padding-right: 80px;
-    position: relative;
-    
-    svg {
-        position: absolute;
-        right: 22px;
-        bottom: 50%;
-        transform: translateY(50%);
-        width: 19px;
-    }
+  cursor: pointer;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 130%;
+  color: #009FDA;
+  padding-right: 80px;
+  position: relative;
+
+  svg {
+    position: absolute;
+    right: 22px;
+    bottom: 50%;
+    transform: translateY(50%);
+    width: 19px;
+  }
 `;
 
 const ChevronUp = () => (
@@ -376,26 +378,26 @@ const ChevronDown = () => (
 )
 
 export const MedicareAccordionFixedContent = styled.div`
-    margin-top: 17px;
-    padding-left: 9px;
-    padding-right: 32px;
+  margin-top: 17px;
+  padding-left: 9px;
+  padding-right: 32px;
 
-    &, p, a {
-        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 120%;
-        color: #4D4D4D;
-    }
+  &, p, a {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #4D4D4D;
+  }
 
-    p {
-        margin: 0;
-    }
+  p {
+    margin: 0;
+  }
 
-    > p:not(:last-child) {
-        margin-bottom: 19px;
-    }
+  > p:not(:last-child) {
+    margin-bottom: 19px;
+  }
 `;
 
 export const MedicareCardText = styled.p`
@@ -413,29 +415,29 @@ export const MedicareCtaTitle = styled.div`
   color: #4D4D4D;
   padding: 0px 0px 26px;
   display: ${({only}: { only: 'desktop' | 'mobile' }) => only === 'mobile' ? 'block' : 'none'};
-  
+
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
     display: ${({only}: { only: 'desktop' | 'mobile' }) => only === 'desktop' ? 'block' : 'none'};
   }
 `;
 
 interface MedicareMedialProps {
-    color: string
-    children: ReactNode
+  color: string
+  children: ReactNode
 }
 
-export const MedicareMedial: FC<MedicareMedialProps> = ({ color, children }) => {
-    const columnCount = (children?.length > 2) ? 'three-columns' : 'two-columns';
-    useEffect(() => {
-        fadeIn('.medial')
-    }, []);
-    return (
-        <MedialWrapper className={`medial ` + color + ` ` + columnCount}>
-            <MedicareInner>
-                {children}
-            </MedicareInner>
-        </MedialWrapper>
-    )
+export const MedicareMedial: FC<MedicareMedialProps> = ({color, children}) => {
+  const columnCount = (children?.length > 2) ? 'three-columns' : 'two-columns';
+  useEffect(() => {
+    fadeIn('.medial')
+  }, []);
+  return (
+    <MedialWrapper className={`medial ` + color + ` ` + columnCount}>
+      <MedicareInner>
+        {children}
+      </MedicareInner>
+    </MedialWrapper>
+  )
 }
 
 const MedicareInner = styled.div`
@@ -501,18 +503,18 @@ const MedicareInner = styled.div`
 `
 
 interface MedicareAdvantageHeroProps {
-    image: string,
-    mobileImage?: string,
-    bgColor?: string,
-    centered?: boolean,
-    boxed?: boolean,
-    half?: boolean,
-    color?: string,
-    children: ReactNode
-    wrapperStyle?: CSSProperties
-    desktopImgStyle?: CSSProperties
-    mobileImgStyle?: CSSProperties
-    innerStyle?: CSSProperties
+  image: string,
+  mobileImage?: string,
+  bgColor?: string,
+  centered?: boolean,
+  boxed?: boolean,
+  half?: boolean,
+  color?: string,
+  children: ReactNode
+  wrapperStyle?: CSSProperties
+  desktopImgStyle?: CSSProperties
+  mobileImgStyle?: CSSProperties
+  innerStyle?: CSSProperties
 }
 
 export const MedicareAdvantageHeroInner = styled.div`
@@ -521,11 +523,12 @@ export const MedicareAdvantageHeroInner = styled.div`
   position: relative;
   width: 100%;
   z-index: 12;
+
   &.half {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    
+
     flex-basis: 72%;
     width: 72%;
 
@@ -538,6 +541,7 @@ export const MedicareAdvantageHeroInner = styled.div`
       text-align: center;
     }
   }
+
   &.left {
     padding-bottom: 11rem;
     display: flex;
@@ -550,6 +554,7 @@ export const MedicareAdvantageHeroInner = styled.div`
       width: 100%;
     }
   }
+
   .boxed & {
     margin: 3.4rem 14.4rem;
     padding: 6rem 12rem;
@@ -562,18 +567,21 @@ export const MedicareAdvantageHeroInner = styled.div`
       padding: 0;
     }
   }
+
   .boxed.primary & {
     background-color: var(--color-primary);
     @media only screen and (max-width: 620px) {
       background-color: transparent;
     }
   }
+
   .boxed.accent & {
     background-color: var(--color-accent);
     @media only screen and (max-width: 620px) {
       background-color: transparent;
     }
   }
+
   .half & {
     flex-basis: 50%;
     width: 50%;
@@ -591,29 +599,38 @@ export const MedicareAdvantageHeroInner = styled.div`
       padding: 65px 21px 55px;
     }
   }
+
   @media only screen and (max-width: 340px) {
     width: 100%;
   }
 `
 
-export const MedicareAdvantageHero: FC<MedicareAdvantageHeroProps> = ({ image, mobileImage, bgColor, centered, boxed, half, color, children, desktopImgStyle, mobileImgStyle, wrapperStyle, innerStyle }) => {
-    let classes = "hero"
-    if (centered) { classes += " centered" }
-    if (boxed) { classes += " boxed" }
-    if (half) { classes += " half" }
-    if (color != null) { classes = classes + " " + color }
+export const MedicareAdvantageHero: FC<MedicareAdvantageHeroProps> = ({image, mobileImage, bgColor, centered, boxed, half, color, children, desktopImgStyle, mobileImgStyle, wrapperStyle, innerStyle}) => {
+  let classes = "hero"
+  if (centered) {
+    classes += " centered"
+  }
+  if (boxed) {
+    classes += " boxed"
+  }
+  if (half) {
+    classes += " half"
+  }
+  if (color != null) {
+    classes = classes + " " + color
+  }
 
-    return (
-        <HeroWrapper className={classes} background={bgColor} style={wrapperStyle}>
-            <Img className={(mobileImage) ? "hide-at-mobile" : ""} src={image} alt="Hero" style={desktopImgStyle}/>
-            {(mobileImage) ? (
-                <Img className="show-at-mobile" src={mobileImage} alt="Hero" style={mobileImgStyle} />
-            ) : null}
-            <MedicareAdvantageHeroInner className={(!centered) ? "half" : ""} style={innerStyle}>
-                {children}
-            </MedicareAdvantageHeroInner>
-        </HeroWrapper>
-    )
+  return (
+    <HeroWrapper className={classes} background={bgColor} style={wrapperStyle}>
+      <Img className={(mobileImage) ? "hide-at-mobile" : ""} src={image} alt="Hero" style={desktopImgStyle}/>
+      {(mobileImage) ? (
+        <Img className="show-at-mobile" src={mobileImage} alt="Hero" style={mobileImgStyle}/>
+      ) : null}
+      <MedicareAdvantageHeroInner className={(!centered) ? "half" : ""} style={innerStyle}>
+        {children}
+      </MedicareAdvantageHeroInner>
+    </HeroWrapper>
+  )
 }
 
 export const HeroWrapper = styled.div`
@@ -628,11 +645,13 @@ export const HeroWrapper = styled.div`
   padding-top: 21rem;
   padding-left: 8.9rem;
   padding-right: 8.9rem;
+
   &.centered {
     align-items: center;
     justify-content: flex-start;
     vertical-align: middle;
   }
+
   &.half {
     align-items: stretch;
     justify-content: flex-end;
@@ -640,22 +659,25 @@ export const HeroWrapper = styled.div`
     padding-left: 0;
     padding-right: 0;
     padding-top: 120px;
+
     &.half > div > h1 {
       color: var(--color-primary);
       text-shadow: none;
     }
+
     &.half > div > h4 {
       font-size: 24px;
       font-weight: 500;
     }
   }
+
   @media screen and (min-width: 1921px) {
     padding-left: 40rem;
     padding-right: 40rem;
     min-height: 65%;
     min-height: 65vh;
   }
-  
+
   @media screen and (min-width: 1281px) {
     margin-top: 120px;
     padding-top: 0;
@@ -681,39 +703,39 @@ export const HeroWrapper = styled.div`
 `
 
 interface MedicareFlexedSectionProps {
-    heading: string,
-    color: string,
-    children: ReactNode
+  heading: string,
+  color: string,
+  children: ReactNode
 }
 
 const switchBgColor = (bgColor: string) => {
-    switch (bgColor) {
-        case 'primary':
-            return "#F3FAFD"
-        case 'accent':
-            return "#F1FBEA"
-        case 'dark':
-            return "#4D4D4D"
-        case 'muted':
-            return "#F6F4F2"
-        default:
-            return "#FFFFFF"
-    }
+  switch (bgColor) {
+    case 'primary':
+      return "#F3FAFD"
+    case 'accent':
+      return "#F1FBEA"
+    case 'dark':
+      return "#4D4D4D"
+    case 'muted':
+      return "#F6F4F2"
+    default:
+      return "#FFFFFF"
+  }
 }
 
-export const MedicareFlexedSection: FC<MedicareFlexedSectionProps> = ({ heading, color, children}) => {
-    const bgColor = switchBgColor(color)
+export const MedicareFlexedSection: FC<MedicareFlexedSectionProps> = ({heading, color, children}) => {
+  const bgColor = switchBgColor(color)
 
-    return (
-        <FlexedWrapper backgroundColor={bgColor} className={`flexed section ` + color}>
-            <FlexedHeading>
-                <h2>{heading}</h2>
-            </FlexedHeading>
-            <Inner>
-                {children}
-            </Inner>
-        </FlexedWrapper>
-    )
+  return (
+    <FlexedWrapper backgroundColor={bgColor} className={`flexed section ` + color}>
+      <FlexedHeading>
+        <h2>{heading}</h2>
+      </FlexedHeading>
+      <Inner>
+        {children}
+      </Inner>
+    </FlexedWrapper>
+  )
 };
 
 const FlexedWrapper = styled.div`
@@ -833,7 +855,7 @@ export const MedicareAccordionContent = styled.div`
     font-size: 16px;
     line-height: 120%;
     color: #4D4D4D;
-    
+
     margin-bottom: 19px;
 
     & + p {
@@ -851,39 +873,42 @@ export const MedicareAccordionContent = styled.div`
 `;
 
 interface MedicareAdvantageSectionProps {
-    color: string,
-    children: ReactNode
-    heading?: string,
-    subheading?: string,
-    guarantee?: boolean,
-    bestPrice?: ReactNode,
-    classes?: string,
-    page?: string
+  color: string,
+  children: ReactNode
+  heading?: string,
+  subheading?: string,
+  guarantee?: boolean,
+  bestPrice?: ReactNode,
+  classes?: string,
+  page?: string
 }
 
 
+export const MedicareAdvantageSection: FC<MedicareAdvantageSectionProps> = ({heading, subheading, guarantee, bestPrice, classes, page, color, children}) => {
+  const bgColor = switchBgColor(color)
 
-export const MedicareAdvantageSection: FC<MedicareAdvantageSectionProps> = ({ heading, subheading, guarantee, bestPrice, classes, page, color, children}) => {
-    const bgColor = switchBgColor(color)
+  let classList = "section";
+  if (page) {
+    classList += ` ${page}`
+  }
+  if (classes) {
+    classList += ` ${classes}`
+  }
 
-    let classList = "section";
-    if (page) { classList += ` ${page}`}
-    if (classes) { classList += ` ${classes}`}
-
-    return (
-        <OuterWrapper>
-            <MedicareAdvantageSectionWrapper backgroundColor={bgColor} className={classList}>
-                <Heading className="heading">
-                    {(heading) ? (<h2>{heading}</h2>) : null}
-                    {(subheading) ? (<h4>{subheading}</h4>) : null}
-                    {(guarantee !== 'false') ? bestPrice : <></>}
-                </Heading>
-                <MedicareAdvantageSectionInner>
-                    {children}
-                </MedicareAdvantageSectionInner>
-            </MedicareAdvantageSectionWrapper>
-        </OuterWrapper>
-    )
+  return (
+    <OuterWrapper>
+      <MedicareAdvantageSectionWrapper backgroundColor={bgColor} className={classList}>
+        <Heading className="heading">
+          {(heading) ? (<h2>{heading}</h2>) : null}
+          {(subheading) ? (<h4>{subheading}</h4>) : null}
+          {(guarantee !== 'false') ? bestPrice : <></>}
+        </Heading>
+        <MedicareAdvantageSectionInner>
+          {children}
+        </MedicareAdvantageSectionInner>
+      </MedicareAdvantageSectionWrapper>
+    </OuterWrapper>
+  )
 };
 
 export const MedicareAdvantageSectionInner = styled.div`
