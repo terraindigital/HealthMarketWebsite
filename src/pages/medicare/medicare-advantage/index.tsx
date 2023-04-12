@@ -252,7 +252,7 @@ export const SectionColumns = styled.div`
 
 export const SectionColumnLeft = styled.div`
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    width: 40.6%;
+    width: 36.7%;
     flex-shrink: 0;
     max-width: 780px;
   }
