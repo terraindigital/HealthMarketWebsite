@@ -4,7 +4,7 @@ import React, {CSSProperties, FC, ReactNode, useEffect} from "react";
 import {fadeIn} from "../../../static/scripts/global";
 import {Wrapper as MedialWrapper} from "../../Medials/styles";
 import {Img} from "../../Hero/styles";
-import {Inner, Wrapper as FlexedWrapper} from "../../Sections/FlexedSection/styles";
+import {Inner} from "../../Sections/FlexedSection/styles";
 import {Heading, OuterWrapper} from "../../Sections/styles";
 import {BREAKPOINT_SM} from "../../../breakpoints";
 
@@ -621,6 +621,45 @@ export const MedicareFlexedSection: FC<MedicareFlexedSectionProps> = ({ heading,
         </FlexedWrapper>
     )
 };
+
+const FlexedWrapper = styled.div`
+  background-color: ${({ backgroundColor }) => backgroundColor};
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding-bottom: 10.4rem;
+  padding-top: 10.4rem;
+
+  padding-left: 8.9rem;
+  padding-right: 8.9rem;
+
+  @media screen and (min-width: 1921px) {
+    padding-left: 40rem;
+    padding-right: 40rem;
+  }
+
+  @media screen and (max-width: 1044px) {
+    padding-left: 5.5rem;
+    padding-right: 5.5rem;
+  }
+
+  @media screen and (max-width: 788px) {
+    display: block;
+    padding-left: 4.8rem;
+    padding-right: 4.8rem;
+    padding-bottom: 8rem;
+    padding-top: 8rem;
+  }
+
+  @media screen and (max-width: 620px) {
+    padding-left: 2.1rem;
+    padding-right: 2.1rem;
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+  }
+`
 
 const FlexedHeading = styled.div`
   display: block;
