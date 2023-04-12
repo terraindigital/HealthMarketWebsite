@@ -96,6 +96,21 @@ const MedicareAdvantagePage = () => {
             </SectionTitle>
           </SectionColumnLeft>
           <SectionColumnRight>
+            <AccordionPadding>
+              <MedicareAccordion
+                title={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion1.heading}
+                content={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion1.content}
+                html />
+              <MedicareAccordion
+                title={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion2.heading}
+                content={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion2.content}
+                html />
+              <MedicareAccordion
+                title={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion3.heading}
+                content={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion3.content}
+                html />
+            </AccordionPadding>
+            <AccordionSeparator/>
             <SectionText dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvPostAccordionText }}/>
           </SectionColumnRight>
         </SectionColumns>
@@ -255,8 +270,8 @@ export const SectionTitle = styled.h2`
   color: #FFFFFF;
   background: #009FDA;
 
-  padding: 18px 26px 14px;
-  width: 70%;
+  padding: 18px 33px 14px;
+  width: 64%;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     width: unset;
@@ -271,6 +286,16 @@ export const SectionColumnRight = styled.div`
     flex-grow: 1;
     padding-left: 37px;
   }
+`;
+
+export const AccordionPadding = styled.div`
+  padding: 0px 21px;
+  margin-top: 25px;
+`;
+
+export const AccordionSeparator = styled.hr`
+  width: 85%;
+  margin: -4px auto 0;
 `;
 
 export const SectionText = styled.div`
