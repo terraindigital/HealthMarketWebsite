@@ -524,6 +524,7 @@ const CardButton = styled.a`
   line-height: 22px;
   text-align: center;
   color: #FFFFFF;
+  display: flex;
   padding: 8px;
   align-items: center;
   justify-content: center;
@@ -538,6 +539,7 @@ const CardButton = styled.a`
   }
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+    display: flex;
     font-size: 24px;
     line-height: 33px;
     padding: 16px;
