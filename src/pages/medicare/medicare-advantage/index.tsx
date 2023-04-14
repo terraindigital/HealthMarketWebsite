@@ -329,7 +329,7 @@ export const SectionText = styled.div`
   }
 
   @media only screen and (min-width: ${BREAKPOINT_LG}px) {
-    padding: 3px 60px 3px 35px;
+    padding: 3px 60px 3px 98px;
   }
 
   @media only screen and (min-width: ${BREAKPOINT_XL}px) {
