@@ -369,12 +369,12 @@ const MedicareAccordionFixedStyled = styled.div`
 
 const MedicareAccordionFixedTitle = styled.h2`
   cursor: pointer;
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  color: #0065BD;
+  font-family: 'IvyPresto Display-SemiBold', serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 36px;
   line-height: 130%;
-  color: #009FDA;
   padding-right: 22px;
   position: relative;
   display: flex;
