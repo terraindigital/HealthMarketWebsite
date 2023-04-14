@@ -1,4 +1,4 @@
-import React, { FC, ReactNode} from "react"
+import React, {CSSProperties, FC, ReactNode} from "react"
 
 // Styles
 import {
@@ -26,9 +26,10 @@ interface Props {
   link?: String,
   title: String,
   children?: ReactNode
+  imgStyle?: CSSProperties | undefined
 }
 
-const Card: FC<Props> = ({ image=null, icon=null, mobile=null, link=null, title, children }) => {
+const Card: FC<Props> = ({ image=null, icon=null, mobile=null, link=null, title, children, imgStyle }) => {
   const imageClass = (icon !== null) ? "icon" : "image"
 
   return (
@@ -42,6 +43,7 @@ const Card: FC<Props> = ({ image=null, icon=null, mobile=null, link=null, title,
               maxWidth={(image === null) ? 128 : null}
               maxHeight={(image === null) ? 98 : null}
               alt="Card Icon Image"
+              style={{...imgStyle}}
             />
           </ImgContainer>
         </Header>

@@ -8,7 +8,7 @@ interface Props {
   children: ReactNode
   heading?: String,
   subheading?: String,
-  guarantee: boolean,
+  guarantee?: boolean,
   bestPrice?: ReactNode,
   classes?: String,
   page?: String

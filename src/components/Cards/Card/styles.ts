@@ -133,7 +133,7 @@ export const Header = styled.div`
 
   @media only screen and (max-width: 620px) {
     max-height: none;
-    min-height: 5.9rem;
+    min-height: 64px;
     overflow: visible;
     
     .icon & {
@@ -195,6 +195,7 @@ export const Img = styled.img`
 
   .image & {
     height: 220px;
+    min-width: 100%;
 
     @media only screen and (max-width: 620px) {
       height: auto;

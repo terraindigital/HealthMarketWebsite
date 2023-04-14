@@ -78,7 +78,7 @@ export const Inner = styled.div`
   }
 
   .two-columns & {
-    padding: 8.3rem 14.6rem 8.3rem 12.8rem;
+    padding: 8.3rem 12.0rem 8.3rem 12.0rem;
 
     @media only screen and (max-width: 1460px) {
       padding: 5.5rem 12.8rem 5.5rem 10.3rem;

@@ -2,11 +2,11 @@ import React, { useState } from "react";
 
 // Styles
 import {
-  Wrapper,
-  Item,
-  TextSize,
-  SearchButton,
-  Bars
+    Wrapper,
+    Item,
+    TextSize,
+    SearchButton,
+    Bars, AgentItem
 } from "./styles"
 
 // Scripts
@@ -35,17 +35,17 @@ const HeaderRight = ({ headerData }: { headerData: any }) => {
 
   return (
     <Wrapper className="header-right">
-      <Item className="hide-at-device">
+      <Item className="hide-at-device" style={{minWidth: '230px'}}>
         <a href="tel:+18178134562">
           <img className="phone icon" src={PhoneIcon} alt="telephone icon" />
           1-817-813-4562
         </a>
       </Item>
-      <Item className="hide-at-device">
+      <AgentItem className="hide-at-device">
         <a className="find-agent" href="/local-health-insurance-agent/" onClick={routeLink}>
           Find an agent
         </a>
-      </Item>
+      </AgentItem>
       <Item className="hide-at-device">
         <TextSize className="decrease text-size" onClick={changeTextSize}>-</TextSize> Text Size <TextSize className="increase text-size" onClick={changeTextSize}>+</TextSize>
       </Item>
