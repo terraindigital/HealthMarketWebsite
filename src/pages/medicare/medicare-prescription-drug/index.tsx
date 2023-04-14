@@ -234,7 +234,7 @@ const RelatedTitle = styled.h2`
   line-height: 150%;
   padding: 17px 17px 0 24px;
 
-  color: #009FDA;
+  color: #0065BD;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-size: 32px;
@@ -338,7 +338,7 @@ const CardTitle = styled.h2`
   text-align: center;
   letter-spacing: 0.02em;
 
-  color: #009FDA;
+  color: #0065BD;
   margin-top: 16px;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
@@ -359,7 +359,7 @@ const CardTitleQuestions = styled.h2`
   line-height: 100%;
   text-align: center;
   letter-spacing: 0.02em;
-  color: #009FDA;
+  color: #0065BD;
   margin: 0 0 22px;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
