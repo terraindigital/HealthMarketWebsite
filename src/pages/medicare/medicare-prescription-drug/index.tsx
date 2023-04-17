@@ -300,10 +300,14 @@ const CardPaddingMobile = styled.div`
 const CardSpacingDesktop = styled.div`
   display: none;
   margin-top: 100px;
-  padding: 0 15px;
+  padding: 0 55px;
   
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     display: block;
+  }
+
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
+    padding: 0 144px;
   }
   
   // Only on XL
@@ -330,9 +334,7 @@ const SectionCardDesktop = styled.div`
 
 const SectionCardDesktopLeft = styled.div`
   width: 64.5%;
-  /* flex-basis: 64.5%; */
-
-  padding: 55px 15px;
+  padding: 55px 15px 55px 30px;
 
   // Only on XL
   @media only screen and (min-width: ${BREAKPOINT_XL}px) {
@@ -346,7 +348,7 @@ const SectionCardDesktopRight = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 55px 15px;
+  padding: 55px 30px 55px 15px;
 `;
 
 const CalculatorLogo = styled.img`
