@@ -279,7 +279,7 @@ const RelatedText = styled.div`
 
 const CardPadding = styled.div`
   padding: 40px 21px 0px;
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
     padding-top: 100px;
   }
 `;
@@ -291,7 +291,7 @@ const SectionCard = styled.div`
   border-radius: 4px;
   padding: 37px 12px 40px;
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
     max-width: 1432px;
     padding: 51px 75px 60px 98px;
     margin-left: auto;
@@ -300,7 +300,7 @@ const SectionCard = styled.div`
 `;
 
 const SectionCardTop = styled.div`
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -308,7 +308,7 @@ const SectionCardTop = styled.div`
 `;
 
 const SectionCardBottom = styled.div`
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -321,10 +321,10 @@ const CalculatorLogo = styled.img`
   width: 120px;
   height: 80px;
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
     width: 172px;
     height: 114px;
-    margin: 10px 95px 0 0;
+    margin: 0 auto;
   }
 `;
 
@@ -341,13 +341,12 @@ const CardTitle = styled.h2`
   color: var(--color-primary-dark);
   margin-top: 16px;
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
     font-size: 65px;
     line-height: 110%;
     margin: 0;
     max-width: 600px;
     text-align: left;
-    padding-right: 30px;
   }
 `;
 
@@ -388,7 +387,11 @@ const CardText = styled.div`
   margin-bottom: 15px;
   padding: 0 8px;
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+      justify-content: center;
+  }
+    
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
     font-weight: 600;
     font-size: 24px;
     line-height: 150%;
@@ -538,7 +541,7 @@ const CardButton = styled.a`
     padding: 15px 34px;
   }
 
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
+  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
     display: flex;
     font-size: 24px;
     line-height: 33px;
