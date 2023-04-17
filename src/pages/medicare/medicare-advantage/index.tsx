@@ -313,7 +313,7 @@ export const SectionText = styled.div`
   }
 
   a {
-    color: #009FDA;
+    color: var(--color-primary-dark);
   }
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {

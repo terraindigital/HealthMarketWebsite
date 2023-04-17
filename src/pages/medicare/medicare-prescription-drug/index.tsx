@@ -94,11 +94,8 @@ const MedicarePrescriptionDrugPage = () => {
                                 <CardText>
                                     {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.subtitle}
                                 </CardText>
-                                <CardButton href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.buttonUrlDesktop} only='desktop'>
+                                <CardButton href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.buttonUrlDesktop}>
                                     {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.buttonTextDesktop}
-                                </CardButton>
-                                <CardButton href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.buttonUrlMobile} only='mobile'>
-                                    {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugSection2.buttonTextMobile}
                                 </CardButton>
                             </SectionCardBottom>
                         </SectionCard>
@@ -237,7 +234,7 @@ const RelatedTitle = styled.h2`
   line-height: 150%;
   padding: 17px 17px 0 24px;
 
-  color: #009FDA;
+  color: var(--color-primary-dark);
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-size: 32px;
@@ -341,7 +338,7 @@ const CardTitle = styled.h2`
   text-align: center;
   letter-spacing: 0.02em;
 
-  color: #009FDA;
+  color: var(--color-primary-dark);
   margin-top: 16px;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
@@ -362,7 +359,7 @@ const CardTitleQuestions = styled.h2`
   line-height: 100%;
   text-align: center;
   letter-spacing: 0.02em;
-  color: #009FDA;
+  color: var(--color-primary-dark);
   margin: 0 0 22px;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
@@ -527,7 +524,7 @@ const CardButton = styled.a`
   line-height: 22px;
   text-align: center;
   color: #FFFFFF;
-  display: ${({only}: { only: 'desktop' | 'mobile' }) => only === 'mobile' ? 'flex' : 'none'};
+  display: flex;
   padding: 8px;
   align-items: center;
   justify-content: center;
@@ -542,7 +539,7 @@ const CardButton = styled.a`
   }
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    display: ${({only}: { only: 'desktop' | 'mobile' }) => only === 'desktop' ? 'flex' : 'none'};
+    display: flex;
     font-size: 24px;
     line-height: 33px;
     padding: 16px;

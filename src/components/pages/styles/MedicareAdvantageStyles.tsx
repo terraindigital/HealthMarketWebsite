@@ -534,7 +534,7 @@ const MedicareInner = styled.div`
   }
 
   h3 {
-    color: var(--color-primary);
+    color: var(--color-primary-dark);
     line-height: 110%;
     margin: 0px;
     letter-spacing: 0.02em;
