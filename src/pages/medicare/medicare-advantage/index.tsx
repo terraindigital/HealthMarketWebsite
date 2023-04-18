@@ -414,6 +414,7 @@ const HeroPadding = styled.div`
   padding: 0 22px;
   z-index: 100;
   position: relative;
+  width: 100%;
 `;
 
 const MainTitle = styled.h1`
@@ -497,14 +498,18 @@ const CallUsCtn = styled.div`
   justify-content: center;
   padding: 0 8px 0 16px;
 
-  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+  @media only screen and (min-width: ${1024}px) {
     justify-content: flex-start;
-    margin-top: 70px;
-    padding: 0 0;
+    max-width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
   }
 
-  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
-    justify-content: flex-start;
+  @media only screen and (min-width: ${1200}px) {
+    max-width: unset;
+    margin-left: 0;
+    margin-right: 0;
   }
 `;
 
@@ -571,12 +576,25 @@ const DisclaimerText = styled.div`
   }
 
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
-    text-align: left;
     &, p, a {
       color: #FFFFFF;
       line-height: 140%;
       font-size: 14px;
     }
+  }
+
+  @media only screen and (min-width: ${1024}px) {
+    text-align: left;
+    width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+  }
+
+  @media only screen and (min-width: ${1200}px) {
+    max-width: unset;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   @media only screen and (min-width: ${BREAKPOINT_LG}px) {
