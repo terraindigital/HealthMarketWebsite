@@ -495,7 +495,7 @@ const CallUsCtn = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 38px 0 45px;
+  padding: 0 8px 0 16px;
 
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
     justify-content: flex-start;
@@ -555,7 +555,7 @@ const CallUsText = styled.div`
 `;
 
 const DisclaimerText = styled.div`
-  margin-top: 14px;
+  margin-top: 10px;
   text-align: center;
 
   &, p, a {
