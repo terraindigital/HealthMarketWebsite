@@ -635,7 +635,7 @@ const CallUsCtn = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 38px;
+  padding: 0 10px;
 
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
     margin-top: 64px;
@@ -678,14 +678,14 @@ const StyledSvg = styled.svg`
 `;
 
 const CallUsText = styled.div`
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 100%;
   display: flex;
 
   &, p, a {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
     text-decoration: none;
     color: #4D4D4D;
   }
@@ -708,15 +708,14 @@ const CallUsText = styled.div`
 
 const DisclaimerText = styled.div`
   margin-top: 12px;
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 110%;
-
   text-align: center;
 
   &, p, a {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 110%;
     text-decoration: none;
     color: #4D4D4D;
   }
