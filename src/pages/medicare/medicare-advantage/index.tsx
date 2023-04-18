@@ -214,21 +214,7 @@ const MedicareAdvantagePage = () => {
           </a>
         </div>
       </Medial>
-      {/* <MedicareMedial color={page.medicareAdvantagePageCustomFields.medicareAdvSection3.color}>
-        <div dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection3.medicareAdvColumns.medicareAdvColumn1.heading }} />
-        <div className="button-container">
-          <a href={page.medicareAdvantagePageCustomFields.medicareAdvSection3.medicareAdvColumns.medicareAdvColumn2.button.button1.link} onClick={routeLink}>
-            <Button background="accent-alt" border="light" color="light">
-              {page.medicareAdvantagePageCustomFields.medicareAdvSection3.medicareAdvColumns.medicareAdvColumn2.button.button1.text}, TTY 771
-            </Button>
-          </a>
-          <a href={page.medicareAdvantagePageCustomFields.medicareAdvSection3.medicareAdvColumns.medicareAdvColumn2.button.button2.link} onClick={routeLink}>
-            <Button background="accent-alt" border="light" color="light">
-              {page.medicareAdvantagePageCustomFields.medicareAdvSection3.medicareAdvColumns.medicareAdvColumn2.button.button2.text}
-            </Button>
-          </a>
-        </div>
-      </MedicareMedial> */}
+      
       <Section
         color={page.medicareAdvantagePageCustomFields.medicareAdvSection4.color}
         heading={page.medicareAdvantagePageCustomFields.medicareAdvSection4.heading}>

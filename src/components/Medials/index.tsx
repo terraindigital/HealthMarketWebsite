@@ -12,7 +12,7 @@ interface Props {
 }
 
 const Medial: FC<Props> = ({ color, children }) => {
-  let columnCount = (children.length > 2) ? 'three-columns' : 'two-columns';
+  let columnCount = (children?.length > 2) ? 'three-columns' : 'two-columns';
 
   useEffect(() => {
     fadeIn('.medial')
