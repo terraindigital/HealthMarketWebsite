@@ -484,7 +484,7 @@ interface MedicareMedialProps {
 }
 
 export const MedicareMedial: FC<MedicareMedialProps> = ({color, children}) => {
-  const columnCount = (children?.length > 2) ? 'three-columns' : 'two-columns';
+  const columnCount = 'two-columns';
   useEffect(() => {
     fadeIn('.medial')
   }, []);
