@@ -14,7 +14,6 @@ import {
   MedicareAdvantageSection,
   MedicareCardText,
   MedicareCtaTitle,
-  MedicareMedial,
   PageStyles,
   HeroHeading,
   HeroSubheading
@@ -28,6 +27,7 @@ import Layout from "../../../components/Layout";
 import PageHead from "../../../components/PageHead";
 import Hero from "../../../components/Hero";
 import PageHeroForm from "../../../components/Hero/PageHeroForm";
+import Medial from "../../../components/Medials";
 import Button from "../../../components/Buttons/Button";
 import Section from "../../../components/Sections";
 import Cards from "../../../components/Cards";
@@ -199,7 +199,7 @@ const MedicareAdvantagePage = () => {
         </a>
       </GuideCTA>
 
-      <MedicareMedial color={page.medicareAdvantagePageCustomFields.medicareAdvSection3.color}>
+      <Medial color={page.medicareAdvantagePageCustomFields.medicareAdvSection3.color}>
         <div dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection3.medicareAdvColumns.medicareAdvColumn1.heading }} />
         <div className="button-container">
           <a href={page.medicareAdvantagePageCustomFields.medicareAdvSection3.medicareAdvColumns.medicareAdvColumn2.button.button1.link} onClick={routeLink}>
@@ -213,7 +213,22 @@ const MedicareAdvantagePage = () => {
             </Button>
           </a>
         </div>
-      </MedicareMedial>
+      </Medial>
+      {/* <MedicareMedial color={page.medicareAdvantagePageCustomFields.medicareAdvSection3.color}>
+        <div dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection3.medicareAdvColumns.medicareAdvColumn1.heading }} />
+        <div className="button-container">
+          <a href={page.medicareAdvantagePageCustomFields.medicareAdvSection3.medicareAdvColumns.medicareAdvColumn2.button.button1.link} onClick={routeLink}>
+            <Button background="accent-alt" border="light" color="light">
+              {page.medicareAdvantagePageCustomFields.medicareAdvSection3.medicareAdvColumns.medicareAdvColumn2.button.button1.text}, TTY 771
+            </Button>
+          </a>
+          <a href={page.medicareAdvantagePageCustomFields.medicareAdvSection3.medicareAdvColumns.medicareAdvColumn2.button.button2.link} onClick={routeLink}>
+            <Button background="accent-alt" border="light" color="light">
+              {page.medicareAdvantagePageCustomFields.medicareAdvSection3.medicareAdvColumns.medicareAdvColumn2.button.button2.text}
+            </Button>
+          </a>
+        </div>
+      </MedicareMedial> */}
       <Section
         color={page.medicareAdvantagePageCustomFields.medicareAdvSection4.color}
         heading={page.medicareAdvantagePageCustomFields.medicareAdvSection4.heading}>
