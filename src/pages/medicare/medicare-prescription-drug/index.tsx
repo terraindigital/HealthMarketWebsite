@@ -1,15 +1,23 @@
 // Library
 import React from "react";
+import {Global} from "@emotion/react";
 
 // Query
 import {useMedicarePrescriptionDrugPageQuery} from "../../../hooks/insurance/useMedicarePrescriptionDrugPageQuery";
 
 // Styles
+import {
+  PageStyles,
+  HeroHeading,
+  HeroSubheading
+} from "../../../components/pages/styles/MedicareAdvantageStyles";
+
 // Scripts
 // Components
 import Layout from "../../../components/Layout";
 import Footer from "../../../components/Footer";
 import styled from "@emotion/styled";
+import Hero from "../../../components/Hero";
 import PageHeroForm from "../../../components/Hero/PageHeroForm";
 import calculatorSvg from "../../../static/images/calculator-logo.svg";
 import {routeLink} from "../../../static/scripts/global";
@@ -36,13 +44,28 @@ const MedicarePrescriptionDrugPage = () => {
     return (
         <Layout>
             <PageContainer>
-                <HeroContainer>
+            <Global styles={PageStyles} />
+              <Hero
+                image={page.pageHeroFields.heroImage.sourceUrl}
+                mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
+                bgColor="#E3DEDA">
+                <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
+                <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
+                <PageHeroForm
+                    light
+                    btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
+                    btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
+                    inputId="medicarePageHeroLocation"
+                    footerContent={page.pageHeroFields.callUs} />
+                <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page.medicarePrescriptionDrugPageCustomFields.heroDisclaimer }} />
+              </Hero>
+                {/* <HeroContainer>
                     <HeroDesktopImg src={page.pageHeroFields.heroImage.sourceUrl} alt="Hero"/>
                     <HeroDesktopOpacity/>
                     <HeroPadding>
                         <MainTitle>{page.pageHeroFields.headline}</MainTitle>
                         <Subtitle>{page.pageHeroFields.subheadline}</Subtitle>
-                        <PageHeroFormStyled
+                        <PageHeroForm
                             light
                             btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
                             btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
@@ -57,7 +80,7 @@ const MedicarePrescriptionDrugPage = () => {
                         <DisclaimerText dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer}}/>
                     </HeroPadding>
                     <HeroMobileImg src={page.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero"/>
-                </HeroContainer>
+                </HeroContainer> */}
                 <SectionContainer>
                     <SectionColumns>
                         <SectionColumnLeft>
@@ -786,7 +809,7 @@ const MainTitle = styled.h1`
   }
 
   @media only screen and (min-width: ${BREAKPOINT_LG}px) {
-    font-size: 120px;
+    font-size: 60px;
     line-height: 110%;
     letter-spacing: 2px;
     text-align: left;
@@ -816,21 +839,21 @@ const Subtitle = styled.h2`
 
   @media only screen and (min-width: ${BREAKPOINT_LG}px) {
     text-align: left;
-    font-size: 32px;
+    font-size: 20px;
     line-height: 140%;
     margin: 0 auto 28px;
   }
 `;
 
-const PageHeroFormStyled = styled(PageHeroForm)`
-  form {
-    text-align: center;
-    @media only screen and (min-width: ${1200}px) {
-      // Exactly at this width the form starts being aligned to the left.
-      text-align: left;
-    }
-  }
-`;
+// const PageHeroFormStyled = styled(PageHeroForm)`
+//   form {
+//     text-align: center;
+//     @media only screen and (min-width: ${1024}px) {
+//       // Exactly at this width the form starts being aligned to the left.
+//       text-align: left;
+//     }
+//   }
+// `;
 
 const HeroMobileImg = styled.img`
   background: #E3DEDA;

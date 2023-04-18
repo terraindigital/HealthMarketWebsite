@@ -16,6 +16,8 @@ import {
   MedicareCtaTitle,
   MedicareMedial,
   PageStyles,
+  HeroHeading,
+  HeroSubheading
 } from "../../../components/pages/styles/MedicareAdvantageStyles";
 
 // Scripts
@@ -24,6 +26,7 @@ import {routeLink} from '../../../static/scripts/global';
 // Components
 import Layout from "../../../components/Layout";
 import PageHead from "../../../components/PageHead";
+import Hero from "../../../components/Hero";
 import PageHeroForm from "../../../components/Hero/PageHeroForm";
 import Button from "../../../components/Buttons/Button";
 import Section from "../../../components/Sections";
@@ -71,8 +74,22 @@ const MedicareAdvantagePage = () => {
     <Layout pageClass="medicare-advantage">
       <PageContainer>
       <Global styles={PageStyles} />
+      <Hero
+        image={page.pageHeroFields.heroImage.sourceUrl}
+        mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
+        bgColor="#F2F2F2">
+        <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
+        <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
+        <PageHeroForm
+            light
+            btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
+            btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
+            inputId="medicarePageHeroLocation"
+            footerContent={page.pageHeroFields.callUs} />
+        <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvPostHeroDisclaimer }} />
+      </Hero>
 
-      <HeroContainer>
+      {/* <HeroContainer>
         <HeroDesktopImg src={page.pageHeroFields.heroImage.sourceUrl} alt="Hero"/>
         <HeroDesktopOpacity/>
 
@@ -94,7 +111,7 @@ const MedicareAdvantagePage = () => {
           <DisclaimerText className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvPostHeroDisclaimer }}/>
         </HeroPadding>
         <HeroMobileImg src={page.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero"/>
-      </HeroContainer>
+      </HeroContainer> */}
 
       <SectionContainer>
         <SectionColumns>
@@ -439,10 +456,10 @@ const MainTitle = styled.h1`
   }
 
   @media only screen and (min-width: ${BREAKPOINT_LG}px) {
-    font-size: 120px;
+    font-size: 60px;
     line-height: 110%;
     letter-spacing: 2px;
-    text-align: left;
+    text-align: center;
     padding: 0;
     margin: 0 0 33px 0;
     text-shadow: none;
@@ -470,9 +487,9 @@ const Subtitle = styled.h2`
     color: #FFFFFF;
   }
 
-  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
-    text-align: left;
-    font-size: 32px;
+  @media only screen and (max-width: ${BREAKPOINT_LG}px) {
+    text-align: center;
+    font-size: 20px;
     line-height: 140%;
     margin: 0 auto 28px;
   }
