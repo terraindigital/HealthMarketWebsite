@@ -484,7 +484,7 @@ const Subtitle = styled.h2`
 const PageHeroFormStyled = styled(PageHeroForm)`
   form {
     text-align: center;
-    @media only screen and (min-width: ${1025}px) {
+    @media only screen and (min-width: ${1200}px) {
       // Exactly at this width the form starts being aligned to the left.
       text-align: left;
     }
