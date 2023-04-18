@@ -1,6 +1,65 @@
+import {css} from "@emotion/react";
 import styled from "@emotion/styled";
 import {BREAKPOINT_LG, BREAKPOINT_MD, BREAKPOINT_SM, BREAKPOINT_XL} from "../../../breakpoints";
 import checkImgSvg from "../../../static/images/list-check.svg";
+
+export const PageStyles = css`
+  .hero .half {
+    flex-basis: 50%;
+    width: 50%;
+  }
+
+  .hero-disclaimer {
+    color: var(--color-light);
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+  @media only screen and (max-width: 788px) {
+    .hero .half {
+      display: block;
+      flex-basis: 100%;
+      text-align: center;
+      width: 100%;
+    }
+
+    .hero > img {
+      bottom: -25rem !important;
+      object-position: bottom;
+    }
+
+    .hero + .section {
+      padding-top: 4rem;
+    }
+
+    .button-container button {
+      max-width: 38.6rem;
+    }
+  }
+
+  @media only screen and (max-width: 620px) {
+    .button-container {
+      min-width: 100%;
+    }
+
+    .hero .half .light span {
+      color: var(--color-dark);
+    }
+
+    .hero .half .light img {
+      filter: none;
+    }
+
+    .hero > img {
+      bottom: -8rem;
+      top: auto;
+    }
+
+    .hero-disclaimer {
+      color: var(--color-dark);
+    }
+  }
+`
 
 export const SectionColumns = styled.div`
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {

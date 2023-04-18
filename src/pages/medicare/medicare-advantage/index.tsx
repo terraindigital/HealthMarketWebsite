@@ -16,6 +16,8 @@ import {
   MedicareCtaTitle,
   MedicareMedial,
   PageStyles,
+  HeroHeading,
+  HeroSubheading
 } from "../../../components/pages/styles/MedicareAdvantageStyles";
 
 // Scripts
@@ -24,6 +26,7 @@ import {routeLink} from '../../../static/scripts/global';
 // Components
 import Layout from "../../../components/Layout";
 import PageHead from "../../../components/PageHead";
+import Hero from "../../../components/Hero";
 import PageHeroForm from "../../../components/Hero/PageHeroForm";
 import Button from "../../../components/Buttons/Button";
 import Section from "../../../components/Sections";
@@ -71,8 +74,22 @@ const MedicareAdvantagePage = () => {
     <Layout pageClass="medicare-advantage">
       <PageContainer>
       <Global styles={PageStyles} />
+      <Hero
+        image={page.pageHeroFields.heroImage.sourceUrl}
+        mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
+        bgColor="#F2F2F2">
+        <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
+        <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
+        <PageHeroForm
+            light
+            btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
+            btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
+            inputId="medicarePageHeroLocation"
+            footerContent={page.pageHeroFields.callUs} />
+        <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvPostHeroDisclaimer }} />
+      </Hero>
 
-      <HeroContainer>
+      {/* <HeroContainer>
         <HeroDesktopImg src={page.pageHeroFields.heroImage.sourceUrl} alt="Hero"/>
         <HeroDesktopOpacity/>
 
@@ -94,7 +111,7 @@ const MedicareAdvantagePage = () => {
           <DisclaimerText className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvPostHeroDisclaimer }}/>
         </HeroPadding>
         <HeroMobileImg src={page.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero"/>
-      </HeroContainer>
+      </HeroContainer> */}
 
       <SectionContainer>
         <SectionColumns>
@@ -414,6 +431,7 @@ const HeroPadding = styled.div`
   padding: 0 22px;
   z-index: 100;
   position: relative;
+  width: 100%;
 `;
 
 const MainTitle = styled.h1`
@@ -438,10 +456,10 @@ const MainTitle = styled.h1`
   }
 
   @media only screen and (min-width: ${BREAKPOINT_LG}px) {
-    font-size: 120px;
+    font-size: 60px;
     line-height: 110%;
     letter-spacing: 2px;
-    text-align: left;
+    text-align: center;
     padding: 0;
     margin: 0 0 33px 0;
     text-shadow: none;
@@ -469,9 +487,9 @@ const Subtitle = styled.h2`
     color: #FFFFFF;
   }
 
-  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
-    text-align: left;
-    font-size: 32px;
+  @media only screen and (max-width: ${BREAKPOINT_LG}px) {
+    text-align: center;
+    font-size: 20px;
     line-height: 140%;
     margin: 0 auto 28px;
   }
@@ -484,7 +502,7 @@ const Subtitle = styled.h2`
 const PageHeroFormStyled = styled(PageHeroForm)`
   form {
     text-align: center;
-    @media only screen and (min-width: ${1025}px) {
+    @media only screen and (min-width: ${1200}px) {
       // Exactly at this width the form starts being aligned to the left.
       text-align: left;
     }
@@ -495,16 +513,20 @@ const CallUsCtn = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 38px 0 45px;
+  padding: 0 8px 0 16px;
 
-  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
+  @media only screen and (min-width: ${1024}px) {
     justify-content: flex-start;
-    margin-top: 70px;
-    padding: 0 0;
+    max-width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
   }
 
-  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
-    justify-content: flex-start;
+  @media only screen and (min-width: ${1200}px) {
+    max-width: unset;
+    margin-left: 0;
+    margin-right: 0;
   }
 `;
 
@@ -555,7 +577,7 @@ const CallUsText = styled.div`
 `;
 
 const DisclaimerText = styled.div`
-  margin-top: 14px;
+  margin-top: 10px;
   text-align: center;
 
   &, p, a {
@@ -571,12 +593,25 @@ const DisclaimerText = styled.div`
   }
 
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
-    text-align: left;
     &, p, a {
       color: #FFFFFF;
       line-height: 140%;
       font-size: 14px;
     }
+  }
+
+  @media only screen and (min-width: ${1024}px) {
+    text-align: left;
+    width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+  }
+
+  @media only screen and (min-width: ${1200}px) {
+    max-width: unset;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   @media only screen and (min-width: ${BREAKPOINT_LG}px) {

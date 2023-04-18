@@ -1,15 +1,23 @@
 // Library
 import React from "react";
+import {Global} from "@emotion/react";
 
 // Query
 import {useMedicarePrescriptionDrugPageQuery} from "../../../hooks/insurance/useMedicarePrescriptionDrugPageQuery";
 
 // Styles
+import {
+  PageStyles,
+  HeroHeading,
+  HeroSubheading
+} from "../../../components/pages/styles/MedicareAdvantageStyles";
+
 // Scripts
 // Components
 import Layout from "../../../components/Layout";
 import Footer from "../../../components/Footer";
 import styled from "@emotion/styled";
+import Hero from "../../../components/Hero";
 import PageHeroForm from "../../../components/Hero/PageHeroForm";
 import calculatorSvg from "../../../static/images/calculator-logo.svg";
 import {routeLink} from "../../../static/scripts/global";
@@ -36,13 +44,28 @@ const MedicarePrescriptionDrugPage = () => {
     return (
         <Layout>
             <PageContainer>
-                <HeroContainer>
+            <Global styles={PageStyles} />
+              <Hero
+                image={page.pageHeroFields.heroImage.sourceUrl}
+                mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
+                bgColor="#E3DEDA">
+                <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
+                <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
+                <PageHeroForm
+                    light
+                    btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
+                    btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
+                    inputId="medicarePageHeroLocation"
+                    footerContent={page.pageHeroFields.callUs} />
+                <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page.medicarePrescriptionDrugPageCustomFields.heroDisclaimer }} />
+              </Hero>
+                {/* <HeroContainer>
                     <HeroDesktopImg src={page.pageHeroFields.heroImage.sourceUrl} alt="Hero"/>
                     <HeroDesktopOpacity/>
                     <HeroPadding>
                         <MainTitle>{page.pageHeroFields.headline}</MainTitle>
                         <Subtitle>{page.pageHeroFields.subheadline}</Subtitle>
-                        <PageHeroFormStyled
+                        <PageHeroForm
                             light
                             btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
                             btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
@@ -57,7 +80,7 @@ const MedicarePrescriptionDrugPage = () => {
                         <DisclaimerText dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer}}/>
                     </HeroPadding>
                     <HeroMobileImg src={page.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero"/>
-                </HeroContainer>
+                </HeroContainer> */}
                 <SectionContainer>
                     <SectionColumns>
                         <SectionColumnLeft>
@@ -635,15 +658,20 @@ const CallUsCtn = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 38px;
+  padding: 0 8px 0 13px;
 
-  @media only screen and (min-width: ${BREAKPOINT_SM}px) {
-    margin-top: 64px;
-    padding: 0 0;
+  @media only screen and (min-width: ${1024}px) {
+    justify-content: flex-start;
+    max-width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
   }
 
-  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
-    justify-content: flex-start;
+  @media only screen and (min-width: ${1200}px) {
+    max-width: unset;
+    margin-left: 0;
+    margin-right: 0;
   }
 `;
 
@@ -681,9 +709,8 @@ const CallUsText = styled.div`
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
-  line-height: 100%;
-  display: flex;
+  padding-right: 3px;
+  text-align: left;
 
   &, p, a {
     text-decoration: none;
@@ -697,26 +724,27 @@ const CallUsText = styled.div`
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
     &, p, a {
       color: #FFFFFF;
+      font-size: 18px;
+      line-height: 150%;
     }
   }
 
   @media only screen and (min-width: ${BREAKPOINT_LG}px) {
-    font-size: 24px;
-    line-height: 150%;
+    &, p, a {
+      font-size: 24px;
+      line-height: 150%;
+    }
   }
 `;
 
 const DisclaimerText = styled.div`
-  margin-top: 12px;
-  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 110%;
-
+  margin-top: 10px;
   text-align: center;
 
   &, p, a {
+    font-size: 12px;
+    line-height: 110%;
+    padding: 0 2px;
     text-decoration: none;
     color: #4D4D4D;
   }
@@ -728,16 +756,34 @@ const DisclaimerText = styled.div`
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
     &, p, a {
       color: #FFFFFF;
+      line-height: 140%;
+      font-size: 14px;
     }
   }
 
+  @media only screen and (min-width: ${1024}px) {
+    text-align: left;
+    width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+  }
+
+  @media only screen and (min-width: ${1200}px) {
+    max-width: unset;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   @media only screen and (min-width: ${BREAKPOINT_LG}px) {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 140%;
     text-align: left;
     margin-top: 33px;
     max-width: 760px;
+    &, p, a {
+      font-weight: 600;
+      line-height: 140%;
+      font-size: 20px;
+    }
   }
 `;
 
@@ -763,7 +809,7 @@ const MainTitle = styled.h1`
   }
 
   @media only screen and (min-width: ${BREAKPOINT_LG}px) {
-    font-size: 120px;
+    font-size: 60px;
     line-height: 110%;
     letter-spacing: 2px;
     text-align: left;
@@ -793,21 +839,21 @@ const Subtitle = styled.h2`
 
   @media only screen and (min-width: ${BREAKPOINT_LG}px) {
     text-align: left;
-    font-size: 32px;
+    font-size: 20px;
     line-height: 140%;
     margin: 0 auto 28px;
   }
 `;
 
-const PageHeroFormStyled = styled(PageHeroForm)`
-  form {
-    text-align: center;
-    @media only screen and (min-width: ${1025}px) {
-      // Exactly at this width the form starts being aligned to the left.
-      text-align: left;
-    }
-  }
-`;
+// const PageHeroFormStyled = styled(PageHeroForm)`
+//   form {
+//     text-align: center;
+//     @media only screen and (min-width: ${1024}px) {
+//       // Exactly at this width the form starts being aligned to the left.
+//       text-align: left;
+//     }
+//   }
+// `;
 
 const HeroMobileImg = styled.img`
   background: #E3DEDA;

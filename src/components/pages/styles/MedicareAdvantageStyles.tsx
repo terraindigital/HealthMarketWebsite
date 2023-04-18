@@ -48,8 +48,8 @@ export const PageStyles = css`
   }
 
   .hero .half {
-    flex-basis: 50% !important;
-    width: 50% !important;
+    flex-basis: 50%;
+    width: 50%;
   }
 
   @media only screen and (max-width: 788px) {
@@ -58,6 +58,11 @@ export const PageStyles = css`
       flex-basis: 100%;
       text-align: center;
       width: 100%;
+    }
+
+    .hero > img {
+      bottom: -25rem !important;
+      object-position: bottom;
     }
 
     .hero + .section {
@@ -90,9 +95,7 @@ export const PageStyles = css`
 
     .hero > img {
       bottom: -8rem;
-      //top: auto;
-      // In order to match figma, we need -100px.
-      top: -100px;
+      top: auto;
     }
 
     .hero-disclaimer {
