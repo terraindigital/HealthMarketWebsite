@@ -179,14 +179,14 @@ const MedicarePrescriptionDrugPage = () => {
                 <TheUl>
                     <TheLi>
                         <CardTitleQuestions>
-                            {page.medicarePrescriptionDrugPageCustomFields.stillHaveQuestions.title}
+                            {page.medicarePrescriptionDrugPageCustomFields.finalMedial.title}
                         </CardTitleQuestions>
                         <CardButtonsContainer>
-                            <CardButtonBig href={page.medicarePrescriptionDrugPageCustomFields.stillHaveQuestions.button1Url}>
-                                {page.medicarePrescriptionDrugPageCustomFields.stillHaveQuestions.button1Text}, TTY 771
+                            <CardButtonBig href={page.medicarePrescriptionDrugPageCustomFields.finalMedial.button1Url}>
+                                {page.medicarePrescriptionDrugPageCustomFields.finalMedial.button1Text}, TTY 771
                             </CardButtonBig>
-                            <CardButtonBig href={page.medicarePrescriptionDrugPageCustomFields.stillHaveQuestions.button2Url}>
-                                {page.medicarePrescriptionDrugPageCustomFields.stillHaveQuestions.button2Text}
+                            <CardButtonBig href={page.medicarePrescriptionDrugPageCustomFields.finalMedial.button2Url}>
+                                {page.medicarePrescriptionDrugPageCustomFields.finalMedial.button2Text}
                             </CardButtonBig>
                         </CardButtonsContainer>
                     </TheLi>

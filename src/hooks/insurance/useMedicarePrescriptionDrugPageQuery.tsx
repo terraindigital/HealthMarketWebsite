@@ -56,7 +56,7 @@ query MedicarePrescriptionDrugPageQuery {
           }
         }
       }
-      stillHaveQuestions {
+      finalMedial {
         title
         button1Text
         button1Url
