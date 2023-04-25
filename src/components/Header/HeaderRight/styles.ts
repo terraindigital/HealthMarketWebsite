@@ -2,22 +2,19 @@ import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
   display: flex;
-  flex-wrap: no-wrap;
+  flex-wrap: nowrap;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-end;
   position: relative;
 `
 
 export const Item = styled.div`
-  border-right: 1px solid var(--color-dark);
   font-size: 2rem;
   font-weight: bold;
   padding: 0 1.6rem;
-
-  &:last-child {
-    border-right: none;
-  }
+  white-space: nowrap;
+  position: relative;
 
   .telephone {
     font-weight: 700;
@@ -42,7 +39,25 @@ export const Item = styled.div`
       padding-right: 0;
     }
   }
+  
+  &:not(:last-child)::after {
+    content: '';
+    height: 30px;
+    width: 1px;
+    background: var(--color-dark);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 `
+
+export const AgentItem = styled(Item)`
+  white-space: normal;
+  text-align: center;
+  flex-basis: 190px;
+  flex-grow: 1;
+`;
 
 export const TextSize = styled.span`
   color: transparent;

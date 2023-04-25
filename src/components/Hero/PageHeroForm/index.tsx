@@ -45,11 +45,11 @@ const api_key = 'ge-8876b9780ea0871d';
 const plans = "https://shop.healthmarkets.com/en/about-me/info/";
 const agents = "/local-health-insurance-agent/search/";
 
-const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, inputId, buttons, footerContent, hideFooter  }) => {
+const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, inputId, buttons, footerContent, hideFooter,...rest  }) => {
   console.log(hideFooter);
 
   return (
-    <Wrapper className={`${(centered) ? `centered` : ``} ${(light) ? `light` : ``}`}>
+    <Wrapper className={`${(centered) ? `centered` : ``} ${(light) ? `light` : ``}`} {...rest}>
       <Form id="zipCodeForm" action={plans} autocomplete="off" onSubmit={(e) => { sendForm(e) }}>
         {(buttons || buttons === undefined) ? (
           <Buttons>

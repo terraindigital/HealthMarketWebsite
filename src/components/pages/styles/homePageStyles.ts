@@ -4,6 +4,10 @@ export const HeroHeading = styled.h1`
   color: var(--color-light);
   margin-bottom: 2.4rem;
   text-align: center;
+
+  @media only screen and (max-width: 620px) {
+    font-size: 5rem;
+  }
 `
 
 export const HeroSubheading = styled.h4`

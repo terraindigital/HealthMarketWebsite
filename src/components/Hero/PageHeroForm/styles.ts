@@ -197,7 +197,8 @@ export const CTA = styled.div`
     }
   }
 
-  @media only screen and (max-width: 788px) {
+  @media only screen and (max-width: 900px) {
+    align-items: flex-start;
     justify-content: center;
     
     a, span {
@@ -206,6 +207,7 @@ export const CTA = styled.div`
     }
 
     img {
+      margin-top: 5px;
       max-height: 18px;
     }
   }
