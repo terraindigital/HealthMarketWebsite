@@ -33,6 +33,17 @@ export const Wrapper = styled.div`
       font-weight: 500;
     }
   }
+  &.open {
+    @media only screen and (max-width: 1024px) {
+      min-height: auto;
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 0;
+    }
+    @media only screen and (max-width: 480px) {
+      padding-top: 148px;
+    }
+  }
   @media screen and (min-width: 1921px) {
     padding-left: 40rem;
     padding-right: 40rem;
@@ -94,6 +105,26 @@ export const Img = styled.img`
       max-height: 50vh;
     }
   }
+  .open & {
+    object-position: center 0;
+    @media only screen and (max-width: 1440px) {
+      object-position: center 0;
+    }
+    @media only screen and (max-width: 1024px) {
+      object-fit: contain;
+      object-position: center 0;
+      min-width: 100%;
+      width: auto;
+    }
+    @media only screen and (max-width: 900px) {
+      object-fit: cover;
+      object-position: center 0;
+      max-height: 50vh;
+    }
+    @media only screen and (max-width: 600px) {
+      max-height: 148px;
+    }
+  }
 `
 
 export const Inner = styled.div`
@@ -116,6 +147,16 @@ export const Inner = styled.div`
     }
 
     @media only screen and (max-width: 1024px) {
+      text-align: center;
+    }
+  }
+  .open &.half {
+    flex-basis: 48%;
+    width: 48%;
+
+    @media only screen and (max-width: 1024px) {
+      flex-basis: 100%;
+      width: 100%;
       text-align: center;
     }
   }
@@ -172,7 +213,33 @@ export const Inner = styled.div`
       padding: 65px 21px 55px;
     }
   }
+  .open & {
+    @media only screen and (max-width: 1024px) {
+      background-color: var(--color-light);
+      display: block;
+      margin-top: 360px;
+      padding: 65px 55px 55px;
+    }
+    @media only screen and (max-width: 768px) {
+      margin-top: 124px;
+      padding: 16px 21px 55px;
+    }
+    @media only screen and (max-width: 480px) {
+      margin-top: 0;
+      padding: 16px 21px 55px;
+    }
+  }
   @media only screen and (max-width: 340px) {
     width: 100%;
+  }
+
+  .open &.form-open {
+    @media only screen and (max-width: 1024px) {
+      padding: 0;
+
+      .inner-contain {
+        display: none;
+      }
+    }
   }
 `

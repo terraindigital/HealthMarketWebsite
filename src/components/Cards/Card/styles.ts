@@ -24,6 +24,10 @@ export const Wrapper = styled.a`
     text-align: center;
   }
 
+  &.green {
+    background-color: var(--color-accent-light);
+  }
+
   @media only screen and (max-width: 788px) {
     flex-basis: calc(50% - 2.1rem);
     width: calc(50% - 2.1rem);
@@ -78,6 +82,10 @@ export const MobileWrapper = styled.div`
     text-align: center;
   }
 
+  &.green {
+    background-color: var(--color-accent-light);
+  }
+
   @media only screen and (max-width: 620px) {
     flex-basis: 100%;
     width: 100%;
@@ -116,6 +124,10 @@ export const Header = styled.div`
     color: var(--color-primary);
     font-family: var(--font-heading);
     padding: 3.2rem 3.2rem 2.4rem;
+  }
+
+  .green & h4 {
+    color: var(--color-accent-alt);
   }
 
   .icon & {
@@ -177,6 +189,16 @@ export const Header = styled.div`
         transform: rotateZ(-135deg);
       }
     }
+
+    .no-image & h4 {
+      border-bottom: 2px solid var(--color-accent-alt);
+      color: var(--color-accent-alt);
+      font-size: 38px;
+      line-height: 130%;
+      margin: 0 36px 20px 36px;
+      padding: 20px 0 18px 0;
+      text-align: center;
+    }
   }
 `
 
@@ -234,12 +256,30 @@ export const Content = styled.div`
     }
   }
 
+  .green & {
+    padding: 91.5px 28px;
+    
+    h4 {
+      border-bottom: 2px solid var(--color-accent-alt);
+      color: var(--color-accent-alt);
+      font-size: 38px;
+      line-height: 130%;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
+
   @media only screen and (max-width: 620px) {
     padding-top: 0;
 
     .icon & {
       margin-top: 1.6rem;
       padding: 0 0 2.4rem 2.4rem;
+    }
+
+    .no-image & {
+      padding: 20px 36px 36px 36px;
+      text-align: center;
     }
   }
 `
