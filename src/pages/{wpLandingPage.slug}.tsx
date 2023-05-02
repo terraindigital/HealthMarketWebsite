@@ -16,7 +16,8 @@ import {
   FormBody,
   FormInputGroup,
   FormInput,
-  FormFooter
+  FormFooter,
+  AcaMedial
 } from '../components/pages/styles/LandingPageStyles';
 
 // Scripts
@@ -41,7 +42,7 @@ import List from '../components/Lists';
 import MegaList from '../components/Lists/MegaList';
 import Medial from '../components/Medials';
 import PageHeroForm from '../components/Hero/PageHeroForm';
-import Footer from '../components/Footer';
+import LPFooter from '../components/Footer/LPFooter';
 import Accordion from "../components/Accordions";
 import Cards from "../components/Cards";
 import Card from "../components/Cards/Card";
@@ -677,7 +678,24 @@ const LPPage = ({data}: { data: PageInfo }) => {
           }
         })}
 
-        {(page.landingPageCustomFields.lpCta.showCta && page.landingPageCustomFields.lpCta.ctaLocation === 'before') ? (
+        {(page.slug === 'aca-insurance-plans') ? (
+          <AcaMedial className="primary">
+              <div className="inner">
+                <img className="chat-bubble" src={page.landingPageCustomFields.lpCta.ctaColumns.column1.image?.sourceUrl} alt="Chat bubble icon" />
+                <div dangerouslySetInnerHTML={{ __html: page.landingPageCustomFields.lpCta.ctaColumns.column2.heading }} style={{ color: '#009FDA' }} />
+                <a href={page.landingPageCustomFields.lpCta.ctaColumns.column3?.button?.link} onClick={routeLink}>
+                    <Button
+                      background={(page.landingPageCustomFields.lpCta.bgColor === "accent") ? "primary" : "accent-alt"}
+                      border={(page.landingPageCustomFields.lpCta.bgColor === "accent") ? "primary" : "light"}
+                      color="light">
+                        {page.landingPageCustomFields.lpCta.ctaColumns.column3?.button?.text}
+                    </Button>
+                </a>
+              </div>
+          </AcaMedial>
+        ) : null}
+
+        {(page.landingPageCustomFields.lpCta.showCta && page.landingPageCustomFields.lpCta.ctaLocation === 'before' && page.slug !== 'aca-insurance-plans') ? (
           <Medial
             color={page.landingPageCustomFields.lpCta.bgColor}>
               <img className="chat-bubble" src={page.landingPageCustomFields.lpCta.ctaColumns.column1.image?.sourceUrl} alt="Chat bubble icon" />
@@ -730,9 +748,9 @@ const LPPage = ({data}: { data: PageInfo }) => {
           </Medial>
         ) : null}
       </Wrapper>
-      <Footer>
+      <LPFooter>
         {page.disclaimers.disclaimer}
-      </Footer>
+      </LPFooter>
     </Layout>
   )
 }

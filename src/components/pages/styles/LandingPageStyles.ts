@@ -46,6 +46,13 @@ export const PageStyles = css`
   .aca-insurance-plans .hero .button-container:first-of-type {
     margin-bottom: 16px;
   }
+
+  .aca-insurance-plans .medial > div {
+    padding-bottom: 63px !important;
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+    padding-top: 63px !important;
+  }
 `
 
 export const Wrapper = styled.div`
@@ -305,4 +312,103 @@ export const FormInput = styled.div`
 
 export const FormFooter = styled.div`
   margin-top: 12px;
+`
+
+export const AcaMedial = styled.div`
+  background-color: var(--color-primary-light);
+  overflow-y: hidden;
+  padding: 10.4rem 8.9rem;
+
+  @media screen and (min-width: 1921px) {
+    padding-left: 40rem;
+    padding-right: 40rem;
+  }
+
+  @media screen and (max-width: 1044px) {
+    padding-left: 5.5rem;
+    padding-right: 5.5rem;
+  }
+
+  @media screen and (max-width: 788px) {
+    padding-left: 11rem;
+    padding-right: 11rem;
+    padding-bottom: 8rem;
+    padding-top: 8rem;
+  }
+
+  @media screen and (max-width: 620px) {
+    padding-left: 2.1rem;
+    padding-right: 2.1rem;
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+  }
+
+  .chat-bubble {
+    max-height: 129px;
+  }
+
+  @media only screen and (max-width: 1280px) {
+    .chat-bubble {
+      margin: 0 auto 2.1rem;
+      max-height: 125px;
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    .chat-bubble {
+      margin-left: 0;
+    }
+  }
+
+  @media only screen and (max-width: 620px) {
+    .chat-bubble {
+      max-height: 75px;
+    }
+  }
+
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0 28px;
+
+    background-color: var(--color-light);
+    border-radius: 4px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 63px 28px;
+
+    h3 {
+      color: var(--color-primary);
+      font-size: 38px;
+      line-height: 110%;
+      margin: 0px;
+
+      &:last-of-type {
+        margin-bottom: 12px;
+      }
+    }
+
+    h4 {
+      font-size: 22px;
+      line-height: 130%;
+    }
+
+    @media only screen and (max-width: 900px) {
+      display: block;
+      padding: 40px 28px;
+
+      p {
+        margin-bottom: 1.3rem;
+        margin-top: 1.3rem;
+      }
+
+      h3 {
+        font-size: 32px;
+      }
+
+      h4 {
+        margin-bottom: 48px;
+      }
+    }
+  }
 `
