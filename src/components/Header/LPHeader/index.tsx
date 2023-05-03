@@ -36,7 +36,7 @@ const LPHeader = ({ headerData }: { headerData: any }) => {
           </a>
         </LPAgentNumber>
       </Item>
-      <Item>
+      {/* <Item>
         <Translate>
           <img src={TranslateIcon} alt="Globe icon" />
           <select name="translate" id="lpTranslate">
@@ -44,7 +44,7 @@ const LPHeader = ({ headerData }: { headerData: any }) => {
             <option value="spanish">Espa&ntilde;ol</option>
           </select>
         </Translate>
-      </Item>
+      </Item> */}
     </Wrapper>
   )
 }
