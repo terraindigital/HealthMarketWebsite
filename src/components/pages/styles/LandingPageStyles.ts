@@ -197,6 +197,57 @@ export const FlyInForm = styled.div`
   }
 `
 
+export const FormConfirm = styled.div`
+  align-items: center;
+  background-color: var(--color-primary-light);
+  display: flex;
+  height: 100%;
+  left: 0;
+  justify-content: center;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 9999px;
+  transition: top 0.22s ease-in,
+              opacity 0.22s ease-in-out;
+  width: 100%;
+  z-index: 99;
+
+  &.submitted {
+    opacity: 1;
+    top: 0;
+  }
+
+  .inner {
+    p {
+      text-align: center;
+    }
+  }
+`
+
+export const Check = styled.div`
+  height: 4rem;
+  left: 50%;
+  margin-bottom: 16px;
+  position: relative;
+  transform: translateX(-50%);
+  width: 4rem;
+
+  &:before {
+    content: '';
+    background-color: var(--color-light);
+    border: 2px solid var(--color-accent);
+    border-radius: 50%;
+    display: block;
+    height: 4.5rem;
+    left: -3px;
+    position: absolute;
+    top: 3px;
+    width: 4.5rem;
+    z-index: -1;
+  }
+`
+
 export const FormClose = styled.div`
   cursor: pointer;
   display: block;
@@ -206,6 +257,7 @@ export const FormClose = styled.div`
   right: 18px;
   top: 14px;
   width: 23px;
+  z-index: 102;
 
   &:after,
   &:before {

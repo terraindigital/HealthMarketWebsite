@@ -11,6 +11,8 @@ import {
   HeroSubheading,
   InputGroup,
   FlyInForm,
+  FormConfirm,
+  Check,
   FormClose,
   FormHeading,
   FormBody,
@@ -50,7 +52,9 @@ import Input from "../components/Inputs/Input";
 import CheckboxGroup from "../components/Inputs/Checkbox/CheckboxGroup";
 import Checkbox from "../components/Inputs/Checkbox";
 import AlternateSection from "../components/Sections/AlternateSection";
-import Modal from "../components/Modals";
+
+// Images
+import checkImg from "../static/images/list-check.png"
 
 interface IconInfo {
   link: String,
@@ -264,15 +268,14 @@ const LPPage = ({data}: { data: PageInfo }) => {
       res.json();
     }).then(() => {
       // activate confirmation modal
-      let modal = document.querySelector('.is-modal.confirmation');
-      modal?.classList.add('is-active');
+      let modal = document.querySelector('.confirmation');
+      modal?.classList.add('submitted');
 
       // clear form
       document.getElementById('acaLpForm')?.reset();
     }).catch(() => {
-      // activate unsuccessful modal
-      let modal = document.querySelector('.is-modal.unsuccessful');
-      modal?.classList.add('is-active');
+      // log the error
+      console.log('ERROR: Form not submitted successfully. Please try again.')
     });
   };
 
@@ -348,12 +351,15 @@ const LPPage = ({data}: { data: PageInfo }) => {
               </div>
             </div>
             <FlyInForm className="acaform">
+              <FormConfirm className="confirmation">
+                <div className="inner">
+                  <Check>
+                    <img src={checkImg} alt="list checkmark" />
+                  </Check>
+                  <p>Your call request has been successfully submitted. One of our licensed insurance agents will be in touch shortly.</p>
+                </div>
+              </FormConfirm>
               <FormClose className="close aca-toggle" />
-              <Modal
-                classes="confirmation"
-                heading="Thank you!"
-                subheading="You are one step closer to finding the option that's right for you."
-                />
               <FormHeading>
                 <h4>Let's connect</h4>
                 <p><small>Enter your information and a licensed insurance agent will contact you soon</small></p>
