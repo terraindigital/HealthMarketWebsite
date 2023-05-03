@@ -172,23 +172,28 @@ export const InputGroup = styled.div`
 export const FlyInForm = styled.div`
   background-color: var(--color-primary-light);
   border: 1px solid var(--color-primary-dark);
-  left: calc(100% + 5.5rem);
+  left: 9999px;
   padding: 32px 40px;
   position: absolute;
   top: 40px;
   width: 100%;
-
-  display: none;
+  transition: left 0.22s ease-in-out;
 
   &.is-open {
-    display: block;
+    left: calc(100% + 5.5rem);
+  }
+
+  @media only screen and (max-width: 1280px) {
+    top: 0;
   }
 
   @media only screen and (max-width: 1024px) {
-    border: none;
-    left: 0;
-    top: 0;
-    position: relative;
+    &.is-open {
+      border: none;
+      left: 0;
+      top: 0;
+      position: relative;
+    }
   }
 `
 
@@ -228,7 +233,7 @@ export const FormHeading = styled.div`
   h4 { margin-bottom: 8px; }
 `
 
-export const FormBody = styled.div`
+export const FormBody = styled.form`
   //
 
   .required {

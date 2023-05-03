@@ -34,6 +34,11 @@ export const Wrapper = styled.div`
     }
   }
   &.open {
+    @media only screen and (min-width: 1025px) {
+      &.form-open {
+        min-height: 1101px;
+      }
+    }
     @media only screen and (max-width: 1024px) {
       min-height: auto;
       padding-left: 0;

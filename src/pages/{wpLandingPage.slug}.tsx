@@ -1,7 +1,7 @@
 // Library
 import React, { ReactNode, useEffect, useState } from "react";
 import { Global } from "@emotion/react";
-import { graphql } from "gatsby";
+import { graphql, withPrefix } from "gatsby";
 
 // Styles
 import {
@@ -50,6 +50,7 @@ import Input from "../components/Inputs/Input";
 import CheckboxGroup from "../components/Inputs/Checkbox/CheckboxGroup";
 import Checkbox from "../components/Inputs/Checkbox";
 import AlternateSection from "../components/Sections/AlternateSection";
+import Modal from "../components/Modals";
 
 interface IconInfo {
   link: String,
@@ -235,6 +236,46 @@ const LPPage = ({data}: { data: PageInfo }) => {
   const sections = page.landingPageCustomFields.lpSections;
   const callouts = page.calloutsCustomField.callouts;
 
+  const submit = async (e) => {
+    e.preventDefault();
+
+    const data = e.target;
+    const body = {
+      fname: data.fName.value,
+      lname: data.lName.value,
+      phone: data.phone.value,
+      zip: data.zipCode.value,
+      email: data.email.value,
+      medicare: false,
+      shortTerm: false,
+      acaHealth: true,
+      dental: false,
+      supplemental: false,
+      vision: false
+    }
+
+    fetch(withPrefix('/api/contact-form'), {
+      method: 'POST',
+      body: JSON.stringify(body),
+    }).then((res) => {
+      if (!res.ok) {
+        console.log(res);
+      }
+      res.json();
+    }).then(() => {
+      // activate confirmation modal
+      let modal = document.querySelector('.is-modal.confirmation');
+      modal?.classList.add('is-active');
+
+      // clear form
+      document.getElementById('acaLpForm')?.reset();
+    }).catch(() => {
+      // activate unsuccessful modal
+      let modal = document.querySelector('.is-modal.unsuccessful');
+      modal?.classList.add('is-active');
+    });
+  };
+
   useEffect(() => {
     const checkbox = document.querySelector('input#medicare');
     const disclaimer = document.querySelector('[data-disclaimer=medicare]');
@@ -250,6 +291,7 @@ const LPPage = ({data}: { data: PageInfo }) => {
     if (page.slug === 'aca-insurance-plans') {
       const toggles = document.querySelectorAll('.aca-toggle');
       const inner = document.querySelector('.hero.open .half');
+      const hero = document.querySelector('.hero.open');
       const form = document.querySelector('.acaform');
     
       toggles.forEach(toggle => {
@@ -257,10 +299,12 @@ const LPPage = ({data}: { data: PageInfo }) => {
           if (!isFormOpen && !form?.classList.contains('is-open')) {
             form?.classList.add('is-open');
             inner?.classList.add('form-open');
+            hero?.classList.add('form-open');
             setFormOpen(true);
           } else {
             form?.classList.remove('is-open');
             inner?.classList.remove('form-open');
+            hero?.classList.remove('form-open');
             setFormOpen(false);
           }
         });
@@ -296,20 +340,25 @@ const LPPage = ({data}: { data: PageInfo }) => {
                 </a>
               </div>
               <div className="button-container" style={{ maxWidth: '400px' }}>
-                <a href={page.landingPageCustomFields.lpHero.heroButtons.heroButton2.link} className="aca-toggle">
+                <div className="aca-toggle">
                   <Button background="light" border="accent-alt" color="accent-alt">
                     {page.landingPageCustomFields.lpHero.heroButtons.heroButton2.text}
                   </Button>
-                </a>
+                </div>
               </div>
             </div>
             <FlyInForm className="acaform">
               <FormClose className="close aca-toggle" />
+              <Modal
+                classes="confirmation"
+                heading="Thank you!"
+                subheading="You are one step closer to finding the option that's right for you."
+                />
               <FormHeading>
                 <h4>Let's connect</h4>
                 <p><small>Enter your information and a licensed insurance agent will contact you soon</small></p>
               </FormHeading>
-              <FormBody>
+              <FormBody id="acaLpForm" onSubmit={ submit }>
                 <FormInputGroup>
                   <FormInput className="group">
                     <label htmlFor="fName">First Name<sup>*</sup></label>
