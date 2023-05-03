@@ -219,6 +219,8 @@ export const FormConfirm = styled.div`
   }
 
   .inner {
+    padding: 44px;
+    
     p {
       text-align: center;
     }

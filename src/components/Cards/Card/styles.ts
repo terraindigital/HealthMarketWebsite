@@ -27,6 +27,7 @@ export const Wrapper = styled.a`
   &.green {
     background-color: var(--color-accent-light);
     max-width: 416px;
+    text-align: center;
   }
 
   @media only screen and (max-width: 788px) {
