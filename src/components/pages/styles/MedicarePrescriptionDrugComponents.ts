@@ -144,7 +144,7 @@ export const SectionSubtitle = styled.h2`
   font-size: 20px;
   line-height: 130%;
 
-  color: var(--color-primary-dark);
+  color: var(--color-primary);
 
   padding: 0 30px;
   margin-top: 40px;
