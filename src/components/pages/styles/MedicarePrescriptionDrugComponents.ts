@@ -15,6 +15,10 @@ export const PageStyles = css`
     font-weight: 400;
   }
 
+  .cards .card .card-content {
+    text-align: center;
+  }
+
   @media only screen and (max-width: 788px) {
     .hero .half {
       display: block;

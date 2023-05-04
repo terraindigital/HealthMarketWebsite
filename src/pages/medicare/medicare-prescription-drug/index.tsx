@@ -24,6 +24,11 @@ import {routeLink} from "../../../static/scripts/global";
 import {BREAKPOINT_LG, BREAKPOINT_MD, BREAKPOINT_SM, BREAKPOINT_XL, NAV_STARTS_FLOATING} from "../../../breakpoints";
 import {CtaButton, ListContainer, ListItem, SectionColumnLeft, SectionColumnRight, SectionColumns, SectionSubtitle, SectionText, SectionTitle} from "../../../components/pages/styles/MedicarePrescriptionDrugComponents";
 import PageHead from "../../../components/PageHead";
+import Section from "../../../components/Sections";
+import RelatedContent from "../../../components/RelatedContent";
+import Cards from "../../../components/Cards";
+import Card from "../../../components/Cards/Card";
+import Button from "../../../components/Buttons/Button";
 
 const PhoneIcon = () => (
     <StyledSvg width="26" height="28" viewBox="0 0 26 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -136,46 +141,39 @@ const MedicarePrescriptionDrugPage = () => {
                     </SectionCardDesktop>
                   </CardSpacingDesktop>
                 </SectionContainer>
-                <SectionContainerWhite>
-                    <SectionTitleRelated>
-                        {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.sectionHeading}
-                    </SectionTitleRelated>
-                    <RelatedCards>
-                        <RelatedCard href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.link}>
-                            <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.image.sourceUrl} alt=""/>
-                            <RelatedTitle>
-                                {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.title}
-                            </RelatedTitle>
-                            <RelatedTime>
-                                6-MINUTE READ
-                            </RelatedTime>
-                            <RelatedText dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.content}}/>
-                        </RelatedCard>
-                        <RelatedCard href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated2.link}>
-                            <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated2.image.sourceUrl} alt=""/>
-                            <RelatedTitle>
-                                {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated2.title}
-                            </RelatedTitle>
-                            <RelatedTime>
-                                6-MINUTE READ
-                            </RelatedTime>
-                            <RelatedText dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated2.content}}/>
-                        </RelatedCard>
-                        <RelatedCard href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated3.link}>
-                            <RelatedImage src={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated3.image.sourceUrl} alt=""/>
-                            <RelatedTitle>
-                                {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated3.title}
-                            </RelatedTitle>
-                            <RelatedTime>
-                                6-MINUTE READ
-                            </RelatedTime>
-                            <RelatedText dangerouslySetInnerHTML={{__html: page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated3.content}}/>
-                        </RelatedCard>
-                    </RelatedCards>
-                    <CtaButtonSecondary href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.ctaLink}>
+                <Section
+                  color={"light"}
+                  heading={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.sectionHeading}>
+                  <RelatedContent />
+                  <Cards relatedContent={true}>
+                    <Card
+                      image={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.image.sourceUrl}
+                      title={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.title}
+                      link={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.link}>
+                      <p dangerouslySetInnerHTML={{ __html: page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated1.content}} />
+                    </Card>
+                    <Card
+                      image={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated2.image.sourceUrl}
+                      title={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated2.title}
+                      link={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated2.link}>
+                      <p dangerouslySetInnerHTML={{ __html: page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated2.content}} />
+                    </Card>
+                    <Card
+                      image={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated3.image.sourceUrl}
+                      title={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated3.title}
+                      link={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated3.link}>
+                      <p dangerouslySetInnerHTML={{ __html: page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.medicarePrescriptionDrugRelated3.content}} />
+                    </Card>
+                  </Cards>
+
+                  <div className="full-rounded" style={{ textAlign: "center" }}>
+                    <a href={page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.ctaLink} onClick={routeLink}>
+                      <Button background="accent-alt" border="light" color="light">
                         {page.medicarePrescriptionDrugPageCustomFields.medicarePrescriptionDrugRelated.ctaText}
-                    </CtaButtonSecondary>
-                </SectionContainerWhite>
+                      </Button>
+                    </a>
+                  </div>
+                </Section>
                 <TheUl>
                     <TheLi>
                         <CardTitleQuestions>
@@ -198,30 +196,6 @@ const MedicarePrescriptionDrugPage = () => {
         </Layout>
     );
 };
-
-const RelatedCards = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 358px));
-  grid-gap: 30px;
-  padding: 0 16px;
-  justify-content: center;
-  list-style: none;
-  margin: 25px auto 30px;
-
-  @media only screen and (min-width: ${BREAKPOINT_MD}px) {
-    margin-top: 80px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 464px));
-    grid-gap: 20px;
-    margin-bottom: 82px;
-  }
-`;
-
-const RelatedCard = styled.a`
-  background: #F9F9F9;
-  margin: 0;
-  box-shadow: 5px 4px 8px rgba(0, 0, 0, 0.15);
-  padding: 0px 0px 20px;
-`;
 
 const TheUl = styled.div`
   display: grid;
