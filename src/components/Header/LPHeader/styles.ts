@@ -75,7 +75,7 @@ export const LPAgentText = styled.div`
   text-align: center;
 
   p {
-    color: var(--color-primary-dark);
+    color: var(--color-primary);
     font-size: 18px;
     font-weight: 600;
     line-height: 150%;
@@ -103,7 +103,7 @@ export const LPAgentNumber = styled.div`
     line-height: 130%;
 
     &, &:hover, &:active {
-      color: var(--color-primary-dark);
+      color: var(--color-primary);
     }
   }
 
