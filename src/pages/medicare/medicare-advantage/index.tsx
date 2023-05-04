@@ -334,7 +334,7 @@ export const SectionColumnRight = styled.div`
 export const SectionText = styled.div`
   padding: 0 36px;
   margin-top: 52px;
-  color: #4D4D4D;
+  color: var(--color-dark);
 
   &, p, a {
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
@@ -346,7 +346,7 @@ export const SectionText = styled.div`
   }
 
   a {
-    color: var(--color-primary-dark);
+    color: var(--color-primary);
   }
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {

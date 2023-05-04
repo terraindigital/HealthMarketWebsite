@@ -227,7 +227,7 @@ const TheUl = styled.div`
   display: grid;
   list-style: none;
   margin: 0;
-  background: #f3fafd;
+  background: var(--color-primary-light);
   padding: 42px 18px 130px;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
@@ -269,7 +269,7 @@ const RelatedTitle = styled.h2`
   line-height: 150%;
   padding: 17px 17px 0 24px;
 
-  color: var(--color-primary-dark);
+  color: var(--color-primary);
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     font-size: 32px;
@@ -340,7 +340,7 @@ const CardSpacingDesktop = styled.div`
 `;
 
 const SectionCardMobile = styled.div`
-  background: #FFFFFF;
+  background: var(--color-light);
 
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
@@ -348,7 +348,7 @@ const SectionCardMobile = styled.div`
 `;
 
 const SectionCardDesktop = styled.div`
-  background: #FFFFFF;
+  background: var(--color-light);
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   display: flex;
@@ -397,7 +397,7 @@ const CardTitleMobile = styled.h2`
     text-align: center;
     letter-spacing: 0.02em;
 
-    color: var(--color-primary-dark);
+    color: var(--color-primary);
   }
 
   p {
@@ -413,7 +413,7 @@ const CardTitleDesktop = styled.h2`
     font-style: normal;
     font-weight: 600;
     letter-spacing: 0.02em;
-    color: var(--color-primary-dark);
+    color: var(--color-primary);
     font-size: 65px;
     line-height: 110%;
     text-align: left;
@@ -431,7 +431,7 @@ const CardTitleQuestions = styled.h2`
   line-height: 100%;
   text-align: center;
   letter-spacing: 0.02em;
-  color: var(--color-primary-dark);
+  color: var(--color-primary);
   margin: 0 0 22px;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
@@ -455,7 +455,7 @@ const CardTextMobile = styled.div`
   display: flex;
   align-items: center;
 
-  color: #4D4D4D;
+  color: var(--color-dark);
   margin-top: 21px;
   margin-bottom: 13px;
   padding: 0 8px;
@@ -464,7 +464,7 @@ const CardTextMobile = styled.div`
 const CardTextDesktop = styled.div`
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   font-style: normal;
-  color: #4D4D4D;
+  color: var(--color-dark);
   font-weight: 600;
   font-size: 24px;
   line-height: 150%;
@@ -490,7 +490,7 @@ const HeroContainer = styled.div`
     height: calc(100vh - 100px);
     display: flex;
     align-items: center;
-    background-color: #F3FAFD;
+    background-color: var(--color-primary-light);
     padding: 0;
   }
   
@@ -508,7 +508,7 @@ const PageContainer = styled.div`
 `;
 
 const SectionContainer = styled.div`
-  background: #f3fafd;
+  background: var(--color-primary-light);
   padding: 40px 0px 38px;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
@@ -517,7 +517,7 @@ const SectionContainer = styled.div`
 `;
 
 const SectionContainerWhite = styled.div`
-  background: #ffffff;
+  background: var(--color-light);
   padding: 40px 0px 38px;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
@@ -534,8 +534,8 @@ const SectionTitleRelated = styled.h2`
 
   letter-spacing: 0.02em;
 
-  color: #FFFFFF;
-  background: #009FDA;
+  color: var(--color-light);
+  background: var(--color-primary);
 
   padding: 6px 0px 12px 33px;
   width: 340px;
@@ -558,13 +558,13 @@ const CtaButtonSecondary = styled.a`
   font-size: 16px;
   line-height: 22px;
   text-align: center;
-  color: #FFFFFF;
+  color: var(--color-light);
   display: flex;
   padding: 15px;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  background: #009B3A;
+  background: var(--color-accent-alt);
   border: none;
   max-width: 335px;
 
@@ -601,13 +601,13 @@ const CardButton = styled.a`
   font-size: 16px;
   line-height: 22px;
   text-align: center;
-  color: #FFFFFF;
+  color: var(--color-light);
   display: flex;
   padding: 8px;
   align-items: center;
   justify-content: center;
-  background: #009B3A;
-  border: 2px solid #FFFFFF;
+  background: var(--color-accent-alt);
+  border: 2px solid var(--color-light);
   margin: 0 auto;
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
@@ -628,13 +628,13 @@ const CardButtonBig = styled.a`
   font-size: 16px;
   line-height: 22px;
   text-align: center;
-  color: #FFFFFF;
+  color: var(--color-light);
   display: flex;
   padding: 8px;
   align-items: center;
   justify-content: center;
-  background: #009B3A;
-  border: 2px solid #FFFFFF;
+  background: var(--color-accent-alt);
+  border: 2px solid var(--color-light);
   margin: 0 auto;
   max-width: 393px;
 
@@ -686,12 +686,12 @@ const StyledSvg = styled.svg`
 
   * {
     stroke: transparent;
-    fill: #4D4D4D;
+    fill: var(--color-dark);
   }
 
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
     * {
-      fill: #ffffff;
+      fill: var(--color-light);
     }
   }
 
@@ -714,7 +714,7 @@ const CallUsText = styled.div`
 
   &, p, a {
     text-decoration: none;
-    color: #4D4D4D;
+    color: var(--color-dark);
   }
 
   p {
@@ -723,7 +723,7 @@ const CallUsText = styled.div`
 
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
     &, p, a {
-      color: #FFFFFF;
+      color: var(--color-light);
       font-size: 18px;
       line-height: 150%;
     }
@@ -746,7 +746,7 @@ const DisclaimerText = styled.div`
     line-height: 110%;
     padding: 0 2px;
     text-decoration: none;
-    color: #4D4D4D;
+    color: var(--color-dark);
   }
 
   p {
@@ -755,7 +755,7 @@ const DisclaimerText = styled.div`
 
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
     &, p, a {
-      color: #FFFFFF;
+      color: var(--color-light);
       line-height: 140%;
       font-size: 14px;
     }
@@ -799,12 +799,12 @@ const MainTitle = styled.h1`
 
   text-align: center;
 
-  color: #4D4D4D;
+  color: var(--color-dark);
 
   margin: 0 auto 14px;
 
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
-    color: #FFFFFF;
+    color: var(--color-light);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
   }
 
@@ -831,10 +831,10 @@ const Subtitle = styled.h2`
 
   text-align: center;
 
-  color: #4D4D4D;
+  color: var(--color-dark);
 
   @media only screen and (min-width: ${BREAKPOINT_SM}px) {
-    color: #FFFFFF;
+    color: var(--color-light);
   }
 
   @media only screen and (min-width: ${BREAKPOINT_LG}px) {
