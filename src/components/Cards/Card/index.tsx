@@ -31,7 +31,7 @@ interface Props {
   displayImage?: Boolean
 }
 
-const Card: FC<Props> = ({ image=null, icon=null, mobile=null, link=null, title, children, imgStyle, background, displayImage }) => {
+const Card: FC<Props> = ({ image=null, icon=null, mobile=null, link=null, title, children, imgStyle, background, displayImage=true }) => {
   const imageClass = (displayImage) ? ((icon !== null) ? "icon" : "image") : "no-image"
 
   return (
