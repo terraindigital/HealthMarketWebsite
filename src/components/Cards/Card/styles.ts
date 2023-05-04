@@ -211,6 +211,10 @@ export const ImgContainer = styled.div`
   &.image {
     height: 220px;
   }
+
+  &.image {
+    height: 326px;
+  }
 `
 
 export const Img = styled.img`
@@ -225,6 +229,14 @@ export const Img = styled.img`
       height: auto;
       min-height: 220px;
       min-width: 100%;
+    }
+  }
+
+  .related-content .image & {
+    height: 326px;
+
+    @media only screen and (max-width: 620px) {
+      height: auto;
     }
   }
 `
@@ -268,6 +280,14 @@ export const Content = styled.div`
       line-height: 130%;
       margin-bottom: 20px;
       text-align: center;
+    }
+  }
+
+  .related-content & {
+    h4, p { text-align: center; }
+
+    h4 {
+      margin-bottom: 0.6em;
     }
   }
 
