@@ -8,12 +8,14 @@ import { routeLink } from '../../../static/scripts/global'
 
 interface Props {
   menu: Object,
-  title: String
+  title?: String
 }
 
 const FooterMenu: FC<Props> = ({ menu, title }) => (
   <Wrapper>
-    <h6>{title}</h6>
+    {(title) ? (
+      <h6>{title}</h6>
+    ) : null}
     <ul>
       {menu.menuItems.nodes.map(item =>
         <li key={item.id} className={`item ${item.cssClasses.map(className => className)}`}>

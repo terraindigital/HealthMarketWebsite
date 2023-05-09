@@ -6,6 +6,10 @@ export const Wrapper = styled.div`
   justify-content: center;
   flex-wrap: wrap;
 
+  &.related-content {
+    margin-bottom: 56px;
+  }
+
   @media only screen and (max-width: 788px) {
     justify-content: center;
   }

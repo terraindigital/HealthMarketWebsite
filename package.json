@@ -13,11 +13,7 @@
     "start": "gatsby develop",
     "build": "gatsby build --prefix-paths",
     "serve": "gatsby serve --prefix-paths",
-    "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit",
-    "format": "eslint . --fix",
-    "webpack-dev-server": "webpack-dev-server --mode=development --config ./wp-renderer/webpack.config.js",
-    "dev": "webpack-dev-server --mode=development --config ./wp-renderer/webpack.config.js"
+    "clean": "gatsby clean"
   },
   "dependencies": {
     "@emotion/cache": "^11.10.3",

@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useEffect } from "react"
+import React, { Children, FC, ReactNode, useEffect } from "react"
 
 // Styles
 import { Wrapper, Inner } from "./styles"
@@ -12,7 +12,8 @@ interface Props {
 }
 
 const Medial: FC<Props> = ({ color, children }) => {
-  let columnCount = (children.length > 2) ? 'three-columns' : 'two-columns';
+  let count = Children.count(children);
+  let columnCount = (count > 2) ? 'three-columns' : 'two-columns';
 
   useEffect(() => {
     fadeIn('.medial')
