@@ -1,7 +1,7 @@
 import React from 'react'
 import {useLocation} from "@reach/router";
 
-const Script = ({ body, id }: { body: string, id: string }) => {
+const Script = ({ body, src, id }: { body?: string, src?: string, id: string }) => {
 
     const {pathname} = useLocation()
 
@@ -9,8 +9,13 @@ const Script = ({ body, id }: { body: string, id: string }) => {
         if (!document.querySelector(`script[data-id="${id}"]`)) {
             const scriptElm = document.createElement('script');
             scriptElm.setAttribute("data-id", id)
-            const inlineCode = document.createTextNode(body);
-            scriptElm.appendChild(inlineCode);
+            if (src) {
+                scriptElm.src = src
+            }
+            if (body) {
+                const inlineCode = document.createTextNode(body);
+                scriptElm.appendChild(inlineCode);
+            }
             document.body.appendChild(scriptElm)
         }
         return () => {

@@ -45,24 +45,10 @@ module.exports = {
             }
         },*/
         {
-            resolve: `gatsby-plugin-google-analytics`,
-            options: {
-                trackingId: 'GA_TRACKING_ID',
-            },
-        },
-        {
           resolve: `gatsby-plugin-canonical-urls`,
           options: {
             siteUrl: `https://www.healthmarkets.com`,
           },
-        },
-        {
-          resolve: `gatsby-plugin-google-tagmanager`,
-          options: {
-            id: `GTM-5D4VMW`,
-            includeInDevelopment: true,
-            defaultDataLayer: {}
-          }
         },
         'gatsby-plugin-image',
         'gatsby-plugin-react-helmet',
