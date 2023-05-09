@@ -14,6 +14,7 @@ export const Buttons = styled.div`
   align-items: stretch;
   display: flex;
   flex-wrap: nowrap;
+  justify-content: left;
 
   .centered & {
     justify-content: center;
@@ -23,8 +24,13 @@ export const Buttons = styled.div`
     min-width: 410px;
   }
 
+  @media only screen and (min-width: 1024px) {
+    justify-content: left;
+  }
+
   @media only screen and (max-width: 1024px) {
     justify-content: center;
+    text-align: center;
   }
 
   @media only screen and (max-width: 920px) {
@@ -73,7 +79,9 @@ export const Radio = styled.div`
 `
 
 export const Form = styled.form`
-  /* change to styled.form */
+  @media only screen and (max-width: 1024px) {
+    text-align: center;
+  }
 `
 
 export const InputGroup = styled.div`

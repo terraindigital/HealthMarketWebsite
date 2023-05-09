@@ -58,6 +58,12 @@ export const Wrapper = styled.div`
     padding-top: 2.1rem;
     position: relative;
   }
+
+  @media only screen and (max-width: 600px) {
+    &.lp-header {
+      margin-top: 81px;
+    }
+  }
 `
 
 export const Logo = styled.img`

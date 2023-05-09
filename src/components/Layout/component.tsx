@@ -31,7 +31,7 @@ const LayoutComponent: FC<LayoutProps> = ({ headerData, pageClass, staticHeader,
     return (
         <Wrapper className={`healthmarkets22 ${pageClass ? pageClass : ""} page`}>
             <Global styles={GlobalStyles}/>
-            <Header headerData={headerData} staticHeader={staticHeader} color={headerColor}/>
+            <Header headerData={headerData} staticHeader={staticHeader} color={headerColor} lp={(pageClass === 'aca-insurance-plans')}/>
             {children}
         </Wrapper>
     )
