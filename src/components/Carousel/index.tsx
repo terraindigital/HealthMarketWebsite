@@ -82,7 +82,7 @@ const Carousel: FC<Props> = ({ children }) => {
           ) : ({children})
         }
         <div className="hide-at-mobile">
-          <CarouselNav current={current} count={children.length}/>
+          <CarouselNav current={current} count={children?.length}/>
         </div>
       </Swiper>
     </Wrapper>
