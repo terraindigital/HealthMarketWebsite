@@ -17,13 +17,13 @@ const FooterMenu: FC<Props> = ({ menu, title }) => (
       <h6>{title}</h6>
     ) : null}
     <ul>
-      {menu.menuItems.nodes.map(item =>
+      {menu?.menuItems?.nodes?.map(item =>
         <li key={item.id} className={`item ${item.cssClasses.map(className => className)}`}>
           <a href={item.url} onClick={routeLink}>
             {item.label}
           </a>
         </li>
-      )}
+      ) || null}
       {(title === 'Get to Know Us') ? 
         <li id="doNotTrack" className="item doNotTrack">
           <div>

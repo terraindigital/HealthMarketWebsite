@@ -108,7 +108,7 @@ const HealthInsurancePage = () => {
               return (
                 <Icon
                   icon={plans[plan].icon.sourceUrl}
-                  mobile={plans[plan].mobileIcon.sourceUrl}
+                  mobile={plans[plan].mobileIcon?.sourceUrl}
                   title={plans[plan].title}
                   link={plans[plan].link} />
               )
@@ -142,7 +142,7 @@ const HealthInsurancePage = () => {
               return (
                 <Icon
                   icon={plans[plan].icon.sourceUrl}
-                  mobile={plans[plan].mobileIcon.sourceUrl}
+                  mobile={plans[plan].mobileIcon?.sourceUrl}
                   title={plans[plan].title}
                   link={plans[plan].link} />
               )
