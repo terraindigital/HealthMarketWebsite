@@ -209,11 +209,13 @@ export const ImgContainer = styled.div`
   position: relative;
 
   &.image {
-    height: 220px;
+    height: 326px;
   }
 
-  &.image {
-    height: 326px;
+  @media only screen and (max-width: 600px) {
+    &.image {
+      height: 220px;
+    }
   }
 `
 
