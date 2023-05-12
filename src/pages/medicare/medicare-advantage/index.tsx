@@ -76,18 +76,18 @@ const MedicareAdvantagePage = () => {
       <PageContainer>
       <Global styles={PageStyles} />
       <Hero
-        image={page.pageHeroFields.heroImage.sourceUrl}
-        mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
+        image={page?.pageHeroFields?.heroImage?.sourceUrl}
+        mobileImage={page?.pageHeroFields?.mobileHeroImage?.sourceUrl}
         bgColor="#F2F2F2">
-        <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
-        <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
+        <HeroHeading>{page?.pageHeroFields?.headline}</HeroHeading>
+        <HeroSubheading>{page?.pageHeroFields?.subheadline}</HeroSubheading>
         <PageHeroForm
             light
-            btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
-            btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
+            btnLeftText={page?.pageHeroFields?.heroButtons?.heroButton1?.text}
+            btnRightText={page?.pageHeroFields?.heroButtons?.heroButton2?.text}
             inputId="medicarePageHeroLocation"
-            footerContent={page.pageHeroFields.callUs} />
-        <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvPostHeroDisclaimer }} />
+            footerContent={page?.pageHeroFields?.callUs} />
+        <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page?.medicareAdvantagePageCustomFields?.medicareAdvPostHeroDisclaimer }} />
       </Hero>
 
       {/* <HeroContainer>
@@ -118,22 +118,22 @@ const MedicareAdvantagePage = () => {
         <SectionColumns>
           <SectionColumnLeft>
             <SectionTitle>
-              {page.medicareAdvantagePageCustomFields.medicareAdvSection1.heading}
+              {page?.medicareAdvantagePageCustomFields?.medicareAdvSection1?.heading}
             </SectionTitle>
           </SectionColumnLeft>
           <SectionColumnRight>
             <AccordionPadding>
-              <MedicareAccordionFixed title={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion1.heading}>
-                <MedicareAccordionFixedContent dangerouslySetInnerHTML={{__html: page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion1.content}}/>
+              <MedicareAccordionFixed title={page?.medicareAdvantagePageCustomFields?.medicareAdvSection1?.medicareAdvAccordions?.medicareAdvAccordion1?.heading}>
+                <MedicareAccordionFixedContent dangerouslySetInnerHTML={{__html: page?.medicareAdvantagePageCustomFields?.medicareAdvSection1?.medicareAdvAccordions?.medicareAdvAccordion1?.content}}/>
               </MedicareAccordionFixed>
-              <MedicareAccordionFixed title={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion2.heading}>
-                <MedicareAccordionFixedContent dangerouslySetInnerHTML={{__html: page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion2.content}}/>
+              <MedicareAccordionFixed title={page?.medicareAdvantagePageCustomFields?.medicareAdvSection1?.medicareAdvAccordions?.medicareAdvAccordion2?.heading}>
+                <MedicareAccordionFixedContent dangerouslySetInnerHTML={{__html: page?.medicareAdvantagePageCustomFields?.medicareAdvSection1?.medicareAdvAccordions?.medicareAdvAccordion2?.content}}/>
               </MedicareAccordionFixed>
-              <MedicareAccordionFixed title={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion3.heading}>
-                <MedicareAccordionFixedContent dangerouslySetInnerHTML={{__html: page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion3.content}}/>
+              <MedicareAccordionFixed title={page?.medicareAdvantagePageCustomFields?.medicareAdvSection1?.medicareAdvAccordions?.medicareAdvAccordion3?.heading}>
+                <MedicareAccordionFixedContent dangerouslySetInnerHTML={{__html: page?.medicareAdvantagePageCustomFields?.medicareAdvSection1?.medicareAdvAccordions?.medicareAdvAccordion3?.content}}/>
               </MedicareAccordionFixed>
             </AccordionPadding>
-            <SectionText dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvPostAccordionText }}/>
+            <SectionText dangerouslySetInnerHTML={{ __html: page?.medicareAdvantagePageCustomFields?.medicareAdvSection1?.medicareAdvPostAccordionText }}/>
           </SectionColumnRight>
         </SectionColumns>
       </SectionContainer>
@@ -160,42 +160,42 @@ const MedicareAdvantagePage = () => {
       */}
       <MedicareAdvantageSection
         page="medicare-advantage"
-        color={page.medicareAdvantagePageCustomFields.medicareAdvSection2.color}>
+        color={page?.medicareAdvantagePageCustomFields?.medicareAdvSection2?.color}>
         <Cards openAtMobile>
           <Card
-            icon={page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard1.icon.sourceUrl}
-            mobile={page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard1.mobile.sourceUrl}
-            title={page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard1.title}
-            link={page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard1.link}>
-              <MedicareCardText className="card-link" dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard1.content }}/>
+            icon={page?.medicareAdvantagePageCustomFields?.medicareAdvSection2?.medicareAdvCards?.medicareAdvCard1?.icon?.sourceUrl}
+            mobile={page?.medicareAdvantagePageCustomFields?.medicareAdvSection2?.medicareAdvCards?.medicareAdvCard1?.mobile?.sourceUrl}
+            title={page?.medicareAdvantagePageCustomFields?.medicareAdvSection2?.medicareAdvCards?.medicareAdvCard1?.title}
+            link={page?.medicareAdvantagePageCustomFields?.medicareAdvSection2?.medicareAdvCards?.medicareAdvCard1?.link}>
+              <MedicareCardText className="card-link" dangerouslySetInnerHTML={{ __html: page?.medicareAdvantagePageCustomFields?.medicareAdvSection2?.medicareAdvCards?.medicareAdvCard1?.content }}/>
           </Card>
           <Card
-            icon={page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard2.icon.sourceUrl}
-            mobile={page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard2.mobile.sourceUrl}
-            title={page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard2.title}
-            link={page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard2.link}>
-            <MedicareCardText className="card-link" dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard2.content }}/>
+            icon={page?.medicareAdvantagePageCustomFields?.medicareAdvSection2?.medicareAdvCards?.medicareAdvCard2?.icon?.sourceUrl}
+            mobile={page?.medicareAdvantagePageCustomFields?.medicareAdvSection2?.medicareAdvCards?.medicareAdvCard2?.mobile?.sourceUrl}
+            title={page?.medicareAdvantagePageCustomFields?.medicareAdvSection2?.medicareAdvCards?.medicareAdvCard2?.title}
+            link={page?.medicareAdvantagePageCustomFields?.medicareAdvSection2?.medicareAdvCards?.medicareAdvCard2?.link}>
+            <MedicareCardText className="card-link" dangerouslySetInnerHTML={{ __html: page?.medicareAdvantagePageCustomFields?.medicareAdvSection2?.medicareAdvCards?.medicareAdvCard2?.content }}/>
           </Card>
           <Card
-            icon={page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard3.icon.sourceUrl}
-            mobile={page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard3.mobile.sourceUrl}
-            title={page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard3.title}
-            link={page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard3.link}>
-            <MedicareCardText className="card-link" dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection2.medicareAdvCards.medicareAdvCard3.content }}/>
+            icon={page?.medicareAdvantagePageCustomFields?.medicareAdvSection2?.medicareAdvCards?.medicareAdvCard3?.icon?.sourceUrl}
+            mobile={page?.medicareAdvantagePageCustomFields?.medicareAdvSection2?.medicareAdvCards?.medicareAdvCard3?.mobile?.sourceUrl}
+            title={page?.medicareAdvantagePageCustomFields?.medicareAdvSection2?.medicareAdvCards?.medicareAdvCard3?.title}
+            link={page?.medicareAdvantagePageCustomFields?.medicareAdvSection2?.medicareAdvCards?.medicareAdvCard3?.link}>
+            <MedicareCardText className="card-link" dangerouslySetInnerHTML={{ __html: page?.medicareAdvantagePageCustomFields?.medicareAdvSection2?.medicareAdvCards?.medicareAdvCard3?.content }}/>
           </Card>
         </Cards>
       </MedicareAdvantageSection>
 
       <GuideCTA>
         <MedicareCtaTitle only="mobile">
-            {page.medicareAdvantagePageCustomFields.guideCta.headlineMobile}
+            {page?.medicareAdvantagePageCustomFields?.guideCta?.headlineMobile}
         </MedicareCtaTitle>
         <MedicareCtaTitle only="desktop">
-            {page.medicareAdvantagePageCustomFields.guideCta.headline}
+            {page?.medicareAdvantagePageCustomFields?.guideCta?.headline}
         </MedicareCtaTitle>
-        <a href={page.medicareAdvantagePageCustomFields.guideCta.button.link} onClick={routeLink}>
+        <a href={page?.medicareAdvantagePageCustomFields?.guideCta?.button?.link} onClick={routeLink}>
           <Button background="accent-alt" border="light" color="light">
-            {page.medicareAdvantagePageCustomFields.guideCta.button.text}
+            {page?.medicareAdvantagePageCustomFields?.guideCta?.button?.text}
           </Button>
         </a>
       </GuideCTA>
@@ -215,57 +215,57 @@ const MedicareAdvantagePage = () => {
           </a>
         </div>
       </Medial> */}
-      <MedicareMedial color={page.medicareAdvantagePageCustomFields.medicareAdvSection3.color}>
-        <div dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection3.medicareAdvColumns.medicareAdvColumn1.heading }} />
+      <MedicareMedial color={page?.medicareAdvantagePageCustomFields?.medicareAdvSection3?.color}>
+        <div dangerouslySetInnerHTML={{ __html: page?.medicareAdvantagePageCustomFields?.medicareAdvSection3?.medicareAdvColumns?.medicareAdvColumn1?.heading }} />
         <div className="button-container">
-          <a href={page.medicareAdvantagePageCustomFields.medicareAdvSection3.medicareAdvColumns.medicareAdvColumn2.button.button1.link} onClick={routeLink}>
+          <a href={page?.medicareAdvantagePageCustomFields?.medicareAdvSection3?.medicareAdvColumns?.medicareAdvColumn2?.button?.button1?.link} onClick={routeLink}>
             <Button background="accent-alt" border="light" color="light">
-              {page.medicareAdvantagePageCustomFields.medicareAdvSection3.medicareAdvColumns.medicareAdvColumn2.button.button1.text}, TTY 771
+              {page?.medicareAdvantagePageCustomFields?.medicareAdvSection3?.medicareAdvColumns?.medicareAdvColumn2?.button?.button1?.text}, TTY 771
             </Button>
           </a>
-          <a href={page.medicareAdvantagePageCustomFields.medicareAdvSection3.medicareAdvColumns.medicareAdvColumn2.button.button2.link} onClick={routeLink}>
+          <a href={page?.medicareAdvantagePageCustomFields?.medicareAdvSection3?.medicareAdvColumns?.medicareAdvColumn2?.button?.button2?.link} onClick={routeLink}>
             <Button background="accent-alt" border="light" color="light">
-              {page.medicareAdvantagePageCustomFields.medicareAdvSection3.medicareAdvColumns.medicareAdvColumn2.button.button2.text}
+              {page?.medicareAdvantagePageCustomFields?.medicareAdvSection3?.medicareAdvColumns?.medicareAdvColumn2?.button?.button2?.text}
             </Button>
           </a>
         </div>
       </MedicareMedial>
       <Section
-        color={page.medicareAdvantagePageCustomFields.medicareAdvSection4.color}
-        heading={page.medicareAdvantagePageCustomFields.medicareAdvSection4.heading}>
+        color={page?.medicareAdvantagePageCustomFields?.medicareAdvSection4?.color}
+        heading={page?.medicareAdvantagePageCustomFields?.medicareAdvSection4?.heading}>
         <RelatedContent />
         <Cards relatedContent={true}>
           <Card
-            image={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent1.image.sourceUrl}
-            title={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent1.title}
-            link={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent1.link}>
-            <p dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent1.content}} />
+            image={page?.medicareAdvantagePageCustomFields?.medicareAdvSection4?.relatedContent?.relatedContent1?.image?.sourceUrl}
+            title={page?.medicareAdvantagePageCustomFields?.medicareAdvSection4?.relatedContent?.relatedContent1?.title}
+            link={page?.medicareAdvantagePageCustomFields?.medicareAdvSection4?.relatedContent?.relatedContent1?.link}>
+            <p dangerouslySetInnerHTML={{ __html: page?.medicareAdvantagePageCustomFields?.medicareAdvSection4?.relatedContent?.relatedContent1?.content}} />
           </Card>
           <Card
-            image={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent2.image.sourceUrl}
-            title={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent2.title}
-            link={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent2.link}>
-            <p dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent2.content}} />
+            image={page?.medicareAdvantagePageCustomFields?.medicareAdvSection4?.relatedContent?.relatedContent2?.image?.sourceUrl}
+            title={page?.medicareAdvantagePageCustomFields?.medicareAdvSection4?.relatedContent?.relatedContent2?.title}
+            link={page?.medicareAdvantagePageCustomFields?.medicareAdvSection4?.relatedContent?.relatedContent2?.link}>
+            <p dangerouslySetInnerHTML={{ __html: page?.medicareAdvantagePageCustomFields?.medicareAdvSection4?.relatedContent?.relatedContent2?.content}} />
           </Card>
           <Card
-            image={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent3.image.sourceUrl}
-            title={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent3.title}
-            link={page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent3.link}>
-            <p dangerouslySetInnerHTML={{ __html: page.medicareAdvantagePageCustomFields.medicareAdvSection4.relatedContent.relatedContent3.content}} />
+            image={page?.medicareAdvantagePageCustomFields?.medicareAdvSection4?.relatedContent?.relatedContent3?.image?.sourceUrl}
+            title={page?.medicareAdvantagePageCustomFields?.medicareAdvSection4?.relatedContent?.relatedContent3?.title}
+            link={page?.medicareAdvantagePageCustomFields?.medicareAdvSection4?.relatedContent?.relatedContent3?.link}>
+            <p dangerouslySetInnerHTML={{ __html: page?.medicareAdvantagePageCustomFields?.medicareAdvSection4?.relatedContent?.relatedContent3?.content}} />
           </Card>
         </Cards>
 
         <div className="full-rounded" style={{ textAlign: "center" }}>
-          <a href={page.medicareAdvantagePageCustomFields.medicareAdvSection4.cta.link} onClick={routeLink}>
+          <a href={page?.medicareAdvantagePageCustomFields?.medicareAdvSection4?.cta?.link} onClick={routeLink}>
             <Button background="accent-alt" border="light" color="light">
-              {page.medicareAdvantagePageCustomFields.medicareAdvSection4.cta.text}
+              {page?.medicareAdvantagePageCustomFields?.medicareAdvSection4?.cta?.text}
             </Button>
           </a>
         </div>
       </Section>
       </PageContainer>
       <Footer>
-          {page.disclaimers.disclaimer}
+          {page?.disclaimers?.disclaimer}
       </Footer>
     </Layout>
   )
@@ -389,8 +389,8 @@ export const Head = () => {
   return (
     <>
       <PageHead
-        title={page.seo.title}
-        description={page.seo.metaDesc}/>
+        title={page?.seo?.title}
+        description={page?.seo?.metaDesc}/>
     </>
   )
 }
