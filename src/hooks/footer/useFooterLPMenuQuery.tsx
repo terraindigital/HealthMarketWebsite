@@ -17,7 +17,7 @@ export const useFooterLPMenuQuery = () => {
         }
       }
     }
-  `)
+  `);
 
   return data
 }
