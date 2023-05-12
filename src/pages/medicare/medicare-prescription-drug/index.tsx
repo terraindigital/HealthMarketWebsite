@@ -892,8 +892,8 @@ export const Head = () => {
     return (
         <>
             <PageHead
-                title={page.seo.title}
-                description={page.seo.metaDesc}/>
+                title={page?.seo?.title}
+                description={page?.seo?.metaDesc}/>
         </>
     )
 }
