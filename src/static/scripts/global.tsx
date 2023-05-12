@@ -373,3 +373,47 @@ export const modal = () => {
     });
   });
 }
+
+export const acaGTM = () => {
+  const s = document.createElement('script');
+  s.type = "text/javascript";
+  const sCode = (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-5D4VMW');
+
+  const t = document.createElement('script');
+  t.type = "text/javascript";
+  t.src = "https://www.googletagmanager.com/gtag/js?id=DC-9943996"
+  t.async = true;
+
+  const u = document.createElement('script');
+  u.type = "text/javascript";
+  u.onload = function() {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);};
+    gtag('js', new Date());
+    gtag('config', 'DC-9943996');
+  };
+
+  const bodyScript = document.createElement('noscript');
+  const noScript = document.createElement('iframe');
+  noScript.src="https://www.googletagmanager.com/ns.html?id=GTM-5D4VMW";
+  noScript.height="0";
+  noScript.width="0";
+  noScript.style="display:none;visibility:hidden";
+  bodyScript.append(noScript);
+
+  const gatsbyWrapper = document.getElementById('___gatsby');
+
+  try {
+    s.appendChild(document.createTextNode(sCode));
+  } catch (e) {
+    s.text = sCode;
+  }
+  document.head.appendChild(s);
+  document.body.insertBefore(bodyScript, gatsbyWrapper);
+  document.head.appendChild(t);
+  document.head.appendChild(u);
+}

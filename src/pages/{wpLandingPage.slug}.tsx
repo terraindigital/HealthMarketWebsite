@@ -24,6 +24,7 @@ import {
 
 // Scripts
 import {
+  acaGTM,
   routeLink
 } from '../static/scripts/global';
 
@@ -313,6 +314,8 @@ const LPPage = ({data}: { data: PageInfo }) => {
         });
       })
     }
+
+    (page.slug === 'aca-insurance-plans') ? acaGTM() : null;
   }, []);
 
   return (
@@ -814,13 +817,13 @@ export default LPPage
 
 export const Head = ({ data }) => {
   const { page } = data;
-    return (
-        <>
-            <PageHead
-                title={page.seo.title}
-                description={page.seo.metaDesc}/>
-        </>
-    )
+  return (
+      <>
+          <PageHead
+            title={page.seo.title}
+            description={page.seo.metaDesc} />
+      </>
+  )
 }
 
 export const pageQuery = graphql`
