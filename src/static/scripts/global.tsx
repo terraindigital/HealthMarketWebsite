@@ -291,6 +291,7 @@ export const sendForm = (e) => {
   e.preventDefault();
   const form = e.target;
   const target = form.getAttribute('target');
+  let action = form.action;
   let queryBits = '';
 
   // get the zip code value
@@ -306,7 +307,7 @@ export const sendForm = (e) => {
   }
 
   // build the first part of our new url
-  form.action = setUrlData(form.action)
+  form.action = setUrlData(action)
 
   // figure out if we need an extra character to join these together
   if (form.action.slice(-1) === "?" || form.action.slice(-1) === "&") {
@@ -318,14 +319,20 @@ export const sendForm = (e) => {
   // join the action and the query bits
   form.action = form.action + queryBits;
 
-  console.log(target);
-
   // send the form
   if (!target) {
     window.location.assign(form.action);
   } else {
     window.open(form.action, target);
   }
+  
+  // reset the form
+  form.reset();
+  if (action.slice(-1) === "?" || action.slice(-1) === '&') {
+    action = action.substring(0, -1);
+  }
+  form.action = setUrlData(action);
+  console.log(form.action);
 }
 
 export const routeLink = (e) => {
