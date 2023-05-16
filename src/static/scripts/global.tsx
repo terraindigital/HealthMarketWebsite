@@ -290,6 +290,7 @@ export const sendForm = (e) => {
   // prevent the form from submitting before we add our pieces
   e.preventDefault();
   const form = e.target;
+  const target = form.getAttribute('target');
   let queryBits = '';
 
   // get the zip code value
@@ -317,8 +318,14 @@ export const sendForm = (e) => {
   // join the action and the query bits
   form.action = form.action + queryBits;
 
+  console.log(target);
+
   // send the form
-  window.location.assign(form.action);
+  if (!target) {
+    window.location.assign(form.action);
+  } else {
+    window.open(form.action, target);
+  }
 }
 
 export const routeLink = (e) => {
