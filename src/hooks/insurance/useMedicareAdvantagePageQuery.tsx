@@ -1,11 +1,5 @@
 import { useStaticQuery, graphql } from "gatsby";
 
-const guideCTA = {
-  title: 'Check out our Medicare Guide for help choosing the right plan',
-  link: '/more/articles',
-  linkText: 'Read More',
-}
-
 export const useMedicareAdvantagePageQuery = () => {
   const data = useStaticQuery(graphql`
     query MedicareAdvantageQuery {
@@ -206,13 +200,6 @@ export const useMedicareAdvantagePageQuery = () => {
       }
     }
   `)
-
-  data.page.guideCTA = guideCTA;
-  // data.page.medicareAdvantagePageCustomFields.medicareSection2.heading = "Medicare Advantage";
-  // data.page.pageHeroFields.headline = "Medicare Advantage plans";
-  // data.page.pageHeroFields.subheadline = "Compare plans and get a quote — at no cost to you.";
-  // data.page.pageHeroFields.heroButtons.heroButton1.text = "Find my plan"
-  // data.page.pageHeroFields.heroButtons.heroButton2.text = "Talk to a licensed insurance agent"
 
   return data
 }

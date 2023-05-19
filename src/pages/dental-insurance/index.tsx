@@ -105,7 +105,7 @@ const DentalInsurancePage = () => {
         heading={page.dentalPageCustomFields.dentalSection2.heading}>
         <RelatedContent />
         {(!hasChildren) ? (
-          <Cards>
+          <Cards relatedContent={true}>
             <Card
               image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.image.sourceUrl}
               title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.heading}
