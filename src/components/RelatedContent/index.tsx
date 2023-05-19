@@ -28,10 +28,11 @@ const RelatedContent = () => {
       const container = document.querySelector('.be-related-link-container');
       const links = document.querySelectorAll('.be-related-link');
 
-      let doesExist = (container !== undefined) ? true : false;
+      let doesExist = (container) ? true : false;
 
       if (doesExist) {
         container?.classList.add('cards');
+        container?.classList.add('related-content');
 
         Object.keys(links).map((i) => {
           const link = links[i];
@@ -54,8 +55,7 @@ const RelatedContent = () => {
           }
 
           link.classList.add('card');
-          clearInterval(delay);
-        })
+        });
       }
     }, 5);
   }, [])
