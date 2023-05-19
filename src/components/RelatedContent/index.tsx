@@ -31,7 +31,8 @@ const RelatedContent = () => {
       let doesExist = (container) ? true : false;
 
       if (doesExist) {
-        container?.classList.add('cards, related-content');
+        container?.classList.add('cards');
+        container?.classList.add('related-content');
 
         Object.keys(links).map((i) => {
           const link = links[i];
