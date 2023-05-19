@@ -32,37 +32,37 @@ interface Props {
 }
 
 const Card: FC<Props> = ({ image=null, icon=null, mobile=null, link=null, title, children, imgStyle, background, displayImage=true }) => {
-  const [isWin, setWin] = useState(false);
+  // const [isWin, setWin] = useState(false);
   const imageClass = (displayImage) ? ((icon !== null) ? "icon" : "image") : "no-image"
 
-  useEffect(() => {
-    const userAgentText = navigator.userAgent;
-    if (userAgentText != null) {
-      const startPoint = userAgentText.indexOf('(') + 1;
-      const endPoint = userAgentText.indexOf(';');
-      const os = userAgentText.substring(startPoint, endPoint);
-      if (os.includes('Windows')) {
-        setWin(true);
-      }
-    }
-    if (isWin) {
-      const parent = document.querySelector('.related-content.cards');
-      const cards = parent
-      console.log(parent);
-      // console.log(typeof cards);
-      // if (cards) {
-      //   // console.log(typeof Object.keys(cards));
-      //   Object.keys(cards).map(i => {
-      //     console.log(i);
-      //     // const card = cards[i];
-      //     // if (!card.classList.contains('is-win')) {
-      //     //   console.log(card);
-      //     //   card.classList.add('is-win');
-      //     // }
-      //   })
-      // }
-    }
-  }, [isWin, setWin])
+  // useEffect(() => {
+  //   const userAgentText = navigator.userAgent;
+  //   if (userAgentText != null) {
+  //     const startPoint = userAgentText.indexOf('(') + 1;
+  //     const endPoint = userAgentText.indexOf(';');
+  //     const os = userAgentText.substring(startPoint, endPoint);
+  //     if (os.includes('Windows')) {
+  //       setWin(true);
+  //     }
+  //   }
+  //   if (isWin) {
+  //     const parent = document.querySelector('.related-content.cards');
+  //     const cards = parent
+  //     console.log(parent);
+  //     // console.log(typeof cards);
+  //     // if (cards) {
+  //     //   // console.log(typeof Object.keys(cards));
+  //     //   Object.keys(cards).map(i => {
+  //     //     console.log(i);
+  //     //     // const card = cards[i];
+  //     //     // if (!card.classList.contains('is-win')) {
+  //     //     //   console.log(card);
+  //     //     //   card.classList.add('is-win');
+  //     //     // }
+  //     //   })
+  //     // }
+  //   }
+  // }, [isWin, setWin])
 
   return (
     <>

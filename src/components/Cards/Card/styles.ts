@@ -30,11 +30,6 @@ export const Wrapper = styled.a`
     text-align: center;
   }
 
-  &.is-win {
-    .image { height: auto; }
-    .card-content h4 { text-align: center; }
-  }
-
   @media only screen and (max-width: 788px) {
     flex-basis: calc(50% - 2.1rem);
     width: calc(50% - 2.1rem);
@@ -214,7 +209,7 @@ export const ImgContainer = styled.div`
   position: relative;
 
   &.image {
-    height: 326px;
+    height: auto;
   }
 
   @media only screen and (max-width: 600px) {
