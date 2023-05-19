@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Global } from "@emotion/react";
 import { graphql } from "gatsby";
 
@@ -17,8 +17,6 @@ import { getRandomPhotos } from "../../static/scripts/global"
 // Components
 
 const RelatedContent = () => {
-  const [ isDone, setDone ] = useState(false);
-
   // define the photos from the query
   let { photos } = useBEPhotoQuery();
 
@@ -34,7 +32,6 @@ const RelatedContent = () => {
 
       if (doesExist) {
         container?.classList.add('cards, related-content');
-        console.log('related content');
 
         Object.keys(links).map((i) => {
           const link = links[i];
@@ -57,16 +54,10 @@ const RelatedContent = () => {
           }
 
           link.classList.add('card');
-          setDone(true);
         });
       }
     }, 5);
-    
-    if (isDone) {
-      clearInterval(delay);
-      return () => {};
-    }
-  }, [setDone])
+  }, [])
 
   return (
     <Wrapper>
