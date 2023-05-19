@@ -119,7 +119,7 @@ const HealthInsurancePage = () => {
         heading={page.suppPageCustomFields.suppSection2.heading}>
         <RelatedContent />
         {(!hasChildren) ? (
-          <Cards>
+          <Cards relatedContent={true}>
             <Card
               image={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent1.image.sourceUrl}
               title={page.suppPageCustomFields.suppSection2.suppRelatedContent.relatedContent1.title}

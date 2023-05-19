@@ -173,7 +173,7 @@ const HealthInsurancePage = () => {
         heading={page.healthPageCustomFields.healthSection4.heading}>
         <RelatedContent />
         {(!hasChildren) ? (
-          <Cards>
+          <Cards relatedContent={true}>
             <Card
               image={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent1.image.sourceUrl}
               title={page.healthPageCustomFields.healthSection4.healthRelatedContent.healthRelatedContent1.heading}
