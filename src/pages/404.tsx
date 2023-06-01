@@ -26,7 +26,7 @@ function NotFound() {
                             <ListItems
                                 icon={Magnifier}
                                 list={listItemsOne}
-                                text="Get Started"
+                                text="Get started"
                             />
                             <ListItems
                                 icon={PriceTag}
