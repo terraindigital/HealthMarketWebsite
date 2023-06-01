@@ -15,10 +15,10 @@ function NotFound() {
                         <h1>Uh-oh,</h1>
                         <h3>Something may be broken</h3>
                         <p>
-                            The page you are looking for can't be found. Get your{" "}
-                            <a href="https://shop.healthmarkets.com/"> FitScore®</a>, <br />{" "}
+                            The page you are looking for can't be found.
+                            <a href="https://shop.healthmarkets.com/"> Shop online</a>, <br />{" "}
                             <a href="https://www.healthmarkets.com/local-health-insurance-agent/">
-                                Find an agent,
+                                find an agent,
                             </a>{" "}
                             or follow the links below to access more pages.
                         </p>
@@ -26,12 +26,12 @@ function NotFound() {
                             <ListItems
                                 icon={Magnifier}
                                 list={listItemsOne}
-                                text="Get Counsel"
+                                text="Get Started"
                             />
                             <ListItems
                                 icon={PriceTag}
                                 list={listItemsTwo}
-                                text="Compare affordable insurance plans"
+                                text="Compare insurance plans"
                             />
                         </ListWrapper>
                     </Left>
@@ -63,7 +63,7 @@ const ListItems = ({ icon, list, text }: any) => {
 const listItemsOne = {
     "Find an Agent":
         "https://www.healthmarkets.com/local-health-insurance-agent/",
-    "Get your FitScore®": "https://shop.healthmarkets.com/",
+    "Shop online": "https://shop.healthmarkets.com/",
 };
 const listItemsTwo = {
     "Health" : "https://www.healthmarkets.com/health-insurance/",
