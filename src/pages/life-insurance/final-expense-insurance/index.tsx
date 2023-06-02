@@ -74,7 +74,8 @@ const FinalExpensePage = () => {
       <Section
         color={page.finalExpensePageCustomFields.finalExpenseSection1.color}
         heading={page.finalExpensePageCustomFields.finalExpenseSection1.heading}
-        subheading={page.finalExpensePageCustomFields.finalExpenseSection1.subheading}>
+        subheading={page.finalExpensePageCustomFields.finalExpenseSection1.subheading}
+        html={true}>
         <SectionOneInner>
           <SectionOneInnerContent>
             <List>

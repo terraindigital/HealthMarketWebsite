@@ -24,6 +24,11 @@ export const PageStyles = css`
     font-weight: 400;
   }
 
+  .section:first-of-type .heading h4 > p {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
   .list-item h5 {
     color: var(--color-dark);
   }
