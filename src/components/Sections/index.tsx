@@ -8,7 +8,6 @@ interface Props {
   children: ReactNode
   heading?: String,
   subheading?: String,
-  html?: boolean,
   guarantee?: boolean,
   bestPrice?: ReactNode,
   classes?: String,
@@ -30,7 +29,7 @@ const switchBgColor = (bgColor) => {
   }
 }
 
-const Section: FC<Props> = ({ heading, subheading, html, guarantee, bestPrice, classes, page, color, children }) => {
+const Section: FC<Props> = ({ heading, subheading, guarantee, bestPrice, classes, page, color, children}) => {
   const bgColor = switchBgColor(color)
 
   let classList = "section";
@@ -42,9 +41,7 @@ const Section: FC<Props> = ({ heading, subheading, html, guarantee, bestPrice, c
     <Wrapper backgroundColor={bgColor} className={classList}>
       <Heading className="heading">
         {(heading) ? (<h2>{heading}</h2>) : null}
-        {(subheading) ?
-          (html) ? <h4 dangerouslySetInnerHTML={{ __html: subheading}} /> : null
-        : null}
+        {(subheading) ? (<h4>{subheading}</h4>) : null}
         {(guarantee !== 'false') ? bestPrice : <></>}
       </Heading>
       <Inner>
