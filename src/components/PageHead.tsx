@@ -56,6 +56,8 @@ const PageHead: FC<Props> = ({
         <meta property="twitter:creator" content={site.siteMetadata.author} />
         <meta property="twitter:title" content={siteTitle} />
         <meta property="twitter:description" content={metaDescription} />
+
+        <script type="text/javascript" src="https://cdne-uho-cdn-eastus-prod.azureedge.net/scripts/analytics-configuration.min.js"></script>
       </>
     );
 }
