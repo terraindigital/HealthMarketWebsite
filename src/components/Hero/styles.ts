@@ -247,4 +247,12 @@ export const Inner = styled.div`
       }
     }
   }
+
+  /**
+   * LPO 1.2 Rollout - Mobile Heading Sizes
+   **/
+  @media only screen and (max-width: 620px) {
+    & > h1 { font-size: 42px; }
+    & > h1 + h4 { font-size: 18px; }
+  }
 `
