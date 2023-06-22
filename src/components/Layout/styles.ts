@@ -647,6 +647,9 @@ export const GlobalStyles = css`
   }
 
   body {
+    /* opacity fix for analytics configuration script */
+    opacity: 1 !important;
+
     color: hsla(0, 0%, 0%, 0.8);
     font-family: var(--font-body);
     font-weight: normal;
