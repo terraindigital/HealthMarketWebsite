@@ -12,7 +12,7 @@ export const Wrapper = styled.a`
 
   margin-right: 2.1rem;
 
-  &:nth-of-type(3n-3) {
+  &:nth-of-type(3n-4) {
     margin-right: 0;
   }
 
@@ -70,7 +70,7 @@ export const Wrapper = styled.a`
   }
 `
 
-export const MobileWrapper = styled.div`
+export const MobileWrapper = styled.a`
   background-color: var(--color-light);
   box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
   margin-bottom: 2.1rem;

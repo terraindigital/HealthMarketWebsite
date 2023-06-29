@@ -56,7 +56,7 @@ const Card: FC<Props> = ({ image=null, icon=null, mobile=null, link=null, title,
           {children}
         </Content>
       </Wrapper>
-      <MobileWrapper className={`card show-at-mobile ${imageClass} ${background}`}>
+      <MobileWrapper className={`card show-at-mobile ${imageClass} ${background}`} href={link} onClick={routeLink}>
         <Header className="card-header" onClick={toggleOpenState}>
           {(displayImage) ? (
             <ImgContainer className={(image !== null) ? 'image' : 'icon'}>
