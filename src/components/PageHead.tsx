@@ -36,7 +36,7 @@ const PageHead: FC<Props> = ({
     const canonical = site.siteMetadata.siteUrl + location.pathname;
     const siteTitle = title || site.siteMetadata.title;
     const metaDescription = description || site.siteMetadata.description;
-    const analytics = '(function(g,b,d,f){(function(a,c,d){if(a){var e=b.createElement("style");e.id=c;e.innerHTML=d;a.appendChild(e)}})(b.getElementsByTagName("head")[0],"at-body-style",d);setTimeout(function(){var a=b.getElementsByTagName("head")[0];if(a){var c=b.getElementById("at-body-style");c&&a.removeChild(c)}},f)})(window,document,"body {opacity: 0 !important}",3E3);';
+    const analytics = '(function(g,b,d,f){(function(a,c,d){if(a){var e=b.createElement("style");e.id=c;e.innerHTML=d;a.appendChild(e)}})(b.getElementsByTagName("head")[0],"at-body-style",d);setTimeout(function(){var a=b.getElementsByTagName("head")[0];if(a){var c=b.getElementById("at-body-style");c&&a.removeChild(c)}},f)})(window,document,"body {z-index: 1}",3E3);';
 
     return (
       <>
