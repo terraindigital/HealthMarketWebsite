@@ -75,7 +75,7 @@ export const Wrapper = styled.div`
 export const Title = styled.div`
   border-bottom: 1px solid var(--color-dark);
   margin-bottom: 0;
-  padding: 2.2rem 0 2.4rem;
+  padding: 2.2rem 20px 2.4rem 0;
 
   h2 {
     color: var(--color-primary);
