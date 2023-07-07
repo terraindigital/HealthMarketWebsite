@@ -98,6 +98,15 @@ export const PageStyles = css`
   }
 
   @media only screen and (max-width: 788px) {
+    .short-term-insurance.hero {
+      padding-bottom: 38.78rem;
+    }
+
+    .short-term-insurance.hero img.show-at-mobile {
+      object-position: bottom;
+      top: auto;
+    }
+
     .hero .half {
       display: block;
       flex-basis: 100%;
@@ -111,6 +120,26 @@ export const PageStyles = css`
 
     .hero + .section {
       padding-top: 4rem;
+    }
+
+    .short-term-insurance.section .heading + div {
+      display: block;
+    }
+
+    .short-term-insurance.list.section .heading + div > div {
+      width: 100%;
+    }
+
+    .short-term-insurance.list.section .heading + div > div .list-item div:last-of-type {
+      font-size: 16px;
+    }
+
+    .short-term-insurance.accordion.section .heading + div > div {
+      width: 100%;
+    }
+
+    .section .accordion .title h2 {
+      max-width: calc(100% - 26px);
     }
 
     .short-term-insurance.section .heading h4 {
