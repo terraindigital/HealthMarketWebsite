@@ -35,8 +35,8 @@ const PageHead: FC<Props> = ({
     const location = useLocation();
     const canonical = site.siteMetadata.siteUrl + location.pathname;
     const siteTitle = title || site.siteMetadata.title;
-    const metaDescription = description || site.siteMetadata.description;
-    const analytics = '(function(g,b,d,f){(function(a,c,d){if(a){var e=b.createElement("style");e.id=c;e.innerHTML=d;a.appendChild(e)}})(b.getElementsByTagName("head")[0],"at-body-style",d);setTimeout(function(){var a=b.getElementsByTagName("head")[0];if(a){var c=b.getElementById("at-body-style");c&&a.removeChild(c)}},f)})(window,document,"body {z-index: 1}",500);';
+    // const metaDescription = description || site.siteMetadata.description;
+    // const analytics = '(function(g,b,d,f){(function(a,c,d){if(a){var e=b.createElement("style");e.id=c;e.innerHTML=d;a.appendChild(e)}})(b.getElementsByTagName("head")[0],"at-body-style",d);setTimeout(function(){var a=b.getElementsByTagName("head")[0];if(a){var c=b.getElementById("at-body-style");c&&a.removeChild(c)}},f)})(window,document,"body {z-index: 1}",500);';
 
     return (
       <>
@@ -58,7 +58,7 @@ const PageHead: FC<Props> = ({
         <meta property="twitter:title" content={siteTitle} />
         <meta property="twitter:description" content={metaDescription} />
 
-        <script dangerouslySetInnerHTML={{ __html: analytics }}></script>
+        {/* <script dangerouslySetInnerHTML={{ __html: analytics }}></script> */}
         <script type="text/javascript" src="https://cdne-uho-cdn-eastus-prod.azureedge.net/scripts/analytics-configuration.min.js"></script>
       </>
     );
