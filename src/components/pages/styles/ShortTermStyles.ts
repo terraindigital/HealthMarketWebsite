@@ -66,6 +66,10 @@ export const PageStyles = css`
     text-align: center;
   }
 
+  .healthmarkets22 .flexed.primary.section > div:first-of-type h2 {
+    display: block;
+  }
+
   @media only screen and (min-width: 821px) {
     .hero .half {
       flex-basis: 56% !important;
