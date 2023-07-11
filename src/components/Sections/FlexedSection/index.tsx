@@ -27,10 +27,10 @@ const FlexedSection: FC<Props> = ({ heading, color, children}) => {
 
   return (
     <Wrapper backgroundColor={bgColor} className={`flexed section ` + color}>
-      <Heading>
+      <Heading className="heading">
         <h2>{heading}</h2>
       </Heading>
-      <Inner>
+      <Inner className="inner">
         {children}
       </Inner>
     </Wrapper>

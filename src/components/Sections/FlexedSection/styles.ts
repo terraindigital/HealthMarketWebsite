@@ -79,7 +79,7 @@ export const Heading = styled.div`
     }
 
     @media only screen and (max-width: 788px) {
-      font-size: 5.6rem;
+      font-size: 3.7rem;
       letter-spacing: 0.02em;
       line-height: 115%;
       max-width: 100%;
