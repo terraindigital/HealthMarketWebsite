@@ -66,47 +66,24 @@ export const PageStyles = css`
     text-align: center;
   }
 
-  @media only screen and (min-width: 821px) {
-    .hero .half {
-      flex-basis: 56% !important;
-      width: 56% !important;
-    }
+  .healthmarkets22 .flexed.primary.section > div:first-of-type h2 {
+    display: block;
   }
 
-  @media only screen and (max-width: 820px) and (min-width: 789px) {
-    .hero .half {
+  @media only screen and (max-width: 820px) {
+    .hero > img.show-at-mobile {
+      bottom: -8rem;
       display: block;
-      flex-basis: 100%;
-      text-align: center;
-      width: 100%;
+      top: auto;
     }
-
-    .hero .hide-at-mobile {
+    .hero > img.hide-at-mobile {
       display: none;
     }
 
-    .hero .show-at-mobile {
-      bottom: -32rem;
-      display: block;
-      object-position: bottom;
-      top: auto;
+    .full-rounded button {
+      margin-top: 1.1rem;
     }
-
-    .hero + .section {
-      padding-top: 4rem;
-    }
-  }
-
-  @media only screen and (max-width: 788px) {
-    .short-term-insurance.hero {
-      padding-bottom: 38.78rem;
-    }
-
-    .short-term-insurance.hero img.show-at-mobile {
-      object-position: bottom;
-      top: auto;
-    }
-
+    
     .hero .half {
       display: block;
       flex-basis: 100%;
@@ -122,59 +99,95 @@ export const PageStyles = css`
       padding-top: 4rem;
     }
 
-    .short-term-insurance.section .heading + div {
+    .short-term-insurance.section {
+      padding-bottom: 16px;
+    }
+
+    .short-term-insurance.section .heading {
       display: block;
     }
 
-    .short-term-insurance.list.section .heading + div > div {
-      width: 100%;
-    }
-
-    .short-term-insurance.list.section .heading + div > div .list-item div:last-of-type {
-      font-size: 16px;
-    }
-
-    .short-term-insurance.accordion.section .heading + div > div {
-      width: 100%;
-    }
-
-    .section .accordion .title h2 {
-      max-width: calc(100% - 26px);
+    .short-term-insurance.section .heading > h2 {
+      font-size: 40px !important;
     }
 
     .short-term-insurance.section .heading h4 {
       flex-basis: 100%;
       width: 100%;
-      max-width: 100%;
+
+      font-weight: 400;
+      margin-top: 3.4rem;
     }
 
     .short-term-insurance.section .heading h4 > p {
       font-size: 16px;
       font-weight: 400;
+      line-height: 19.2px;
     }
 
-    .short-term-insurance.section .heading + div > div {
+    .short-term-insurance.section .heading + div {
+      display: block;
+    }
+
+    .short-term-insurance.list.section .heading + div > div {
+      flex-basis: 100%;
+      width: 100%;
+    }
+
+    .short-term-insurance.accordion.section .heading + div > div {
       flex-basis: 100%;
       width: 100%;
     }
 
     .short-term-insurance.section .heading + div > div h4 {
-      margin-left: 0;
-    }
-  }
-
-  @media only screen and (max-width: 620px) {
-    .hero > img {
-      bottom: -8rem;
-      top: auto;
+      font-size: 20px;
+      line-height: 24px;
+      margin-left: 2.4rem;
     }
 
-    .full-rounded button {
-      margin-top: 1.1rem;
+    .short-term-insurance.section .heading + div > div ul {
+      margin-bottom: 0;
+      margin-left: 6.4rem;
     }
 
-    .flexed.section + .hide-at-mobile + .section {
-      padding-top: 0;
+    .short-term-insurance.section .heading + div > div ul li div {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .short-term-insurance.section .heading + div > div ul li div:first-of-type,
+    .short-term-insurance.section .heading + div > div ul li div:first-of-type:before {
+      height: 27px;
+      width: 27px;
+    }
+
+    .short-term-insurance.section .heading + div > div ul li div:first-of-type{
+      left: -3.92rem;
+    }
+
+    .short-term-insurance.section > div:last-of-type .accordion .title h2 {
+      font-family: var(--font-body);
+      font-size: 20px;
+      line-height: 26px;
+    }
+
+    .healthmarkets22 .flexed.primary.section {
+      display: block;
+    }
+
+    .healthmarkets22 .flexed.primary.section > div:first-of-type h2 {
+      display: inline-block;
+    }
+
+    .healthmarkets22 .flexed.primary.section > div:last-of-type {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .healthmarkets22 .flexed.primary.section > div:last-of-type .accordion .title h2 {
+      font-family: var(--font-body);
+      font-size: 20px;
+      line-height: 26px;
     }
   }
 `
