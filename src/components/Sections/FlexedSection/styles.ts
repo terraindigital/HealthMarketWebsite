@@ -118,18 +118,6 @@ export const Inner = styled.div`
   flex-basis: calc(50% - 9.6rem);
   width: calc(50% - 9.6rem);
 
-  .heading + & {
-    padding-top: 8rem;
-
-    @media only screen and (max-width: 1460px) {
-      padding-top: 4.8rem;
-    }
-
-    @media only screen and (max-width: 620px) {
-      padding-top: 2.4rem;
-    }
-  }
-
   @media only screen and (max-width: 788px) {
     flex-basis: 100%;
     width: 100%;
