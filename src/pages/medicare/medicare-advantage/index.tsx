@@ -37,6 +37,8 @@ import Footer from "../../../components/Footer";
 import RelatedContent from "../../../components/RelatedContent";
 import styled from "@emotion/styled";
 import {BREAKPOINT_LG, BREAKPOINT_MD, BREAKPOINT_SM, BREAKPOINT_XL, NAV_STARTS_FLOATING} from "../../../breakpoints";
+import FlexedSection from "../../../components/Sections/FlexedSection";
+import Accordion from "../../../components/Accordions";
 
 const StyledSvg = styled.svg`
   width: 16px;
@@ -67,6 +69,11 @@ const StyledSvg = styled.svg`
     min-height: 28px;
   }
 `;
+
+const toggleAccordion = (el) => {
+  const parent = el.target.closest('.accordion')
+  parent.classList.toggle('active')
+}
 
 const MedicareAdvantagePage = () => {
   const { page } = useMedicareAdvantagePageQuery();
@@ -114,50 +121,24 @@ const MedicareAdvantagePage = () => {
         <HeroMobileImg src={page?.pageHeroFields.mobileHeroImage.sourceUrl} alt="Hero"/>
       </HeroContainer> */}
 
-      <SectionContainer>
-        <SectionColumns>
-          <SectionColumnLeft>
-            <SectionTitle>
-              {page?.medicareAdvantagePageCustomFields?.medicareAdvSection1?.heading}
-            </SectionTitle>
-          </SectionColumnLeft>
-          <SectionColumnRight>
-            <AccordionPadding>
-              <MedicareAccordionFixed title={page?.medicareAdvantagePageCustomFields?.medicareAdvSection1?.medicareAdvAccordions?.medicareAdvAccordion1?.heading}>
-                <MedicareAccordionFixedContent dangerouslySetInnerHTML={{__html: page?.medicareAdvantagePageCustomFields?.medicareAdvSection1?.medicareAdvAccordions?.medicareAdvAccordion1?.content}}/>
-              </MedicareAccordionFixed>
-              <MedicareAccordionFixed title={page?.medicareAdvantagePageCustomFields?.medicareAdvSection1?.medicareAdvAccordions?.medicareAdvAccordion2?.heading}>
-                <MedicareAccordionFixedContent dangerouslySetInnerHTML={{__html: page?.medicareAdvantagePageCustomFields?.medicareAdvSection1?.medicareAdvAccordions?.medicareAdvAccordion2?.content}}/>
-              </MedicareAccordionFixed>
-              <MedicareAccordionFixed title={page?.medicareAdvantagePageCustomFields?.medicareAdvSection1?.medicareAdvAccordions?.medicareAdvAccordion3?.heading}>
-                <MedicareAccordionFixedContent dangerouslySetInnerHTML={{__html: page?.medicareAdvantagePageCustomFields?.medicareAdvSection1?.medicareAdvAccordions?.medicareAdvAccordion3?.content}}/>
-              </MedicareAccordionFixed>
-            </AccordionPadding>
-            <SectionText dangerouslySetInnerHTML={{ __html: page?.medicareAdvantagePageCustomFields?.medicareAdvSection1?.medicareAdvPostAccordionText }}/>
-          </SectionColumnRight>
-        </SectionColumns>
-      </SectionContainer>
+      <FlexedSection
+        color={page.medicareAdvantagePageCustomFields.medicareAdvSection1.color}
+        heading={page.medicareAdvantagePageCustomFields.medicareAdvSection1.heading}>
+        <Accordion
+          title={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion1.heading}
+          content={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion1.content}
+          html />
+        <Accordion
+          title={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion2.heading}
+          content={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion2.content}
+          html />
+        <Accordion
+          title={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion3.heading}
+          content={page.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion3.content}
+          html />
+        <SectionText dangerouslySetInnerHTML={{ __html: page?.medicareAdvantagePageCustomFields?.medicareAdvSection1?.medicareAdvPostAccordionText }}/>
+      </FlexedSection>
 
-      {/*
-      <MedicareFlexedSection
-        color={page?.medicareAdvantagePageCustomFields.medicareAdvSection1.color}
-        heading={page?.medicareAdvantagePageCustomFields.medicareAdvSection1.heading}>
-        <MedicareAccordion
-          title={page?.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion1.heading}
-          content={page?.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion1.content}
-          html />
-        <MedicareAccordion
-          title={page?.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion2.heading}
-          content={page?.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion2.content}
-          html />
-        <MedicareAccordion
-          title={page?.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion3.heading}
-          content={page?.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvAccordions.medicareAdvAccordion3.content}
-          html />
-        <hr style={{marginTop: '-4px'}}/>
-        <PostAccordionText dangerouslySetInnerHTML={{ __html: page?.medicareAdvantagePageCustomFields.medicareAdvSection1.medicareAdvPostAccordionText }} />
-      </MedicareFlexedSection>
-      */}
       <MedicareAdvantageSection
         page="medicare-advantage"
         color={page?.medicareAdvantagePageCustomFields?.medicareAdvSection2?.color}>
@@ -336,7 +317,7 @@ export const SectionColumnRight = styled.div`
 `;
 
 export const SectionText = styled.div`
-  padding: 0 36px;
+  padding: 0;
   margin-top: 52px;
   color: var(--color-dark);
 
@@ -355,7 +336,6 @@ export const SectionText = styled.div`
 
   @media only screen and (min-width: ${BREAKPOINT_MD}px) {
     margin-top: 106px;
-    padding: 3px 35px 3px 35px;
 
     &, p, a {
       font-weight: 600;
@@ -365,12 +345,7 @@ export const SectionText = styled.div`
     }
   }
 
-  @media only screen and (min-width: ${BREAKPOINT_LG}px) {
-    padding: 3px 60px 3px 98px;
-  }
-
   @media only screen and (min-width: ${BREAKPOINT_XL}px) {
-    padding: 3px 22% 3px 107px;
     &, p, a {
       //Big size (originally 32px) until large screens
       font-size: 32px;

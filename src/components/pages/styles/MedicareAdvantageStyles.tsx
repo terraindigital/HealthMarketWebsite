@@ -52,6 +52,18 @@ export const PageStyles = css`
     width: 50%;
   }
 
+  .healthmarkets22 .accordion .title h2 {
+    font-size: 36px;
+  }
+
+  .healthmarkets22 .accordion .content p {
+    font-size: 20px;
+  }
+
+  .healthmarkets22 .flexed.section .heading + .inner {
+    padding-top: 0;
+  }
+
   @media only screen and (max-width: 788px) {
     .hero .half {
       display: block;
