@@ -9,6 +9,7 @@ interface Props {
   image: String,
   mobileImage?: String,
   bgColor?: String,
+  classes?: String,
   centered?: boolean,
   boxed?: boolean,
   half?: boolean,
@@ -21,16 +22,17 @@ interface Props {
   innerStyle?: CSSProperties
 }
 
-const Hero: FC<Props> = ({ image, mobileImage, bgColor, centered, boxed, half, open, color, children, desktopImgStyle, mobileImgStyle, wrapperStyle, innerStyle }) => {
-  let classes = "hero"
-  if (centered) { classes += " centered" }
-  if (boxed) { classes += " boxed" }
-  if (half) { classes += " half" }
-  if (open) { classes += " open" }
-  if (color != null) { classes = classes + " " + color }
+const Hero: FC<Props> = ({ image, mobileImage, bgColor, classes, centered, boxed, half, open, color, children, desktopImgStyle, mobileImgStyle, wrapperStyle, innerStyle }) => {
+  let classNames = "hero"
+  if (classes) { classNames += " " + classes}
+  if (centered) { classNames += " centered" }
+  if (boxed) { classNames += " boxed" }
+  if (half) { classNames += " half" }
+  if (open) { classNames += " open" }
+  if (color != null) { classNames = classNames + " " + color }
 
   return (
-    <Wrapper className={classes} background={bgColor} style={wrapperStyle}>
+    <Wrapper className={classNames} background={bgColor} style={wrapperStyle}>
       <Img className={(mobileImage) ? "hide-at-mobile" : ""} src={image} alt="Hero" style={desktopImgStyle}/>
       {(mobileImage) ? (
         <Img className="show-at-mobile" src={mobileImage} alt="Hero" style={mobileImgStyle} />
