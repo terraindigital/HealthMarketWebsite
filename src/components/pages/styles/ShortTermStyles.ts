@@ -83,7 +83,7 @@ export const PageStyles = css`
     .full-rounded button {
       margin-top: 1.1rem;
     }
-
+    
     .hero .half {
       display: block;
       flex-basis: 100%;

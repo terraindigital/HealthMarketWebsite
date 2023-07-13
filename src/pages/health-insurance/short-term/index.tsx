@@ -57,6 +57,7 @@ const ShortTermInsurancePage = () => {
       <Hero
         image={page?.pageHeroFields?.heroImage?.sourceUrl}
         mobileImage={page?.pageHeroFields?.mobileHeroImage?.sourceUrl}
+        classes="short-term-insurance"
         bgColor="#E2F1F2">
         <HeroHeading>{page?.pageHeroFields?.headline}</HeroHeading>
         <HeroSubheading>{page?.pageHeroFields?.subheadline}</HeroSubheading>
