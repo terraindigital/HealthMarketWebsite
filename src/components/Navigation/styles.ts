@@ -27,7 +27,8 @@ export const Nav = styled.nav`
 
 export const Menu = styled.ul`
   list-style-type: none;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 656px;
   text-align: center;
 
   &.submenu {
@@ -45,14 +46,17 @@ export const Menu = styled.ul`
 
 export const MenuItem = styled.li`
   margin: 0;
-  padding: 0.8rem 1.3rem;
+  padding: 16px 1.3rem;
 
   a {
     color: var(--color-light);
     font-family: var(--font-heading);
-    font-size: 4.4rem;
+    font-size: 6.5rem;
     font-weight: bold;
+    line-height: 100%;
     text-decoration: none;
+    word-break: normal;
+    white-space: normal;
   }
 
   &.has-submenu > a {
