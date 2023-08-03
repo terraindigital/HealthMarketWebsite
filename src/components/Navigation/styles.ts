@@ -7,7 +7,7 @@ export const Nav = styled.nav`
   min-width: 100%;
   min-width: 100vw;
   opacity: 0;
-  overflow-y: scroll;
+  overflow-y: hidden;
   padding: 14rem 3.4rem 3.4rem;
   position: fixed;
   top: -9999px;
@@ -23,6 +23,12 @@ export const Nav = styled.nav`
   @media only screen and (max-width: 620px) {
     padding: 8.9rem 2.1rem 2.1rem;
   }
+`
+
+export const Wrapper = styled.div`
+  max-height: 100%;
+  overflow-y: scroll; 
+  max-width: 100%;
 `
 
 export const Menu = styled.ul`
