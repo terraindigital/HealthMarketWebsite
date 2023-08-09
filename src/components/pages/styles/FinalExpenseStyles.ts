@@ -106,6 +106,12 @@ export const PageStyles = css`
     .button-container {
       min-width: 100%;
     }
+
+    .section:first-of-type .heading h4 {
+      max-width: 100%;
+      padding-left: 20px;
+      padding-right: 0px;
+    }
     
     .hero > img {
       bottom: -8rem;
