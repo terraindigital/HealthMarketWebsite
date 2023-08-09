@@ -159,3 +159,6 @@ export const ListHeading = styled.h4`
     margin-left: -38px;
   }
 `
+export const ListWrapper = styled.div`
+  margin-top: 50px;
+`
