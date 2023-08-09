@@ -81,6 +81,10 @@ export const PageStyles = css`
       width: 100%;
     }
 
+    .hero + div .section {
+      background-color: var(--color-primary-light);
+    }
+
     .hero + .section {
       padding-top: 4rem;
     }
