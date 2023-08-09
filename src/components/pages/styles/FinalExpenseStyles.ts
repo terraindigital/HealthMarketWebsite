@@ -171,4 +171,8 @@ export const ListHeading = styled.h4`
 `
 export const ListWrapper = styled.div`
   margin-top: 50px;
+
+  @media only screen and (max-width: 620px) {
+   margin-top: 40px;
+  }
 `
