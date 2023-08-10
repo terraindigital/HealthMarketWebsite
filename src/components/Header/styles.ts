@@ -56,10 +56,14 @@ export const Wrapper = styled.div`
     padding-left: 2.1rem;
     padding-right: 2.1rem;
     padding-top: 2.1rem;
-    position: fixed;
+    position: relative;
   }
 
   @media only screen and (max-width: 600px) {
+    &.takeover-active {
+      position: fixed;
+    }
+    
     &.lp-header {
       margin-top: 81px;
   }
