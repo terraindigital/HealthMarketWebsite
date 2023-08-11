@@ -25,12 +25,14 @@ export const PageStyles = css`
   }
 
   .section:first-of-type .heading h4 > p {
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 16px;
+    line-height: 20.8px;
+    color: var(--color-dark);
   }
 
   .list-item h5 {
     color: var(--color-dark);
+    font-size: 16px;
   }
 
   .card-link > p:first-of-type {
@@ -191,6 +193,9 @@ export const ListHeading = styled.h4`
 
   @media only screen and (max-width: 620px) {
     margin-left: -38px;
+    font-size: 20px;
+    font-family: var(--font-body);
+    font-weight: 700;
   }
 `
 export const ListWrapper = styled.div`
