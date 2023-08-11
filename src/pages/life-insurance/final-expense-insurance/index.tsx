@@ -64,12 +64,14 @@ const FinalExpensePage = () => {
         bgColor="#5899D1">
         <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
+        <div className="form-container">
         <PageHeroForm
             light
             btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
             btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
             inputId="finalExpensePageHeroLocation"
             footerContent={page.pageHeroFields.callUs} />
+            </div>
       </Hero>
 
       <Section

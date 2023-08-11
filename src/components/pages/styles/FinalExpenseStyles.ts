@@ -103,9 +103,23 @@ export const PageStyles = css`
   }
 
   @media only screen and (max-width: 620px) {
+    .form-container div:nth-child(1){
+      display: flex;
+    }
+
+    .form-container div:nth-child(1), div:nth-child(1) + div{
+      line-height: 2rem;
+      font-weight: 400;
+    }
+
     .button-container {
       min-width: 100%;
     }
+
+    .button-container button {
+      padding-left: 0px;
+      padding-right: 0px;
+     }
 
     .section:first-of-type .heading h4 {
       max-width: 100%;
@@ -129,6 +143,7 @@ export const HeroHeading = styled.h1`
   @media only screen and (max-width: 620px) {
     margin-top: 0;
     color: var(--color-dark); 
+    font-size: 50px !important;
   }
 `
 
@@ -139,6 +154,9 @@ export const HeroSubheading = styled.h4`
 
   @media only screen and (max-width: 620px) {
     color: var(--color-dark); 
+    font-size: 20px !important;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 `
 
