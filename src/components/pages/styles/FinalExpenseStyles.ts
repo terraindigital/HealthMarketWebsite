@@ -2,6 +2,15 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 export const PageStyles = css`
+.form-container form div:nth-child(1) div:nth-child(1),
+.form-container form div:nth-child(1) div:nth-child(1) + div {
+  border: 1px solid var(--color-accent-alt);
+}
+
+.form-container input.geocode.input {
+  border-bottom: 2px solid var(--color-accent-alt);
+}
+
   .button-container {
     display: flex;
     flex-direction: column;
