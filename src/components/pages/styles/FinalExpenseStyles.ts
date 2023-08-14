@@ -114,6 +114,11 @@ export const PageStyles = css`
   }
 
   @media only screen and (max-width: 620px) {
+    .header div:nth-child(1){
+      background-color: #F4F3F1;
+      box-shadow: none;
+    }
+
     .form-container div:nth-child(1){
       display: flex;
     }
