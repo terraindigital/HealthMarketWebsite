@@ -81,10 +81,6 @@ export const PageStyles = css`
       width: 100%;
     }
 
-    .hero + div .section {
-      background-color: var(--color-primary-light);
-    }
-
     .hero + .section {
       padding-top: 4rem;
     }
@@ -105,12 +101,6 @@ export const PageStyles = css`
   @media only screen and (max-width: 620px) {
     .button-container {
       min-width: 100%;
-    }
-
-    .section:first-of-type .heading h4 {
-      max-width: 100%;
-      padding-left: 20px;
-      padding-right: 0px;
     }
     
     .hero > img {
@@ -167,12 +157,5 @@ export const ListHeading = styled.h4`
 
   @media only screen and (max-width: 620px) {
     margin-left: -38px;
-  }
-`
-export const ListWrapper = styled.div`
-  margin-top: 50px;
-
-  @media only screen and (max-width: 620px) {
-   margin-top: 40px;
   }
 `

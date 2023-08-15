@@ -65,10 +65,6 @@ const AutocompleteField = ({ showFilters = false,  className, placeholder, defau
                                 type: "text",
                                 className: 'geocode input',
                               })}
-                              onInput={(e) => {
-                                e.currentTarget.value = e.currentTarget.value.replace(/[^0-9.]/g, "").replace(/(\..*?)\..*/g, "$1").replace(/^0[^.]/, "0")
-                                e.currentTarget.value = (e.currentTarget.value.length > 5) ? e.currentTarget.value.substring(0,5) : e.currentTarget.value;
-                              }}
                             />
                           </div>
                           

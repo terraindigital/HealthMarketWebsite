@@ -12,8 +12,7 @@ import {
   HeroSubheading,
   SectionOneInner,
   SectionOneInnerContent,
-  ListHeading,
-  ListWrapper
+  ListHeading
 } from "../../../components/pages/styles/FinalExpenseStyles";
 
 // Scripts
@@ -81,12 +80,10 @@ const FinalExpensePage = () => {
           <SectionOneInnerContent>
             <List>
               <ListHeading>{page.finalExpensePageCustomFields.finalExpenseSection1.list.listHeading}</ListHeading>
-              <ListWrapper>
               <ListItem heading={page.finalExpensePageCustomFields.finalExpenseSection1.list.listItem1.text} />
               <ListItem heading={page.finalExpensePageCustomFields.finalExpenseSection1.list.listItem2.text} />
               <ListItem heading={page.finalExpensePageCustomFields.finalExpenseSection1.list.listItem3.text} />
               <ListItem heading={page.finalExpensePageCustomFields.finalExpenseSection1.list.listItem4.text} />
-              </ListWrapper>
             </List>
             <div className="full-rounded" style={{ marginTop: "37px" }}>
               <a href={page?.finalExpensePageCustomFields?.finalExpenseSection1?.button?.link} onClick={routeLink}>
