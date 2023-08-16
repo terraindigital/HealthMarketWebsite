@@ -1,7 +1,7 @@
 import React from "react"
 
 // Styles
-import { Nav, Menu, MenuItem } from "./styles"
+import { Nav, Menu, MenuItem, Wrapper } from "./styles"
 
 // Scripts
 import { routeLink, toggleSubnav } from "../../static/scripts/global"
@@ -12,6 +12,7 @@ import AfterNav from "./AfterNav"
 const Navigation = ({ headerData }: { headerData: any }) => {
   return (
     <Nav className="menu wrapper">
+      <Wrapper>
       <Menu>
         {headerData?.menuItems && headerData?.menuItems?.nodes.map(item =>
           !item.parentId ? (
@@ -37,6 +38,7 @@ const Navigation = ({ headerData }: { headerData: any }) => {
         )}
       </Menu>
       <AfterNav />
+      </Wrapper>
     </Nav>
   )
 }

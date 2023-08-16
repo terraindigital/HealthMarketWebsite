@@ -7,7 +7,7 @@ export const Nav = styled.nav`
   min-width: 100%;
   min-width: 100vw;
   opacity: 0;
-  overflow-y: scroll;
+  overflow-y: hidden;
   padding: 14rem 3.4rem 3.4rem;
   position: fixed;
   top: -9999px;
@@ -25,9 +25,16 @@ export const Nav = styled.nav`
   }
 `
 
+export const Wrapper = styled.div`
+  max-height: 100%;
+  overflow-y: scroll; 
+  max-width: 100%;
+`
+
 export const Menu = styled.ul`
   list-style-type: none;
-  margin: 0;
+  margin: 0 auto;
+  max-width: 656px;
   text-align: center;
 
   &.submenu {
@@ -45,14 +52,17 @@ export const Menu = styled.ul`
 
 export const MenuItem = styled.li`
   margin: 0;
-  padding: 0.8rem 1.3rem;
+  padding: 16px 1.3rem;
 
   a {
     color: var(--color-light);
     font-family: var(--font-heading);
-    font-size: 4.4rem;
+    font-size: 6.5rem;
     font-weight: bold;
+    line-height: 100%;
     text-decoration: none;
+    word-break: normal;
+    white-space: normal;
   }
 
   &.has-submenu > a {
