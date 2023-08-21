@@ -160,6 +160,7 @@ export const HeroHeading = styled.h1`
     margin-top: 0;
     color: var(--color-dark); 
     font-size: 50px !important;
+    line-height: 57.5px;
   }
 `
 
