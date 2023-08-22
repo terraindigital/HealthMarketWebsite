@@ -52,6 +52,7 @@ const [secondButtonActive, setSecondButtonActive] = useState(true);
 // these functions and conditionals will serve as temporary measures until all pages have been redesigned to reflect the updated requirements for this component
 
   const onClickFirstButton = (el) => {
+    toggleForm(el)
     setFirstButtonActive(true);
     setSecondButtonActive(false)
   }
@@ -128,10 +129,10 @@ const [secondButtonActive, setSecondButtonActive] = useState(true);
           <>
           <HideOnDesktopWrapper>
           <Buttons>
-            <Radio onClick={onClickFirstButton} className="accented">{btnLeftText}
+            <Radio onClick={onClickFirstButton}>{btnLeftText}
               <input id="radioSearchPlans" type="radio" value={plans} checked />
             </Radio>
-            <Radio onClick={onClickSecondButton}>{btnRightText}
+            <Radio onClick={onClickSecondButton} className="accented">{btnRightText}
               <input id="radioSearchAgents" type="radio" value={agents} />
             </Radio>
           </Buttons>
