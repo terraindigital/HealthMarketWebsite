@@ -185,6 +185,7 @@ export const CTA = styled.div`
   .light & {
     img {
       filter: brightness(0) invert(1);
+      z-index: -999;
        @media only screen and (max-width: 620px) {
         filter: brightness(0);
         margin-top: 14px;
