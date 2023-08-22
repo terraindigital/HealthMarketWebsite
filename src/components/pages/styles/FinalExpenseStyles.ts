@@ -9,6 +9,24 @@ export const PageStyles = css`
 
 .form-container input.geocode.input {
   border-bottom: 2px solid var(--color-accent-alt);
+  min-width: 65rem;
+
+  @media only screen and (max-width: 620px) {
+  min-width: 12.5rem;
+  }
+}
+
+.form-container button {
+  min-width: 45rem;
+
+  @media only screen and (max-width: 620px) {
+min-width: 20rem;
+  }
+
+}
+
+.form-container button .desktop-button {
+  min-width: 100%;
 }
 
   .button-container {
