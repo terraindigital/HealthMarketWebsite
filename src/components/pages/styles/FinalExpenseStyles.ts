@@ -238,3 +238,17 @@ export const ListWrapper = styled.div`
    margin-top: 40px;
   }
 `
+
+export const RelatedContentWrapper = styled.div`
+
+h4 {
+font-weight: 600;
+line-height: 36px;
+}
+  p {
+    color: #828282;
+font-size: 17px;
+font-weight: 600;
+line-height: 28px;
+  }
+`
