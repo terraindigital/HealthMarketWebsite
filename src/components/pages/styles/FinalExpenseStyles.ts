@@ -137,6 +137,14 @@ min-width: 20rem;
       box-shadow: none;
     }
 
+    .header div:nth-child(1) button div {
+      background-color: var(--color-primary)
+  }
+
+    .header div:nth-child(1) nav div {
+      background-color: var(--color-primary)
+  }
+
     .form-container div:nth-child(1){
       display: flex;
     }
