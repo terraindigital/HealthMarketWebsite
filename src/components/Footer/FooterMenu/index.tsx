@@ -27,7 +27,7 @@ const FooterMenu: FC<Props> = ({ menu, title }) => (
       {(title === 'Get to Know Us') ? 
         <li id="doNotTrack" className="item doNotTrack">
           <div>
-            <a onClick={() => window.truste.eu.irmClickListener()} href='https://submit-irm.trustarc.com/services/validation/10525e43-877a-42dd-ae69-031a183e6adf' target='_blank'> 
+            <a onClick={() => window.truste.eu.irmClickListener()} href="javascript:void(0)"> 
             Do not Share or Sell My Information
             </a>
           </div>
