@@ -1,5 +1,6 @@
 // Library
 import React, { FC, useEffect, useState } from "react";
+import { useLocation } from '@reach/router';
 
 // Styles
 import {
@@ -98,7 +99,7 @@ const [secondButtonActive, setSecondButtonActive] = useState(true);
   return (
     <Wrapper className={`${(centered) ? `centered` : ``} ${(light) ? `light` : ``}`} {...rest}>
       <Form id="zipCodeForm" action={plans} autocomplete="off" onSubmit={(e) => { sendForm(e) }}>
-    { window.location.pathname !== finalExpense ? 
+    { useLocation()?.pathname !== finalExpense ?
         <>
         {(buttons || buttons === undefined) ? (
           <Buttons>
