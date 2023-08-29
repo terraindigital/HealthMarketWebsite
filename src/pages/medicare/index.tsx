@@ -39,8 +39,8 @@ const MedicarePage = () => {
     <Layout pageClass="medicare">
       <Global styles={PageStyles} />
       <Hero
-        image={page.pageHeroFields.heroImage.sourceUrl}
-        mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
+        image={page.pageHeroFields.heroImage?.sourceUrl}
+        mobileImage={page.pageHeroFields.mobileHeroImage?.sourceUrl}
         bgColor="#5899D1">
         <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
