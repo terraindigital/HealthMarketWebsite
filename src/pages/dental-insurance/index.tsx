@@ -55,8 +55,8 @@ const DentalInsurancePage = () => {
     <Layout pageClass="dental-insurance">
       <Global styles={PageStyles} />
       <Hero
-        image={page.pageHeroFields.heroImage.sourceUrl}
-        mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
+        image={page.pageHeroFields.heroImage?.sourceUrl}
+        mobileImage={page.pageHeroFields.mobileHeroImage?.sourceUrl}
         bgColor="#BBD9F1">
         <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>

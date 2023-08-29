@@ -65,7 +65,7 @@ const MedicarePrescriptionDrugPage = () => {
                 <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page?.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer }} />
               </Hero>
                 {/* <HeroContainer>
-                    <HeroDesktopImg src={page.pageHeroFields.heroImage.sourceUrl} alt="Hero"/>
+                    <HeroDesktopImg src={page.pageHeroFields.heroImage?.sourceUrl} alt="Hero"/>
                     <HeroDesktopOpacity/>
                     <HeroPadding>
                         <MainTitle>{page.pageHeroFields.headline}</MainTitle>
