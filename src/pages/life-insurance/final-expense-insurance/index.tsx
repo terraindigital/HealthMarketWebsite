@@ -138,19 +138,19 @@ const FinalExpensePage = () => {
               image={page?.finalExpensePageCustomFields?.finalExpenseSection4?.relatedContent?.relatedContent1?.image?.sourceUrl}
               title={page?.finalExpensePageCustomFields?.finalExpenseSection4?.relatedContent?.relatedContent1?.title}
               link={page?.finalExpensePageCustomFields?.finalExpenseSection4?.relatedContent?.relatedContent1?.link}>
-              <p dangerouslySetInnerHTML={{ __html: '6 MINUTE READ' + page?.finalExpensePageCustomFields?.finalExpenseSection4?.relatedContent?.relatedContent1?.content}} />
+              <p dangerouslySetInnerHTML={{ __html: page?.finalExpensePageCustomFields?.finalExpenseSection4?.relatedContent?.relatedContent1?.content}} />
             </Card>
             <Card
               image={page?.finalExpensePageCustomFields?.finalExpenseSection4?.relatedContent?.relatedContent2?.image?.sourceUrl}
               title={page?.finalExpensePageCustomFields?.finalExpenseSection4?.relatedContent?.relatedContent2?.title}
               link={page?.finalExpensePageCustomFields?.finalExpenseSection4?.relatedContent?.relatedContent2?.link}>
-              <p dangerouslySetInnerHTML={{ __html: '6 MINUTE READ' + page?.finalExpensePageCustomFields?.finalExpenseSection4?.relatedContent?.relatedContent2?.content}} />
+              <p dangerouslySetInnerHTML={{ __html: page?.finalExpensePageCustomFields?.finalExpenseSection4?.relatedContent?.relatedContent2?.content}} />
             </Card>
             <Card
               image={page?.finalExpensePageCustomFields?.finalExpenseSection4?.relatedContent?.relatedContent3?.image?.sourceUrl}
               title={page?.finalExpensePageCustomFields?.finalExpenseSection4?.relatedContent?.relatedContent3?.title}
               link={page?.finalExpensePageCustomFields?.finalExpenseSection4?.relatedContent?.relatedContent3?.link}>
-              <p dangerouslySetInnerHTML={{ __html: '6 MINUTE READ' + page?.finalExpensePageCustomFields?.finalExpenseSection4?.relatedContent?.relatedContent3?.content}} />
+              <p dangerouslySetInnerHTML={{ __html: page?.finalExpensePageCustomFields?.finalExpenseSection4?.relatedContent?.relatedContent3?.content}} />
 
             </Card>
           </Cards>
