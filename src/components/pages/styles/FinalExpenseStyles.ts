@@ -170,9 +170,16 @@ min-width: 20rem;
     }
     
     .hero > img {
-      bottom: -8rem;
-      top: auto;
+      margin-top: 5rem;
     }
+
+    .hero + div .section {
+      margin-top: 5rem;
+    }
+
+    div:nth-child(1)+div  {
+      overflow: visible;
+     }
   }
 `
 
