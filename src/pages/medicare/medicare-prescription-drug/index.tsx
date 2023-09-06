@@ -181,7 +181,7 @@ const MedicarePrescriptionDrugPage = () => {
                         </CardTitleQuestions>
                         <CardButtonsContainer>
                             <CardButtonBig href={page?.medicarePrescriptionDrugPageCustomFields?.finalMedial?.button1Url}>
-                                {page?.medicarePrescriptionDrugPageCustomFields?.finalMedial?.button1Text}, TTY 771
+                                {page?.medicarePrescriptionDrugPageCustomFields?.finalMedial?.button1Text}
                             </CardButtonBig>
                             <CardButtonBig href={page?.medicarePrescriptionDrugPageCustomFields?.finalMedial?.button2Url}>
                                 {page?.medicarePrescriptionDrugPageCustomFields?.finalMedial?.button2Text}
