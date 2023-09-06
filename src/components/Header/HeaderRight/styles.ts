@@ -44,7 +44,7 @@ display:none;
       padding-right: 0;
     }
     .hide-at-desktop{
-      display: inline;
+      display: none;
       color: var(--color-primary-dark);
       font-family: Open Sans;
       font-size: 16px;
