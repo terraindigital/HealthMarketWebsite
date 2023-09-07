@@ -7,6 +7,7 @@ export const HeroHeading = styled.h1`
 
   @media only screen and (max-width: 620px) {
     font-size: 5rem;
+    color: var(--color-light) !important;
   }
 `
 
@@ -18,6 +19,7 @@ export const HeroSubheading = styled.h4`
 
   @media only screen and (max-width: 620px) {
     margin-bottom: 3.2rem;
+    color: var(--color-light) !important;
 
     & + div .home-hero-buttons {
       display: flex;

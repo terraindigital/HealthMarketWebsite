@@ -41,7 +41,7 @@ const MedicarePage = () => {
       <Hero
         image={page.pageHeroFields.heroImage.sourceUrl}
         mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
-        bgColor="#5899D1">
+        bgColor="#82BBCF" >
         <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
         <PageHeroForm

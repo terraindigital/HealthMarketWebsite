@@ -67,6 +67,11 @@ export const PageStyles = css`
       bottom: -8rem;
       top: auto;
     }
+
+    .hero > img.show-at-mobile {
+      object-position: bottom;
+      bottom: -2rem;
+    }
   }
 `
 
