@@ -208,9 +208,7 @@ export const TierListStyles = css`
   background-color: grey;
   border: grey;
 }
-    .hero > img {
-      transform: scaleX(-1);
-    }
+
 
   .flexed.section p{
     margin-top: 1rem;
