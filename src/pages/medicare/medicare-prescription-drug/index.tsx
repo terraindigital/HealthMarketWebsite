@@ -53,15 +53,18 @@ const MedicarePrescriptionDrugPage = () => {
               <Hero
                 image={page?.pageHeroFields?.heroImage?.sourceUrl}
                 mobileImage={page?.pageHeroFields?.mobileHeroImage?.sourceUrl}
-                bgColor="#BFBDB8">
-                <HeroHeading>{page?.pageHeroFields?.headline}</HeroHeading>
-                <HeroSubheading>{page?.pageHeroFields?.subheadline}</HeroSubheading>
+                bgColor="#BFBDB8"
+                >
+                <HeroHeading className="white-text">{page?.pageHeroFields?.headline}</HeroHeading>
+                <HeroSubheading className="white-text">{page?.pageHeroFields?.subheadline}</HeroSubheading>
                 <PageHeroForm
                     light
+                    whiteText
                     btnLeftText={page?.pageHeroFields?.heroButtons?.heroButton1?.text}
                     btnRightText={page?.pageHeroFields?.heroButtons?.heroButton2?.text}
                     inputId="medicarePageHeroLocation"
-                    footerContent={page?.pageHeroFields?.callUs} />
+                    footerContent={page?.pageHeroFields?.callUs}
+                    />
                 <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page?.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer }} />
               </Hero>
                 {/* <HeroContainer>

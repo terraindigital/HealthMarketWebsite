@@ -74,7 +74,7 @@ export const PageStyles = css`
 
     .hero > img.show-at-mobile {
       object-position: bottom;
-      bottom: -3rem;
+      bottom: -8rem;
     }
 
     .hero + .section {
@@ -132,6 +132,10 @@ export const HeroHeading = styled.h1`
 
   @media only screen and (max-width: 620px) {
     color: var(--color-dark);
+
+    &.white-text {
+      color: var(--color-light);
+    }
   }
 `
 
@@ -143,6 +147,10 @@ export const HeroSubheading = styled.h4`
 
   @media only screen and (max-width: 620px) {
     color: var(--color-dark);
+  }
+
+  &.white-text {
+    color: var(--color-light);
   }
 `
 

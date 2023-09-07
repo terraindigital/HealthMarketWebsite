@@ -8,6 +8,19 @@ export const Wrapper = styled.div`
   &.agent {
     // ...
   }
+  
+  &.white-text.light {
+    @media only screen and (max-width: 620px) {
+      .cta-phone {
+        img {
+          filter: brightness(0) invert(1)
+        }
+        span p {
+          color: var(--color-light);
+        }
+      }
+    }
+  }
 `
 export const FirstWrapper = styled.div`
 .phone-link {

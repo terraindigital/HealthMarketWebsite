@@ -35,7 +35,8 @@ interface Props {
   inputId: string,
   buttons?: boolean,
   footerContent: string,
-  hideFooter?: boolean
+  hideFooter?: boolean,
+  whiteText?: boolean
 }
 
 // set geocode earth api key
@@ -46,7 +47,7 @@ const plans = "https://shop.healthmarkets.com/en/about-me/info/";
 const agents = "/local-health-insurance-agent/search/";
 const finalExpense = "/life-insurance/final-expense-insurance/"
 
-const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, inputId, buttons, footerContent, hideFooter,...rest  }) => {
+const PageHeroForm: FC<Props> = ({ centered, light, whiteText, btnLeftText, btnRightText, inputId, buttons, footerContent, hideFooter,...rest  }) => {
 const [firstButtonActive, setFirstButtonActive] = useState(false);
 const [secondButtonActive, setSecondButtonActive] = useState(true);
 
@@ -86,7 +87,7 @@ const [secondButtonActive, setSecondButtonActive] = useState(true);
         </div>
         <Footer>
           <Button style={{borderRadius: "4px"}} background="accent-alt" border="light" color="light"><div className="mobile-button">Search</div><div className="desktop-button">Find a licensed insurance agent</div></Button>
-          <CTA>
+          <CTA className="cta-phone">
               <img src={PhoneIcon} />
               <span dangerouslySetInnerHTML={{ __html: footerContent }} />
             </CTA>
@@ -97,7 +98,7 @@ const [secondButtonActive, setSecondButtonActive] = useState(true);
 }
 
   return (
-    <Wrapper className={`${(centered) ? `centered` : ``} ${(light) ? `light` : ``}`} {...rest}>
+    <Wrapper className={`${(centered) ? `centered` : ``} ${(light) ? `light` : ``} ${(whiteText) ? `white-text` : ``}`} {...rest}>
       <Form id="zipCodeForm" action={plans} autocomplete="off" onSubmit={(e) => { sendForm(e) }}>
     { useLocation()?.pathname !== finalExpense ?
         <>
@@ -119,7 +120,7 @@ const [secondButtonActive, setSecondButtonActive] = useState(true);
         <Footer>
           <Button style={{borderRadius: "4px"}} background="accent-alt" border="light" color="light">Search</Button>
           {(!hideFooter || hideFooter === undefined) ? (
-            <CTA>
+            <CTA className="cta-phone">
               <img src={PhoneIcon} />
               <span dangerouslySetInnerHTML={{ __html: footerContent }} />
             </CTA>
