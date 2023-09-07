@@ -64,6 +64,10 @@ export const PageStyles = css`
     padding-top: 0;
   }
 
+  .hero > img.hide-at-mobile {
+    object-position: bottom;
+  }
+
   @media only screen and (max-width: 788px) {
     .hero .half {
       display: block;
@@ -72,9 +76,9 @@ export const PageStyles = css`
       width: 100%;
     }
 
-    .hero > img {
-      bottom: -25rem !important;
+    .hero > img.show-at-mobile {
       object-position: bottom;
+      bottom: -8rem;
     }
 
     .hero + .section {
@@ -118,12 +122,32 @@ export const PageStyles = css`
       margin-left: 19px;
     }
   }
+
+  .Medicare-PD {
+    img.hide-at-mobile {
+      object-position: top;
+    }
+
+    div #zipCodeForm .cta-phone {
+      img {
+        filter: none;
+      }
+
+      span {
+        color: var(--color-dark);
+      }
+    }    
+  }
 `
 
 export const HeroHeading = styled.h1`
   color: var(--color-light);
   margin-bottom: 15px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+
+  &.dark-text {
+    color: var(--color-dark);
+  }
 
   @media only screen and (max-width: 1280px) {
     font-size: 50px;
@@ -132,6 +156,10 @@ export const HeroHeading = styled.h1`
 
   @media only screen and (max-width: 620px) {
     color: var(--color-dark);
+
+    &.white-text {
+      color: var(--color-light);
+    }
   }
 `
 
@@ -141,8 +169,16 @@ export const HeroSubheading = styled.h4`
   margin-bottom: 4rem;
   line-height: 120%;
 
+  &.dark-text {
+    color: var(--color-dark);
+  }
+
   @media only screen and (max-width: 620px) {
     color: var(--color-dark);
+  }
+
+  &.white-text {
+    color: var(--color-light);
   }
 `
 
