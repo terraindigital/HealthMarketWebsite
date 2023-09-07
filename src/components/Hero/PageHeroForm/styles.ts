@@ -169,7 +169,6 @@ export const CTA = styled.div`
 
   span > p > a, span > p {
     font-size: 2.4rem;
-    font-weight: 600;
     margin-bottom: 0;
   }
 
@@ -179,6 +178,7 @@ export const CTA = styled.div`
         color: var(--color-dark);
         text-align: left;
         margin-top: 5px;
+        font-weight: 100;
     }
   }
 

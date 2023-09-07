@@ -72,9 +72,9 @@ export const PageStyles = css`
       width: 100%;
     }
 
-    .hero > img {
-      bottom: -25rem !important;
+    .hero > img.show-at-mobile {
       object-position: bottom;
+      bottom: -3rem;
     }
 
     .hero + .section {
