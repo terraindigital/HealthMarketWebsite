@@ -70,6 +70,7 @@ export const PageStyles = css`
 
     .hero > img.show-at-mobile {
       object-position: bottom;
+      bottom: -2rem;
     }
   }
 `
