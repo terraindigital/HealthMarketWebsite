@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby";
 export const useIndividualPageQuery = () => {
-    const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query IndividualQuery {
       page: wpPage(databaseId: {eq: 9583}) {
         id
@@ -78,7 +78,16 @@ export const useIndividualPageQuery = () => {
               link
             }
           }
-          individualSection3 {
+            individualSection3 {
+                color
+                heading
+                subHeading
+                cta {
+                    text
+                    link
+                }
+            }
+          individualSection4 {
             heading
             color
             individualRelatedContent {
@@ -145,5 +154,5 @@ export const useIndividualPageQuery = () => {
       }
     }
   `);
-    return data;
+  return data;
 };

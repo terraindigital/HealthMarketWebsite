@@ -66,6 +66,7 @@ const IndividualPage = () => {
                     <h1>{page.individualPageCustomField.individualSection2.title}</h1>
                     <p>{page.individualPageCustomField.individualSection2.statement}</p>
                 </div>
+
                 <ul className="items hide-at-mobile">
                     <li style={{ listStylePosition: 'inside', color: '#009FDA' }}>
                         {individualSection2.bronzePlan.planName}
@@ -116,17 +117,19 @@ const IndividualPage = () => {
                         </span>
                         {individualSection2.catastrophicCoverage.normalText}
                     </li>
-                    <ul className="items show-at-mobile">
-                        <li>
-                            <div className="dot"></div>
-                            <div className="content">
-                                <h3 style={{ color: '#009FDA' }}>{individualSection2.bronzePlan.planName}</h3>
-                                <p style={{ color: '#009FDA' }}>{individualSection2.bronzePlan.highlightedText}</p>
-                                <p>{individualSection2.bronzePlan.normalText}</p>
-                            </div>
-                            <div className="line"></div>
-                        </li>
-                    </ul>
+                </ul>
+
+                <ul className="items show-at-mobile">
+
+                    <li>
+                        <div className="dot"></div>
+                        <div className="content">
+                            <h3 style={{ color: '#009FDA' }}>{individualSection2.bronzePlan.planName}</h3>
+                            <p style={{ color: '#009FDA' }}>{individualSection2.bronzePlan.highlightedText}</p>
+                            <p>{individualSection2.bronzePlan.normalText}</p>
+                        </div>
+                        <div className="line"></div>
+                    </li>
                     <li>
                         <div className="dot"></div>
                         <div className="content">
@@ -175,29 +178,43 @@ const IndividualPage = () => {
                     </a>
                 </div>
             </div>
+
+            <div style={{ textAlign: 'center', background: 'rgb(244, 250, 253)' }}>
+                <h2 style={{ color: '#009FDA', paddingTop: '4rem' }}>{page.individualPageCustomField.individualSection3.heading}</h2>
+                <p style={{ paddingTop: '1rem', textAlign: 'left', lineHeight: '2rem' }}>{page.individualPageCustomField.individualSection3.subHeading}</p>
+
+                <div className="full-rounded" style={{ textAlign: "center" }}>
+                    <a href={page.individualPageCustomField.individualSection3.cta.link} onClick={routeLink}>
+                        <Button background="accent-alt" border="light" color="light">
+                            {page.individualPageCustomField.individualSection3.cta.text}
+                        </Button>
+                    </a>
+                </div>
+            </div>
+
             <Section
-                color={page.individualPageCustomField.individualSection3.color}
-                heading={page.individualPageCustomField.individualSection3.heading}>
+                color={page.individualPageCustomField.individualSection4.color}
+                heading={page.individualPageCustomField.individualSection4.heading}>
                 <RelatedContent />
                 {(!hasChildren) ? (
                     <Cards relatedContent={true}>
                         <Card
-                            image={page.individualPageCustomField.individualSection3.individualRelatedContent.individualRelatedContent1.image.sourceUrl}
-                            title={page.individualPageCustomField.individualSection3.individualRelatedContent.individualRelatedContent1.heading}
-                            link={page.individualPageCustomField.individualSection3.individualRelatedContent.individualRelatedContent1.link}>
-                            <p dangerouslySetInnerHTML={{ __html: page.individualPageCustomField.individualSection3.individualRelatedContent.individualRelatedContent1.content }} />
+                            image={page.individualPageCustomField.individualSection4.individualRelatedContent.individualRelatedContent1.image.sourceUrl}
+                            title={page.individualPageCustomField.individualSection4.individualRelatedContent.individualRelatedContent1.heading}
+                            link={page.individualPageCustomField.individualSection4.individualRelatedContent.individualRelatedContent1.link}>
+                            <p dangerouslySetInnerHTML={{ __html: page.individualPageCustomField.individualSection4.individualRelatedContent.individualRelatedContent1.content }} />
                         </Card>
                         <Card
-                            image={page.individualPageCustomField.individualSection3.individualRelatedContent.individualRelatedContent2.image.sourceUrl}
-                            title={page.individualPageCustomField.individualSection3.individualRelatedContent.individualRelatedContent2.heading}
-                            link={page.individualPageCustomField.individualSection3.individualRelatedContent.individualRelatedContent2.link}>
-                            <p dangerouslySetInnerHTML={{ __html: page.individualPageCustomField.individualSection3.individualRelatedContent.individualRelatedContent2.content }} />
+                            image={page.individualPageCustomField.individualSection4.individualRelatedContent.individualRelatedContent2.image.sourceUrl}
+                            title={page.individualPageCustomField.individualSection4.individualRelatedContent.individualRelatedContent2.heading}
+                            link={page.individualPageCustomField.individualSection4.individualRelatedContent.individualRelatedContent2.link}>
+                            <p dangerouslySetInnerHTML={{ __html: page.individualPageCustomField.individualSection4.individualRelatedContent.individualRelatedContent2.content }} />
                         </Card>
                         <Card
-                            image={page.individualPageCustomField.individualSection3.individualRelatedContent.individualRelatedContent3.image.sourceUrl}
-                            title={page.individualPageCustomField.individualSection3.individualRelatedContent.individualRelatedContent3.heading}
-                            link={page.individualPageCustomField.individualSection3.individualRelatedContent.individualRelatedContent3.link}>
-                            <p dangerouslySetInnerHTML={{ __html: page.individualPageCustomField.individualSection3.individualRelatedContent.individualRelatedContent3.content }} />
+                            image={page.individualPageCustomField.individualSection4.individualRelatedContent.individualRelatedContent3.image.sourceUrl}
+                            title={page.individualPageCustomField.individualSection4.individualRelatedContent.individualRelatedContent3.heading}
+                            link={page.individualPageCustomField.individualSection4.individualRelatedContent.individualRelatedContent3.link}>
+                            <p dangerouslySetInnerHTML={{ __html: page.individualPageCustomField.individualSection4.individualRelatedContent.individualRelatedContent3.content }} />
                         </Card>
                     </Cards>
                 ) : null}

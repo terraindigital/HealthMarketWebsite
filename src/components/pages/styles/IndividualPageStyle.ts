@@ -2,6 +2,7 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 export const TierListStyles = css`
+
 .center-content {
   text-align: center;
 }
@@ -61,6 +62,7 @@ export const TierListStyles = css`
   padding-left: 40px;
 }
 
+
 .dot {
   width: 12px;
   height: 12px;
@@ -71,15 +73,14 @@ export const TierListStyles = css`
   top: 10px;
 }
 
-.line {
-  position: absolute;
-  width: 2px;
-  height: 187%;
-  background-color: #009FDA;
-  left: 5px;
-  top: 10px;
-  z-index: -1;
-}
+  .line {
+    position: absolute;
+    width: 2px;
+    height: 145%;
+    background-color: #009FDA;
+    left: 5px;
+    top: 20px;
+  }
 
 .items li:last-child .line {
   display: none;
@@ -89,8 +90,8 @@ export const TierListStyles = css`
   display: none;
 }
 
-.items li:last-child .dot {
-  background-color: grey;
+.items > li:last-child .dot {
+   background-color: grey;
 }
 
   .full-rounded {
@@ -101,21 +102,23 @@ export const TierListStyles = css`
     padding: 1.2rem;
   }
 
-  .hide-at-mobile {
-    display: none;
-  }
-  .show-at-mobile {
-    display: block;
-  }
+.show-at-mobile {
+  display: block;
+}
+
+.hide-at-mobile {
+  display: none;
+}
 }
 
 @media (min-width: 769px) {
-  .show-at-mobile {
-    display: none;
-  }
-  .hide-at-mobile {
-    display: block;
-  }
+.show-at-mobile {
+  display: block;
+}
+
+.hide-at-mobile {
+  display: none;
+}
 }
 
  @media only screen and (min-width: 788px) {
@@ -130,10 +133,10 @@ export const TierListStyles = css`
   .items::before {
     content: "";
     position: absolute;
-    top: 80px;
+    top: 40px;
     left: 50%;
     width: 2px;
-    height: 56%;
+    height: 60%;
     background-color: #009FDA;
     transform: translateX(-50%);
   }
@@ -233,10 +236,6 @@ export const TierListStyles = css`
     font-size: 50rem;
   }
 
-    .hide-at-mobile {
-    display: none;
-  }
-
   .timeline {
   position: relative;
   margin-left: 20px;
@@ -299,14 +298,15 @@ export const TierListStyles = css`
 .timeline p {
   margin-bottom: 0;
 }
-.hide-at-mobile {
-  display: block;
+
+.show-at-mobile {
+    display: none; /* or inline, inline-block, etc. depending on what you need */
 }
 
-/* Hidden by default, show on mobile */
-.show-at-mobile {
-  display: none;
+.hide-at-mobile {
+    display: block;
 }
+
 }
 
 `;
