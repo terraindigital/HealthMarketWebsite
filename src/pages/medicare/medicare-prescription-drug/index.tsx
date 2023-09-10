@@ -48,20 +48,22 @@ const MedicarePrescriptionDrugPage = () => {
     const {page} = useMedicarePrescriptionDrugPageQuery();
     return (
         <Layout>
-            <PageContainer>
+            <PageContainer className="Medicare-PD">
             <Global styles={PageStyles} />
               <Hero
                 image={page?.pageHeroFields?.heroImage?.sourceUrl}
                 mobileImage={page?.pageHeroFields?.mobileHeroImage?.sourceUrl}
-                bgColor="#C6C3BE">
-                <HeroHeading>{page?.pageHeroFields?.headline}</HeroHeading>
-                <HeroSubheading>{page?.pageHeroFields?.subheadline}</HeroSubheading>
+                bgColor="#EFEFEF"
+                >
+                <HeroHeading className="dark-text">{page?.pageHeroFields?.headline}</HeroHeading>
+                <HeroSubheading className="dark-text">{page?.pageHeroFields?.subheadline}</HeroSubheading>
                 <PageHeroForm
                     light
                     btnLeftText={page?.pageHeroFields?.heroButtons?.heroButton1?.text}
                     btnRightText={page?.pageHeroFields?.heroButtons?.heroButton2?.text}
                     inputId="medicarePageHeroLocation"
-                    footerContent={page?.pageHeroFields?.callUs} />
+                    footerContent={page?.pageHeroFields?.callUs}
+                    />
                 <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page?.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer }} />
               </Hero>
                 {/* <HeroContainer>
@@ -181,7 +183,7 @@ const MedicarePrescriptionDrugPage = () => {
                         </CardTitleQuestions>
                         <CardButtonsContainer>
                             <CardButtonBig href={page?.medicarePrescriptionDrugPageCustomFields?.finalMedial?.button1Url}>
-                                {page?.medicarePrescriptionDrugPageCustomFields?.finalMedial?.button1Text}, TTY 771
+                                {page?.medicarePrescriptionDrugPageCustomFields?.finalMedial?.button1Text}
                             </CardButtonBig>
                             <CardButtonBig href={page?.medicarePrescriptionDrugPageCustomFields?.finalMedial?.button2Url}>
                                 {page?.medicarePrescriptionDrugPageCustomFields?.finalMedial?.button2Text}

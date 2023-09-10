@@ -8,6 +8,19 @@ export const Wrapper = styled.div`
   &.agent {
     // ...
   }
+  
+  &.white-text.light {
+    @media only screen and (max-width: 620px) {
+      .cta-phone {
+        img {
+          filter: brightness(0) invert(1)
+        }
+        span p {
+          color: var(--color-light);
+        }
+      }
+    }
+  }
 `
 export const FirstWrapper = styled.div`
 .phone-link {
@@ -169,7 +182,6 @@ export const CTA = styled.div`
 
   span > p > a, span > p {
     font-size: 2.4rem;
-    font-weight: 600;
     margin-bottom: 0;
   }
 
@@ -179,6 +191,7 @@ export const CTA = styled.div`
         color: var(--color-dark);
         text-align: left;
         margin-top: 5px;
+        font-weight: 100;
     }
   }
 
