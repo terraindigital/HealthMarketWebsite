@@ -85,15 +85,16 @@ const MedicareAdvantagePage = () => {
       <Hero
         image={page?.pageHeroFields?.heroImage?.sourceUrl}
         mobileImage={page?.pageHeroFields?.mobileHeroImage?.sourceUrl}
-        bgColor="#F2F2F2">
-        <HeroHeading>{page?.pageHeroFields?.headline}</HeroHeading>
-        <HeroSubheading>{page?.pageHeroFields?.subheadline}</HeroSubheading>
+        bgColor="#86AEC9">
+        <HeroHeading className="white-text">{page?.pageHeroFields?.headline}</HeroHeading>
+        <HeroSubheading className="white-text">{page?.pageHeroFields?.subheadline}</HeroSubheading>
         <PageHeroForm
             light
             btnLeftText={page?.pageHeroFields?.heroButtons?.heroButton1?.text}
             btnRightText={page?.pageHeroFields?.heroButtons?.heroButton2?.text}
             inputId="medicarePageHeroLocation"
-            footerContent={page?.pageHeroFields?.callUs} />
+            footerContent={page?.pageHeroFields?.callUs}
+            whiteText />
         <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page?.medicareAdvantagePageCustomFields?.medicareAdvPostHeroDisclaimer }} />
       </Hero>
 
@@ -203,7 +204,7 @@ const MedicareAdvantagePage = () => {
         <div className="button-container">
           <a href={page?.medicareAdvantagePageCustomFields?.medicareAdvSection3?.medicareAdvColumns?.medicareAdvColumn2?.button?.button1?.link} onClick={routeLink}>
             <Button background="accent-alt" border="light" color="light">
-              {page?.medicareAdvantagePageCustomFields?.medicareAdvSection3?.medicareAdvColumns?.medicareAdvColumn2?.button?.button1?.text}, TTY 771
+              {page?.medicareAdvantagePageCustomFields?.medicareAdvSection3?.medicareAdvColumns?.medicareAdvColumn2?.button?.button1?.text}
             </Button>
           </a>
           <a href={page?.medicareAdvantagePageCustomFields?.medicareAdvSection3?.medicareAdvColumns?.medicareAdvColumn2?.button?.button2?.link} onClick={routeLink}>

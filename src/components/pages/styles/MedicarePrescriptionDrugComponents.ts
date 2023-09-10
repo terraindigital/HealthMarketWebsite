@@ -27,8 +27,8 @@ export const PageStyles = css`
       width: 100%;
     }
 
-    .hero > img {
-      bottom: -25rem !important;
+    .hero > img.show-at-mobile {
+      bottom: -0rem !important;
       object-position: bottom;
     }
 
