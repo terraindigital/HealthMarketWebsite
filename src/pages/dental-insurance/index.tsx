@@ -61,12 +61,11 @@ const DentalInsurancePage = () => {
         <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
         <PageHeroForm
-          btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
-          btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
-          inputId="dentalPageHeroLocation"
-          footerContent={page.pageHeroFields.callUs} />
+            btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
+            btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
+            inputId="dentalPageHeroLocation"
+            footerContent={page.pageHeroFields.callUs} />
       </Hero>
-      <Button>btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}</Button>
       <FlexedSection
         color={page.dentalPageCustomFields.dentalSection1.color}
         heading={page.dentalPageCustomFields.dentalSection1.heading}>
@@ -85,20 +84,20 @@ const DentalInsurancePage = () => {
       </FlexedSection>
       <Section color="light">
         <Callouts>
-          {(callouts) ? (
-            Object.keys(callouts).map((index) => {
-              const callout = callouts[index];
-              return (
-                <Callout
-                  number={callout.number}
-                  tagline={callout.tagline}
-                  title={callout.title}
-                  description={callout.description}
-                  disclaimer={callout.disclaimer}
-                />
-              )
-            })
-          ) : null}
+            {(callouts) ? (
+                Object.keys(callouts).map((index) => {
+                    const callout = callouts[index];
+                    return (
+                        <Callout
+                            number={callout.number}
+                            tagline={callout.tagline}
+                            title={callout.title}
+                            description={callout.description}
+                            disclaimer={callout.disclaimer}
+                        />
+                    )
+                })
+            ) : null}
         </Callouts>
       </Section>
       <Section
@@ -111,19 +110,19 @@ const DentalInsurancePage = () => {
               image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.image.sourceUrl}
               title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.heading}
               link={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.link}>
-              <p dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.content }} />
+              <p dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent1.content}} />
             </Card>
             <Card
               image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.image.sourceUrl}
               title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.heading}
               link={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.link}>
-              <p dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.content }} />
+              <p dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent2.content}} />
             </Card>
             <Card
               image={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.image.sourceUrl}
               title={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.heading}
               link={page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.link}>
-              <p dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.content }} />
+              <p dangerouslySetInnerHTML={{ __html: page.dentalPageCustomFields.dentalSection2.dentalRelatedContent.dentalRelatedContent3.content}} />
             </Card>
           </Cards>
         ) : null}
@@ -135,9 +134,9 @@ const DentalInsurancePage = () => {
           </a>
         </div>
       </Section>
-      <Footer>
-        {page.disclaimers.disclaimer}
-      </Footer>
+        <Footer>
+            {page.disclaimers.disclaimer}
+        </Footer>
     </Layout>
   )
 }
@@ -150,7 +149,7 @@ export const Head = () => {
     <>
       <PageHead
         title={page.seo.title}
-        description={page.seo.metaDesc} />
+        description={page.seo.metaDesc}/>
       <script src="//cdn.bc0a.com/autopilot/f00000000075672/autopilot_sdk.js"></script>
     </>
   )
