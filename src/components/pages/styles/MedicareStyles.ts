@@ -73,6 +73,18 @@ export const PageStyles = css`
       bottom: -2rem;
     }
   }
+
+  @media only screen and (max-width: 480px) {
+    div.hero {
+      padding-bottom: 34rem;
+    }
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 788px) {
+    div.hero {
+      padding-bottom: 46rem;
+    }
+  }
 `
 
 export const HeroHeading = styled.h1`

@@ -67,5 +67,16 @@ export const Wrapper = styled.div`
   }
   }
 
+  @media only screen and (max-width: 360px) {
+    .flip-clock {
+      margin: auto;
+      --fcc-digit-block-height: 4.688rem; /* height of digit card, highly recommend in even number */
+      --fcc-digit-block-width: 3.188rem; /* height of digit card, highly recommend in even number */
+      --fcc-digit-font-size: 3rem; /* font size of digit */
+      --fcc-label-font-size: 16px; /* font size of label */
+      --fcc-label-color: #4D4D4D; /* color of label */
+      margin-top: 2rem;
+    }
+  }
 
 `
