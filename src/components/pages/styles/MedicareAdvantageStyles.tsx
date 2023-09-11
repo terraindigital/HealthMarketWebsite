@@ -68,6 +68,40 @@ export const PageStyles = css`
     object-position: bottom;
   }
 
+  .hero h4, .hero .cta-phone {
+    max-width: 820px;
+  }
+
+  @media (min-width: 788px) and (max-width: 1024px) {
+    .hero h1 {
+      width: 83%;
+    }
+  }
+
+  @media only screen (min-width: 1280px) {
+    .hero h1 {
+      width: 80%;
+    }
+  }
+
+  @media (min-width: 788px) and (max-width: 1540px) {
+    .geocode {
+      width: 100%;
+
+      .input.group {
+        width: 100%;
+
+        input {
+          min-width: 0;
+        }
+      }
+    }
+
+    .hero #zipCodeForm, h4 {
+      width: 80%;
+    }
+  }
+
   @media only screen and (max-width: 788px) {
     .hero .half {
       display: block;
@@ -123,6 +157,25 @@ export const PageStyles = css`
     }
   }
 
+  .medicare-advantage {
+
+    @media only screen and (max-width: 480px) {
+      div.hero {
+        padding-bottom: 32rem;
+      }
+    }
+  
+    @media only screen and (min-width: 480px) and (max-width: 788px) {
+      div.hero {
+        padding-bottom: 40rem;
+      }
+    }
+
+    img.hide-at-mobile {
+      object-position: top;
+    }
+  }
+
   .Medicare-PD {
     img.hide-at-mobile {
       object-position: top;
@@ -136,7 +189,38 @@ export const PageStyles = css`
       span {
         color: var(--color-dark);
       }
-    }    
+    }
+
+    @media (min-width: 1440px) and (max-width: 2240px) {
+      #zipCodeForm {
+        width: 90%;
+      }
+
+      input.geocode.input {
+        width: 100%;
+        min-width: 0;
+        max-width: 820px;
+        display: flex;
+        justify-content: left;
+      }
+
+      div.input.group {
+        width: 100%;
+      }     
+    }
+  
+  }
+
+  @media only screen and (max-width: 480px) {
+    div.hero {
+      padding-bottom: 28rem;
+    }
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 788px) {
+    div.hero {
+      padding-bottom: 36rem;
+    }
   }
 `
 

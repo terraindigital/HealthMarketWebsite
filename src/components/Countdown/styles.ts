@@ -1,11 +1,12 @@
 import styled from "@emotion/styled"
 
 export const Wrapper = styled.div`
+
 .flip-clock {
     --fcc-flip-duration: 0.5s; /* transition duration when flip card */
-    --fcc-digit-block-height: 17.25rem; /* height of digit card, highly recommend in even number */
-    --fcc-digit-block-width: 12.25rem; /* height of digit card, highly recommend in even number */
-    --fcc-digit-font-size: 11rem; /* font size of digit */
+    --fcc-digit-block-height: 12.25rem; /* height of digit card, highly recommend in even number */
+    --fcc-digit-block-width: 7.25rem; /* height of digit card, highly recommend in even number */
+    --fcc-digit-font-size: 7rem; /* font size of digit */
     --fcc-digit-color: #009FDA; /* color of digit */
     --fcc-label-font-size: 1rem; /* font size of label */
     --fcc-label-color: #ffffff; /* color of label */
@@ -23,7 +24,7 @@ export const Wrapper = styled.div`
   }
 
   .flip-clock div div:not(:last-child) {
-    margin-right: -3rem;
+    margin-right: -2rem;
   }
 
   @media only screen and (max-width: 1070px) {
