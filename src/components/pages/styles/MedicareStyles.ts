@@ -36,6 +36,34 @@ export const PageStyles = css`
     margin-bottom: 23px;
   }
 
+  .hero h4, .hero .cta-phone {
+    max-width: 820px;
+  }
+
+  @media (min-width: 788px) and (max-width: 1024px) {
+    .hero h1 {
+      width: 83%;
+    }
+  }
+
+  @media (min-width: 788px) and (max-width: 1540px) {
+    .geocode {
+      width: 100%;
+
+      .input.group {
+        width: 100%;
+
+        input {
+          min-width: 0;
+        }
+      }
+    }
+
+    .hero #zipCodeForm, h4 {
+      width: 80%;
+    }
+  }
+
   @media only screen and (max-width: 788px) {
     .hero .half {
       display: block;

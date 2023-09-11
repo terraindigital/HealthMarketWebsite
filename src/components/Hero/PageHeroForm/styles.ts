@@ -51,11 +51,21 @@ export const Buttons = styled.div`
   }
 
   div {
-    min-width: 410px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  @media only screen and (min-width: 1380px) {
+    max-width: 820px;
   }
 
   @media only screen and (min-width: 1024px) {
     justify-content: left;
+
+
   }
 
   @media only screen and (max-width: 1024px) {
