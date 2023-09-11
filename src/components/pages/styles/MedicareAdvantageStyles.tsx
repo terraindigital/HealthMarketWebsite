@@ -1077,3 +1077,11 @@ export const MedicareAdvantageSectionWrapper = styled.div`
     padding-top: 0;
   }
 `
+
+export const CountdownWrapper = styled.div`
+@media only screen and (max-width: 680px) {
+
+  .flip-clock {  
+      --fcc-label-color: white; /* color of label */
+    }
+`
