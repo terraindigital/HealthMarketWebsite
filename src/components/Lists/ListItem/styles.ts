@@ -54,7 +54,6 @@ export const Check = styled.div`
   @media only screen and (max-width: 620px) {
     height: 2.3rem;
     width: 2.3rem;
-    top: -5px;
 
     left: -3.6rem;
 

@@ -83,12 +83,11 @@ const IntelligentPage = () => {
                             const option = options[key];
                             return (
                                 <Card
+                                title={option.title}
+                                link={option.link}
                                 >
-                                    <div className="card-content-container">
-                                    <h3 className="card-header">{option.title}</h3>
                                     <p className="card-p">{option.description}</p>
                                     <a className="card-link" href={option.link.link}>{option.link.text}</a>
-                                    </div>
                                 </Card>
                             )
                         })
@@ -135,11 +134,12 @@ const IntelligentPage = () => {
                             const plan = plans[key];
                             return (
                                 <Card
+                                title={plan.title}
+                                link={plan.link.link}
                                 >
                                     <div className="card-content-container">
                                     <img className="card-image" src={plan.icon.sourceUrl}></img>
                                     <p className="line">______</p>
-                                    <h3 className="card-header">{plan.title}</h3>
                                     <p className="card-p">{plan.content}</p>
                                     <p className="line">______</p>
                                     <a className="card-link" href={plan.link.link}>{plan.link.text}</a>
@@ -199,7 +199,7 @@ const IntelligentPage = () => {
             {/* learn more portion */}
             <Section
                 color={page.intelligentInsurancePageCustomField.intelligentSection5.color}
-                heading={page.intelligentInsurancePageCustomField.intelligentSection5.heading}>
+                heading={page.intelligentInsurancePageCustomField.intelligentSection5.sectionHeading}>
                 <RelatedContent />
                 {(!hasChildren) ? (
                     <Cards relatedContent={true}>

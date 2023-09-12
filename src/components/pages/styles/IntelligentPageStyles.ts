@@ -55,12 +55,10 @@ export const IntelligentStyles = css`
     width: 100px;
   }
 
-  .card-header{
+  .card-content h4 {
     text-align: center;
-    color: #009B3A;
+    color: #009B3A !important;
     font-size: 38px;
-    line-height: 49.4px;
-    margin-bottom: 2rem;
   }
 
   .card-image{
@@ -82,10 +80,6 @@ export const IntelligentStyles = css`
    .chat-bubble {
       width: 160px;
       height: 124px;
-  }
-
-  .medial.primary {
-   padding: 6.5rem 20rem;
   }
 
   .medial.primary.three-columns div div div{
@@ -140,7 +134,7 @@ export const IntelligentStyles = css`
     margin-top: -2rem;
   }
 
-  @media only screen and (max-width: 788px) {
+  @media only screen and (max-width: 1030px) {
     .hero .half {
       display: block;
       flex-basis: 100%;
@@ -156,6 +150,11 @@ export const IntelligentStyles = css`
     padding-left: 2rem;
     padding-right: 0rem;
   }
+
+  .card-container .card:nth-of-type(3n-4) {
+    margin-right: 2rem !important;
+  }
+
   }
 
   @media only screen and (max-width: 620px) {
@@ -178,6 +177,16 @@ export const IntelligentStyles = css`
 
   .card-p {
     padding-bottom: 0px;
+  }
+
+  .card-header .show-at-mobile{
+    text-align: center;
+    color: #009B3A !important;
+    font-size: 24px;
+  }
+
+  .card-container .card:nth-of-type(3n-4) {
+    margin-right: 0 !important;
   }
 
   .chat-bubble {
@@ -205,10 +214,6 @@ export const IntelligentStyles = css`
   .shop-card-container .cards a {
     border: 2px solid #009FDA;
     padding: 0rem;
-  }
-
-  .list-container heading {
-    color: red;
   }
 }
 `
