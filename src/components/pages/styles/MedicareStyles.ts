@@ -36,32 +36,42 @@ export const PageStyles = css`
     margin-bottom: 23px;
   }
 
-  .hero h4, .hero .cta-phone {
+  .hero .cta-phone {
     max-width: 820px;
   }
 
-  @media (min-width: 788px) and (max-width: 1024px) {
-    .hero h1 {
-      width: 83%;
-    }
+  .hero #zipCodeForm div:first-of-type {
+    width: 100%;
+  
   }
 
-  @media (min-width: 788px) and (max-width: 1540px) {
-    .geocode {
-      width: 100%;
+  @media only screen and (min-width: 1020px) {
 
-      .input.group {
-        width: 100%;
+    .hero #zipCodeForm, .hero h4 {
+      width: 70%;
+    }
 
-        input {
-          min-width: 0;
-        }
+    .hero #zipCodeForm div:first-of-type {
+      div {
+        min-width: 0px;
+        width: 50%;
       }
     }
 
-    .hero #zipCodeForm, h4 {
-      width: 80%;
-    }
+    .hero #zipCodeForm {
+      .geocode {
+        width: 100%;
+        max-width: 820px; 
+
+        .input.group {
+          width: 100%;
+  
+          input.geocode.input {
+            min-width: 0;
+          }
+        }
+      }
+    } 
   }
 
   @media only screen and (max-width: 788px) {
@@ -111,6 +121,22 @@ export const PageStyles = css`
   @media only screen and (min-width: 480px) and (max-width: 788px) {
     div.hero {
       padding-bottom: 46rem;
+    }
+  }
+
+  @media only screen and (min-width: 620px) and (max-width: 1680px) {
+    .hero img.hide-at-mobile {
+      object-position: bottom right;
+    }
+  }
+
+  @media only screen and (min-width: 1281px){
+    .medicare.hero{
+      padding-top: 3.4375rem
+    }
+
+    #zipCodeForm {
+      width: 80%;
     }
   }
 `

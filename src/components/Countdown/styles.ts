@@ -4,9 +4,9 @@ export const Wrapper = styled.div`
 
 .flip-clock {
     --fcc-flip-duration: 0.5s; /* transition duration when flip card */
-    --fcc-digit-block-height: 16.293rem; /* height of digit card, highly recommend in even number */
-    --fcc-digit-block-width: 9.6425rem; /* height of digit card, highly recommend in even number */
-    --fcc-digit-font-size: 9.31rem; /* font size of digit */
+    --fcc-digit-block-height: 16.388rem; /* height of digit card, highly recommend in even number */
+    --fcc-digit-block-width: 11.638rem; /* height of digit card, highly recommend in even number */
+    --fcc-digit-font-size: 10.45rem; /* font size of digit */
     --fcc-digit-color: #009FDA; /* color of digit */
     --fcc-label-font-size: 1rem; /* font size of label */
     --fcc-label-color: #ffffff; /* color of label */
@@ -25,6 +25,25 @@ export const Wrapper = styled.div`
 
   .flip-clock div div:not(:last-child) {
     margin-right: -2rem;
+  }
+
+  @media only screen and (max-width: 1440px) {
+    margin: auto;
+    
+    .flip-clock {
+        margin: auto;
+        --fcc-digit-block-height: 13.8rem; /* height of digit card, highly recommend in even number */
+        --fcc-digit-block-width: 9.8rem; /* height of digit card, highly recommend in even number */
+        --fcc-digit-font-size: 8.8rem; /* font size of digit */
+        --fcc-divider-height: 3px; /* height of divider */
+        --fcc-label-font-size: 23px; /* font size of label */
+        margin-top: 2rem;
+      }
+
+      .flip-clock div div:not(:last-child) {
+        margin-right: -2rem;
+      }
+
   }
 
   @media only screen and (max-width: 1070px) {

@@ -146,6 +146,10 @@ export const Inner = styled.div`
     width: 72%;
 
     @media only screen and (max-width: 1024px) {
+      width: 100%;
+    }
+
+    @media only screen and (max-width: 1024px) {
       text-align: center;
     }
   }

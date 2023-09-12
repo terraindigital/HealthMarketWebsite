@@ -51,7 +51,7 @@ export const Buttons = styled.div`
   }
 
   div {
-    width: 50%;
+    min-width: 410px;
     display: flex;
     align-items: center;
     justify-content: center;

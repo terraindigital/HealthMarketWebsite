@@ -97,7 +97,7 @@ export const PageStyles = css`
       }
     }
 
-    .hero #zipCodeForm, h4 {
+    .hero #zipCodeForm, .hero h4 {
       width: 80%;
     }
   }
