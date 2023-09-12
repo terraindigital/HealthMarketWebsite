@@ -40,12 +40,11 @@ export const PageStyles = css`
     max-width: 820px;
   }
 
-  .hero #zipCodeForm div:first-of-type {
+  .hero #zipCodeForm > div:first-of-type {
     width: 100%;
-  
   }
 
-  @media only screen and (min-width: 1020px) {
+  @media only screen and (min-width: 1025px) {
 
     .hero #zipCodeForm, .hero h4 {
       width: 70%;
@@ -138,6 +137,19 @@ export const PageStyles = css`
     #zipCodeForm {
       width: 80%;
     }
+  }
+
+  @media only screen and (min-width: 620px) and (max-width: 1024px) {
+    .hero #zipCodeForm > div:first-of-type {
+      flex-direction: column;
+      width: 88.8vw;
+      margin: auto;
+
+      &> div {
+        width: 100%;
+      }
+    }
+
   }
 `
 

@@ -47,11 +47,6 @@ export const PageStyles = css`
     padding-bottom: 0;
   }
 
-  // .hero .half {
-  //   flex-basis: 50%;
-  //   width: 50%;
-  // }
-
   .healthmarkets22 .accordion .title h2 {
     font-size: 36px;
   }
@@ -68,12 +63,11 @@ export const PageStyles = css`
     max-width: 820px;
   }
 
-  .hero #zipCodeForm div:first-of-type {
+  .hero #zipCodeForm > div:first-of-type {
     width: 100%;
-  
   }
 
-  @media only screen and (min-width: 1020px) {
+  @media only screen and (min-width: 1025px) {
 
     .hero #zipCodeForm, .hero h4 {
       width: 70%;
@@ -195,6 +189,10 @@ export const PageStyles = css`
       }
     }
 
+    img.show-at-mobile {
+      bottom: 0rem;
+    }
+
     div.flip-clock{
       --fcc-label-color: #4D4D4D
     }
@@ -209,12 +207,10 @@ export const PageStyles = css`
       }
     }
 
-    @media (min-width: 620px) and (max-width: 1020px) {
+    @media (min-width: 620px) and (max-width: 1025px) {
       .cta-phone {
         margin-top: 11rem;
       }
-
-
     }
   }
 
@@ -227,6 +223,18 @@ export const PageStyles = css`
   @media only screen and (min-width: 480px) and (max-width: 788px) {
     div.hero {
       padding-bottom: 36rem;
+    }
+  }
+
+  @media only screen and (min-width: 620px) and (max-width: 1024px) {
+    .hero #zipCodeForm > div:first-of-type {
+      flex-direction: column;
+      width: 88.8vw;
+      margin: auto;
+
+      &> div {
+        width: 100%;
+      }
     }
   }
 `
@@ -686,7 +694,7 @@ const MedicareInner = styled.div`
     }
   }
 
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 1025px) {
     display: block;
     padding: 2.1rem 1.3rem;
     text-align: center;
@@ -733,7 +741,7 @@ export const MedicareAdvantageHeroInner = styled.div`
       width: 100%;
     }
 
-    @media only screen and (max-width: 1024px) {
+    @media only screen and (max-width: 1025px) {
       text-align: center;
     }
   }
