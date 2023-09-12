@@ -9,6 +9,8 @@ import Footer from "../../../components/Footer";
 
 // Scripts
 import { routeLink } from "../../../static/scripts/global";
+
+// Components
 import Section from "../../../components/Sections";
 import Button from "../../../components/Buttons/Button";
 import Card from "../../../components/Cards/Card";
@@ -18,8 +20,10 @@ import FlexedSection from "../../../components/Sections/FlexedSection";
 import List from "../../../components/Lists";
 import ListItem from "../../../components/Lists/ListItem";
 import Medial from "../../../components/Medials";
-import { HeroHeading, HeroSubheading } from "../../../components/pages/styles/IntelligentPageStyles";
-import PageHeroForm from "../../../components/Hero/PageHeroForm";
+import { HeroHeading, HeroSubheading, FlexedSectionContainer} from "../../../components/pages/styles/IntelligentPageStyles";
+
+// Images
+import PhoneIcon from "../../../static/images/phone-icon.png"
 
 
 const IntelligentPage = () => {
@@ -57,7 +61,10 @@ const IntelligentPage = () => {
                     onClick={routeLink}
                 >
                     <Button background="accent-alt" border="light" color="light">
-                        {page.intelligentInsurancePageCustomField.intelligentSection2.columns.column3.button.text}
+                        <div className="button-content">
+                    <img src={PhoneIcon} />
+                    {page.intelligentInsurancePageCustomField.intelligentSection2.columns.column3.button.text}
+                    </div>
                     </Button>
                 </a>
             </Hero>
@@ -66,10 +73,10 @@ const IntelligentPage = () => {
             <FlexedSection
                 color={page.intelligentInsurancePageCustomField.intelligentSection1.color}
                 heading={page.intelligentInsurancePageCustomField.intelligentSection1.heading}>
-                <p dangerouslySetInnerHTML={{ __html: page.intelligentInsurancePageCustomField.intelligentSection1.intelligentSectionSubheading }} />
+                <h4 dangerouslySetInnerHTML={{ __html: page.intelligentInsurancePageCustomField.intelligentSection1.intelligentSectionSubheading }} />
             </FlexedSection>
             {/* 5 cards */}
-            <div style={{ background: 'rgb(244, 250, 253)' }}>
+            <div className="card-container" style={{ background: 'rgb(244, 250, 253)' }}>
                 <Cards>
                     {options ? (
                         Object.keys(options).map((key) => {
@@ -77,16 +84,17 @@ const IntelligentPage = () => {
                             return (
                                 <Card
                                 >
-                                    <h4 style={{ textAlign: 'center' }}>{option.title}</h4>
-                                    <p style={{ textAlign: 'center' }}>{option.description}</p>
-                                    <a style={{ display: 'block', textAlign: 'center' }} href={option.link.link}>{option.link.text}</a>
+                                    <div className="card-content-container">
+                                    <h3 className="card-header">{option.title}</h3>
+                                    <p className="card-p">{option.description}</p>
+                                    <a className="card-link" href={option.link.link}>{option.link.text}</a>
+                                    </div>
                                 </Card>
                             )
                         })
                     ) : null}
                 </Cards>
             </div>
-
 
             {/* we're here to help  */}
             <Medial color={page.intelligentInsurancePageCustomField.intelligentSection2.color}>
@@ -95,49 +103,61 @@ const IntelligentPage = () => {
                     src={page.intelligentInsurancePageCustomField.intelligentSection2.columns.column1.image.sourceUrl}
                     alt="Chat bubble icon"
                 />
-                <div dangerouslySetInnerHTML={{ __html: page.intelligentInsurancePageCustomField.intelligentSection2.columns.column2.heading }} />
-
+                <div className="medial-header" dangerouslySetInnerHTML={{ __html: page.intelligentInsurancePageCustomField.intelligentSection2.columns.column2.heading }} />
                 <div dangerouslySetInnerHTML={{ __html: page.intelligentInsurancePageCustomField.intelligentSection2.subText }} />
                 <a
                     href={page.intelligentInsurancePageCustomField.intelligentSection2.columns.column3.button.link}
                     onClick={routeLink}
                 >
+                    <div className="help-button-container">
                     <Button background="accent-alt" border="light" color="light">
-                        {page.intelligentInsurancePageCustomField.intelligentSection2.columns.column3.button.text}
+                        <div className="help-button-content">
+                    <img className="help-button-content" src={PhoneIcon} />{page.intelligentInsurancePageCustomField.intelligentSection2.columns.column3.button.text}
+                    </div>
                     </Button>
+                    </div>
                 </a>
             </Medial>
+        
 
 
             {/* Three cards */}
-            <div style={{ background: 'white' }}>
+                <FlexedSectionContainer>
                 <FlexedSection
                     heading={page.intelligentInsurancePageCustomField.intelligentSection3.sectionHeading}
                     color={page.intelligentInsurancePageCustomField.intelligentSection3.sectionColor}
                 />
+                </FlexedSectionContainer>
+                <div className="shop-card-container" style={{ background: 'rgb(244, 250, 253)' }}>
                 <Cards>
-                    {(plans) ? (
-                        Object.keys(plans).map((plan) => {
+                    {plans ? (
+                        Object.keys(plans).map((key) => {
+                            const plan = plans[key];
                             return (
                                 <Card
-                                    icon={plans[plan].icon.sourceUrl}
-                                    mobile={plans[plan].mobileIcon?.sourceUrl}
-                                    title={plans[plan].title}
-                                    link={plans[plan].link}>
-                                    <p dangerouslySetInnerHTML={{ __html: plans[plan].content }} />
-                                    <a href={plans[plan].link.link}>{plans[plan].link.text}</a>
+                                >
+                                    <div className="card-content-container">
+                                    <img className="card-image" src={plan.icon.sourceUrl}></img>
+                                    <p className="line">______</p>
+                                    <h3 className="card-header">{plan.title}</h3>
+                                    <p className="card-p">{plan.content}</p>
+                                    <p className="line">______</p>
+                                    <a className="card-link" href={plan.link.link}>{plan.link.text}</a>
+                                    </div>
                                 </Card>
                             )
                         })
                     ) : null}
                 </Cards>
-            </div>
+                </div>
 
 
+{/* How we help */}
             <FlexedSection
                 heading={page.intelligentInsurancePageCustomField.intelligentSection4.sectionHeading}
                 color={page.intelligentInsurancePageCustomField.intelligentSection4.color}
             >
+                <div className="list-container">
                 <List>
                     <ListItem
                         heading={page.intelligentInsurancePageCustomField.intelligentSection4.intelligentListItems.intelligentListItem1.heading}
@@ -172,6 +192,7 @@ const IntelligentPage = () => {
                         {page.intelligentInsurancePageCustomField.intelligentSection4.sectionCta.text}
                     </Button>
                 </a>
+                </div>
             </FlexedSection>
 
 

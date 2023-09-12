@@ -33,7 +33,7 @@ export const Check = styled.div`
   height: 4rem;
   left: -6rem;
   position: absolute;
-  top: -10px;
+  top: 0px;
   width: 4rem;
   z-index: 1;
 
