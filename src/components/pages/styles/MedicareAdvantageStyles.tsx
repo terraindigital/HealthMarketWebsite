@@ -76,7 +76,8 @@ export const PageStyles = css`
   @media only screen and (min-width: 1025px) {
 
     .hero div.half {
-      flex-basis: 72%
+      flex-basis: 72%;
+      width: 72%;
     }
 
     .hero #zipCodeForm, .hero h4 {
