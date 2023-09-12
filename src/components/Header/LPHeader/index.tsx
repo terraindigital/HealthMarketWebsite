@@ -32,7 +32,7 @@ const LPHeader = ({ headerData }: { headerData: any }) => {
         </LPAgentText>
         <LPAgentNumber>
           <a className="primary dark" href="tel:+18178134562">
-            1-817-813-4562, TTY 771
+            1-817-813-4562, TTY 711
           </a>
         </LPAgentNumber>
       </Item>
