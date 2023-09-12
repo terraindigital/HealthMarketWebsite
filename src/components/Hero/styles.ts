@@ -78,6 +78,10 @@ export const Wrapper = styled.div`
       min-height: auto;
     }
   }
+  @media only screen and (min-width: 1600px) {
+    padding-top: 3.4rem;
+
+  }
 `
 
 export const Img = styled.img`

@@ -47,10 +47,10 @@ export const PageStyles = css`
     padding-bottom: 0;
   }
 
-  .hero .half {
-    flex-basis: 50%;
-    width: 50%;
-  }
+  // .hero .half {
+  //   flex-basis: 50%;
+  //   width: 50%;
+  // }
 
   .healthmarkets22 .accordion .title h2 {
     font-size: 36px;
@@ -64,42 +64,42 @@ export const PageStyles = css`
     padding-top: 0;
   }
 
-  .hero > img.hide-at-mobile {
-    object-position: bottom;
-  }
-
-  .hero h4, .hero .cta-phone {
+  .hero .cta-phone {
     max-width: 820px;
   }
 
-  @media (min-width: 788px) and (max-width: 1024px) {
-    .hero h1 {
-      width: 83%;
-    }
+  .hero #zipCodeForm div:first-of-type {
+    width: 100%;
+  
   }
 
-  @media only screen (min-width: 1280px) {
-    .hero h1 {
-      width: 80%;
+  @media only screen and (min-width: 1020px) {
+
+    .hero #zipCodeForm, .hero h4 {
+      width: 70%;
     }
-  }
 
-  @media (min-width: 788px) and (max-width: 1540px) {
-    .geocode {
-      width: 100%;
-
-      .input.group {
-        width: 100%;
-
-        input {
-          min-width: 0;
-        }
+    .hero #zipCodeForm div:first-of-type {
+      div {
+        min-width: 0px;
+        width: 50%;
       }
     }
 
-    .hero #zipCodeForm, .hero h4 {
-      width: 80%;
-    }
+    .hero #zipCodeForm {
+      .geocode {
+        width: 100%;
+        max-width: 820px; 
+
+        .input.group {
+          width: 100%;
+  
+          input.geocode.input {
+            min-width: 0;
+          }
+        }
+      }
+    } 
   }
 
   @media only screen and (max-width: 788px) {
@@ -159,6 +159,12 @@ export const PageStyles = css`
 
   .medicare-advantage {
 
+    @media only screen and (max-width: 788px) {
+      div.flip-clock{
+        --fcc-label-color: #ffffff;
+      }
+    }
+
     @media only screen and (max-width: 480px) {
       div.hero {
         padding-bottom: 32rem;
@@ -172,13 +178,25 @@ export const PageStyles = css`
     }
 
     img.hide-at-mobile {
-      object-position: top;
+      object-position: top right;
+  
+      @media only screen and (min-width: 1600px) {
+        object-position: bottom;
+      }
     }
   }
 
   .Medicare-PD {
     img.hide-at-mobile {
-      object-position: top;
+      object-position: top right;
+  
+      @media only screen and (min-width: 1600px) {
+        object-position: top;
+      }
+    }
+
+    div.flip-clock{
+      --fcc-label-color: #4D4D4D
     }
 
     div #zipCodeForm .cta-phone {
@@ -191,24 +209,13 @@ export const PageStyles = css`
       }
     }
 
-    @media (min-width: 1440px) and (max-width: 2240px) {
-      #zipCodeForm {
-        width: 90%;
+    @media (min-width: 620px) and (max-width: 1020px) {
+      .cta-phone {
+        margin-top: 11rem;
       }
 
-      input.geocode.input {
-        width: 100%;
-        min-width: 0;
-        max-width: 820px;
-        display: flex;
-        justify-content: left;
-      }
 
-      div.input.group {
-        width: 100%;
-      }     
     }
-  
   }
 
   @media only screen and (max-width: 480px) {
