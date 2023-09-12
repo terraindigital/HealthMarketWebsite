@@ -75,6 +75,10 @@ export const PageStyles = css`
 
   @media only screen and (min-width: 1025px) {
 
+    .hero div.half {
+      flex-basis: 72%
+    }
+
     .hero #zipCodeForm, .hero h4 {
       width: 70%;
     }
@@ -85,22 +89,22 @@ export const PageStyles = css`
         width: 50%;
       }
     }
+  }
 
-    .hero #zipCodeForm {
-      .geocode {
+  .hero #zipCodeForm {
+    div.geocode {
+      width: 100%;
+
+      .input.group {
         width: 100%;
-        max-width: 820px; 
 
-        .input.group {
+        input.geocode.input {
+          min-width: 0;
           width: 100%;
-  
-          input.geocode.input {
-            min-width: 0;
-          }
         }
       }
-    } 
-  }
+    }
+  } 
 
   @media only screen and (max-width: 788px) {
     .hero .half {
@@ -196,7 +200,7 @@ export const PageStyles = css`
     }
 
     img.show-at-mobile {
-      bottom: 0rem;
+      bottom: -2rem;
     }
 
     div.flip-clock{
@@ -235,7 +239,7 @@ export const PageStyles = css`
   @media only screen and (min-width: 620px) and (max-width: 1024px) {
     .hero #zipCodeForm > div:first-of-type {
       flex-direction: column;
-      width: 88.8vw;
+      width: 100%;
       margin: auto;
 
       &> div {
@@ -250,9 +254,15 @@ export const PageStyles = css`
     }
   }
 
-  @media only screen and (min-width: 1600px) {
+  @media only screen and (min-width: 1280px) {
     div.hero {
-      padding-top: 3.4rem;
+      padding-top: 5rem;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .hero {
+      width: 100%;
     }
   }
 `
@@ -275,7 +285,7 @@ export const HeroHeading = styled.h1`
     color: var(--color-dark);
 
     &.white-text {
-      color: var(--color-light);
+      color: var(--color-light) !important;
     }
   }
 `
@@ -295,7 +305,7 @@ export const HeroSubheading = styled.h4`
   }
 
   &.white-text {
-    color: var(--color-light);
+    color: var(--color-light) !important;
   }
 `
 
