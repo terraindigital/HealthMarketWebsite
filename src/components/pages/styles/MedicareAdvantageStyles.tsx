@@ -47,11 +47,6 @@ export const PageStyles = css`
     padding-bottom: 0;
   }
 
-  .hero .half {
-    flex-basis: 50%;
-    width: 50%;
-  }
-
   .healthmarkets22 .accordion .title h2 {
     font-size: 36px;
   }
@@ -64,9 +59,53 @@ export const PageStyles = css`
     padding-top: 0;
   }
 
-  .hero > img.hide-at-mobile {
-    object-position: bottom;
+  .hero .cta-phone {
+    max-width: 820px;
   }
+
+  .hero #zipCodeForm > div:first-of-type {
+    width: 100%;
+
+    &> div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  @media only screen and (min-width: 1025px) {
+
+    .hero div.half {
+      flex-basis: 72%;
+      width: 72%;
+    }
+
+    .hero #zipCodeForm, .hero h4 {
+      width: 70%;
+    }
+
+    .hero #zipCodeForm div:first-of-type {
+      div {
+        min-width: 0px;
+        width: 50%;
+      }
+    }
+  }
+
+  .hero #zipCodeForm {
+    div.geocode {
+      width: 100%;
+
+      .input.group {
+        width: 100%;
+
+        input.geocode.input {
+          min-width: 0;
+          width: 100%;
+        }
+      }
+    }
+  } 
 
   @media only screen and (max-width: 788px) {
     .hero .half {
@@ -123,9 +162,50 @@ export const PageStyles = css`
     }
   }
 
+  .medicare-advantage {
+
+    @media only screen and (max-width: 788px) {
+      div.flip-clock{
+        --fcc-label-color: #ffffff;
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      div.hero {
+        padding-bottom: 32rem;
+      }
+    }
+  
+    @media only screen and (min-width: 480px) and (max-width: 788px) {
+      div.hero {
+        padding-bottom: 40rem;
+      }
+    }
+
+    img.hide-at-mobile {
+      object-position: top right;
+  
+      @media only screen and (min-width: 1600px) {
+        object-position: bottom;
+      }
+    }
+  }
+
   .Medicare-PD {
     img.hide-at-mobile {
-      object-position: top;
+      object-position: top right;
+  
+      @media only screen and (min-width: 1600px) {
+        object-position: top;
+      }
+    }
+
+    img.show-at-mobile {
+      bottom: -2rem;
+    }
+
+    div.flip-clock{
+      --fcc-label-color: #4D4D4D
     }
 
     div #zipCodeForm .cta-phone {
@@ -136,7 +216,55 @@ export const PageStyles = css`
       span {
         color: var(--color-dark);
       }
-    }    
+    }
+
+    @media (min-width: 620px) and (max-width: 1025px) {
+      .cta-phone {
+        margin-top: 11rem;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    div.hero {
+      padding-bottom: 28rem;
+    }
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 788px) {
+    div.hero {
+      padding-bottom: 36rem;
+    }
+  }
+
+  @media only screen and (min-width: 620px) and (max-width: 1024px) {
+    .hero #zipCodeForm > div:first-of-type {
+      flex-direction: column;
+      width: 100%;
+      margin: auto;
+
+      &> div {
+        width: 100%;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1380px) {
+    .hero #zipCodeForm div:first-of-type {
+      max-width: 820px;
+    }
+  }
+
+  @media only screen and (min-width: 1280px) {
+    div.hero {
+      padding-top: 5rem;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .hero {
+      width: 100%;
+    }
   }
 `
 
@@ -158,7 +286,7 @@ export const HeroHeading = styled.h1`
     color: var(--color-dark);
 
     &.white-text {
-      color: var(--color-light);
+      color: var(--color-light) !important;
     }
   }
 `
@@ -178,7 +306,7 @@ export const HeroSubheading = styled.h4`
   }
 
   &.white-text {
-    color: var(--color-light);
+    color: var(--color-light) !important;
   }
 `
 
@@ -595,7 +723,7 @@ const MedicareInner = styled.div`
     }
   }
 
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 1025px) {
     display: block;
     padding: 2.1rem 1.3rem;
     text-align: center;
@@ -642,7 +770,7 @@ export const MedicareAdvantageHeroInner = styled.div`
       width: 100%;
     }
 
-    @media only screen and (max-width: 1024px) {
+    @media only screen and (max-width: 1025px) {
       text-align: center;
     }
   }
