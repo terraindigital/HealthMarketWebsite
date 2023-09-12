@@ -42,6 +42,12 @@ export const PageStyles = css`
 
   .hero #zipCodeForm > div:first-of-type {
     width: 100%;
+
+    &> div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   @media only screen and (min-width: 1025px) {
@@ -150,6 +156,18 @@ export const PageStyles = css`
       }
     }
 
+  }
+
+  @media only screen and (min-width: 1380px) {
+    .hero #zipCodeForm div:first-of-type {
+      max-width: 820px;
+    }
+  }
+
+  @media only screen and (min-width: 1600px) {
+    div.hero {
+      padding-top: 3.4rem;
+    }
   }
 `
 
