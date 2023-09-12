@@ -4,9 +4,9 @@ export const Wrapper = styled.div`
 
 .flip-clock {
     --fcc-flip-duration: 0.5s; /* transition duration when flip card */
-    --fcc-digit-block-height: 12.25rem; /* height of digit card, highly recommend in even number */
-    --fcc-digit-block-width: 7.25rem; /* height of digit card, highly recommend in even number */
-    --fcc-digit-font-size: 7rem; /* font size of digit */
+    --fcc-digit-block-height: 16.293rem; /* height of digit card, highly recommend in even number */
+    --fcc-digit-block-width: 9.6425rem; /* height of digit card, highly recommend in even number */
+    --fcc-digit-font-size: 9.31rem; /* font size of digit */
     --fcc-digit-color: #009FDA; /* color of digit */
     --fcc-label-font-size: 1rem; /* font size of label */
     --fcc-label-color: #ffffff; /* color of label */

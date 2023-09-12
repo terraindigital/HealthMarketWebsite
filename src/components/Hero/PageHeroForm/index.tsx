@@ -45,7 +45,8 @@ const api_key = 'ge-8876b9780ea0871d';
 // set the urls to change the form action to
 const plans = "https://shop.healthmarkets.com/en/about-me/info/";
 const agents = "/local-health-insurance-agent/search/";
-const finalExpense = "/life-insurance/final-expense-insurance/"
+const redesignPages = "/life-insurance/final-expense-insurance/" || "/medicare"
+// const finalExpense = "/life-insurance/final-expense-insurance/"
 
 const PageHeroForm: FC<Props> = ({ centered, light, whiteText, btnLeftText, btnRightText, inputId, buttons, footerContent, hideFooter,...rest  }) => {
 const [firstButtonActive, setFirstButtonActive] = useState(false);
@@ -100,7 +101,7 @@ const [secondButtonActive, setSecondButtonActive] = useState(true);
   return (
     <Wrapper className={`${(centered) ? `centered` : ``} ${(light) ? `light` : ``} ${(whiteText) ? `white-text` : ``}`} {...rest}>
       <Form id="zipCodeForm" action={plans} autocomplete="off" onSubmit={(e) => { sendForm(e) }}>
-    { useLocation()?.pathname !== finalExpense ?
+    { useLocation()?.pathname !== redesignPages ?
         <>
         {(buttons || buttons === undefined) ? (
           <Buttons>
