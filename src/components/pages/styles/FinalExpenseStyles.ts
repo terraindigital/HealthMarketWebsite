@@ -2,6 +2,43 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 export const PageStyles = css`
+.form-container form div:nth-child(1) div:nth-child(1),
+.form-container form div:nth-child(1) div:nth-child(1) + div {
+  border: 1px solid var(--color-accent-alt);
+}
+
+.form-container input.geocode.input {
+  border-bottom: 2px solid var(--color-accent-alt);
+  min-width: 65rem;
+
+  @media only screen and (max-width: 620px) {
+  min-width: 12.5rem;
+  }
+}
+
+.section:first-of-type .heading {
+  align-items: flex-start;
+}
+
+.heading h4 > p {
+  color: var(--color-dark);
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.form-container button {
+  min-width: 45rem;
+
+  @media only screen and (max-width: 620px) {
+min-width: 20rem;
+  }
+
+}
+
+.form-container button .desktop-button {
+  min-width: 100%;
+}
+
   .button-container {
     display: flex;
     flex-direction: column;
@@ -22,11 +59,6 @@ export const PageStyles = css`
     color: var(--color-light);
     font-size: 2rem;
     font-weight: 400;
-  }
-
-  .section:first-of-type .heading h4 > p {
-    font-size: 20px;
-    line-height: 28px;
   }
 
   .list-item h5 {
@@ -81,8 +113,30 @@ export const PageStyles = css`
       width: 100%;
     }
 
+    .hero + div .section {
+      background-color: var(--color-primary-light);
+    }
+
+    .section:first-of-type .heading { 
+      display: block;
+    }
+
+    .section:first-of-type .heading h4 > p {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 19.2px;
+    }
+
     .hero + .section {
       padding-top: 4rem;
+    }
+    
+    .section:first-of-type .heading > h2 {
+      font-size: 40px !important;
+    }
+
+    .section:first-of-type .heading > h4 {
+      margin-top: 2.125em;
     }
 
     .button-container button {
@@ -99,21 +153,69 @@ export const PageStyles = css`
   }
 
   @media only screen and (max-width: 620px) {
+    .header div:nth-child(1){
+      background-color: #F4F3F1;
+      box-shadow: none;
+    }
+
+    .header div:nth-child(1) button div {
+      background-color: var(--color-primary)
+  }
+
+    .header div:nth-child(1) nav div {
+      background-color: var(--color-primary)
+  }
+
+    .form-container div:nth-child(1){
+      display: flex;
+    }
+
+    .form-container div:nth-child(1), div:nth-child(1) + div{
+      line-height: 2rem;
+      font-weight: 400;
+    }
+
     .button-container {
       min-width: 100%;
     }
+
+    .button-container button {
+      padding-left: 0px;
+      padding-right: 0px;
+     }
+
+    .section:first-of-type .heading h4 {
+      max-width: 100%;
+      padding-left: 20px;
+      padding-right: 0px;
+    }
     
     .hero > img {
-      bottom: -8rem;
-      top: auto;
+      margin-top: 5rem;
     }
+
+    .hero + div .section {
+      margin-top: 5rem;
+    }
+
+    div:nth-child(1)+div  {
+      overflow: visible;
+     }
   }
 `
 
 export const HeroHeading = styled.h1`
   color: var(--color-light);
+  margin-top: 10rem;
   margin-bottom: 2.4rem;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+
+  @media only screen and (max-width: 620px) {
+    margin-top: 0;
+    color: var(--color-dark); 
+    font-size: 50px !important;
+    line-height: 57.5px;
+  }
 `
 
 export const HeroSubheading = styled.h4`
@@ -122,7 +224,10 @@ export const HeroSubheading = styled.h4`
   margin-bottom: 4rem;
 
   @media only screen and (max-width: 620px) {
-    color: var(--color-light);
+    color: var(--color-dark); 
+    font-size: 20px !important;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 `
 
@@ -149,7 +254,6 @@ export const SectionOneInnerContent = styled.div`
 export const ListHeading = styled.h4`
   color: var(--color-primary);
   font-family: var(--font-heading);
-  font-size: 32px;
   letter-spacing: 0.02em;
   line-height: 110%;
   margin-bottom: 34px;
@@ -157,5 +261,40 @@ export const ListHeading = styled.h4`
 
   @media only screen and (max-width: 620px) {
     margin-left: -38px;
+    font-size: 20px;
+    font-family: var(--font-body);
+    font-weight: 700;
+  }
+`
+export const ListWrapper = styled.div`
+  margin-top: 50px;
+
+  @media only screen and (max-width: 620px) {
+   margin-top: 40px;
+  }
+
+  li.list-item > div > h5 {
+    font-size: 24px;
+  }
+
+  @media only screen and (max-width: 820px) {
+    li.list-item > div > h5 {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+`
+
+export const RelatedContentWrapper = styled.div`
+
+h4 {
+font-weight: 600;
+line-height: 36px;
+}
+  p {
+    color: #828282;
+font-size: 17px;
+font-weight: 600;
+line-height: 28px;
   }
 `
