@@ -166,15 +166,6 @@ min-width: 20rem;
       background-color: var(--color-primary)
   }
 
-    .form-container div:nth-child(1){
-      display: flex;
-    }
-
-    .form-container div:nth-child(1), div:nth-child(1) + div{
-      line-height: 2rem;
-      font-weight: 400;
-    }
-
     .button-container {
       min-width: 100%;
     }
