@@ -12,7 +12,8 @@ import {
   HeroSubheading,
   SectionOneInner,
   SectionOneInnerContent,
-  ListHeading
+  ListHeading,
+  ListWrapper
 } from "../../../components/pages/styles/FinalExpenseStyles";
 
 // Scripts
@@ -60,15 +61,17 @@ const FinalExpensePage = () => {
       <Hero
         image={page.pageHeroFields.heroImage?.sourceUrl}
         mobileImage={page.pageHeroFields.mobileHeroImage?.sourceUrl}
-        bgColor="#5899D1">
+        bgColor="#F4F3F1">
         <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
+        <div className="form-container">
         <PageHeroForm
             light
             btnLeftText={page.pageHeroFields.heroButtons.heroButton1.text}
             btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
             inputId="finalExpensePageHeroLocation"
             footerContent={page.pageHeroFields.callUs} />
+            </div>
       </Hero>
 
       <Section
@@ -80,10 +83,12 @@ const FinalExpensePage = () => {
           <SectionOneInnerContent>
             <List>
               <ListHeading>{page.finalExpensePageCustomFields.finalExpenseSection1.list.listHeading}</ListHeading>
+              <ListWrapper>
               <ListItem heading={page.finalExpensePageCustomFields.finalExpenseSection1.list.listItem1.text} />
               <ListItem heading={page.finalExpensePageCustomFields.finalExpenseSection1.list.listItem2.text} />
               <ListItem heading={page.finalExpensePageCustomFields.finalExpenseSection1.list.listItem3.text} />
               <ListItem heading={page.finalExpensePageCustomFields.finalExpenseSection1.list.listItem4.text} />
+              </ListWrapper>
             </List>
             <div className="full-rounded" style={{ marginTop: "37px" }}>
               <a href={page?.finalExpensePageCustomFields?.finalExpenseSection1?.button?.link} onClick={routeLink}>

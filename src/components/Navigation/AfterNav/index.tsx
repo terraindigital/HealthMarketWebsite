@@ -32,7 +32,7 @@ const AfterNav = () => {
       <Item>
         <a href="tel:+18178134562">
           <img className="icon" src={PhoneIcon} alt="telephone icon" />
-          1-817-813-4562, TTY 771
+          1-817-813-4562, TTY 711
         </a>
       </Item>
       <Item>

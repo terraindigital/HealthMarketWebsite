@@ -203,7 +203,7 @@ const MedicareAdvantagePage = () => {
         <div className="button-container">
           <a href={page?.medicareAdvantagePageCustomFields?.medicareAdvSection3?.medicareAdvColumns?.medicareAdvColumn2?.button?.button1?.link} onClick={routeLink}>
             <Button background="accent-alt" border="light" color="light">
-              {page?.medicareAdvantagePageCustomFields?.medicareAdvSection3?.medicareAdvColumns?.medicareAdvColumn2?.button?.button1?.text}, TTY 771
+              {page?.medicareAdvantagePageCustomFields?.medicareAdvSection3?.medicareAdvColumns?.medicareAdvColumn2?.button?.button1?.text}
             </Button>
           </a>
           <a href={page?.medicareAdvantagePageCustomFields?.medicareAdvSection3?.medicareAdvColumns?.medicareAdvColumn2?.button?.button2?.link} onClick={routeLink}>
