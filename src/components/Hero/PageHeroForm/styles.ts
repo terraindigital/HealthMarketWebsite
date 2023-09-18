@@ -15,7 +15,7 @@ export const FirstWrapper = styled.div`
   text-decoration: none;
 }
 @media only screen and (max-width: 620px) {
-  margin-top: 200px;
+  margin-top: 3.5rem;
 }
 `
 
