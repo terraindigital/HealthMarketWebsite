@@ -1,29 +1,29 @@
 import React, { useEffect, useState } from "react";
-import PageHead from "../../../components/PageHead";
-import { useIntelligentPageQuery } from "../../../hooks/insurance/useIntelligentPageQuery";
-import Layout from "../../../components/Layout";
+import PageHead from "../../components/PageHead";
+import { useIntelligentPageQuery } from "../../hooks/insurance/useIntelligentPageQuery";
+import Layout from "../../components/Layout";
 import { Global } from "@emotion/react";
-import { IntelligentStyles } from "../../../components/pages/styles/IntelligentPageStyles";
-import Hero from "../../../components/Hero";
-import Footer from "../../../components/Footer";
+import { IntelligentStyles } from "../../components/pages/styles/IntelligentPageStyles";
+import Hero from "../../components/Hero";
+import Footer from "../../components/Footer";
 
 // Scripts
-import { routeLink } from "../../../static/scripts/global";
+import { routeLink } from "../../static/scripts/global";
 
 // Components
-import Section from "../../../components/Sections";
-import Button from "../../../components/Buttons/Button";
-import Card from "../../../components/Cards/Card";
-import RelatedContent from "../../../components/RelatedContent";
-import Cards from "../../../components/Cards";
-import FlexedSection from "../../../components/Sections/FlexedSection";
-import List from "../../../components/Lists";
-import ListItem from "../../../components/Lists/ListItem";
-import Medial from "../../../components/Medials";
-import { HeroHeading, HeroSubheading, FlexedSectionContainer} from "../../../components/pages/styles/IntelligentPageStyles";
+import Section from "../../components/Sections";
+import Button from "../../components/Buttons/Button";
+import Card from "../../components/Cards/Card";
+import RelatedContent from "../../components/RelatedContent";
+import Cards from "../../components/Cards";
+import FlexedSection from "../../components/Sections/FlexedSection";
+import List from "../../components/Lists";
+import ListItem from "../../components/Lists/ListItem";
+import Medial from "../../components/Medials";
+import { HeroHeading, HeroSubheading, FlexedSectionContainer} from "../../components/pages/styles/IntelligentPageStyles";
 
 // Images
-import PhoneIcon from "../../../static/images/phone-icon.png"
+import PhoneIcon from "../../static/images/phone-icon.png"
 
 
 const IntelligentPage = () => {
