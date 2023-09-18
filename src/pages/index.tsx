@@ -1,12 +1,13 @@
 // Library
 import * as React from 'react';
+import {Global} from "@emotion/react";
 import { PageProps } from 'gatsby';
 
 // Queries
 import { useHomePageQuery } from '../hooks/useHomePageQuery';
 
 // Styles
-import { HeroHeading, HeroSubheading } from '../components/pages/styles/homePageStyles';
+import { HeroHeading, HeroSubheading, PageStyles } from '../components/pages/styles/homePageStyles';
 
 // Scripts
 import { routeLink } from '../static/scripts/global';
@@ -27,6 +28,8 @@ import ListItem from '../components/Lists/ListItem';
 import Callouts from '../components/Callouts';
 import Callout from '../components/Callouts/Callout';
 import Footer from '../components/Footer';
+import Countdown from "../components/Countdown";
+
 
 const IndexPage = ({path}: PageProps) => {
     const { home } = useHomePageQuery();
@@ -35,10 +38,12 @@ const IndexPage = ({path}: PageProps) => {
 
     return (
         <Layout pageClass="home" headerColor="light">
+        <Global styles={PageStyles} />
             <Hero
                 image={home.pageHeroFields.heroImage.sourceUrl}
                 mobileImage={home.pageHeroFields.mobileHeroImage.sourceUrl}
-                centered>
+                centered
+                bgColor="#CBCAD2" >
                 <HeroHeading>{home.pageHeroFields.headline}</HeroHeading>
                 <HeroSubheading>{home.pageHeroFields.subheadline}</HeroSubheading>
                 <PageHeroForm
@@ -47,7 +52,9 @@ const IndexPage = ({path}: PageProps) => {
                     btnRightText={home.pageHeroFields.heroButtons.heroButton2.text}
                     inputId="homepageHeroLocation"
                     buttons
-                    hideFooter />
+                    footerContent={home.pageHeroFields.callUs} />
+                <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: home.homePageCustomFields.heroDisclaimer }} />
+                <Countdown date={1696161600313}/>
             </Hero>
             <Section
                 heading={home.homePageCustomFields.homeSection1.heading}
