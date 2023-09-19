@@ -150,7 +150,7 @@ export const Inner = styled.div`
       flex-basis: 100%;
       width: 100%;
     }
-
+    
     @media only screen and (max-width: 1024px) {
       text-align: center;
     }
