@@ -9,6 +9,10 @@ export const changeTextSize = (el) => {
   }
 }
 
+export const isValidZip = (zip: string) => {
+  return /^[0-9]{5}(?:-[0-9]{4})?$/.test(zip);
+}
+
 export const toggleSearch = () => {
   const searchBox = document.querySelector('.search-box')
   const header = document.querySelector('.site-header')
