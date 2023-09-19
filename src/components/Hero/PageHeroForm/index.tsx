@@ -13,6 +13,7 @@ import {
 
 // Scripts
 import {
+  isValidZip,
   toggleForm,
 } from "../../../static/scripts/global"
 
@@ -71,7 +72,7 @@ const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, i
           <input type="hidden" id="county" value="" />
         </div>
         <Footer>
-          <Button style={{borderRadius: "4px"}} background="accent-alt" border="light" color="light" disabled>Search</Button>
+          <Button style={{borderRadius: "4px"}} background="accent-alt" border="light" color="light" disabled={!isValidZip(zip)}>Search</Button>
           {(!hideFooter || hideFooter === undefined) ? (
             <CTA>
               <img src={PhoneIcon} />
