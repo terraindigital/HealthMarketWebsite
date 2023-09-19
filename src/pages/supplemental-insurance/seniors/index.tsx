@@ -63,6 +63,7 @@ const SeniorsPage = () => {
                     btnRightText={page.pageHeroFields.heroButtons.heroButton2.text}
                     inputId="senior-insurance"
                     footerContent={page.pageHeroFields.callUs}
+                    whiteText
                 />
             </Hero>
             <FlexedSection

@@ -9,6 +9,30 @@ export const PageStyles = css`
     padding-right: 6.5rem;
   }
 
+  #zipCodeForm {
+    &> div:first-of-type div {
+      color: #69BE28;
+      &.accented {
+        color: white;
+        background-color: #69BE28;
+      }
+    }
+
+    div.geocode {
+      input::placeholder {
+        color: #69BE28;
+      }
+    }
+
+    button {
+      background-color: #69BE28;
+    }
+
+    div.cta-phone {
+      margin-left: 0.5em;
+    }
+  }
+
   @media only screen and (max-width: 788px) {
     .hero .half {
       display: block;
