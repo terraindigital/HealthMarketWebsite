@@ -4,7 +4,7 @@ import { Global } from '@emotion/react';
 // Queries
 // Styles
 
-import { HeroHeading, HeroSubheading, TierListStyles } from "../../../components/pages/styles/IndividualPageStyle";
+import { HeroHeading, HeroSubheading, PageStyles, TierWrapper } from "../../../components/pages/styles/IndividualPageStyle";
 // Scripts
 import { routeLink } from "../../../static/scripts/global";
 
@@ -12,7 +12,6 @@ import { routeLink } from "../../../static/scripts/global";
 import { useIndividualPageQuery } from "../../../hooks/insurance/useIndividualPageQuery";
 import Hero from "../../../components/Hero";
 import PageHeroForm from "../../../components/Hero/PageHeroForm";
-import FlexedSection from "../../../components/Sections/FlexedSection";
 import Section from "../../../components/Sections";
 import Button from "../../../components/Buttons/Button";
 import RelatedContent from "../../../components/RelatedContent";
@@ -41,7 +40,7 @@ const IndividualPage = () => {
     }, []);
     return (
         <Layout pageClass='individual'>
-            <Global styles={TierListStyles} />
+            <Global styles={PageStyles} />
             <Hero
                 image={page.pageHeroFields.heroImage.sourceUrl}
                 mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
@@ -54,19 +53,20 @@ const IndividualPage = () => {
                     inputId="individualPageHeroLocation"
                     footerContent={page.pageHeroFields.callUs} />
             </Hero>
-            <FlexedSection
+            <Section
                 color={page.individualPageCustomField.individualSection1.color}
-                heading={page.individualPageCustomField.individualSection1.sectionHeading}>
-                <div className="flex-container center-content">
-                    <p className="sectionPar" dangerouslySetInnerHTML={{ __html: page.individualPageCustomField.individualSection1.text }} />
-                </div>
-            </FlexedSection>
+                heading={page.individualPageCustomField.individualSection1.sectionHeading}
+                subheading={page.individualPageCustomField.individualSection1.text}
+                html={true}>
+            </Section>
+            <TierWrapper>
             <div className='plan' style={{ background: 'rgb(244, 250, 253)' }}>
                 <div className="affordable-plans">
                     <h1>{page.individualPageCustomField.individualSection2.title}</h1>
                     <p>{page.individualPageCustomField.individualSection2.statement}</p>
                 </div>
 
+                <div className='tier-container'>
                 <ul className="items hide-at-mobile">
                     <li style={{ listStylePosition: 'inside', color: '#009FDA' }}>
                         {individualSection2.bronzePlan.planName}
@@ -118,6 +118,7 @@ const IndividualPage = () => {
                         {individualSection2.catastrophicCoverage.normalText}
                     </li>
                 </ul>
+                </div>
 
                 <ul className="items show-at-mobile">
 
@@ -169,7 +170,7 @@ const IndividualPage = () => {
                     </li>
                 </ul>
 
-                <div className="full-rounded" style={{ textAlign: "center" }}>
+                <div className="full-rounded" style={{ textAlign: "center"}}>
                     <p className="statement">{individualSection2.statement2}</p>
                     <a href={page.individualPageCustomField.individualSection2.cta.link} onClick={routeLink}>
                         <Button background="accent-alt" border="light" color="light">
@@ -178,8 +179,12 @@ const IndividualPage = () => {
                     </a>
                 </div>
             </div>
+            </TierWrapper>
 
-            <div style={{ textAlign: 'center', background: 'rgb(244, 250, 253)' }}>
+            
+            {/* For NMB-96
+            
+                <div style={{ textAlign: 'center', background: 'rgb(244, 250, 253)' }}>
                 <h2 style={{ color: '#009FDA', paddingTop: '4rem' }}>{page.individualPageCustomField.individualSection3.heading}</h2>
                 <p style={{ paddingTop: '1rem', textAlign: 'left', lineHeight: '2rem' }}>{page.individualPageCustomField.individualSection3.subHeading}</p>
 
@@ -190,7 +195,7 @@ const IndividualPage = () => {
                         </Button>
                     </a>
                 </div>
-            </div>
+            </div> */}
 
             <Section
                 color={page.individualPageCustomField.individualSection4.color}
@@ -221,7 +226,7 @@ const IndividualPage = () => {
                 <div className="full-rounded" style={{ textAlign: "center" }}>
                     <a href={page.individualPageCustomField.individualSection3.cta.link} onClick={routeLink}>
                         <Button background="accent-alt" border="light" color="light">
-                            {page.individualPageCustomField.individualSection3.cta.text}
+                            {page.individualPageCustomField.individualSection4.cta.text}
                         </Button>
                     </a>
                 </div>
