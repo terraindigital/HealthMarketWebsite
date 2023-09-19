@@ -36,6 +36,7 @@ export const ValidationMessage = styled.span`
   color: white;
   text-align: left;
   display: block;
+  position: absolute;
 `;
 
 export default ZipInput;
