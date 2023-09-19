@@ -80,7 +80,6 @@ const [secondButtonActive, setSecondButtonActive] = useState(true);
   } else if (secondButtonActive) {
     return (
       <>
-      <AutocompleteField />
       <div id="zipCodeField" className="hidden-inputs">
           <input type="hidden" id="zipCode" value="" />
           <input type="hidden" id="county" value="" />
