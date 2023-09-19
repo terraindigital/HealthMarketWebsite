@@ -46,7 +46,7 @@ export const IntelligentStyles = css`
   }
 
   .card-content {
-    padding-bottom: 3.5rem !important;
+    padding-bottom: 3.5rem;
   }
 
   .card-logo {
@@ -55,10 +55,14 @@ export const IntelligentStyles = css`
     width: 100px;
   }
 
-  .card-content h4 {
+  div.card-content h4 {
     text-align: center;
-    color: #009B3A !important;
+    color: #009B3A;
     font-size: 38px;
+  }
+
+  div.related-content a.card h4 {
+    color: var(--color-primary);
   }
 
   .card-image{
@@ -179,9 +183,9 @@ export const IntelligentStyles = css`
     padding-bottom: 0px;
   }
 
-  .card-header .show-at-mobile{
+  div.card-header .show-at-mobile{
     text-align: center;
-    color: #009B3A !important;
+    color: #009B3A;
     font-size: 24px;
   }
 
