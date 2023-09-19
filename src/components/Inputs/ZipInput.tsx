@@ -9,6 +9,9 @@ const ZipInput = ({zip, setZip}: { zip: string, setZip: (value: string) => void 
   const [touched, setTouched] = useState(false);
 
   const onChange: ChangeEventHandler<HTMLInputElement> = (e) => {
+    if (isNaN(+e.target.value) || e.target.value.length > 5) {
+      return;
+    }
     setZip(e.target.value);
   }
 
