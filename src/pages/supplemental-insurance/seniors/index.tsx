@@ -6,7 +6,7 @@ import { Global } from "@emotion/react";
 import { useSeniorPageQuery } from "../../../hooks/insurance/useSeniorPageQuerty";
 
 // Styles
-import { PageStyles, HeroHeading, HeroSubheading } from "../../../components/pages/styles/SeniorsPageStyles";
+import { PageStyles, HeroHeading, HeroSubheading, SectionOneWrapper } from "../../../components/pages/styles/SeniorsPageStyles";
 
 // Scripts
 import { routeLink } from "../../../static/scripts/global";
@@ -66,13 +66,15 @@ const SeniorsPage = () => {
                     whiteText
                 />
             </Hero>
-            <FlexedSection
-                color={page.seniorPageCustomFields.senSection1.color}
-                heading={page.seniorPageCustomFields.senSection1.heading}>
-                <div className="flex-container" style={{ textAlign: 'left', }}>
-                    <p style={{ lineHeight: '2rem' }}>{page.seniorPageCustomFields.senSection1.subheading}</p>
-                </div>
-            </FlexedSection>
+            <SectionOneWrapper>
+                <FlexedSection
+                    color={page.seniorPageCustomFields.senSection1.color}
+                    heading={page.seniorPageCustomFields.senSection1.heading}>
+                    <div className="flex-container" style={{ textAlign: 'left', }}>
+                        <p>{page.seniorPageCustomFields.senSection1.subheading}</p>
+                    </div>
+                </FlexedSection>
+            </SectionOneWrapper>
             <Cards>
                 {(plans) ? (
                     Object.keys(plans).map((plan) => {

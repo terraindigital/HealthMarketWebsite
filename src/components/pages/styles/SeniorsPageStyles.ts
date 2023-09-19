@@ -9,6 +9,20 @@ export const PageStyles = css`
     padding-right: 6.5rem;
   }
 
+  .hero img.show-at-mobile {
+    object-position: bottom;
+    display: block;
+  }
+
+  .hero img.hide-at-mobile {
+    display: none;
+    object-position: bottom right;
+  }
+
+  div.hero div.half {
+    justify-content: flex-start;
+  }
+
   #zipCodeForm {
     &> div:first-of-type div {
       color: #69BE28;
@@ -33,7 +47,63 @@ export const PageStyles = css`
     }
   }
 
+  .hero #zipCodeForm > div:first-of-type {
+    width: 100%;
+
+    &> div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 100%;
+      min-width: none;
+    }
+  }
+
+  .related-content .card-content p{
+    color: #828282;
+  }
+
+  @media only screen and (min-width: 1025px) {
+
+    .hero div.half {
+      flex-basis: 72%;
+      width: 72%;
+    }
+
+    .hero #zipCodeForm, .hero h4 {
+      width: 60%;
+    }
+
+    .hero #zipCodeForm div:first-of-type {
+      div {
+        min-width: 0px;
+        width: 50%;
+      }
+    }
+  }
+
+  .hero #zipCodeForm {
+    .geocode {
+      width: 100%;
+
+      .input.group {
+        width: 100%;
+
+        input.geocode.input {
+          min-width: 0;
+          width: 100%;
+        }
+      }
+    }
+  } 
+
   @media only screen and (max-width: 788px) {
+  
+    div.hero {
+      padding-bottom: 20em;
+    }
+
     .hero .half {
       display: block;
       flex-basis: 100%;
@@ -76,6 +146,66 @@ flex-container p {
 }
 
   }
+
+  @media only screen and (min-width: 620px) and (max-width:1024px) {
+
+    div.hero {
+      padding-bottom: 42em;
+    }
+  }
+
+  @media only screen and (min-width: 1025px) {
+    .hero img.hide-at-mobile {
+      display: block;
+    }
+
+    .hero img.show-at-mobile {
+      display: none;
+    }
+
+    div.hero {
+      padding-top: 9rem;
+
+      #zipCodeForm {
+
+        div.geocode {
+          input {
+            height: 110px;
+          }
+        }
+
+        button {
+          height: 70px;
+        }
+      }
+      div.cta-phone {
+        margin-top: 2em;
+      }
+
+      h1 {
+        font-size: 120px;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1025px) and (max-width: 1920px) {
+    div.hero {
+      margin-top: -60px;
+
+        div.half {
+          margin-top: 180px;
+        }
+    }
+  }
+
+  @media only screen and (min-width: 1920px) {
+    div.hero {
+      div.half {
+        width: 90%;
+        flex-basis: 90%;
+      }
+    }
+  }
 `
 
 export const HeroHeading = styled.h1`
@@ -85,6 +215,10 @@ export const HeroHeading = styled.h1`
 
     @media only screen and (max-width: 620px) {
     color: var(--color-light);
+  }
+
+  @media only screen and min-width(1025px) {
+    font-size: 120px;
   }
 `
 
@@ -99,3 +233,18 @@ export const HeroSubheading = styled.h4`
   }
 `
 
+export const SectionOneWrapper = styled.h1`
+  div.flex-container p {
+    line-height: 1.3;
+    font-size: 16px;
+    color: #828282;
+    font-weight: 600;
+  }
+
+  @media only screen and (min-width: 1025px) {
+    div.flex-container p {
+      line-height: 1.4;
+      font-size: 32px;
+    }
+  }
+`
