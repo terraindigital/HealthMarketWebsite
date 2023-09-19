@@ -30,6 +30,7 @@ import Medial from "../../components/Medials";
 import Callouts from "../../components/Callouts";
 import Callout from "../../components/Callouts/Callout";
 import Footer from "../../components/Footer";
+import Countdown from "../../components/Countdown";
 
 const MedicarePage = () => {
   const { page } = useMedicarePageQuery();
@@ -41,7 +42,7 @@ const MedicarePage = () => {
       <Hero
         image={page.pageHeroFields.heroImage.sourceUrl}
         mobileImage={page.pageHeroFields.mobileHeroImage.sourceUrl}
-        bgColor="#5899D1">
+        bgColor="#82BBCF" >
         <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
         <PageHeroForm
@@ -51,6 +52,7 @@ const MedicarePage = () => {
             inputId="medicarePageHeroLocation"
             footerContent={page.pageHeroFields.callUs} />
         <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.disclaimer }} />
+        <Countdown date={1696161600313}/>
       </Hero>
       <Section
         page="medicare"
