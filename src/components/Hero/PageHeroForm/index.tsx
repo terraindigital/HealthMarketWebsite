@@ -1,5 +1,5 @@
 // Library
-import React, { FC, useEffect, useState } from "react";
+import React, {FC, FormEventHandler, useState} from "react";
 
 // Styles
 import {
@@ -9,22 +9,18 @@ import {
   Radio,
   Footer,
   CTA,
-  // InputGroup,
-  // Input
 } from "./styles"
 
 // Scripts
 import {
   toggleForm,
-  sendForm
 } from "../../../static/scripts/global"
 
 // Components
 import Button from "../../Buttons/Button"
-import AutocompleteField from "../../Inputs/Geocode/AutocompleteField";
+import ZipInput from "../../Inputs/ZipInput";
 
 // Images
-// import MapPin from "../../../static/images/location.png"
 import PhoneIcon from "../../../static/images/phone-icon.png"
 
 interface Props {
@@ -48,9 +44,17 @@ const agents = "/local-health-insurance-agent/search/";
 const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, inputId, buttons, footerContent, hideFooter,...rest  }) => {
   console.log(hideFooter);
 
+  const [zip, setZip] = useState('');
+
+  const onSubmitForm: FormEventHandler<HTMLFormElement> = (event) => {
+    event.preventDefault();
+    const redirectUrl = `${plans}?zip=${zip}`;
+    window.location.assign(redirectUrl);
+  };
+
   return (
     <Wrapper className={`${(centered) ? `centered` : ``} ${(light) ? `light` : ``}`} {...rest}>
-      <Form id="zipCodeForm" action={plans} autocomplete="off" onSubmit={(e) => { sendForm(e) }}>
+      <Form id="zipCodeForm" action={plans} autoComplete="off" onSubmit={onSubmitForm}>
         {(buttons || buttons === undefined) ? (
           <Buttons>
             <Radio onClick={toggleForm} className="accented">{btnLeftText}
@@ -61,7 +65,7 @@ const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, i
             </Radio>
           </Buttons>
         ) : null}
-        <AutocompleteField />
+        <ZipInput zip={zip} setZip={setZip}/>
         <div id="zipCodeField" className="hidden-inputs">
           <input type="hidden" id="zipCode" value="" />
           <input type="hidden" id="county" value="" />
