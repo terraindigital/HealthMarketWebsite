@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
         img {
           filter: brightness(0) invert(1)
         }
-        span p {
+        span p, span p a {
           color: var(--color-light);
         }
       }
