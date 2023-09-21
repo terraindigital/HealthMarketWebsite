@@ -43,7 +43,12 @@ interface Props {
 const api_key = 'ge-8876b9780ea0871d';
 
 // set the urls to change the form action to
-const plans = "https://shop.healthmarkets.com/en/about-me/info/";
+let plans = "";
+if (window.location.pathname.includes("medicare")) {
+  plans = "https://healthmarkets6.destinationrx.com/pc/2023/shopping/home";
+} else {
+  plans = "https://shop.healthmarkets.com/en/about-me/info/";
+}
 const agents = "/local-health-insurance-agent/search/";
 const finalExpense = "/life-insurance/final-expense-insurance/"
 
