@@ -80,6 +80,7 @@ const [secondButtonActive, setSecondButtonActive] = useState(true);
   } else if (secondButtonActive) {
     return (
       <>
+      <ZipInput zip={zip} setZip={setZip}/>
       <div id="zipCodeField" className="hidden-inputs">
           <input type="hidden" id="zipCode" value="" />
           <input type="hidden" id="county" value="" />
