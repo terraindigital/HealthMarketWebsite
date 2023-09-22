@@ -12,6 +12,8 @@ import {
   CTA,
   FirstWrapper,
   HideOnDesktopWrapper,
+  HideOnMobileWrapper,
+  CallButton
 } from "./styles"
 
 // Scripts
@@ -52,7 +54,7 @@ if (window.location.pathname.includes("medicare")) {
   plans = "https://shop.healthmarkets.com/en/about-me/info/";
   agents = "/local-health-insurance-agent/search/"
 }
-const finalExpense = "/life-insurance/final-expense-insurance/"
+const finalExpense = "/life-insurance/final-expense-insurance";
 
 const PageHeroForm: FC<Props> = ({ centered, light, whiteText, btnLeftText, btnRightText, inputId, buttons, footerContent, hideFooter,...rest  }) => {
 const [firstButtonActive, setFirstButtonActive] = useState(true);
@@ -78,8 +80,7 @@ const [secondButtonActive, setSecondButtonActive] = useState(false);
       <>
       <FirstWrapper>
       <Footer>
-      <Button style={{borderRadius: "4px", marginTop: "-180px", height: '50px'}} background="accent-alt" border="light" color="light">
-      <a className="phone-link" href="tel:+18339100995">Call 1-833-910-0995</a></Button>
+      <CallButton href="tel:+18339100995" style={{borderRadius: "4px", marginTop: "-180px", height: '50px'}} background="accent-alt" border="light" color="light">Call 1-833-910-0995</CallButton>
       </Footer>
       </FirstWrapper>
       </>
@@ -87,6 +88,7 @@ const [secondButtonActive, setSecondButtonActive] = useState(false);
   } else if (secondButtonActive) {
     return (
       <>
+      <ZipInput zip={zip} setZip={setZip}/>
       <div id="zipCodeField" className="hidden-inputs">
           <input type="hidden" id="zipCode" value="" />
           <input type="hidden" id="county" value="" />
@@ -108,7 +110,7 @@ const [secondButtonActive, setSecondButtonActive] = useState(false);
   const onSubmitForm: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
     let redirectUrl: string;
-    if (firstButtonActive) {
+    if (firstButtonActive && !window.location.pathname.includes(finalExpense)) {
       redirectUrl = `${plans}?zip=${zip}`;
     } else {
       redirectUrl = agents;
@@ -119,7 +121,7 @@ const [secondButtonActive, setSecondButtonActive] = useState(false);
   return (
     <Wrapper className={`${(centered) ? `centered` : ``} ${(light) ? `light` : ``} ${(whiteText) ? `white-text` : ``}`} {...rest}>
       <Form id="zipCodeForm" action={plans} autoComplete="off" onSubmit={onSubmitForm}>
-    { useLocation()?.pathname !== finalExpense ?
+    { !window.location.pathname.includes(finalExpense) ?
         <>
         {(buttons || buttons === undefined) ? (
           <Buttons>
@@ -150,15 +152,29 @@ const [secondButtonActive, setSecondButtonActive] = useState(false);
           <>
           <HideOnDesktopWrapper>
           <Buttons>
-            <Radio onClick={onClickFirstButton}>{btnLeftText}
+            <Radio onClick={onClickFirstButton} className="accented">{btnLeftText}
               <input id="radioSearchPlans" type="radio" value={plans} checked />
             </Radio>
-            <Radio onClick={onClickSecondButton} className="accented">{btnRightText}
+            <Radio onClick={onClickSecondButton}>{btnRightText}
               <input id="radioSearchAgents" type="radio" value={agents} />
             </Radio>
           </Buttons>
           </HideOnDesktopWrapper>
           {renderButton()}
+          <HideOnMobileWrapper>
+            <ZipInput zip={zip} setZip={setZip}/>
+              <div id="zipCodeField" className="hidden-inputs">
+                <input type="hidden" id="zipCode" value="" />
+                <input type="hidden" id="county" value="" />
+              </div>
+              <div className="button-container">
+              <Button style={{borderRadius: "4px"}} background="accent-alt" border="light" color="light" disabled={!isValidZip(zip)}>Find a licensed insurance agent</Button>
+              </div>
+            <CTA className="cta-phone">
+              <img src={PhoneIcon} />
+              <span dangerouslySetInnerHTML={{ __html: footerContent }} />
+            </CTA>
+          </HideOnMobileWrapper>
             </>)}
       </Form>
     </Wrapper>
