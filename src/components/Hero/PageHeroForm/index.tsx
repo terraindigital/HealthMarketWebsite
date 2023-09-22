@@ -53,8 +53,8 @@ const agents = "/local-health-insurance-agent/search/";
 const finalExpense = "/life-insurance/final-expense-insurance/"
 
 const PageHeroForm: FC<Props> = ({ centered, light, whiteText, btnLeftText, btnRightText, inputId, buttons, footerContent, hideFooter,...rest  }) => {
-const [firstButtonActive, setFirstButtonActive] = useState(false);
-const [secondButtonActive, setSecondButtonActive] = useState(true);
+const [firstButtonActive, setFirstButtonActive] = useState(true);
+const [secondButtonActive, setSecondButtonActive] = useState(false);
 
 // these functions and conditionals will serve as temporary measures until all pages have been redesigned to reflect the updated requirements for this component
 
@@ -105,7 +105,12 @@ const [secondButtonActive, setSecondButtonActive] = useState(true);
 
   const onSubmitForm: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    const redirectUrl = `${plans}?zip=${zip}`;
+    let redirectUrl: string;
+    if (firstButtonActive) {
+      redirectUrl = `${plans}?zip=${zip}`;
+    } else {
+      redirectUrl = agents;
+    }
     window.location.assign(redirectUrl);
   };
 
@@ -116,10 +121,10 @@ const [secondButtonActive, setSecondButtonActive] = useState(true);
         <>
         {(buttons || buttons === undefined) ? (
           <Buttons>
-            <Radio onClick={toggleForm} className="accented">{btnLeftText}
+            <Radio onClick={onClickFirstButton} className="accented">{btnLeftText}
               <input id="radioSearchPlans" type="radio" value={plans} checked />
             </Radio>
-            <Radio onClick={toggleForm}>{btnRightText}
+            <Radio onClick={onClickSecondButton}>{btnRightText}
               <input id="radioSearchAgents" type="radio" value={agents} />
             </Radio>
           </Buttons>
