@@ -152,9 +152,23 @@ min-width: 20rem;
     }
   }
 
+  #zipCodeForm {
+    &> div:nth-of-type(2) {
+      display: none;
+    }
+
+    div.group.input {
+      margin-bottom: 1.6rem;
+    }
+  }
+
   @media only screen and (max-width: 620px) {
     #zipCodeForm {
       width: 100%;
+
+      &> div:nth-of-type(2) {
+        display: block;
+      }
 
       &> div:first-of-type {
         width: 100%;
@@ -162,7 +176,7 @@ min-width: 20rem;
         &> div {
           flex-direction: column;
           width: 100%;
-          
+
           &> div {
             min-width: 100%;
             width: 100%;
@@ -239,9 +253,9 @@ export const HeroHeading = styled.h1`
 export const HeroSubheading = styled.h4`
   color: var(--color-light);
   font-family: var(--font-body);
-  margin-bottom: 4rem;
 
   @media only screen and (max-width: 620px) {
+    margin-bottom: 4rem;
     color: var(--color-dark); 
     font-size: 20px !important;
     padding-left: 30px;

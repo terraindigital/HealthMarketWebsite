@@ -40,6 +40,14 @@ display: none;
 }
 `
 
+export const HideOnMobileWrapper = styled.div`
+display: block;
+
+@media only screen and (max-width: 620px) {
+  display: none;
+}
+`
+
 export const Buttons = styled.div`
   align-items: stretch;
   display: flex;

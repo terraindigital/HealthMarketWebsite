@@ -12,6 +12,7 @@ import {
   CTA,
   FirstWrapper,
   HideOnDesktopWrapper,
+  HideOnMobileWrapper,
   CallButton
 } from "./styles"
 
@@ -102,11 +103,12 @@ const [secondButtonActive, setSecondButtonActive] = useState(false);
   const onSubmitForm: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
     let redirectUrl: string;
-    if (firstButtonActive) {
+    if (firstButtonActive && !window.location.pathname.includes(finalExpense)) {
       redirectUrl = `${plans}?zip=${zip}`;
     } else {
       redirectUrl = agents;
     }
+    // debugger
     window.location.assign(redirectUrl);
   };
 
@@ -153,6 +155,20 @@ const [secondButtonActive, setSecondButtonActive] = useState(false);
           </Buttons>
           </HideOnDesktopWrapper>
           {renderButton()}
+          <HideOnMobileWrapper>
+            <ZipInput zip={zip} setZip={setZip}/>
+              <div id="zipCodeField" className="hidden-inputs">
+                <input type="hidden" id="zipCode" value="" />
+                <input type="hidden" id="county" value="" />
+              </div>
+              <div className="button-container">
+              <Button style={{borderRadius: "4px"}} background="accent-alt" border="light" color="light" disabled={!isValidZip(zip)}>Find a licensed insurance agent</Button>
+              </div>
+            <CTA className="cta-phone">
+              <img src={PhoneIcon} />
+              <span dangerouslySetInnerHTML={{ __html: footerContent }} />
+            </CTA>
+          </HideOnMobileWrapper>
             </>)}
       </Form>
     </Wrapper>
