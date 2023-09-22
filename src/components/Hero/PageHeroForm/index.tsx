@@ -1,6 +1,6 @@
 // Library
 import React, { FC, FormEventHandler, useEffect, useState } from "react";
-import { useLocation } from '@reach/router';
+import { useLocation, navigate } from '@reach/router';
 
 // Styles
 import {
@@ -99,23 +99,24 @@ const [secondButtonActive, setSecondButtonActive] = useState(false);
 }
 
   const [zip, setZip] = useState('');
+  const location = useLocation();
 
   const onSubmitForm: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
     let redirectUrl: string;
-    if (firstButtonActive && !window.location.pathname.includes(finalExpense)) {
+    if (firstButtonActive && !location?.pathname?.includes(finalExpense)) {
       redirectUrl = `${plans}?zip=${zip}`;
     } else {
       redirectUrl = agents;
     }
     // debugger
-    window.location.assign(redirectUrl);
+    navigate(redirectUrl);
   };
 
   return (
     <Wrapper className={`${(centered) ? `centered` : ``} ${(light) ? `light` : ``} ${(whiteText) ? `white-text` : ``}`} {...rest}>
       <Form id="zipCodeForm" action={plans} autoComplete="off" onSubmit={onSubmitForm}>
-    { !window.location.pathname.includes(finalExpense) ?
+    { !location?.pathname?.includes(finalExpense) ?
         <>
         {(buttons || buttons === undefined) ? (
           <Buttons>
