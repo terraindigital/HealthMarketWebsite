@@ -79,6 +79,7 @@ const toggleAccordion = (el) => {
 
 const MedicareAdvantagePage = () => {
   const { page } = useMedicareAdvantagePageQuery();
+  debugger
 
   return (
     <Layout pageClass="medicare-advantage">

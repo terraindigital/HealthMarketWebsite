@@ -61,6 +61,10 @@ export const PageStyles = css`
 
   .hero .cta-phone {
     max-width: 820px;
+
+    span a {
+      text-decoration: none;
+    }
   }
 
   .hero #zipCodeForm > div:first-of-type {
@@ -209,8 +213,9 @@ export const PageStyles = css`
         filter: none;
       }
 
-      span {
+      span, span a {
         color: var(--color-dark);
+        text-decoration: none;
       }
     }
 
