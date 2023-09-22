@@ -12,6 +12,7 @@ import {
   CTA,
   FirstWrapper,
   HideOnDesktopWrapper,
+  CallButton
 } from "./styles"
 
 // Scripts
@@ -45,11 +46,11 @@ const api_key = 'ge-8876b9780ea0871d';
 // set the urls to change the form action to
 const plans = "https://shop.healthmarkets.com/en/about-me/info/";
 const agents = "/local-health-insurance-agent/search/";
-const finalExpense = "/life-insurance/final-expense-insurance/"
+const finalExpense = "/life-insurance/final-expense-insurance";
 
 const PageHeroForm: FC<Props> = ({ centered, light, whiteText, btnLeftText, btnRightText, inputId, buttons, footerContent, hideFooter,...rest  }) => {
-const [firstButtonActive, setFirstButtonActive] = useState(false);
-const [secondButtonActive, setSecondButtonActive] = useState(true);
+const [firstButtonActive, setFirstButtonActive] = useState(true);
+const [secondButtonActive, setSecondButtonActive] = useState(false);
 
 // these functions and conditionals will serve as temporary measures until all pages have been redesigned to reflect the updated requirements for this component
 
@@ -71,8 +72,7 @@ const [secondButtonActive, setSecondButtonActive] = useState(true);
       <>
       <FirstWrapper>
       <Footer>
-      <Button style={{borderRadius: "4px", marginTop: "-180px", height: '50px'}} background="accent-alt" border="light" color="light">
-      <a className="phone-link" href="tel:+18339100995">Call 1-833-910-0995</a></Button>
+      <CallButton href="tel:+18339100995" style={{borderRadius: "4px", marginTop: "-180px", height: '50px'}} background="accent-alt" border="light" color="light">Call 1-833-910-0995</CallButton>
       </Footer>
       </FirstWrapper>
       </>
@@ -101,14 +101,19 @@ const [secondButtonActive, setSecondButtonActive] = useState(true);
 
   const onSubmitForm: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
-    const redirectUrl = `${plans}?zip=${zip}`;
+    let redirectUrl: string;
+    if (firstButtonActive) {
+      redirectUrl = `${plans}?zip=${zip}`;
+    } else {
+      redirectUrl = agents;
+    }
     window.location.assign(redirectUrl);
   };
 
   return (
     <Wrapper className={`${(centered) ? `centered` : ``} ${(light) ? `light` : ``} ${(whiteText) ? `white-text` : ``}`} {...rest}>
       <Form id="zipCodeForm" action={plans} autoComplete="off" onSubmit={onSubmitForm}>
-    { useLocation()?.pathname !== finalExpense ?
+    { window.location.pathname !== finalExpense ?
         <>
         {(buttons || buttons === undefined) ? (
           <Buttons>
@@ -139,10 +144,10 @@ const [secondButtonActive, setSecondButtonActive] = useState(true);
           <>
           <HideOnDesktopWrapper>
           <Buttons>
-            <Radio onClick={onClickFirstButton}>{btnLeftText}
+            <Radio onClick={onClickFirstButton} className="accented">{btnLeftText}
               <input id="radioSearchPlans" type="radio" value={plans} checked />
             </Radio>
-            <Radio onClick={onClickSecondButton} className="accented">{btnRightText}
+            <Radio onClick={onClickSecondButton}>{btnRightText}
               <input id="radioSearchAgents" type="radio" value={agents} />
             </Radio>
           </Buttons>

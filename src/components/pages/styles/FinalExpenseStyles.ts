@@ -153,6 +153,24 @@ min-width: 20rem;
   }
 
   @media only screen and (max-width: 620px) {
+    #zipCodeForm {
+      width: 100%;
+
+      &> div:first-of-type {
+        width: 100%;
+
+        &> div {
+          flex-direction: column;
+          width: 100%;
+          
+          &> div {
+            min-width: 100%;
+            width: 100%;
+          }
+        }
+      }
+    }
+
     .header div:nth-child(1){
       background-color: #F4F3F1;
       box-shadow: none;
@@ -160,11 +178,11 @@ min-width: 20rem;
 
     .header div:nth-child(1) button div {
       background-color: var(--color-primary)
-  }
+    }
 
     .header div:nth-child(1) nav div {
       background-color: var(--color-primary)
-  }
+    }
 
     .form-container div:nth-child(1){
       display: flex;
