@@ -32,7 +32,7 @@ export const PageStyles = css`
       }
     }
 
-    div.geocode {
+    div.group.input {
       input::placeholder {
         color: #69BE28;
       }
@@ -84,9 +84,6 @@ export const PageStyles = css`
   }
 
   .hero #zipCodeForm {
-    .geocode {
-      width: 100%;
-
       .input.group {
         width: 100%;
 
@@ -95,7 +92,6 @@ export const PageStyles = css`
           width: 100%;
         }
       }
-    }
   } 
 
   @media only screen and (max-width: 788px) {
@@ -168,7 +164,7 @@ flex-container p {
 
       #zipCodeForm {
 
-        div.geocode {
+        div.group.input {
           input {
             height: 110px;
           }
