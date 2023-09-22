@@ -112,10 +112,10 @@ const [secondButtonActive, setSecondButtonActive] = useState(true);
         <>
         {(buttons || buttons === undefined) ? (
           <Buttons>
-            <Radio onClick={toggleForm} className="accented">{btnLeftText}
+            <Radio onClick={onClickFirstButton} className="accented">{btnLeftText}
               <input id="radioSearchPlans" type="radio" value={plans} checked />
             </Radio>
-            <Radio onClick={toggleForm}>{btnRightText}
+            <Radio onClick={onClickSecondButton}>{btnRightText}
               <input id="radioSearchAgents" type="radio" value={agents} />
             </Radio>
           </Buttons>
