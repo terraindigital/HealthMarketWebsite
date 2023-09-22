@@ -113,7 +113,7 @@ const [secondButtonActive, setSecondButtonActive] = useState(false);
   return (
     <Wrapper className={`${(centered) ? `centered` : ``} ${(light) ? `light` : ``} ${(whiteText) ? `white-text` : ``}`} {...rest}>
       <Form id="zipCodeForm" action={plans} autoComplete="off" onSubmit={onSubmitForm}>
-    { window.location.pathname !== finalExpense ?
+    { !window.location.pathname.includes(finalExpense) ?
         <>
         {(buttons || buttons === undefined) ? (
           <Buttons>
