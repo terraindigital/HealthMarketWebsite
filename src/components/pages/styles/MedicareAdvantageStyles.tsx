@@ -93,9 +93,6 @@ export const PageStyles = css`
   }
 
   .hero #zipCodeForm {
-    div.geocode {
-      width: 100%;
-
       .input.group {
         width: 100%;
 
@@ -104,7 +101,6 @@ export const PageStyles = css`
           width: 100%;
         }
       }
-    }
   } 
 
   @media only screen and (max-width: 788px) {
