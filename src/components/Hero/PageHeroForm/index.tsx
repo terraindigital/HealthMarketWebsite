@@ -46,13 +46,14 @@ const api_key = 'ge-8876b9780ea0871d';
 
 // set the urls to change the form action to
 let plans: string;
-let agents: string;
+let agents = "/local-health-insurance-agent/search/?query=";
+let agentsFilterAppend: string;
 if (window.location.pathname.includes("medicare")) {
   plans = "https://healthmarkets6.destinationrx.com/pc/2023/shopping/home";
-  agents = "/local-health-insurance-agent/search/?filter=medicare";
+  agentsFilterAppend = "&filter=medicare";
 } else {
   plans = "https://shop.healthmarkets.com/en/about-me/info/";
-  agents = "/local-health-insurance-agent/search/"
+  agentsFilterAppend = "";
 }
 const finalExpense = "/life-insurance/final-expense-insurance";
 
@@ -113,7 +114,7 @@ const [secondButtonActive, setSecondButtonActive] = useState(false);
     if (firstButtonActive && !window.location.pathname.includes(finalExpense)) {
       redirectUrl = `${plans}?zip=${zip}`;
     } else {
-      redirectUrl = agents;
+      redirectUrl = `${agents}${zip}${agentsFilterAppend}`;
     }
     window.location.assign(redirectUrl);
   };
