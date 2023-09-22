@@ -43,16 +43,12 @@ export const PageStyles = css`
 }
 
 .hero #zipCodeForm {
-  .geocode {
+  .input.group {
     width: 100%;
 
-    .input.group {
+    input.geocode.input {
+      min-width: 0;
       width: 100%;
-
-      input.geocode.input {
-        min-width: 0;
-        width: 100%;
-      }
     }
   }
 } 
