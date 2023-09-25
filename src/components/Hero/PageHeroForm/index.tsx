@@ -123,7 +123,7 @@ const finalExpense = "/life-insurance/final-expense-insurance";
   return (
     <Wrapper className={`${(centered) ? `centered` : ``} ${(light) ? `light` : ``} ${(whiteText) ? `white-text` : ``}`} {...rest}>
       <Form id="zipCodeForm" action={plans} autoComplete="off" onSubmit={onSubmitForm}>
-    { !useLocation().pathname.includes(finalExpense) ?
+    { !location.pathname.includes(finalExpense) ?
         <>
         {(buttons || buttons === undefined) ? (
           <Buttons>
