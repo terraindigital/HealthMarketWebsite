@@ -108,7 +108,6 @@ const finalExpense = "/life-insurance/final-expense-insurance";
 }
 
   const [zip, setZip] = useState('');
-  const location = useLocation();
 
   const onSubmitForm: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
