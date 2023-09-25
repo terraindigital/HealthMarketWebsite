@@ -117,7 +117,7 @@ const finalExpense = "/life-insurance/final-expense-insurance";
     } else {
       redirectUrl = `${agents}${zip}${agentsFilterAppend}`;
     }
-    window.location.assign(redirectUrl);
+    navigate(redirectUrl);
   };
 
   return (
