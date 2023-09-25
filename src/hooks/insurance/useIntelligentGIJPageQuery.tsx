@@ -1,8 +1,8 @@
 import { useStaticQuery, graphql } from "gatsby";
 
-export const useIntelligentInsuranceGIJPageQuery = () => {
+export const useIntelligentGIJPageQuery = () => {
     const data = useStaticQuery(graphql`
-    query InsuranceGIJQuery {
+    query IntelligentGIJQuery {
       page: wpPage(databaseId: { eq: 10482 }) {
         id
         slug

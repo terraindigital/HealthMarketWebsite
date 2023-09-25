@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PageHead from "../../../components/PageHead";
-import { useIntelligentInsuranceGIJPageQuery } from "../../../hooks/insurance/useIntelligentInsuranceGIJPageQuery";
+import { useIntelligentGIJPageQuery } from "../../../hooks/insurance/useIntelligentGIJPageQuery";
 import Layout from "../../../components/Layout";
 import { Global } from "@emotion/react";
 import { IntelligentStyles } from "../../../components/pages/styles/IntelligentPageStyles";
@@ -27,7 +27,7 @@ import PhoneIcon from "../../../static/images/phone-icon.png"
 
 
 const IntelligentGIJPage = () => {
-    const { page } = useIntelligentInsuranceGIJPageQuery();
+    const { page } = useIntelligentGIJPageQuery();
     const plans = page.intelligentInsuranceGIJPageCustomField.intelligentSection3.intelligentCards;
     const options = page.intelligentInsuranceGIJPageCustomField.intelligentSection1.options;
     const [hasChildren, setHasChildren] = useState(false);
@@ -242,7 +242,7 @@ export default IntelligentGIJPage;
 
 
 export const Head = () => {
-    const { page } = useIntelligentInsuranceGIJPageQuery();
+    const { page } = useIntelligentGIJPageQuery();
     return (
         <>
             <PageHead

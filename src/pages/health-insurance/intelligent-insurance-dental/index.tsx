@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PageHead from "../../../components/PageHead";
-import { useIntelligentDIPageQuery } from "../../../hooks/insurance/useIntelligentInsuranceDIPageQuery";
+import { useIntelligentDIPageQuery } from "../../../hooks/insurance/useIntelligentDIPageQuery";
 import Layout from "../../../components/Layout";
 import { Global } from "@emotion/react";
 import { IntelligentStyles } from "../../../components/pages/styles/IntelligentPageStyles";
