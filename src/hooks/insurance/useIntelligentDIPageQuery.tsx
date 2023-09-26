@@ -33,7 +33,7 @@ export const useIntelligentDIPageQuery = () => {
           subheadline
         }
         intelligentInsuranceDIPageCustomField {
-          intelligentSection1 {
+          intelligentDiSection1 {
             heading
             color
             intelligentSectionSubheading
@@ -80,7 +80,7 @@ export const useIntelligentDIPageQuery = () => {
               }
             }
           }
-          intelligentSection2 {
+          intelligentDiSection2 {
             color
             columns {
               column1 {
@@ -99,7 +99,7 @@ export const useIntelligentDIPageQuery = () => {
               }
             }
           }
-          intelligentSection3 {
+          intelligentDiSection3 {
             sectionHeading
             sectionColor
             intelligentCards {
@@ -153,7 +153,7 @@ export const useIntelligentDIPageQuery = () => {
               }
             }
           }
-          intelligentSection4 {
+          intelligentDiSection4 {
             color
             sectionHeading
             intelligentListItems {
@@ -175,7 +175,7 @@ export const useIntelligentDIPageQuery = () => {
               text
             }
           }
-          intelligentSection5 {
+          intelligentDiSection5 {
             sectionHeading
             color
             intelligentRelatedContent {

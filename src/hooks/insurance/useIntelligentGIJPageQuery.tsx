@@ -33,7 +33,7 @@ export const useIntelligentGIJPageQuery = () => {
           subheadline
         }
         intelligentInsuranceGIJPageCustomField {
-          intelligentSection1 {
+          intelligentGijSection1 {
             heading
             color
             intelligentSectionSubheading
@@ -80,7 +80,7 @@ export const useIntelligentGIJPageQuery = () => {
               }
             }
           }
-          intelligentSection2 {
+          intelligentGijSection2 {
             color
             columns {
               column1 {
@@ -99,7 +99,7 @@ export const useIntelligentGIJPageQuery = () => {
               }
             }
           }
-          intelligentSection3 {
+          intelligentGijSection3 {
             sectionHeading
             sectionColor
             intelligentCards {
@@ -153,7 +153,7 @@ export const useIntelligentGIJPageQuery = () => {
               }
             }
           }
-          intelligentSection4 {
+          intelligentGijSection4 {
             color
             sectionHeading
             intelligentListItems {
@@ -175,7 +175,7 @@ export const useIntelligentGIJPageQuery = () => {
               text
             }
           }
-          intelligentSection5 {
+          intelligentGijSection5 {
             sectionHeading
             color
             intelligentRelatedContent {

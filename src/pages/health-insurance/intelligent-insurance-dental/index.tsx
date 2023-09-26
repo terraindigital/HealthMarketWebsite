@@ -28,8 +28,8 @@ import PhoneIcon from "../../../static/images/phone-icon.png"
 
 const IntelligentDentalPage = () => {
     const { page } = useIntelligentDIPageQuery();
-    const plans = page.intelligentInsuranceDIPageCustomField.intelligentSection3.intelligentCards;
-    const options = page.intelligentInsuranceDIPageCustomField.intelligentSection1.options;
+    const plans = page.intelligentInsuranceDIPageCustomField.intelligentDiSection3.intelligentCards;
+    const options = page.intelligentInsuranceDIPageCustomField.intelligentDiSection1.options;
     const [hasChildren, setHasChildren] = useState(false);
 
     useEffect(() => {
@@ -57,13 +57,13 @@ const IntelligentDentalPage = () => {
                 <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
                 <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
                 <a
-                    href={page.intelligentInsuranceDIPageCustomField.intelligentSection2.columns.column3.button.link}
+                    href={page.intelligentInsuranceDIPageCustomField.intelligentDiSection2.columns.column3.button.link}
                     onClick={routeLink}
                 >
                     <Button background="accent-alt" border="light" color="light">
                         <div className="button-content">
                     <img src={PhoneIcon} />
-                    {page.intelligentInsuranceDIPageCustomField.intelligentSection2.columns.column3.button.text}
+                    {page.intelligentInsuranceDIPageCustomField.intelligentDiSection2.columns.column3.button.text}
                     </div>
                     </Button>
                 </a>
@@ -71,9 +71,9 @@ const IntelligentDentalPage = () => {
             {/* Explore options  */}
 
             <FlexedSection
-                color={page.intelligentInsuranceDIPageCustomField.intelligentSection1.color}
-                heading={page.intelligentInsuranceDIPageCustomField.intelligentSection1.heading}>
-                <h4 dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceDIPageCustomField.intelligentSection1.intelligentSectionSubheading }} />
+                color={page.intelligentInsuranceDIPageCustomField.intelligentDiSection1.color}
+                heading={page.intelligentInsuranceDIPageCustomField.intelligentDiSection1.heading}>
+                <h4 dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceDIPageCustomField.intelligentDiSection1.intelligentSectionSubheading }} />
             </FlexedSection>
             {/* 5 cards */}
             <div className="card-container" style={{ background: 'rgb(244, 250, 253)' }}>
@@ -96,22 +96,22 @@ const IntelligentDentalPage = () => {
             </div>
 
             {/* we're here to help  */}
-            <Medial color={page.intelligentInsuranceDIPageCustomField.intelligentSection2.color}>
+            <Medial color={page.intelligentInsuranceDIPageCustomField.intelligentDiSection2.color}>
                 <img
                     className="chat-bubble"
-                    src={page.intelligentInsuranceDIPageCustomField.intelligentSection2.columns.column1.image.sourceUrl}
+                    src={page.intelligentInsuranceDIPageCustomField.intelligentDiSection2.columns.column1.image.sourceUrl}
                     alt="Chat bubble icon"
                 />
-                <div className="medial-header" dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceDIPageCustomField.intelligentSection2.columns.column2.heading }} />
-                <div dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceDIPageCustomField.intelligentSection2.subText }} />
+                <div className="medial-header" dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceDIPageCustomField.intelligentDiSection2.columns.column2.heading }} />
+                <div dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceDIPageCustomField.intelligentDiSection2.subText }} />
                 <a
-                    href={page.intelligentInsuranceDIPageCustomField.intelligentSection2.columns.column3.button.link}
+                    href={page.intelligentInsuranceDIPageCustomField.intelligentDiSection2.columns.column3.button.link}
                     onClick={routeLink}
                 >
                     <div className="help-button-container">
                     <Button background="accent-alt" border="light" color="light">
                         <div className="help-button-content">
-                    <img className="help-button-content" src={PhoneIcon} />{page.intelligentInsuranceDIPageCustomField.intelligentSection2.columns.column3.button.text}
+                    <img className="help-button-content" src={PhoneIcon} />{page.intelligentInsuranceDIPageCustomField.intelligentDiSection2.columns.column3.button.text}
                     </div>
                     </Button>
                     </div>
@@ -123,8 +123,8 @@ const IntelligentDentalPage = () => {
             {/* Three cards */}
                 <FlexedSectionContainer>
                 <FlexedSection
-                    heading={page.intelligentInsuranceDIPageCustomField.intelligentSection3.sectionHeading}
-                    color={page.intelligentInsuranceDIPageCustomField.intelligentSection3.sectionColor}
+                    heading={page.intelligentInsuranceDIPageCustomField.intelligentDiSection3.sectionHeading}
+                    color={page.intelligentInsuranceDIPageCustomField.intelligentDiSection3.sectionColor}
                 />
                 </FlexedSectionContainer>
                 <div className="shop-card-container" style={{ background: 'rgb(244, 250, 253)' }}>
@@ -154,42 +154,42 @@ const IntelligentDentalPage = () => {
 
 {/* How we help */}
             <FlexedSection
-                heading={page.intelligentInsuranceDIPageCustomField.intelligentSection4.sectionHeading}
-                color={page.intelligentInsuranceDIPageCustomField.intelligentSection4.color}
+                heading={page.intelligentInsuranceDIPageCustomField.intelligentDiSection4.sectionHeading}
+                color={page.intelligentInsuranceDIPageCustomField.intelligentDiSection4.color}
             >
                 <div className="list-container">
                 <List>
                     <ListItem
-                        heading={page.intelligentInsuranceDIPageCustomField.intelligentSection4.intelligentListItems.intelligentListItem1.heading}
+                        heading={page.intelligentInsuranceDIPageCustomField.intelligentDiSection4.intelligentListItems.intelligentListItem1.heading}
                     >
                         <div
                             dangerouslySetInnerHTML={{
-                                __html: page.intelligentInsuranceDIPageCustomField.intelligentSection4.intelligentListItems.intelligentListItem1.content,
+                                __html: page.intelligentInsuranceDIPageCustomField.intelligentDiSection4.intelligentListItems.intelligentListItem1.content,
                             }}
                         />
                     </ListItem>
                     <ListItem
-                        heading={page.intelligentInsuranceDIPageCustomField.intelligentSection4.intelligentListItems.intelligentListItem2.heading}
+                        heading={page.intelligentInsuranceDIPageCustomField.intelligentDiSection4.intelligentListItems.intelligentListItem2.heading}
                     >
                         <div
                             dangerouslySetInnerHTML={{
-                                __html: page.intelligentInsuranceDIPageCustomField.intelligentSection4.intelligentListItems.intelligentListItem2.content,
+                                __html: page.intelligentInsuranceDIPageCustomField.intelligentDiSection4.intelligentListItems.intelligentListItem2.content,
                             }}
                         />
                     </ListItem>
                     <ListItem
-                        heading={page.intelligentInsuranceDIPageCustomField.intelligentSection4.intelligentListItems.intelligentListItem3.heading}
+                        heading={page.intelligentInsuranceDIPageCustomField.intelligentDiSection4.intelligentListItems.intelligentListItem3.heading}
                     >
                         <div
                             dangerouslySetInnerHTML={{
-                                __html: page.intelligentInsuranceDIPageCustomField.intelligentSection4.intelligentListItems.intelligentListItem3.content,
+                                __html: page.intelligentInsuranceDIPageCustomField.intelligentDiSection4.intelligentListItems.intelligentListItem3.content,
                             }}
                         />
                     </ListItem>
                 </List>
-                <a href={page.intelligentInsuranceDIPageCustomField.intelligentSection4.sectionCta.link} onClick={routeLink}>
+                <a href={page.intelligentInsuranceDIPageCustomField.intelligentDiSection4.sectionCta.link} onClick={routeLink}>
                     <Button background="accent-alt" border="light" color="light">
-                        {page.intelligentInsuranceDIPageCustomField.intelligentSection4.sectionCta.text}
+                        {page.intelligentInsuranceDIPageCustomField.intelligentDiSection4.sectionCta.text}
                     </Button>
                 </a>
                 </div>
@@ -198,35 +198,35 @@ const IntelligentDentalPage = () => {
 
             {/* learn more portion */}
             <Section
-                color={page.intelligentInsuranceDIPageCustomField.intelligentSection5.color}
-                heading={page.intelligentInsuranceDIPageCustomField.intelligentSection5.sectionHeading}>
+                color={page.intelligentInsuranceDIPageCustomField.intelligentDiSection5.color}
+                heading={page.intelligentInsuranceDIPageCustomField.intelligentDiSection5.sectionHeading}>
                 <RelatedContent />
                 {(!hasChildren) ? (
                     <Cards relatedContent={true}>
                         <Card
-                            image={page.intelligentInsuranceDIPageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent1.image.sourceUrl}
-                            title={page.intelligentInsuranceDIPageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent1.heading}
-                            link={page.intelligentInsuranceDIPageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent1.link}>
-                            <p dangerouslySetInnerHTML={{ __html: page?.intelligentInsuranceDIPageCustomField?.intelligentSection5?.intelligentRelatedContent?.intelligentRelatedContent1?.content }} />
+                            image={page.intelligentInsuranceDIPageCustomField.intelligentDiSection5.intelligentRelatedContent.intelligentRelatedContent1.image.sourceUrl}
+                            title={page.intelligentInsuranceDIPageCustomField.intelligentDiSection5.intelligentRelatedContent.intelligentRelatedContent1.heading}
+                            link={page.intelligentInsuranceDIPageCustomField.intelligentDiSection5.intelligentRelatedContent.intelligentRelatedContent1.link}>
+                            <p dangerouslySetInnerHTML={{ __html: page?.intelligentInsuranceDIPageCustomField?.intelligentDiSection5?.intelligentRelatedContent?.intelligentRelatedContent1?.content }} />
                         </Card>
                         <Card
-                            image={page.intelligentInsuranceDIPageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent2.image.sourceUrl}
-                            title={page.intelligentInsuranceDIPageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent2.heading}
-                            link={page.intelligentInsuranceDIPageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent2.link}>
-                            <p dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceDIPageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent2.content }} />
+                            image={page.intelligentInsuranceDIPageCustomField.intelligentDiSection5.intelligentRelatedContent.intelligentRelatedContent2.image.sourceUrl}
+                            title={page.intelligentInsuranceDIPageCustomField.intelligentDiSection5.intelligentRelatedContent.intelligentRelatedContent2.heading}
+                            link={page.intelligentInsuranceDIPageCustomField.intelligentDiSection5.intelligentRelatedContent.intelligentRelatedContent2.link}>
+                            <p dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceDIPageCustomField.intelligentDiSection5.intelligentRelatedContent.intelligentRelatedContent2.content }} />
                         </Card>
                         <Card
-                            image={page.intelligentInsuranceDIPageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent3.image.sourceUrl}
-                            title={page.intelligentInsuranceDIPageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent3.heading}
-                            link={page.intelligentInsuranceDIPageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent3.link}>
-                            <p dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceDIPageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent3.content }} />
+                            image={page.intelligentInsuranceDIPageCustomField.intelligentDiSection5.intelligentRelatedContent.intelligentRelatedContent3.image.sourceUrl}
+                            title={page.intelligentInsuranceDIPageCustomField.intelligentDiSection5.intelligentRelatedContent.intelligentRelatedContent3.heading}
+                            link={page.intelligentInsuranceDIPageCustomField.intelligentDiSection5.intelligentRelatedContent.intelligentRelatedContent3.link}>
+                            <p dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceDIPageCustomField.intelligentDiSection5.intelligentRelatedContent.intelligentRelatedContent3.content }} />
                         </Card>
                     </Cards>
                 ) : null}
                 <div className="full-rounded" style={{ textAlign: "center" }}>
-                    <a href={page.intelligentInsuranceDIPageCustomField.intelligentSection5.cta.link} onClick={routeLink}>
+                    <a href={page.intelligentInsuranceDIPageCustomField.intelligentDiSection5.cta.link} onClick={routeLink}>
                         <Button background="accent-alt" border="light" color="light">
-                            {page.intelligentInsuranceDIPageCustomField.intelligentSection5.cta.text}
+                            {page.intelligentInsuranceDIPageCustomField.intelligentDiSection5.cta.text}
                         </Button>
                     </a>
                 </div>

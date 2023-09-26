@@ -28,8 +28,8 @@ import PhoneIcon from "../../../static/images/phone-icon.png"
 
 const IntelligentGIJPage = () => {
     const { page } = useIntelligentGIJPageQuery();
-    const plans = page.intelligentInsuranceGIJPageCustomField.intelligentSection3.intelligentCards;
-    const options = page.intelligentInsuranceGIJPageCustomField.intelligentSection1.options;
+    const plans = page.intelligentInsuranceGIJPageCustomField.intelligentGijSection3.intelligentCards;
+    const options = page.intelligentInsuranceGIJPageCustomField.intelligentGijSection1.options;
     const [hasChildren, setHasChildren] = useState(false);
 
     useEffect(() => {
@@ -57,13 +57,13 @@ const IntelligentGIJPage = () => {
                 <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
                 <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
                 <a
-                    href={page.intelligentInsuranceGIJPageCustomField.intelligentSection2.columns.column3.button.link}
+                    href={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection2.columns.column3.button.link}
                     onClick={routeLink}
                 >
                     <Button background="accent-alt" border="light" color="light">
                         <div className="button-content">
                     <img src={PhoneIcon} />
-                    {page.intelligentInsuranceGIJPageCustomField.intelligentSection2.columns.column3.button.text}
+                    {page.intelligentInsuranceGIJPageCustomField.intelligentGijSection2.columns.column3.button.text}
                     </div>
                     </Button>
                 </a>
@@ -71,9 +71,9 @@ const IntelligentGIJPage = () => {
             {/* Explore options  */}
 
             <FlexedSection
-                color={page.intelligentInsuranceGIJPageCustomField.intelligentSection1.color}
-                heading={page.intelligentInsuranceGIJPageCustomField.intelligentSection1.heading}>
-                <h4 dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceGIJPageCustomField.intelligentSection1.intelligentSectionSubheading }} />
+                color={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection1.color}
+                heading={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection1.heading}>
+                <h4 dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceGIJPageCustomField.intelligentGijSection1.intelligentSectionSubheading }} />
             </FlexedSection>
             {/* 5 cards */}
             <div className="card-container" style={{ background: 'rgb(244, 250, 253)' }}>
@@ -96,22 +96,22 @@ const IntelligentGIJPage = () => {
             </div>
 
             {/* we're here to help  */}
-            <Medial color={page.intelligentInsuranceGIJPageCustomField.intelligentSection2.color}>
+            <Medial color={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection2.color}>
                 <img
                     className="chat-bubble"
-                    src={page.intelligentInsuranceGIJPageCustomField.intelligentSection2.columns.column1.image.sourceUrl}
+                    src={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection2.columns.column1.image.sourceUrl}
                     alt="Chat bubble icon"
                 />
-                <div className="medial-header" dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceGIJPageCustomField.intelligentSection2.columns.column2.heading }} />
-                <div dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceGIJPageCustomField.intelligentSection2.subText }} />
+                <div className="medial-header" dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceGIJPageCustomField.intelligentGijSection2.columns.column2.heading }} />
+                <div dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceGIJPageCustomField.intelligentGijSection2.subText }} />
                 <a
-                    href={page.intelligentInsuranceGIJPageCustomField.intelligentSection2.columns.column3.button.link}
+                    href={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection2.columns.column3.button.link}
                     onClick={routeLink}
                 >
                     <div className="help-button-container">
                     <Button background="accent-alt" border="light" color="light">
                         <div className="help-button-content">
-                    <img className="help-button-content" src={PhoneIcon} />{page.intelligentInsuranceGIJPageCustomField.intelligentSection2.columns.column3.button.text}
+                    <img className="help-button-content" src={PhoneIcon} />{page.intelligentInsuranceGIJPageCustomField.intelligentGijSection2.columns.column3.button.text}
                     </div>
                     </Button>
                     </div>
@@ -123,8 +123,8 @@ const IntelligentGIJPage = () => {
             {/* Three cards */}
                 <FlexedSectionContainer>
                 <FlexedSection
-                    heading={page.intelligentInsuranceGIJPageCustomField.intelligentSection3.sectionHeading}
-                    color={page.intelligentInsuranceGIJPageCustomField.intelligentSection3.sectionColor}
+                    heading={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection3.sectionHeading}
+                    color={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection3.sectionColor}
                 />
                 </FlexedSectionContainer>
                 <div className="shop-card-container" style={{ background: 'rgb(244, 250, 253)' }}>
@@ -154,42 +154,42 @@ const IntelligentGIJPage = () => {
 
 {/* How we help */}
             <FlexedSection
-                heading={page.intelligentInsuranceGIJPageCustomField.intelligentSection4.sectionHeading}
-                color={page.intelligentInsuranceGIJPageCustomField.intelligentSection4.color}
+                heading={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection4.sectionHeading}
+                color={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection4.color}
             >
                 <div className="list-container">
                 <List>
                     <ListItem
-                        heading={page.intelligentInsuranceGIJPageCustomField.intelligentSection4.intelligentListItems.intelligentListItem1.heading}
+                        heading={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection4.intelligentListItems.intelligentListItem1.heading}
                     >
                         <div
                             dangerouslySetInnerHTML={{
-                                __html: page.intelligentInsuranceGIJPageCustomField.intelligentSection4.intelligentListItems.intelligentListItem1.content,
+                                __html: page.intelligentInsuranceGIJPageCustomField.intelligentGijSection4.intelligentListItems.intelligentListItem1.content
                             }}
                         />
                     </ListItem>
                     <ListItem
-                        heading={page.intelligentInsuranceGIJPageCustomField.intelligentSection4.intelligentListItems.intelligentListItem2.heading}
+                        heading={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection4.intelligentListItems.intelligentListItem2.heading}
                     >
                         <div
                             dangerouslySetInnerHTML={{
-                                __html: page.intelligentInsuranceGIJPageCustomField.intelligentSection4.intelligentListItems.intelligentListItem2.content,
+                                __html: page.intelligentInsuranceGIJPageCustomField.intelligentGijSection4.intelligentListItems.intelligentListItem2.content
                             }}
                         />
                     </ListItem>
                     <ListItem
-                        heading={page.intelligentInsuranceGIJPageCustomField.intelligentSection4.intelligentListItems.intelligentListItem3.heading}
+                        heading={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection4.intelligentListItems.intelligentListItem3.heading}
                     >
                         <div
                             dangerouslySetInnerHTML={{
-                                __html: page.intelligentInsuranceGIJPageCustomField.intelligentSection4.intelligentListItems.intelligentListItem3.content,
+                                __html: page.intelligentInsuranceGIJPageCustomField.intelligentGijSection4.intelligentListItems.intelligentListItem3.content
                             }}
                         />
                     </ListItem>
                 </List>
-                <a href={page.intelligentInsuranceGIJPageCustomField.intelligentSection4.sectionCta.link} onClick={routeLink}>
+                <a href={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection4.sectionCta.link} onClick={routeLink}>
                     <Button background="accent-alt" border="light" color="light">
-                        {page.intelligentInsuranceGIJPageCustomField.intelligentSection4.sectionCta.text}
+                        {page.intelligentInsuranceGIJPageCustomField.intelligentGijSection4.sectionCta.text}
                     </Button>
                 </a>
                 </div>
@@ -198,35 +198,35 @@ const IntelligentGIJPage = () => {
 
             {/* learn more portion */}
             <Section
-                color={page.intelligentInsuranceGIJPageCustomField.intelligentSection5.color}
-                heading={page.intelligentInsuranceGIJPageCustomField.intelligentSection5.sectionHeading}>
+                color={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.color}
+                heading={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.sectionHeading}>
                 <RelatedContent />
                 {(!hasChildren) ? (
                     <Cards relatedContent={true}>
                         <Card
-                            image={page.intelligentInsuranceGIJPageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent1.image.sourceUrl}
-                            title={page.intelligentInsuranceGIJPageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent1.heading}
-                            link={page.intelligentInsuranceGIJPageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent1.link}>
-                            <p dangerouslySetInnerHTML={{ __html: page?.intelligentInsuranceGIJPageCustomField?.intelligentSection5?.intelligentRelatedContent?.intelligentRelatedContent1?.content }} />
+                            image={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent1.image.sourceUrl}
+                            title={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent1.heading}
+                            link={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent1.link}>
+                            <p dangerouslySetInnerHTML={{ __html: page?.intelligentInsuranceGIJPageCustomField?.intelligentGijSection5?.intelligentRelatedContent?.intelligentRelatedContent1?.content }} />
                         </Card>
                         <Card
-                            image={page.intelligentInsuranceGIJPageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent2.image.sourceUrl}
-                            title={page.intelligentInsuranceGIJPageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent2.heading}
-                            link={page.intelligentInsuranceGIJPageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent2.link}>
-                            <p dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceGIJPageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent2.content }} />
+                            image={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent2.image.sourceUrl}
+                            title={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent2.heading}
+                            link={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent2.link}>
+                            <p dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent2.content }} />
                         </Card>
                         <Card
-                            image={page.intelligentInsuranceGIJPageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent3.image.sourceUrl}
-                            title={page.intelligentInsuranceGIJPageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent3.heading}
-                            link={page.intelligentInsuranceGIJPageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent3.link}>
-                            <p dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceGIJPageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent3.content }} />
+                            image={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent3.image.sourceUrl}
+                            title={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent3.heading}
+                            link={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent3.link}>
+                            <p dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent3.content }} />
                         </Card>
                     </Cards>
                 ) : null}
                 <div className="full-rounded" style={{ textAlign: "center" }}>
-                    <a href={page.intelligentInsuranceintelligentInsuranceGIJPageCustomFieldnceDIPageCustomField.intelligentSection5.cta.link} onClick={routeLink}>
+                    <a href={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.cta.link} onClick={routeLink}>
                         <Button background="accent-alt" border="light" color="light">
-                            {page.intelligentInsuranceGIJPageCustomField.intelligentSection5.cta.text}
+                            {page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.cta.text}
                         </Button>
                     </a>
                 </div>
