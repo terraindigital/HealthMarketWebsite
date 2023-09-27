@@ -9,6 +9,10 @@ export const changeTextSize = (el) => {
   }
 }
 
+export const isValidZip = (zip: string) => {
+  return /^[0-9]{5}(?:-[0-9]{4})?$/.test(zip);
+}
+
 export const toggleSearch = () => {
   const searchBox = document.querySelector('.search-box')
   const header = document.querySelector('.site-header')
@@ -286,6 +290,9 @@ export const hmAnalytics = () => {
   document.cookie = cookie;
 }
 
+/**
+ * @deprecated apparently this function is no longer needed.
+ */
 export const sendForm = (e) => {
   // prevent the form from submitting before we add our pieces
   e.preventDefault();

@@ -61,6 +61,10 @@ export const PageStyles = css`
 
   .hero .cta-phone {
     max-width: 820px;
+
+    span a {
+      text-decoration: none;
+    }
   }
 
   .hero #zipCodeForm > div:first-of-type {
@@ -93,9 +97,6 @@ export const PageStyles = css`
   }
 
   .hero #zipCodeForm {
-    div.geocode {
-      width: 100%;
-
       .input.group {
         width: 100%;
 
@@ -104,7 +105,6 @@ export const PageStyles = css`
           width: 100%;
         }
       }
-    }
   } 
 
   @media only screen and (max-width: 788px) {
@@ -213,8 +213,9 @@ export const PageStyles = css`
         filter: none;
       }
 
-      span {
+      span, span a {
         color: var(--color-dark);
+        text-decoration: none;
       }
     }
 

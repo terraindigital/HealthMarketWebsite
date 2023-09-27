@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
         img {
           filter: brightness(0) invert(1)
         }
-        span p {
+        span p, span p a {
           color: var(--color-light);
         }
       }
@@ -37,6 +37,14 @@ display: none;
 
 @media only screen and (max-width: 620px) {
   display: block;
+}
+`
+
+export const HideOnMobileWrapper = styled.div`
+display: block;
+
+@media only screen and (max-width: 620px) {
+  display: none;
 }
 `
 
@@ -227,5 +235,39 @@ export const CTA = styled.div`
       margin-top: 5px;
       max-height: 18px;
     }
+  }
+`
+
+
+export const CallButton = styled.a`
+  background-color: ${props => `var(--color-${props.background})`};
+  border: 2px solid ${props => `var(--color-${props.border})`};
+  color: ${props => `var(--color-${props.color})`};
+
+  border-radius: 4px;
+  font-size: 2.4rem;
+  font-weight: bold;
+  min-width: 33.3rem;
+  padding: 1.3rem 3.4rem;
+
+  // animations
+  transition: all 0.22s ease-in-out;
+
+  &:hover {
+    background-color: ${props => props.border !== 'light' ? `var(--color-${props.border})` : `var(--color-accent)`};
+    color: var(--color-light);
+  }
+
+  @media only screen and (max-width: 1460px) {
+    font-size: 2rem;
+  }
+
+  @media only screen and (max-width: 788px) {
+    font-size: 1.8rem;
+  }
+
+  @media only screen and (max-width: 620px) {
+    font-size: 1.6rem;
+    min-width: 100%;
   }
 `
