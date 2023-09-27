@@ -75,7 +75,7 @@ const IntelligentPage = () => {
             </Hero>
             {/* Explore options  */}
 
-            { marketingRefCode === 'email_ILG_gen_health_tpX_HLT' ? 
+            { generalHealthPage ? 
             <>
             <FlexedSection
                 color={page.intelligentInsurancePageCustomField.intelligentSection1.color}
@@ -231,7 +231,7 @@ const IntelligentPage = () => {
 
 
             {/* learn more portion */}
-            { marketingRefCode === 'email_ILG_gen_health_tpX_HLT' ? 
+            { generalHealthPage ? 
             <>
             <Section
                 color={page.intelligentInsurancePageCustomField.intelligentSection5.color}
@@ -288,7 +288,7 @@ heading={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.sect
             <p dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent2.content }} />
         </Card>
         <Card
-            image={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent3.image.sourceUrl}
+          a  image={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent3.image.sourceUrl}
             title={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent3.heading}
             link={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent3.link}>
             <p dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent3.content }} />
