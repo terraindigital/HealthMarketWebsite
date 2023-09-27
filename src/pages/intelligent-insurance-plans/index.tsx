@@ -231,8 +231,41 @@ const IntelligentPage = () => {
 
 
             {/* learn more portion */}
-            { generalHealthPage ? 
-            <>
+            { !generalHealthPage ? 
+
+<Section
+color={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.color}
+heading={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.sectionHeading}>
+<RelatedContent />
+    <Cards>
+        <Card
+            image="https://hmnm2022.wpengine.com/wp-content/uploads/2023/04/final-expense-hero-desktop.png"
+            title="Compare final expense insurance plans"
+            link="https://www.healthmarkets.com/life-insurance/final-expense-insurance">
+            <p className="content-description">Cover funeral and burial expenses so your family won't have to.</p>
+        </Card>
+        <Card
+            image="https://hmnm2022.wpengine.com/wp-content/uploads/2023/09/image-53-2.png"
+            title="Set your sights on an affordable vision plan"
+            link="https://www.healthmarkets.com/vision-insurance/">
+            <p className="content-description">Shop vision plans to see what’s right for you.</p>
+        </Card>
+        <Card
+          image="https://hmnm2022.wpengine.com/wp-content/uploads/2023/09/GettyImages-1074886550-copy-scaled-e1695160474267.jpeg"
+          title="Looking for individual health insurance?"
+          link="https://www.healthmarkets.com/health-insurance/individual/">
+          <p className="content-description">We can help find a plan that works for you.</p>
+        </Card>
+    </Cards>
+<div className="full-rounded" style={{ textAlign: "center" }}>
+    <a href={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.cta.link} onClick={routeLink}>
+        <Button background="accent-alt" border="light" color="light">
+            {page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.cta.text}
+        </Button>
+    </a>
+</div>
+</Section> :
+ <>
             <Section
                 color={page.intelligentInsurancePageCustomField.intelligentSection5.color}
                 heading={page.intelligentInsurancePageCustomField.intelligentSection5.sectionHeading}>
@@ -267,43 +300,8 @@ const IntelligentPage = () => {
                     </a>
                 </div>
             </Section>
-            </> :
-<>
-<Section
-color={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.color}
-heading={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.sectionHeading}>
-<RelatedContent />
-{(!hasChildren) ? (
-    <Cards relatedContent={true}>
-        <Card
-            image={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent1.image.sourceUrl}
-            title={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent1.heading}
-            link={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent1.link}>
-            <p dangerouslySetInnerHTML={{ __html: page?.intelligentInsuranceGIJPageCustomField?.intelligentGijSection5?.intelligentRelatedContent?.intelligentRelatedContent1?.content }} />
-        </Card>
-        <Card
-            image={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent2.image.sourceUrl}
-            title={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent2.heading}
-            link={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent2.link}>
-            <p dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent2.content }} />
-        </Card>
-        <Card
-          a  image={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent3.image.sourceUrl}
-            title={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent3.heading}
-            link={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent3.link}>
-            <p dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent3.content }} />
-        </Card>
-    </Cards>
-) : null}
-<div className="full-rounded" style={{ textAlign: "center" }}>
-    <a href={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.cta.link} onClick={routeLink}>
-        <Button background="accent-alt" border="light" color="light">
-            {page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.cta.text}
-        </Button>
-    </a>
-</div>
-</Section>
-</> }
+            </> 
+}
             <Footer>  {/* I'm guessing you wanted Footer inside Layout */}
                 {page.disclaimers.disclaimer}
             </Footer>
