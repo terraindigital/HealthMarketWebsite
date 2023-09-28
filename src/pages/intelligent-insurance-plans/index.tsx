@@ -230,50 +230,64 @@ const IntelligentPage = () => {
             </FlexedSection>
 
 
-            {/* learn more portion */}
+         {/* learn more portion */}
+         { generalHealthPage ? 
+            <>
             <Section
+                color={page.intelligentInsurancePageCustomField.intelligentSection5.color}
+                heading={page.intelligentInsurancePageCustomField.intelligentSection5.sectionHeading}>
+                    <Cards>
+                        <Card
+                            image={page.intelligentInsurancePageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent1.image.sourceUrl}
+                            title={page.intelligentInsurancePageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent1.heading}
+                            link={page.intelligentInsurancePageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent1.link}>
+                            <p dangerouslySetInnerHTML={{ __html: page?.intelligentInsurancePageCustomField?.intelligentSection5?.intelligentRelatedContent?.intelligentRelatedContent1?.content }} />
+                        </Card>
+                        <Card
+                            image={page.intelligentInsurancePageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent2.image.sourceUrl}
+                            title={page.intelligentInsurancePageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent2.heading}
+                            link={page.intelligentInsurancePageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent2.link}>
+                            <p dangerouslySetInnerHTML={{ __html: page.intelligentInsurancePageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent2.content }} />
+                        </Card>
+                        <Card
+                            image={page.intelligentInsurancePageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent3.image.sourceUrl}
+                            title={page.intelligentInsurancePageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent3.heading}
+                            link={page.intelligentInsurancePageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent3.link}>
+                            <p dangerouslySetInnerHTML={{ __html: page.intelligentInsurancePageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent3.content }} />
+                        </Card>
+                    </Cards>
+                <div className="full-rounded" style={{ textAlign: "center" }}>
+                    <a href={page.intelligentInsurancePageCustomField.intelligentSection5.cta.link} onClick={routeLink}>
+                        <Button background="accent-alt" border="light" color="light">
+                            {page.intelligentInsurancePageCustomField.intelligentSection5.cta.text}
+                        </Button>
+                    </a>
+                </div>
+            </Section>
+            </> :
+<Section
 color={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.color}
 heading={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.sectionHeading}>
     <Cards>
-            { generalHealthPage ? 
-
-<><Card
-image="https://hmnm2022.wpengine.com/wp-content/uploads/2023/08/related-content-1-300x181-1.png"
-title="What Is The Affordable Care Act?"
-link="https://www.healthmarkets.com/aca-insurance-plans/">
-<p className="content-description">What is the Affordable Care Act? HealthMarkets can answer this question and others that you may have about health insurance. </p>
-</Card><Card
-image="https://hmnm2022.wpengine.com/wp-content/uploads/2022/10/couple-snuggled.jpg"
-title="What Does Basic Health Insurance Cost?"
-link="https://www.healthmarkets.com/resources/health-insurance/health-insurance-guide/">
-    <p className="content-description">Shopping for healthcare can be time-consuming and feel overwhelming. And one frustrating part can be figuring out what health insurance might cost. There’s no one-size-fits-all answer...</p>
-</Card><Card
-    image="https://hmnm2022.wpengine.com/wp-content/uploads/2022/10/woman-on-smartwatch.jpg"
-    title="Picking a Healthcare Plan?"
-    link="https://www.healthmarkets.com/resources/health-insurance/insurance-agent-aca/">
-    <p className="content-description">Knowing that your healthcare costs are covered for the year ahead can be a big relief. Thankfully, millions of Americans have access to health insurance through the Affordable Care Act (ACA).</p>
-</Card></>
-
-:
-                        <><Card
-                            image="https://hmnm2022.wpengine.com/wp-content/uploads/2023/04/final-expense-hero-desktop.png"
-                            title="Compare final expense insurance plans"
-                            link="https://www.healthmarkets.com/life-insurance/final-expense-insurance">
-                            <p className="content-description">Cover funeral and burial expenses so your family won't have to.</p>
-                        </Card><Card
-                            image="https://hmnm2022.wpengine.com/wp-content/uploads/2023/09/image-53-2.png"
-                            title="Set your sights on an affordable vision plan"
-                            link="https://www.healthmarkets.com/vision-insurance/">
-                                <p className="content-description">Shop vision plans to see what’s right for you.</p>
-                            </Card><Card
-                                image="https://hmnm2022.wpengine.com/wp-content/uploads/2023/09/GettyImages-1074886550-copy-scaled-e1695160474267.jpeg"
-                                title="Looking for individual health insurance?"
-                                link="https://www.healthmarkets.com/health-insurance/individual/">
-                                <p className="content-description">We can help find a plan that works for you.</p>
-                            </Card></>
-
-            }
-</Cards>
+        <Card
+            image={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent1.image.sourceUrl}
+            title={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent1.heading}
+            link={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent1.link}>
+            <p dangerouslySetInnerHTML={{ __html: page?.intelligentInsuranceGIJPageCustomField?.intelligentGijSection5?.intelligentRelatedContent?.intelligentRelatedContent1?.content }} />
+        </Card>
+        <Card
+            image={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent2.image.sourceUrl}
+            title={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent2.heading}
+            link={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent2.link}>
+            <p dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent2.content }} />
+        </Card>
+        <Card
+            image={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent3.image.sourceUrl}
+            title={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent3.heading}
+            link={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent3.link}>
+            <p dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent3.content }} />
+        </Card>
+    </Cards>
 <div className="full-rounded" style={{ textAlign: "center" }}>
     <a href={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.cta.link} onClick={routeLink}>
         <Button background="accent-alt" border="light" color="light">
@@ -281,7 +295,7 @@ link="https://www.healthmarkets.com/resources/health-insurance/health-insurance-
         </Button>
     </a>
 </div>
-</Section>
+</Section> }
             <Footer>  {/* I'm guessing you wanted Footer inside Layout */}
                 {page.disclaimers.disclaimer}
             </Footer>

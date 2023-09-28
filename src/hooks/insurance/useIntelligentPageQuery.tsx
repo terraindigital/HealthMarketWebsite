@@ -229,6 +229,32 @@ export const useIntelligentPageQuery = () => {
           intelligentSection5 {
             sectionHeading
             color
+            intelligentRelatedContent {
+              intelligentRelatedContent1 {
+                image {
+                    sourceUrl
+                }
+                heading
+                content
+                link
+              }
+              intelligentRelatedContent2 {
+                image {
+                    sourceUrl
+                }
+                heading
+                content
+                link
+              }
+              intelligentRelatedContent3 {
+                image {
+                    sourceUrl
+                }
+                heading
+                content
+                link
+              }
+            }
             cta {
               link
               text
