@@ -14,11 +14,6 @@ export const PageStyles = css`
   display: none;
 }
 
-#zipCodeForm .cta-phone p a {
-  text-decoration: none;
-  font-weight: 400;
-}
-
 .hero > div:last-of-type > div:last-of-type {
     display: flex;
 
