@@ -1,5 +1,5 @@
 // Library
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, FormEventHandler, useEffect, useState } from "react";
 import { useLocation } from '@reach/router';
 
 // Styles
@@ -16,6 +16,7 @@ import {
 
 // Scripts
 import {
+  isValidZip,
   toggleForm,
   sendForm
 } from "../../../static/scripts/global"
@@ -23,6 +24,7 @@ import {
 // Components
 import Button from "../../Buttons/Button"
 import AutocompleteField from "../../Inputs/Geocode/AutocompleteField";
+import ZipInput from "../../Inputs/ZipInput";
 
 // Images
 import PhoneIcon from "../../../static/images/phone-icon.png"
@@ -96,9 +98,17 @@ const [secondButtonActive, setSecondButtonActive] = useState(true);
   }
 }
 
+const [zip, setZip] = useState('');
+
+const onSubmitForm: FormEventHandler<HTMLFormElement> = (event) => {
+  event.preventDefault();
+  const redirectUrl = `${plans}?zip=${zip}`;
+  window.location.assign(redirectUrl);
+};
+
   return (
     <Wrapper className={`${(centered) ? `centered` : ``} ${(light) ? `light` : ``}`} {...rest}>
-      <Form id="zipCodeForm" action={plans} autocomplete="off" onSubmit={(e) => { sendForm(e) }}>
+      <Form id="zipCodeForm" action={plans} autoComplete="off" onSubmit={onSubmitForm}>
     { useLocation()?.pathname !== finalExpense ? 
         <>
         {(buttons || buttons === undefined) ? (
@@ -111,13 +121,13 @@ const [secondButtonActive, setSecondButtonActive] = useState(true);
             </Radio>
           </Buttons>
         ) : null}
-        <AutocompleteField />
+        <ZipInput zip={zip} setZip={setZip}/>
         <div id="zipCodeField" className="hidden-inputs">
           <input type="hidden" id="zipCode" value="" />
           <input type="hidden" id="county" value="" />
         </div>
         <Footer>
-          <Button style={{borderRadius: "4px"}} background="accent-alt" border="light" color="light">Search</Button>
+        <Button style={{borderRadius: "4px"}} background="accent-alt" border="light" color="light" disabled={!isValidZip(zip)}>Search</Button>
           {(!hideFooter || hideFooter === undefined) ? (
             <CTA>
               <img src={PhoneIcon} />
