@@ -231,6 +231,7 @@ const IntelligentPage = () => {
 
 
          {/* learn more portion */}
+         <div className="related-content">
          { generalHealthPage ? 
             <>
             <Section
@@ -296,6 +297,7 @@ heading={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.sect
     </a>
 </div>
 </Section> }
+</div>
             <Footer>  {/* I'm guessing you wanted Footer inside Layout */}
                 {page.disclaimers.disclaimer}
             </Footer>
