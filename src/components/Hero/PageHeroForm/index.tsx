@@ -1,6 +1,6 @@
 // Library
 import React, { FC, FormEventHandler, useEffect, useState } from "react";
-import { useLocation } from '@reach/router';
+import { useLocation, navigate } from '@reach/router';
 
 // Styles
 import {
@@ -18,12 +18,10 @@ import {
 import {
   isValidZip,
   toggleForm,
-  sendForm
 } from "../../../static/scripts/global"
 
 // Components
 import Button from "../../Buttons/Button"
-import AutocompleteField from "../../Inputs/Geocode/AutocompleteField";
 import ZipInput from "../../Inputs/ZipInput";
 
 // Images
@@ -37,20 +35,31 @@ interface Props {
   inputId: string,
   buttons?: boolean,
   footerContent: string,
-  hideFooter?: boolean
+  hideFooter?: boolean,
+  whiteText?: boolean
 }
 
 // set geocode earth api key
 const api_key = 'ge-8876b9780ea0871d';
 
-// set the urls to change the form action to
-const plans = "https://shop.healthmarkets.com/en/about-me/info/";
-const agents = "/local-health-insurance-agent/search/";
-const finalExpense = "/life-insurance/final-expense-insurance/"
+const PageHeroForm: FC<Props> = ({ centered, light, whiteText, btnLeftText, btnRightText, inputId, buttons, footerContent, hideFooter,...rest  }) => {
+const [firstButtonActive, setFirstButtonActive] = useState(true);
+const [secondButtonActive, setSecondButtonActive] = useState(false);
 
-const PageHeroForm: FC<Props> = ({ centered, light, btnLeftText, btnRightText, inputId, buttons, footerContent, hideFooter,...rest  }) => {
-const [firstButtonActive, setFirstButtonActive] = useState(false);
-const [secondButtonActive, setSecondButtonActive] = useState(true);
+// set the urls to change the form action to
+const location = useLocation();
+let plans: string;
+const agents = "/local-health-insurance-agent/search/?query=";
+let agentsFilterAppend: string;
+if (location.pathname.includes("medicare")) {
+  plans = "https://healthmarkets6.destinationrx.com/pc/2023/shopping/home";
+  agentsFilterAppend = "&filter=medicare";
+} else {
+  plans = "https://shop.healthmarkets.com/en/about-me/info/";
+  agentsFilterAppend = "";
+}
+const finalExpense = "/life-insurance/final-expense-insurance";
+
 
 // these functions and conditionals will serve as temporary measures until all pages have been redesigned to reflect the updated requirements for this component
 
@@ -81,14 +90,13 @@ const [secondButtonActive, setSecondButtonActive] = useState(true);
   } else if (secondButtonActive) {
     return (
       <>
-      <AutocompleteField />
       <div id="zipCodeField" className="hidden-inputs">
           <input type="hidden" id="zipCode" value="" />
           <input type="hidden" id="county" value="" />
         </div>
         <Footer>
           <Button style={{borderRadius: "4px"}} background="accent-alt" border="light" color="light"><div className="mobile-button">Search</div><div className="desktop-button">Find a licensed insurance agent</div></Button>
-          <CTA>
+          <CTA className="cta-phone">
               <img src={PhoneIcon} />
               <span dangerouslySetInnerHTML={{ __html: footerContent }} />
             </CTA>
@@ -98,25 +106,31 @@ const [secondButtonActive, setSecondButtonActive] = useState(true);
   }
 }
 
-const [zip, setZip] = useState('');
+  const [zip, setZip] = useState('');
 
-const onSubmitForm: FormEventHandler<HTMLFormElement> = (event) => {
-  event.preventDefault();
-  const redirectUrl = `${plans}?zip=${zip}`;
-  window.location.assign(redirectUrl);
-};
+  const onSubmitForm: FormEventHandler<HTMLFormElement> = (event) => {
+    event.preventDefault();
+    let redirectUrl: string;
+    if (firstButtonActive && !location?.pathname?.includes(finalExpense)) {
+      redirectUrl = `${plans}?zip=${zip}`;
+    } else {
+      redirectUrl = `${agents}${zip}${agentsFilterAppend}`;
+    }
+    // debugger
+    navigate(redirectUrl);
+  };
 
   return (
-    <Wrapper className={`${(centered) ? `centered` : ``} ${(light) ? `light` : ``}`} {...rest}>
+    <Wrapper className={`${(centered) ? `centered` : ``} ${(light) ? `light` : ``} ${(whiteText) ? `white-text` : ``}`} {...rest}>
       <Form id="zipCodeForm" action={plans} autoComplete="off" onSubmit={onSubmitForm}>
-    { useLocation()?.pathname !== finalExpense ? 
+    { useLocation()?.pathname !== finalExpense ?
         <>
         {(buttons || buttons === undefined) ? (
           <Buttons>
-            <Radio onClick={toggleForm} className="accented">{btnLeftText}
+            <Radio onClick={onClickFirstButton} className="accented">{btnLeftText}
               <input id="radioSearchPlans" type="radio" value={plans} checked />
             </Radio>
-            <Radio onClick={toggleForm}>{btnRightText}
+            <Radio onClick={onClickSecondButton}>{btnRightText}
               <input id="radioSearchAgents" type="radio" value={agents} />
             </Radio>
           </Buttons>
@@ -127,9 +141,9 @@ const onSubmitForm: FormEventHandler<HTMLFormElement> = (event) => {
           <input type="hidden" id="county" value="" />
         </div>
         <Footer>
-        <Button style={{borderRadius: "4px"}} background="accent-alt" border="light" color="light" disabled={!isValidZip(zip)}>Search</Button>
+          <Button style={{borderRadius: "4px"}} background="accent-alt" border="light" color="light" disabled={!isValidZip(zip)}>Search</Button>
           {(!hideFooter || hideFooter === undefined) ? (
-            <CTA>
+            <CTA className="cta-phone">
               <img src={PhoneIcon} />
               <span dangerouslySetInnerHTML={{ __html: footerContent }} />
             </CTA>
