@@ -97,7 +97,7 @@ const MedicareAdvantagePage = () => {
             inputId="medicarePageHeroLocation"
             footerContent={page?.pageHeroFields?.callUs} />
         <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page?.medicareAdvantagePageCustomFields?.medicareAdvPostHeroDisclaimer }} />
-        <Countdown date={1696161600313}/>
+        <Countdown date={1697342400000}/>
       </Hero>
 
       {/* <HeroContainer>

@@ -1,6 +1,6 @@
 // Library
 import React, { FC, FormEventHandler, useEffect, useState } from "react";
-import { useLocation } from '@reach/router';
+import { useLocation, navigate } from '@reach/router';
 
 // Styles
 import {
@@ -44,14 +44,23 @@ interface Props {
 // set geocode earth api key
 const api_key = 'ge-8876b9780ea0871d';
 
-// set the urls to change the form action to
-const plans = "https://shop.healthmarkets.com/en/about-me/info/";
-const agents = "/local-health-insurance-agent/search/";
-const finalExpense = "/life-insurance/final-expense-insurance";
-
 const PageHeroForm: FC<Props> = ({ centered, light, whiteText, btnLeftText, btnRightText, inputId, buttons, footerContent, hideFooter,...rest  }) => {
 const [firstButtonActive, setFirstButtonActive] = useState(true);
 const [secondButtonActive, setSecondButtonActive] = useState(false);
+
+// set the urls to change the form action to
+const location = useLocation();
+let plans: string;
+const agents = "/local-health-insurance-agent/search/?query=";
+let agentsFilterAppend: string;
+if (location.pathname.includes("medicare")) {
+  plans = "https://healthmarkets6.destinationrx.com/pc/2023/shopping/home";
+  agentsFilterAppend = "&filter=medicare";
+} else {
+  plans = "https://healthmarkets6.destinationrx.com/pc/2023/shopping/home";
+  agentsFilterAppend = "";
+}
+const finalExpense = "/life-insurance/final-expense-insurance";
 
 // these functions and conditionals will serve as temporary measures until all pages have been redesigned to reflect the updated requirements for this component
 
@@ -103,19 +112,18 @@ const [secondButtonActive, setSecondButtonActive] = useState(false);
   const onSubmitForm: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
     let redirectUrl: string;
-    if (firstButtonActive && !window.location.pathname.includes(finalExpense)) {
+    if (firstButtonActive && !location?.pathname?.includes(finalExpense)) {
       redirectUrl = `${plans}?zip=${zip}`;
     } else {
-      redirectUrl = agents;
+      redirectUrl = `${agents}${zip}${agentsFilterAppend}`;
     }
-    // debugger
-    window.location.assign(redirectUrl);
+    navigate(redirectUrl);
   };
 
   return (
     <Wrapper className={`${(centered) ? `centered` : ``} ${(light) ? `light` : ``} ${(whiteText) ? `white-text` : ``}`} {...rest}>
       <Form id="zipCodeForm" action={plans} autoComplete="off" onSubmit={onSubmitForm}>
-    { !window.location.pathname.includes(finalExpense) ?
+    { !location?.pathname?.includes(finalExpense) ?
         <>
         {(buttons || buttons === undefined) ? (
           <Buttons>
