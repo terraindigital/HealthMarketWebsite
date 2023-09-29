@@ -82,7 +82,7 @@ const MedicareAdvantagePage = () => {
 
   return (
     <Layout pageClass="medicare-advantage">
-      <PageContainer>
+      <PageContainer className="medicare-advantage">
       <Global styles={PageStyles} />
       <Hero
         image={page?.pageHeroFields?.heroImage?.sourceUrl}
@@ -97,9 +97,7 @@ const MedicareAdvantagePage = () => {
             inputId="medicarePageHeroLocation"
             footerContent={page?.pageHeroFields?.callUs} />
         <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page?.medicareAdvantagePageCustomFields?.medicareAdvPostHeroDisclaimer }} />
-        <CountdownWrapper>
         <Countdown date={1696161600313}/>
-        </CountdownWrapper>
       </Hero>
 
       {/* <HeroContainer>
