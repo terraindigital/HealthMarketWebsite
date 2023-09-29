@@ -57,7 +57,7 @@ if (location.pathname.includes("medicare")) {
   plans = "https://healthmarkets6.destinationrx.com/pc/2023/shopping/home";
   agentsFilterAppend = "&filter=medicare";
 } else {
-  plans = "https://shop.healthmarkets.com/en/about-me/info/";
+  plans = "https://healthmarkets6.destinationrx.com/pc/2023/shopping/home";
   agentsFilterAppend = "";
 }
 const finalExpense = "/life-insurance/final-expense-insurance";

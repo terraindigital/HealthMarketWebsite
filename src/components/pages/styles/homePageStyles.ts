@@ -14,6 +14,11 @@ export const PageStyles = css`
   display: none;
 }
 
+#zipCodeForm .cta-phone p a {
+  text-decoration: none;
+  font-weight: 400;
+}
+
 .hero > div:last-of-type > div:last-of-type {
     display: flex;
 
@@ -81,7 +86,11 @@ export const PageStyles = css`
   #zipCodeForm .cta-phone {
     margin-top: 2em;
     margin-bottom: 2em;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
   }
+
 
   #zipCodeForm .geocode input {
     height: 105px;
@@ -125,5 +134,11 @@ color: var(--color-dark);
         padding: 1.2rem;
       }
     }
+  }
+
+  @media only screen and (min-width: 1025px) {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
   }
 `
