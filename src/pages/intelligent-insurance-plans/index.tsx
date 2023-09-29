@@ -230,15 +230,14 @@ const IntelligentPage = () => {
             </FlexedSection>
 
 
-            {/* learn more portion */}
-            { generalHealthPage ? 
+         {/* learn more portion */}
+         <div className="related-content">
+         { generalHealthPage ? 
             <>
             <Section
                 color={page.intelligentInsurancePageCustomField.intelligentSection5.color}
                 heading={page.intelligentInsurancePageCustomField.intelligentSection5.sectionHeading}>
-                <RelatedContent />
-                {(!hasChildren) ? (
-                    <Cards relatedContent={true}>
+                    <Cards>
                         <Card
                             image={page.intelligentInsurancePageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent1.image.sourceUrl}
                             title={page.intelligentInsurancePageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent1.heading}
@@ -258,7 +257,6 @@ const IntelligentPage = () => {
                             <p dangerouslySetInnerHTML={{ __html: page.intelligentInsurancePageCustomField.intelligentSection5.intelligentRelatedContent.intelligentRelatedContent3.content }} />
                         </Card>
                     </Cards>
-                ) : null}
                 <div className="full-rounded" style={{ textAlign: "center" }}>
                     <a href={page.intelligentInsurancePageCustomField.intelligentSection5.cta.link} onClick={routeLink}>
                         <Button background="accent-alt" border="light" color="light">
@@ -268,13 +266,10 @@ const IntelligentPage = () => {
                 </div>
             </Section>
             </> :
-<>
 <Section
 color={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.color}
 heading={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.sectionHeading}>
-<RelatedContent />
-{(!hasChildren) ? (
-    <Cards relatedContent={true}>
+    <Cards>
         <Card
             image={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent1.image.sourceUrl}
             title={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent1.heading}
@@ -288,13 +283,12 @@ heading={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.sect
             <p dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent2.content }} />
         </Card>
         <Card
-          a  image={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent3.image.sourceUrl}
+            image={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent3.image.sourceUrl}
             title={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent3.heading}
             link={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent3.link}>
             <p dangerouslySetInnerHTML={{ __html: page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.intelligentRelatedContent.intelligentRelatedContent3.content }} />
         </Card>
     </Cards>
-) : null}
 <div className="full-rounded" style={{ textAlign: "center" }}>
     <a href={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.cta.link} onClick={routeLink}>
         <Button background="accent-alt" border="light" color="light">
@@ -302,8 +296,8 @@ heading={page.intelligentInsuranceGIJPageCustomField.intelligentGijSection5.sect
         </Button>
     </a>
 </div>
-</Section>
-</> }
+</Section> }
+</div>
             <Footer>  {/* I'm guessing you wanted Footer inside Layout */}
                 {page.disclaimers.disclaimer}
             </Footer>

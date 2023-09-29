@@ -138,6 +138,14 @@ export const IntelligentStyles = css`
     margin-top: -2rem;
   }
 
+  .content-description {
+    text-align: center;
+  }
+
+  .related-content h4 {
+    color: #009FDA;
+  }
+
   @media only screen and (max-width: 1030px) {
     .hero .half {
       display: block;
