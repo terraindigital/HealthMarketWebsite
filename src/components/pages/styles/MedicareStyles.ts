@@ -40,7 +40,6 @@ export const PageStyles = css`
     max-width: 820px;
 
     span a {
-      text-decoration: none;
     }
   }
 
