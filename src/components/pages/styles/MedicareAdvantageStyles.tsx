@@ -257,6 +257,18 @@ export const PageStyles = css`
     }
   }
 
+  @media only screen and (min-width: 1025px) {
+    .Medicare-PD {
+      &> div:nth-of-type(2) {
+        &> div:nth-of-type(1) {
+          &> div:nth-of-type(1) {
+            max-width: none;
+          }
+        }
+      }
+    }
+  }
+
   @media only screen and (max-width: 1024px) {
     .hero {
       width: 100%;
