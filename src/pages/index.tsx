@@ -43,7 +43,7 @@ const IndexPage = ({path}: PageProps) => {
                 image={home.pageHeroFields.heroImage.sourceUrl}
                 mobileImage={home.pageHeroFields.mobileHeroImage.sourceUrl}
                 centered
-                bgColor="#CBCAD2" >
+                bgColor="#E7FBFF" >
                 <HeroHeading>{home.pageHeroFields.headline}</HeroHeading>
                 <HeroSubheading>{home.pageHeroFields.subheadline}</HeroSubheading>
                 <PageHeroForm
@@ -54,7 +54,7 @@ const IndexPage = ({path}: PageProps) => {
                     buttons
                     footerContent={home.pageHeroFields.callUs} />
                 <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: home.homePageCustomFields.heroDisclaimer }} />
-                <Countdown date={1696161600313}/>
+                <Countdown date={1697342400000}/>
             </Hero>
             <Section
                 heading={home.homePageCustomFields.homeSection1.heading}
