@@ -17,7 +17,8 @@ import {
   MedicareMedial,
   PageStyles,
   HeroHeading,
-  HeroSubheading
+  HeroSubheading,
+  CountdownWrapper
 } from "../../../components/pages/styles/MedicareAdvantageStyles";
 
 // Scripts
@@ -39,6 +40,7 @@ import styled from "@emotion/styled";
 import {BREAKPOINT_LG, BREAKPOINT_MD, BREAKPOINT_SM, BREAKPOINT_XL, NAV_STARTS_FLOATING} from "../../../breakpoints";
 import FlexedSection from "../../../components/Sections/FlexedSection";
 import Accordion from "../../../components/Accordions";
+import Countdown from "../../../components/Countdown";
 
 const StyledSvg = styled.svg`
   width: 16px;
@@ -80,7 +82,7 @@ const MedicareAdvantagePage = () => {
 
   return (
     <Layout pageClass="medicare-advantage">
-      <PageContainer>
+      <PageContainer className="medicare-advantage">
       <Global styles={PageStyles} />
       <Hero
         image={page?.pageHeroFields?.heroImage?.sourceUrl}
@@ -95,6 +97,7 @@ const MedicareAdvantagePage = () => {
             inputId="medicarePageHeroLocation"
             footerContent={page?.pageHeroFields?.callUs} />
         <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page?.medicareAdvantagePageCustomFields?.medicareAdvPostHeroDisclaimer }} />
+        <Countdown date={1697342400000}/>
       </Hero>
 
       {/* <HeroContainer>
