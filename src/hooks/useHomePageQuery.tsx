@@ -31,6 +31,7 @@ export const useHomePageQuery = () => {
           }
           headline
           subheadline
+          callUs
         }
         homePageCustomFields {
           homeSection1 {
@@ -165,6 +166,7 @@ export const useHomePageQuery = () => {
               text
             }
           }
+          heroDisclaimer
         }
         disclaimers {
           disclaimer

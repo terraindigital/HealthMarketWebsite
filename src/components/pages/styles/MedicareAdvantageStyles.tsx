@@ -47,11 +47,6 @@ export const PageStyles = css`
     padding-bottom: 0;
   }
 
-  .hero .half {
-    flex-basis: 50%;
-    width: 50%;
-  }
-
   .healthmarkets22 .accordion .title h2 {
     font-size: 36px;
   }
@@ -64,6 +59,50 @@ export const PageStyles = css`
     padding-top: 0;
   }
 
+  .hero .cta-phone {
+    max-width: 820px;
+  }
+
+  .hero #zipCodeForm > div:first-of-type {
+    width: 100%;
+
+    &> div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  @media only screen and (min-width: 1025px) {
+
+    .hero div.half {
+      flex-basis: 72%;
+      width: 72%;
+    }
+
+    .hero #zipCodeForm, .hero h4 {
+      width: 70%;
+    }
+
+    .hero #zipCodeForm div:first-of-type {
+      div {
+        min-width: 0px;
+        width: 50%;
+      }
+    }
+  }
+
+  .hero #zipCodeForm {
+      .input.group {
+        width: 100%;
+
+        input.geocode.input {
+          min-width: 0;
+          width: 100%;
+        }
+      }
+  } 
+
   @media only screen and (max-width: 788px) {
     .hero .half {
       display: block;
@@ -72,9 +111,9 @@ export const PageStyles = css`
       width: 100%;
     }
 
-    .hero > img {
-      bottom: -25rem !important;
+    .hero > img.show-at-mobile {
       object-position: bottom;
+      bottom: -8rem;
     }
 
     .hero + .section {
@@ -118,12 +157,133 @@ export const PageStyles = css`
       margin-left: 19px;
     }
   }
+
+  .medicare-advantage {
+
+    @media only screen and (max-width: 788px) {
+      div.flip-clock{
+        --fcc-label-color: #ffffff;
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      div.hero {
+        padding-bottom: 32rem;
+      }
+    }
+  
+    @media only screen and (min-width: 480px) and (max-width: 788px) {
+      div.hero {
+        padding-bottom: 40rem;
+      }
+    }
+
+    img.hide-at-mobile {
+      object-position: top right;
+  
+      @media only screen and (min-width: 1600px) {
+        object-position: bottom;
+      }
+    }
+  }
+
+  .Medicare-PD {
+    img.hide-at-mobile {
+      object-position: top right;
+  
+      @media only screen and (min-width: 1600px) {
+        object-position: top;
+      }
+    }
+
+    img.show-at-mobile {
+      bottom: -2rem;
+    }
+
+    div.flip-clock{
+      --fcc-label-color: #4D4D4D
+    }
+
+    div #zipCodeForm .cta-phone {
+      img {
+        filter: none;
+      }
+
+      span, span a {
+        color: var(--color-dark);
+      }
+    }
+
+    @media (min-width: 620px) and (max-width: 1025px) {
+      .cta-phone {
+        margin-top: 11rem;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    div.hero {
+      padding-bottom: 28rem;
+    }
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 788px) {
+    div.hero {
+      padding-bottom: 36rem;
+    }
+  }
+
+  @media only screen and (min-width: 620px) and (max-width: 1024px) {
+    .hero #zipCodeForm > div:first-of-type {
+      flex-direction: column;
+      width: 100%;
+      margin: auto;
+
+      &> div {
+        width: 100%;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1380px) {
+    .hero #zipCodeForm div:first-of-type {
+      max-width: 820px;
+    }
+  }
+
+  @media only screen and (min-width: 1280px) {
+    div.hero {
+      padding-top: 5rem;
+    }
+  }
+
+  @media only screen and (min-width: 1025px) {
+    .Medicare-PD {
+      &> div:nth-of-type(2) {
+        &> div:nth-of-type(1) {
+          &> div:nth-of-type(1) {
+            max-width: none;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .hero {
+      width: 100%;
+    }
+  }
 `
 
 export const HeroHeading = styled.h1`
   color: var(--color-light);
   margin-bottom: 15px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+
+  &.dark-text {
+    color: var(--color-dark);
+  }
 
   @media only screen and (max-width: 1280px) {
     font-size: 50px;
@@ -132,6 +292,10 @@ export const HeroHeading = styled.h1`
 
   @media only screen and (max-width: 620px) {
     color: var(--color-dark);
+
+    &.white-text {
+      color: var(--color-light) !important;
+    }
   }
 `
 
@@ -141,8 +305,16 @@ export const HeroSubheading = styled.h4`
   margin-bottom: 4rem;
   line-height: 120%;
 
+  &.dark-text {
+    color: var(--color-dark);
+  }
+
   @media only screen and (max-width: 620px) {
     color: var(--color-dark);
+  }
+
+  &.white-text {
+    color: var(--color-light) !important;
   }
 `
 
@@ -559,7 +731,7 @@ const MedicareInner = styled.div`
     }
   }
 
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 1025px) {
     display: block;
     padding: 2.1rem 1.3rem;
     text-align: center;
@@ -606,7 +778,7 @@ export const MedicareAdvantageHeroInner = styled.div`
       width: 100%;
     }
 
-    @media only screen and (max-width: 1024px) {
+    @media only screen and (max-width: 1025px) {
       text-align: center;
     }
   }
@@ -1040,4 +1212,12 @@ export const MedicareAdvantageSectionWrapper = styled.div`
   &.light + .light {
     padding-top: 0;
   }
+`
+
+export const CountdownWrapper = styled.div`
+@media only screen and (max-width: 680px) {
+
+  .flip-clock {  
+      --fcc-label-color: white; /* color of label */
+    }
 `

@@ -30,6 +30,7 @@ import Medial from "../../components/Medials";
 import Callouts from "../../components/Callouts";
 import Callout from "../../components/Callouts/Callout";
 import Footer from "../../components/Footer";
+import Countdown from "../../components/Countdown";
 
 const MedicarePage = () => {
   const { page } = useMedicarePageQuery();
@@ -51,6 +52,7 @@ const MedicarePage = () => {
             inputId="medicarePageHeroLocation"
             footerContent={page.pageHeroFields.callUs} />
         <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.disclaimer }} />
+        <Countdown date={1697342400000}/>
       </Hero>
       <Section
         page="medicare"
