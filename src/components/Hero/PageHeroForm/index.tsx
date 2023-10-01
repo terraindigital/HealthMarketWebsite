@@ -51,7 +51,7 @@ const [secondButtonActive, setSecondButtonActive] = useState(false);
 // set the urls to change the form action to
 const location = useLocation();
 let plans: string;
-const agents = "/local-health-insurance-agent/search/?query=";
+const agents = "/local-health-insurance-agent/search/";
 let agentsFilterAppend: string;
 if (location.pathname.includes("medicare")) {
   plans = "https://healthmarkets6.destinationrx.com/pc/2023/shopping/home";
@@ -115,7 +115,7 @@ const finalExpense = "/life-insurance/final-expense-insurance";
     if (firstButtonActive && !location?.pathname?.includes(finalExpense)) {
       redirectUrl = `${plans}?zip=${zip}`;
     } else {
-      redirectUrl = `${agents}${zip}${agentsFilterAppend}`;
+      redirectUrl = `${agents}?zip=${zip}${agentsFilterAppend}`;
     }
     navigate(redirectUrl);
   };
