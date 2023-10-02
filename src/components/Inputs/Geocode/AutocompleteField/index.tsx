@@ -61,7 +61,7 @@ const AutocompleteField = ({ showFilters = false,  className, placeholder, defau
                             <input
                               {...getInputProps({
                                 value: address,
-                                placeholder: "Enter Zip Code",
+                                placeholder: "Enter ZIP code",
                                 type: "text",
                                 className: 'geocode input',
                               })}
