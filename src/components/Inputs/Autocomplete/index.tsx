@@ -152,7 +152,7 @@ const Autocomplete: FC<Props> = ({ api_key }) => {
         size="5"
       ></ge-autocomplete> */}
       <img src={MapPin} alt="map location pin image" />
-      <Input id="geocodeAutocomplete" type="text" placeholder="Enter Zip Code/City" onChange={getOptions} autocomplete="off" />
+      <Input id="geocodeAutocomplete" type="text" placeholder="Enter ZIP code/City" onChange={getOptions} autocomplete="off" />
       <Options className="location-options" />
       <input type="hidden" name="healthShortTermEnrollOnline" value="yes" />
       <input type="hidden" name="medicareMAenrollonline" value="yes" />

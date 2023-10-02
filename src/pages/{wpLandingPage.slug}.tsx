@@ -386,7 +386,7 @@ const LPPage = ({data}: { data: PageInfo }) => {
                     <input id="email" type="email" name="email" required />
                   </FormInput>
                   <FormInput className="group">
-                    <label htmlFor="zipCode">Zip Code<sup>*</sup></label>
+                    <label htmlFor="zipCode">ZIP code<sup>*</sup></label>
                     <input id="zipCode" type="number" name="zipCode" pattern="[0-9]{5}" required />
                   </FormInput>
                 </FormInputGroup>
@@ -426,7 +426,7 @@ const LPPage = ({data}: { data: PageInfo }) => {
                   <Input id="lName" type="text" name="lName" placeholder="Last name" required />
                 </InputGroup>
                 <InputGroup>
-                  <Input id="zipCode" type="number" name="zipCode" pattern="[0-9]{5}" placeholder="Zip code" required />
+                  <Input id="zipCode" type="number" name="zipCode" pattern="[0-9]{5}" placeholder="ZIP code" required />
                   <Input id="email" type="email" name="email" placeholder="Email" required />
                 </InputGroup>
                 <CheckboxGroup title="Select all that apply">
