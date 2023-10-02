@@ -49,14 +49,14 @@ const MedicarePrescriptionDrugPage = () => {
     const {page} = useMedicarePrescriptionDrugPageQuery();
     return (
         <Layout>
-            <PageContainer>
+            <PageContainer className="Medicare-PD">
             <Global styles={PageStyles} />
               <Hero
                 image={page?.pageHeroFields?.heroImage?.sourceUrl}
                 mobileImage={page?.pageHeroFields?.mobileHeroImage?.sourceUrl}
                 bgColor="#C6C3BE">
-                <HeroHeading>{page?.pageHeroFields?.headline}</HeroHeading>
-                <HeroSubheading>{page?.pageHeroFields?.subheadline}</HeroSubheading>
+                <HeroHeading className="dark-text">{page?.pageHeroFields?.headline}</HeroHeading>
+                <HeroSubheading className="dark-text">{page?.pageHeroFields?.subheadline}</HeroSubheading>
                 <PageHeroForm
                     light
                     btnLeftText={page?.pageHeroFields?.heroButtons?.heroButton1?.text}
