@@ -12,6 +12,7 @@ export const IntelligentStyles = css`
     display: flex;
     gap: 10px;
     justify-content: center;
+    align-items: center;
   }
 
   .button-content img{
@@ -19,6 +20,7 @@ export const IntelligentStyles = css`
     width: 26px;
     height: 26px;
     padding: 0;
+    margin-bottom: 0px;
   } 
 
   {/* Explore options  */}
