@@ -8,10 +8,6 @@ export const IntelligentStyles = css`
 
   {/* Hero Section */}
 
-  .half button {
-    padding-bottom: 0px;
-  }
-
   .button-content{
     display: flex;
     gap: 10px;
@@ -22,6 +18,7 @@ export const IntelligentStyles = css`
     filter: brightness(0) invert(1);
     width: 26px;
     height: 26px;
+    padding: 0;
   } 
 
   {/* Explore options  */}
@@ -144,6 +141,14 @@ export const IntelligentStyles = css`
 
   .related-content h4 {
     color: #009FDA;
+  }
+
+  @media only screen and (min-width: 1460px) {
+    .button-content img {
+      width: 30px;
+      height: 30px;
+      margin-top: .25rem;
+    }
   }
 
   @media only screen and (max-width: 1030px) {
