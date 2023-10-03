@@ -146,13 +146,11 @@ export const Inner = styled.div`
     flex-basis: 72%;
     width: 72%;
 
-    @media only screen and (max-width: 1280px) {
-      flex-basis: 100%;
-      width: 100%;
-    }
     
     @media only screen and (max-width: 1024px) {
       text-align: center;
+      flex-basis: 100%;
+      width: 100%;
     }
   }
   .open &.half {
