@@ -106,7 +106,7 @@ export const PageStyles = css`
 
 @media only screen and (min-width: 620px) and (max-width: 1680px) {
   .hero img.hide-at-mobile {
-    object-position: bottom right;
+    object-position: center;
   }
 }
 
@@ -431,9 +431,8 @@ export const HeroHeading = styled.h1`
   color: #4D4D4D;
   margin-bottom: 2.4rem;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
-  margin-top: 8rem;
   margin-bottom: 4rem;
-  font-size: 7rem;
+  font-size: 8rem;
   width: 80%;
 
   @media only screen and (max-width: 1030px) {
