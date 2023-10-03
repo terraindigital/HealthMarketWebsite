@@ -240,7 +240,6 @@ export const IntelligentStyles = css`
 export const HeroHeading = styled.h1`
   color: #4D4D4D;
   margin-bottom: 2.4rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
   width: 80%;
 
   @media only screen and (max-width: 1030px) {

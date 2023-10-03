@@ -24,7 +24,7 @@ import Medial from "../../components/Medials";
 import { HeroHeading, HeroSubheading, FlexedSectionContainer} from "../../components/pages/styles/IntelligentPageStyles";
 
 // Images
-import PhoneIcon from "../../static/images/phone-icon.png"
+import PhoneIcon from "../../static/images/phone-icon.svg"
 
 
 const IntelligentPage = () => {
