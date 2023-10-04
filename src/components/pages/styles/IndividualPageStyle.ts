@@ -207,11 +207,19 @@ ul {
   content: "";
   position: absolute;
   top: 40px;
-  left: 46.5%;
+  left: calc(50% - 50px);
   width: 2px;
   height: 60%;
   background-color: #009FDA;
   transform: translateX(-50%);
+
+  @media only screen and (min-width: 790px) and (max-width: 958px) {
+    top: 58px;
+  }
+  @media only screen and (min-width: 790px) and (max-width: 988px) {
+    height: 58%;
+  }
+
 }
 
 .items li {
