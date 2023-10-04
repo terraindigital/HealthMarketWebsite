@@ -35,7 +35,7 @@ export const IntelligentStyles = css`
 
   .flexed.section h4{
     margin-top: 3rem;
-    line-height: 3rem;
+    line-height: 3.5rem;
     color: #4D4D4D
   }
 
@@ -44,8 +44,10 @@ export const IntelligentStyles = css`
     padding-right: 15rem;
   }
 
-  .card-content {
-    padding-bottom: 3.5rem;
+  .card-container .card-content {
+    top: 50%;
+    left: 50%;
+    position: sticky;
   }
 
   .card-logo {
@@ -70,11 +72,25 @@ export const IntelligentStyles = css`
 
   .card-p {
     text-align: center;
-    padding-bottom: 2rem;
   }
 
   .card-link {
     display: block;
+    text-align: center;
+    text-decoration: underline;
+    border: none !important;
+    margin-top: 2rem;
+  }
+
+  .shop-card-container .card-content {
+    padding-bottom: 2rem;
+  }
+
+  .shop-card-link {
+    position: absolute;
+    left: 32px;
+    right: 32px;
+    bottom: 0px;
     text-align: center;
     text-decoration: underline;
     border: none !important;
@@ -126,6 +142,7 @@ export const IntelligentStyles = css`
 
   .shop-card-container .cards a {
     border: 2px solid #009FDA;
+    padding-bottom: 4rem;
   }
 
   .shop-card-container .line {
@@ -189,9 +206,26 @@ export const IntelligentStyles = css`
     text-align: left;
   }
 
+  .card-container .card-header .show-at-mobile {
+    font-size: 32px;
+  }
+
+  .card-content .card-link {
+    font-size: 18px;
+  }
+
   .card-container{
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  div.card-content h4 {
+    font-size: 24px;
+  }
+
+  .card-image {
+    width: 100px;
+    height: 100px;
   }
 
   .card-p {
@@ -225,14 +259,28 @@ export const IntelligentStyles = css`
     padding: 2rem;
    }
 
+   
+
   .shop-card-container {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 
+  .shop-card-container .card-header{
+    min-height: 0px;
+  }
+
+  .shop-card-container .card-header .show-at-mobile{
+    display: none;
+  }
+
+  .shop-card-container p:nth-child(5)  {
+    padding-bottom: 4rem;
+  }
+
   .shop-card-container .cards a {
     border: 2px solid #009FDA;
-    padding: 0rem;
+    padding-bottom: 2rem;
   }
 }
 `
