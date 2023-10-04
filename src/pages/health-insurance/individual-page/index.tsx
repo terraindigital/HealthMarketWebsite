@@ -162,7 +162,7 @@ const IndividualPage = () => {
                     <li>
                         <div className="dot"></div>
                         <div className="content">
-                            <h3>{individualSection2.catastrophicCoverage.planName}</h3>
+                            <h3 style={{ color: '#4D4D4D' }}>{individualSection2.catastrophicCoverage.planName}</h3>
                             <p style={{ color: '#009FDA' }}>{individualSection2.catastrophicCoverage.highlightedText}</p>
                             <p>{individualSection2.catastrophicCoverage.normalText}</p>
                         </div>
@@ -224,7 +224,7 @@ const IndividualPage = () => {
                     </Cards>
                 ) : null}
                 <div className="full-rounded" style={{ textAlign: "center" }}>
-                    <a href={page.individualPageCustomField.individualSection3.cta.link} onClick={routeLink}>
+                    <a href={page.individualPageCustomField.individualSection4.cta.link} onClick={routeLink}>
                         <Button background="accent-alt" border="light" color="light">
                             {page.individualPageCustomField.individualSection4.cta.text}
                         </Button>

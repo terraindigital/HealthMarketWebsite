@@ -13,14 +13,21 @@ export const PageStyles = css`
   }
 }
 
-.section .heading h2{
-  padding-left: 90px;
-  width: 50%;
-  font-size: 62px;
+.section .heading {
+  align-items: flex-start;
 }
 
-.section h4{
-  line-height: 3rem;
+.section .heading h2 {
+  flex-basis: 50%;
+}
+
+.section .heading h4 {
+  flex-basis: calc(50% - 9.6rem);
+  width: calc(50% - 9.6rem);
+  max-width: 100%;
+  font-weight: 600;
+  font-size: 32px;
+  color: var(--color-dark)
 }
 
 @media only screen and (min-width: 1025px) {
@@ -62,9 +69,6 @@ export const PageStyles = css`
     width: 100%;
   }
 
-  .hero + .section {
-    padding-top: 4rem;
-  }
 
   .button-container button {
     max-width: 38.6rem;
@@ -159,11 +163,15 @@ export const PageStyles = css`
     font-size: 36px;
   }
   
-  .section h4{
-    line-height: 2rem !important;
-    font-size: 16px !important;
-    padding: 1rem 0rem 1rem 3rem !important;
-    max-width: 100% !important;
+  .section .heading h4{
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 19.2px;
+    width: 100%;
+  }
+
+  .card-header h4 {
+    text-align: center;
   }
 }
 
@@ -171,6 +179,11 @@ export const PageStyles = css`
 `;
 
 export const TierWrapper = styled.div`
+
+p {
+  color: var(--color-dark)
+}
+
 .affordable-plans {
   margin-bottom: 3rem;
   text-align: center;
@@ -207,11 +220,19 @@ ul {
   content: "";
   position: absolute;
   top: 40px;
-  left: 46.5%;
+  left: calc(50% - 50px);
   width: 2px;
   height: 60%;
   background-color: #009FDA;
   transform: translateX(-50%);
+
+  @media only screen and (min-width: 790px) and (max-width: 958px) {
+    top: 58px;
+  }
+  @media only screen and (min-width: 790px) and (max-width: 988px) {
+    height: 58%;
+  }
+
 }
 
 .items li {
