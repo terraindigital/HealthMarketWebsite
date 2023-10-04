@@ -90,9 +90,10 @@ export const IntelligentStyles = css`
     margin-top: 2rem;
   }
 
-  .shop-card-container .card-content {
-    padding-bottom: 2rem;
-  }
+  // .shop-card-container .card-content {
+  //   padding-bottom: 3rem;
+  //   padding-top: 3rem;
+  // }
 
   .shop-card-link {
     position: absolute;
@@ -151,6 +152,11 @@ export const IntelligentStyles = css`
   .shop-card-container .cards a {
     border: 2px solid #009FDA;
     padding-bottom: 4rem;
+    padding-top: 0rem;
+
+    @media only screen and (max-width: 620px) {
+      padding-top: 4rem
+    }
   }
 
   .shop-card-container .line {
@@ -283,14 +289,20 @@ export const IntelligentStyles = css`
     display: none;
   }
 
-  .shop-card-container p:nth-child(5)  {
-    padding-bottom: 4rem;
-  }
+  // .shop-card-container .cards a {
+  //   border: 2px solid #009FDA;
+  //   padding-bottom: 4rem;
+  //   padding-top: 0rem;
 
-  .shop-card-container .cards a {
-    border: 2px solid #009FDA;
-    padding-bottom: 2rem;
-  }
+  //   @media only screen and (max-width: 620px) {
+  //     padding-top: 4rem
+  //   }
+
+  //   &.shop-card-link {
+  //     padding-bottom: 1rem;
+  //     padding-top: 1rem
+  //   }
+  // }
 
 }
 `
