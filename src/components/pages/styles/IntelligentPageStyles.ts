@@ -12,6 +12,7 @@ export const IntelligentStyles = css`
     display: flex;
     gap: 10px;
     justify-content: center;
+    align-items: center;
   }
 
   .button-content img{
@@ -19,6 +20,7 @@ export const IntelligentStyles = css`
     width: 26px;
     height: 26px;
     padding: 0;
+    margin-bottom: 0px;
   } 
 
   {/* Explore options  */}
@@ -33,7 +35,7 @@ export const IntelligentStyles = css`
 
   .flexed.section h4{
     margin-top: 3rem;
-    line-height: 3rem;
+    line-height: 3.5rem;
     color: #4D4D4D
   }
 
@@ -42,8 +44,18 @@ export const IntelligentStyles = css`
     padding-right: 15rem;
   }
 
-  .card-content {
-    padding-bottom: 3.5rem;
+  @media only screen and (min-width: 620px) {
+    .card-container .cards {
+      a.hide-at-mobile {
+        display: flex;
+        align-items: center;
+
+        div.card-content {
+          padding-top: 60px;
+          padding-bottom: 60px;
+        }
+      }
+    }
   }
 
   .card-logo {
@@ -68,11 +80,26 @@ export const IntelligentStyles = css`
 
   .card-p {
     text-align: center;
-    padding-bottom: 2rem;
   }
 
   .card-link {
     display: block;
+    text-align: center;
+    text-decoration: underline;
+    border: none !important;
+    margin-top: 2rem;
+  }
+
+  // .shop-card-container .card-content {
+  //   padding-bottom: 3rem;
+  //   padding-top: 3rem;
+  // }
+
+  .shop-card-link {
+    position: absolute;
+    left: 32px;
+    right: 32px;
+    bottom: 0px;
     text-align: center;
     text-decoration: underline;
     border: none !important;
@@ -124,6 +151,12 @@ export const IntelligentStyles = css`
 
   .shop-card-container .cards a {
     border: 2px solid #009FDA;
+    padding-bottom: 4rem;
+    padding-top: 0rem;
+
+    @media only screen and (max-width: 620px) {
+      padding-top: 4rem
+    }
   }
 
   .shop-card-container .line {
@@ -187,9 +220,26 @@ export const IntelligentStyles = css`
     text-align: left;
   }
 
+  .card-container .card-header .show-at-mobile {
+    font-size: 32px;
+  }
+
+  .card-content .card-link {
+    font-size: 18px;
+  }
+
   .card-container{
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  div.card-content h4 {
+    font-size: 24px;
+  }
+
+  .card-image {
+    width: 100px;
+    height: 100px;
   }
 
   .card-p {
@@ -200,6 +250,7 @@ export const IntelligentStyles = css`
     text-align: center;
     color: #009B3A;
     font-size: 24px;
+    padding-top: 60px;
   }
 
   .card-container .card:nth-of-type(3n-4) {
@@ -223,22 +274,42 @@ export const IntelligentStyles = css`
     padding: 2rem;
    }
 
+   
+
   .shop-card-container {
     padding-left: 2rem;
     padding-right: 2rem;
   }
 
-  .shop-card-container .cards a {
-    border: 2px solid #009FDA;
-    padding: 0rem;
+  .shop-card-container .card-header{
+    min-height: 0px;
   }
+
+  .shop-card-container .card-header .show-at-mobile{
+    display: none;
+  }
+
+  // .shop-card-container .cards a {
+  //   border: 2px solid #009FDA;
+  //   padding-bottom: 4rem;
+  //   padding-top: 0rem;
+
+  //   @media only screen and (max-width: 620px) {
+  //     padding-top: 4rem
+  //   }
+
+  //   &.shop-card-link {
+  //     padding-bottom: 1rem;
+  //     padding-top: 1rem
+  //   }
+  // }
+
 }
 `
 
 export const HeroHeading = styled.h1`
   color: #4D4D4D;
   margin-bottom: 2.4rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
   width: 80%;
 
   @media only screen and (max-width: 1030px) {
