@@ -44,10 +44,18 @@ export const IntelligentStyles = css`
     padding-right: 15rem;
   }
 
-  .card-container .card-content {
-    top: 50%;
-    left: 50%;
-    position: sticky;
+  @media only screen and (min-width: 620px) {
+    .card-container .cards {
+      a.hide-at-mobile {
+        display: flex;
+        align-items: center;
+
+        div.card-content {
+          padding-top: 60px;
+          padding-bottom: 60px;
+        }
+      }
+    }
   }
 
   .card-logo {
@@ -236,6 +244,7 @@ export const IntelligentStyles = css`
     text-align: center;
     color: #009B3A;
     font-size: 24px;
+    padding-top: 60px;
   }
 
   .card-container .card:nth-of-type(3n-4) {
@@ -282,6 +291,7 @@ export const IntelligentStyles = css`
     border: 2px solid #009FDA;
     padding-bottom: 2rem;
   }
+
 }
 `
 
