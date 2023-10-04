@@ -25,18 +25,11 @@ export const IntelligentStyles = css`
 
   {/* Explore options  */}
 
-  .flexed.section h2{
-    padding-left: 90px;
-  }
-
-  .flexed.section .inner{
-    padding-left: 90px;
-  }
-
   .flexed.section h4{
-    margin-top: 3rem;
     line-height: 3.5rem;
-    color: #4D4D4D
+    color: #4D4D4D;
+    font-size: 32px;
+    font-weight: 600;
   }
 
   .card-container{
@@ -86,23 +79,7 @@ export const IntelligentStyles = css`
     display: block;
     text-align: center;
     text-decoration: underline;
-    border: none !important;
     margin-top: 2rem;
-  }
-
-  // .shop-card-container .card-content {
-  //   padding-bottom: 3rem;
-  //   padding-top: 3rem;
-  // }
-
-  .shop-card-link {
-    position: absolute;
-    left: 32px;
-    right: 32px;
-    bottom: 0px;
-    text-align: center;
-    text-decoration: underline;
-    border: none !important;
   }
 
    .chat-bubble {
@@ -149,19 +126,9 @@ export const IntelligentStyles = css`
     padding-right: 10rem;
   }
 
-  .shop-card-container .cards a {
-    border: 2px solid #009FDA;
-    padding-bottom: 4rem;
-    padding-top: 0rem;
-
-    @media only screen and (max-width: 620px) {
-      padding-top: 4rem
-    }
-  }
-
-  .shop-card-container .line {
-    text-align: center;
-    color: #009B3A
+  .card-header {
+    color: #009FDA !important;
+    font-size: 32px;
   }
 
   .list-container heading {
@@ -234,7 +201,7 @@ export const IntelligentStyles = css`
   }
 
   div.card-content h4 {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .card-image {
@@ -281,28 +248,9 @@ export const IntelligentStyles = css`
     padding-right: 2rem;
   }
 
-  .shop-card-container .card-header{
-    min-height: 0px;
-  }
-
   .shop-card-container .card-header .show-at-mobile{
     display: none;
   }
-
-  // .shop-card-container .cards a {
-  //   border: 2px solid #009FDA;
-  //   padding-bottom: 4rem;
-  //   padding-top: 0rem;
-
-  //   @media only screen and (max-width: 620px) {
-  //     padding-top: 4rem
-  //   }
-
-  //   &.shop-card-link {
-  //     padding-bottom: 1rem;
-  //     padding-top: 1rem
-  //   }
-  // }
 
 }
 `
@@ -340,12 +288,6 @@ export const HeroSubheading = styled.h4`
 `;
 
 export const FlexedSectionContainer = styled.div`
-.heading {
-    flex-basis: 1000%;
-    width: 100%;
-    left: 0;
-  }
-
   h2 {
     font-size: 60px;
   }

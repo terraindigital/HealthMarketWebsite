@@ -172,11 +172,9 @@ const IntelligentPage = () => {
                                 >
                                     <div className="card-content-container">
                                     <img className="card-image" src={plan.icon.sourceUrl}></img>
-                                    <p className="line">______</p>
-                                    <h4>{plan.title}</h4>
+                                    <h4 className="card-header">{plan.title}</h4>
                                     <p className="card-p">{plan.content}</p>
-                                    <p className="line">______</p>
-                                   <a className="shop-card-link" href={plan.link.link}>{plan.link.text}</a>
+                                   <a className="card-link" href={plan.link.link}>{plan.link.text}</a>
                                     </div>
                                 </Card>
                             )
