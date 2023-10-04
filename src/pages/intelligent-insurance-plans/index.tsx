@@ -24,7 +24,7 @@ import Medial from "../../components/Medials";
 import { HeroHeading, HeroSubheading, FlexedSectionContainer} from "../../components/pages/styles/IntelligentPageStyles";
 
 // Images
-import PhoneIcon from "../../static/images/phone-icon.png"
+import PhoneIcon from "../../static/images/phone-icon.svg"
 
 
 const IntelligentPage = () => {
@@ -168,15 +168,15 @@ const IntelligentPage = () => {
                             const plan = plans[key];
                             return (
                                 <Card
-                                title={plan.title}
                                 link={plan.link.link}
                                 >
                                     <div className="card-content-container">
                                     <img className="card-image" src={plan.icon.sourceUrl}></img>
                                     <p className="line">______</p>
+                                    <h4>{plan.title}</h4>
                                     <p className="card-p">{plan.content}</p>
                                     <p className="line">______</p>
-                                    <a className="card-link" href={plan.link.link}>{plan.link.text}</a>
+                                   <a className="shop-card-link" href={plan.link.link}>{plan.link.text}</a>
                                     </div>
                                 </Card>
                             )

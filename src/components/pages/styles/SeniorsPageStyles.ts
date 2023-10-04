@@ -25,21 +25,9 @@ export const PageStyles = css`
 
   #zipCodeForm {
     &> div:first-of-type div {
-      color: #69BE28;
       &.accented {
         color: white;
-        background-color: #69BE28;
       }
-    }
-
-    div.group.input {
-      input::placeholder {
-        color: #69BE28;
-      }
-    }
-
-    button {
-      background-color: #69BE28;
     }
 
     div.cta-phone {
