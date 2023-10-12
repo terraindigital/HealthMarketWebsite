@@ -52,7 +52,7 @@ const MedicarePage = () => {
             inputId="medicarePageHeroLocation"
             footerContent={page.pageHeroFields.callUs} />
         <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.disclaimer }} />
-        <Countdown date={1697342400000}/>
+        <Countdown date={1702011600000}/>
       </Hero>
       <Section
         page="medicare"
