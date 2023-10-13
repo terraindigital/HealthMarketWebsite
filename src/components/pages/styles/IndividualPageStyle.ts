@@ -166,6 +166,7 @@ export const PageStyles = css`
   }
   
   .section .heading h4{
+    padding-top: 4rem;
     font-size: 16px;
     font-weight: 200;
     line-height: 19.2px;
@@ -341,21 +342,24 @@ padding-bottom: 5rem;
 
 @media only screen and (max-width: 788px) {
   .affordable-plans {
-    padding: 1rem 3rem;
+    padding: 0rem 3rem;
     text-align: left;
   }
 
   .affordable-plans h1 {
     font-size: 25px;
+    margin-bottom: 0rem;
   }
   
   .affordable-plans p {
     font-size: 16px;
     line-height: 2rem;
+    padding-top: 2rem;
+    text-align: left;
   }
 
   .items {
-     padding: 1rem 0rem 1rem 3rem;
+     padding: 0rem 0rem 1rem 3rem;
   }
 
   .items li {
@@ -476,7 +480,7 @@ export const HeroSubheading = styled.h4`
   color: #4D4D4D;
   font-family: var(--font-body);
   margin-bottom: 4rem;
-  font-size: 2.1rem;
+  font-size: 2.5rem;
   width: 70%;
 
   @media only screen and (max-width: 620px) {
