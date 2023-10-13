@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from "gatsby";
 export const useIntelligentPageQuery = () => {
     const data = useStaticQuery(graphql`
     query IntelligentQuery {
-      page: wpPage(databaseId: { eq: 9720 }) {
+      page: wpPage(databaseId: { eq: 9334 }) {
         id
         slug
         seo {

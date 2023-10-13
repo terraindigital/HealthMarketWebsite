@@ -2,7 +2,7 @@ import { useStaticQuery, graphql } from "gatsby";
 export const useIndividualPageQuery = () => {
   const data = useStaticQuery(graphql`
     query IndividualQuery {
-      page: wpPage(databaseId: {eq: 9583}) {
+      page: wpPage(databaseId: {eq: 9890}) {
         id
         slug
         seo {
