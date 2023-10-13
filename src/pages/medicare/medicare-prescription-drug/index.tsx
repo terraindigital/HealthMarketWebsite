@@ -54,7 +54,7 @@ const MedicarePrescriptionDrugPage = () => {
               <Hero
                 image={page?.pageHeroFields?.heroImage?.sourceUrl}
                 mobileImage={page?.pageHeroFields?.mobileHeroImage?.sourceUrl}
-                bgColor="#C6C3BE">
+                bgColor="#EFEFEF">
                 <HeroHeading className="dark-text">{page?.pageHeroFields?.headline}</HeroHeading>
                 <HeroSubheading className="dark-text">{page?.pageHeroFields?.subheadline}</HeroSubheading>
                 <PageHeroForm
