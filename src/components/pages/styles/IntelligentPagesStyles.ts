@@ -185,6 +185,7 @@ export const IntelligentStyles = css`
 
   .flexed.section h4{
     text-align: left;
+    font-size: 20px;
   }
 
   .card-container .card-header .show-at-mobile {
