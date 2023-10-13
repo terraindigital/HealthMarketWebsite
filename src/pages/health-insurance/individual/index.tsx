@@ -200,9 +200,7 @@ const IndividualPage = () => {
             <Section
                 color={page.individualPageCustomField.individualSection4.color}
                 heading={page.individualPageCustomField.individualSection4.heading}>
-                <RelatedContent />
-                {(!hasChildren) ? (
-                    <Cards relatedContent={true}>
+                    <Cards>
                         <Card
                             image={page.individualPageCustomField.individualSection4.individualRelatedContent.individualRelatedContent1.image.sourceUrl}
                             title={page.individualPageCustomField.individualSection4.individualRelatedContent.individualRelatedContent1.heading}
@@ -222,7 +220,6 @@ const IndividualPage = () => {
                             <p dangerouslySetInnerHTML={{ __html: page.individualPageCustomField.individualSection4.individualRelatedContent.individualRelatedContent3.content }} />
                         </Card>
                     </Cards>
-                ) : null}
                 <div className="full-rounded" style={{ textAlign: "center" }}>
                     <a href={page.individualPageCustomField.individualSection4.cta.link} onClick={routeLink}>
                         <Button background="accent-alt" border="light" color="light">
