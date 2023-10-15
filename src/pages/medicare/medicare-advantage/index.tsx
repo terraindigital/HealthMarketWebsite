@@ -87,7 +87,7 @@ const MedicareAdvantagePage = () => {
       <Hero
         image={page?.pageHeroFields?.heroImage?.sourceUrl}
         mobileImage={page?.pageHeroFields?.mobileHeroImage?.sourceUrl}
-        bgColor="#F2F2F2">
+        bgColor="#86aec9">
         <HeroHeading>{page?.pageHeroFields?.headline}</HeroHeading>
         <HeroSubheading>{page?.pageHeroFields?.subheadline}</HeroSubheading>
         <PageHeroForm
@@ -97,7 +97,7 @@ const MedicareAdvantagePage = () => {
             inputId="medicarePageHeroLocation"
             footerContent={page?.pageHeroFields?.callUs} />
         <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page?.medicareAdvantagePageCustomFields?.medicareAdvPostHeroDisclaimer }} />
-        <Countdown date={1697342400000}/>
+        <Countdown date={1702011600000}/>
       </Hero>
 
       {/* <HeroContainer>

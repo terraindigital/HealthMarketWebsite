@@ -186,6 +186,10 @@ export const HeroHeading = styled.h1`
   color: var(--color-light);
   margin-bottom: 2.4rem;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+
+  @media only screen and (max-width: 620px) {
+    color: var(--color-dark);
+  }
 `
 
 export const HeroSubheading = styled.h4`
@@ -194,6 +198,6 @@ export const HeroSubheading = styled.h4`
   margin-bottom: 4rem;
 
   @media only screen and (max-width: 620px) {
-    color: var(--color-light);
+    color: var(--color-dark);
   }
 `
