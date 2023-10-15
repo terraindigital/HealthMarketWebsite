@@ -54,7 +54,7 @@ const MedicarePrescriptionDrugPage = () => {
               <Hero
                 image={page?.pageHeroFields?.heroImage?.sourceUrl}
                 mobileImage={page?.pageHeroFields?.mobileHeroImage?.sourceUrl}
-                bgColor="#C6C3BE">
+                bgColor="#EFEFEF">
                 <HeroHeading className="dark-text">{page?.pageHeroFields?.headline}</HeroHeading>
                 <HeroSubheading className="dark-text">{page?.pageHeroFields?.subheadline}</HeroSubheading>
                 <PageHeroForm
@@ -64,7 +64,7 @@ const MedicarePrescriptionDrugPage = () => {
                     inputId="medicarePageHeroLocation"
                     footerContent={page?.pageHeroFields?.callUs} />
                 <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page?.medicarePrescriptionDrugPageCustomFields?.heroDisclaimer }} />
-                <Countdown date={1697342400000}/>
+                <Countdown date={1702011600000}/>
               </Hero>
                 {/* <HeroContainer>
                     <HeroDesktopImg src={page.pageHeroFields.heroImage?.sourceUrl} alt="Hero"/>

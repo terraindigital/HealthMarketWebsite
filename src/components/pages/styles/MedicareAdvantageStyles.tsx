@@ -160,6 +160,25 @@ export const PageStyles = css`
 
   .medicare-advantage {
 
+    .hero .half {
+      h1, h4 {
+        color: var(--color-light);
+      }
+    }
+
+    .hero #zipCodeForm .cta-phone {
+      &> img {
+        filter: brightness(0) invert(1)
+      } 
+      &> span > p {
+        color: var(--color-light);
+
+        &> a {
+          color: var(--color-light);
+        }
+      }
+    }
+
     @media only screen and (max-width: 788px) {
       div.flip-clock{
         --fcc-label-color: #ffffff;

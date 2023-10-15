@@ -42,7 +42,7 @@ const MedicarePage = () => {
       <Hero
         image={page.pageHeroFields.heroImage?.sourceUrl}
         mobileImage={page.pageHeroFields.mobileHeroImage?.sourceUrl}
-        bgColor="#5899D1">
+        bgColor="#70bdd2">
         <HeroHeading>{page.pageHeroFields.headline}</HeroHeading>
         <HeroSubheading>{page.pageHeroFields.subheadline}</HeroSubheading>
         <PageHeroForm
@@ -52,7 +52,7 @@ const MedicarePage = () => {
             inputId="medicarePageHeroLocation"
             footerContent={page.pageHeroFields.callUs} />
         <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: page.medicarePageCustomFields.medicareSection1.disclaimer }} />
-        <Countdown date={1697342400000}/>
+        <Countdown date={1702011600000}/>
       </Hero>
       <Section
         page="medicare"
