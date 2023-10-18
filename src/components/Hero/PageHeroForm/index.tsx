@@ -54,7 +54,7 @@ let plans: string;
 const agents = "/local-health-insurance-agent/search/";
 let agentsFilterAppend: string;
 if (location.pathname.includes("medicare")) {
-  plans = "https://healthmarkets6.destinationrx.com/pc/2023/shopping/home";
+  plans = "https://healthmarkets6.destinationrx.com/pc/2024/shopping/home";
   agentsFilterAppend = "&filter=medicare";
 } else {
   plans = "https://shop.healthmarkets.com/";
