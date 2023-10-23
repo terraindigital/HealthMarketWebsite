@@ -54,7 +54,7 @@ const IndexPage = ({path}: PageProps) => {
                     buttons
                     footerContent={home.pageHeroFields.callUs} />
                 <div className="hero-disclaimer" dangerouslySetInnerHTML={{ __html: home.homePageCustomFields.heroDisclaimer }} />
-                <Countdown date={1702011600000}/>
+                <Countdown date={1698811200000}/>
             </Hero>
             <Section
                 heading={home.homePageCustomFields.homeSection1.heading}
