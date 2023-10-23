@@ -43,7 +43,7 @@ const IndexPage = ({path}: PageProps) => {
                 image={home.pageHeroFields.heroImage.sourceUrl}
                 mobileImage={home.pageHeroFields.mobileHeroImage.sourceUrl}
                 centered
-                bgColor="#E7FBFF" >
+                bgColor="#CBCAD2" >
                 <HeroHeading>{home.pageHeroFields.headline}</HeroHeading>
                 <HeroSubheading>{home.pageHeroFields.subheadline}</HeroSubheading>
                 <PageHeroForm

@@ -4,8 +4,9 @@ import {css} from "@emotion/react";
 export const PageStyles = css`
 
 .hero img.show-at-mobile {
-  object-position: top;
+  object-position: bottom;
   display: block;
+  top: 30px;
 }
 
 .hero img.hide-at-mobile {
