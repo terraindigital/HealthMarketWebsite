@@ -6,7 +6,7 @@ export const PageStyles = css`
 .hero img.show-at-mobile {
   object-position: bottom;
   display: block;
-  top: 40px;
+  top: 30px;
 }
 
 .hero img.hide-at-mobile {
