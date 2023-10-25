@@ -86,9 +86,13 @@ export const PageStyles = css`
   #zipCodeForm .cta-phone {
     margin-top: 2em;
     margin-bottom: 2em;
-    width: 50%;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
+
+    span > p, span > p > a {
+      font-weight: 600;
+    }
   }
 
 
@@ -101,6 +105,13 @@ export const PageStyles = css`
   div.hero {
     padding-top: 9em;
     padding-bottom: 12em;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  div.hero {
+    padding-top: 6em;
+    padding-bottom: 26em;
   }
 }
 `
